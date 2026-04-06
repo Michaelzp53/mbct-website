@@ -18,7 +18,7 @@ export default function HomePage() {
           </div>
           
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             AI原生酒店增长实验室
           </h1>
           
