@@ -103,7 +103,7 @@ export default function AboutPage() {
               },
               {
                 letter: 'B',
-                name: 'Bros Team',
+                name: 'Bros & Team',
                 title: '资深专家顾问',
                 quote: '好的战略必须能落地，好的落地必须有效果。',
                 desc: '前顶级投行分析师，擅长商业模型设计与资本运作。负责将MBCT的增长方法论转化为可量化的商业成果。',
