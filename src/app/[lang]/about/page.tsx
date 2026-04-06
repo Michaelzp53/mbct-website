@@ -23,7 +23,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-2xl font-bold text-white mb-4">使命</h2>
               <p className="text-3xl font-bold text-[#f59e0b] mb-4">
-                "让每一家酒店都能用上AI"
+                "把AI数据精益管理植入每家酒店的DNA里"
               </p>
               <p className="text-gray-400">
                 MBCT专注于酒店行业，以AI数字化能力和私域流量运营为核心，
