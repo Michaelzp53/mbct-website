@@ -12,9 +12,9 @@ export default function HomePage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-16">
             <Sparkles className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-[#f59e0b] text-sm font-medium">让数据成为增长的灯塔</span>
+            <span className="text-[#f59e0b] text-lg font-medium">让数据成为增长的灯塔</span>
           </div>
           
           {/* Main Headline */}
@@ -170,7 +170,7 @@ export default function HomePage() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
                 <Shield className="w-4 h-4 text-[#f59e0b]" />
-                <span className="text-[#f59e0b] text-sm font-medium">效果跟进</span>
+                <span className="text-[#f59e0b] text-lg font-medium">效果跟进</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 以结果为尺，量增长之路
