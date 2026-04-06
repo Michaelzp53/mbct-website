@@ -82,12 +82,12 @@ export const en = {
         metric: 'Return rate↑',
       },
       {
-        client: 'A Luxury Urban Hotel',
+        client: 'A Luxury Hotel in Beijing',
         category: 'Luxury Urban Hotel',
         image: '/images/cases/case2.png',
-        description: 'Revenue management optimization and smart pricing significantly improved off-season revenue.',
-        result: 'RevPAR +18%, OTA score 4.2→4.7',
-        metric: '18%↑',
+        description: 'Through MBCT brand strategy upgrade and service process optimization, combined with smart pricing and fashionable health concepts, operational costs improved and profit margins increased.',
+        result: 'Guest satisfaction steadily improved, repeat customer ratio increased',
+        metric: 'Profit margin↑',
       },
       {
         client: 'A Large MICE Hotel',

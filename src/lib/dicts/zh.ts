@@ -82,12 +82,12 @@ export const zh = {
         metric: '回头率↑',
       },
       {
-        client: '某奢华城市酒店',
+        client: '北京某奢华酒店',
         category: '奢华城市酒店',
         image: '/images/cases/case2.png',
-        description: '实施收益管理优化和智能定价策略，淡季收益明显改善。',
-        result: 'RevPAR提升18%，OTA评分从4.2升至4.7',
-        metric: '18%↑',
+        description: '通过MBCT品牌战略升级与服务流程优化，结合智能定价策略与时尚健康服务理念，运营成本结构明显改善，利润空间有效提升。',
+        result: '宾客满意度稳步提升，回头客比例增加',
+        metric: '利润率↑',
       },
       {
         client: '某大型会展酒店',
