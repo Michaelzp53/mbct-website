@@ -90,12 +90,12 @@ export const zh = {
         metric: '利润率↑',
       },
       {
-        client: '某大型会展酒店',
+        client: '华东某大型会展酒店',
         category: '大型会展酒店',
         image: '/images/cases/case3.png',
-        description: '6个月私域会员突破10万，年度复购率提升35%。',
-        result: '私域会员破10万，复购率提升35%',
-        metric: '10万+会员',
+        description: '通过MBCT全链条运营优化，建立完善的淡旺季应对预案与员工培训体系，线上线下销售策略协同发力，运营效率与服务水平双提升。',
+        result: '承接大型会展活动能力增强，淡旺季收益更加均衡',
+        metric: '运营稳健↑',
       },
       {
         client: '某精品度假酒店',

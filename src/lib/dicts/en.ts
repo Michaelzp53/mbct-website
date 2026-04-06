@@ -90,12 +90,12 @@ export const en = {
         metric: 'Profit margin↑',
       },
       {
-        client: 'A Large MICE Hotel',
+        client: 'A Large MICE Hotel in East China',
         category: 'MICE Hotel',
         image: '/images/cases/case3.png',
-        description: 'Private domain membership exceeded 100,000 in 6 months, annual repurchase rate +35%.',
-        result: '100K+ members, Repurchase rate +35%',
-        metric: '10万+',
+        description: 'Through MBCT full-chain operations optimization, establishing comprehensive seasonal response plans and staff training systems, online and offline sales strategies working together.',
+        result: 'Enhanced capacity for large events, more balanced revenue in peak and off-seasons',
+        metric: 'Operations stable↑',
       },
       {
         client: 'A Boutique Resort Hotel',
