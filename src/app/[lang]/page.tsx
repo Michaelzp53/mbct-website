@@ -71,7 +71,7 @@ export default function HomePage() {
             {/* Badge like Hero section */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 mb-8">
               <Users className="w-4 h-4 text-[#3b82f6]" />
-              <span className="text-[#3b82f6] text-sm font-medium">理解 · 共情 · 解决</span>
+              <span className="text-[#3b82f6] text-lg font-medium">理解 · 共情 · 解决</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">我们懂你的困境</h2>
             <p className="text-xl text-gray-400">三种角色，三种痛点，一种解决方案</p>
