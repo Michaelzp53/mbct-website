@@ -74,12 +74,12 @@ export const zh = {
     cta: '查看更多案例',
     items: [
       {
-        client: '某高端度假酒店',
+        client: '三亚某高端度假酒店',
         category: '高端度假酒店',
         image: '/images/cases/case1.png',
-        description: '通过引入MBCT SaaS系统和AI客服，年节省人力成本约50万元。',
-        result: '运营效率提升40%，客户满意度提升25%',
-        metric: '50万/年',
+        description: '通过MBCT品牌战略升级与服务流程优化，打造沉浸式度假体验，时尚健康理念深度融入服务细节。',
+        result: '宾客满意度大幅提升，口碑传播效果显著',
+        metric: '回头率↑',
       },
       {
         client: '某奢华城市酒店',

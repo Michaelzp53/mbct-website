@@ -74,12 +74,12 @@ export const en = {
     cta: 'View More Cases',
     items: [
       {
-        client: 'A Luxury Resort Hotel',
+        client: 'A Luxury Resort in Sanya',
         category: 'Luxury Resort',
         image: '/images/cases/case1.png',
-        description: 'With MBCT SaaS and AI customer service, annual labor cost savings of ~500,000 RMB.',
-        result: 'Operations efficiency +40%, Guest satisfaction +25%',
-        metric: '50万/年',
+        description: 'Through MBCT brand strategy upgrade and service process optimization, creating immersive resort experience with fashion and health concepts.',
+        result: 'Guest satisfaction significantly improved, word-of-mouth spread significantly',
+        metric: 'Return rate↑',
       },
       {
         client: 'A Luxury Urban Hotel',
