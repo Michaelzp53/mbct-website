@@ -3,18 +3,23 @@
 import { useState, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { User, Lock, Mail, ArrowRight, Sparkles } from 'lucide-react'
+import { User, Lock, Mail, ArrowRight, Sparkles, Check } from 'lucide-react'
 
 function LoginForm() {
   const [isLogin, setIsLogin] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const [agreed, setAgreed] = useState(false)
   const searchParams = useSearchParams()
   const redirect = searchParams.get('redirect') || '/zh'
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!isLogin && !agreed) {
+      alert('请先阅读并同意用户协议和隐私政策')
+      return
+    }
     console.log(isLogin ? 'Login' : 'Register', { email, password, name })
   }
 
@@ -74,9 +79,36 @@ function LoginForm() {
           </div>
         </div>
 
+        {!isLogin && (
+          <div className="flex items-start gap-3">
+            <button
+              type="button"
+              onClick={() => setAgreed(!agreed)}
+              className={`mt-0.5 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
+                agreed
+                  ? 'bg-[#f59e0b] border-[#f59e0b]'
+                  : 'border-gray-600 hover:border-[#f59e0b]'
+              }`}
+            >
+              {agreed && <Check className="w-3 h-3 text-[#0f172a]" />}
+            </button>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              我已阅读并同意
+              <Link href="/zh/terms" className="text-[#f59e0b] hover:underline mx-1">《服务条款》</Link>
+              和
+              <Link href="/zh/privacy" className="text-[#f59e0b] hover:underline mx-1">《隐私政策》</Link>
+            </p>
+          </div>
+        )}
+
         <button
           type="submit"
-          className="w-full flex items-center justify-center px-4 py-3 bg-[#f59e0b] text-[#0f172a] font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all"
+          className={`w-full flex items-center justify-center px-4 py-3 font-bold rounded-lg transition-all ${
+            !isLogin && !agreed
+              ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+              : 'bg-[#f59e0b] text-[#0f172a] hover:bg-[#f59e0b]/90'
+          }`}
+          disabled={!isLogin && !agreed}
         >
           {isLogin ? '登录' : '注册'}
           <ArrowRight className="ml-2 w-5 h-5" />
