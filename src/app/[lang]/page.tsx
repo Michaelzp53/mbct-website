@@ -204,23 +204,23 @@ export default function HomePage() {
             </div>
             
             <div className="bg-[#0f172a] rounded-2xl p-8 border border-gray-800">
-              <h3 className="text-xl font-bold text-white mb-6">对赌模式示例</h3>
+              <h3 className="text-xl font-bold text-white mb-6">效果跟进/评估模式示例</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">对赌目标</span>
-                  <span className="text-white font-medium">年营收增长30%</span>
+                  <span className="text-gray-400">结果导向目标</span>
+                  <span className="text-white font-medium">年综合运营指数递增增长6-15%</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-gray-800">
                   <span className="text-gray-400">基础服务费</span>
-                  <span className="text-white font-medium">30万（覆盖成本）</span>
+                  <span className="text-white font-medium">按照项目收费（样板工程仅基础服务成本费）</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">超额分成</span>
-                  <span className="text-[#f59e0b] font-medium">超出部分20%</span>
+                  <span className="text-gray-400">超额奖励</span>
+                  <span className="text-[#f59e0b] font-medium">评估指数超出，加收20%奖励金</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
                   <span className="text-gray-400">未达标</span>
-                  <span className="text-green-400 font-medium">仅收15万基础费</span>
+                  <span className="text-green-400 font-medium">仅收50%基础服务成本费，风险共担！</span>
                 </div>
               </div>
             </div>
