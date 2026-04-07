@@ -238,9 +238,9 @@ export const zh = {
       '人才培训体系',
     ],
     info: {
-      phone: '400-888-8888',
-      email: 'contact@marvelbros.com',
-      address: '上海市浦东新区世纪大道100号',
+      phone: '18941579333',
+      email: 'info@marvelbros.com',
+      address: '中国香港地区（总部），深圳市福田区（办事处）',
     },
   },
   footer: {

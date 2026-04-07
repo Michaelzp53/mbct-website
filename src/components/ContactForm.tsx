@@ -2,10 +2,6 @@
 
 import { useState } from 'react'
 import { CheckCircle, Loader2 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Textarea } from '@/components/ui/textarea'
 import type { Dict } from '@/lib/dicts'
 
 interface ContactFormProps {
@@ -40,22 +36,23 @@ export function ContactForm({ dict }: ContactFormProps) {
           {/* Name + Phone */}
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
-              <Label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.name}</Label>
-              <Input
+              <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.name}</label>
+              <input
+                type="text"
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="rounded-lg border-slate-300 focus:border-[#0f172a] focus:ring-[#0f172a]"
+                className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
               />
             </div>
             <div>
-              <Label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.phone}</Label>
-              <Input
-                required
+              <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.phone}</label>
+              <input
                 type="tel"
+                required
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="rounded-lg border-slate-300 focus:border-[#0f172a] focus:ring-[#0f172a]"
+                className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
               />
             </div>
           </div>
@@ -63,33 +60,34 @@ export function ContactForm({ dict }: ContactFormProps) {
           {/* Email + Company */}
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
-              <Label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.email}</Label>
-              <Input
-                required
+              <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.email}</label>
+              <input
                 type="email"
+                required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="rounded-lg border-slate-300 focus:border-[#0f172a] focus:ring-[#0f172a]"
+                className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
               />
             </div>
             <div>
-              <Label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.company}</Label>
-              <Input
+              <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.company}</label>
+              <input
+                type="text"
                 value={form.company}
                 onChange={(e) => setForm({ ...form, company: e.target.value })}
-                className="rounded-lg border-slate-300 focus:border-[#0f172a] focus:ring-[#0f172a]"
+                className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
               />
             </div>
           </div>
 
           {/* Service dropdown */}
           <div>
-            <Label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.service}</Label>
+            <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.service}</label>
             <select
               required
               value={form.service}
               onChange={(e) => setForm({ ...form, service: e.target.value })}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-[#0f172a] focus:outline-none"
+              className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
             >
               <option value="">{dict.contact.form.servicePlaceholder}</option>
               {dict.contact.services.map((s) => (
@@ -100,14 +98,14 @@ export function ContactForm({ dict }: ContactFormProps) {
 
           {/* Message */}
           <div>
-            <Label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.message}</Label>
-            <Textarea
+            <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.message}</label>
+            <textarea
               required
               rows={4}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               placeholder={dict.contact.form.messagePlaceholder}
-              className="rounded-lg border-slate-300 focus:border-[#0f172a] focus:ring-[#0f172a] resize-none"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors resize-none"
             />
           </div>
 
@@ -123,20 +121,20 @@ export function ContactForm({ dict }: ContactFormProps) {
           </label>
 
           {/* Submit */}
-          <Button
+          <button
             type="submit"
             disabled={!privacy || status === 'loading'}
-            className="w-full bg-[#f59e0b] text-[#0f172a] hover:bg-[#fbbf24] font-semibold rounded-lg py-3 disabled:opacity-50"
+            className="w-full bg-[#f59e0b] text-[#0f172a] hover:bg-[#fbbf24] font-semibold rounded-lg py-3 disabled:opacity-50 transition-colors flex items-center justify-center gap-2"
           >
             {status === 'loading' ? (
               <>
-                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                <Loader2 className="h-5 w-5 animate-spin" />
                 {dict.contact.form.submitting}
               </>
             ) : (
               dict.contact.form.submit
             )}
-          </Button>
+          </button>
         </form>
       )}
     </div>
