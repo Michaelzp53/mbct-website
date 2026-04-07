@@ -60,6 +60,45 @@ export default async function CasesPage({
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-4">
+              {dict.cases.testimonials.title}
+            </h2>
+            <p className="text-slate-500 text-lg">{dict.cases.testimonials.subtitle}</p>
+          </div>
+          
+          <div className="space-y-6">
+            {dict.cases.testimonials.items.map((t, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#ea580c] flex items-center justify-center text-2xl flex-shrink-0">
+                    {t.avatar}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="font-semibold text-[#0f172a]">{t.name}</span>
+                      <span className="text-slate-400 text-sm">·</span>
+                      <span className="text-slate-500 text-sm">{t.role}</span>
+                    </div>
+                    <p className="text-slate-600 leading-relaxed mb-4">{t.content}</p>
+                    <div className="flex items-center gap-4 text-sm text-slate-400">
+                      <span>{t.time}</span>
+                      <span className="flex items-center gap-1">👍 {t.likes}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTASection dict={dict} lang={lang} />
     </>
   )
