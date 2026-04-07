@@ -1,8 +1,6 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Clock, User, Calendar, BookOpen, ChevronDown, ChevronUp } from 'lucide-react'
+import { useState } from 'react'
 
 // 完整文章内容数据 - 使用桌面原文件，不删减
 const articlesData: Record<string, {
@@ -379,12 +377,12 @@ function ExpandableContent({ content }: { content: string[] }) {
   )
 }
 
-export default function ArticlePage({
+export default async function ArticlePage({
   params,
 }: {
   params: Promise<{ lang: string; slug: string }>
 }) {
-  const { lang, slug } = use(params)
+  const { lang, slug } = await params
   const article = articlesData[decodeURIComponent(slug)]
 
   if (!article) {
@@ -458,7 +456,4 @@ export default function ArticlePage({
   )
 }
 
-// React use hook for Next.js 15
-function use<T>(promise: Promise<T>): T {
-  return promise as T
-}
+
