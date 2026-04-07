@@ -1405,7 +1405,7 @@ const articlesData: Record<string, {
       '希望这篇文章，能给你一些启发。',
       '作者：MarvelBros - MBCT'
     ]
-  }
+  },
 
   '资源基础观视角下的酒店竞争优势研究': {
     id: 12,
