@@ -6,8 +6,7 @@ import { useSearchParams } from 'next/navigation'
 
 function LoginForm() {
   const [isLogin, setIsLogin] = useState(true)
-  const [phone, setPhone] = useState('')
-  const [email, setEmail] = useState('')
+  const [account, setAccount] = useState('')
   const [agreed, setAgreed] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -16,6 +15,7 @@ function LoginForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!account) return
     if (!isLogin && !agreed) {
       alert('请先阅读并同意用户协议和隐私政策')
       return
@@ -70,7 +70,7 @@ function LoginForm() {
     pointerEvents: 'none' as const,
   }
 
-  const isDisabled = (!isLogin && !agreed) || !phone || !email || isSubmitting
+  const isDisabled = (!isLogin && !agreed) || !account || isSubmitting
 
   return (
     <div style={{ backgroundColor: '#111827', borderRadius: '16px', padding: '32px', border: '1px solid #1f2937' }}>
@@ -90,40 +90,21 @@ function LoginForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          {/* 手机号 */}
+          {/* 邮箱/手机号 */}
           <div>
-            <label htmlFor="phone" style={labelStyle}>手机号</label>
-            <div style={inputWrapperStyle}>
-              <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                <line x1="12" y1="18" x2="12.01" y2="18" />
-              </svg>
-              <input
-                id="phone"
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                style={inputStyle}
-                placeholder="请输入手机号"
-              />
-            </div>
-          </div>
-
-          {/* 邮箱 */}
-          <div>
-            <label htmlFor="email" style={labelStyle}>邮箱</label>
+            <label htmlFor="account" style={labelStyle}>邮箱 / 手机号</label>
             <div style={inputWrapperStyle}>
               <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>
               <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id="account"
+                type="text"
+                value={account}
+                onChange={(e) => setAccount(e.target.value)}
                 style={inputStyle}
-                placeholder="请输入邮箱"
+                placeholder="请输入邮箱或手机号"
               />
             </div>
           </div>
