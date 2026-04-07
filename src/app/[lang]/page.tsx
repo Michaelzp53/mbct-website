@@ -50,10 +50,10 @@ export default function HomePage() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {[
-              { value: '50%+', label: '平均增长' },
+              { value: '25-50%+', label: '平均增长' },
               { value: '100+', label: '服务酒店' },
-              { value: '30万+', label: '节省佣金' },
-              { value: '80%', label: '续约率' },
+              { value: '50%+', label: '节省佣金' },
+              { value: '60%+', label: '续签率' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-[#f59e0b] mb-2">{stat.value}</div>
