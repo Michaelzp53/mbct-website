@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { ArrowLeft, Clock, User, Calendar, BookOpen } from 'lucide-react'
+import { ArrowLeft, Clock, User, Calendar, BookOpen, Mail } from 'lucide-react'
 import ArticleContent from './ArticleContent'
+import NewsletterSubscribe from './NewsletterSubscribe'
 
 // 完整文章内容数据
 const articlesData: Record<string, {
@@ -365,6 +366,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </div>
 
           <ArticleContent content={article.content} articleTitle={article.title} />
+
+          {/* Newsletter 订阅 */}
+          <NewsletterSubscribe />
 
           <div className="mt-12 pt-8 border-t border-gray-800 text-center">
             <div className="flex items-center justify-center gap-2 text-[#f59e0b] mb-4">
