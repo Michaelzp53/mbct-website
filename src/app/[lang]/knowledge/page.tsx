@@ -386,7 +386,7 @@ export default function KnowledgePage() {
         </section>
 
         {/* Industry Reports Section */}
-        <section id="report-list" className="mb-8">
+        <section id="report" className="mb-8">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <BarChart3 className="w-5 h-5 text-[#3b82f6]" />
             行业报告
