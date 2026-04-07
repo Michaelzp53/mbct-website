@@ -78,7 +78,7 @@ export const zh = {
         category: '高端度假酒店',
         image: '/images/cases/case1.png',
         description: '通过MBCT品牌战略升级与服务流程优化，打造沉浸式度假体验，时尚健康理念深度融入服务细节。',
-        result: '宾客满意度大幅提升，口碑传播效果显著',
+        result: '复购率 35%+ - 高端度假市场复购率提升',
         metric: '回头率↑',
       },
       {
@@ -86,7 +86,7 @@ export const zh = {
         category: '奢华城市酒店',
         image: '/images/cases/case2.png',
         description: '通过MBCT品牌战略升级与服务流程优化，结合智能定价策略与时尚健康服务理念，运营成本结构明显改善，利润空间有效提升。',
-        result: '宾客满意度稳步提升，回头客比例增加',
+        result: '客户满意度 97%+ - 奢华酒店满意度头部水准',
         metric: '利润率↑',
       },
       {
@@ -94,7 +94,7 @@ export const zh = {
         category: '大型会展酒店',
         image: '/images/cases/case3.png',
         description: '通过MBCT全链条运营优化，建立完善的淡旺季应对预案与员工培训体系，线上线下销售策略协同发力，运营效率与服务水平双提升。',
-        result: '承接大型会展活动能力增强，淡旺季收益更加均衡',
+        result: '会展承接量 30%+ - 大型会展效率提升空间大',
         metric: '运营稳健↑',
       },
       {
@@ -102,7 +102,7 @@ export const zh = {
         category: '精品度假民宿',
         image: '/images/cases/case4.png',
         description: '通过MBCT自媒体营销策略与私域流量运营，打造网红打卡目的地，更新迭代情绪价值产品，灵活价格调控结合自媒体销售平台，宾客口碑与情绪价值双提升。',
-        result: '自媒体传播效果显著，私域流量稳步增长',
+        result: '自媒体传播 200%+ - 民宿红利主要靠自媒体',
         metric: '流量↑',
       },
       {
@@ -110,7 +110,7 @@ export const zh = {
         category: '国企迎宾馆',
         image: '/images/cases/case5.png',
         description: '通过MBCT市场化运营改革与产品优化，保留历史年代感特色服务，激活银发经济客群，优化服务品质和出品策略，体现传统和流行结合，结合人事管理制度改革与成本控制双优化，焕新中国式国宾馆新活力。',
-        result: '特定客群满意度提升，市场化运营成效显著',
+        result: '银发客群满意度 90%+ - 特定客群精准服务',
         metric: '焕新↑',
       },
       {
@@ -118,7 +118,7 @@ export const zh = {
         category: '经济型酒店',
         image: '/images/cases/case6.png',
         description: '通过MBCT自动化技术植入与服务标准化打造，灵活价格调控机制结合时尚快捷服务，服务质量与干净度双提升，运营成本有效降低。',
-        result: '价格竞争力提升，自动化节约成本显著',
+        result: '运营成本降低 25%+ - 经济型降本空间明显',
         metric: '效益↑',
       },
     ],
