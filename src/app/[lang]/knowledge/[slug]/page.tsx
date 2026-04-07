@@ -364,7 +364,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </span>
           </div>
 
-          <ArticleContent content={article.content} />
+          <ArticleContent content={article.content} articleTitle={article.title} />
 
           <div className="mt-12 pt-8 border-t border-gray-800 text-center">
             <div className="flex items-center justify-center gap-2 text-[#f59e0b] mb-4">
