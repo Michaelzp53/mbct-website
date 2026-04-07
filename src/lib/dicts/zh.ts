@@ -98,12 +98,12 @@ export const zh = {
         metric: '运营稳健↑',
       },
       {
-        client: '杭州某精品度假酒店',
-        category: '精品度假酒店',
+        client: '西南某精品度假民宿',
+        category: '精品度假民宿',
         image: '/images/cases/case4.png',
-        description: '通过MBCT品牌营销升级与服务细节优化，时尚健康理念贯穿宾客体验，口碑在小红书等平台持续发酵，品牌影响力有效提升。',
-        result: '品牌曝光度稳步增长，客单价有所提升',
-        metric: '品牌↑',
+        description: '通过MBCT自媒体营销策略与私域流量运营，打造网红打卡目的地，灵活价格调控结合自媒体销售平台，宾客口碑与情绪价值双提升。',
+        result: '自媒体传播效果显著，私域流量稳步增长',
+        metric: '流量↑',
       },
       {
         client: '上海某国际奢华酒店',

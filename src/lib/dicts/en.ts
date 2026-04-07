@@ -98,12 +98,12 @@ export const en = {
         metric: 'Operations stable↑',
       },
       {
-        client: 'A Boutique Resort Hotel in Hangzhou',
+        client: 'A Boutique Resort in Southwest China',
         category: 'Boutique Resort',
         image: '/images/cases/case4.png',
-        description: 'Through MBCT brand marketing upgrade and service detail optimization, fashion and health concepts throughout guest experience, word-of-mouth spreading on platforms, brand influence effectively improved.',
-        result: 'Brand exposure steadily increased, average order value improved',
-        metric: 'Brand↑',
+        description: 'Through MBCT social media marketing strategy and private traffic operations, creating a popular check-in destination with flexible pricing and social media sales platforms, guest word-of-mouth and emotional value both improved.',
+        result: 'Social media reach significant, private traffic growing steadily',
+        metric: 'Traffic↑',
       },
       {
         client: 'An International Luxury Hotel in Shanghai',
