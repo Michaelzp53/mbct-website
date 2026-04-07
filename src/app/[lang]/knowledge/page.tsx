@@ -3,6 +3,7 @@ import { BookOpen, FileText, BarChart3, Newspaper, ArrowRight, Clock, User, Cale
 
 export default function KnowledgePage() {
   const articles = [
+    // 学术文章 (保持原有12篇)
     {
       id: 1,
       type: 'article',
@@ -92,7 +93,7 @@ export default function KnowledgePage() {
       type: 'article',
       title: '虚拟体验经济视角下的目的地营销创新',
       slug: '虚拟体验经济视角下的目的地营销创新',
-      summary: 'VR、AR、元宇宙如何改变旅游营销？从打卡到沉浸，目的地营销的下一站。',
+      summary: 'VR、AR，元宇宙如何改变旅游营销？从打卡到沉浸，目的地营销的下一站。',
       firstLine: '你有多久没有真正「到达」一个地方了？不是那种订好机票酒店、打卡签到就算完事的那种「到达」。',
       author: 'MarvelBros - MBCT',
       date: '2026-04-07',
@@ -149,6 +150,82 @@ export default function KnowledgePage() {
     },
   ]
 
+  // 行业报告 - 新增6篇
+  const reports = [
+    {
+      id: 101,
+      type: 'report',
+      title: 'AI浪潮下的智慧酒店管理',
+      slug: 'AI浪潮下的智慧酒店管理',
+      summary: '从自动调价到无人接单，从机器人客服到数据中台——MBCT AI管理系统实战解析，以及华住、锦江、亚朵竞品对比。',
+      firstLine: '上周和一位酒店老板喝茶，他抱怨："现在招个前台都难，年轻人不愿意干。工资开到6000，还是留不住人。"',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-07',
+      readTime: '25分钟',
+      tag: '行业报告',
+    },
+    {
+      id: 102,
+      type: 'report',
+      title: '存量改造：老酒店如何焕发新生',
+      slug: '存量改造：老酒店如何焕发新生',
+      summary: '潮流化产品升级、情绪价值传递、轻资产模式、翻牌改造实操案例——老酒店翻红的完整作战手册。',
+      firstLine: '上周去长沙出差，住进一家老牌酒店。大堂还是90年代的装修，地毯灰扑扑的，前台小姐姐穿着不合身的制服...',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-07',
+      readTime: '30分钟',
+      tag: '行业报告',
+    },
+    {
+      id: 103,
+      type: 'report',
+      title: '酒店会员体系：从积分到生态',
+      slug: '酒店会员体系：从积分到生态',
+      summary: '私域流量建设、积分体系优化、等级权益设计、复购率提升策略、异业联盟——从0到1搭建会员生态。',
+      firstLine: '我认识一位酒店老板，他的酒店位置一般，设施一般，价格也不便宜。但他的会员复购率达到了惊人的70%。',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-07',
+      readTime: '28分钟',
+      tag: '行业报告',
+    },
+    {
+      id: 104,
+      type: 'report',
+      title: '文旅融合：酒店的场景革命',
+      slug: '文旅融合：酒店的场景革命',
+      summary: '沉浸式体验设计、剧本酒店、目的地营销、文化IP植入、周边配套开发——文化搭台、产品唱戏的实战方法论。',
+      firstLine: '去年去成都，我特意去了一家网红酒店。不是为了住，而是为了"玩"。这家酒店把整个大堂做成了一个沉浸式剧本体验空间...',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-07',
+      readTime: '35分钟',
+      tag: '行业报告',
+    },
+    {
+      id: 105,
+      type: 'report',
+      title: '选址密码：好位置的科学评估',
+      slug: '选址密码：好位置的科学评估',
+      summary: '商圈分析方法、人流热力图解读、竞争半径评估、坪效预测模型、市场容量测算——用数据选对位置。',
+      firstLine: '我见过太多酒店倒在"选址"上。有人觉得，找个人流量大的地方就行；有人觉得，跟着商业综合体走准没错...',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-07',
+      readTime: '32分钟',
+      tag: '行业报告',
+    },
+    {
+      id: 106,
+      type: 'report',
+      title: '民宿进化论：从标准化到特色化',
+      slug: '民宿进化论：从标准化到特色化',
+      summary: '非标住宿崛起、精品民宿设计趋势、乡村民宿发展、差异化竞争策略——民宿下半场的生存指南。',
+      firstLine: '十年前，民宿还是个新鲜词。那时候开民宿的都是文艺青年，情怀满满，但口袋空空...',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-07',
+      readTime: '22分钟',
+      tag: '行业报告',
+    },
+  ]
+
   const categories = [
     {
       id: 'academic',
@@ -162,8 +239,8 @@ export default function KnowledgePage() {
       id: 'report',
       icon: BarChart3,
       title: '行业报告',
-      desc: '数据驱动的趋势分析与预测',
-      count: 8,
+      desc: '实战经验分享，方法论与案例分析',
+      count: 6,
       color: '#3b82f6',
     },
     {
@@ -178,7 +255,7 @@ export default function KnowledgePage() {
       id: 'blog',
       icon: Newspaper,
       title: '博客文章',
-      desc: '行业快讯、方法论、最佳实践',
+      desc: '行业快讯，方法论，最佳实践',
       count: 36,
       color: '#8b5cf6',
     },
@@ -228,37 +305,37 @@ export default function KnowledgePage() {
           </div>
         </section>
 
-        {/* Featured Article */}
-        <section id="academic" className="mb-16">
-          <div className="p-8 rounded-2xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] border border-gray-800">
+        {/* Featured Report - 行业报告第一篇 */}
+        <section id="report" className="mb-16">
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#0f172a] border border-[#3b82f6]/30">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="lg:w-2/3">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#f59e0b]/20 text-[#f59e0b] text-sm font-medium mb-4">
-                  最新发布
+                <span className="inline-block px-3 py-1 rounded-full bg-[#3b82f6]/20 text-[#3b82f6] text-sm font-medium mb-4">
+                  热门报告
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  {articles[0].title}
+                  {reports[0].title}
                 </h2>
                 <p className="text-gray-400 mb-6 text-lg">
-                  {articles[0].summary}
+                  {reports[0].summary}
                 </p>
                 <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-6">
                   <span className="flex items-center gap-2">
                     <User className="w-4 h-4" />
-                    {articles[0].author}
+                    {reports[0].author}
                   </span>
                   <span className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    {articles[0].date}
+                    {reports[0].date}
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    {articles[0].readTime}
+                    {reports[0].readTime}
                   </span>
                 </div>
                 <Link
-                  href={`/zh/knowledge/${encodeURIComponent(articles[0].slug)}`}
-                  className="inline-flex items-center px-6 py-3 bg-[#f59e0b] text-[#0f172a] font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all"
+                  href={`/zh/knowledge/${encodeURIComponent(reports[0].slug)}`}
+                  className="inline-flex items-center px-6 py-3 bg-[#3b82f6] text-white font-bold rounded-lg hover:bg-[#3b82f6]/90 transition-all"
                 >
                   阅读全文
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -266,14 +343,14 @@ export default function KnowledgePage() {
               </div>
               <div className="lg:w-1/3 flex items-center justify-center">
                 <div className="w-full h-64 rounded-xl bg-[#111827] flex items-center justify-center border border-gray-800">
-                  <FileText className="w-24 h-24 text-[#f59e0b]/30" />
+                  <BarChart3 className="w-24 h-24 text-[#3b82f6]/30" />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Article List - Vertical with first line preview */}
+        {/* Academic Articles Section */}
         <section id="academic-list" className="mb-8">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <FileText className="w-5 h-5 text-[#f59e0b]" />
@@ -301,6 +378,41 @@ export default function KnowledgePage() {
                   <div className="flex items-center gap-4 flex-shrink-0 text-xs text-gray-500">
                     <span>{article.author.split(' - ')[0]}</span>
                     <span>{article.readTime}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Industry Reports Section */}
+        <section id="report-list" className="mb-8">
+          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <BarChart3 className="w-5 h-5 text-[#3b82f6]" />
+            行业报告
+          </h2>
+          <div className="space-y-3">
+            {reports.map((report) => (
+              <Link
+                key={report.id}
+                href={`/zh/knowledge/${encodeURIComponent(report.slug)}`}
+                className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#3b82f6]/50 transition-all group"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="px-2 py-1 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] text-xs font-medium flex-shrink-0 mt-0.5">
+                    {report.tag}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#3b82f6] transition-colors">
+                      {report.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 line-clamp-1">
+                      {report.firstLine}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-gray-500">
+                    <span>{report.author.split(' - ')[0]}</span>
+                    <span>{report.readTime}</span>
                   </div>
                 </div>
               </Link>
