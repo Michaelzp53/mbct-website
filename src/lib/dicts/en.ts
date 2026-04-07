@@ -143,6 +143,14 @@ export const en = {
           likes: 256,
         },
         {
+          name: 'Mr. Bruce',
+          role: 'GM, International Chain 5-Star Hotel',
+          avatar: '🌐',
+          content: "Managing an international chain hotel in China is about balancing global standards with local realities. Brand consistency matters, but cultural differences are real. MBCT helped us address both - maintaining international service standards while adapting to Chinese guest expectations. Employee turnover was a major issue; our data showed it was partly due to scheduling inflexibility. After optimization, staff satisfaction improved noticeably. Market share in our segment is holding steady despite new competitors. Owner satisfaction hinges on both top-line and bottom-line - we're delivering on both fronts now.",
+          time: '7 months ago',
+          likes: 234,
+        },
+        {
           name: 'General Manager Ke',
           role: 'Local 5-Star Hotel GM',
           avatar: '⭐',

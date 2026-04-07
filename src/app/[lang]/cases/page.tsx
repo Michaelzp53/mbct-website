@@ -61,23 +61,23 @@ export default async function CasesPage({
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 to-slate-100">
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] mb-3">
               {dict.cases.testimonials.title}
             </h2>
-            <p className="text-slate-500 text-lg">{dict.cases.testimonials.subtitle}</p>
+            <p className="text-slate-500">{dict.cases.testimonials.subtitle}</p>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-5">
             {dict.cases.testimonials.items.map((t, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100"
+                className="bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#ea580c] flex items-center justify-center text-2xl flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#ea580c] flex items-center justify-center text-xl flex-shrink-0">
                     {t.avatar}
                   </div>
                   <div className="flex-1 min-w-0">
