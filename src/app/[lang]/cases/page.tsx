@@ -74,7 +74,7 @@ export default async function CasesPage({
             {dict.cases.testimonials.items.map((t, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100"
+                className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#ea580c] flex items-center justify-center text-xl flex-shrink-0">
