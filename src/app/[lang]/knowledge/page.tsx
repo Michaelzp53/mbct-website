@@ -236,7 +236,7 @@ export default function KnowledgePage() {
       color: '#f59e0b',
     },
     {
-      id: 'report',
+      id: 'industry-reports',
       icon: BarChart3,
       title: '行业报告',
       desc: '实战经验分享，方法论与案例分析',
@@ -386,7 +386,7 @@ export default function KnowledgePage() {
         </section>
 
         {/* Industry Reports Section */}
-        <section id="report" className="mb-8">
+        <section id="industry-reports" className="mb-8">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <BarChart3 className="w-5 h-5 text-[#3b82f6]" />
             行业报告
