@@ -19,75 +19,109 @@ export function ContactForm({ dict }: ContactFormProps) {
     e.preventDefault()
     if (!privacy) return
     setStatus('loading')
-    // Simulate API call
     await new Promise((r) => setTimeout(r, 1500))
     setStatus('success')
   }
 
+  const inputStyle = {
+    width: '100%',
+    height: '42px',
+    borderRadius: '8px',
+    border: '1px solid #cbd5e1',
+    padding: '0 12px',
+    fontSize: '14px',
+    backgroundColor: '#ffffff',
+    color: '#0f172a',
+    outline: 'none',
+    transition: 'border-color 0.2s, box-shadow 0.2s',
+  } as React.CSSProperties
+
+  const textareaStyle = {
+    ...inputStyle,
+    height: 'auto',
+    padding: '12px',
+    resize: 'none' as const,
+  }
+
+  const selectStyle = {
+    ...inputStyle,
+    cursor: 'pointer' as const,
+  }
+
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+    <div style={{ backgroundColor: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
       {status === 'success' ? (
-        <div className="text-center py-12">
-          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-[#0f172a] mb-2">{dict.contact.form.success}</h3>
+        <div style={{ textAlign: 'center', paddingTop: '48px', paddingBottom: '48px' }}>
+          <CheckCircle style={{ width: '64px', height: '64px', color: '#22c55e', margin: '0 auto 16px' }} />
+          <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#0f172a' }}>{dict.contact.form.success}</h3>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           {/* Name + Phone */}
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
             <div>
-              <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.name}</label>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.name}</label>
               <input
                 type="text"
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
+                style={inputStyle}
+                onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
+                onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
             <div>
-              <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.phone}</label>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.phone}</label>
               <input
                 type="tel"
                 required
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
+                style={inputStyle}
+                onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
+                onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
           </div>
 
           {/* Email + Company */}
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
             <div>
-              <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.email}</label>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.email}</label>
               <input
                 type="email"
                 required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
+                style={inputStyle}
+                onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
+                onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
             <div>
-              <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.company}</label>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.company}</label>
               <input
                 type="text"
                 value={form.company}
                 onChange={(e) => setForm({ ...form, company: e.target.value })}
-                className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
+                style={inputStyle}
+                onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
+                onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
           </div>
 
           {/* Service dropdown */}
           <div>
-            <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.service}</label>
+            <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.service}</label>
             <select
               required
               value={form.service}
               onChange={(e) => setForm({ ...form, service: e.target.value })}
-              className="w-full h-10 rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors"
+              style={selectStyle}
+              onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
+              onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
             >
               <option value="">{dict.contact.form.servicePlaceholder}</option>
               {dict.contact.services.map((s) => (
@@ -98,37 +132,53 @@ export function ContactForm({ dict }: ContactFormProps) {
 
           {/* Message */}
           <div>
-            <label className="text-sm font-medium text-slate-700 mb-1.5 block">{dict.contact.form.message}</label>
+            <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.message}</label>
             <textarea
               required
               rows={4}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               placeholder={dict.contact.form.messagePlaceholder}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm bg-white focus:border-[#0f172a] focus:ring-1 focus:ring-[#0f172a] focus:outline-none transition-colors resize-none"
+              style={textareaStyle}
+              onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
+              onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
             />
           </div>
 
           {/* Privacy checkbox */}
-          <label className="flex items-start gap-3 cursor-pointer">
+          <label style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', cursor: 'pointer' }}>
             <input
               type="checkbox"
               checked={privacy}
               onChange={(e) => setPrivacy(e.target.checked)}
-              className="mt-0.5 w-4 h-4 rounded border-slate-300 text-[#0f172a] focus:ring-[#0f172a]"
+              style={{ marginTop: '2px', width: '16px', height: '16px', cursor: 'pointer' }}
             />
-            <span className="text-sm text-slate-600 leading-relaxed">{dict.contact.form.privacy}</span>
+            <span style={{ fontSize: '14px', color: '#475569', lineHeight: 1.5 }}>{dict.contact.form.privacy}</span>
           </label>
 
           {/* Submit */}
           <button
             type="submit"
             disabled={!privacy || status === 'loading'}
-            className="w-full bg-[#f59e0b] text-[#0f172a] hover:bg-[#fbbf24] font-semibold rounded-lg py-3 disabled:opacity-50 transition-colors flex items-center justify-center gap-2"
+            style={{
+              width: '100%',
+              padding: '12px 24px',
+              backgroundColor: !privacy ? '#d4d4d4' : '#f59e0b',
+              color: '#0f172a',
+              fontWeight: 600,
+              borderRadius: '8px',
+              border: 'none',
+              cursor: !privacy ? 'not-allowed' : 'pointer',
+              transition: 'background-color 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+            }}
           >
             {status === 'loading' ? (
               <>
-                <Loader2 className="h-5 w-5 animate-spin" />
+                <Loader2 style={{ width: '20px', height: '20px', animation: 'spin 1s linear infinite' }} />
                 {dict.contact.form.submitting}
               </>
             ) : (
@@ -137,6 +187,12 @@ export function ContactForm({ dict }: ContactFormProps) {
           </button>
         </form>
       )}
+      <style>{`
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
     </div>
   )
 }
