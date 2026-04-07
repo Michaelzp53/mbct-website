@@ -4,7 +4,7 @@ import { ArrowRight, TrendingUp, Shield, Sparkles, Users, Target, ChevronRight }
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#0f172a]">
-      {/* Hero Section - AI原生植入的酒店数据化精益管理孵化器 */}
+      {/* Hero Section - AI原生植入的全域酒店"数据精益化管理"孵化器 */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]" />
@@ -19,7 +19,7 @@ export default function HomePage() {
           
           {/* Main Headline */}
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            AI原生植入的酒店数据化精益管理孵化器
+            AI原生植入的全域酒店"数据精益化管理"孵化器
           </h1>
           
           {/* Subtitle */}
