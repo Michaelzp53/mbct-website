@@ -236,7 +236,7 @@ export default function AuthPage() {
             欢迎回来
           </h2>
           <p style={{ color: '#9ca3af' }}>
-            {isLogin ? '登录以获取独家行业洞察与资源' : '注册成为MBCT会员'}
+            登录以获取独家行业洞察与资源
           </p>
         </div>
 
