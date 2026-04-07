@@ -106,12 +106,12 @@ export const zh = {
         metric: '流量↑',
       },
       {
-        client: '上海某国际奢华酒店',
-        category: '国际奢华酒店',
+        client: '西北某国企迎宾馆',
+        category: '国企迎宾馆',
         image: '/images/cases/case5.png',
-        description: '通过MBCT全套数字化转型方案，服务流程与宾客体验深度优化，贵宾客户满意度达到历史新高，品牌口碑与NPS净推荐值稳步提升。',
-        result: 'VIP客户满意度显著提升，忠诚宾客群体扩大',
-        metric: '口碑↑',
+        description: '通过MBCT市场化运营改革与产品优化，保留历史年代感特色服务，激活银发经济客群，人事管理与成本控制双优化，焕新中国式国宾馆新活力。',
+        result: '特定客群满意度提升，市场化运营成效显著',
+        metric: '焕新↑',
       },
       {
         client: '深圳某商务会议酒店',

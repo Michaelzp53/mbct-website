@@ -106,12 +106,12 @@ export const en = {
         metric: 'Traffic↑',
       },
       {
-        client: 'An International Luxury Hotel in Shanghai',
-        category: 'International Luxury',
+        client: 'A State-Owned Guesthouse in Northwest China',
+        category: 'State-Owned Guesthouse',
         image: '/images/cases/case5.png',
-        description: 'Through MBCT full digital transformation, service processes and guest experience deeply optimized, VIP client satisfaction at historical high, brand reputation and NPS steadily improved.',
-        result: 'VIP client satisfaction significantly improved, loyal guest base expanded',
-        metric: 'Reputation↑',
+        description: 'Through MBCT market-oriented reform and product optimization, preserving historical vintage services, activating silver economy customers, optimizing HR management and cost control, revitalizing Chinese state guesthouse.',
+        result: 'Specific customer satisfaction improved, market-oriented operations achieved significant results',
+        metric: 'Revitalized↑',
       },
       {
         client: 'A Business & Conference Hotel in Shenzhen',
