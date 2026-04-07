@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, Suspense } from 'react'
+import { useState, Suspense, useEffect } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
@@ -8,10 +8,21 @@ function LoginForm() {
   const [isLogin, setIsLogin] = useState(true)
   const [account, setAccount] = useState('')
   const [agreed, setAgreed] = useState(false)
+  const [rememberMe, setRememberMe] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [showForgotPassword, setShowForgotPassword] = useState(false)
   const searchParams = useSearchParams()
   const redirect = searchParams.get('redirect') || '/zh'
+
+  // 初始化 - 读取记住的账号
+  useEffect(() => {
+    const savedAccount = localStorage.getItem('mbct_account')
+    if (savedAccount) {
+      setAccount(savedAccount)
+      setRememberMe(true)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -25,11 +36,26 @@ function LoginForm() {
     // 模拟注册/登录
     await new Promise(resolve => setTimeout(resolve, 1500))
     setIsSubmitting(false)
+    
+    // 记住我功能
+    if (rememberMe) {
+      localStorage.setItem('mbct_account', account)
+    } else {
+      localStorage.removeItem('mbct_account')
+    }
+    
     setIsSuccess(true)
     
     setTimeout(() => {
       alert(isLogin ? '登录成功！' : '注册成功！')
     }, 500)
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem('mbct_account')
+    setAccount('')
+    setRememberMe(false)
+    setIsSuccess(false)
   }
 
   const inputStyle = {
@@ -72,11 +98,100 @@ function LoginForm() {
 
   const isDisabled = (!isLogin && !agreed) || !account || isSubmitting
 
-  return (
-    <div style={{ backgroundColor: '#111827', borderRadius: '16px', padding: '32px', border: '1px solid #1f2937' }}>
-      {isSuccess ? (
+  // 忘记密码弹窗
+  if (showForgotPassword) {
+    return (
+      <div style={{ backgroundColor: '#111827', borderRadius: '16px', padding: '32px', border: '1px solid #1f2937' }}>
+        <button
+          onClick={() => setShowForgotPassword(false)}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: '#6b7280',
+            cursor: 'pointer',
+            marginBottom: '16px',
+            fontSize: '14px',
+          }}
+        >
+          ← 返回登录
+        </button>
+        
+        <div style={{ textAlign: 'center' }}>
+          <div style={{
+            width: '64px',
+            height: '64px',
+            borderRadius: '50%',
+            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 16px',
+          }}>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          
+          <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
+            忘记密码
+          </h3>
+          <p style={{ color: '#9ca3af', marginBottom: '24px', lineHeight: 1.6 }}>
+            请联系客服重置密码
+          </p>
+          
+          <div style={{
+            backgroundColor: '#0f172a',
+            borderRadius: '12px',
+            padding: '20px',
+            marginBottom: '24px',
+          }}>
+            <p style={{ color: '#6b7280', fontSize: '14px', marginBottom: '8px' }}>
+              客服邮箱
+            </p>
+            <a 
+              href="mailto:info@marvelbros.com" 
+              style={{ color: '#f59e0b', fontSize: '16px', fontWeight: 600, textDecoration: 'none' }}
+            >
+              info@marvelbros.com
+            </a>
+          </div>
+          
+          <div style={{
+            backgroundColor: '#0f172a',
+            borderRadius: '12px',
+            padding: '20px',
+          }}>
+            <p style={{ color: '#6b7280', fontSize: '14px', marginBottom: '8px' }}>
+              客服电话
+            </p>
+            <a 
+              href="tel:18941579333" 
+              style={{ color: '#f59e0b', fontSize: '16px', fontWeight: 600, textDecoration: 'none' }}
+            >
+              189-4157-9333
+            </a>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // 已登录状态
+  if (isSuccess) {
+    return (
+      <div style={{ backgroundColor: '#111827', borderRadius: '16px', padding: '32px', border: '1px solid #1f2937' }}>
         <div style={{ textAlign: 'center', padding: '40px 0' }}>
-          <div style={{ width: '64px', height: '64px', borderRadius: '50%', backgroundColor: 'rgba(34, 197, 94, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+          <div style={{
+            width: '64px',
+            height: '64px',
+            borderRadius: '50%',
+            backgroundColor: 'rgba(34, 197, 94, 0.2)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 16px',
+          }}>
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="3">
               <polyline points="20 6 9 17 4 12" />
             </svg>
@@ -87,117 +202,180 @@ function LoginForm() {
           <p style={{ color: '#9ca3af', marginBottom: '24px' }}>
             欢迎成为MBCT会员
           </p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          {/* 邮箱/手机号 */}
-          <div>
-            <label htmlFor="account" style={labelStyle}>邮箱 / 手机号</label>
-            <div style={inputWrapperStyle}>
-              <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-              <input
-                id="account"
-                type="text"
-                value={account}
-                onChange={(e) => setAccount(e.target.value)}
-                style={inputStyle}
-                placeholder="请输入邮箱或手机号"
-              />
-            </div>
-          </div>
-
-          {/* 协议 - 仅注册 */}
-          {!isLogin && (
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-              <button
-                type="button"
-                onClick={() => setAgreed(!agreed)}
-                style={{
-                  marginTop: '2px',
-                  width: '20px',
-                  height: '20px',
-                  borderRadius: '4px',
-                  border: agreed ? '2px solid #f59e0b' : '2px solid #4b5563',
-                  backgroundColor: agreed ? '#f59e0b' : 'transparent',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                }}
-              >
-                {agreed && (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="3">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                )}
-              </button>
-              <p style={{ fontSize: '14px', color: '#9ca3af', lineHeight: 1.5 }}>
-                我已阅读并同意
-                <Link href="/zh/terms" style={{ color: '#f59e0b', textDecoration: 'none', margin: '0 4px' }}>《服务条款》</Link>
-                和
-                <Link href="/zh/privacy" style={{ color: '#f59e0b', textDecoration: 'none', margin: '0 4px' }}>《隐私政策》</Link>
-              </p>
-            </div>
-          )}
-
+          <p style={{ color: '#6b7280', fontSize: '14px', marginBottom: '24px' }}>
+            已登录：{account}
+          </p>
           <button
-            type="submit"
-            disabled={isDisabled}
+            onClick={handleLogout}
             style={{
-              width: '100%',
-              padding: '14px 24px',
-              fontWeight: 700,
+              padding: '12px 24px',
               borderRadius: '8px',
-              border: 'none',
-              cursor: isDisabled ? 'not-allowed' : 'pointer',
-              backgroundColor: isDisabled ? '#4b5563' : '#f59e0b',
-              color: isDisabled ? '#9ca3af' : '#0f172a',
-              fontSize: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              transition: 'all 0.2s',
+              border: '1px solid #374151',
+              backgroundColor: 'transparent',
+              color: '#9ca3af',
+              cursor: 'pointer',
+              fontSize: '14px',
             }}
           >
-            {isSubmitting ? (
-              <>
-                <svg style={{ animation: 'spin 1s linear infinite' }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" strokeOpacity="0.25" />
-                  <path d="M12 2a10 10 0 0 1 10 10" strokeOpacity="0.75" />
-                </svg>
-                {isLogin ? '登录中...' : '注册中...'}
-              </>
-            ) : (
-              <>
-                {isLogin ? '登录' : '注册'}
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </>
-            )}
+            退出登录
           </button>
-        </form>
-      )}
-
-      {!isSuccess && (
-        <div style={{ marginTop: '24px', textAlign: 'center' }}>
-          <p style={{ color: '#9ca3af' }}>
-            {'还没有账号？'}
-            <button
-              onClick={() => setIsLogin(!isLogin)}
-              style={{ marginLeft: '8px', color: '#f59e0b', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer' }}
-            >
-              {'立即注册'}
-            </button>
-          </p>
         </div>
-      )}
+      </div>
+    )
+  }
+
+  return (
+    <div style={{ backgroundColor: '#111827', borderRadius: '16px', padding: '32px', border: '1px solid #1f2937' }}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        {/* 邮箱/手机号 */}
+        <div>
+          <label htmlFor="account" style={labelStyle}>邮箱 / 手机号</label>
+          <div style={inputWrapperStyle}>
+            <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <input
+              id="account"
+              type="text"
+              value={account}
+              onChange={(e) => setAccount(e.target.value)}
+              style={inputStyle}
+              placeholder="请输入邮箱或手机号"
+            />
+          </div>
+        </div>
+
+        {/* 记住我 & 忘记密码 */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+            <button
+              type="button"
+              onClick={() => setRememberMe(!rememberMe)}
+              style={{
+                width: '18px',
+                height: '18px',
+                borderRadius: '4px',
+                border: rememberMe ? '2px solid #f59e0b' : '2px solid #4b5563',
+                backgroundColor: rememberMe ? '#f59e0b' : 'transparent',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+              }}
+            >
+              {rememberMe && (
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              )}
+            </button>
+            <span style={{ color: '#9ca3af', fontSize: '14px' }}>记住我</span>
+          </label>
+          
+          <button
+            type="button"
+            onClick={() => setShowForgotPassword(true)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#f59e0b',
+              fontSize: '14px',
+              cursor: 'pointer',
+            }}
+          >
+            忘记密码？
+          </button>
+        </div>
+
+        {/* 协议 - 仅注册 */}
+        {!isLogin && (
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+            <button
+              type="button"
+              onClick={() => setAgreed(!agreed)}
+              style={{
+                marginTop: '2px',
+                width: '20px',
+                height: '20px',
+                borderRadius: '4px',
+                border: agreed ? '2px solid #f59e0b' : '2px solid #4b5563',
+                backgroundColor: agreed ? '#f59e0b' : 'transparent',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                padding: 0,
+              }}
+            >
+              {agreed && (
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="3">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              )}
+            </button>
+            <p style={{ fontSize: '14px', color: '#9ca3af', lineHeight: 1.5 }}>
+              我已阅读并同意
+              <Link href="/zh/terms" style={{ color: '#f59e0b', textDecoration: 'none', margin: '0 4px' }}>《服务条款》</Link>
+              和
+              <Link href="/zh/privacy" style={{ color: '#f59e0b', textDecoration: 'none', margin: '0 4px' }}>《隐私政策》</Link>
+            </p>
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={isDisabled}
+          style={{
+            width: '100%',
+            padding: '14px 24px',
+            fontWeight: 700,
+            borderRadius: '8px',
+            border: 'none',
+            cursor: isDisabled ? 'not-allowed' : 'pointer',
+            backgroundColor: isDisabled ? '#4b5563' : '#f59e0b',
+            color: isDisabled ? '#9ca3af' : '#0f172a',
+            fontSize: '16px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            transition: 'all 0.2s',
+          }}
+        >
+          {isSubmitting ? (
+            <>
+              <svg style={{ animation: 'spin 1s linear infinite' }} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" strokeOpacity="0.25" />
+                <path d="M12 2a10 10 0 0 1 10 10" strokeOpacity="0.75" />
+              </svg>
+              {isLogin ? '登录中...' : '注册中...'}
+            </>
+          ) : (
+            <>
+              {isLogin ? '登录' : '注册'}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </>
+          )}
+        </button>
+      </form>
+
+      <div style={{ marginTop: '24px', textAlign: 'center' }}>
+        <p style={{ color: '#9ca3af' }}>
+          {'还没有账号？'}
+          <button
+            onClick={() => setIsLogin(!isLogin)}
+            style={{ marginLeft: '8px', color: '#f59e0b', fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer' }}
+          >
+            {'立即注册'}
+          </button>
+        </p>
+      </div>
     </div>
   )
 }
