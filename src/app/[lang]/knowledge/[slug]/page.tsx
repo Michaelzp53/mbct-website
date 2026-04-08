@@ -1405,7 +1405,7 @@ const articlesData: Record<string, {
       '希望这篇文章，能给你一些启发。',
       '作者：MarvelBros - MBCT'
     ]
-  },,
+  },
 
   '文旅融合：场景设计与故事线的完美结合': {
     id: 201,
