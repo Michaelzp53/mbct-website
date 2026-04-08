@@ -2353,7 +2353,7 @@ const articlesData: Record<string, {
       'MBCT = MarvelBros Commercial Technology',
       'AI原生植入的文旅酒店全域"数据精益化管理"终端'
     ]
-  }
+  },
 
 
   '资源基础观视角下的酒店竞争优势研究': {
