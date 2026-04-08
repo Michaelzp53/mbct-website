@@ -302,6 +302,130 @@ export default function KnowledgePage() {
     },
   ]
 
+  // 博客文章 - 新增10篇
+  const blogs = [
+    {
+      id: 301,
+      type: 'blog',
+      title: '退房时前台小姑娘的一个举动，让我成了回头客',
+      slug: '退房时前台小姑娘的一个举动，让我成了回头客',
+      summary: '游客视角：被记住的感觉',
+      firstLine: '上个月去杭州出差，入住了一家商务酒店。说实话，走进去的时候没觉得有什么特别。',
+      author: '游客',
+      date: '2026-04-08',
+      readTime: '3分钟',
+      tag: '博客',
+    },
+    {
+      id: 302,
+      type: 'blog',
+      title: '带着孩子来酒店，没想到孩子比我还开心',
+      slug: '带着孩子来酒店，没想到孩子比我还开心',
+      summary: '亲子入住体验：细节打动人心',
+      firstLine: '上周末带娃去成都玩，5岁的小朋友正处于"什么都要自己来"的年纪。',
+      author: '游客',
+      date: '2026-04-08',
+      readTime: '3分钟',
+      tag: '博客',
+    },
+    {
+      id: 303,
+      type: 'blog',
+      title: '三个月改造，我的酒店RevPAR从120涨到180',
+      slug: '三个月改造，我的酒店RevPAR从120涨到180',
+      summary: '酒店老板视角：数据驱动的改造',
+      firstLine: '我做酒店十年了，一直觉得自己挺懂行的。什么收益管理、价格策略，该做的都做了。',
+      author: '酒店老板',
+      date: '2026-04-08',
+      readTime: '4分钟',
+      tag: '博客',
+    },
+    {
+      id: 304,
+      type: 'blog',
+      title: '从"工具人"到"故事主角"',
+      slug: '从工具人到故事主角',
+      summary: '前台员工视角：工作的意义',
+      firstLine: '我在酒店前台干了三年多，最大的感受就是——累。不是身体累，是心累。',
+      author: '前台员工',
+      date: '2026-04-08',
+      readTime: '4分钟',
+      tag: '博客',
+    },
+    {
+      id: 305,
+      type: 'blog',
+      title: 'AI帮我省了20万人工成本',
+      slug: 'AI帮我省了20万人工成本',
+      summary: '降本增效的真实故事',
+      firstLine: '说实话，开酒店十几年，我从没想过有一天会被"数据"打动。',
+      author: '酒店老板',
+      date: '2026-04-08',
+      readTime: '4分钟',
+      tag: '博客',
+    },
+    {
+      id: 306,
+      type: 'blog',
+      title: '90后员工流失率从80%降到20%',
+      slug: '90后员工流失率从80%降到20%',
+      summary: '员工管理：数据透明的力量',
+      firstLine: '我当店长五年，最怕的就是招人。不是招不到，是留不住。',
+      author: '酒店店长',
+      date: '2026-04-08',
+      readTime: '4分钟',
+      tag: '博客',
+    },
+    {
+      id: 307,
+      type: 'blog',
+      title: '入住"神奇"体验：从冷漠到温暖',
+      slug: '入住神奇体验：从冷漠到温暖',
+      summary: '被记住的感动',
+      firstLine: '我是个出差党，一年住酒店不下100天。说实话，大部分酒店给我的感觉都差不多。',
+      author: '游客',
+      date: '2026-04-08',
+      readTime: '4分钟',
+      tag: '博客',
+    },
+    {
+      id: 308,
+      type: 'blog',
+      title: '动态定价让我终于能睡个好觉',
+      slug: '动态定价让我终于能睡个好觉',
+      summary: '收益经理视角：技术解放',
+      firstLine: '说实话，干我们这行的，哪个没熬过凌晨两三点的夜？',
+      author: '收益经理',
+      date: '2026-04-08',
+      readTime: '4分钟',
+      tag: '博客',
+    },
+    {
+      id: 309,
+      type: 'blog',
+      title: '那些年烧在改造上的冤枉钱',
+      slug: '那些年烧在改造上的冤枉钱',
+      summary: '业主视角：数据诊断的教训',
+      firstLine: '2019年，我第一家酒店开业第三年，生意开始下滑。我当时一拍大腿：装修老了，得改！',
+      author: '酒店业主',
+      date: '2026-04-08',
+      readTime: '4分钟',
+      tag: '博客',
+    },
+    {
+      id: 310,
+      type: 'blog',
+      title: '入职第一天，师父教我的一件事',
+      slug: '入职第一天，师父教我的一件事',
+      summary: '新员工视角：传承的温度',
+      firstLine: '2019年3月1日，我第一天到酒店报到，紧张得手心全是汗。',
+      author: '新员工',
+      date: '2026-04-08',
+      readTime: '4分钟',
+      tag: '博客',
+    },
+  ]
+
   const categories = [
     {
       id: 'academic',
@@ -328,11 +452,11 @@ export default function KnowledgePage() {
       color: '#22c55e',
     },
     {
-      id: 'blog',
+      id: 'blogs',
       icon: Newspaper,
       title: '博客文章',
       desc: '行业快讯，方法论，最佳实践',
-      count: 36,
+      count: 10,
       color: '#8b5cf6',
     },
   ]
@@ -533,6 +657,41 @@ export default function KnowledgePage() {
           </div>
         </section>
 
+
+        {/* Blogs Section */}
+        <section id="blogs" className="mb-8">
+          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <Newspaper className="w-5 h-5 text-[#8b5cf6]" />
+            博客文章
+          </h2>
+          <div className="space-y-3">
+            {blogs.map((blog) => (
+              <Link
+                key={blog.id}
+                href={`/zh/knowledge/${encodeURIComponent(blog.slug)}`}
+                className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#8b5cf6]/50 transition-all group"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="px-2 py-1 rounded-full bg-[#8b5cf6]/10 text-[#8b5cf6] text-xs font-medium flex-shrink-0 mt-0.5">
+                    {blog.tag}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#8b5cf6] transition-colors">
+                      {blog.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 line-clamp-1">
+                      {blog.firstLine}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-gray-500">
+                    <span>{blog.author}</span>
+                    <span>{blog.readTime}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
         <section className="mt-16 text-center">
           <div className="p-8 rounded-2xl bg-[#111827] border border-gray-800">
             <h2 className="text-2xl font-bold text-white mb-4">
