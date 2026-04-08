@@ -14,64 +14,6 @@ export default function HomePage() {
       
       {/* Original content continues... */}
       {/* Hero Section - AI原生植入的文旅酒店全域"数据精益化管理"终端 */}
-      {false && <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.15),transparent_50%)]" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-16">
-            <Sparkles className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-[#f59e0b] text-lg font-medium">让数据成为增长的灯塔</span>
-          </div>
-          
-          {/* Main Headline */}
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            AI原生植入的文旅酒店全域"数据精益化管理"终端
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto">
-            我们不是一家"用AI的咨询公司"
-          </p>
-          <p className="text-lg text-[#f59e0b] mb-8 max-w-2xl mx-auto">
-            我们是第一家从DNA里就是AI原生的酒店增长服务机构
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link
-              href="/zh/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#f59e0b] text-[#0f172a] font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all transform hover:scale-105"
-            >
-              预约增长诊断
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-            <Link
-              href="/zh/guarantee"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#f59e0b] text-[#f59e0b] font-bold rounded-lg hover:bg-[#f59e0b]/10 transition-all"
-            >
-              了解效果跟进
-            </Link>
-          </div>
-          
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {[
-              { value: '25-50%+', label: '平均增长' },
-              { value: '100+', label: '服务酒店' },
-              { value: '50%+', label: '节省佣金' },
-              { value: '60%+', label: '续签率' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[#f59e0b] mb-2">{stat.value}</div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Pain Points Section - 我们懂你的困境 */}
       <section className="py-24 bg-[#111827]">
