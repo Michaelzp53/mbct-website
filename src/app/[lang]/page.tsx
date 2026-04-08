@@ -1,11 +1,20 @@
 import Link from 'next/link'
 import { ArrowRight, TrendingUp, Shield, Sparkles, Users, Target, ChevronRight } from 'lucide-react'
+import HeroWithStats from '@/components/HeroWithStats'
+import BentoServices from '@/components/BentoServices'
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#0f172a]">
+      {/* Hero Section with Stats */}
+      <HeroWithStats />
+      
+      {/* Bento Grid Services */}
+      <BentoServices />
+      
+      {/* Original content continues... */}
       {/* Hero Section - AI原生植入的文旅酒店全域"数据精益化管理"终端 */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {false && <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.15),transparent_50%)]" />
