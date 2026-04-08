@@ -3,6 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, BookOpen, Mail } from 'lucide-react'
 import ArticleContent from './ArticleContent'
 import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
+import ArticleInteractions from '@/components/interactions/ArticleInteractions'
 
 // 完整文章内容数据
 const articlesData: Record<string, {
@@ -2587,6 +2588,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </span>
           </div>
 
+          <ArticleInteractions 
+            articleId={article.id.toString()} 
+            articleTitle={article.title}
+            articleUrl={`https://marvelbros.com/zh/knowledge/${slug}`}
+          />
           <ArticleContent content={article.content} articleTitle={article.title} />
 
           {/* Newsletter 订阅 */}

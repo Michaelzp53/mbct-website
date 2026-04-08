@@ -26,6 +26,15 @@ export default function RegisterModal({ isOpen, onClose, onSuccess, articleTitle
     // 模拟注册请求
     await new Promise(resolve => setTimeout(resolve, 1500))
     
+    // 记录注册
+    const registrations = JSON.parse(localStorage.getItem('mbct_registrations') || '[]')
+    registrations.push({
+      account,
+      date: new Date().toISOString(),
+      article: articleTitle,
+    })
+    localStorage.setItem('mbct_registrations', JSON.stringify(registrations))
+    
     setIsSubmitting(false)
     setIsSuccess(true)
     
