@@ -497,6 +497,42 @@ export default function KnowledgePage() {
         </section>
 
         {/* CTA */}
+
+        {/* Case Studies Section */}
+        <section id="cases" className="mb-8">
+          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-[#22c55e]" />
+            案例研究
+          </h2>
+          <div className="space-y-3">
+            {cases.map((c) => (
+              <Link
+                key={c.id}
+                href={`/zh/knowledge/${encodeURIComponent(c.slug)}`}
+                className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#22c55e]/50 transition-all group"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="px-2 py-1 rounded-full bg-[#22c55e]/10 text-[#22c55e] text-xs font-medium flex-shrink-0 mt-0.5">
+                    {c.tag}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#22c55e] transition-colors">
+                      {c.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 line-clamp-1">
+                      {c.firstLine}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-gray-500">
+                    <span>{c.author.split(' - ')[0]}</span>
+                    <span>{c.readTime}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className="mt-16 text-center">
           <div className="p-8 rounded-2xl bg-[#111827] border border-gray-800">
             <h2 className="text-2xl font-bold text-white mb-4">
