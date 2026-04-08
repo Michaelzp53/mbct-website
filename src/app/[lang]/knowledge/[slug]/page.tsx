@@ -2353,7 +2353,7 @@ const articlesData: Record<string, {
       'MBCT = MarvelBros Commercial Technology',
       'AI原生植入的文旅酒店全域"数据精益化管理"终端'
     ]
-  },,
+  },
 
   '退房时前台小姑娘的一个举动，让我成了回头客': {
     id: 301,
