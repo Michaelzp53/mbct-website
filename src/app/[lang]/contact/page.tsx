@@ -24,7 +24,7 @@ export default async function ContactPage({
   return (
     <>
       {/* Page Hero */}
-      <section className="bg-gradient-to-br from-[#0f172a] to-slate-900 py-20">
+      <section className="bg-gradient-to-br from-[#0f172a] to-slate-900 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{dict.contact.title}</h1>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">{dict.contact.subtitle}</p>
@@ -32,7 +32,7 @@ export default async function ContactPage({
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-16 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Left - Info */}

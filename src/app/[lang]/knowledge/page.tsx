@@ -462,7 +462,7 @@ export default function KnowledgePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#0f172a] py-24">
+    <div className="min-h-screen bg-[#0f172a] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -476,6 +476,32 @@ export default function KnowledgePage() {
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             MBCT研究院出品，用数据说话，为酒店行业提供前瞻洞察与实战指南
           </p>
+        </div>
+
+        {/* Search Box */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="搜索文章..."
+              className="w-full px-6 py-4 bg-[#111827] border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-[#f59e0b] transition-colors pl-14"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </div>
         </div>
 
         {/* Categories */}
@@ -551,7 +577,7 @@ export default function KnowledgePage() {
         </section>
 
         {/* Academic Articles Section */}
-        <section id="academic-list" className="mb-8">
+        <section id="academic" className="mb-8">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <FileText className="w-5 h-5 text-[#f59e0b]" />
             学术文章

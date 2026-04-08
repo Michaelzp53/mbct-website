@@ -10,7 +10,7 @@ interface CTASectionProps {
 
 export function CTASection({ dict, lang }: CTASectionProps) {
   return (
-    <section className="py-24 bg-gradient-to-br from-[#0f172a] via-slate-900 to-[#0f172a] relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-[#0f172a] via-slate-900 to-[#0f172a] relative overflow-hidden">
       {/* Dot grid */}
       <div className="absolute inset-0 opacity-[0.06]">
         <div

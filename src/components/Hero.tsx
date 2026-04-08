@@ -10,7 +10,7 @@ interface HeroProps {
 
 export function Hero({ dict, lang }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-slate-900 to-[#0f172a] py-24 md:py-36">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-slate-900 to-[#0f172a] py-16 md:py-24">
       {/* Dot grid background */}
       <div className="absolute inset-0 opacity-[0.07]">
         <div

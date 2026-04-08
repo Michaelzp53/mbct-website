@@ -2,7 +2,7 @@ import { Target, Heart, Lightbulb, Users, Award, TrendingUp } from 'lucide-react
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#0f172a] py-24">
+    <div className="min-h-screen bg-[#0f172a] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <div className="text-center mb-20">

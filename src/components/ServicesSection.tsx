@@ -17,7 +17,7 @@ export function ServicesSection({ dict, lang }: ServicesSectionProps) {
   const icons = ['Building2', 'TrendingUp', 'Shield', 'Sparkles', 'BarChart3', 'Users', 'Megaphone', 'GraduationCap']
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-16 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

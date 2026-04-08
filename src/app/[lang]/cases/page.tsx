@@ -25,7 +25,7 @@ export default async function CasesPage({
   return (
     <>
       {/* Page Hero */}
-      <section className="bg-gradient-to-br from-[#0f172a] to-slate-900 py-20">
+      <section className="bg-gradient-to-br from-[#0f172a] to-slate-900 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{dict.nav.cases}</h1>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">{dict.cases.subtitle}</p>
@@ -33,7 +33,7 @@ export default async function CasesPage({
       </section>
 
       {/* Cases Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {dict.cases.items.map((c) => (
