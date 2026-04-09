@@ -35,7 +35,7 @@ export function Header() {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-brand-navy text-lg leading-none">MBCT</span>
-              <span className="text-xs text-brand-muted">迈创兄弟商业科技</span>
+              <span className="text-xs text-brand-muted">MBCT</span>
             </div>
           </Link>
           

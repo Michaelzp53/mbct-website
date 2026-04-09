@@ -13,64 +13,69 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
-const services = [
-  {
-    id: 'strategy',
-    title: '数字化战略咨询',
-    desc: 'AI驱动的酒店数字化转型顶层设计，从诊断到落地的全链路服务',
-    icon: BarChart3,
-    color: '#f59e0b',
-    size: 'large', // large or small
-    stats: '300+酒店',
-  },
-  {
-    id: 'saas',
-    title: '酒店SaaS系统',
-    desc: '智能收益管理、客户关系、运营分析一体化平台',
-    icon: Cpu,
-    color: '#3b82f6',
-    size: 'small',
-    stats: '效率提升40%',
-  },
-  {
-    id: 'membership',
-    title: '会员体系设计',
-    desc: '从积分到生态，打造高粘性会员体系',
-    icon: Users,
-    color: '#22c55e',
-    size: 'small',
-    stats: '复购率70%',
-  },
-  {
-    id: 'revenue',
-    title: '收益管理优化',
-    desc: '动态定价、库存优化、渠道管理',
-    icon: TrendingUp,
-    color: '#8b5cf6',
-    size: 'small',
-    stats: 'RevPAR+35%',
-  },
-  {
-    id: 'feasibility',
-    title: '可行性分析',
-    desc: '选址评估、投资回报测算、风险评估',
-    icon: Building2,
-    color: '#ef4444',
-    size: 'small',
-    stats: '准确率95%',
-  },
-  {
-    id: 'brand',
-    title: '品牌策划',
-    desc: '品牌定位、视觉设计、传播策略',
-    icon: Palette,
-    color: '#ec4899',
-    size: 'small',
-    stats: '品牌溢价30%',
-  },
-]
+interface BentoServicesProps {
+  lang: string
+}
 
-export default function BentoServices() {
+export default function BentoServices({ lang }: BentoServicesProps) {
+  const isZh = lang === 'zh'
+
+  const services = [
+    {
+      id: 'strategy',
+      title: isZh ? '数字化战略咨询' : 'Digital Strategy Consulting',
+      desc: isZh ? 'AI驱动的酒店数字化转型顶层设计，从诊断到落地的全链路服务' : 'AI-driven hotel digital transformation from diagnosis to implementation',
+      icon: BarChart3,
+      color: '#f59e0b',
+      size: 'large',
+      stats: isZh ? '300+酒店' : '300+ Hotels',
+    },
+    {
+      id: 'saas',
+      title: isZh ? '酒店SaaS系统' : 'Hotel SaaS System',
+      desc: isZh ? '智能收益管理、客户关系、运营分析一体化平台' : 'Integrated platform for revenue management, CRM, and operations analytics',
+      icon: Cpu,
+      color: '#3b82f6',
+      size: 'small',
+      stats: isZh ? '效率提升40%' : '+40% Efficiency',
+    },
+    {
+      id: 'membership',
+      title: isZh ? '会员体系设计' : 'Membership Design',
+      desc: isZh ? '从积分到生态，打造高粘性会员体系' : 'Build high-engagement membership ecosystems beyond points',
+      icon: Users,
+      color: '#22c55e',
+      size: 'small',
+      stats: isZh ? '复购率70%' : '70% Retention',
+    },
+    {
+      id: 'revenue',
+      title: isZh ? '收益管理优化' : 'Revenue Management',
+      desc: isZh ? '动态定价、库存优化、渠道管理' : 'Dynamic pricing, inventory optimization, and channel management',
+      icon: TrendingUp,
+      color: '#8b5cf6',
+      size: 'small',
+      stats: isZh ? 'RevPAR+35%' : 'RevPAR +35%',
+    },
+    {
+      id: 'feasibility',
+      title: isZh ? '可行性分析' : 'Feasibility Analysis',
+      desc: isZh ? '选址评估、投资回报测算、风险评估' : 'Site evaluation, ROI calculation, and risk assessment',
+      icon: Building2,
+      color: '#ef4444',
+      size: 'small',
+      stats: isZh ? '准确率95%' : '95% Accuracy',
+    },
+    {
+      id: 'brand',
+      title: isZh ? '品牌策划' : 'Brand Strategy',
+      desc: isZh ? '品牌定位、视觉设计、传播策略' : 'Brand positioning, visual design, and communication strategy',
+      icon: Palette,
+      color: '#ec4899',
+      size: 'small',
+      stats: isZh ? '品牌溢价30%' : '30% Premium',
+    },
+  ]
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
@@ -80,13 +85,15 @@ export default function BentoServices() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
             <Sparkles className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-[#f59e0b] text-sm font-medium">核心业务</span>
+            <span className="text-[#f59e0b] text-sm font-medium">{isZh ? '核心业务' : 'Core Services'}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            全方位酒店数字化解决方案
+            {isZh ? '全方位酒店数字化解决方案' : 'Comprehensive Hotel Digital Solutions'}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            从战略咨询到技术落地，从会员运营到收益优化，MBCT陪跑式服务助力酒店业绩增长
+            {isZh 
+              ? '从战略咨询到技术落地，从会员运营到收益优化，MBCT陪跑式服务助力酒店业绩增长'
+              : 'From strategy consulting to tech implementation, from membership to revenue optimization—MBCT partnership services drive hotel growth'}
           </p>
         </div>
 
@@ -149,7 +156,7 @@ export default function BentoServices() {
                       {service.stats}
                     </span>
                     <div className="flex items-center gap-1 text-gray-500 group-hover:text-[#f59e0b] transition-colors">
-                      <span className="text-sm">了解详情</span>
+                      <span className="text-sm">{isZh ? '了解详情' : 'Learn More'}</span>
                       <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -162,10 +169,10 @@ export default function BentoServices() {
         {/* CTA */}
         <div className="text-center mt-12">
           <Link
-            href="/zh/contact?type=plan"
+            href={`/${lang}/contact?type=plan`}
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#f59e0b] text-[#0f172a] font-bold rounded-xl hover:bg-[#f59e0b]/90 transition-all hover:scale-105"
           >
-            获取定制方案
+            {isZh ? '获取定制方案' : 'Get Custom Plan'}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

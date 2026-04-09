@@ -37,7 +37,7 @@ export function CTASection({ dict, lang }: CTASectionProps) {
               {dict.cta.cta1} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <a href="tel:400-888-8888">
+          <a href="tel:18941579333">
             <Button size="lg" variant="outline" className="text-base px-8 rounded-lg border-slate-500 text-white hover:bg-white hover:text-[#0f172a] w-full sm:w-auto">
               {dict.cta.cta2}
             </Button>

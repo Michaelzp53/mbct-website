@@ -7,12 +7,12 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 export const metadata: Metadata = {
   metadataBase: new URL('https://marvelbros.com'),
   title: {
-    template: '%s | MBCT 迈创兄弟商业科技',
-    default: 'MBCT 迈创兄弟商业科技 - AI赋能酒店数字化转型',
+    template: '%s | MBCT',
+    default: 'MBCT - AI赋能酒店数字化转型',
   },
   description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
   keywords: '酒店管理, SaaS系统, AI数字化, 酒店咨询, 可行性分析, 运营诊断',
-  authors: [{ name: 'MBCT迈创兄弟商业科技' }],
+  authors: [{ name: 'MBCT' }],
   openGraph: {
     type: 'website',
     siteName: 'MBCT',

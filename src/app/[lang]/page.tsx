@@ -1,55 +1,107 @@
 import Link from 'next/link'
-import { ArrowRight, TrendingUp, Shield, Sparkles, Users, Target, ChevronRight } from 'lucide-react'
+import { ArrowRight, Users, Target, TrendingUp, Shield } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
 import BentoServices from '@/components/BentoServices'
+import { getDict } from '@/lib/dicts'
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  const dict = getDict(lang)
+  
+  const personas = [
+    {
+      title: lang === 'zh' ? '投资人' : 'Investors',
+      subtitle: lang === 'zh' ? '孤独的决策者' : 'The Lone Decision Maker',
+      quote: lang === 'zh' 
+        ? '几千万的投资，市场调研的数据却停留在半年前。您需要的不是另一个写报告的顾问，而是一个能陪您扛结果的伙伴。'
+        : 'Your feasibility study data is six months stale. What you need isn\'t another report-writing consultant—it\'s a partner who shares your risk.',
+    },
+    {
+      title: lang === 'zh' ? '经营管理者' : 'Hotel Managers',
+      subtitle: lang === 'zh' ? '被困住的总经理' : 'The Trapped GM',
+      quote: lang === 'zh'
+        ? 'OTA的账单像流水，70%的订单，15%的佣金，一年200万就这么流走了。您需要的不是更多工具，是一个7×24小时的AI运营团队。'
+        : '70% of your bookings through OTAs at 15% commission—that\'s ¥2M flowing out the door annually. What you need isn\'t more tools, it\'s a 24/7 AI operations team.',
+    },
+    {
+      title: lang === 'zh' ? '创始人' : 'Founders',
+      subtitle: lang === 'zh' ? '理想主义者的困境' : 'The Idealist\'s Dilemma',
+      quote: lang === 'zh'
+        ? '您想做一家有故事、有温度、有灵魂的酒店。情怀和盈利，可以兼得。我们用数据找到您的"审美niche"。'
+        : 'You want to build a hotel with soul—story, warmth, and character. Profit and passion don\'t have to be opposites. We find your aesthetic niche through data.',
+    },
+  ]
+  
+  const team = [
+    {
+      letter: 'M',
+      title: lang === 'zh' ? 'Marvel / 创始人' : 'Marvel / Founder',
+      desc: lang === 'zh' 
+        ? '酒店行业需要一次革命，而不是改良。10年咨询经验，坚信数据驱动的力量。'
+        : 'The hotel industry needs a revolution, not incremental tweaks. 10 years of consulting experience, unwavering belief in data-driven decisions.',
+      color: '#f59e0b',
+    },
+    {
+      letter: 'B',
+      title: lang === 'zh' ? 'Business / 商业筹划总监' : 'Business / Business Director',
+      desc: lang === 'zh'
+        ? '好的战略必须能落地，好的落地必须有效果。前顶级投行分析师。'
+        : 'Good strategy means nothing without execution. Good execution means nothing without results. Former top-tier investment bank analyst.',
+      color: '#3b82f6',
+    },
+    {
+      letter: 'C',
+      title: lang === 'zh' ? 'Consultant / 资深顾问团队' : 'Consultant / Senior Advisory Team',
+      desc: lang === 'zh'
+        ? '每一个数据背后，都是一个真实的人。5位10年+经验酒店行业专家。'
+        : 'Behind every data point is a real person. 5 senior hotel industry experts with over a decade of experience each.',
+      color: '#22c55e',
+    },
+    {
+      letter: 'T',
+      title: lang === 'zh' ? 'Technical / 技术交付团队' : 'Technical / Tech Delivery Team',
+      desc: lang === 'zh'
+        ? '技术的价值，是让复杂变简单。基于OpenClaw自研AI Copilot系统。'
+        : 'The value of technology is making the complex simple. Built on OpenClaw\'s proprietary AI Copilot system.',
+      color: '#8b5cf6',
+    },
+  ]
+
+  const ctaLink = `/${lang}/contact`
+  const guaranteeLink = `/${lang}/guarantee`
+  
   return (
     <div className="min-h-screen bg-[#0f172a]">
       {/* Hero Section with Stats */}
-      <HeroWithStats />
+      <HeroWithStats lang={lang} />
       
       {/* Bento Grid Services */}
-      <BentoServices />
+      <BentoServices lang={lang} />
       
-      {/* Original content continues... */}
-      {/* Hero Section - AI原生植入的文旅酒店全域"数据精益化管理"终端 */}
-
-      {/* Pain Points Section - 我们懂你的困境 */}
-      <section className="py-24 bg-[#111827]">
+      {/* Pain Points Section */}
+      <section className="py-16 bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            {/* Badge like Hero section */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 mb-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 mb-6">
               <Users className="w-4 h-4 text-[#3b82f6]" />
-              <span className="text-[#3b82f6] text-lg font-medium">理解 · 共情 · 解决</span>
+              <span className="text-[#3b82f6] text-sm font-medium">
+                {lang === 'zh' ? '理解 · 共情 · 解决' : 'Understand · Empathize · Solve'}
+              </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">我们懂你的困境</h2>
-            <p className="text-xl text-gray-400">三种角色，三种痛点，一种解决方案</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {lang === 'zh' ? '我们懂你的困境' : 'We Understand Your Challenges'}
+            </h2>
+            <p className="text-gray-400">
+              {lang === 'zh' ? '三种角色，三种痛点，一种解决方案' : 'Three Roles, Three Pain Points, One Solution'}
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: '投资人',
-                subtitle: '孤独的决策者',
-                quote: '几千万的投资，市场调研的数据却停留在半年前。您需要的不是另一个写报告的顾问，而是一个能陪您扛结果的伙伴。',
-              },
-              {
-                title: '经营管理者',
-                subtitle: '被困住的总经理',
-                quote: 'OTA的账单像流水，70%的订单，15%的佣金，一年200万就这么流走了。您需要的不是更多工具，是一个7×24小时的AI运营团队。',
-              },
-              {
-                title: '创始人',
-                subtitle: '理想主义者的困境',
-                quote: '您想做一家有故事、有温度、有灵魂的酒店。情怀和盈利，可以兼得。我们用数据找到您的"审美niche"。',
-              },
-            ].map((persona, index) => (
-              <div key={index} className="p-8 rounded-2xl bg-[#0f172a] border border-gray-800">
-                <h3 className="text-2xl font-bold text-white mb-2">{persona.title}</h3>
-                <p className="text-[#f59e0b] mb-4">{persona.subtitle}</p>
-                <p className="text-gray-400 italic leading-relaxed">"{persona.quote}"</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {personas.map((persona, index) => (
+              <div key={index} className="p-6 rounded-2xl bg-[#0f172a] border border-gray-800">
+                <h3 className="text-xl font-bold text-white mb-2">{persona.title}</h3>
+                <p className="text-[#f59e0b] mb-3 text-sm">{persona.subtitle}</p>
+                <p className="text-gray-400 text-sm italic leading-relaxed">"{persona.quote}"</p>
               </div>
             ))}
           </div>
@@ -57,121 +109,179 @@ export default function HomePage() {
       </section>
 
       {/* Growth Flywheel Section */}
-      <section className="py-24 bg-[#0f172a]">
+      <section className="py-16 bg-[#0f172a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">MBCT增长飞轮</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">从洞察到规模化，构建酒店增长的完整闭环</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {lang === 'zh' ? 'MBCT增长飞轮' : 'The MBCT Growth Flywheel'}
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-sm">
+              {lang === 'zh' 
+                ? '从洞察到规模化，构建酒店增长的完整闭环'
+                : 'From insight to scale—building the complete hotel growth loop'}
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Target,
-                title: '洞察模块',
-                subtitle: '科学决策层',
-                description: 'AI投资可行性研究、存量酒店诊断，让每一个决策都有数据支撑',
-                color: '#3b82f6',
-              },
-              {
-                icon: TrendingUp,
-                title: '增长引擎',
-                subtitle: '系统驱动层',
-                description: 'AI管理系统、私域流量运营，用系统替代人工，用数据驱动增长',
-                color: '#22c55e',
-              },
-              {
-                icon: Shield,
-                title: '规模化模块',
-                subtitle: '资产沉淀层',
-                description: '品牌创建、效果跟进陪跑，把增长能力变成可复用的资产',
-                color: '#f59e0b',
-              },
-              {
-                icon: Users,
-                title: '支撑服务',
-                subtitle: '基础服务层',
-                description: '轻量顾问、融资顾问、行业研究，全生命周期陪伴',
-                color: '#8b5cf6',
-              },
-            ].map((module, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-2xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all group"
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                  style={{ backgroundColor: `${module.color}20` }}
-                >
-                  <module.icon className="w-6 h-6" style={{ color: module.color }} />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1">{module.title}</h3>
-                <p className="text-sm text-[#f59e0b] mb-3">{module.subtitle}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{module.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#3b82f620' }}>
+                <Target className="w-5 h-5" style={{ color: '#3b82f6' }} />
               </div>
-            ))}
+              <h3 className="text-lg font-bold text-white mb-1">
+                {lang === 'zh' ? '洞察模块' : 'Insight Module'}
+              </h3>
+              <p className="text-xs text-[#f59e0b] mb-2">
+                {lang === 'zh' ? '科学决策层' : 'Data-Driven'}
+              </p>
+              <p className="text-gray-400 text-xs">
+                {lang === 'zh' 
+                  ? 'AI可行性研究、诊断，让决策有数据支撑'
+                  : 'AI feasibility studies and diagnostics'}
+              </p>
+            </div>
+            
+            <div className="p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#22c55e20' }}>
+                <TrendingUp className="w-5 h-5" style={{ color: '#22c55e' }} />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-1">
+                {lang === 'zh' ? '增长引擎' : 'Growth Engine'}
+              </h3>
+              <p className="text-xs text-[#f59e0b] mb-2">
+                {lang === 'zh' ? '系统驱动层' : 'System-Driven'}
+              </p>
+              <p className="text-gray-400 text-xs">
+                {lang === 'zh'
+                  ? 'AI管理、私域运营，数据驱动增长'
+                  : 'AI PMS and private domain ops'}
+              </p>
+            </div>
+            
+            <div className="p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#f59e0b20' }}>
+                <Shield className="w-5 h-5" style={{ color: '#f59e0b' }} />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-1">
+                {lang === 'zh' ? '规模化模块' : 'Scale Module'}
+              </h3>
+              <p className="text-xs text-[#f59e0b] mb-2">
+                {lang === 'zh' ? '资产沉淀层' : 'Asset Building'}
+              </p>
+              <p className="text-gray-400 text-xs">
+                {lang === 'zh'
+                  ? '品牌创建、效果跟进，增长能力资产化'
+                  : 'Brand building and growth assets'}
+              </p>
+            </div>
+            
+            <div className="p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#8b5cf620' }}>
+                <Users className="w-5 h-5" style={{ color: '#8b5cf6' }} />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-1">
+                {lang === 'zh' ? '支撑服务' : 'Support'}
+              </h3>
+              <p className="text-xs text-[#f59e0b] mb-2">
+                {lang === 'zh' ? '基础服务层' : 'Foundation'}
+              </p>
+              <p className="text-gray-400 text-xs">
+                {lang === 'zh'
+                  ? '顾问、融资、行业研究，全周期陪伴'
+                  : 'Consulting, financing, research'}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Effect Guarantee Section */}
-      <section className="py-24 bg-[#111827]">
+      {/* Results Section */}
+      <section className="py-16 bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-4">
                 <Shield className="w-4 h-4 text-[#f59e0b]" />
-                <span className="text-[#f59e0b] text-lg font-medium">效果跟进</span>
+                <span className="text-[#f59e0b] text-sm font-medium">
+                  {lang === 'zh' ? '效果跟进' : 'Performance Tracking'}
+                </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                以结果为尺，量增长之路
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                {lang === 'zh' ? '以结果为尺，量增长之路' : 'Measured by Results, Growth by Design'}
               </h2>
-              <p className="text-gray-300 mb-6 text-lg">
-                我们相信，真正的伙伴关系建立在共同的成果之上。当您的酒店增长时，我们才值得被认可。
+              <p className="text-gray-300 mb-5 text-sm">
+                {lang === 'zh'
+                  ? '真正的伙伴关系建立在共同的成果之上。当您的酒店增长时，我们才值得被认可。'
+                  : 'True partnerships are built on shared outcomes. We only earn our worth when your hotel grows.'}
               </p>
               
-              <div className="space-y-4 mb-8">
-                {[
-                  '诊断阶段：免费/低价，确诊增长机会',
-                  '方案阶段：成本价，客户认可机会',
-                  '敢于承诺可量化的业务结果，直到达标为止',
-                ].map((step, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-[#0f172a] text-sm font-bold">{index + 1}</span>
-                    </div>
-                    <p className="text-gray-300">{step}</p>
+              <div className="space-y-3 mb-5">
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#0f172a] text-xs font-bold">1</span>
                   </div>
-                ))}
+                  <p className="text-gray-300 text-sm">
+                    {lang === 'zh' ? '诊断阶段：免费/低价，确诊增长机会' : 'Diagnosis: Free/low cost to identify opportunities'}
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#0f172a] text-xs font-bold">2</span>
+                  </div>
+                  <p className="text-gray-300 text-sm">
+                    {lang === 'zh' ? '方案阶段：成本价，客户认可机会' : 'Solution: Cost-plus—only succeeds if you succeed'}
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-[#0f172a] text-xs font-bold">3</span>
+                  </div>
+                  <p className="text-gray-300 text-sm">
+                    {lang === 'zh' ? '承诺可量化的结果，直到达标为止' : 'We commit to measurable results'}
+                  </p>
+                </div>
               </div>
               
-              <Link
-                href="/zh/guarantee"
-                className="inline-flex items-center text-[#f59e0b] font-medium hover:underline"
-              >
-                了解对赌详情
-                <ChevronRight className="w-5 h-5" />
+              <Link href={guaranteeLink} className="inline-flex items-center text-[#f59e0b] font-medium hover:underline text-sm">
+                {lang === 'zh' ? '了解效果保障详情 →' : 'Learn about our guarantee →'}
               </Link>
             </div>
             
-            <div className="bg-[#0f172a] rounded-2xl p-8 border border-gray-800">
-              <h3 className="text-xl font-bold text-white mb-6">效果跟进/评估模式示例</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">结果导向目标</span>
-                  <span className="text-white font-medium">年综合运营指数递增增长6-15%</span>
+            <div className="bg-[#0f172a] rounded-xl p-6 border border-gray-800">
+              <h3 className="text-lg font-bold text-white mb-4">
+                {lang === 'zh' ? '评估模式示例' : 'Performance Model Example'}
+              </h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center py-2 border-b border-gray-800">
+                  <span className="text-gray-400 text-sm">
+                    {lang === 'zh' ? '结果导向目标' : 'Result Goals'}
+                  </span>
+                  <span className="text-white font-medium text-sm">
+                    {lang === 'zh' ? '年增长6-15%' : 'Annual +6-15%'}
+                  </span>
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">基础服务费</span>
-                  <span className="text-white font-medium">按照项目收费（样板工程仅基础服务成本费）</span>
+                <div className="flex justify-between items-center py-2 border-b border-gray-800">
+                  <span className="text-gray-400 text-sm">
+                    {lang === 'zh' ? '基础服务费' : 'Base Fee'}
+                  </span>
+                  <span className="text-white font-medium text-sm">
+                    {lang === 'zh' ? '按项目收费' : 'Project-based'}
+                  </span>
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="text-gray-400">超额奖励</span>
-                  <span className="text-[#f59e0b] font-medium">评估指数超出，加收20%奖励金</span>
+                <div className="flex justify-between items-center py-2 border-b border-gray-800">
+                  <span className="text-gray-400 text-sm">
+                    {lang === 'zh' ? '超额奖励' : 'Bonus'}
+                  </span>
+                  <span className="text-[#f59e0b] font-medium text-sm">
+                    {lang === 'zh' ? '超出加收20%' : '+20% if exceeded'}
+                  </span>
                 </div>
-                <div className="flex justify-between items-center py-3">
-                  <span className="text-gray-400">未达标</span>
-                  <span className="text-green-400 font-medium">仅收50%基础服务成本费，风险共担！</span>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-gray-400 text-sm">
+                    {lang === 'zh' ? '未达标' : 'If missed'}
+                  </span>
+                  <span className="text-green-400 font-medium text-sm">
+                    {lang === 'zh' ? '仅收50%！' : 'Only 50% fee!'}
+                  </span>
                 </div>
               </div>
             </div>
@@ -180,49 +290,28 @@ export default function HomePage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-[#0f172a]">
+      <section className="py-16 bg-[#0f172a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">MBCT团队</h2>
-            <p className="text-gray-400">不是"顾问"，是并肩作战的战友</p>
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              {lang === 'zh' ? 'MBCT团队' : 'The MBCT Team'}
+            </h2>
+            <p className="text-gray-400 text-sm">
+              {lang === 'zh' ? '不是"顾问"，是并肩作战的战友' : 'Not just consultants—battle-tested partners'}
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                letter: 'M',
-                title: 'Marvel / 创始人',
-                desc: '酒店行业需要一次革命，而不是改良。10年咨询经验，坚信数据驱动的力量。',
-                color: '#f59e0b',
-              },
-              {
-                letter: 'B',
-                title: 'Business / 商业筹划总监',
-                desc: '好的战略必须能落地，好的落地必须有效果。前顶级投行分析师。',
-                color: '#3b82f6',
-              },
-              {
-                letter: 'C',
-                title: 'Consultant / 资深顾问团队',
-                desc: '每一个数据背后，都是一个真实的人。5位10年+经验酒店行业专家。',
-                color: '#22c55e',
-              },
-              {
-                letter: 'T',
-                title: 'Technical / 技术交付团队',
-                desc: '技术的价值，是让复杂变简单。基于OpenClaw自研AI Copilot系统。',
-                color: '#8b5cf6',
-              },
-            ].map((member, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-[#111827] border border-gray-800 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {team.map((member, index) => (
+              <div key={index} className="p-4 rounded-xl bg-[#111827] border border-gray-800 text-center">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 text-xl font-bold"
                   style={{ backgroundColor: `${member.color}20`, color: member.color }}
                 >
                   {member.letter}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{member.title}</h3>
-                <p className="text-gray-400 text-sm">{member.desc}</p>
+                <h3 className="text-sm font-bold text-white mb-1">{member.title}</h3>
+                <p className="text-gray-400 text-xs">{member.desc}</p>
               </div>
             ))}
           </div>
@@ -230,20 +319,22 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
+      <section className="py-16 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            准备好让酒店增长了吗？
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            {lang === 'zh' ? '准备好让酒店增长了吗？' : 'Ready to Grow Your Hotel?'}
           </h2>
-          <p className="text-gray-300 mb-8 text-lg">
-            预约一次免费的增长诊断，看看您的酒店有多少增长机会
+          <p className="text-gray-300 mb-6 text-sm">
+            {lang === 'zh'
+              ? '预约一次免费的增长诊断'
+              : 'Book a free growth diagnosis'}
           </p>
           <Link
-            href="/zh/contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-[#f59e0b] text-[#0f172a] font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all transform hover:scale-105"
+            href={ctaLink}
+            className="inline-flex items-center justify-center px-6 py-3 bg-[#f59e0b] text-[#0f172a] font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all hover:scale-105"
           >
-            立即预约诊断
-            <ArrowRight className="ml-2 w-5 h-5" />
+            {lang === 'zh' ? '立即预约诊断' : 'Book Free Diagnosis'}
+            <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
         </div>
       </section>

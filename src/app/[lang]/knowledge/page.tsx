@@ -1,7 +1,29 @@
 import Link from 'next/link'
 import { BookOpen, FileText, BarChart3, Newspaper, ArrowRight, Clock, User, Calendar } from 'lucide-react'
 
-export default function KnowledgePage() {
+export default async function KnowledgePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  const isZh = lang === 'zh'
+
+  // 页面UI翻译
+  const ui = {
+    pageTitle: isZh ? '行业前沿' : 'Industry Insights',
+    pageSubtitle: isZh 
+      ? '洞察行业趋势，分享实战经验，助力酒店数字化转型'
+      : 'Insights into industry trends, sharing practical experience, empowering hotel digital transformation',
+    academicTitle: isZh ? '学术文章' : 'Academic Research',
+    academicDesc: isZh ? '学术研究论文，理论与实践结合' : 'Peer-reviewed research combining theory and practice',
+    reportTitle: isZh ? '行业报告' : 'Industry Reports',
+    reportDesc: isZh ? '行业深度报告，实战案例分析' : 'In-depth industry analysis with real cases',
+    caseTitle: isZh ? '案例研究' : 'Case Studies', 
+    caseDesc: isZh ? '实战项目复盘，数据脱敏处理' : 'Real project retrospectives with anonymized data',
+    blogTitle: isZh ? '博客文章' : 'Blog',
+    blogDesc: isZh ? '最新趋势、方法论、实战经验' : 'Latest trends, methodologies, practical experience',
+    searchPlaceholder: isZh ? '搜索文章...' : 'Search articles...',
+    readMore: isZh ? '阅读全文' : 'Read More',
+    minRead: isZh ? '分钟' : 'min read',
+  }
+
   const articles = [
     // 学术文章 (保持原有12篇)
     {
@@ -430,32 +452,32 @@ export default function KnowledgePage() {
     {
       id: 'academic',
       icon: FileText,
-      title: '学术文章',
-      desc: '深度理论研究，发表在行业核心期刊',
+      title: ui.academicTitle,
+      desc: ui.academicDesc,
       count: 12,
       color: '#f59e0b',
     },
     {
       id: 'industry-reports',
       icon: BarChart3,
-      title: '行业报告',
-      desc: '实战经验分享，方法论与案例分析',
+      title: ui.reportTitle,
+      desc: ui.reportDesc,
       count: 6,
       color: '#3b82f6',
     },
     {
       id: 'cases',
       icon: BookOpen,
-      title: '案例研究',
-      desc: '真实项目复盘，数据脱敏处理',
+      title: ui.caseTitle,
+      desc: ui.caseDesc,
       count: 6,
       color: '#22c55e',
     },
     {
       id: 'blogs',
       icon: Newspaper,
-      title: '博客文章',
-      desc: '行业快讯，方法论，最佳实践',
+      title: ui.blogTitle,
+      desc: ui.blogDesc,
       count: 10,
       color: '#8b5cf6',
     },
@@ -468,13 +490,13 @@ export default function KnowledgePage() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
             <BookOpen className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-[#f59e0b] text-sm font-medium">思想领导力</span>
+            <span className="text-[#f59e0b] text-sm font-medium">{isZh ? '思想领导力' : 'Thought Leadership'}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            行业前沿
+            {ui.pageTitle}
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            MBCT研究院出品，用数据说话，为酒店行业提供前瞻洞察与实战指南
+            {isZh ? 'MBCT研究院出品，用数据说话，为酒店行业提供前瞻洞察与实战指南' : 'From MBCT Institute — data-driven insights and practical guides for the hotel industry'}
           </p>
         </div>
 
@@ -483,7 +505,7 @@ export default function KnowledgePage() {
           <div className="relative">
             <input
               type="text"
-              placeholder="搜索文章..."
+              placeholder={ui.searchPlaceholder}
               className="w-full px-6 py-4 bg-[#111827] border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-[#f59e0b] transition-colors pl-14"
             />
             <svg
@@ -560,7 +582,7 @@ export default function KnowledgePage() {
                   </span>
                 </div>
                 <Link
-                  href={`/zh/knowledge/${encodeURIComponent(reports[0].slug)}`}
+                  href={`/${lang}/knowledge/${encodeURIComponent(reports[0].slug)}`}
                   className="inline-flex items-center px-6 py-3 bg-[#3b82f6] text-white font-bold rounded-lg hover:bg-[#3b82f6]/90 transition-all"
                 >
                   阅读全文
@@ -580,13 +602,13 @@ export default function KnowledgePage() {
         <section id="academic" className="mb-8">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <FileText className="w-5 h-5 text-[#f59e0b]" />
-            学术文章
+            {ui.academicTitle}
           </h2>
           <div className="space-y-3">
             {articles.map((article) => (
               <Link
                 key={article.id}
-                href={`/zh/knowledge/${encodeURIComponent(article.slug)}`}
+                href={`/${lang}/knowledge/${encodeURIComponent(article.slug)}`}
                 className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all group"
               >
                 <div className="flex items-start gap-4">
@@ -615,13 +637,13 @@ export default function KnowledgePage() {
         <section id="industry-reports" className="mb-8">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <BarChart3 className="w-5 h-5 text-[#3b82f6]" />
-            行业报告
+            {ui.reportTitle}
           </h2>
           <div className="space-y-3">
             {reports.map((report) => (
               <Link
                 key={report.id}
-                href={`/zh/knowledge/${encodeURIComponent(report.slug)}`}
+                href={`/${lang}/knowledge/${encodeURIComponent(report.slug)}`}
                 className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#3b82f6]/50 transition-all group"
               >
                 <div className="flex items-start gap-4">
@@ -652,13 +674,13 @@ export default function KnowledgePage() {
         <section id="cases" className="mb-8">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-[#22c55e]" />
-            案例研究
+            {ui.caseTitle}
           </h2>
           <div className="space-y-3">
             {cases.map((c) => (
               <Link
                 key={c.id}
-                href={`/zh/knowledge/${encodeURIComponent(c.slug)}`}
+                href={`/${lang}/knowledge/${encodeURIComponent(c.slug)}`}
                 className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#22c55e]/50 transition-all group"
               >
                 <div className="flex items-start gap-4">
@@ -688,13 +710,13 @@ export default function KnowledgePage() {
         <section id="blogs" className="mb-8">
           <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <Newspaper className="w-5 h-5 text-[#8b5cf6]" />
-            博客文章
+            {ui.blogTitle}
           </h2>
           <div className="space-y-3">
             {blogs.map((blog) => (
               <Link
                 key={blog.id}
-                href={`/zh/knowledge/${encodeURIComponent(blog.slug)}`}
+                href={`/${lang}/knowledge/${encodeURIComponent(blog.slug)}`}
                 className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#8b5cf6]/50 transition-all group"
               >
                 <div className="flex items-start gap-4">

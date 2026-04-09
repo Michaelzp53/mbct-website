@@ -4,6 +4,10 @@ import { useEffect, useState, useRef } from 'react'
 import { ArrowRight, TrendingUp, Users, Building2, Award } from 'lucide-react'
 import Link from 'next/link'
 
+interface HeroWithStatsProps {
+  lang: string
+}
+
 interface AnimatedNumberProps {
   value: number
   suffix?: string
@@ -51,14 +55,15 @@ function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberP
   )
 }
 
-const stats = [
-  { icon: TrendingUp, value: 35, suffix: '%', label: 'RevPAR提升', color: '#22c55e' },
-  { icon: Users, value: 300, suffix: '+', label: '服务酒店', color: '#3b82f6' },
-  { icon: Building2, value: 50, suffix: '+', label: '覆盖城市', color: '#f59e0b' },
-  { icon: Award, value: 98, suffix: '%', label: '客户满意度', color: '#8b5cf6' },
-]
-
-export default function HeroWithStats() {
+export default function HeroWithStats({ lang }: HeroWithStatsProps) {
+  const isZh = lang === 'zh'
+  
+  const stats = [
+    { icon: TrendingUp, value: 35, suffix: '%', label: isZh ? 'RevPAR提升' : 'RevPAR Growth', color: '#22c55e' },
+    { icon: Users, value: 300, suffix: '+', label: isZh ? '服务酒店' : 'Hotels Served', color: '#3b82f6' },
+    { icon: Building2, value: 50, suffix: '+', label: isZh ? '覆盖城市' : 'Cities Covered', color: '#f59e0b' },
+    { icon: Award, value: 98, suffix: '%', label: isZh ? '客户满意度' : 'Client Satisfaction', color: '#8b5cf6' },
+  ]
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0a0f1c] via-[#0f172a] to-[#1e293b]">
       {/* Background Effects */}
@@ -75,40 +80,42 @@ export default function HeroWithStats() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-8 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse" />
-              <span className="text-[#f59e0b] text-sm font-medium">AI原生 · 数据驱动 · 陪跑式服务</span>
+              <span className="text-[#f59e0b] text-sm font-medium">
+                {isZh ? 'AI原生 · 数据驱动 · 陪跑式服务' : 'AI-Native · Data-Driven · Partnership'}
+              </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              让数据成为
+              {isZh ? '让数据成为' : 'Let Data Be Your'}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#fbbf24]">
-                增长的灯塔
+                {isZh ? '增长的灯塔' : 'Growth Beacon'}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0">
-              AI原生植入的文旅酒店全域
-              <span className="text-[#f59e0b] font-medium">"数据精益化管理"终端</span>
+              {isZh ? 'AI原生植入的文旅酒店全域' : 'AI-native hospitality data'}
+              <span className="text-[#f59e0b] font-medium">{isZh ? '"数据精益化管理"终端' : ' "Lean Management" Terminal'}</span>
               <br />
-              陪跑式服务，风险共担
+              {isZh ? '陪跑式服务，风险共担' : 'Partnership service, shared risk'}
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
-                href="/zh/contact?type=plan"
+                href={`/${lang}/contact?type=plan`}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#f59e0b] text-[#0f172a] font-bold rounded-xl hover:bg-[#f59e0b]/90 transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#f59e0b]/25"
               >
-                获取定制方案
+                {isZh ? '获取定制方案' : 'Get Custom Plan'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/zh/services"
+                href={`/${lang}/services`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-gray-700 text-white font-medium rounded-xl hover:border-[#f59e0b] hover:text-[#f59e0b] transition-all"
               >
-                了解服务
+                {isZh ? '了解服务' : 'Our Services'}
               </Link>
             </div>
           </div>
@@ -120,7 +127,7 @@ export default function HeroWithStats() {
               <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-[#f59e0b]/20 via-transparent to-[#3b82f6]/20 opacity-50" />
               
               <div className="relative">
-                <h3 className="text-lg font-medium text-gray-400 mb-6">客户业绩提升</h3>
+                <h3 className="text-lg font-medium text-gray-400 mb-6">{isZh ? '客户业绩提升' : 'Client Performance'}</h3>
                 
                 <div className="grid grid-cols-2 gap-6">
                   {stats.map((stat) => {
@@ -145,7 +152,7 @@ export default function HeroWithStats() {
                 {/* Bottom Note */}
                 <div className="mt-6 pt-6 border-t border-gray-800 text-center">
                   <p className="text-sm text-gray-500">
-                    基于 <span className="text-[#f59e0b]">300+</span> 家酒店真实数据
+                    {isZh ? '基于 ' : 'Based on '} <span className="text-[#f59e0b]">300+</span> {isZh ? '家酒店真实数据' : 'Real Hotels'}
                   </p>
                 </div>
               </div>

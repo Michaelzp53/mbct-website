@@ -1,12 +1,27 @@
 'use client'
 
-import Giscus from '@giscus/react'
+import { useEffect, useRef } from 'react'
 
 interface ArticleCommentsProps {
   slug: string
 }
 
 export default function ArticleComments({ slug }: ArticleCommentsProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // 动态加载 Commentbox 脚本
+    const script = document.createElement('script')
+    script.src = 'https://cdn.commentbox.io_embed.js'
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      // 清理
+      document.body.removeChild(script)
+    }
+  }, [slug])
+
   return (
     <div className="mt-12 pt-8 border-t border-gray-800">
       <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
@@ -18,20 +33,12 @@ export default function ArticleComments({ slug }: ArticleCommentsProps) {
       <p className="text-gray-400 text-sm mb-4">
         欢迎分享您的观点和经验，与其他酒店从业者交流
       </p>
-      <Giscus
-        id="comments"
-        repo="michaelzp53/mbct-website"
-        repoId="R_kgDOON9bJg"
-        category="文章评论"
-        categoryId="DIC_kwDOON9bJs4Co8mS"
-        mapping="specific"
-        term={slug}
-        reactionsEnabled="1"
-        emitMetadata="0"
-        inputPosition="top"
-        theme="dark"
-        lang="zh-CN"
-        loading="lazy"
+      <div 
+        ref={containerRef}
+        className="commentbox" 
+        data-page-id={slug}
+        data-page-url={`https://marvelbros.com/zh/knowledge/${slug}`}
+        data-box-id="5634563627810816-proj"
       />
     </div>
   )

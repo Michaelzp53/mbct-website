@@ -2598,7 +2598,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           {/* Newsletter 订阅 */}
           <NewsletterSubscribe />
           {/* 评论功能暂时隐藏 - 等待GitHub Discussions配置完成 */}
-          {/* <ArticleComments slug={slug} /> */}
+          <ArticleComments slug={slug} />
 
           <div className="mt-12 pt-8 border-t border-gray-800 text-center">
             <div className="flex items-center justify-center gap-2 text-[#f59e0b] mb-4">

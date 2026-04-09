@@ -45,7 +45,7 @@ export default async function TermsPage({
               </h2>
               <p>
                 {lang === 'zh'
-                  ? 'MBCT迈创兄弟商业科技致力于为酒店行业提供数字化转型解决方案，包括但不限于：酒店SaaS管理系统、可行性分析报告、运营诊断、收益管理优化等服务。'
+                  ? 'MBCTMBCT致力于为酒店行业提供数字化转型解决方案，包括但不限于：酒店SaaS管理系统、可行性分析报告、运营诊断、收益管理优化等服务。'
                   : 'MBCT Commercial Technology is committed to providing digital transformation solutions for the hotel industry, including but not limited to: Hotel SaaS Management System, Feasibility Analysis Reports, Operations Diagnosis, Revenue Management Optimization, and other services.'}
               </p>
             </section>

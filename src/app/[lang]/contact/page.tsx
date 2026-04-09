@@ -73,9 +73,13 @@ export default async function ContactPage({
 
               {/* 24h promise */}
               <div className="mt-10 p-6 bg-[#f59e0b]/5 border border-[#f59e0b]/20 rounded-xl">
-                <p className="text-[#0f172a] font-semibold mb-1">⏰ 24小时回复承诺</p>
+                <p className="text-[#0f172a] font-semibold mb-1">
+                  {lang === 'zh' ? '⏰ 24小时回复承诺' : '⏰ 24-Hour Response Guarantee'}
+                </p>
                 <p className="text-slate-500 text-sm">
-                  我们将在24小时内回复您的咨询，请保持联系方式畅通。
+                  {lang === 'zh' 
+                    ? '我们将在24小时内回复您的咨询，请保持联系方式畅通。' 
+                    : 'We will respond to your inquiry within 24 hours. Please keep your contact information accessible.'}
                 </p>
               </div>
             </div>
