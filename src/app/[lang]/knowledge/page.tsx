@@ -25,17 +25,30 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   }
 
   const articles = [
-    // 学术文章 (保持原有12篇)
+    // 学术文章 (14篇) - 新增2篇
     {
       id: 1,
       type: 'article',
-      title: '技术范式转移视角下的酒店业创新路径研究',
-      slug: '技术范式转移视角下的酒店业创新路径研究',
-      summary: 'AI、物联网、大数据如何重塑酒店业？凯文·凯利《5000天后的世界》理念在酒店数字化转型中的应用。',
-      firstLine: '作为一名在酒店行业摸爬滚打了十余年的研究者，我时常被问到一个问题：酒店的未来在哪里？',
+      title: '酒店资产价值重估与品牌升级路径研究',
+      slug: '酒店资产价值重估与品牌升级路径研究',
+      summary: '存量时代，酒店如何通过品牌升级实现资产价值重估？三种品牌升级路径深度剖析。',
+      firstLine: '2024年深秋，我受邀前往西南某省会城市，诊断一家开业十五年的国际品牌五星级酒店。',
       author: 'MarvelBros - MBCT',
-      date: '2026-04-07',
-      readTime: '10分钟',
+      date: '2026-04-14',
+      readTime: '15分钟',
+      tag: '学术文章',
+      featured: true,
+    },
+    {
+      id: 2,
+      type: 'article',
+      title: '动态定价与收益管理系统对酒店GOP影响研究',
+      slug: '动态定价与收益管理系统对酒店GOP影响研究',
+      summary: 'AI动态定价如何提升酒店GOP？收益管理系统的原理、效果与实操指南。',
+      firstLine: '收益管理是酒店运营的核心，但传统收益管理依赖经验，AI正在改变这一切。',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-14',
+      readTime: '18分钟',
       tag: '学术文章',
     },
     {
@@ -172,18 +185,31 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-  // 行业报告 - 新增6篇
+  // 行业报告 - 新增4篇 (共10篇)
   const reports = [
     {
       id: 101,
       type: 'report',
-      title: 'AI浪潮下的智慧酒店管理',
-      slug: 'AI浪潮下的智慧酒店管理',
-      summary: '从自动调价到无人接单，从机器人客服到数据中台——MBCT AI管理系统实战解析，以及华住、锦江、亚朵竞品对比。',
-      firstLine: '上周和一位酒店老板喝茶，他抱怨："现在招个前台都难，年轻人不愿意干。工资开到6000，还是留不住人。"',
+      title: '中国银发经济背景下高端酒店投资机遇白皮书',
+      slug: '中国银发经济背景下高端酒店投资机遇白皮书',
+      summary: '银发经济万亿市场，酒店如何抓住3-5年窗口期？需求画像、供给错配，投资策略全面解析。',
+      firstLine: '中国正在经历人类历史上规模最大、速度最快的人口老龄化进程。',
       author: 'MarvelBros - MBCT',
-      date: '2026-04-07',
-      readTime: '25分钟',
+      date: '2026-04-14',
+      readTime: '20分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+    {
+      id: 102,
+      type: 'report',
+      title: '2026年中国高端酒店存量改造投资分析报告',
+      slug: '2026年中国高端酒店存量改造投资分析报告',
+      summary: '存量改造是未来十年酒店行业的主战场，改造路径，投资测算、案例复盘完整指南。',
+      firstLine: '增量时代终结，存量时代开启。中国酒店行业正在经历一场深刻的大洗牌。',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-14',
+      readTime: '22分钟',
       tag: '行业报告',
     },
     {
@@ -502,7 +528,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: FileText,
       title: ui.academicTitle,
       desc: ui.academicDesc,
-      count: 12,
+      count: 14,
       color: '#f59e0b',
     },
     {
@@ -510,7 +536,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BarChart3,
       title: ui.reportTitle,
       desc: ui.reportDesc,
-      count: 6,
+      count: 10,
       color: '#3b82f6',
     },
     {
