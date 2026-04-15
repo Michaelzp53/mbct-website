@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Separator } from '@/components/ui/separator'
 
 const footerLinks = {
@@ -37,9 +38,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-brand-gold to-yellow-300 rounded-lg flex items-center justify-center">
-                <span className="text-brand-navy font-bold text-xl">M</span>
-              </div>
+              <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={58} height={58} className="object-contain" />
               <div>
                 <span className="font-bold text-xl">MBCT</span>
                 <p className="text-sm text-gray-400">Marvelbros Commercial Technology</p>

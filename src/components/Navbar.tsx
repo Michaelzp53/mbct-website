@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X, Globe, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -33,9 +34,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href={`/${lang}/`} className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#f59e0b] to-[#fbbf24] rounded-lg flex items-center justify-center">
-              <span className="text-[#0f172a] font-bold text-lg">M</span>
-            </div>
+            <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={46} height={46} className="object-contain" />
             <div className="flex flex-col">
               <span className="font-bold text-white text-lg leading-none">MBCT</span>
               <span className="text-xs text-gray-400">Marvelbros Commercial Technology</span>
@@ -87,9 +86,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               <div className="flex flex-col gap-1 p-6">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#f59e0b] to-[#fbbf24] rounded-lg flex items-center justify-center">
-                      <span className="text-[#0f172a] font-bold">M</span>
-                    </div>
+                    <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={37} height={37} className="object-contain" />
                     <span className="font-bold text-white">MBCT</span>
                   </div>
                   <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-gray-400">

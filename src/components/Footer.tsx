@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Dict } from '@/lib/dicts'
 
 interface FooterProps {
@@ -35,12 +36,10 @@ export function Footer({ lang, dict }: FooterProps) {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#f59e0b] to-yellow-300 rounded-lg flex items-center justify-center">
-                <span className="text-[#0f172a] font-bold text-lg">M</span>
-              </div>
+              <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={48} height={48} className="object-contain" />
               <div>
                 <span className="font-bold text-xl">MBCT</span>
-                <p className="text-xs text-slate-400">Marvel Bros Commercial Technology</p>
+                <p className="text-xs text-slate-400">Marvelbros Commercial Technology</p>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
