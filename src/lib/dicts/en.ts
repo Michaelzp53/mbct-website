@@ -284,7 +284,7 @@ export const en = {
   },
   footer: {
     description: 'MBCT is a hotel-focused digital transformation partner—delivering AI-powered PMS, revenue management optimization, and private domain growth solutions to hotels worldwide.',
-    copyright: '© 2026 Marvel Bros Consulting Team (MBCT). All rights reserved.',
+    copyright: '© 2026 Marvelbros Commercial Technology (MBCT). All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
     sitemap: 'Sitemap',

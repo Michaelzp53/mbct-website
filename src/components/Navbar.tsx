@@ -38,7 +38,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-white text-lg leading-none">MBCT</span>
-              <span className="text-xs text-gray-400">Marvel Bros Consulting Team</span>
+              <span className="text-xs text-gray-400">Marvelbros Commercial Technology</span>
             </div>
           </Link>
 

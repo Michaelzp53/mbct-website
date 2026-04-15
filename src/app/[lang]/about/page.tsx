@@ -80,7 +80,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             {lang === 'zh' ? '关于 MBCT' : 'About MBCT'}
           </h1>
           <p className="text-lg md:text-xl text-[#f59e0b]">
-            {lang === 'zh' ? 'MBCT有限公司' : 'Marvel Bros Consulting Team'}
+            {lang === 'zh' ? 'MBCT有限公司' : 'Marvelbros Commercial Technology'}
           </p>
         </div>
 
