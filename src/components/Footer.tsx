@@ -36,7 +36,7 @@ export function Footer({ lang, dict }: FooterProps) {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={48} height={48} className="object-contain" />
+              <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={58} height={58} className="object-contain" />
               <div>
                 <span className="font-bold text-xl">MBCT</span>
                 <p className="text-xs text-slate-400">Marvelbros Commercial Technology</p>

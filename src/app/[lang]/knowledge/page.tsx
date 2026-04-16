@@ -52,7 +52,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 2,
+      id: 3,
       type: 'article',
       title: '老龄化人口对酒店服务需求的弹性影响研究',
       slug: '老龄化人口对酒店服务需求的弹性影响研究',
@@ -64,7 +64,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 3,
+      id: 4,
       type: 'article',
       title: '代际消费价值观对住宿选择的影响机制',
       slug: '代际消费价值观对住宿选择的影响机制',
@@ -76,7 +76,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 4,
+      id: 5,
       type: 'article',
       title: '人工智能对酒店运营决策的影响机制研究',
       slug: '人工智能对酒店运营决策的影响机制研究',
@@ -88,7 +88,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 5,
+      id: 6,
       type: 'article',
       title: '物联网采纳对民宿绩效的影响',
       slug: '物联网采纳对民宿绩效的影响',
@@ -100,7 +100,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 6,
+      id: 7,
       type: 'article',
       title: '组织变革理论视角下的酒店数字化转型',
       slug: '组织变革理论视角下的酒店数字化转型',
@@ -112,7 +112,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 7,
+      id: 8,
       type: 'article',
       title: '区块链技术对资产价值评估模型的优化研究',
       slug: '区块链技术对资产价值评估模型的优化研究',
@@ -124,7 +124,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 8,
+      id: 9,
       type: 'article',
       title: '虚拟体验经济视角下的目的地营销创新',
       slug: '虚拟体验经济视角下的目的地营销创新',
@@ -136,7 +136,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 9,
+      id: 10,
       type: 'article',
       title: '消费者体验层次模型的实证检验',
       slug: '消费者体验层次模型的实证检验',
@@ -148,7 +148,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 10,
+      id: 11,
       type: 'article',
       title: '可持续发展理论框架下的中国旅游实践',
       slug: '可持续发展理论框架下的中国旅游实践',
@@ -160,7 +160,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 11,
+      id: 12,
       type: 'article',
       title: '服务接触中情绪劳动对溢价支付意愿的影响',
       slug: '服务接触中情绪劳动对溢价支付意愿的影响',
@@ -172,7 +172,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '学术文章',
     },
     {
-      id: 12,
+      id: 13,
       type: 'article',
       title: '资源基础观视角下的酒店竞争优势研究',
       slug: '资源基础观视角下的酒店竞争优势研究',
@@ -185,7 +185,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-  // 行业报告 - 新增4篇 (共10篇)
+  // 行业报告 - 共10篇
   const reports = [
     {
       id: 101,
@@ -213,7 +213,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '行业报告',
     },
     {
-      id: 102,
+      id: 103,
       type: 'report',
       title: '存量改造：老酒店如何焕发新生',
       slug: '存量改造：老酒店如何焕发新生',
@@ -225,7 +225,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '行业报告',
     },
     {
-      id: 103,
+      id: 104,
       type: 'report',
       title: '酒店会员体系：从积分到生态',
       slug: '酒店会员体系：从积分到生态',
@@ -237,7 +237,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '行业报告',
     },
     {
-      id: 104,
+      id: 105,
       type: 'report',
       title: '文旅融合：酒店的场景革命',
       slug: '文旅融合：酒店的场景革命',
@@ -249,7 +249,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '行业报告',
     },
     {
-      id: 105,
+      id: 106,
       type: 'report',
       title: '选址密码：好位置的科学评估',
       slug: '选址密码：好位置的科学评估',
@@ -261,7 +261,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '行业报告',
     },
     {
-      id: 106,
+      id: 107,
       type: 'report',
       title: '民宿进化论：从标准化到特色化',
       slug: '民宿进化论：从标准化到特色化',
@@ -273,8 +273,8 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '行业报告',
     },
     {
-      id: 13,
-      type: 'article',
+      id: 108,
+      type: 'report',
       title: '酒店资产价值重估与品牌升级路径研究',
       slug: '酒店资产价值重估与品牌升级路径研究',
       summary: '存量时代，酒店如何通过品牌升级实现资产价值重估？三种品牌升级路径深度剖析。',
@@ -282,10 +282,10 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       author: 'MarvelBros - MBCT',
       date: '2026-04-14',
       readTime: '15分钟',
-      tag: '学术文章',
+      tag: '行业报告',
     },
     {
-      id: 14,
+      id: 109,
       type: 'report',
       title: '动态定价与收益管理系统对酒店GOP影响研究',
       slug: '动态定价与收益管理系统对酒店GOP影响研究',
@@ -297,27 +297,15 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tag: '行业报告',
     },
     {
-      id: 15,
+      id: 110,
       type: 'report',
       title: '中国银发经济背景下高端酒店投资机遇白皮书',
-      slug: '中国银发经济背景下高端酒店投资机遇白皮书',
+      slug: '中国银发经济背景下高端酒店投资机遇白皮书-深度版',
       summary: '银发经济万亿市场，酒店如何抓住3-5年窗口期？需求画像、供给错配，投资策略全面解析。',
       firstLine: '中国正在经历人类历史上规模最大、速度最快的人口老龄化进程。',
       author: 'MarvelBros - MBCT',
       date: '2026-04-14',
       readTime: '20分钟',
-      tag: '行业报告',
-    },
-    {
-      id: 16,
-      type: 'report',
-      title: '2026年中国高端酒店存量改造投资分析报告',
-      slug: '2026年中国高端酒店存量改造投资分析报告',
-      summary: '存量改造是未来十年酒店行业的主战场，改造路径，投资测算、案例复盘完整指南。',
-      firstLine: '增量时代终结，存量时代开启。中国酒店行业正在经历一场深刻的大洗牌。',
-      author: 'MarvelBros - MBCT',
-      date: '2026-04-14',
-      readTime: '22分钟',
       tag: '行业报告',
     },
   ]

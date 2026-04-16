@@ -34,7 +34,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href={`/${lang}/`} className="flex items-center gap-3">
-            <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={46} height={46} className="object-contain" />
+            <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={55} height={55} className="object-contain" />
             <div className="flex flex-col">
               <span className="font-bold text-white text-lg leading-none">MBCT</span>
               <span className="text-xs text-gray-400">Marvelbros Commercial Technology</span>
@@ -86,7 +86,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               <div className="flex flex-col gap-1 p-6">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
-                    <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={37} height={37} className="object-contain" />
+                    <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={44} height={44} className="object-contain" />
                     <span className="font-bold text-white">MBCT</span>
                   </div>
                   <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-gray-400">

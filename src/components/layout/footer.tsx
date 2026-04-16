@@ -38,7 +38,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={58} height={58} className="object-contain" />
+              <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={70} height={70} className="object-contain" />
               <div>
                 <span className="font-bold text-xl">MBCT</span>
                 <p className="text-sm text-gray-400">Marvelbros Commercial Technology</p>
