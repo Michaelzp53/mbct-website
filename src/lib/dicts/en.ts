@@ -334,5 +334,22 @@ export const en = {
       subscribe: 'Subscribe Now',
     },
     readTime: 'min read',
+    newArticles: {
+      article1: {
+        title: 'Value Reconstruction of Hotel Spatial Narrative from the Perspective of Experience Economy',
+        summary: 'In the era of experience economy, the hotel industry is undergoing a profound transformation from function-oriented to emotion-oriented. This paper explores how hotel space transforms from a mere functional container to a narrative carrier of emotional memory and brand value.',
+      },
+      article2: {
+        title: '2026 China Hotel Industry Digital Transformation Deep Water Zone Report',
+        summary: 'China\'s hotel industry digital transformation has entered the deep water zone. This report identifies the phased characteristics and core bottlenecks of digital transformation, and proposes practical paths for data middle platform construction and AI-enabled operational decision-making.',
+      },
+      article3: {
+        title: 'From Loss to Premium: The Experience Reshaping Journey of a Regional Hotel',
+        summary: 'In early 2024, I received a call from an old friend. He runs a business hotel in Southwest China that has been a local landmark for twelve years but has fallen into serious operational difficulties in recent years.',
+      },
+      article4: {
+        title: 'Hotel Industry "Involution" Dilemma: Three Breakthrough Points for Differentiated Competition',
+        summary: 'Recently, I chatted with several hotel owners and found that they all share a common anxiety: business is getting harder and harder. Price cuts mean paper-thin profits; without price cuts, guests are stolen by competitors.',
+      },
+    },
   },
-}

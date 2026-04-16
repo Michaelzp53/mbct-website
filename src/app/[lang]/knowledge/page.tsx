@@ -25,9 +25,22 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   }
 
   const articles = [
-    // 学术文章 (14篇) - 新增2篇
+    // 学术文章 - 新增1篇
     {
       id: 1,
+      type: 'article',
+      title: '体验经济视域下酒店空间叙事的价值重构',
+      slug: '体验经济视域下酒店空间叙事的价值重构',
+      summary: '在体验经济时代，酒店业正经历着从功能导向向情感导向的深刻转型。本文以空间叙事理论为分析框架，探讨酒店空间如何从单纯的功能容器转变为承载情感记忆与品牌价值的叙事载体。',
+      firstLine: '在体验经济时代，酒店业正经历着从功能导向向情感导向的深刻转型。',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-16',
+      readTime: '18分钟',
+      tag: '学术文章',
+      featured: true,
+    },
+    {
+      id: 2,
       type: 'article',
       title: '酒店资产价值重估与品牌升级路径研究',
       slug: '酒店资产价值重估与品牌升级路径研究',
@@ -37,7 +50,6 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-04-14',
       readTime: '15分钟',
       tag: '学术文章',
-      featured: true,
     },
     {
       id: 2,
@@ -185,18 +197,18 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-  // 行业报告 - 共10篇
+  // 行业报告 - 新增1篇
   const reports = [
     {
       id: 101,
       type: 'report',
-      title: '中国银发经济背景下高端酒店投资机遇白皮书',
-      slug: '中国银发经济背景下高端酒店投资机遇白皮书',
-      summary: '银发经济万亿市场，酒店如何抓住3-5年窗口期？需求画像、供给错配，投资策略全面解析。',
-      firstLine: '中国正在经历人类历史上规模最大、速度最快的人口老龄化进程。',
+      title: '2026年中国酒店业数字化转型深水区攻坚报告',
+      slug: '2026年中国酒店业数字化转型深水区攻坚报告',
+      summary: '中国酒店业的数字化转型已进入深水区。本报告识别数字化转型的阶段性特征与核心瓶颈，提出数据中台建设的实践路径、AI赋能运营决策的场景化策略。',
+      firstLine: '中国酒店业的数字化转型可以划分为三个明显阶段，每个阶段都有其特定的任务与挑战。',
       author: 'MarvelBros - MBCT',
-      date: '2026-04-14',
-      readTime: '20分钟',
+      date: '2026-04-16',
+      readTime: '22分钟',
       tag: '行业报告',
       featured: true,
     },
@@ -310,19 +322,20 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-  // 案例研究 - 新增6篇
+  // 案例研究 - 新增1篇（设为热门）
   const cases = [
     {
       id: 201,
       type: 'case',
-      title: '文旅融合：场景设计与故事线的完美结合',
-      slug: '文旅融合：场景设计与故事线的完美结合',
-      summary: '设计师不是画画的人，而是讲故事的人。故事线→空间叙事→产品设计→体验闭环的完整方法论。',
-      firstLine: '我见过一个项目，烧了三个亿，开业三个月就关门了。设计师做了一套精美的视觉系统，但没有人想过——游客为什么要来这里？',
+      title: '从亏损到溢价：一家区域酒店的体验重塑之路',
+      slug: '从亏损到溢价一家区域酒店的体验重塑之路',
+      summary: '2024年初，我接到了一位老朋友的电话。他在西南地区经营着一家开业十二年的商务酒店，曾经是当地的地标，但近年来陷入了严重的经营困境。',
+      firstLine: '2024年初，我接到了一位老朋友的电话。',
       author: 'MarvelBros - MBCT',
-      date: '2026-04-08',
-      readTime: '15分钟',
+      date: '2026-04-16',
+      readTime: '20分钟',
       tag: '案例研究',
+      featured: true,
     },
     {
       id: 202,
@@ -386,17 +399,17 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-  // 博客文章 - 新增10篇
+  // 博客文章 - 新增1篇
   const blogs = [
     {
       id: 301,
       type: 'blog',
-      title: '退房时前台小姑娘的一个举动，让我成了回头客',
-      slug: '退房时前台小姑娘的一个举动，让我成了回头客',
-      summary: '游客视角：被记住的感觉',
-      firstLine: '上个月去杭州出差，入住了一家商务酒店。说实话，走进去的时候没觉得有什么特别。',
-      author: '游客',
-      date: '2026-04-08',
+      title: '酒店业"内卷"困局：差异化竞争的三个破局点',
+      slug: '酒店业内卷困局差异化竞争的三个破局点',
+      summary: '最近和几位酒店老板聊天，发现大家都有一个共同的焦虑：生意越来越难做了。降价吧，利润薄得像纸；不降价吧，客人被隔壁抢走。',
+      firstLine: '最近和几位酒店老板聊天，发现大家都有一个共同的焦虑。',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-16',
       readTime: '3分钟',
       tag: '博客',
     },
@@ -615,37 +628,37 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
           </div>
         </section>
 
-        {/* Featured Report - 行业报告第一篇 */}
+        {/* Featured Report - 案例研究热门报道 */}
         <section id="report" className="mb-16">
-          <div className="p-8 rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#0f172a] border border-[#3b82f6]/30">
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#0f172a] border border-[#22c55e]/30">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="lg:w-2/3">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#3b82f6]/20 text-[#3b82f6] text-sm font-medium mb-4">
-                  热门报告
+                <span className="inline-block px-3 py-1 rounded-full bg-[#22c55e]/20 text-[#22c55e] text-sm font-medium mb-4">
+                  热门案例
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  {reports[0].title}
+                  {cases[0].title}
                 </h2>
                 <p className="text-gray-400 mb-6 text-lg">
-                  {reports[0].summary}
+                  {cases[0].summary}
                 </p>
                 <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-6">
                   <span className="flex items-center gap-2">
                     <User className="w-4 h-4" />
-                    {reports[0].author}
+                    {cases[0].author}
                   </span>
                   <span className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    {reports[0].date}
+                    {cases[0].date}
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    {reports[0].readTime}
+                    {cases[0].readTime}
                   </span>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/${encodeURIComponent(reports[0].slug)}`}
-                  className="inline-flex items-center px-6 py-3 bg-[#3b82f6] text-white font-bold rounded-lg hover:bg-[#3b82f6]/90 transition-all"
+                  href={`/${lang}/knowledge/${encodeURIComponent(cases[0].slug)}`}
+                  className="inline-flex items-center px-6 py-3 bg-[#22c55e] text-white font-bold rounded-lg hover:bg-[#22c55e]/90 transition-all"
                 >
                   阅读全文
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -653,7 +666,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
               </div>
               <div className="lg:w-1/3 flex items-center justify-center">
                 <div className="w-full h-64 rounded-xl bg-[#111827] flex items-center justify-center border border-gray-800">
-                  <BarChart3 className="w-24 h-24 text-[#3b82f6]/30" />
+                  <BookOpen className="w-24 h-24 text-[#22c55e]/30" />
                 </div>
               </div>
             </div>
