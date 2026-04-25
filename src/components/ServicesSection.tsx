@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap, Landmark, BookOpen } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import type { Dict } from '@/lib/dicts'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap,
+  Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap, Landmark, BookOpen,
 }
 
 interface ServicesSectionProps {
@@ -14,7 +14,7 @@ interface ServicesSectionProps {
 }
 
 export function ServicesSection({ dict, lang }: ServicesSectionProps) {
-  const icons = ['Building2', 'TrendingUp', 'Shield', 'Sparkles', 'BarChart3', 'Users', 'Megaphone', 'GraduationCap']
+  const icons = ['Building2', 'Sparkles', 'TrendingUp', 'BarChart3', 'Users', 'Shield', 'Megaphone', 'Landmark', 'BookOpen']
 
   return (
     <section className="py-16 bg-slate-50">

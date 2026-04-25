@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap, CheckCircle } from 'lucide-react'
+import { Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap, Landmark, BookOpen, CheckCircle } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CTASection } from '@/components/CTASection'
 import { getDict } from '@/lib/dicts'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap,
+  Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap, Landmark, BookOpen,
 }
 
 export async function generateMetadata({
@@ -25,7 +25,7 @@ export default async function ServicesPage({
 }) {
   const { lang } = await params
   const dict = getDict(lang)
-  const icons = ['Building2', 'TrendingUp', 'Shield', 'Sparkles', 'BarChart3', 'Users', 'Megaphone', 'GraduationCap']
+  const icons = ['Building2', 'Sparkles', 'TrendingUp', 'BarChart3', 'Users', 'Shield', 'Megaphone', 'Landmark', 'BookOpen']
 
   return (
     <>

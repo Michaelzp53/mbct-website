@@ -25,7 +25,45 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   }
 
   const articles = [
-    // 学术文章 - 新增1篇
+    // 学术文章 - 新增3篇（2026-04-19）
+    {
+      id: 0,
+      type: 'article',
+      title: '30年老酒店的逆袭之路：从濒临倒闭到一房难求的MBCT改造实录',
+      slug: 'hotel-renovation',
+      summary: '一家三十年历史酒店如何用1800万改造实现271% RevPAR提升？看MBCT如何用"微手术"激活沉睡资产。',
+      firstLine: '2022年春天，一家位于历史文化街区、始建于1993年的三十年历史酒店，正面临着严峻的生存危机。',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-19',
+      readTime: '15分钟',
+      tag: '案例研究',
+      featured: true,
+    },
+    {
+      id: -1,
+      type: 'article',
+      title: '酒店人房比：增效还是降本？',
+      slug: 'hotel-staff-ratio',
+      summary: '人房比越低越好吗？数据揭示行业真相：服务和情绪价值是通过人传递的，但成本控制又不得不做。',
+      firstLine: '人房比，这个被无数酒店业主、投资人、运营者挂在嘴边的数字，真的越低越好吗？',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-19',
+      readTime: '12分钟',
+      tag: '行业报告',
+    },
+    {
+      id: -2,
+      type: 'article',
+      title: '文化灵魂：为什么文旅产业正在经历一场静默革命？',
+      slug: 'culture-soul',
+      summary: '当"网红打卡地"成为标配，中国文旅行业正陷入前所未有的同质化困境。MBCT提出文化积淀理论。',
+      firstLine: '你有没有发现，现在的文旅项目越来越像了？',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-19',
+      readTime: '10分钟',
+      tag: '学术文章',
+    },
+    // 学术文章 - 原有文章
     {
       id: 1,
       type: 'article',
@@ -37,7 +75,6 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-04-16',
       readTime: '18分钟',
       tag: '学术文章',
-      featured: true,
     },
     {
       id: 2,
@@ -320,6 +357,18 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       readTime: '20分钟',
       tag: '行业报告',
     },
+    {
+      id: 111,
+      type: 'report',
+      title: '中国高端酒店正在"变慢"：一场针对效率焦虑的反叛',
+      slug: 'human-touch-service-revolution',
+      summary: '当酒店业卷完速度、硬件、价格，下一个战场在哪里？"人感服务"正在成为中国高端酒店的新赛道，从东方本源到当代诠释，从投资回报到失败教训的深度行业报告。',
+      firstLine: '凌晨两点，你落地一座陌生的城市。',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-20',
+      readTime: '15分钟',
+      tag: '行业报告',
+    },
   ]
 
   // 案例研究 - 新增1篇（设为热门）
@@ -396,6 +445,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-04-08',
       readTime: '18分钟',
       tag: '案例研究',
+    },
+    {
+      id: 207,
+      type: 'case',
+      title: '一家酒店如何用"人感管家"让你后悔只订一晚',
+      slug: 'human-touch-butler-case',
+      summary: '好的服务，是"看不见的服务"。从进门那一刻开始，这家酒店如何用东方待客之道，创造让人"后悔只订一晚"的体验？',
+      firstLine: '三年后，你再次踏入那家酒店。还没等你走到门口，门童已经迎了上来："周先生，好久不见。"',
+      author: 'MarvelBros - MBCT',
+      date: '2026-04-20',
+      readTime: '14分钟',
+      tag: '案例研究',
+      featured: true,
     },
   ]
 
@@ -537,7 +599,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BarChart3,
       title: ui.reportTitle,
       desc: ui.reportDesc,
-      count: 10,
+      count: 11,
       color: '#3b82f6',
     },
     {
@@ -545,7 +607,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BookOpen,
       title: ui.caseTitle,
       desc: ui.caseDesc,
-      count: 6,
+      count: 7,
       color: '#22c55e',
     },
     {
@@ -637,27 +699,27 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                   热门案例
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  {cases[0].title}
+                  {cases[6].title}
                 </h2>
                 <p className="text-gray-400 mb-6 text-lg">
-                  {cases[0].summary}
+                  {cases[6].summary}
                 </p>
                 <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-6">
                   <span className="flex items-center gap-2">
                     <User className="w-4 h-4" />
-                    {cases[0].author}
+                    {cases[6].author}
                   </span>
                   <span className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    {cases[0].date}
+                    {cases[6].date}
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    {cases[0].readTime}
+                    {cases[6].readTime}
                   </span>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/${encodeURIComponent(cases[0].slug)}`}
+                  href={`/${lang}/knowledge/${encodeURIComponent(cases[6].slug)}`}
                   className="inline-flex items-center px-6 py-3 bg-[#22c55e] text-white font-bold rounded-lg hover:bg-[#22c55e]/90 transition-all"
                 >
                   阅读全文
