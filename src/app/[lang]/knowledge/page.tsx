@@ -523,13 +523,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
+  // 动态计算各栏目文章数量
+  const academicCount = articles.filter(a => a.tag === '学术文章').length
+  const reportCount = articles.filter(a => a.tag === '行业报告').length
+  const caseCount = articles.filter(a => a.tag === '案例研究').length
+  const blogCount = articles.filter(a => a.tag === '博客').length
+
   const categories = [
     {
       id: 'academic',
       icon: FileText,
       title: ui.academicTitle,
       desc: ui.academicDesc,
-      count: 14,
+      count: academicCount,
       color: '#f59e0b',
     },
     {
@@ -537,7 +543,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BarChart3,
       title: ui.reportTitle,
       desc: ui.reportDesc,
-      count: 10,
+      count: reportCount,
       color: '#3b82f6',
     },
     {
@@ -545,7 +551,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BookOpen,
       title: ui.caseTitle,
       desc: ui.caseDesc,
-      count: 6,
+      count: caseCount,
       color: '#22c55e',
     },
     {
@@ -553,7 +559,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: Newspaper,
       title: ui.blogTitle,
       desc: ui.blogDesc,
-      count: 10,
+      count: blogCount,
       color: '#8b5cf6',
     },
   ]
