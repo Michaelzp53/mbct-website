@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://marvelbros.com'),
   title: {
     template: '%s | MBCT',
-    default: 'MBCT - AI赋能酒店数字化转型',
+    default: '迈创兄弟 - AI赋能酒店数字化转型',
   },
   description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
   keywords: '酒店管理, SaaS系统, AI数字化, 酒店咨询, 可行性分析, 运营诊断',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   other: {
-    'baidu-site-verification': 'codeva-6Cx3aeBaDo',
+    'baidu-site-verification': 'codeva-gQwRux4oUu',
   },
 }
 

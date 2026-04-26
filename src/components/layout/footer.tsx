@@ -41,7 +41,7 @@ export function Footer() {
               <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={70} height={70} className="object-contain" />
               <div>
                 <span className="font-bold text-xl">MBCT</span>
-                <p className="text-sm text-gray-400">Marvelbros Commercial Technology</p>
+                <p className="text-sm text-gray-400">迈创兄弟商业科技</p>
               </div>
             </div>
             <p className="text-gray-400 mb-6 max-w-sm">
@@ -109,7 +109,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-gray-400 text-sm">
-            © 2026 MBCT (Marvelbros Commercial Technology). All rights reserved.
+            © 2026 MBCT (迈创兄弟商业科技). All rights reserved.
           </div>
           <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-gray-400 hover:text-brand-gold transition-colors">

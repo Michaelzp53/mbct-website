@@ -8,7 +8,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: '2026年中国酒店业数字化转型深水区攻坚报告',
     summary: '中国酒店业的数字化转型已进入深水区。经过前期的信息化基础建设，行业普遍面临技术投入与业务价值错位、数据孤岛难以打通、组织变革滞后于技术变革等深层挑战。',
-    author: 'MarvelBros - MBCT',
+    author: '迈创兄弟',
     date: '2026-04-16',
     readTime: '22分钟',
     tag: '行业报告',
@@ -107,7 +107,7 @@ AI系统不仅能够呈现数据，更能够基于数据进行分析、预测、
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-gray-400 hover:text-[#3b82f6] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          {isZh ? '返回行业前沿' : 'Back to Industry Insights'}
+          {isZh ? '返回前沿导航' : 'Back to Industry Navigation'}
         </Link>
 
         <article className="bg-[#111827] rounded-2xl border border-gray-800 overflow-hidden">

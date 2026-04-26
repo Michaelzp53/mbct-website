@@ -113,7 +113,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {lang === 'zh' ? 'MBCT增长飞轮' : 'The MBCT Growth Flywheel'}
+              {lang === 'zh' ? '迈创兄弟增长飞轮' : 'The Marvelbros Growth Flywheel'}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-sm">
               {lang === 'zh' 
@@ -294,7 +294,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              {lang === 'zh' ? 'MBCT团队' : 'The MBCT Team'}
+              {lang === 'zh' ? '迈创兄弟团队' : 'The Marvelbros Team'}
             </h2>
             <p className="text-gray-400 text-sm">
               {lang === 'zh' ? '不是"顾问"，是并肩作战的战友' : 'Not just consultants—battle-tested partners'}

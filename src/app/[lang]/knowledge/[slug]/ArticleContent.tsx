@@ -1,8 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
-import RegisterModal from './RegisterModal'
 
 interface ArticleContentProps {
   content: string[]
@@ -11,17 +10,6 @@ interface ArticleContentProps {
 
 export default function ArticleContent({ content, articleTitle }: ArticleContentProps) {
   const [isExpanded, setIsExpanded] = useState(false)
-  const [showRegister, setShowRegister] = useState(false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  
-  // 检测登录状态
-  useEffect(() => {
-    const savedAccount = localStorage.getItem('mbct_account')
-    if (savedAccount) {
-      setIsLoggedIn(true)
-      setIsExpanded(true) // 已登录，直接解锁
-    }
-  }, [])
   
   // 如果内容少于等于6段，不需要折叠
   if (content.length <= 6) {
@@ -41,18 +29,6 @@ export default function ArticleContent({ content, articleTitle }: ArticleContent
   const fullContent = content.slice(3)
   
   const handleReadMore = () => {
-    // 如果已登录，直接展开
-    if (isLoggedIn) {
-      setIsExpanded(true)
-    } else {
-      // 未登录，显示注册弹窗
-      setShowRegister(true)
-    }
-  }
-
-  const handleRegisterSuccess = () => {
-    setShowRegister(false)
-    setIsLoggedIn(true)
     setIsExpanded(true)
   }
   
@@ -66,14 +42,6 @@ export default function ArticleContent({ content, articleTitle }: ArticleContent
           </p>
         ))}
       </div>
-      
-      {/* 注册弹窗 */}
-      <RegisterModal
-        isOpen={showRegister}
-        onClose={() => setShowRegister(false)}
-        onSuccess={handleRegisterSuccess}
-        articleTitle={articleTitle}
-      />
       
       {/* 折叠的完整内容 */}
       {!isExpanded && (

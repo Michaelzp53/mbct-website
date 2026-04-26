@@ -41,12 +41,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
   
   return {
-    title: 'MBCT MBCT - AI赋能酒店数字化转型',
+    title: 'MBCT 迈创兄弟 - AI赋能酒店数字化转型',
     description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
     keywords: '酒店管理, SaaS系统, AI数字化, 酒店咨询, 可行性分析, 运营诊断',
-    authors: [{ name: 'MBCTMBCT' }],
+    authors: [{ name: '迈创兄弟' }],
     openGraph: {
-      title: 'MBCT MBCT - AI赋能酒店数字化转型',
+      title: 'MBCT 迈创兄弟 - AI赋能酒店数字化转型',
       description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
       siteName: 'MBCT',
       locale: 'zh_CN',
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'MBCT MBCT - AI赋能酒店数字化转型',
+      title: 'MBCT 迈创兄弟 - AI赋能酒店数字化转型',
       description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
     },
     alternates: {

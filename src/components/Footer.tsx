@@ -25,7 +25,7 @@ export function Footer({ lang, dict }: FooterProps) {
   const resourceLinks = [
     { label: 'Case Studies', href: `/${lang}/cases` },
     { label: 'Industry Reports', href: `/${lang}/cases` },
-    { label: 'Knowledge Base', href: `/${lang}/knowledge` },
+    { label: 'Industry Navigation', href: `/${lang}/knowledge` },
     { label: 'Blog', href: `/${lang}/knowledge` },
   ]
 
@@ -39,7 +39,7 @@ export function Footer({ lang, dict }: FooterProps) {
               <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={58} height={58} className="object-contain" />
               <div>
                 <span className="font-bold text-xl">MBCT</span>
-                <p className="text-xs text-slate-400">Marvelbros Commercial Technology</p>
+                <p className="text-xs text-slate-400">迈创兄弟商业科技</p>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">

@@ -8,10 +8,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: '体验经济视域下酒店空间叙事的价值重构',
     summary: '在体验经济时代，酒店业正经历着从功能导向向情感导向的深刻转型。本文以空间叙事理论为分析框架，探讨酒店空间如何从单纯的功能容器转变为承载情感记忆与品牌价值的叙事载体。',
-    author: 'MarvelBros - MBCT',
+    author: '迈创兄弟',
     date: '2026-04-16',
     readTime: '18分钟',
-    tag: '行业洞察',
+    tag: '行业分析',
     content: `
 ## 摘要
 
@@ -76,7 +76,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-gray-400 hover:text-[#f59e0b] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          {isZh ? '返回行业前沿' : 'Back to Industry Insights'}
+          {isZh ? '返回前沿导航' : 'Back to Industry Navigation'}
         </Link>
 
         <article className="bg-[#111827] rounded-2xl border border-gray-800 overflow-hidden">

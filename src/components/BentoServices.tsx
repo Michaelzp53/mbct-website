@@ -92,7 +92,7 @@ export default function BentoServices({ lang }: BentoServicesProps) {
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             {isZh 
-              ? '从战略咨询到技术落地，从会员运营到收益优化，MBCT陪跑式服务助力酒店业绩增长'
+              ? '从战略咨询到技术落地，从会员运营到收益优化，迈创兄弟陪跑式服务助力酒店业绩增长'
               : 'From strategy consulting to tech implementation, from membership to revenue optimization—MBCT partnership services drive hotel growth'}
           </p>
         </div>

@@ -20,7 +20,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
-    { href: `/${lang}/knowledge`, label: lang === 'zh' ? '行业前沿' : 'Knowledge' },
+    { href: `/${lang}/knowledge`, label: lang === 'zh' ? '前沿导航' : 'Knowledge' },
     { href: `/${lang}/about`, label: nav.about },
     { href: `/${lang}/services`, label: nav.services },
     { href: `/${lang}/cases`, label: nav.cases },
@@ -37,7 +37,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
             <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={55} height={55} className="object-contain" />
             <div className="flex flex-col">
               <span className="font-bold text-white text-lg leading-none">MBCT</span>
-              <span className="text-xs text-gray-400">Marvelbros Commercial Technology</span>
+              <span className="text-xs text-gray-400">迈创兄弟商业科技</span>
             </div>
           </Link>
 

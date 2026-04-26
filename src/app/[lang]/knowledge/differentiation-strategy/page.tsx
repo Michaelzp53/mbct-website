@@ -8,7 +8,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: '酒店业"内卷"困局：差异化竞争的三个破局点',
     summary: '最近和几位酒店老板聊天，发现大家都有一个共同的焦虑：生意越来越难做了。降价吧，利润薄得像纸；不降价吧，客人被隔壁抢走。',
-    author: 'MarvelBros - MBCT',
+    author: '迈创兄弟',
     date: '2026-04-16',
     readTime: '3分钟',
     tag: '博客',
@@ -52,7 +52,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-gray-400 hover:text-[#8b5cf6] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          {isZh ? '返回行业前沿' : 'Back to Industry Insights'}
+          {isZh ? '返回前沿导航' : 'Back to Industry Navigation'}
         </Link>
 
         <article className="bg-[#111827] rounded-2xl border border-gray-800 overflow-hidden">

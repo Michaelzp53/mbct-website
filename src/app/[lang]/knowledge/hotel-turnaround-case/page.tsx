@@ -8,7 +8,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: '从亏损到溢价：一家区域酒店的体验重塑之路',
     summary: '2024年初，我接到了一位老朋友的电话。他在西南地区经营着一家开业十二年的商务酒店，曾经是当地的地标，但近年来陷入了严重的经营困境。',
-    author: 'MarvelBros - MBCT',
+    author: '迈创兄弟',
     date: '2026-04-16',
     readTime: '20分钟',
     tag: '案例研究',
@@ -73,7 +73,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-gray-400 hover:text-[#22c55e] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          {isZh ? '返回行业前沿' : 'Back to Industry Insights'}
+          {isZh ? '返回前沿导航' : 'Back to Industry Navigation'}
         </Link>
 
         <article className="bg-[#111827] rounded-2xl border border-gray-800 overflow-hidden">

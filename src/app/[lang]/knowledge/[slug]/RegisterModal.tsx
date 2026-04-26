@@ -69,7 +69,7 @@ export default function RegisterModal({ isOpen, onClose, onSuccess, articleTitle
               <Check className="w-8 h-8 text-green-500" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">注册成功！</h3>
-            <p className="text-gray-400 mb-4">欢迎成为MBCT会员</p>
+            <p className="text-gray-400 mb-4">欢迎成为迈创兄弟会员</p>
             <p className="text-[#f59e0b] text-sm">正在解锁文章...</p>
           </div>
         ) : (

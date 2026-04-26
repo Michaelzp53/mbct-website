@@ -11,7 +11,7 @@ export default function ArticlePage({ params }: { params: { lang: string } }) {
     author: 'MarvelBros - MBCT',
     date: '2026-04-19',
     readTime: '10分钟',
-    tag: '行业洞察',
+    tag: '学术文章',
     content: `
 ## 引言：你有没有发现，现在的文旅项目越来越像了？
 

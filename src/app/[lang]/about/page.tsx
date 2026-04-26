@@ -77,10 +77,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         {/* Hero */}
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            {lang === 'zh' ? '关于 MBCT' : 'About MBCT'}
+            {lang === 'zh' ? '关于 迈创兄弟' : 'About MBCT'}
           </h1>
           <p className="text-lg md:text-xl text-[#f59e0b]">
-            {lang === 'zh' ? 'MBCT有限公司' : 'Marvelbros Commercial Technology'}
+            {lang === 'zh' ? '迈创兄弟商业科技有限公司' : '迈创兄弟商业科技'}
           </p>
         </div>
 
@@ -151,7 +151,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         {/* Team Section */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-3">
-            {lang === 'zh' ? 'MBCT团队' : 'The MBCT Team'}
+            {lang === 'zh' ? '迈创兄弟团队' : 'The MBCT Team'}
           </h2>
           <p className="text-gray-400 text-center mb-8 text-sm md:text-base">
             {lang === 'zh' ? '不是"顾问"，是并肩作战的战友' : 'Not just consultants—battle-tested partners'}
