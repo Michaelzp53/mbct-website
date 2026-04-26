@@ -698,7 +698,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: FileText,
       title: ui.academicTitle,
       desc: ui.academicDesc,
-      count: 19,
+      count: 23,
       color: '#f59e0b',
     },
     {
@@ -706,7 +706,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BarChart3,
       title: ui.reportTitle,
       desc: ui.reportDesc,
-      count: 14,
+      count: 12,
       color: '#3b82f6',
     },
     {
@@ -714,7 +714,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BookOpen,
       title: ui.caseTitle,
       desc: ui.caseDesc,
-      count: 10,
+      count: 8,
       color: '#22c55e',
     },
     {
