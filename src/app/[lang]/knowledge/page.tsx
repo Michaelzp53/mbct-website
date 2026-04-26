@@ -10,14 +10,14 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     pageSubtitle: isZh
       ? '洞察行业趋势，分享实战经验，助力酒店数字化转型'
       : 'Insights into industry trends, sharing practical experience, empowering hotel digital transformation',
-    academicTitle: isZh ? '学术文章' : 'Academic Research',
-    academicDesc: isZh ? '学术研究论文，理论与实践结合' : 'Peer-reviewed research combining theory and practice',
+    academicTitle: isZh ? '行业洞察' : 'Industry Insights',
+    academicDesc: isZh ? '深度理论研究，发表在行业核心期刊' : 'In-depth theoretical research published in industry core journals',
     reportTitle: isZh ? '行业报告' : 'Industry Reports',
-    reportDesc: isZh ? '行业深度报告，实战案例分析' : 'In-depth industry analysis with real cases',
+    reportDesc: isZh ? '数据驱动的趋势分析与预测' : 'Data-driven trend analysis and forecasting',
     caseTitle: isZh ? '案例研究' : 'Case Studies',
     caseDesc: isZh ? '实战项目复盘，数据脱敏处理' : 'Real project retrospectives with anonymized data',
-    blogTitle: isZh ? '博客文章' : 'Blog',
-    blogDesc: isZh ? '最新趋势、方法论、实战经验' : 'Latest trends, methodologies, practical experience',
+    blogTitle: isZh ? '方法论' : 'Methodology',
+    blogDesc: isZh ? '系统方法论+执行SOP' : 'Systematic methodology + execution SOP',
     searchPlaceholder: isZh ? '搜索文章...' : 'Search articles...',
     readMore: isZh ? '阅读全文' : 'Read More',
     minRead: isZh ? '分钟' : 'min read',
@@ -47,7 +47,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       author: 'MarvelBros - MBCT',
       date: '2026-04-19',
       readTime: '12分钟',
-      tag: '学术文章',
+      tag: '行业洞察',
     },
     {
       id: 2,
@@ -59,7 +59,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       author: 'MarvelBros - MBCT',
       date: '2026-04-19',
       readTime: '10分钟',
-      tag: '学术文章',
+      tag: '行业洞察',
     },
     {
       id: 3,
@@ -71,7 +71,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       author: 'MarvelBros - MBCT',
       date: '2026-04-16',
       readTime: '18分钟',
-      tag: '学术文章',
+      tag: '行业洞察',
     },
   ]
 
@@ -143,7 +143,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       author: 'MarvelBros - MBCT',
       date: '2026-04-16',
       readTime: '3分钟',
-      tag: '博客',
+      tag: '数据报告',
     },
   ]
 

@@ -11,7 +11,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
     author: 'MarvelBros - MBCT',
     date: '2026-04-16',
     readTime: '18分钟',
-    tag: '学术文章',
+    tag: '行业洞察',
     content: `
 ## 摘要
 
