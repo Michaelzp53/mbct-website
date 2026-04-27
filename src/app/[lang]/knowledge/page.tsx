@@ -49,6 +49,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-04-27',
       readTime: '15分钟',
       tag: '行业报告',
+      featured: true,
     },
     {
       id: -13,
