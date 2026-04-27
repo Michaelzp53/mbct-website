@@ -26,6 +26,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: -11,
+      type: 'article',
+      title: '2026酒店业K型分化深水区：58.2%单体酒店面临出局的结构性真相',
+      slug: 'hotel-k-shaped-divergence-deepwater-2026',
+      summary: '中国饭店协会2026年报告核心解读：58.2%单体酒店面临出局，41.80%连锁化率背后的结构性分化。三条死亡路径、五个致命误区、三条生存法则。',
+      firstLine: '2026年4月23日，中国饭店协会正式发布《2026年中国酒店业发展报告》。',
+      author: '迈创兄弟',
+      date: '2026-04-27',
+      readTime: '18分钟',
+      tag: '行业分析',
+      featured: true,
+    },
+    {
       id: 0,
       type: 'article',
       title: '2026酒店业"K型分化"：高端领跑与低端淘汰的结构性真相',
