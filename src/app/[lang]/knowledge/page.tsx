@@ -26,6 +26,32 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: -20,
+      type: 'article',
+      title: '三十年单体老酒店重生记：180天如何让RevPAR翻番',
+      slug: 'hotel-180-day-revpar-double-case',
+      summary: '华中地区某四线城市三十年老牌酒店，入住率38%到62%，ADR 170元到218元，RevPAR从65元提升到138元。模块化改造、不停业、精准投入的真实案例。',
+      firstLine: '这是一个真实的故事。',
+      author: '迈创兄弟',
+      date: '2026-04-29',
+      readTime: '15分钟',
+      tag: '案例研究',
+      featured: true,
+    },
+    {
+      id: -21,
+      type: 'article',
+      title: '酒店数字化转型六年了，为什么多数酒店还在原地踏步？',
+      slug: 'hotel-digital-transformation-six-years-stuck',
+      summary: '数字化成熟度评分64分，93%有预算但不到四成跑通。三个常见坑：买装饰品、数据孤岛、技术债。破局之道：先诊断，再动手，只改最痛的一点。',
+      firstLine: '上周去西南一座三线城市出差，顺道看了看当地一家老牌三星级酒店。',
+      author: '迈创兄弟',
+      date: '2026-04-29',
+      readTime: '12分钟',
+      tag: '博客文章',
+      featured: false,
+    },
+    {
       id: -11,
       type: 'article',
       title: '2026酒店业K型分化深水区：58.2%单体酒店面临出局的结构性真相',
