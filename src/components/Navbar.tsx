@@ -42,13 +42,13 @@ export function Navbar({ lang, dict }: NavbarProps) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-0.5">
+          <nav className="hidden lg:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'px-2 py-2 text-sm font-medium text-gray-300 rounded-lg hover:bg-[#f59e0b]/10 hover:text-[#f59e0b] transition-colors whitespace-nowrap'
+                  'px-4 py-2 text-sm font-medium text-gray-300 rounded-lg hover:bg-[#f59e0b]/10 hover:text-[#f59e0b] transition-colors whitespace-nowrap'
                 )}
               >
                 {link.label}
@@ -57,7 +57,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
           </nav>
 
           {/* Right Side: Lang + Login */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-6">
             {/* Language Switch with icon */}
             <Link
               href={`/${lang === 'zh' ? 'en' : 'zh'}/`}
