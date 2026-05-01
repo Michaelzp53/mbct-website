@@ -43,14 +43,14 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </div>
           </Link>
 
-          {/* Desktop Nav - Hidden on xl, shown on 2xl */}
-          <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 flex-shrink-0">
+          {/* Desktop Nav - Hidden on lg, shown on xl */}
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-4 2xl:gap-6 flex-shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'px-3 py-2 lg:px-5 lg:py-2 text-sm lg:text-base font-bold text-[#a0a0a0] rounded-lg hover:bg-[#4285f4]/10 hover:text-[#4285f4] transition-colors whitespace-nowrap flex-shrink-0'
+                  'px-3 py-2 text-sm font-bold text-[#a0a0a0] rounded-lg hover:bg-[#4285f4]/10 hover:text-[#4285f4] transition-colors whitespace-nowrap flex-shrink-0'
                 )}
               >
                 {link.label}
@@ -59,14 +59,14 @@ export function Navbar({ lang, dict }: NavbarProps) {
           </nav>
 
           {/* Right Side: Lang + Login */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-8 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
             {/* Language Switch with icon */}
             <Link
               href={`/${lang === 'zh' ? 'en' : 'zh'}/`}
-              className="flex items-center gap-1.5 px-2 py-2 lg:px-3 lg:py-2 text-sm lg:text-base font-bold text-[#a0a0a0] hover:text-[#4285f4] transition-colors rounded-lg hover:bg-[#4285f4]/10 flex-shrink-0"
+              className="flex items-center gap-1.5 px-2 py-2 text-sm font-bold text-[#a0a0a0] hover:text-[#4285f4] transition-colors rounded-lg hover:bg-[#4285f4]/10 flex-shrink-0"
             >
               <Globe className="w-4 h-4" />
-              <span className="hidden sm:inline">{lang === 'zh' ? 'EN' : '中文'}</span>
+              <span className="hidden xl:inline">{lang === 'zh' ? 'EN' : '中文'}</span>
             </Link>
 
             {/* Login/Register with blue border */}
@@ -76,7 +76,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 className="border-[#4285f4] text-[#4285f4] hover:bg-[#4285f4] hover:text-[#ffffff] font-semibold text-xs sm:text-sm px-3 py-2 rounded-lg flex items-center gap-1.5 flex-shrink-0"
               >
                 <User className="w-4 h-4" />
-                <span className="hidden sm:inline">{nav.login}</span>
+                <span className="hidden xl:inline">{nav.login}</span>
               </Button>
             </Link>
           </div>
