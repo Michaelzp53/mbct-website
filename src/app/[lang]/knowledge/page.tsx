@@ -26,6 +26,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 314,
+      type: 'article',
+      title: '2026五一酒店消费报告：预订暴增158%背后的品质化红利',
+      slug: '2026-yulan-labour-day-hotel-report',
+      summary: '2026年五一假期酒店预订量同比暴增158%，更值得关注的是ADR同步上涨22%——量价齐升而非以价换量，揭示品质化红利的真正内涵。',
+      firstLine: '2026年五一假期，中国酒店业交出了一份超出预期的成绩单。',
+      author: 'MBCT机构研究中心',
+      date: '2026-05-01',
+      readTime: '15分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+    {
       id: -20,
       type: 'article',
       title: '三十年单体老酒店重生记：180天如何让RevPAR翻番',
@@ -516,19 +529,6 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-04-22',
       readTime: '20分钟',
       tag: '行业报告',
-    },
-    {
-      id: 314,
-      type: 'report',
-      title: '2026五一酒店消费报告：预订暴增158%背后的品质化红利',
-      slug: '2026-yulan-labour-day-hotel-report',
-      summary: '2026年五一假期酒店预订量同比暴增158%，更值得关注的是ADR同步上涨22%——量价齐升而非以价换量，揭示品质化红利的真正内涵。',
-      firstLine: '2026年五一假期，中国酒店业交出了一份超出预期的成绩单。',
-      author: 'MBCT机构研究中心',
-      date: '2026-05-01',
-      readTime: '15分钟',
-      tag: '行业报告',
-      featured: true,
     },
     {
       id: 316,
