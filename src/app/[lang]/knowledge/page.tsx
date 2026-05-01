@@ -782,7 +782,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
     {
       id: 314,
-      type: 'report',
+      type: 'article',
       title: '2026五一酒店消费报告：预订暴增158%背后的品质化红利',
       slug: '2026-yulan-labour-day-hotel-report',
       summary: '2026年五一假期酒店预订量同比暴增158%，更值得关注的是ADR同步上涨22%——量价齐升而非以价换量，揭示品质化红利的真正内涵。',
@@ -795,7 +795,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
     {
       id: 315,
-      type: 'blog',
+      type: 'article',
       title: '酒店投资人避坑指南：3个"伪热点"让多少投资人亏钱？',
       slug: 'hotel-investor-pitfalls-guide',
       summary: '下沉市场翻番增长、电竞酒店合规化红利、OTA高佣金认命论——三个看起来很美的伪热点，实际分析后发现都是坑。',
@@ -807,7 +807,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
     {
       id: 316,
-      type: 'report',
+      type: 'article',
       title: '本周酒店业5条热点速递（4.25-5.2）',
       slug: 'hotel-industry-weekly-0503',
       summary: '五一预订数据出炉确认品质化趋势；酒店人房比优化成行业热点；电竞酒店监管收紧；OTA佣金博弈持续。',
