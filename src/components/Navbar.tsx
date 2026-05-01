@@ -66,7 +66,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               className="flex items-center gap-1.5 px-2 py-2 text-sm font-bold text-[#a0a0a0] hover:text-[#4285f4] transition-colors rounded-lg hover:bg-[#4285f4]/10 flex-shrink-0"
             >
               <Globe className="w-4 h-4" />
-              <span className="hidden xl:inline">{lang === 'zh' ? 'EN' : '中文'}</span>
+              <span>{lang === 'zh' ? 'EN' : '中文'}</span>
             </Link>
 
             {/* Login/Register with blue border */}
@@ -76,7 +76,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 className="border-[#4285f4] text-[#4285f4] hover:bg-[#4285f4] hover:text-[#ffffff] font-semibold text-xs sm:text-sm px-3 py-2 rounded-lg flex items-center gap-1.5 flex-shrink-0"
               >
                 <User className="w-4 h-4" />
-                <span className="hidden xl:inline">{nav.login}</span>
+                <span className="hidden sm:inline">{nav.login}</span>
               </Button>
             </Link>
           </div>
