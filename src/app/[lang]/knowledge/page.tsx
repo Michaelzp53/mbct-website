@@ -7,7 +7,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   // 页面UI翻译
   const ui = {
-    pageTitle: isZh ? '前沿导航' : 'Industry Navigation',
+    pageTitle: isZh ? '行业动态' : 'Industry Navigation',
     pageSubtitle: isZh
       ? '洞察行业趋势,分享实战经验,助力酒店数字化转型'
       : 'Insights into industry trends, sharing practical experience, empowering hotel digital transformation',
@@ -25,19 +25,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   }
 
   const articles = [
-    {
-      id: -20,
-      type: 'article',
-      title: '三十年单体老酒店重生记：180天如何让RevPAR翻番',
-      slug: 'hotel-180-day-revpar-double-case',
-      summary: '华中地区某四线城市三十年老牌酒店，入住率38%到62%，ADR 170元到218元，RevPAR从65元提升到138元。模块化改造、不停业、精准投入的真实案例。',
-      firstLine: '这是一个真实的故事。',
-      author: '迈创兄弟',
-      date: '2026-04-29',
-      readTime: '15分钟',
-      tag: '案例研究',
-      featured: true,
-    },
+
     {
       id: -21,
       type: 'article',
@@ -196,30 +184,6 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       firstLine: '在体验经济时代,酒店业正经历着从功能导向向情感导向的深刻转型。',
       author: '迈创兄弟',
       date: '2026-04-16',
-      readTime: '18分钟',
-      tag: '行业分析',
-    },
-    {
-      id: 2,
-      type: 'article',
-      title: '酒店资产价值重估与品牌升级路径研究',
-      slug: '酒店资产价值重估与品牌升级路径研究',
-      summary: '存量时代,酒店如何通过品牌升级实现资产价值重估?三种品牌升级路径深度剖析。',
-      firstLine: '2024年深秋,我受邀前往西南某省会城市,诊断一家开业十五年的国际品牌五星级酒店。',
-      author: '迈创兄弟',
-      date: '2026-04-14',
-      readTime: '15分钟',
-      tag: '行业分析',
-    },
-    {
-      id: 2,
-      type: 'article',
-      title: '动态定价与收益管理系统对酒店GOP影响研究',
-      slug: '动态定价与收益管理系统对酒店GOP影响研究',
-      summary: 'AI动态定价如何提升酒店GOP?收益管理系统的原理、效果与实操指南。',
-      firstLine: '收益管理是酒店运营的核心,但传统收益管理依赖经验,AI正在改变这一切。',
-      author: '迈创兄弟',
-      date: '2026-04-14',
       readTime: '18分钟',
       tag: '行业分析',
     },
@@ -812,7 +776,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: FileText,
       title: ui.academicTitle,
       desc: ui.academicDesc,
-      count: 23,
+      count: 24,
       color: '#f59e0b',
     },
     {
@@ -820,7 +784,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BarChart3,
       title: ui.reportTitle,
       desc: ui.reportDesc,
-      count: 13,
+      count: 14,
       color: '#3b82f6',
     },
     {
@@ -836,7 +800,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: Newspaper,
       title: ui.blogTitle,
       desc: ui.blogDesc,
-      count: 12,
+      count: 13,
       color: '#8b5cf6',
     },
   ]
@@ -911,13 +875,13 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
           </div>
         </section>
 
-        {/* Featured Article - 热门文章 */}
+        {/* Featured Article - 热门话题 */}
         <section id="featured" className="mb-16">
           <div className="p-8 rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#0f172a] border border-[#f59e0b]/30">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="lg:w-2/3">
                 <span className="inline-block px-3 py-1 rounded-full bg-[#f59e0b]/20 text-[#f59e0b] text-sm font-medium mb-4">
-                  热门文章
+                  热门话题
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   {articles[0].title}
