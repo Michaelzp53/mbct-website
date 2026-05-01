@@ -71,7 +71,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const guaranteeLink = `/${lang}/guarantee`
   
   return (
-    <div className="min-h-screen bg-[#0f172a]">
+    <div className="min-h-screen bg-[#1a1a2e]">
       {/* Hero Section with Stats */}
       <HeroWithStats lang={lang} />
       
@@ -79,29 +79,29 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <BentoServices lang={lang} />
       
       {/* Pain Points Section */}
-      <section className="py-16 bg-[#111827]">
+      <section className="py-16 bg-[#16213e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/30 mb-6">
-              <Users className="w-4 h-4 text-[#3b82f6]" />
-              <span className="text-[#3b82f6] text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#4285f4]/10 border border-[#4285f4]/30 mb-6">
+              <Users className="w-4 h-4 text-[#4285f4]" />
+              <span className="text-[#4285f4] text-sm font-medium">
                 {lang === 'zh' ? '理解 · 共情 · 解决' : 'Understand · Empathize · Solve'}
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#e8e8e8] mb-4">
               {lang === 'zh' ? '我们懂你的困境' : 'We Understand Your Challenges'}
             </h2>
-            <p className="text-gray-400">
+            <p className="text-[#a0a0a0]">
               {lang === 'zh' ? '三种角色，三种痛点，一种解决方案' : 'Three Roles, Three Pain Points, One Solution'}
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {personas.map((persona, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-[#0f172a] border border-gray-800">
-                <h3 className="text-xl font-bold text-white mb-2">{persona.title}</h3>
-                <p className="text-[#f59e0b] mb-3 text-sm">{persona.subtitle}</p>
-                <p className="text-gray-400 text-sm italic leading-relaxed">"{persona.quote}"</p>
+              <div key={index} className="p-6 rounded-2xl bg-[#1a1a2e] border border-[rgba(255,255,255,0.05)] card-gemini">
+                <h3 className="text-xl font-bold text-[#e8e8e8] mb-2">{persona.title}</h3>
+                <p className="text-[#4285f4] mb-3 text-sm">{persona.subtitle}</p>
+                <p className="text-[#a0a0a0] text-sm italic leading-relaxed">"{persona.quote}"</p>
               </div>
             ))}
           </div>
@@ -109,13 +109,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       {/* Growth Flywheel Section */}
-      <section className="py-16 bg-[#0f172a]">
+      <section className="py-16 bg-[#1a1a2e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#e8e8e8] mb-4">
               {lang === 'zh' ? '迈创兄弟增长飞轮' : 'The Marvelbros Growth Flywheel'}
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-sm">
+            <p className="text-[#a0a0a0] max-w-2xl mx-auto text-sm">
               {lang === 'zh' 
                 ? '从洞察到规模化，构建酒店增长的完整闭环'
                 : 'From insight to scale—building the complete hotel growth loop'}
@@ -123,68 +123,68 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#3b82f620' }}>
-                <Target className="w-5 h-5" style={{ color: '#3b82f6' }} />
+            <div className="p-5 rounded-xl bg-[#16213e] border border-[rgba(255,255,255,0.05)] card-gemini">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#4285f420' }}>
+                <Target className="w-5 h-5" style={{ color: '#4285f4' }} />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">
+              <h3 className="text-lg font-bold text-[#e8e8e8] mb-1">
                 {lang === 'zh' ? '洞察模块' : 'Insight Module'}
               </h3>
-              <p className="text-xs text-[#f59e0b] mb-2">
+              <p className="text-xs text-[#4285f4] mb-2">
                 {lang === 'zh' ? '科学决策层' : 'Data-Driven'}
               </p>
-              <p className="text-gray-400 text-xs">
+              <p className="text-[#a0a0a0] text-xs">
                 {lang === 'zh' 
-                  ? 'AI可行性研究、诊断，让决策有数据支撑'
+                  ? 'AI 可行性研究、诊断，让决策有数据支撑'
                   : 'AI feasibility studies and diagnostics'}
               </p>
             </div>
             
-            <div className="p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#22c55e20' }}>
-                <TrendingUp className="w-5 h-5" style={{ color: '#22c55e' }} />
+            <div className="p-5 rounded-xl bg-[#16213e] border border-[rgba(255,255,255,0.05)] card-gemini">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#34a85320' }}>
+                <TrendingUp className="w-5 h-5" style={{ color: '#34a853' }} />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">
+              <h3 className="text-lg font-bold text-[#e8e8e8] mb-1">
                 {lang === 'zh' ? '增长引擎' : 'Growth Engine'}
               </h3>
-              <p className="text-xs text-[#f59e0b] mb-2">
+              <p className="text-xs text-[#4285f4] mb-2">
                 {lang === 'zh' ? '系统驱动层' : 'System-Driven'}
               </p>
-              <p className="text-gray-400 text-xs">
+              <p className="text-[#a0a0a0] text-xs">
                 {lang === 'zh'
-                  ? 'AI管理、私域运营，数据驱动增长'
+                  ? 'AI 管理、私域运营，数据驱动增长'
                   : 'AI PMS and private domain ops'}
               </p>
             </div>
             
-            <div className="p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all">
+            <div className="p-5 rounded-xl bg-[#16213e] border border-[rgba(255,255,255,0.05)] card-gemini">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#f59e0b20' }}>
                 <Shield className="w-5 h-5" style={{ color: '#f59e0b' }} />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">
+              <h3 className="text-lg font-bold text-[#e8e8e8] mb-1">
                 {lang === 'zh' ? '规模化模块' : 'Scale Module'}
               </h3>
-              <p className="text-xs text-[#f59e0b] mb-2">
+              <p className="text-xs text-[#4285f4] mb-2">
                 {lang === 'zh' ? '资产沉淀层' : 'Asset Building'}
               </p>
-              <p className="text-gray-400 text-xs">
+              <p className="text-[#a0a0a0] text-xs">
                 {lang === 'zh'
                   ? '品牌创建、效果跟进，增长能力资产化'
                   : 'Brand building and growth assets'}
               </p>
             </div>
             
-            <div className="p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#8b5cf620' }}>
-                <Users className="w-5 h-5" style={{ color: '#8b5cf6' }} />
+            <div className="p-5 rounded-xl bg-[#16213e] border border-[rgba(255,255,255,0.05)] card-gemini">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#764ba220' }}>
+                <Users className="w-5 h-5" style={{ color: '#764ba2' }} />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">
+              <h3 className="text-lg font-bold text-[#e8e8e8] mb-1">
                 {lang === 'zh' ? '支撑服务' : 'Support'}
               </h3>
-              <p className="text-xs text-[#f59e0b] mb-2">
+              <p className="text-xs text-[#4285f4] mb-2">
                 {lang === 'zh' ? '基础服务层' : 'Foundation'}
               </p>
-              <p className="text-gray-400 text-xs">
+              <p className="text-[#a0a0a0] text-xs">
                 {lang === 'zh'
                   ? '顾问、融资、行业研究，全周期陪伴'
                   : 'Consulting, financing, research'}
@@ -195,7 +195,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       {/* Results Section */}
-      <section className="py-16 bg-[#111827]">
+      <section className="py-16 bg-[#16213e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
@@ -205,10 +205,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   {lang === 'zh' ? '效果跟进' : 'Performance Tracking'}
                 </span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#e8e8e8] mb-4">
                 {lang === 'zh' ? '以结果为尺，量增长之路' : 'Measured by Results, Growth by Design'}
               </h2>
-              <p className="text-gray-300 mb-5 text-sm">
+              <p className="text-[#a0a0a0] mb-5 text-sm">
                 {lang === 'zh'
                   ? '真正的伙伴关系建立在共同的成果之上。当您的酒店增长时，我们才值得被认可。'
                   : 'True partnerships are built on shared outcomes. We only earn our worth when your hotel grows.'}
@@ -217,25 +217,25 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div className="space-y-3 mb-5">
                 <div className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#0f172a] text-xs font-bold">1</span>
+                    <span className="text-[#1a1a2e] text-xs font-bold">1</span>
                   </div>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-[#a0a0a0] text-sm">
                     {lang === 'zh' ? '诊断阶段：免费/低价，确诊增长机会' : 'Diagnosis: Free/low cost to identify opportunities'}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#0f172a] text-xs font-bold">2</span>
+                    <span className="text-[#1a1a2e] text-xs font-bold">2</span>
                   </div>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-[#a0a0a0] text-sm">
                     {lang === 'zh' ? '方案阶段：成本价，客户认可机会' : 'Solution: Cost-plus—only succeeds if you succeed'}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-[#0f172a] text-xs font-bold">3</span>
+                    <span className="text-[#1a1a2e] text-xs font-bold">3</span>
                   </div>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-[#a0a0a0] text-sm">
                     {lang === 'zh' ? '承诺可量化的结果，直到达标为止' : 'We commit to measurable results'}
                   </p>
                 </div>
@@ -246,41 +246,41 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </Link>
             </div>
             
-            <div className="bg-[#0f172a] rounded-xl p-6 border border-gray-800">
-              <h3 className="text-lg font-bold text-white mb-4">
+            <div className="bg-[#1a1a2e] rounded-xl p-6 border border-[rgba(255,255,255,0.05)]">
+              <h3 className="text-lg font-bold text-[#e8e8e8] mb-4">
                 {lang === 'zh' ? '评估模式示例' : 'Performance Model Example'}
               </h3>
               <div className="space-y-3">
-                <div className="flex justify-between items-center py-2 border-b border-gray-800">
-                  <span className="text-gray-400 text-sm">
+                <div className="flex justify-between items-center py-2 border-b border-[rgba(255,255,255,0.05)]">
+                  <span className="text-[#a0a0a0] text-sm">
                     {lang === 'zh' ? '结果导向目标' : 'Result Goals'}
                   </span>
-                  <span className="text-white font-medium text-sm">
-                    {lang === 'zh' ? '年增长6-15%' : 'Annual +6-15%'}
+                  <span className="text-[#e8e8e8] font-medium text-sm">
+                    {lang === 'zh' ? '年增长 6-15%' : 'Annual +6-15%'}
                   </span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-800">
-                  <span className="text-gray-400 text-sm">
+                <div className="flex justify-between items-center py-2 border-b border-[rgba(255,255,255,0.05)]">
+                  <span className="text-[#a0a0a0] text-sm">
                     {lang === 'zh' ? '基础服务费' : 'Base Fee'}
                   </span>
-                  <span className="text-white font-medium text-sm">
+                  <span className="text-[#e8e8e8] font-medium text-sm">
                     {lang === 'zh' ? '按项目收费' : 'Project-based'}
                   </span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-800">
-                  <span className="text-gray-400 text-sm">
+                <div className="flex justify-between items-center py-2 border-b border-[rgba(255,255,255,0.05)]">
+                  <span className="text-[#a0a0a0] text-sm">
                     {lang === 'zh' ? '超额奖励' : 'Bonus'}
                   </span>
                   <span className="text-[#f59e0b] font-medium text-sm">
-                    {lang === 'zh' ? '超出加收20%' : '+20% if exceeded'}
+                    {lang === 'zh' ? '超出加收 20%' : '+20% if exceeded'}
                   </span>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="text-gray-400 text-sm">
+                  <span className="text-[#a0a0a0] text-sm">
                     {lang === 'zh' ? '未达标' : 'If missed'}
                   </span>
-                  <span className="text-green-400 font-medium text-sm">
-                    {lang === 'zh' ? '仅收50%！' : 'Only 50% fee!'}
+                  <span className="text-[#34a853] font-medium text-sm">
+                    {lang === 'zh' ? '仅收 50%！' : 'Only 50% fee!'}
                   </span>
                 </div>
               </div>
@@ -290,28 +290,28 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-[#0f172a]">
+      <section className="py-16 bg-[#1a1a2e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#e8e8e8] mb-2">
               {lang === 'zh' ? '迈创兄弟团队' : 'The Marvelbros Team'}
             </h2>
-            <p className="text-gray-400 text-sm">
+            <p className="text-[#a0a0a0] text-sm">
               {lang === 'zh' ? '不是"顾问"，是并肩作战的战友' : 'Not just consultants—battle-tested partners'}
             </p>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {team.map((member, index) => (
-              <div key={index} className="p-4 rounded-xl bg-[#111827] border border-gray-800 text-center">
+              <div key={index} className="p-4 rounded-xl bg-[#16213e] border border-[rgba(255,255,255,0.05)] card-gemini text-center">
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 text-xl font-bold"
                   style={{ backgroundColor: `${member.color}20`, color: member.color }}
                 >
                   {member.letter}
                 </div>
-                <h3 className="text-sm font-bold text-white mb-1">{member.title}</h3>
-                <p className="text-gray-400 text-xs">{member.desc}</p>
+                <h3 className="text-sm font-bold text-[#e8e8e8] mb-1">{member.title}</h3>
+                <p className="text-[#a0a0a0] text-xs">{member.desc}</p>
               </div>
             ))}
           </div>
@@ -319,19 +319,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
+      <section className="py-16 bg-gradient-to-br from-[#1a1a2e] via-[#1f2944] to-[#1a1a2e]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#e8e8e8] mb-4">
             {lang === 'zh' ? '准备好让酒店增长了吗？' : 'Ready to Grow Your Hotel?'}
           </h2>
-          <p className="text-gray-300 mb-6 text-sm">
+          <p className="text-[#a0a0a0] mb-6 text-sm">
             {lang === 'zh'
               ? '预约一次免费的增长诊断'
               : 'Book a free growth diagnosis'}
           </p>
           <Link
             href={ctaLink}
-            className="inline-flex items-center justify-center px-6 py-3 bg-[#f59e0b] text-[#0f172a] font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all hover:scale-105"
+            className="inline-flex items-center justify-center px-6 py-3 btn-gradient-primary font-bold rounded-lg"
           >
             {lang === 'zh' ? '立即预约诊断' : 'Book Free Diagnosis'}
             <ArrowRight className="ml-2 w-4 h-4" />

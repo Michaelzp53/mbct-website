@@ -917,7 +917,8 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                 </div>
                 <Link
                   href={`/${lang}/knowledge/${encodeURIComponent(articles[0].slug)}`}
-                  className="inline-flex items-center px-6 py-3 bg-[#f59e0b] text-white font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all"
+                  className="inline-flex items-center px-6 py-3 text-white font-bold rounded-lg transition-all"
+                  style={{ background: 'linear-gradient(135deg, #4285f4, #34a853, #fbbc04, #ea4335)' }}
                 >
                   阅读全文
                   <ArrowRight className="ml-2 w-4 h-4" />

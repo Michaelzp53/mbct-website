@@ -29,26 +29,28 @@ export function Navbar({ lang, dict }: NavbarProps) {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#f59e0b]/30 bg-[#0f172a]/95 backdrop-blur supports-[backdrop-filter]:bg-[#0f172a]/90">
+    <header className="sticky top-0 z-50 w-full border-b border-[rgba(255,255,255,0.05)] bg-[#1a1a2e]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1a1a2e]/90">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href={`/${lang}/`} className="flex items-center gap-3">
-            <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={55} height={55} className="object-contain" />
-            <div className="flex flex-col">
-              <span className="font-bold text-white text-lg leading-none">MBCT</span>
-              <span className="text-xs text-gray-400">迈创兄弟商业科技</span>
+          <Link href={`/${lang}/`} className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
+            <Image src="/logo-new.png" alt="MBCT Logo" width={48} height={48} className="object-contain flex-shrink-0" />
+            <div className="flex flex-col min-w-0">
+              <span className="font-bold text-white text-base lg:text-lg leading-none">MBCT</span>
+              <span className="text-[10px] sm:text-xs text-gradient-rainbow font-medium truncate max-w-[120px] sm:max-w-[160px] lg:max-w-none">
+                {lang === 'zh' ? '迈创兄弟商业科技' : 'MarvelBros C&T'}
+              </span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          {/* Desktop Nav - Hidden on xl, shown on 2xl */}
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 flex-shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'px-5 py-2 text-sm font-medium text-gray-300 rounded-lg hover:bg-[#f59e0b]/10 hover:text-[#f59e0b] transition-colors whitespace-nowrap'
+                  'px-3 py-2 lg:px-5 lg:py-2 text-sm lg:text-base font-bold text-[#a0a0a0] rounded-lg hover:bg-[#4285f4]/10 hover:text-[#4285f4] transition-colors whitespace-nowrap flex-shrink-0'
                 )}
               >
                 {link.label}
@@ -57,39 +59,39 @@ export function Navbar({ lang, dict }: NavbarProps) {
           </nav>
 
           {/* Right Side: Lang + Login */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8 flex-shrink-0">
             {/* Language Switch with icon */}
             <Link
               href={`/${lang === 'zh' ? 'en' : 'zh'}/`}
-              className="flex items-center gap-1.5 px-3 py-2 text-sm text-gray-400 hover:text-[#f59e0b] transition-colors rounded-lg hover:bg-[#f59e0b]/10"
+              className="flex items-center gap-1.5 px-2 py-2 lg:px-3 lg:py-2 text-sm lg:text-base font-bold text-[#a0a0a0] hover:text-[#4285f4] transition-colors rounded-lg hover:bg-[#4285f4]/10 flex-shrink-0"
             >
               <Globe className="w-4 h-4" />
-              <span>{lang === 'zh' ? 'EN' : '中文'}</span>
+              <span className="hidden sm:inline">{lang === 'zh' ? 'EN' : '中文'}</span>
             </Link>
 
-            {/* Login/Register with gold border */}
+            {/* Login/Register with blue border */}
             <Link href={`/${lang}/login`}>
               <Button
                 variant="outline"
-                className="border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-[#0f172a] font-semibold text-sm px-4 py-2 rounded-lg flex items-center gap-1.5"
+                className="border-[#4285f4] text-[#4285f4] hover:bg-[#4285f4] hover:text-[#ffffff] font-semibold text-xs sm:text-sm px-3 py-2 rounded-lg flex items-center gap-1.5 flex-shrink-0"
               >
                 <User className="w-4 h-4" />
-                {nav.login}
+                <span className="hidden sm:inline">{nav.login}</span>
               </Button>
             </Link>
           </div>
 
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger className="md:hidden" render={<Button variant="ghost" size="icon" className="text-gray-300 hover:text-white"><Menu className="h-5 w-5" /></Button>} />
-            <SheetContent side="right" className="w-[300px] p-0 bg-[#0f172a] border-l border-[#f59e0b]/30">
+            <SheetTrigger className="md:hidden" render={<Button variant="ghost" size="icon" className="text-[#a0a0a0] hover:text-white"><Menu className="h-5 w-5" /></Button>} />
+            <SheetContent side="right" className="w-[300px] p-0 bg-[#1a1a2e] border-l border-[rgba(255,255,255,0.05)]">
               <div className="flex flex-col gap-1 p-6">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
-                    <Image src="/MBCT_final_gold.png" alt="MBCT Logo" width={44} height={44} className="object-contain" />
+                    <Image src="/logo-new.png" alt="MBCT Logo" width={44} height={44} className="object-contain" />
                     <span className="font-bold text-white">MBCT</span>
                   </div>
-                  <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-gray-400">
+                  <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-[#a0a0a0]">
                     <X className="h-5 w-5" />
                   </Button>
                 </div>
@@ -99,17 +101,17 @@ export function Navbar({ lang, dict }: NavbarProps) {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="px-3 py-3 text-base font-medium text-gray-300 rounded-lg hover:bg-[#f59e0b]/10 hover:text-[#f59e0b] transition-colors"
+                    className="px-3 py-3 text-base font-medium text-[#a0a0a0] rounded-lg hover:bg-[#4285f4]/10 hover:text-[#4285f4] transition-colors"
                   >
                     {link.label}
                   </Link>
                 ))}
 
-                <div className="mt-6 pt-6 border-t border-gray-800 space-y-3">
+                <div className="mt-6 pt-6 border-t border-[rgba(255,255,255,0.05)] space-y-3">
                   <Link
                     href={`/${lang === 'zh' ? 'en' : 'zh'}/`}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-2 px-3 py-2 text-gray-400 hover:text-[#f59e0b]"
+                    className="flex items-center gap-2 px-3 py-2 text-[#a0a0a0] hover:text-[#4285f4]"
                   >
                     <Globe className="w-4 h-4" />
                     {lang === 'zh' ? 'EN' : '中文'}
@@ -118,7 +120,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                   <Link href={`/${lang}/login`} onClick={() => setIsOpen(false)}>
                     <Button
                       variant="outline"
-                      className="w-full border-[#f59e0b] text-[#f59e0b] hover:bg-[#f59e0b] hover:text-[#0f172a]"
+                      className="w-full border-[#4285f4] text-[#4285f4] hover:bg-[#4285f4] hover:text-[#ffffff]"
                     >
                       <User className="w-4 h-4 mr-2" />
                       {nav.login}

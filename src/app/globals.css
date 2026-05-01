@@ -4,34 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* MBCT Brand Colors */
-  --deep-space: #0f172a;
+  /* MBCT Brand Colors - Gemini Style */
+  --deep-space: #1a1a2e;
   --star-gold: #f59e0b;
-  --electric-blue: #3b82f6;
-  --growth-green: #22c55e;
-  --night-black: #111827;
-  --moon-white: #f8fafc;
+  --electric-blue: #4285f4;
+  --growth-green: #34a853;
+  --night-black: #16213e;
+  --moon-white: #e8e8e8;
   
-  /* Theme variables */
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --card: #111827;
-  --card-foreground: #f8fafc;
-  --popover: #111827;
-  --popover-foreground: #f8fafc;
-  --primary: #f59e0b;
-  --primary-foreground: #0f172a;
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #f59e0b;
-  --accent-foreground: #0f172a;
-  --destructive: #ef4444;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #f59e0b;
+  /* Gemini-inspired theme variables */
+  --background: #1a1a2e;
+  --background-alt: #16213e;
+  --foreground: #e8e8e8;
+  --card: #16213e;
+  --card-foreground: #e8e8e8;
+  --popover: #16213e;
+  --popover-foreground: #e8e8e8;
+  --primary: #4285f4;
+  --primary-foreground: #ffffff;
+  --secondary: #1f2944;
+  --secondary-foreground: #e8e8e8;
+  --muted: #1f2944;
+  --muted-foreground: #a0a0a0;
+  --accent: #4285f4;
+  --accent-foreground: #ffffff;
+  --destructive: #ea4335;
+  --border: rgba(255, 255, 255, 0.05);
+  --input: #1f2944;
+  --ring: #4285f4;
   --radius: 0.625rem;
+  
+  /* Gradient definitions */
+  --gradient-primary: linear-gradient(135deg, #4285f4 0%, #764ba2 100%);
+  --gradient-google: linear-gradient(90deg, #4285f4, #34a853, #fbbc04, #ea4335);
+  --gradient-text: linear-gradient(135deg, #e8e8e8 0%, #a8c0ff 100%);
 }
 
 @theme inline {
@@ -79,7 +85,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-[#0f172a] text-[#f8fafc] antialiased;
+    @apply bg-[#1a1a2e] text-[#e8e8e8] antialiased;
     font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
@@ -111,11 +117,59 @@
   background-clip: text;
 }
 
+/* Gemini gradient text - blue-gray with silver */
+.text-gradient-gemini {
+  background: linear-gradient(135deg, #e8e8e8 0%, #a8c0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary gradient button */
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #4285f4 0%, #764ba2 100%);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(66, 133, 244, 0.4);
+}
+
 /* Glass effect */
 .glass {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(26, 26, 46, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gemini card hover effect */
+.card-gemini {
+  background: #16213e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-gemini:hover {
+  border-color: rgba(102, 126, 234, 0.3);
+  background: rgba(102, 126, 234, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Rainbow gradient for MBCT text - Gemini style */
+.text-gradient-rainbow {
+  background: linear-gradient(90deg, #4285f4, #34a853, #fbbc04, #ea4335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% 100%;
+  animation: rainbow-shift 3s ease infinite;
+}
+
+@keyframes rainbow-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 /* Smooth scroll */

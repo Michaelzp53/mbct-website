@@ -27,11 +27,11 @@ export function ContactForm({ dict }: ContactFormProps) {
     width: '100%',
     height: '42px',
     borderRadius: '8px',
-    border: '1px solid #cbd5e1',
+    border: '1px solid rgba(255,255,255,0.1)',
     padding: '0 12px',
     fontSize: '14px',
-    backgroundColor: '#ffffff',
-    color: '#0f172a',
+    backgroundColor: '#16213e',
+    color: '#e8e8e8',
     outline: 'none',
     transition: 'border-color 0.2s, box-shadow 0.2s',
   } as React.CSSProperties
@@ -49,38 +49,38 @@ export function ContactForm({ dict }: ContactFormProps) {
   }
 
   return (
-    <div style={{ backgroundColor: '#ffffff', borderRadius: '16px', border: '1px solid #e2e8f0', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
+    <div style={{ backgroundColor: '#16213e', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>
       {status === 'success' ? (
         <div style={{ textAlign: 'center', paddingTop: '48px', paddingBottom: '48px' }}>
-          <CheckCircle style={{ width: '64px', height: '64px', color: '#22c55e', margin: '0 auto 16px' }} />
-          <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#0f172a' }}>{dict.contact.form.success}</h3>
+          <CheckCircle style={{ width: '64px', height: '64px', color: '#34a853', margin: '0 auto 16px' }} />
+          <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#e8e8e8' }}>{dict.contact.form.success}</h3>
         </div>
       ) : (
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           {/* Name + Phone */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.name}</label>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#a0a0a0', marginBottom: '6px' }}>{dict.contact.form.name}</label>
               <input
                 type="text"
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 style={inputStyle}
-                onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
-                onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
+                onFocus={(e) => { e.target.style.borderColor = '#4285f4'; e.target.style.boxShadow = '0 0 0 2px rgba(66,133,244,0.2)'; }}
+                onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.phone}</label>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#a0a0a0', marginBottom: '6px' }}>{dict.contact.form.phone}</label>
               <input
                 type="tel"
                 required
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 style={inputStyle}
-                onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
-                onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
+                onFocus={(e) => { e.target.style.borderColor = '#4285f4'; e.target.style.boxShadow = '0 0 0 2px rgba(66,133,244,0.2)'; }}
+                onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
           </div>
@@ -88,40 +88,40 @@ export function ContactForm({ dict }: ContactFormProps) {
           {/* Email + Company */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.email}</label>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#a0a0a0', marginBottom: '6px' }}>{dict.contact.form.email}</label>
               <input
                 type="email"
                 required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 style={inputStyle}
-                onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
-                onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
+                onFocus={(e) => { e.target.style.borderColor = '#4285f4'; e.target.style.boxShadow = '0 0 0 2px rgba(66,133,244,0.2)'; }}
+                onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.company}</label>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#a0a0a0', marginBottom: '6px' }}>{dict.contact.form.company}</label>
               <input
                 type="text"
                 value={form.company}
                 onChange={(e) => setForm({ ...form, company: e.target.value })}
                 style={inputStyle}
-                onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
-                onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
+                onFocus={(e) => { e.target.style.borderColor = '#4285f4'; e.target.style.boxShadow = '0 0 0 2px rgba(66,133,244,0.2)'; }}
+                onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'none'; }}
               />
             </div>
           </div>
 
           {/* Service dropdown */}
           <div>
-            <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.service}</label>
+            <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#a0a0a0', marginBottom: '6px' }}>{dict.contact.form.service}</label>
             <select
               required
               value={form.service}
               onChange={(e) => setForm({ ...form, service: e.target.value })}
               style={selectStyle}
-              onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
-              onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
+              onFocus={(e) => { e.target.style.borderColor = '#4285f4'; e.target.style.boxShadow = '0 0 0 2px rgba(66,133,244,0.2)'; }}
+              onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'none'; }}
             >
               <option value="">{dict.contact.form.servicePlaceholder}</option>
               {dict.contact.services.map((s) => (
@@ -132,7 +132,7 @@ export function ContactForm({ dict }: ContactFormProps) {
 
           {/* Message */}
           <div>
-            <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#334155', marginBottom: '6px' }}>{dict.contact.form.message}</label>
+            <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#a0a0a0', marginBottom: '6px' }}>{dict.contact.form.message}</label>
             <textarea
               required
               rows={4}
@@ -140,8 +140,8 @@ export function ContactForm({ dict }: ContactFormProps) {
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               placeholder={dict.contact.form.messagePlaceholder}
               style={textareaStyle}
-              onFocus={(e) => { e.target.style.borderColor = '#0f172a'; e.target.style.boxShadow = '0 0 0 2px rgba(15,23,42,0.1)'; }}
-              onBlur={(e) => { e.target.style.borderColor = '#cbd5e1'; e.target.style.boxShadow = 'none'; }}
+              onFocus={(e) => { e.target.style.borderColor = '#4285f4'; e.target.style.boxShadow = '0 0 0 2px rgba(66,133,244,0.2)'; }}
+              onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'none'; }}
             />
           </div>
 
@@ -153,7 +153,7 @@ export function ContactForm({ dict }: ContactFormProps) {
               onChange={(e) => setPrivacy(e.target.checked)}
               style={{ marginTop: '2px', width: '16px', height: '16px', cursor: 'pointer' }}
             />
-            <span style={{ fontSize: '14px', color: '#475569', lineHeight: 1.5 }}>{dict.contact.form.privacy}</span>
+            <span style={{ fontSize: '14px', color: '#a0a0a0', lineHeight: 1.5 }}>{dict.contact.form.privacy}</span>
           </label>
 
           {/* Submit */}
@@ -163,13 +163,14 @@ export function ContactForm({ dict }: ContactFormProps) {
             style={{
               width: '100%',
               padding: '12px 24px',
-              backgroundColor: !privacy ? '#d4d4d4' : '#f59e0b',
-              color: '#0f172a',
+              backgroundColor: !privacy ? '#334155' : 'linear-gradient(135deg, #4285f4 0%, #764ba2 100%)',
+              backgroundImage: !privacy ? 'none' : 'linear-gradient(135deg, #4285f4 0%, #764ba2 100%)',
+              color: '#ffffff',
               fontWeight: 600,
               borderRadius: '8px',
               border: 'none',
               cursor: !privacy ? 'not-allowed' : 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'background-color 0.2s, transform 0.2s',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
