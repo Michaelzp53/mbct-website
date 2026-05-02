@@ -4,6 +4,7 @@ import ArticleContent from './ArticleContent'
 import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ArticleInteractions from '@/components/interactions/ArticleInteractions'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 // 完整文章内容数据
 const articlesData: Record<string, {
@@ -1634,28 +1635,31 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#0f172a] py-24">
+    <div className="min-h-screen bg-background py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link
-          href={`/${lang}/knowledge`}
-          className="inline-flex items-center gap-2 text-[#f59e0b] hover:text-[#f59e0b]/80 mb-8 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          返回前沿导航
-        </Link>
+        <div className="flex items-center justify-between mb-8">
+          <Link
+            href={`/${lang}/knowledge`}
+            className="inline-flex items-center gap-2 text-[#f59e0b] hover:text-[#f59e0b]/80 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            返回前沿导航
+          </Link>
+          <ThemeToggle lang={lang} />
+        </div>
 
-        <article className="bg-[#111827] rounded-2xl border border-gray-800 p-8 md:p-12">
+        <article className="bg-card rounded-2xl border border-border p-8 md:p-12">
           <div className="mb-6">
             <span className="px-3 py-1 rounded-full bg-[#f59e0b]/20 text-[#f59e0b] text-sm font-medium">
               {article.tag}
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-card-foreground mb-6">
             {article.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400 mb-8 pb-8 border-b border-gray-800">
+          <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
             <span className="flex items-center gap-2">
               <User className="w-4 h-4" />
               {article.author}
@@ -1678,16 +1682,16 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <ArticleContent content={article.content} articleTitle={article.title} />
 
           {/* Newsletter 订阅 */}
-          <NewsletterSubscribe />
+          <NewsletterSubscribe lang={lang} />
           {/* 评论功能暂时隐藏 - 等待GitHub Discussions配置完成 */}
           <ArticleComments slug={slug} />
 
-          <div className="mt-12 pt-8 border-t border-gray-800 text-center">
+          <div className="mt-12 pt-8 border-t border-border text-center">
             <div className="flex items-center justify-center gap-2 text-[#f59e0b] mb-4">
               <BookOpen className="w-5 h-5" />
               <span className="font-medium">迈创兄弟</span>
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-muted-foreground text-sm">
               版权所有 · 欢迎转发，但请注明出处
             </p>
           </div>

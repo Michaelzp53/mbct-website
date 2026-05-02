@@ -248,7 +248,7 @@ export const en = {
     ],
     info: {
       phone: '18941579333',
-      email: 'contact@marvelbros.com',
+      email: 'contactme@marvelbros.com',
       address: 'Hong Kong SAR, China (HQ) | Futian District, Shenzhen (Office)',
     },
   },

@@ -20,21 +20,21 @@ export default async function TermsPage({
   const { lang } = await params
 
   return (
-    <div className="min-h-screen bg-[#0f172a] py-12 px-4">
+    <div className="min-h-screen bg-background py-12 px-4">
       <div className="max-w-3xl mx-auto">
         <Link
           href={`/${lang}/login`}
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           {lang === 'zh' ? '返回登录' : 'Back to Login'}
         </Link>
 
-        <div className="bg-[#111827] rounded-2xl p-8 border border-gray-800">
+        <div className="bg-card rounded-2xl p-8 border border-border">
           <h1 className="text-3xl font-bold text-white mb-2">
             {lang === 'zh' ? '服务条款' : 'Terms of Service'}
           </h1>
-          <p className="text-gray-400 mb-8">
+          <p className="text-muted-foreground mb-8">
             {lang === 'zh' ? '更新日期：2026年4月6日' : 'Last updated: April 6, 2026'}
           </p>
 
@@ -122,8 +122,8 @@ export default async function TermsPage({
               </h2>
               <p>
                 {lang === 'zh'
-                  ? '如对本条款有任何疑问，请联系我们：contact@marvelbros.com'
-                  : 'If you have any questions about these terms, please contact us: contact@marvelbros.com'}
+                  ? '如对本条款有任何疑问，请联系我们：contactme@marvelbros.com'
+                  : 'If you have any questions about these terms, please contact us: contactme@marvelbros.com'}
               </p>
             </section>
           </div>

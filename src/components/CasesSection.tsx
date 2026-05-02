@@ -12,20 +12,20 @@ interface CasesSectionProps {
 
 export function CasesSection({ dict, lang }: CasesSectionProps) {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-4">{dict.cases.title}</h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">{dict.cases.subtitle}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{dict.cases.title}</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{dict.cases.subtitle}</p>
         </div>
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {dict.cases.items.slice(0, 6).map((c) => (
-            <Card key={c.client} className="border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-xl overflow-hidden bg-white">
+            <Card key={c.client} className="border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-xl overflow-hidden bg-card">
               {/* Image placeholder */}
-              <div className="h-40 bg-gradient-to-br from-[#0f172a] to-[#3b82f6] flex items-center justify-center relative">
+              <div className="h-40 bg-gradient-to-br from-slate-900 to-blue-600 flex items-center justify-center relative">
                 <Building2 className="w-16 h-16 text-white/15" />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-[#f59e0b]/90 text-[#0f172a] text-xs font-medium">
@@ -34,12 +34,12 @@ export function CasesSection({ dict, lang }: CasesSectionProps) {
                 </div>
               </div>
               <CardHeader className="pb-3">
-                <CardTitle className="text-lg font-semibold text-[#0f172a]">{c.client}</CardTitle>
+                <CardTitle className="text-lg font-semibold text-card-foreground">{c.client}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-500 text-sm mb-4 leading-relaxed">{c.description}</p>
-                <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                  <p className="text-green-800 font-medium text-sm">📈 {c.result}</p>
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{c.description}</p>
+                <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-3">
+                  <p className="text-green-800 dark:text-green-300 font-medium text-sm">📈 {c.result}</p>
                 </div>
               </CardContent>
             </Card>
@@ -49,7 +49,7 @@ export function CasesSection({ dict, lang }: CasesSectionProps) {
         {/* CTA */}
         <div className="text-center mt-12">
           <Link href={`/${lang}/cases`}>
-            <Button variant="outline" className="border-2 border-[#0f172a] text-[#0f172a] hover:bg-[#0f172a] hover:text-white font-semibold px-8 rounded-lg">
+            <Button variant="outline" className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background font-semibold px-8 rounded-lg">
               {dict.cases.cta} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

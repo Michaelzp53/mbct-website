@@ -77,7 +77,7 @@ export default function ArticlePage({ params }: { params: { lang: string } }) {
   return (
     <div className="min-h-screen bg-[#0f172a] py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-gray-400 hover:text-[#22c55e] transition-colors mb-8">
+        <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-muted-foreground hover:text-[#22c55e] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           {isZh ? '返回行业前沿' : 'Back to Industry Insights'}
         </Link>
@@ -89,7 +89,7 @@ export default function ArticlePage({ params }: { params: { lang: string } }) {
               <span className="text-gray-500 text-sm">{article.date}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{article.title}</h1>
-            <p className="text-xl text-gray-400 mb-6">{article.summary}</p>
+            <p className="text-xl text-muted-foreground mb-6">{article.summary}</p>
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-6 text-sm text-gray-500">
                 <span className="flex items-center gap-2"><User className="w-4 h-4" />{article.author}</span>
@@ -97,8 +97,8 @@ export default function ArticlePage({ params }: { params: { lang: string } }) {
                 <span className="flex items-center gap-2"><Calendar className="w-4 h-4" />{article.date}</span>
               </div>
               <div className="flex items-center gap-3">
-                <button className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:text-[#22c55e] transition-colors"><Share2 className="w-4 h-4" /></button>
-                <button className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:text-[#22c55e] transition-colors"><Bookmark className="w-4 h-4" /></button>
+                <button className="p-2 rounded-lg bg-muted text-muted-foreground hover:text-[#22c55e] transition-colors"><Share2 className="w-4 h-4" /></button>
+                <button className="p-2 rounded-lg bg-muted text-muted-foreground hover:text-[#22c55e] transition-colors"><Bookmark className="w-4 h-4" /></button>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function ArticlePage({ params }: { params: { lang: string } }) {
                   .replace(/\n\n/g, '</p><p class="text-gray-300 mb-4 leading-relaxed">')
                   .replace(/^/, '<p class="text-gray-300 mb-4 leading-relaxed">')
                   .replace(/$/, '</p>')
-                  .replace(/&gt; (.*)/g, '<blockquote class="border-l-4 border-[#22c55e] pl-4 my-6 italic text-gray-400">$1</blockquote>')
+                  .replace(/&gt; (.*)/g, '<blockquote class="border-l-4 border-[#22c55e] pl-4 my-6 italic text-muted-foreground">$1</blockquote>')
               }}
             />
           </div>

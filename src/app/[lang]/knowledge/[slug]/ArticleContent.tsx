@@ -16,7 +16,7 @@ export default function ArticleContent({ content, articleTitle }: ArticleContent
     return (
       <div className="space-y-6">
         {content.map((paragraph, index) => (
-          <p key={index} className="text-gray-300 leading-relaxed text-lg">
+          <p key={index} className="text-muted-foreground leading-relaxed text-lg dark:text-gray-300">
             {paragraph}
           </p>
         ))}
@@ -37,7 +37,7 @@ export default function ArticleContent({ content, articleTitle }: ArticleContent
       {/* 预览内容 */}
       <div className="space-y-6">
         {previewContent.map((paragraph, index) => (
-          <p key={index} className="text-gray-300 leading-relaxed text-lg">
+          <p key={index} className="text-muted-foreground leading-relaxed text-lg dark:text-gray-300">
             {paragraph}
           </p>
         ))}
@@ -46,11 +46,11 @@ export default function ArticleContent({ content, articleTitle }: ArticleContent
       {/* 折叠的完整内容 */}
       {!isExpanded && (
         <div className="relative mt-6">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#111827] pointer-events-none h-32" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-card dark:to-[#111827] pointer-events-none h-32" />
           <div className="pt-16">
             <button
               onClick={handleReadMore}
-              className="w-full py-4 bg-[#1e293b] hover:bg-[#334155] rounded-xl text-[#f59e0b] font-medium transition-colors flex items-center justify-center gap-2"
+              className="w-full py-4 bg-muted dark:bg-[#1e293b] hover:bg-muted/80 dark:hover:bg-[#334155] rounded-xl text-[#f59e0b] font-medium transition-colors flex items-center justify-center gap-2"
             >
               <span>阅读全文</span>
               <ChevronDown className="w-5 h-5" />
@@ -63,13 +63,13 @@ export default function ArticleContent({ content, articleTitle }: ArticleContent
       {isExpanded && (
         <div className="space-y-6 mt-6">
           {fullContent.map((paragraph, index) => (
-            <p key={index} className="text-gray-300 leading-relaxed text-lg">
+            <p key={index} className="text-muted-foreground leading-relaxed text-lg dark:text-gray-300">
               {paragraph}
             </p>
           ))}
           <button
             onClick={() => setIsExpanded(false)}
-            className="w-full py-3 bg-[#1e293b] hover:bg-[#334155] rounded-xl text-gray-400 font-medium transition-colors flex items-center justify-center gap-2"
+            className="w-full py-3 bg-muted dark:bg-[#1e293b] hover:bg-muted/80 dark:hover:bg-[#334155] rounded-xl text-muted-foreground dark:text-gray-400 font-medium transition-colors flex items-center justify-center gap-2"
           >
             <ChevronUp className="w-4 h-4" />
             <span>收起</span>

@@ -15,7 +15,6 @@ export default function RegistrationStats({ showDetail = false }: RegistrationSt
   })
 
   useEffect(() => {
-    // 从localStorage读取注册数据
     const registrations = JSON.parse(localStorage.getItem('mbct_registrations') || '[]')
     
     const now = new Date()
@@ -39,26 +38,26 @@ export default function RegistrationStats({ showDetail = false }: RegistrationSt
 
   if (showDetail) {
     return (
-      <div className="bg-[#111827] rounded-2xl border border-gray-800 p-6">
-        <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+      <div className="bg-muted rounded-2xl border border-border p-6">
+        <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
           <Users className="w-5 h-5 text-[#f59e0b]" />
           会员注册统计
         </h3>
         
         <div className="grid grid-cols-3 gap-4">
-          <div className="text-center p-4 bg-[#0f172a] rounded-xl">
+          <div className="text-center p-4 bg-background dark:bg-[#0f172a] rounded-xl">
             <div className="text-3xl font-bold text-[#f59e0b] mb-1">{stats.total}</div>
-            <div className="text-sm text-gray-400">总注册数</div>
+            <div className="text-sm text-muted-foreground">总注册数</div>
           </div>
           
-          <div className="text-center p-4 bg-[#0f172a] rounded-xl">
+          <div className="text-center p-4 bg-background dark:bg-[#0f172a] rounded-xl">
             <div className="text-3xl font-bold text-green-500 mb-1">{stats.today}</div>
-            <div className="text-sm text-gray-400">今日新增</div>
+            <div className="text-sm text-muted-foreground">今日新增</div>
           </div>
           
-          <div className="text-center p-4 bg-[#0f172a] rounded-xl">
+          <div className="text-center p-4 bg-background dark:bg-[#0f172a] rounded-xl">
             <div className="text-3xl font-bold text-blue-500 mb-1">{stats.week}</div>
-            <div className="text-sm text-gray-400">本周新增</div>
+            <div className="text-sm text-muted-foreground">本周新增</div>
           </div>
         </div>
 
@@ -72,9 +71,8 @@ export default function RegistrationStats({ showDetail = false }: RegistrationSt
     )
   }
 
-  // 简洁版本 (用于导航栏或页脚)
   return (
-    <div className="flex items-center gap-2 text-sm text-gray-400">
+    <div className="flex items-center gap-2 text-sm text-muted-foreground">
       <Users className="w-4 h-4" />
       <span>{stats.total} 位会员</span>
     </div>

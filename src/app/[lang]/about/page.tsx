@@ -72,11 +72,11 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   ]
 
   return (
-    <div className="min-h-screen bg-[#0f172a] py-12 md:py-16">
+    <div className="min-h-screen bg-background py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             {lang === 'zh' ? '关于 迈创兄弟' : 'About MBCT'}
           </h1>
           <p className="text-lg md:text-xl text-[#f59e0b]">
@@ -87,11 +87,11 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         {/* Vision & Mission */}
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-6 md:p-8 rounded-2xl bg-[#111827] border border-gray-800">
+            <div className="p-6 md:p-8 rounded-2xl bg-card border border-border">
               <div className="w-12 h-12 rounded-xl bg-[#f59e0b]/20 flex items-center justify-center mb-4">
                 <Target className="w-6 h-6 text-[#f59e0b]" />
               </div>
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
+              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">
                 {lang === 'zh' ? '使命' : 'Mission'}
               </h2>
               <p className="text-lg md:text-xl font-bold text-[#f59e0b] mb-3">
@@ -99,18 +99,18 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   ? '"把AI数据精益管理植入每家酒店的DNA里"' 
                   : '"Embedding AI-powered data-driven management into every hotel\'s DNA"'}
               </p>
-              <p className="text-gray-400 text-sm md:text-base">
+              <p className="text-muted-foreground text-sm md:text-base">
                 {lang === 'zh'
                   ? 'MBCT专注于酒店行业，以AI数字化能力和私域流量运营为核心，帮助酒店实现：投资决策有据可依，品牌建设有路可循，运营增长有技可依、收益提升有数据支撑。'
                   : 'MBCT specializes in the hotel industry, leveraging AI digital capabilities and private domain operations to help hotels make data-driven investment decisions, build recognizable brands, achieve operational growth, and improve revenue with measurable data.'}
               </p>
             </div>
 
-            <div className="p-6 md:p-8 rounded-2xl bg-[#111827] border border-gray-800">
+            <div className="p-6 md:p-8 rounded-2xl bg-card border border-border">
               <div className="w-12 h-12 rounded-xl bg-[#3b82f6]/20 flex items-center justify-center mb-4">
                 <TrendingUp className="w-6 h-6 text-[#3b82f6]" />
               </div>
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
+              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3">
                 {lang === 'zh' ? '愿景' : 'Vision'}
               </h2>
               <p className="text-lg md:text-xl font-bold text-[#3b82f6] mb-3">
@@ -118,7 +118,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   ? '"成为酒店行业最受信赖的AI数字化与私域流量增长专家"'
                   : '"Becoming the most trusted AI digital transformation and private domain growth expert in the hotel industry"'}
               </p>
-              <p className="text-gray-400 text-sm md:text-base">
+              <p className="text-muted-foreground text-sm md:text-base">
                 {lang === 'zh'
                   ? '我们不只是提供工具，我们提供增长结果。通过AI技术与私域运营的深度结合，帮助酒店实现可持续增长。'
                   : 'We don\'t just provide tools—we deliver growth results. Through deep integration of AI technology and private domain operations, we help hotels achieve sustainable growth.'}
@@ -129,20 +129,20 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
         {/* Core Values */}
         <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-8">
             {lang === 'zh' ? '核心价值观' : 'Core Values'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {values.map((value, index) => (
-              <div key={index} className="p-5 md:p-6 rounded-xl bg-[#111827] border border-gray-800">
+              <div key={index} className="p-5 md:p-6 rounded-xl bg-card border border-border">
                 <div
                   className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-3 md:mb-4"
                   style={{ backgroundColor: `${value.color}20` }}
                 >
                   <value.icon className="w-5 h-5 md:w-6 md:h-6" style={{ color: value.color }} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{value.title}</h3>
-                <p className="text-gray-400 text-sm">{value.desc}</p>
+                <h3 className="text-lg font-bold text-foreground mb-2">{value.title}</h3>
+                <p className="text-muted-foreground text-sm">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -150,25 +150,25 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
         {/* Team Section */}
         <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">
             {lang === 'zh' ? '迈创兄弟团队' : 'The MBCT Team'}
           </h2>
-          <p className="text-gray-400 text-center mb-8 text-sm md:text-base">
+          <p className="text-muted-foreground text-center mb-8 text-sm md:text-base">
             {lang === 'zh' ? '不是"顾问"，是并肩作战的战友' : 'Not just consultants—battle-tested partners'}
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {team.map((member, index) => (
-              <div key={index} className="p-4 md:p-6 rounded-xl bg-[#111827] border border-gray-800 text-center">
+              <div key={index} className="p-4 md:p-6 rounded-xl bg-card border border-border text-center">
                 <div
                   className="w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4 text-xl md:text-2xl font-bold"
                   style={{ backgroundColor: `${member.color}20`, color: member.color }}
                 >
                   {member.letter}
                 </div>
-                <h3 className="text-sm md:text-base font-bold text-white mb-1">{member.name}</h3>
+                <h3 className="text-sm md:text-base font-bold text-foreground mb-1">{member.name}</h3>
                 <p className="text-xs md:text-sm text-[#f59e0b] mb-2">{member.title}</p>
-                <p className="text-xs text-gray-400 italic">"{member.quote}"</p>
+                <p className="text-xs text-muted-foreground italic">"{member.quote}"</p>
               </div>
             ))}
           </div>
@@ -176,7 +176,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
         {/* Business Chain */}
         <section>
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-8">
             {lang === 'zh' ? '业务链' : 'Business Chain'}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -202,15 +202,15 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 color: '#8b5cf6'
               },
             ].map((item, index) => (
-              <div key={index} className="p-4 rounded-xl bg-[#111827] border border-gray-800 text-center">
+              <div key={index} className="p-4 rounded-xl bg-card border border-border text-center">
                 <div 
                   className="text-2xl md:text-3xl font-bold mb-2"
                   style={{ color: item.color }}
                 >
                   {String(index + 1).padStart(2, '0')}
                 </div>
-                <h3 className="text-sm md:text-base font-bold text-white mb-1">{item.title}</h3>
-                <p className="text-xs text-gray-400">{item.desc}</p>
+                <h3 className="text-sm md:text-base font-bold text-foreground mb-1">{item.title}</h3>
+                <p className="text-xs text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>

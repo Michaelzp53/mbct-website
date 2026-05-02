@@ -48,7 +48,7 @@ export function Footer() {
               专注酒店行业数字化转型，提供专业的酒店管理咨询、AI数字化管理和可行性分析服务。
             </p>
             <div className="flex gap-4">
-              <a href="mailto:contact@marvelbros.com" className="text-gray-400 hover:text-brand-gold transition-colors">
+              <a href="mailto:contactme@marvelbros.com" className="text-gray-400 hover:text-brand-gold transition-colors">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>

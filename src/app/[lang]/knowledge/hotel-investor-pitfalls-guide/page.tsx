@@ -11,7 +11,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
     author: 'MBCT机构研究中心',
     date: '2026-05-02',
     readTime: '10分钟',
-    tag: '博客',
+    tag: '案例研究',
     content: `
 ## 最近跟几位投资人喝茶，聊到今年的新项目，气氛有点微妙——有人踩了坑，有人还在观望，有人正打算ALL IN。
 

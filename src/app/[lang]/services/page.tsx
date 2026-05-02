@@ -27,47 +27,51 @@ export default async function ServicesPage({
   const dict = getDict(lang)
   const icons = ['Building2', 'Sparkles', 'TrendingUp', 'BarChart3', 'Users', 'Shield', 'Megaphone', 'Landmark', 'BookOpen']
 
+  const iconGradients = [
+    'linear-gradient(135deg, #4285f4, #34a853)',
+    'linear-gradient(135deg, #34a853, #fbbc04)',
+    'linear-gradient(135deg, #fbbc04, #ea4335)',
+    'linear-gradient(135deg, #ea4335, #764ba2)',
+    'linear-gradient(135deg, #764ba2, #4285f4)',
+    'linear-gradient(135deg, #4285f4, #ea4335)',
+    'linear-gradient(135deg, #4285f4, #34a853)',
+    'linear-gradient(135deg, #34a853, #fbbc04)',
+    'linear-gradient(135deg, #fbbc04, #ea4335)',
+  ]
+
   return (
     <>
       {/* Page Hero */}
-      <section className="bg-gradient-to-br from-[#1a1a2e] to-[#16213e] py-16">
+      <section className="py-16 section-light">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#e8e8e8] mb-4">{dict.nav.services}</h1>
-          <p className="text-[#a0a0a0] text-lg max-w-2xl mx-auto">{dict.services.subtitle}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{dict.nav.services}</h1>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{dict.services.subtitle}</p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 bg-[#1a1a2e]">
+      <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {dict.services.items.map((service, i) => {
               const Icon = iconMap[icons[i]] ?? Building2
-              const iconGradients = [
-                'linear-gradient(135deg, #4285f4, #34a853)',
-                'linear-gradient(135deg, #34a853, #fbbc04)',
-                'linear-gradient(135deg, #fbbc04, #ea4335)',
-                'linear-gradient(135deg, #ea4335, #764ba2)',
-                'linear-gradient(135deg, #764ba2, #4285f4)',
-                'linear-gradient(135deg, #4285f4, #ea4335)',
-                'linear-gradient(135deg, #34a853, #764ba2)',
-                'linear-gradient(135deg, #fbbc04, #4285f4)',
-              ]
               return (
-                <Card key={service.title} className="border border-[rgba(255,255,255,0.05)] bg-[#16213e] rounded-xl overflow-hidden hover:shadow-xl hover:border-[rgba(102,126,234,0.3)] transition-all duration-300 card-gemini">
-                  <div className="h-2" style={{ background: iconGradients[i % iconGradients.length] }} />
+                <Card key={service.title} className="border border-border bg-card rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 card-themed">
                   <CardHeader className="pb-3">
-                    <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ background: iconGradients[i % iconGradients.length] }}>
-                      <Icon className="w-7 h-7 text-white" />
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                      style={{ background: iconGradients[i % iconGradients.length] }}
+                    >
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl font-semibold text-[#e8e8e8]">{service.title}</CardTitle>
+                    <CardTitle className="text-lg font-semibold text-card-foreground">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#a0a0a0] text-sm mb-4 leading-relaxed">{service.description}</p>
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature) => (
-                        <li key={feature} className="flex items-center text-sm text-[#a0a0a0]">
-                          <CheckCircle className="w-4 h-4 text-[#34a853] mr-2 flex-shrink-0" />
+                        <li key={feature} className="flex items-start text-sm text-muted-foreground">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}

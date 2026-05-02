@@ -498,6 +498,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
     {
+      id: 315,
+      type: 'case',
+      title: '酒店投资人避坑指南：3个"伪热点"让多少投资人亏钱？',
+      slug: 'hotel-investor-pitfalls-guide',
+      summary: '下沉市场翻番增长、电竞酒店合规化红利、OTA高佣金认命论——三个看起来很美的伪热点，实际分析后发现都是坑。',
+      firstLine: '最近跟几位投资人喝茶，聊到今年的新项目，气氛有点微妙。',
+      author: 'MBCT机构研究中心',
+      date: '2026-05-02',
+      readTime: '10分钟',
+      tag: '案例研究',
+      featured: true,
+    },
+    {
       id: 312,
       type: 'case',
       title: '三十年单体老酒店重生记：180天如何让RevPAR翻番',
@@ -754,19 +767,8 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       author: '酒店业主',
       date: '2026-04-22',
       readTime: '3分钟',
-      tag: '博客',
-    },
-    {
-      id: 315,
-      type: 'blog',
-      title: '酒店投资人避坑指南：3个"伪热点"让多少投资人亏钱？',
-      slug: 'hotel-investor-pitfalls-guide',
-      summary: '下沉市场翻番增长、电竞酒店合规化红利、OTA高佣金认命论——三个看起来很美的伪热点，实际分析后发现都是坑。',
-      firstLine: '最近跟几位投资人喝茶，聊到今年的新项目，气氛有点微妙。',
-      author: 'MBCT机构研究中心',
-      date: '2026-05-02',
-      readTime: '10分钟',
-      tag: '博客',
+      tag: '案例研究',
+      featured: true,
     },
   ]
 
@@ -792,7 +794,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BookOpen,
       title: ui.caseTitle,
       desc: ui.caseDesc,
-      count: 9,
+      count: 10,
       color: '#22c55e',
     },
     {
@@ -800,13 +802,13 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: Newspaper,
       title: ui.blogTitle,
       desc: ui.blogDesc,
-      count: 13,
+      count: 12,
       color: '#8b5cf6',
     },
   ]
 
   return (
-    <div className="min-h-screen bg-[#0f172a] py-16">
+    <div className="min-h-screen bg-background py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -814,10 +816,10 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
             <BookOpen className="w-4 h-4 text-[#f59e0b]" />
             <span className="text-[#f59e0b] text-sm font-medium">{isZh ? '思想领导力' : 'Thought Leadership'}</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             {ui.pageTitle}
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {isZh ? 'MBCT研究院出品,用数据说话,为酒店行业提供前瞻洞察与实战指南' : 'From MBCT Institute - data-driven insights and practical guides for the hotel industry'}
           </p>
         </div>
@@ -828,7 +830,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
             <input
               type="text"
               placeholder={ui.searchPlaceholder}
-              className="w-full px-6 py-4 bg-[#111827] border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-[#f59e0b] transition-colors pl-14"
+              className="w-full px-6 py-4 bg-card border border-border rounded-2xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b] transition-colors pl-14"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -840,7 +842,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
+              className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
             >
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.3-4.3" />
@@ -855,7 +857,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
               <a
                 key={cat.id}
                 href={`#${cat.id}`}
-                className="p-6 rounded-2xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all group text-center block"
+                className="p-6 rounded-2xl bg-card border border-border hover:border-[#f59e0b]/50 transition-all group text-center block"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 mx-auto"
@@ -863,12 +865,12 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                 >
                   <cat.icon className="w-6 h-6" style={{ color: cat.color }} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-1">{cat.title}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-1">{cat.title}</h3>
                 <div className="flex items-center justify-center gap-2">
                   <span className="text-2xl font-bold" style={{ color: cat.color }}>
                     {cat.count}
                   </span>
-                  <span className="text-gray-500 text-sm">篇</span>
+                  <span className="text-muted-foreground text-sm">篇</span>
                 </div>
               </a>
             ))}
@@ -877,35 +879,35 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
         {/* Featured Article - 热门话题 */}
         <section id="featured" className="mb-16">
-          <div className="p-8 rounded-2xl bg-gradient-to-br from-[#1e3a5f] to-[#0f172a] border border-[#f59e0b]/30">
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-slate-100 border border-amber-200 dark:from-[#1e3a5f] dark:to-[#0f172a] dark:border-[#f59e0b]/30">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="lg:w-2/3">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#f59e0b]/20 text-[#f59e0b] text-sm font-medium mb-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-[#f59e0b]/20 dark:text-[#f59e0b] text-sm font-medium mb-4">
                   热门话题
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  {articles[0].title}
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  {cases[0].title}
                 </h2>
-                <p className="text-gray-400 mb-6 text-lg">
-                  {articles[0].summary}
+                <p className="text-muted-foreground mb-6 text-lg">
+                  {cases[0].summary}
                 </p>
-                <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 mb-6">
+                <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-6">
                   <span className="flex items-center gap-2">
                     <User className="w-4 h-4" />
-                    {articles[0].author}
+                    {cases[0].author}
                   </span>
                   <span className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    {articles[0].date}
+                    {cases[0].date}
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    {articles[0].readTime}
+                    {cases[0].readTime}
                   </span>
                 </div>
                 <Link
                   href={`/${lang}/knowledge/${encodeURIComponent(articles[0].slug)}`}
-                  className="inline-flex items-center px-6 py-3 text-white font-bold rounded-lg transition-all"
+                  className="inline-flex items-center px-6 py-3 text-foreground font-bold rounded-lg transition-all"
                   style={{ background: 'linear-gradient(135deg, #4285f4, #34a853, #fbbc04, #ea4335)' }}
                 >
                   阅读全文
@@ -913,7 +915,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                 </Link>
               </div>
               <div className="lg:w-1/3 flex items-center justify-center">
-                <div className="w-full h-64 rounded-xl bg-[#111827] flex items-center justify-center border border-gray-800">
+                <div className="w-full h-64 rounded-xl bg-card flex items-center justify-center border border-border">
                   <FileText className="w-24 h-24 text-[#f59e0b]/30" />
                 </div>
               </div>
@@ -923,7 +925,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
         {/* Academic Articles Section */}
         <section id="academic" className="mb-8">
-          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
             <FileText className="w-5 h-5 text-[#f59e0b]" />
             {ui.academicTitle}
           </h2>
@@ -932,21 +934,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
               <Link
                 key={article.id}
                 href={`/${lang}/knowledge/${encodeURIComponent(article.slug)}`}
-                className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#f59e0b]/50 transition-all group"
+                className="block p-5 rounded-xl bg-card border border-border hover:border-[#f59e0b]/50 transition-all group"
               >
                 <div className="flex items-start gap-4">
                   <span className="px-2 py-1 rounded-full bg-[#f59e0b]/10 text-[#f59e0b] text-xs font-medium flex-shrink-0 mt-0.5">
                     {article.tag}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#f59e0b] transition-colors">
+                    <h3 className="text-base font-bold text-foreground mb-1 group-hover:text-[#f59e0b] transition-colors">
                       {article.title}
                     </h3>
-                    <p className="text-sm text-gray-500 line-clamp-1">
+                    <p className="text-sm text-muted-foreground truncate">
                       {article.firstLine}
                     </p>
                   </div>
-                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-muted-foreground">
                     <span>{article.author.split(' - ')[0]}</span>
                     <span>{article.readTime}</span>
                   </div>
@@ -958,7 +960,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
         {/* Industry Reports Section */}
         <section id="industry-reports" className="mb-8">
-          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
             <BarChart3 className="w-5 h-5 text-[#3b82f6]" />
             {ui.reportTitle}
           </h2>
@@ -967,21 +969,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
               <Link
                 key={report.id}
                 href={`/${lang}/knowledge/${encodeURIComponent(report.slug)}`}
-                className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#3b82f6]/50 transition-all group"
+                className="block p-5 rounded-xl bg-card border border-border hover:border-[#3b82f6]/50 transition-all group"
               >
                 <div className="flex items-start gap-4">
                   <span className="px-2 py-1 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] text-xs font-medium flex-shrink-0 mt-0.5">
                     {report.tag}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#3b82f6] transition-colors">
+                    <h3 className="text-base font-bold text-foreground mb-1 group-hover:text-[#3b82f6] transition-colors">
                       {report.title}
                     </h3>
-                    <p className="text-sm text-gray-500 line-clamp-1">
+                    <p className="text-sm text-muted-foreground truncate">
                       {report.firstLine}
                     </p>
                   </div>
-                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-muted-foreground">
                     <span>{report.author.split(' - ')[0]}</span>
                     <span>{report.readTime}</span>
                   </div>
@@ -995,7 +997,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
         {/* Case Studies Section */}
         <section id="cases" className="mb-8">
-          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-[#22c55e]" />
             {ui.caseTitle}
           </h2>
@@ -1004,21 +1006,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
               <Link
                 key={c.id}
                 href={`/${lang}/knowledge/${encodeURIComponent(c.slug)}`}
-                className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#22c55e]/50 transition-all group"
+                className="block p-5 rounded-xl bg-card border border-border hover:border-[#22c55e]/50 transition-all group"
               >
                 <div className="flex items-start gap-4">
                   <span className="px-2 py-1 rounded-full bg-[#22c55e]/10 text-[#22c55e] text-xs font-medium flex-shrink-0 mt-0.5">
                     {c.tag}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#22c55e] transition-colors">
+                    <h3 className="text-base font-bold text-foreground mb-1 group-hover:text-[#22c55e] transition-colors">
                       {c.title}
                     </h3>
-                    <p className="text-sm text-gray-500 line-clamp-1">
+                    <p className="text-sm text-muted-foreground truncate">
                       {c.firstLine}
                     </p>
                   </div>
-                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-muted-foreground">
                     <span>{c.author.split(' - ')[0]}</span>
                     <span>{c.readTime}</span>
                   </div>
@@ -1031,7 +1033,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
         {/* Blogs Section */}
         <section id="blogs" className="mb-8">
-          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
             <Newspaper className="w-5 h-5 text-[#8b5cf6]" />
             {ui.blogTitle}
           </h2>
@@ -1040,21 +1042,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
               <Link
                 key={blog.id}
                 href={`/${lang}/knowledge/${encodeURIComponent(blog.slug)}`}
-                className="block p-5 rounded-xl bg-[#111827] border border-gray-800 hover:border-[#8b5cf6]/50 transition-all group"
+                className="block p-5 rounded-xl bg-card border border-border hover:border-[#8b5cf6]/50 transition-all group"
               >
                 <div className="flex items-start gap-4">
                   <span className="px-2 py-1 rounded-full bg-[#8b5cf6]/10 text-[#8b5cf6] text-xs font-medium flex-shrink-0 mt-0.5">
                     {blog.tag}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1 group-hover:text-[#8b5cf6] transition-colors">
+                    <h3 className="text-base font-bold text-foreground mb-1 group-hover:text-[#8b5cf6] transition-colors">
                       {blog.title}
                     </h3>
-                    <p className="text-sm text-gray-500 line-clamp-1">
+                    <p className="text-sm text-muted-foreground truncate">
                       {blog.firstLine}
                     </p>
                   </div>
-                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 flex-shrink-0 text-xs text-muted-foreground">
                     <span>{blog.author}</span>
                     <span>{blog.readTime}</span>
                   </div>
@@ -1064,18 +1066,18 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
           </div>
         </section>
         <section className="mt-16 text-center">
-          <div className="p-8 rounded-2xl bg-[#111827] border border-gray-800">
-            <h2 className="text-2xl font-bold text-white mb-4">
+          <div className="p-8 rounded-2xl bg-card border border-border">
+            <h2 className="text-2xl font-bold text-foreground mb-4">
               订阅行业洞察
             </h2>
-            <p className="text-gray-400 mb-6">
+            <p className="text-muted-foreground mb-6">
               每周获取最新研究报告与行业分析,领先一步洞察趋势
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="输入您的邮箱"
-                className="px-4 py-3 rounded-lg bg-[#0f172a] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[#f59e0b]"
+                className="px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b]"
               />
               <button className="px-6 py-3 bg-[#f59e0b] text-[#0f172a] font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all whitespace-nowrap">
                 立即订阅
