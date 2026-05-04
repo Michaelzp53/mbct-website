@@ -825,7 +825,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: FileText,
       title: ui.academicTitle,
       desc: ui.academicDesc,
-      count: 25,
+      count: 26,
       color: '#f59e0b',
     },
     {
@@ -833,7 +833,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BarChart3,
       title: ui.reportTitle,
       desc: ui.reportDesc,
-      count: 15,
+      count: 16,
       color: '#3b82f6',
     },
     {
@@ -841,7 +841,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BookOpen,
       title: ui.caseTitle,
       desc: ui.caseDesc,
-      count: 11,
+      count: 12,
       color: '#22c55e',
     },
     {
@@ -849,7 +849,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: Newspaper,
       title: ui.blogTitle,
       desc: ui.blogDesc,
-      count: 13,
+      count: 14,
       color: '#8b5cf6',
     },
   ]
