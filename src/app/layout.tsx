@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -34,6 +35,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning>
+      <head>
+        {/* Google Analytics */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DWV89MEG50" />
+        <Script id="google-analytics">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DWV89MEG50');`}
+        </Script>
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           {children}
