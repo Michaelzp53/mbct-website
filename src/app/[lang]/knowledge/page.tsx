@@ -25,6 +25,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   }
 
   const articles = [
+    {
+      id: 317,
+      type: 'article',
+      title: '从"悦己"到"智性"：Z世代消费决策的双重逻辑演变',
+      slug: 'gen-z-dual-logic-consumption',
+      summary: 'Z世代消费决策已形成"悦己"与"智性"双重逻辑并存的框架。情绪价值负责决策触发，理性评估负责价值校验。近9成青年有过情绪消费，月均949元，但同时73%会进行深度比价研究。',
+      firstLine: '当最后一届90后全部迈入25岁门槛，Z世代已无可争议地成为中国消费市场的核心驱动力。',
+      author: '迈创兄弟',
+      date: '2026-05-04',
+      readTime: '18分钟',
+      tag: '行业分析',
+      featured: false,
+    },
 
     {
       id: -21,
@@ -324,6 +337,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-04-22新增1篇
   const reports = [
     {
+      id: 318,
+      type: 'report',
+      title: '2026青年旅居趋势报告："即时满足"时代下的酒店业新机遇',
+      slug: 'youth-travel-trends-2026',
+      summary: '74%的青年旅客习惯3天内临时预订，70%曾有当天订酒店经历。"疗愈型"住宿需求年增长率达128%。青年旅客对"情绪价值"的支付意愿高于其他年龄段23%。',
+      firstLine: '2026年，青年消费群体已成为中国酒店业最具增长潜力的细分市场。',
+      author: '迈创兄弟',
+      date: '2026-05-04',
+      readTime: '15分钟',
+      tag: '行业报告',
+      featured: false,
+    },
+    {
       id: 311,
       type: 'report',
       title: '2026年中国酒店连锁化率深度报告：41.8%背后的结构性机会',
@@ -498,9 +524,20 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
     {
-      id: 315,
+      id: 319,
       type: 'case',
-      title: '酒店投资人避坑指南：3个"伪热点"让多少投资人亏钱？',
+      title: '情绪消费浪潮下，酒店如何成为年轻人的"精神快充站"',
+      slug: 'emotional-consumption-hotel-spirit-charging',
+      summary: '2026年情绪消费市场规模预计达2.72万亿元。三个实战案例：精品酒店"疗愈系"产品溢价47%、连锁品牌"社交型"大堂年轻客群占比从34%升至51%、度假酒店"周五微度假"套餐复购率54%。',
+      firstLine: '2026年，中国情绪消费市场规模预计将达到2.72万亿元，同比增长41.3%。',
+      author: '迈创兄弟',
+      date: '2026-05-04',
+      readTime: '15分钟',
+      tag: '案例研究',
+      featured: true,
+    },
+    {
+      id: 315,
       slug: 'hotel-investor-pitfalls-guide',
       summary: '下沉市场翻番增长、电竞酒店合规化红利、OTA高佣金认命论——三个看起来很美的伪热点，实际分析后发现都是坑。',
       firstLine: '最近跟几位投资人喝茶，聊到今年的新项目，气氛有点微妙。',
@@ -626,9 +663,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 博客文章 - 2026-04-22新增1篇
   const blogs = [
     {
-      id: 313,
+      id: 320,
       type: 'blog',
-      title: '播客：一位酒店投资人的十年复盘',
+      title: '青年节特辑：这届年轻人住酒店，到底在买什么？',
+      slug: 'youth-day-hotel-consumption-insights',
+      summary: '五四青年节特辑。不为"住"为"感受"，不为"贵"为"值"，不为"标准"为"个性"。理解这届年轻人住酒店买什么，其实是在理解未来十年消费市场的方向。',
+      firstLine: '今天是五四青年节。',
+      author: '迈创兄弟',
+      date: '2026-05-04',
+      readTime: '8分钟',
+      tag: '博客',
+    },
+    {
+      id: 313,
       slug: 'podcast-hotel-investor-decade',
       summary: '李总，酒店投资十二年，4家酒店。选址选错了可能亏损，选对了才能盈利。加盟还是单体，要看自己的能力圈。耐心比什么都重要。',
       firstLine: '李总，酒店投资十二年，经历过行业最鼎盛时期，也扛过疫情三年。最深的感悟：酒店投资，最难的不是开业，是退出。',
@@ -778,7 +825,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: FileText,
       title: ui.academicTitle,
       desc: ui.academicDesc,
-      count: 24,
+      count: 25,
       color: '#f59e0b',
     },
     {
@@ -786,7 +833,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BarChart3,
       title: ui.reportTitle,
       desc: ui.reportDesc,
-      count: 14,
+      count: 15,
       color: '#3b82f6',
     },
     {
@@ -794,7 +841,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BookOpen,
       title: ui.caseTitle,
       desc: ui.caseDesc,
-      count: 10,
+      count: 11,
       color: '#22c55e',
     },
     {
@@ -802,7 +849,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: Newspaper,
       title: ui.blogTitle,
       desc: ui.blogDesc,
-      count: 12,
+      count: 13,
       color: '#8b5cf6',
     },
   ]
