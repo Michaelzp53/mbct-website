@@ -337,6 +337,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-04-22新增1篇
   const reports = [
     {
+      id: 319,
+      type: 'report',
+      title: '下沉市场连锁化率19%，单体酒店出路在哪？',
+      slug: 'downmarket-hotel-chain-19-percent',
+      summary: '下沉市场酒店连锁化率仅19%，但增速连续三年超30%。五年内可能突破35%，15万+单体酒店面临抉择。四条破局路径：主动连锁、特色化经营、本地联盟、精细化运营。',
+      firstLine: '当你看到"下沉市场酒店连锁化率仅为19%"这个数据时，你会想到什么？',
+      author: '迈创兄弟',
+      date: '2026-05-05',
+      readTime: '18分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+    {
       id: 318,
       type: 'report',
       title: '2026青年旅居趋势报告："即时满足"时代下的酒店业新机遇',
@@ -833,7 +846,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BarChart3,
       title: ui.reportTitle,
       desc: ui.reportDesc,
-      count: 16,
+      count: 17,
       color: '#3b82f6',
     },
     {
