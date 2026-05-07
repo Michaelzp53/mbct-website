@@ -40,6 +40,20 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
 
     {
+      id: 402,
+      type: 'article',
+      title: '情绪价值驱动下的酒店业转型：从"空间供给"到"体验创造"',
+      slug: 'emotional-value-hotel-transformation',
+      summary: '2026年五一假期，"蓝眼泪"现象揭示情绪价值正在重塑旅行决策。县域高星酒店预订量同比增长逾三成，年轻人愿为"一朵蓝眼泪"奔赴一座城。本文系统分析酒店业从"空间供给"向"体验创造"的转型路径。',
+      firstLine: '2026年五一假期，中国旅游市场呈现出与过往截然不同的消费图景：游客不再涌向传统热门景点，而是为"一朵蓝眼泪"奔赴一座此前无人问津的沿海小城。',
+      author: '迈创兄弟',
+      date: '2026-05-06',
+      readTime: '25分钟',
+      tag: '行业分析',
+      featured: true,
+    },
+
+    {
       id: 317,
       type: 'article',
       title: '从"悦己"到"智性"：Z世代消费决策的双重逻辑演变',
@@ -551,7 +565,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
     {
-      id: 319,
+      id: 403,
+      type: 'case',
+      title: '当"老酒店"遇上"新需求"：21天模块化焕新实录',
+      slug: 'old-hotel-new-demand-renovation',
+      summary: '面对存量时代的市场变局，运营超过二十年的老旧酒店面临定位失焦、客群流失与收益下滑的多重困境。本文通过MBCT实际参与的一座三十年物业焕新全过程，呈现从"定位重塑"到"21天模块化改造"的完整路径。',
+      firstLine: '第一次走进华泰饭店，是2024年的一个雨天下午。大堂的水晶灯亮着有些发黄的光，旋转楼梯的扶手锈迹斑斑，墙上挂着的还是十年前的风景画。',
+      author: '迈创兄弟',
+      date: '2026-05-06',
+      readTime: '20分钟',
+      tag: '案例研究',
+      featured: true,
+    },
+
+    {
+      id: 401,
       type: 'case',
       title: '情绪消费浪潮下，酒店如何成为年轻人的"精神快充站"',
       slug: 'emotional-consumption-hotel-spirit-charging',
@@ -852,7 +880,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: FileText,
       title: ui.academicTitle,
       desc: ui.academicDesc,
-      count: 26,
+      count: 27,
       color: '#f59e0b',
     },
     {
@@ -868,7 +896,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       icon: BookOpen,
       title: ui.caseTitle,
       desc: ui.caseDesc,
-      count: 12,
+      count: 13,
       color: '#22c55e',
     },
     {
