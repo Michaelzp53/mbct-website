@@ -26,6 +26,20 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 321,
+      type: 'article',
+      title: '中国酒店业连锁化率40.09%背后的结构性机遇：下沉市场与存量改造双轮驱动',
+      slug: 'hotel-chain-penetration-40-percent-structural-opportunity',
+      summary: '中国酒店业连锁化率达40.09%，但距欧美70%+仍有显著差距。本文从下沉市场蓝海与存量改造两条主线剖析结构性机遇，为行业投资者提供决策参考。',
+      firstLine: '截至2024年底，中国酒店业连锁化率已达到40.09%，较上年提升2.45个百分点，但与欧美成熟市场70%以上的连锁化率相比，仍存在显著差距。',
+      author: '迈创兄弟',
+      date: '2026-05-07',
+      readTime: '20分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+
+    {
       id: 317,
       type: 'article',
       title: '从"悦己"到"智性"：Z世代消费决策的双重逻辑演变',
