@@ -248,40 +248,47 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             
             <div className="bg-card rounded-xl p-6 border border-border">
               <h3 className="text-lg font-bold text-card-foreground mb-4">
-                {lang === 'zh' ? '评估模式示例' : 'Performance Model Example'}
+                {lang === 'zh' ? '我们的承诺' : 'Our Commitment'}
               </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center py-2 border-b border-border">
-                  <span className="text-muted-foreground text-sm">
-                    {lang === 'zh' ? '结果导向目标' : 'Result Goals'}
-                  </span>
-                  <span className="text-card-foreground font-medium text-sm">
-                    {lang === 'zh' ? '年增长 6-15%' : 'Annual +6-15%'}
-                  </span>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
+                    <Target className="w-4 h-4 text-[#f59e0b]" />
+                  </div>
+                  <div>
+                    <h4 className="text-card-foreground font-medium text-sm">
+                      {lang === 'zh' ? '目标导向' : 'Goal Oriented'}
+                    </h4>
+                    <p className="text-muted-foreground text-xs">
+                      {lang === 'zh' ? '以可量化的增长目标为合作基础' : 'Measurable growth targets as partnership foundation'}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-border">
-                  <span className="text-muted-foreground text-sm">
-                    {lang === 'zh' ? '基础服务费' : 'Base Fee'}
-                  </span>
-                  <span className="text-card-foreground font-medium text-sm">
-                    {lang === 'zh' ? '按项目收费' : 'Project-based'}
-                  </span>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#34a853]/10 flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-4 h-4 text-[#34a853]" />
+                  </div>
+                  <div>
+                    <h4 className="text-card-foreground font-medium text-sm">
+                      {lang === 'zh' ? '风险共担' : 'Risk Sharing'}
+                    </h4>
+                    <p className="text-muted-foreground text-xs">
+                      {lang === 'zh' ? '未达标仅收基础费用，达标后收取全额' : 'Base fee only if missed, full fee upon success'}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-border">
-                  <span className="text-muted-foreground text-sm">
-                    {lang === 'zh' ? '超额奖励' : 'Bonus'}
-                  </span>
-                  <span className="text-[#f59e0b] font-medium text-sm">
-                    {lang === 'zh' ? '超出加收 20%' : '+20% if exceeded'}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-muted-foreground text-sm">
-                    {lang === 'zh' ? '未达标' : 'If missed'}
-                  </span>
-                  <span className="text-[#34a853] font-medium text-sm">
-                    {lang === 'zh' ? '仅收 50%！' : 'Only 50% fee!'}
-                  </span>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#3b82f6]/10 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-4 h-4 text-[#3b82f6]" />
+                  </div>
+                  <div>
+                    <h4 className="text-card-foreground font-medium text-sm">
+                      {lang === 'zh' ? '超额激励' : 'Exceed Bonus'}
+                    </h4>
+                    <p className="text-muted-foreground text-xs">
+                      {lang === 'zh' ? '超出目标部分，双方共享增长收益' : 'Shared growth benefits beyond targets'}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
