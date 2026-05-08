@@ -183,58 +183,50 @@ K型复苏指的是：不同板块、不同城市、不同酒店类型之间的�
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <div className="flex items-center gap-2 text-blue-200 text-sm mb-4">
-            <Link href={`/${lang}/knowledge`} className="flex items-center gap-1 hover:text-white transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              {isZh ? '返回行业动态' : 'Back to Industry'}
-            </Link>
-          </div>
-          <div className="flex items-center gap-2 text-blue-300 text-sm mb-3">
-            <span className="bg-blue-800 px-2 py-1 rounded text-xs">{article.tag}</span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              <Calendar className="w-3 h-3" />
-              {article.date}
-            </span>
-          </div>
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">{article.title}</h1>
-          <p className="text-blue-100 text-lg leading-relaxed">{article.summary}</p>
-        </div>
-      </div>
+    <div className="min-h-screen bg-[#0f172a] py-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-muted-foreground hover:text-[#3b82f6] transition-colors mb-8">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          {isZh ? '返回前沿导航' : 'Back to Industry'}
+        </Link>
 
-      {/* Article Meta */}
-      <div className="max-w-4xl mx-auto px-4 py-6 border-b border-gray-200">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4 text-sm text-gray-600">
-            <span className="flex items-center gap-1">
-              <User className="w-4 h-4" />
-              {article.author}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock className="w-4 h-4" />
-              {article.readTime}
-            </span>
+        <article className="bg-[#111827] rounded-2xl border border-gray-800 overflow-hidden">
+          <div className="p-8 border-b border-gray-800">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="px-3 py-1 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] text-sm font-medium">{article.tag}</span>
+              <span className="text-gray-500 text-sm">{article.date}</span>
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{article.title}</h1>
+            <p className="text-xl text-muted-foreground mb-6">{article.summary}</p>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-6 text-sm text-gray-500">
+                <span className="flex items-center gap-2">
+                  <User className="w-4 h-4" />
+                  {article.author}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  {article.readTime}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  {article.date}
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <button className="p-2 rounded-lg bg-muted text-muted-foreground hover:text-[#3b82f6] transition-colors">
+                  <Share2 className="w-4 h-4" />
+                </button>
+                <button className="p-2 rounded-lg bg-muted text-muted-foreground hover:text-[#3b82f6] transition-colors">
+                  <Bookmark className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <Share2 className="w-4 h-4 text-gray-600" />
-            </button>
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <Bookmark className="w-4 h-4 text-gray-600" />
-            </button>
+          <div className="p-8">
+            <div className="prose prose-invert prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br/>') }} />
           </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="prose prose-lg max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br/>') }} />
-        </div>
+        </article>
       </div>
     </div>
   )
