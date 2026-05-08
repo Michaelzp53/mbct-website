@@ -26,6 +26,20 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 404,
+      type: 'article',
+      title: 'STR数据解读：2026年Q1中国酒店市场复苏超预期，但结构性分化加剧',
+      slug: 'str-q1-2026',
+      summary: 'STR发布2026年Q1中国酒店市场数据：入住率68.5%，ADR同比+3.8%，RevPAR同比+10.6%。但复苏呈现明显的K型结构性特征——高端市场ADR+5.3%，三四线城市ADR-2.3%。',
+      firstLine: 'STR发布2026年Q1中国酒店市场数据：入住率、ADR、RevPAR三项核心指标均高于2025年同期，上海高端酒店ADR达1078元（+5.3%）。',
+      author: 'MBCT观察者',
+      date: '2026-05-09',
+      readTime: '8分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+
+    {
       id: 403,
       type: 'article',
       title: '万豪与阿里巴巴AI战略合作升级：酒店业AI应用进入"智能体"时代',
