@@ -26,6 +26,20 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 403,
+      type: 'article',
+      title: '万豪与阿里巴巴AI战略合作升级：酒店业AI应用进入"智能体"时代',
+      slug: 'marriott-alibaba-ai-agent-2026',
+      summary: '万豪国际与阿里巴巴宣布AI战略合作升级，飞猪旗舰店启用AI智能体为客人规划个性化行程，万丽酒店AI礼宾服务RENAI正式上线。这意味着酒店业AI应用正从"聊天工具"升级为"运营基础设施"。',
+      firstLine: '2026年4月，万豪国际与阿里巴巴宣布AI战略合作升级，万豪飞猪旗舰店成为首批接入阿里巴巴"通义"大模型的国际酒店品牌。',
+      author: 'MBCT观察者',
+      date: '2026-05-08',
+      readTime: '8分钟',
+      tag: '行业分析',
+      featured: true,
+    },
+
+    {
       id: 321,
       type: 'article',
       title: '中国酒店业连锁化率40.09%背后的结构性机遇：下沉市场与存量改造双轮驱动',
