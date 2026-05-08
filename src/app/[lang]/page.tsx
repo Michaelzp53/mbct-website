@@ -283,10 +283,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <div>
                     <h4 className="text-card-foreground font-medium text-sm">
-                      {lang === 'zh' ? '超额激励' : 'Exceed Bonus'}
+                      {lang === 'zh' ? '持续精进' : 'Continuous Improvement'}
                     </h4>
                     <p className="text-muted-foreground text-xs">
-                      {lang === 'zh' ? '超出目标部分，双方共享增长成果' : 'Beyond targets, we share the growth achievements together'}
+                      {lang === 'zh' ? '达成目标后，我们继续寻找提升空间，追求更好表现' : 'After reaching targets, we keep finding ways to improve and perform even better'}
                     </p>
                   </div>
                 </div>
