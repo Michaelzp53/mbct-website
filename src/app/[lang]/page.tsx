@@ -273,7 +273,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       {lang === 'zh' ? '风险共担' : 'Risk Sharing'}
                     </h4>
                     <p className="text-muted-foreground text-xs">
-                      {lang === 'zh' ? '未达标仅收基础费用，达标后收取全额' : 'Base fee only if missed, full fee upon success'}
+                      {lang === 'zh' ? '效果未达预期，我们共同复盘调整，直到达成目标' : 'If results fall short, we review and adjust together until targets are met'}
                     </p>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       {lang === 'zh' ? '超额激励' : 'Exceed Bonus'}
                     </h4>
                     <p className="text-muted-foreground text-xs">
-                      {lang === 'zh' ? '超出目标部分，双方共享增长收益' : 'Shared growth benefits beyond targets'}
+                      {lang === 'zh' ? '超出目标部分，双方共享增长成果' : 'Beyond targets, we share the growth achievements together'}
                     </p>
                   </div>
                 </div>
