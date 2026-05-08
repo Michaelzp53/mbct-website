@@ -241,9 +241,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </div>
               </div>
               
-              <Link href={guaranteeLink} className="inline-flex items-center text-[#f59e0b] font-medium hover:underline text-sm">
-                {lang === 'zh' ? '了解效果保障详情 →' : 'Learn about our guarantee →'}
-              </Link>
+
             </div>
             
             <div className="bg-card rounded-xl p-6 border border-border">
