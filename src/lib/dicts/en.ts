@@ -198,7 +198,7 @@ export const en = {
       'Nine Pillars: full lifecycle from pre-investment to operational growth to long-term partnership',
       'AI-native technology: 50-70% of baseline work automated by AI, faster delivery at lower cost',
       'Execution partnership: end-to-end support from strategy to implementation, never a hands-off approach',
-      'Results guarantee: shared risk, pay only 50% if targets are not met, prove value with outcomes',
+      'Results guarantee: goal-oriented partnership, joint review and adjustment until targets are met, prove value with outcomes',
       'Vertical specialization: 100% focused on hospitality, no generic multi-industry methodologies',
       'Proven track record: 300+ hotels with real data, average RevPAR improvement of 35%',
     ],
