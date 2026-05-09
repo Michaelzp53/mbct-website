@@ -26,6 +26,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 405,
+      type: 'article',
+      title: '万豪希尔顿首次警告：ChatGPT等AI平台正在威胁酒店直订渠道',
+      titleEn: 'Marriott and Hilton Warn: AI Platforms Threaten Direct Bookings',
+      slug: 'marriott-hilton-ai-ota-threat-2026',
+      summary: '万豪和希尔顿在SEC文件中首次将AI平台列为风险因素。AI可能将客户导向OTA，佣金率15-25%。MBCT分析两种结局：酒店沦为内容供应商，或AI成为直订利器。',
+      summaryEn: 'Marriott and Hilton first list AI platforms as risk factors in SEC filings. AI may redirect customers to OTAs with 15-25% commission rates. MBCT analyzes two outcomes.',
+      author: 'MBCT观察者',
+      date: '2026-05-09',
+      readTime: 6,
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+    },
+    {
       id: 404,
       type: 'article',
       title: 'STR数据解读：2026年Q1中国酒店市场复苏超预期，但结构性分化加剧',
