@@ -1031,23 +1031,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                   热门话题
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  {cases[0].title}
+                  {articles[0].title}
                 </h2>
                 <p className="text-muted-foreground mb-6 text-lg">
-                  {cases[0].summary}
+                  {articles[0].summary}
                 </p>
                 <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-6">
                   <span className="flex items-center gap-2">
                     <User className="w-4 h-4" />
-                    {cases[0].author}
+                    {articles[0].author}
                   </span>
                   <span className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    {cases[0].date}
+                    {articles[0].date}
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    {cases[0].readTime}
+                    {articles[0].readTime}分钟
                   </span>
                 </div>
                 <Link
