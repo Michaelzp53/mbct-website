@@ -74,7 +74,7 @@ export default function BentoServices({ lang }: BentoServicesProps) {
     {
       id: 'partnership',
       title: isZh ? '⑥ 落地陪跑与效果保障' : '⑥ Execution Partnership',
-      desc: isZh ? '风险共担，收益共享。透明数据看板+节点可控，未达标仅收50%' : 'Share risk, share rewards. Transparent dashboard + milestone control, 50% if targets miss',
+      desc: isZh ? '目标导向，持续精进。透明数据看板+关键节点可控，效果未达预期共同复盘调整直到达成目标' : 'Goal-oriented, continuous improvement. Transparent dashboard + milestone control, joint review and adjustment until targets are met',
       icon: Building2,
       color: '#764ba2',
       gradient: 'linear-gradient(135deg, #764ba2, #4285f4)',

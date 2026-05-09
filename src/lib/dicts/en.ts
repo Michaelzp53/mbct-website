@@ -54,7 +54,7 @@ export const en = {
       },
       {
         title: '⑥ Execution Partnership & Results Guarantee',
-        description: 'Share risk, share rewards. Transparent process + milestone control + flexible engagement. Pay only 50% if targets are not met',
+        description: 'Goal-oriented, continuous improvement. Transparent dashboard + milestone control + flexible engagement. Joint review and adjustment until targets are met',
         features: ['Transparent data dashboard with full visibility', 'Phase-based results review with timely adjustments', 'Flexible engagement model tied to outcomes', 'Layer 1: Process transparency', 'Layer 2: Milestone control', 'Layer 3: Partnership assurance'],
       },
       {
@@ -65,7 +65,7 @@ export const en = {
       {
         title: '⑧ Financing Advisory',
         description: 'Secure optimal capital for hotel projects. Investment-bank-grade financial packaging + precise investor matching + full negotiation support',
-        features: ['Optimal capital structure design', 'Investment-grade BP + financial model + valuation', 'Precision matching with banks / PE / strategic funds', 'Full negotiation support from DD to closing', 'Success-fee model: we get paid when you close', 'Case: total investment reduced by ¥55M'],
+        features: ['Optimal capital structure design', 'Investment-grade BP + financial model + valuation', 'Precision matching with banks / PE / strategic funds', 'Full negotiation support from DD to closing', 'Results-oriented: delivery complete only when financing succeeds', 'Case: total investment reduced by ¥55M'],
       },
       {
         title: '⑨ Industry Research & Content',
