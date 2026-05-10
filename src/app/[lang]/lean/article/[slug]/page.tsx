@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft, MessageSquare, ThumbsUp, Clock, User, Eye, Send, ChevronRight, Tag, Heart } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { getArticleBySlug, getAllSlugs, ArticleData } from './articles-data'
 
 // 7大分类
 const categories = [
@@ -26,206 +27,11 @@ interface Comment {
   isOfficial: boolean
 }
 
-// 示例评论
-const sampleComments: Comment[] = [
-  {
-    id: 1,
-    author: '张经理',
-    avatar: 'Z',
-    content: '我们酒店也遇到了同样的问题，前台等待时间经常超过10分钟。请问情绪预判系统的具体实施步骤是什么？',
-    date: '2026-05-21',
-    likes: 8,
-    replies: [
-      {
-        id: 11,
-        author: '迈创兄弟',
-        avatar: 'M',
-        content: '实施步骤：1) 分析入住/退房高峰时段；2) 部署预退房系统（手机端）；3) 设置等待区增值体验（茶水+杂志+WiFi）；4) 培训前台"3分钟预警"机制。需要详细方案可以私信我们。',
-        date: '2026-05-21',
-        likes: 12,
-        replies: [],
-        isOfficial: true,
-      }
-    ],
-    isOfficial: false,
-  },
-  {
-    id: 2,
-    author: '李老板',
-    avatar: 'L',
-    content: '文章写得很实用，特别是关于"等待增值体验"的部分。我们尝试后客人投诉确实减少了。',
-    date: '2026-05-20',
-    likes: 5,
-    replies: [],
-    isOfficial: false,
-  },
-]
-
-// 示例文章数据
-const articleData = {
-  id: 4,
-  slug: 'front-desk-wait-optimization',
-  titleZh: '前台等待12分钟→3分钟：情绪预判系统实战',
-  titleEn: 'Front Desk Wait Time: 12min to 3min with Emotional Anticipation System',
-  contentZh: `## 问题背景
-
-张老板在杭州经营一家120间客房的商务酒店，位置靠近会展中心，主要客源是出差商务人士。
-
-**痛点**：
-- 下午2-4点入住高峰，前台排队经常超过12分钟
-- 客人投诉"等待太久"，携程评分从4.6降到4.2
-- 前台员工压力大，流失率高
-
-## 解决方案：情绪预判系统
-
-### 第一步：数据分析
-
-通过PMS系统分析一周入住数据：
-- 高峰时段：14:00-16:00（占全天入住量40%）
-- 平均办理时间：4.5分钟/人
-- 高峰期同时到达：8-12人
-
-### 第二步：预退房系统
-
-部署手机端预退房功能：
-- 客人离店前1小时收到短信链接
-- 点击确认退房→系统自动查房→生成账单
-- 前台只需确认收款，办理时间从4.5分钟降至1分钟
-
-### 第三步：等待增值体验
-
-在等候区设置：
-- 免费茶水+小点心
-- 当地旅游指南杂志
-- 高速WiFi+充电站
-- 电子屏显示预计等待时间
-
-### 第四步：情绪预判机制
-
-培训前台"3分钟预警"：
-- 等待超过3分钟→主动道歉+赠送饮品券
-- 等待超过5分钟→升级房型或延迟退房
-- VIP客户→优先办理通道
-
-## 实施效果
-
-| 指标 | 实施前 | 实施后 | 改善 |
-|------|--------|--------|------|
-| 平均等待时间 | 12分钟 | 3分钟 | -75% |
-| 前台投诉率 | 15% | 3% | -80% |
-| 携程评分 | 4.2 | 4.6 | +0.4 |
-| 员工满意度 | 3.2 | 4.1 | +28% |
-
-## 关键洞察
-
-> "客人不讨厌等待，讨厌的是**不确定的等待**。显示预计时间+提供增值体验，焦虑感降低70%。" —— 迈创兄弟
-
-## 行动清单
-
-- [ ] 分析入住高峰时段数据
-- [ ] 部署预退房系统（可选手机端或小程序）
-- [ ]  redesign 等候区为"体验区"
-- [ ] 培训前台"3分钟预警"话术
-- [ ] 设置VIP快速通道
-
----
-
-**作者**：迈创兄弟  
-**日期**：2026-05-12  
-**阅读时长**：10分钟`,
-  contentEn: `## Problem Background
-
-Mr. Zhang operates a 120-room business hotel in Hangzhou near the convention center, primarily serving business travelers.
-
-**Pain Points**:
-- Check-in queue often exceeds 12 minutes during 2-4 PM peak hours
-- Guest complaints about long waits dropped Ctrip rating from 4.6 to 4.2
-- Front desk staff under high pressure, high turnover rate
-
-## Solution: Emotional Anticipation System
-
-### Step 1: Data Analysis
-
-Analyzing one week of check-in data through PMS:
-- Peak hours: 14:00-16:00 (40% of daily check-ins)
-- Average processing time: 4.5 minutes per guest
-- Simultaneous arrivals during peak: 8-12 guests
-
-### Step 2: Pre-Checkout System
-
-Deploying mobile pre-checkout:
-- Guests receive SMS link 1 hour before departure
-- Click to confirm checkout → automatic room check → bill generated
-- Front desk only needs to confirm payment, processing time drops from 4.5 to 1 minute
-
-### Step 3: Waiting Value-Added Experience
-
-Setting up in waiting area:
-- Free tea + snacks
-- Local travel guide magazines
-- High-speed WiFi + charging stations
-- Digital display showing estimated wait time
-
-### Step 4: Emotional Anticipation Mechanism
-
-Training front desk "3-minute alert":
-- Wait > 3 minutes → proactive apology + beverage voucher
-- Wait > 5 minutes → room upgrade or late checkout
-- VIP guests → priority processing channel
-
-## Implementation Results
-
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| Average wait time | 12 min | 3 min | -75% |
-| Front desk complaints | 15% | 3% | -80% |
-| Ctrip rating | 4.2 | 4.6 | +0.4 |
-| Staff satisfaction | 3.2 | 4.1 | +28% |
-
-## Key Insight
-
-> "Guests don't hate waiting, they hate **uncertain waiting**. Displaying estimated time + providing value-added experiences reduces anxiety by 70%." — MarvelBros
-
-## Action Checklist
-
-- [ ] Analyze check-in peak hour data
-- [ ] Deploy pre-checkout system (mobile app or mini-program)
-- [ ] Redesign waiting area as "experience zone"
-- [ ] Train front desk "3-minute alert" scripts
-- [ ] Set up VIP express channel
-
----
-
-**Author**: MarvelBros  
-**Date**: 2026-05-12  
-**Read Time**: 10 min`,
-  category: 'operations',
-  tags: ['前台优化', '客户体验', '等待管理'],
-  author: '迈创兄弟',
-  date: '2026-05-12',
-  readTime: 10,
-  views: 1876,
-  likes: 132,
-  comments: 18,
-}
+// 示例评论（空数组，等待真实评论系统）
+const sampleComments: Comment[] = []
 
 export async function generateStaticParams() {
-  const slugs = [
-    'hotel-energy-cost-optimization-2026',
-    'hotel-labor-cost-ai-collaboration-2026',
-    'hotel-investment-pitfalls-2026',
-    'hotel-reits-exit-strategy-2026',
-    'hotel-social-media-marketing-2026',
-    'hotel-ota-commission-direct-booking-2026',
-    'hotel-ai-agent-intelligent-upgrade-2026',
-    'hotel-data-driven-operations-2026',
-    'hotel-construction-timeline-72-checkpoints-2026',
-    'hotel-pms-selection-guide-2026',
-    'hotel-gen-z-retention-dual-track-2026',
-    'hotel-training-system-lifelong-learning-2026',
-    'hotel-pms-ai-infrastructure-2026',
-    'hotel-data-governance-standardization-2026',
-  ]
+  const slugs = getAllSlugs()
   
   return slugs.flatMap((slug) => [
     { lang: 'zh', slug },
@@ -236,6 +42,28 @@ export async function generateStaticParams() {
 export default async function LeanArticlePage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params
   const isZh = lang === 'zh'
+
+  // 获取文章数据
+  const articleData = getArticleBySlug(slug)
+
+  // 如果文章不存在，显示404
+  if (!articleData) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-foreground mb-4">
+            {isZh ? '文章未找到' : 'Article Not Found'}
+          </h1>
+          <Link 
+            href={`/${lang}/lean`}
+            className="text-[#f59e0b] hover:underline"
+          >
+            {isZh ? '返回文章列表' : 'Back to Articles'}
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   const ui = {
     backToList: isZh ? '返回文章列表' : 'Back to Articles',
