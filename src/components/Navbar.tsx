@@ -29,6 +29,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
     { href: `/${lang}/contact?type=plan`, label: lang === 'zh' ? '获取方案' : 'Get Plan' },
     { href: `/${lang}/contact`, label: lang === 'zh' ? '联系我们' : 'Contact' },
   ]
+  // Navigation order: 首页-关于我们-核心业务-行业资讯-案例展示-管享精道-获取方案-联系我们
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 dark:bg-[#1a1a2e]/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 dark:supports-[backdrop-filter]:bg-[#1a1a2e]/90">
