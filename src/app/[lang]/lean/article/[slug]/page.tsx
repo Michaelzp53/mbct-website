@@ -211,13 +211,20 @@ Training front desk "3-minute alert":
 
 export async function generateStaticParams() {
   const slugs = [
-    'front-desk-wait-optimization',
-    'ota-commission-optimization',
-    'digital-transformation-human-touch',
-    'employee-turnover-optimization',
-    'investment-decision-guide',
-    'hotel-construction-pitfall-guide',
-    'energy-cost-optimization',
+    'hotel-energy-cost-optimization-2026',
+    'hotel-labor-cost-ai-collaboration-2026',
+    'hotel-investment-pitfalls-2026',
+    'hotel-reits-exit-strategy-2026',
+    'hotel-social-media-marketing-2026',
+    'hotel-ota-commission-direct-booking-2026',
+    'hotel-ai-agent-intelligent-upgrade-2026',
+    'hotel-data-driven-operations-2026',
+    'hotel-construction-timeline-72-checkpoints-2026',
+    'hotel-pms-selection-guide-2026',
+    'hotel-gen-z-retention-dual-track-2026',
+    'hotel-training-system-lifelong-learning-2026',
+    'hotel-pms-ai-infrastructure-2026',
+    'hotel-data-governance-standardization-2026',
   ]
   
   return slugs.flatMap((slug) => [
