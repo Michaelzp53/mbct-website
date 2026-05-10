@@ -16,6 +16,14 @@ interface Comment {
   isOfficial: boolean
 }
 
+interface ApiComment {
+  id: number
+  article_slug: string
+  nickname: string
+  content: string
+  created_at: string
+}
+
 interface ArticleInteractionsProps {
   slug: string
   initialLikes: number
@@ -37,6 +45,8 @@ export default function ArticleInteractions({
   const [comments, setComments] = useState<Comment[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [views, setViews] = useState(0)
+  const [error, setError] = useState('')
 
   const ui = {
     comments: isZh ? '评论交流' : 'Comments',
@@ -47,46 +57,78 @@ export default function ArticleInteractions({
     like: isZh ? '点赞' : 'Like',
     loadMore: isZh ? '加载更多' : 'Load More',
     official: isZh ? '迈创兄弟官方' : 'Official',
+    views: isZh ? '阅读' : 'Views',
   }
 
-  // Load likes and comments from localStorage
+  // Load data from API
   useEffect(() => {
-    try {
-      // Load like state
-      const likedKey = `lean_article_liked_${slug}`
-      const savedLiked = localStorage.getItem(likedKey)
-      if (savedLiked === 'true') setLiked(true)
-
-      // Load like count
-      const likeCountKey = `lean_article_likes_${slug}`
-      const savedLikeCount = localStorage.getItem(likeCountKey)
-      if (savedLikeCount) setLikeCount(parseInt(savedLikeCount, 10))
-
-      // Load comments
-      const commentsKey = `lean_article_comments_${slug}`
-      const savedComments = localStorage.getItem(commentsKey)
-      if (savedComments) {
-        setComments(JSON.parse(savedComments))
+    const loadData = async () => {
+      try {
+        const res = await fetch(`/api/lean/interactions?slug=${encodeURIComponent(slug)}`)
+        if (res.ok) {
+          const data = await res.json()
+          setLikeCount(data.likes || initialLikes)
+          setLiked(data.hasLiked || false)
+          setViews(data.views || 0)
+          
+          // Convert API comments to Comment format
+          if (data.comments && data.comments.length > 0) {
+            const formattedComments: Comment[] = data.comments.map((c: ApiComment) => ({
+              id: String(c.id),
+              author: c.nickname || '匿名用户',
+              avatar: (c.nickname || '匿').charAt(0).toUpperCase(),
+              content: c.content,
+              date: new Date(c.created_at).toLocaleDateString(isZh ? 'zh-CN' : 'en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              }),
+              likes: 0,
+              replies: [],
+              isOfficial: false,
+            }))
+            setComments(formattedComments)
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load interactions:', err)
+        // Fallback to initial values
+        setLikeCount(initialLikes)
       }
-    } catch {
-      // Ignore localStorage errors
+      setIsLoaded(true)
     }
-    setIsLoaded(true)
-  }, [slug])
+    
+    loadData()
+  }, [slug, initialLikes, isZh])
 
-  const handleLike = () => {
+  const handleLike = async () => {
     if (liked) return // Already liked
 
-    const newLiked = true
-    const newCount = likeCount + 1
-    setLiked(newLiked)
-    setLikeCount(newCount)
+    // Optimistic update
+    setLiked(true)
+    setLikeCount(prev => prev + 1)
 
     try {
-      localStorage.setItem(`lean_article_liked_${slug}`, String(newLiked))
-      localStorage.setItem(`lean_article_likes_${slug}`, String(newCount))
-    } catch {
-      // Ignore
+      const res = await fetch('/api/lean/interactions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, action: 'like' }),
+      })
+      
+      if (!res.ok) {
+        // Revert on error
+        const data = await res.json()
+        if (data.error === 'Already liked') {
+          setLiked(true)
+        } else {
+          setLiked(false)
+          setLikeCount(prev => prev - 1)
+        }
+      }
+    } catch (err) {
+      console.error('Like failed:', err)
+      setLiked(false)
+      setLikeCount(prev => prev - 1)
     }
   }
 
@@ -94,35 +136,46 @@ export default function ArticleInteractions({
     if (!commentText.trim()) return
 
     setIsSubmitting(true)
+    setError('')
 
-    const newComment: Comment = {
-      id: `c-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      author: 'Guest',
-      avatar: 'G',
-      content: commentText.trim(),
-      date: new Date().toLocaleDateString(isZh ? 'zh-CN' : 'en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      }),
-      likes: 0,
-      replies: [],
-      isOfficial: false,
-    }
-
-    // Save to localStorage
     try {
-      const commentsKey = `lean_article_comments_${slug}`
-      const existing = comments.map((c) => c)
-      existing.unshift(newComment)
-      localStorage.setItem(commentsKey, JSON.stringify(existing))
-    } catch {
-      // Ignore
-    }
+      const res = await fetch('/api/lean/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug,
+          content: commentText.trim(),
+          nickname: '访客',
+        }),
+      })
 
-    setComments((prev) => [newComment, ...prev])
-    setCommentText('')
-    setIsSubmitting(false)
+      if (res.ok) {
+        const data = await res.json()
+        const newComment: Comment = {
+          id: String(data.comment.id),
+          author: data.comment.nickname || '匿名用户',
+          avatar: (data.comment.nickname || '匿').charAt(0).toUpperCase(),
+          content: data.comment.content,
+          date: new Date(data.comment.created_at).toLocaleDateString(isZh ? 'zh-CN' : 'en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          }),
+          likes: 0,
+          replies: [],
+          isOfficial: false,
+        }
+        setComments((prev) => [newComment, ...prev])
+        setCommentText('')
+      } else {
+        setError(isZh ? '评论提交失败，请重试' : 'Failed to post comment')
+      }
+    } catch (err) {
+      console.error('Comment failed:', err)
+      setError(isZh ? '网络错误，请重试' : 'Network error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (!isLoaded) {

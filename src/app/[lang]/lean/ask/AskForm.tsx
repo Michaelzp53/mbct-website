@@ -89,8 +89,8 @@ export default function AskForm({ lang }: AskFormProps) {
       ? '迈创兄弟将在48小时内回复。精选问答将在管享精道展示。'
       : 'MarvelBros will respond within 48 hours. Selected Q&A will be featured in the Lean Insights section.',
     notice: isZh
-      ? '当前问题保存在本地浏览器中。如需正式提交，请通过联系页面联系我们。'
-      : 'Questions are saved locally in your browser. For production, please contact MarvelBros directly.',
+      ? '迈创兄弟团队将在48小时内回复您的问题。精选问答将展示在管享精道栏目。'
+      : 'The MarvelBros team will respond within 48 hours. Selected Q&A will be featured in Lean Insights.',
   }
 
   const toggleWaste = (wasteId: string) => {
@@ -125,38 +125,36 @@ export default function AskForm({ lang }: AskFormProps) {
     setErrorMessage('')
 
     try {
-      const question: SavedQuestion = {
-        id: `q-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-        title: title.trim(),
-        detail: detail.trim(),
-        pillar,
-        wasteTypes: selectedWastes,
-        nickname: nickname.trim() || 'Anonymous',
-        hotelName: hotelName.trim() || undefined,
-        submittedAt: new Date().toISOString(),
+      // Submit to real API
+      const res = await fetch('/api/lean/questions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: title.trim(),
+          detail: detail.trim(),
+          pillar,
+          wasteTypes: selectedWastes,
+          nickname: nickname.trim() || undefined,
+          hotelName: hotelName.trim() || undefined,
+        }),
+      })
+
+      if (res.ok) {
+        setSubmitStatus('success')
+        setTitle('')
+        setDetail('')
+        setPillar('')
+        setSelectedWastes([])
+        setNickname('')
+        setHotelName('')
+      } else {
+        const data = await res.json()
+        setErrorMessage(data.error || (isZh ? '提交失败，请重试' : 'Submission failed. Please try again.'))
+        setSubmitStatus('error')
       }
-
-      let questions: SavedQuestion[] = []
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY)
-        if (saved) questions = JSON.parse(saved)
-      } catch {}
-
-      questions.push(question)
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(questions))
-
-      await new Promise((resolve) => setTimeout(resolve, 800))
-
-      setSubmitStatus('success')
-      setTitle('')
-      setDetail('')
-      setPillar('')
-      setSelectedWastes([])
-      setNickname('')
-      setHotelName('')
     } catch {
+      setErrorMessage(isZh ? '网络错误，请重试' : 'Network error. Please try again.')
       setSubmitStatus('error')
-      setErrorMessage(isZh ? '提交失败，请重试' : 'Failed to submit. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
