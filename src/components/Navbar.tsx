@@ -22,8 +22,8 @@ export function Navbar({ lang, dict }: NavbarProps) {
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
     { href: `/${lang}/about`, label: lang === 'zh' ? '关于我们' : 'About' },
-    { href: `/${lang}/knowledge`, label: lang === 'zh' ? '行业动态' : 'Knowledge' },
     { href: `/${lang}/services`, label: lang === 'zh' ? '核心业务' : 'Services' },
+    { href: `/${lang}/knowledge`, label: lang === 'zh' ? '行业资讯' : 'Industry Insights' },
     { href: `/${lang}/cases`, label: lang === 'zh' ? '案例展示' : 'Cases' },
     { href: `/${lang}/lean`, label: lang === 'zh' ? '管享精道' : 'Lean Insights' },
     { href: `/${lang}/contact?type=plan`, label: lang === 'zh' ? '获取方案' : 'Get Plan' },
