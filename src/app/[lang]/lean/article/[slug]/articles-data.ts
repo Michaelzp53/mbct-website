@@ -1,5 +1,6 @@
-// 管享精道文章数据 - 14篇完整内容
+// 管享精道文章数据 - 14篇完整内容（中英文）
 // 生成时间: 2026-05-10
+// 更新: 2026-05-10 添加英文版完整内容
 // 注意: 此文件由脚本生成，手动修改需谨慎
 
 export interface ArticleData {
@@ -235,11 +236,220 @@ MBCT的做法是：**建立量化的决策模型，让每个选项都能用数�
 更进一步，MBCT认为投资决策的最高境界是**"情绪价值"**——给投资人一个确定性，让他在做重大决策时心里是安定的。
 
 核心原则：**酒店是资产，不是赌具**。当你用科学的方法做决策，资产才能真正增值，而不是在"热闹"中蒸发。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 2026酒店投资：为什么有的酒店只赚热闹不赚钱？.
+## 1. The Story
 
-[Full English translation coming soon]`,
+Mr. Chen had his eyes on a prime subway-adjacent property in Suzhou — 3,500 square meters, killer location. He rounded up three "expert" friends for a second opinion.
+
+Friend A said: "With a spot like this, an economy hotel would be packed every night."
+
+Friend B said: "Go mid-scale. Strong brand, right price point, widest market coverage."
+
+Friend C said: "You're both wrong. The trend now is young people wanting boutique experiences. That's the lane I'm playing."
+
+Chen went with Friend C's call — boutique hotel. Eight million yuan invested.
+
+First year on the books, his RevPAR sat at 58 yuan. The economy hotel next door? 82 yuan. The mid-scale down the street? 95 yuan. Static payback period came out to 7.8 years — way above industry average.
+
+"The location's just as good, the finishes are even better. How is my return the lowest?" Chen was baffled.
+
+After some soul-searching, he figured it out: the problem wasn't operations. It was the initial positioning — dead wrong. This subway exit drew 70% business travelers. Boutique hotels target "deep experience" tourists. Those two crowds barely overlap at this location.
+
+Within three months of opening, Chen was stuck in an awkward middle ground — the boutique positioning didn't pull experience-seekers, and the price made business travelers feel they weren't getting their money's worth. He ended up running discount promotions just to keep occupancy from cratering.
+
+Eight million yuan in, and he was bleeding cash every month.
+
+---
+
+## 2. Why Traditional Approaches Fall Short
+
+Chen's situation isn't unique. Among MBCT-served hotel investment projects, over 60% of cases lost money because of one thing: positioning mistakes.
+
+Traditional hotel investment decisions usually lean on three approaches:
+
+**Method 1: Going with Gut Feel**
+
+Like Chen did — grab a few "expert" friends for dinner, trust your gut. They mean well, sure, but their judgment is "a feeling," not systematic data analysis.
+
+Problem: Feelings are deceiving, and everyone measures "good feel" differently.
+
+**Method 2: Chasing the Trend**
+
+2021 was all about "National Style" aesthetics. 2023 was "boutique homestays." 2025 is "smart hotels." Whatever's hot, invest in it — ride the wave.
+
+Problem: Hot means crowded, means saturated, means you're buying in right as the party's already over.
+
+**Method 3: Leaning on Experience**
+
+Find a "veteran" consultant with 20 years in hotels, let their past experience call the shots.
+
+Problem: Experience is valuable, but past success doesn't automatically transfer to new market conditions. A model that worked in 2015 might be completely dead in 2026.
+
+The common thread? **These approaches turn hotel investment into gambling instead of decision-making.**
+
+---
+
+## 3. The MBCT Perspective
+
+When MBCT stepped in, the first thing we did was turn "positioning" into a math problem.
+
+We surveyed every hotel within 3 kilometers of that Suzhou subway exit — 42 properties, 3,100 total rooms, 67% average occupancy, 76 yuan average RevPAR.
+
+More importantly, we analyzed the guest mix: **87% business travelers, 13% tourists.**
+
+What Chen chose — the "boutique hotel" lane — targets "deep experience tourists," who account for just 5% of the local market.
+
+Translation: **Chen built a product for 5% of visitors in a market that's 87% business travelers.**
+
+This isn't an operations problem. It's a strategic one.
+
+**The First Principle of Investment Decisions?**
+
+Not "what's the best product?" — it's **"what product fits this specific market?"**
+
+Good investment means studying the market first, then matching the product. Not the other way around.
+
+**Where's the deeper problem?**
+
+Hotel investment fails not because people "don't know" — it's because they "don't want to know."
+
+Before Chen made his call, he had the chance to run market research. He chose to trust his friend's gut instead. Research is a hassle. Gut feel is easier.
+
+Human nature: we gravitate toward "good news" and dodge "bad news." When you've invested 8 million in a project, part of you wants it to succeed. So you filter out dissent and selectively absorb confirmation.
+
+This psychological bias is the deadliest killer in investment decisions.
+
+---
+
+## 4. The Right Solution
+
+### Step 1: Build a Three-Dimensional Decision Model
+
+We helped Chen develop an investment evaluation framework across three dimensions:
+
+**Dimension 1: Financial**
+
+| Metric | Calculation | Threshold |
+|--------|-------------|-----------|
+| Payback period (static) | Total investment ÷ Annual net profit | <5 years |
+| Net yield | Annual net profit ÷ Total investment | >15% |
+| Cash flow break-even | Time to cumulative positive cash flow | <18 months |
+| Risk buffer | (Expected RevPAR - Breakeven RevPAR) ÷ Breakeven RevPAR | >20% |
+
+**Dimension 2: Market**
+
+| Metric | Calculation | Threshold |
+|--------|-------------|-----------|
+| Target guest match | Position coverage ÷ Hotel positioning | Match rate >70% |
+| Competition intensity | Same-category hotels within 3 km | <5 properties |
+| Market capacity | Annual regional demand ÷ Total supply | Supply/demand ratio >1.2 |
+
+**Dimension 3: Operations**
+
+| Metric | Assessment | Standard |
+|--------|------------|----------|
+| Labor ratio | Total staff ÷ Total rooms | Economy <0.25, Mid-scale <0.35 |
+| Rate match | Location spending power ÷ Product pricing | Match >75% |
+| Supply chain maturity | Local procurement difficulty | Difficulty <Medium |
+
+### Step 2: The Four-Quadrant Positioning Method
+
+Based on market research, we mapped hotel products into four quadrants:
+
+\`\`\`
+                    High-End
+                       │
+      Boutique Hotels │      Luxury Hotels
+          (Niche)      │      (Rare)
+                       │
+   Low Frequency ─────────────────── High Frequency
+                       │
+     Economy Hotels    │      Mid-Scale Hotels
+         (Red Ocean)   │         (Main Battlefield)
+                       │
+                    Low-End
+\`\`\`
+
+Chen's location: 87% business travelers. The "main battlefield" in this quadrant is mid-scale hotels. Investing in a boutique hotel puts him in the "low frequency + niche" quadrant — a rough place to be.
+
+### Step 3: Test the "Minimum Viable Hypothesis"
+
+Before going all in, we suggested Chen run a small-scale validation:
+
+Rent one floor (25 rooms), finish and price it as a mid-scale hotel, test-run for 3 months, collect real data:
+
+- What's the actual RevPAR?
+- Does the guest mix match expectations?
+- Can operational costs be covered?
+
+If the numbers work, go full steam ahead. If they don't, there's still room to adjust.
+
+This "low-cost testing" approach is way safer than "bet everything on black."
+
+### Step 4: Build an Investment Decision Checklist
+
+We helped Chen put together a pre-investment checklist:
+
+- [ ] Competitor analysis within 3 km (count, brands, occupancy, RevPAR)
+- [ ] Target guest profile (business/tourist/local, frequency, spend)
+- [ ] Supply/demand calculation (regional demand vs. total supply)
+- [ ] Financial model (static payback, net yield, cash flow break-even)
+- [ ] Competitive moat assessment (brand/location/service — any real barriers?)
+- [ ] Exit strategy (how to exit in 5 years, who would buy?)
+
+---
+
+## 5. The Emotional Value Angle
+
+What hurts most about a failed hotel investment?
+
+Not the money — it's the spirit.
+
+Chen said something that stuck with me: "I thought I found a blue ocean. Turns out I walked into a dead sea."
+
+That feeling is worse than losing 8 million yuan.
+
+From MBCT's view, the real emotional value of hotel investment is **certainty**.
+
+What investors need most isn't a "maybe I'll get rich" opportunity — it's a "this will probably work" assessment.
+
+When your decisions are backed by data and validated by models, your mind is at ease. You know what you're doing and why. You know how to course-correct if things go sideways.
+
+That certainty? That's emotional value.
+
+---
+
+## 6. Results
+
+After re-evaluating through this framework, Chen adjusted course:
+
+- Switched from boutique to mid-scale business hotel
+- Total investment controlled at 7.5 million (500,000 less than the original plan)
+- First year RevPAR hit 89 yuan, static payback 4.2 years
+- Occupancy held steady at 82%, above regional average
+
+More importantly, Chen's mindset shifted — he wasn't "gambling." He was "doing something he had confidence in."
+
+---
+
+## 7. Key Takeaways
+
+The core lesson here: **Hotel investment is scientific decision-making, not a popularity contest.**
+
+The old way: "trust your gut, lean on connections, chase trends" — turns investment into gambling.
+
+MBCT's way: **Build quantitative decision models so every option can be compared with data.**
+
+When you turn "what to invest in" into a math problem, the answer becomes clear.
+
+Going further, MBCT believes the highest form of investment decisions is **"emotional value"** — giving the investor certainty so they can make big decisions with a calm mind.
+
+Core principle: **Hotels are assets, not betting chips.** When you make decisions the scientific way, assets actually appreciate — instead of evaporating in all the "buzz."
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'investment',
     tags: ["投资分析", "选址评估", "投资回报"],
     author: '迈创兄弟',
@@ -463,11 +673,217 @@ REITs不是万能药，但它为酒店业主打开了一扇新窗。对于优质
 更进一步，MBCT认为：**资产的本质是"未来现金流的折现"，而不是"砖头水泥"。** 当你用金融的视角看待酒店，退出路径自然会变宽。
 
 核心原则：**让资产流动起来，是最高效的增值方式。**`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 酒店资产REITs时代来临：持有型项目的退出新路径.
+## 1. The Story
 
-[Full English translation coming soon]`,
+Mr. Wang acquired a property in Shanghai's Waigaoqiao area back in 2019, transformed it into a boutique hotel. Valuation: 230 million yuan.
+
+Five years on, the hotel runs stably — annual net cash flow exceeds 15 million. But Wang had a persistent headache: **that 230 million just sits on the balance sheet, frozen.**
+
+He wanted to expand, but the capital was locked into this building. He tried bringing in strategic investors, but equity valuations wouldn't align. He considered selling, but the premium was so thin it felt like giving it away.
+
+"Hotels are great assets. It's just that they're incredibly hard to liquidate." Wang's words.
+
+This is the universal problem for hotel owners: **great assets, terrible liquidity.**
+
+Traditional exit paths — there are three:
+
+**Sale**: Market windows are short, buyers are hard to find, premiums are thin. Often you're forced to sell at 70% of asking price.
+
+**Equity transfer**: Complicated process, requires finding the right strategic or financial investor, long negotiation cycles, and you're diluting your stake.
+
+**Master lease**: Typical 15-20 year contracts, fixed rent, locking in future earnings but ceding any upside from asset appreciation.
+
+Wang had considered all three. Every single one felt like "leaving money on the table."
+
+Then in 2025, a new policy signal gave him hope: **Hotel Asset REITs.**
+
+---
+
+## 2. Why Traditional Approaches Fall Short
+
+Hotel asset exit has always been an industry headache. Traditional solutions:
+
+**Option 1: Wait for the right moment, sell high**
+
+Pros: In theory, you capture all the asset appreciation.
+
+Cons: The hotel buyer pool is small and liquidity is terrible. If you need cash urgently, you're forced to discount heavily. Wang's Waigaoqiao property was valued at 230 million in 2019. Similar properties traded at only 200 million in 2024. **It went down, not up.**
+
+**Option 2: Bring in strategic investors to diversify risk**
+
+Pros: No need to sell outright, you keep collecting operational returns.
+
+Cons: Equity pricing is technical, and investors usually demand protective clauses — ratchet terms, repurchase clauses, etc. All that pressure ends up flowing down to operations.
+
+**Option 3: Mortgage loan, keep leveraging up**
+
+Pros: No equity dilution, you keep holding.
+
+Cons: Loans have maturities, interest rate swings create repayment pressure. Any operational stumble and the bank might call the loan.
+
+The common thread across all three: **They're all "stock thinking" — shuffling assets around without ever asking "what if we securitized this?"**
+
+---
+
+## 3. The MBCT Perspective
+
+2025 brought a game-changing policy shift: **the National Development and Reform Commission announced the expansion of infrastructure REITs, with hotel assets explicitly added to the pilot scope.**
+
+What does that mean?
+
+Hotel asset exits just went from three paths to **four — with a new "REITs exit" option.**
+
+REITs (Real Estate Investment Trusts) at its core: **package real estate into securities, let investors buy and sell on secondary markets, enjoy rental income and asset appreciation.**
+
+For hotel owners, this means: **you can effectively "list" your hotel asset, sell shares on an open market, access liquidity — while retaining some operational control.**
+
+**What's the advantage of a REITs exit?**
+
+| Dimension | Traditional Exit (Sale) | REITs Exit |
+|-----------|------------------------|-----------|
+| Liquidity | Low (need a specific buyer) | High (like stock trading) |
+| Premium | 10-30% discount typical | Possible premium (market pricing) |
+| Exit timeline | 6-18 months | 1-3 months |
+| Control | Full sale | Can retain operations |
+| Capital threshold | Hundreds of millions | Thousands (retail investors allowed) |
+
+Wang's first reaction when hearing the REITs option: "Is this real?"
+
+Twenty years in hotels, and he'd only ever known the "buy, operate, sell" single path. "Going public" had never been on his radar.
+
+**What's the deeper issue?**
+
+Hotel owners resist REITs for three psychological reasons:
+
+**Barrier 1: Ignorance**
+
+REITs are financial products requiring specialized knowledge — asset stripping, SPV architecture design, yield calculations. High barriers.
+
+**Barrier 2: Attachment**
+
+"This property is in such a prime location — why should I let others share the returns?" Many owners think "being the boss" is non-negotiable.
+
+**Barrier 3: Distrust**
+
+"What if policy flips? Today they say hotels are in the pilot, tomorrow they pull back."
+
+All three barriers are really just "path dependency" — judging future opportunities by past experiences.
+
+From MBCT's perspective, these barriers are all solvable through **cognitive upgrades.**
+
+---
+
+## 4. The Right Solution
+
+### Step 1: Assess Whether Your Asset is REITs-Ready
+
+REITs aren't a magic bullet — they have prerequisites. We helped Wang build an assessment:
+
+| Dimension | Standard | Wang's Asset |
+|-----------|----------|-------------|
+| Asset size | Single property ≥500M or portfolio ≥1B | 230M (small) |
+| Operational stability | 3 consecutive years positive net cash flow | ✅ Met |
+| Capitalization rate | >5% (investor return requirements) | ~6.5% ✅ |
+| Title clarity | No disputes, clean legal structure | ✅ Met |
+| Location | Core areas of Tier 1/Tier 2 cities | ✅ Shanghai Waigaoqiao |
+
+Wang's asset had two issues: **size is too small for standalone REITs, costs don't pencil out.**
+
+Solution: Find 2-3 nearby similar properties to bundle together as an "asset portfolio" for joint REITs filing, sharing the costs.
+
+### Step 2: Understand the Two REITs Paths
+
+**Path 1: Public REITs (mainstream)**
+
+- Threshold: Single property ≥500M, operations ≥3 years
+- Process: Asset strip → SPV setup → CSRC approval → public offering
+- Timeline: 6-12 months
+- Pros: Best liquidity, strictest oversight
+- Challenges: High bar, long approval cycle
+
+**Path 2: Private REITs (or quasi-REITs)**
+
+- Threshold: Flexible size, negotiable
+- Process: Asset strip → find private investors → share transfer
+- Timeline: 3-6 months
+- Pros: High flexibility, customizable structure
+- Challenges: Lower liquidity, lighter oversight
+
+For single hotel assets in the 200-300 million range like Wang's, **private REITs are the more pragmatic choice.**
+
+### Step 3: Design the REITs Structure
+
+The core architecture involves "asset stripping + SPV isolation":
+
+\`\`\`
+Original Beneficiary (Wang)
+        ↓ Asset transfer
+    SPV (Special Purpose Vehicle)
+        ↓ Issue shares
+    Investors (retail + institutions)
+        ↓ Share trading
+    Secondary market
+\`\`\`
+
+The SPV's job: **strip the hotel asset out of Wang's personal balance sheet into an independent pool. Investor rights attach only to this pool — not Wang's personal liabilities.**
+
+This step requires professional brokers and legal counsel to design. Wang didn't need to master it himself, just needed to find the right team.
+
+### Step 4: Run the Numbers
+
+REITs aren't free lunch — need to calculate costs vs. benefits:
+
+| Item | Amount/Rate | Notes |
+|------|------------|-------|
+| Underwriting fee | 1-2% of amount raised | Broker fee |
+| Legal fees | 500K-1M | Due diligence + structure design |
+| Audit fees | 300K-500K | Financial compliance |
+| Annual management fee | 0.3-0.5% of fund size | Ongoing charge |
+| Yield requirement | >5% (investor expectations) | Drives pricing |
+
+Wang's 230M asset, 15M annual net cash flow, ~6.5% capitalization rate. After fees, expecting ~5.8% distribution yield — market competitive.
+
+---
+
+## 5. The Emotional Value Angle
+
+Wang ultimately chose private REITs, transferring 50% of shares to three institutional investors.
+
+He said two things that stuck with me:
+
+First: "I finally understand what they mean when they say 'an asset sitting idle is dead —liquidity makes it alive.'"
+
+Second: "I used to think doing it myself was the only way. Now I realize letting others share the cake can actually make the cake bigger."
+
+From MBCT's view, REITs solve more than just funding issues — they solve **"ownership anxiety."**
+
+Many hotel owners treat their hotel like "their child," resistant to any sharing. But this possessiveness caps the asset's growth potential.
+
+REITs essentially: **turn "exclusive ownership" into "shared ownership," letting assets appreciate through mobility.**
+
+That mindset shift? That's the hardest part for traditional owners.
+
+---
+
+## 6. Key Takeaways
+
+The core lesson: **Hotel asset exits are moving from single-path to multi-path era.**
+
+Traditional thinking: "buy, operate, sell" — every step is stock-based thinking.
+
+MBCT's approach: **Securitize assets, let liquidity become the asset's accelerator.**
+
+REITs aren't a cure-all, but they open a new window for hotel owners. For quality assets, this is an exit path worth serious study.
+
+Going further, MBCT believes: **Assets are fundamentally "discounted future cash flow" — not bricks and mortar.** When you view hotels through a financial lens, exit paths multiply naturally.
+
+Core principle: **Making assets liquid is the most efficient way to add value.**
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'investment',
     tags: ["投资分析", "选址评估", "投资回报"],
     author: '迈创兄弟',
@@ -650,11 +1066,178 @@ This article discusses key insights about 酒店资产REITs时代来临：持有
 MBCT的做法是：**在每个环节做好前置检查，把问题消灭在发生之前**。
 
 核心原则：**筹建是"系统工程"，不是"碰运气"**。当你用清单化管理筹建全流程，14个月可以缩短到10个月，1200万可以控制在预算内。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 筹建周期从14个月缩到10个月：72个检查点实战手册.
+## 1. The Story
 
-[Full English translation coming soon]`,
+Mr. Sun invested in a hotel conversion project in Hangzhou — a former budget hotel, 2,200 square meters, being converted to a mid-scale select hotel.
+
+The whole pre-opening process took 14 months, 4 over budget. The investment ballooned from a planned 12 million to 15 million. And right before opening, several "fatal issues" surfaced — fire approval failed, drainage system didn't meet new standards, elevator capacity fell short.
+
+Sun later reflected: "I thought pre-opening was just 'find a designer, find a contractor, get inspected, open.' Turns out every step had traps, and each one was different."
+
+He eventually brought in a grizzled pre-opening veteran to help salvage things. After reviewing the project, the veteran said: "Half these issues could have been caught during site selection. The other half could have been prevented during design."
+
+That comment sparked serious reflection.
+
+---
+
+## 2. Why Traditional Approaches Fall Short
+
+Traditional hotel pre-opening follows a "three-step" process:
+
+**Step 1: Find a design firm**
+
+They produce concept proposals, construction drawings, support bidding. The designer calls the shots — the investor is in a passive reception position.
+
+Problem: Designers optimize for "works of art," not necessarily "functional products." Many designs look stunning but create operational headaches.
+
+**Step 2: Find a contractor**
+
+Contractor moves in, builds to spec, fixes issues as they arise. One fix gets signed off, on to the next.
+
+Problem: Changes during construction are the biggest source of cost overruns. One change can cascade into three others, dragging timelines 2-3 months.
+
+**Step 3: Inspect and open**
+
+Fire, health, special equipment — item by item. Find an issue, fix it, re-inspect.
+
+Problem: Inspection is the last line of defense. Issues caught here cost the most — either tear it down and redo, or pay to make problems disappear.
+
+The common thread: **Upstream problems get discovered downstream, and correction costs grow exponentially.**
+
+Find an issue during site selection? Fix cost = 1.
+Find it during design? Fix cost = 10.
+Find it during construction? Fix cost = 100.
+Find it pre-opening? Fix cost could be 1,000.
+
+---
+
+## 3. The MBCT Perspective
+
+We ran the numbers: 70% of problems in hotel pre-opening trace back to "insufficient information at the site selection stage." 20% are "functional planning gaps in design." Only 10% are genuine construction surprises.
+
+Translation: **90% of problems could have been prevented upstream.**
+
+Looking back at Sun's project, the problem list was alarming:
+
+| Stage | Issue | When Discovered | Correction Cost |
+|-------|-------|----------------|----------------|
+| Site selection | Fire access lanes substandard | Pre-opening inspection | 3-month delay + fines |
+| Design | Elevator capacity insufficient | During construction | Additional 400K investment |
+| Design | Drainage system design error | Pre-opening | Reconstruction + delay |
+| Construction | Waterproofing done shoddily | 3 months post-opening | Guest compensation + major repair |
+
+What's the root cause?
+
+Not "not knowing" — it's "not wanting to know."
+
+During site selection, Sun could have pulled historical approval records from the fire department for that property. He thought it was "too much hassle." During design, he could have had the operations team do a post-occupancy evaluation. He thought "design fees are already paid, changes cost extra." During construction, he could have hired full-time oversight. He thought "supervision fees are just wasted money."
+
+Human nature: **reluctant to spend during investment phase, end up spending way more in thefix phase.**
+
+---
+
+## 4. The Right Solution
+
+### Step 1: Site Selection — "Inherent Conditions" Determine Future Operations
+
+We helped Sun build a site evaluation framework across three dimensions:
+
+**Dimension 1: Hardware Conditions**
+
+| Check Item | Standard | Failure Risk |
+|-----------|----------|--------------|
+| Title clarity | All permits in place, no disputes | Cannot open |
+| Fire approval conditions | Meets local fire code | Fire inspection fails |
+| Drainage/wastewater system | Meets latest environmental standards | Inspection fails, fines, remediation |
+| Electrical capacity | Meets operational needs + 30% buffer | Peak demand trips breakers |
+| Elevator capacity | Meets guest + freight needs | Operations constrained |
+
+**Dimension 2: Market Conditions**
+
+| Check Item | Assessment Content |
+|-----------|--------------------|
+| Competitors within 3 km | How many? Average ratings? Price range? |
+| Guest mix within 3 km | Business/tourist/conference/local? |
+| Transit hub distance | Subway/train/airport? Walkable? |
+
+**Dimension 3: Financial Conditions**
+
+| Check Item | Calculation |
+|-----------|-------------|
+| Rent value | Monthly rent ÷ room count, within reasonable range? |
+| Renovation cost estimate | Renovation cost ÷ expected payback period |
+
+### Step 2: Design Stage — "Functional Planning" Matters More Than "Visual Effect"
+
+We helped Sun map the most common design traps:
+
+**Trap 1: Chasing visual effects, ignoring operational flow**
+
+Many designers approach hotel design from "looks good" — but the first principle of hotel design is "works well."
+
+Example: Some hotels feature an open-plan front desk — very aesthetically pleasing, but front desk staff end up completely visible to everyone walking by in the corridor. Their attention fragments, efficiency drops.
+
+Solution: Front desk location should be "quiet" (away from foot traffic) but also "visible" (easy for guests to find).
+
+**Trap 2: Guest room layouts that don't match real usage**
+
+We've seen many guest room designs that look spacious on paper but after furniture placement reveal:
+- Bedside table blocks wardrobe door swing
+- Writing desk has no outlet — guests can't use laptops
+- Bathroom entrance has a step — trip hazard
+
+Solution: Full-scale 1:1 furniture mockup before any room design is finalized.
+
+### Step 3: Construction Stage — "Process Management" Determines Final Quality
+
+We helped Sun build a 72-point inspection checklist across 12 phases:
+
+| Phase | Checkpoints | Core Inspection Content |
+|-------|------------|------------------------|
+| 1. Demolition | 8 items | Complete demolition, structural integrity |
+| 2. Electrical/plumbing concealment | 6 items | Pipe routing, load margins |
+| 3. Waterproofing | 5 items | Water immersion test, joint treatment |
+| 4. Fire systems | 7 items | Sprinklers/smoke detectors/egress marking |
+| 5. HVAC | 5 items | Vent placement, heating/cooling layout |
+| 6. Low-voltage systems | 6 items | Network drop points, camera placement |
+| 7. Rough finish | 8 items | Wall flatness, floor leveling |
+| 8. Door/window installation | 4 items | Sealing, security |
+| 9. Lighting systems | 5 items | Brightness uniformity, color temp consistency |
+| 10. Furniture installation | 8 items | Secure mounting, ease of use |
+| 11. Soft furnishings | 6 items | Style consistency, detail completeness |
+| 12. System integration | 4 items | Door locks/elevator control/TV/HVACintegration |
+
+### Step 4: The Emotional Value Angle
+
+Sun told me later: "During pre-opening, I was putting out fires every day. I was constantly anxious."
+
+This is a feeling many investors know.
+
+From MBCT's perspective, pre-opening anxiety is fundamentally **"loss of control"** — you never know what'll break next, whether every yuan spent is worth it.
+
+Good pre-opening management isn't "able tofix when problems arise" — it's **"making problems never happen in the first place."**
+
+When you have a complete checklist, when you know what to check and confirm at each stage — your mind is at ease.
+
+That certainty? It's the most important emotional value during pre-opening.
+
+---
+
+## 5. Key Takeaways
+
+The core lesson: **Hotel pre-opening is a "upstream determines downstream" system project.**
+
+The old way: "figure it out as we go," but every fix costs more.
+
+MBCT's way: **Run pre-checks at every phase, eliminate problems before they happen.**
+
+Core principle: **Pre-opening is "systems engineering," not "rolling the dice."** When you manage the full pre-opening process with checklist discipline, 14 months can shrink to 10, and 12 million can stay on budget.
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'preparation',
     tags: ["筹建管理", "检查清单", "项目管理"],
     author: '迈创兄弟',
@@ -838,11 +1421,179 @@ MBCT能提供的，正是这种确定性——不是替你做决定，而是告�
 MBCT的做法是：**先梳理运营场景，再匹配合适的系统，最后用评估模型做量化比较**。
 
 核心原则：**PMS是酒店运营的核心，选错了代价很高**。用科学的方法选型，是对自己和时间负责任。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 新店PMS选型指南：2026年系统怎么选才不踩坑？.
+## 1. The Story
 
-[Full English translation coming soon]`,
+Mr. Zhang opened a 80-room boutique hotel in Chengdu. Three months before opening, he started the PMS selection process.
+
+He evaluated four vendors:
+- **Vendor A**: International brand, OPERA, powerful features — but quoted 3x his budget
+- **Vendor B**: Established domestic brand, Shiji, many subsystems — but unstable integrations
+- **Vendor C**: New cloud PMS, Order Done, affordable — but unclear if they'll survive 5 years
+- **Vendor D**: AI-native PMS, Mews (overseas version), AI features — but weak China support
+
+Zhang went with Vendor B — the established domestic brand, "figured they'd be reliable."
+
+First month of operations, problems cascaded:
+- Check-in system crashed 2-3 times daily, front desk had to register guests manually
+- Room status couldn't sync in real-time, guests complained "room shows available but isn't cleaned"
+- Finance exports didn't match tax system formats, accountantsmanual adjustments every month
+
+Zhang later tallied it up: **System issues drove extra labor costs + guest compensation + delayed opening losses totaling over 40% of the PMS purchase price.**
+
+"Shanked on the small saving, hemorrhaged on the big loss." Zhang's words.
+
+---
+
+## 2. Why Traditional Approaches Fall Short
+
+Traditional PMS selection usually follows three paths:
+
+**Method 1: Brand-chasing**
+
+Go for big international brands — "expensive must mean quality."
+
+Problem: International brands often have poor localization, slow support response, and inflated pricing. Many features are designed for Western hotels Chinese operations will never use.
+
+**Method 2: Price-chasing**
+
+Go cheap — "PMS is basically the same, if it works it works."
+
+Problem: PMS is the core operating system for the entire hotel. Once it fails, front desk, housekeeping, finance, revenue — everything gets hit. Low-quality PMS hidden costs often dwarf the purchase price.
+
+**Method 3: Feature-chasing**
+
+Go for the most fully-featured — "buy everything at once, never need to add later."
+
+Problem: More features means higher learning curves, slower staff adoption. And many features turn out to be "theoretically there, practically useless."
+
+The common thread: **None of these approaches start from the hotel's actual operational needs — they're all reactive to vendor marketing.**
+
+---
+
+## 3. The MBCT Perspective
+
+When MBCT stepped in, the first thing we did was map the hotel's operational scenarios.
+
+Here's what we found: Zhang's 80-room boutique hotel was actually using less than 30% of PMS capabilities.
+
+That other 70%? The vendor "threw in for free" — but never got touched.
+
+More importantly, the features Zhang actually needed most, Vendor B did poorly:
+- WeChat unlock (guest high-frequency need) — integration unstable, frequently fails
+- Mobile housekeeping (housekeeping high-frequency need) — PC only, no mobile access
+- Automated financial reconciliation (finance high-frequency need) — export format incompatible
+
+**The First Principle of PMS Selection?**
+
+Not "what's the most advanced system?" — it's **"what system fits my hotel's scale, business scenarios, and team capabilities?"**
+
+Good PMS selection means mapping operational scenarios first, then matching the right system. Not picking a system first and forcing operations to adapt.
+
+**What's the deeper issue?**
+
+Zhang chose Vendor B partly because of a psychological factor: **"Old brands don't go bankrupt easily."**
+
+That consideration has merit — but it's incomplete.
+
+The PMS market is in upheaval: Traditional OPERA-based systems face cloud migration, established domestic brands face disruption from new-wave PMS, new entrants are flexible but financially thin.
+
+In 2026's PMS market, there's no "absolutely safe" choice — only "relatively appropriate" choices.
+
+---
+
+## 4. The Right Solution
+
+### Step 1: Map Operational Scenarios — "What I Need" Matters More Than "What's Available"
+
+We helped Zhang build an "operational scenario checklist":
+
+**Check-in Scenarios (Front Desk)**
+
+- Scan-to-check-in: Need WeChat/Alipay QR code room opening?
+- Member recognition: Have a loyalty program that auto-identifies member tiers?
+- Police integration: Need direct connection to police check-in reporting?
+
+**Housekeeping Scenarios (Housekeeping)**
+
+- Room status sync: Real-time view on both PC and mobile?
+- Inspection records: Mobile supports photo upload of inspection findings?
+- Work order dispatch: Connects to engineering maintenance system?
+
+**Finance Scenarios (Finance)**
+
+- Automated report generation: Supports custom report templates?
+- Tax integration: Export format compatible with Golden Tax system?
+- Accounts receivable: Supports ledger management?
+
+**Revenue Scenarios (Sales)**
+
+- Dynamic pricing: Supports real-time OTA price sync?
+- Inventory management: Unified multi-platform inventory control?
+
+### Step 2: Build a Five-Dimension Evaluation Model
+
+Based on operational scenarios, we built Zhang's PMS evaluation framework:
+
+| Dimension | Weight | Assessment Content |
+|-----------|--------|-------------------|
+| Feature fit | 30% | Covers core operational scenarios? |
+| System stability | 25% | Reliable, low failure rate? |
+| Open integration | 20% | Connects with existing systems? |
+| Implementation cost | 15% | Purchase + implementation + training total? |
+| Vendor capability | 10% | Support response speed + continuous iteration? |
+
+### Step 3: PMS Selection Logic by Hotel Scale
+
+| Scale | Recommended Type | Representative Products | Selection Logic |
+|-------|----------------|----------------------|-----------------|
+| <50 rooms | Light cloud PMS | Order Done, Tomato Arrived | Low cost, fast rollout |
+| 50-150 rooms | Mid-scale cloud PMS | Shiji Xishan, Meituan | Full features, good service |
+| 150-300 rooms | High-end cloud/hybrid PMS | OPERA Cloud, Mews | Powerful, customizable |
+| >300 rooms | International high-end system | OPERA, Infor | Global standard, robust integrations |
+
+Zhang's 80 rooms map to "mid-scale cloud PMS." Vendor B may have the brand name, but their mid-market product had actually been outperformed by newer PMS entrants in this segment.
+
+### Step 4: Pre-Launch "Parallel Run" Mechanism
+
+We recommended Zhang do a one-month parallel run before go-live:
+
+- New system and old system run simultaneously, comparing data outputs
+- Issues get flagged and fed back to vendor for pre-opening fixes
+- Staff training must be complete — don't be learning the system on opening day
+
+---
+
+## 5. The Emotional Value Angle
+
+Zhang later told me the worst part wasn't "making the wrong choice" — it was **"not knowing who to trust."**
+
+Every vendor said they were the best, claimed to be "professional," said competitors were "inadequate." As a non-expert, Zhang had no way to judge who was telling the truth.
+
+I think many investors have lived this feeling.
+
+From MBCT's perspective, the real emotional value in PMS selection is: **certainty.**
+
+When your decision is backed by methodology, when you know exactly why you chose this over that — your mind is at ease.
+
+What MBCT provides is precisely this certainty — not making the choice for you, but showing you **"how to choose so you won't regret it."**
+
+---
+
+## 6. Key Takeaways
+
+The core lesson: **PMS selection is "needs-driven," not "brand-driven" or "price-driven."**
+
+The old way: let vendor marketing drive the decision, expensive doesn't guarantee appropriate.
+
+MBCT's way: **Map operational scenarios first, match the right system, then use evaluation models for quantitative comparison.**
+
+Core principle: **PMS is the core of hotel operations — the cost of a wrong choice is high.** Using a scientific selection process is taking responsibility for your own time and money.
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'preparation',
     tags: ["筹建管理", "检查清单", "项目管理"],
     author: '迈创兄弟',
@@ -1003,11 +1754,160 @@ HR分析报告说，90后员工离职的前三个原因分别是：看不到成�
 MBCT的做法是：**给员工一个"可见的成长路径"、"有意义的参与感"和"生活方式的归属感"**。
 
 核心原则：**员工不是"工具"，是"共创者"**。当员工的工作被赋予"成长"和"意义"的价值，他们不需要被管理，他们会自我驱动。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 90后员工干不满3个月就辞职？双轨职业体系实战.
+## 1. The Story
 
-[Full English translation coming soon]`,
+Manager Zhou runs a 68-room urban business hotel in Ningbo — a standalone property, no chain brand backing.
+
+Over the past year, he's noticed a worsening problem: new front desk and housekeeping staff quit within 3 months. The shortest tenure? Just 18 days.
+
+Zhou did the math: three complete turnovers in one year, recruitment and training costs approaching 180,000 yuan. Worse, each turnover created quality fluctuations — new people unfamiliar with flows, guest complaints spiking, scores dipping.
+
+His first instinct was "not paying enough." So he raised base salaries, added monthly bonuses. Two months of improvement, then month four — someone's gone again.
+
+He tried the "emotional retention" approach — treating staff to meals, team events, holiday red envelopes. But these gestures started feeling "entitled" to employees, and once stopped, complaints actually got worse.
+
+HR's analysis showed Gen Z employees quit for three reasons: no clear growth path, repetitive and boring work, feeling disrespected.
+
+Zhou said: "I did everything I could think of, but I just can't retain people."
+
+---
+
+## 2. Why Traditional Approaches Fall Short
+
+When facing employee turnover, traditional approaches usually look like:
+
+**Method 1: Throw money at it**
+
+Raise base pay, add bonuses, hand out red envelopes. Effective short-term, fails long-term. Competitors can also raise pay, and you can't outpace employee expectations indefinitely.
+
+**Method 2: Paint a vision**
+
+"Work hard, I'll promote you to supervisor next year." "Good performance, you'll manage our new location someday."
+
+Problem: By the time you actually open that new location, the person may already be gone.
+
+**Method 3: Strict management**
+
+Implement rigid attendance policies, performance metrics, penalty standards.
+
+Problem: The people this approach retains are typically those with nowhere else to go. The capable ones leave first.
+
+The common thread: **These approaches address "money" and "authority" but completely miss "growth."**
+
+60% of Gen Z quits because they "can't see a future at this company." Only 20% quit because "the money's not enough."
+
+---
+
+## 3. The MBCT Perspective
+
+When we researched the hotel, we noticed an interesting pattern:
+
+Senior employees training new hires typically say: "This is how it's done here. Just follow the process."
+
+New hire asks: "Why is it done this way?"
+
+Senior employee answers: "Because that's how I was taught."
+
+This kind of knowledge transfer addresses "procedural compliance" but completely ignores "meaning."
+
+**Gen Z employees aren't opposed to hard work — they're opposed to meaningless repetition.** They want to know why they're doing something, what value it creates, how it helps them grow.
+
+What's the deeper issue?
+
+When designing new hire training, the hotel only considered the "skill level" — not the "psychological level."
+
+A new employee spends their first three days learning: how to process check-in, how to handle checkout, how to manage complaints. These are procedures, operational specs.
+
+But what new employees actually want to know is:
+- What can I learn at this hotel?
+- What kind of person will I be in three months?
+- Do I have a future here?
+
+Traditional training doesn't answer these questions — so new hires only see "doing the same thing every day," can't visualize growth, and therefore have no incentive to stay.
+
+---
+
+## 4. The Right Solution
+
+### Step 1: Dual-Track Career System Design — Management Track + Professional Track in Parallel
+
+We helped the hotel design a "dual-track career system":
+
+**Management track**: Staff → Supervisor → Manager → Senior Manager → Director
+**Professional track**: Staff → Senior Staff → Veteran → Expert → Principal Expert
+
+Both tracks develop in parallel, with equivalent compensation and benefits. Employees choose the path that matches their interests and strengths.
+
+On the professional track, employees don't "manage people" but must demonstrate progressively deeper expertise — for example, the front desk professional track's ultimate goal is "Customer Experience Expert"; Housekeeping's is "Space Aesthetics Expert."
+
+### Step 2: Upgrade the Mentoring Program — Not "Teaching Tasks" but "Coaching Growth"
+
+We transformed senior employees from "task trainers" to "growth coaches."
+
+When a new hire joins, the hotel assigns a "growth mentor." The mentor's responsibility isn't teaching SOPs — it's:
+- Deep conversation with the new hire once a week, understanding their confusion and thoughts
+- Sharing their own journey from newcomer to where they are today
+- Helping new hires build a "90-day growth plan"
+
+The key insight: Make new hires see "the possibility of growth" — not "the repetition of work."
+
+### Step 3: Growth Dashboard — Make Advancement Visible
+
+We built the hotel a "growth dashboard":
+
+Every employee can see in the system:
+- What level they're currently at
+- What capabilities they need to reach the next level
+- What new skills they acquired this month
+- Direct manager's feedback and suggestions
+
+Weekly, mentor and new hire review together: What did you learn this week? What's missing to reach Level 2? What's the next step?
+
+New employees aren't just "completing tasks" — they're "accumulating capabilities."
+
+---
+
+## 5. The Emotional Value Angle
+
+Manager Zhou told me later he noticed a pattern: **The employees who stayed all shared one trait — they knew exactly "what they'd become in three months."**
+
+The ones who left also shared a trait — they "couldn't see themselves three months ahead."
+
+From MBCT's view, what Gen Z employees need most isn't money or benefits — it's **certainty.**
+
+Certainty that they have a future at this company. Certainty their efforts will be seen. Certainty their growth has a clear path.
+
+When that certainty exists, hearts settle.
+
+---
+
+## 6. Results
+
+8 months after implementation:
+- Employee turnover rate dropped from 45% to 15%
+- Average new hire tenure increased from 2.1 months to 8.7 months
+- Annual recruitment/training costs dropped from 180K to 65K
+- Employee satisfaction score jumped from 62 to 89
+
+More importantly, the hotel developed a culture where employees want to stay, want to grow, want to contribute.
+
+---
+
+## 7. Key Takeaways
+
+The core lesson: **Gen Z retention issues aren't about insufficient pay — it's about "no future" and "no sense of belonging."**
+
+The old way: "retain through benefits" — but benefits are hygiene factors, not motivators.
+
+MBCT's way: **Give employees a "visible growth path," "meaningful participation," and "lifestyle belonging."**
+
+Core principle: **Employees aren't "tools" — they're "co-creators."** When work is given the value of "growth" and "meaning," employees don't need managing — they self-drive.
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'team',
     tags: ["员工流失", "双轨体系", "职业发展"],
     author: '迈创兄弟',
@@ -1172,11 +2072,160 @@ HR的反馈是："员工不配合，培训的时候都想着早点结束。"
 MBCT的做法是：**把培训和职业发展绑定，让员工为自己学，学了有用**。
 
 核心原则：**最好的培训，是让学员感受不到在培训**。当学习融入了工作场景，变成了工作的一部分，培训就不再是负担。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 酒店培训体系：从"新兵训练营"到"终身学习".
+## 1. The Story
 
-[Full English translation coming soon]`,
+Mr. Liu runs a 120-room business hotel in Nanjing with 60 staff members.
+
+He'd always taken training seriously — annual training budget exceeded 300,000 yuan. New hires got "onboarding training," senior staff got "monthly training," management got "quarterly training."
+
+But the results?
+
+He ran an internal survey and found:
+- 68% of employees felt "training content has little to do with my work"
+- 55% felt "training is just going through the motions"
+- 42% said "I forget everything right after training — still don't know how to handle issues next time"
+
+Liu was puzzled: "We're spending real money. Why is the effect so poor?"
+
+HR's feedback: "Employees aren't cooperating — they're always wishing training would end early."
+
+I think many hotel managers have faced this exact situation.
+
+---
+
+## 2. Why Traditional Approaches Fall Short
+
+Traditional hotel training models usually look like:
+
+**Model 1: Cramming sessions**
+
+New hires come in for a 3-5 day "immersion training" covering company culture, policies, service flows, operational specs.
+
+Problem: The information volume is too high — employees can't digest it. Three days later on the floor, they've forgotten everything they "learned."
+
+**Model 2: Senioronboarding**
+
+Senior employees hands-on teach new hires: "watch me do it once, you'll figure it out."
+
+Problem: Senior employee capability becomes the new hire's ceiling. If the senior's methods are wrong, the new hire learns wrong. And senior employees have no incentive to teach well — teaching the apprentice steals from the master.
+
+**Model 3: External trainers**
+
+Bring in outside instructors for training — "master classes," "industry sharing," "cutting-edge concepts."
+
+Problem: Theory sounds beautiful but rarely translates to the floor. Once the instructor leaves, the tools and methods leave with them.
+
+The common thread: **These models treat training as a "task" to complete, not a "capacity building" exercise to design.**
+
+---
+
+## 3. The MBCT Perspective
+
+We observed Liu's hotel training sessions and found the core issue: **training content is "generic" rather than "customized."**
+
+60 employees — front desk, housekeeping, sales, engineering, finance. Different job responsibilities, different capability baselines, different learning paces.
+
+But their training content was identical.
+
+This is the problem — **using uniform standards to train diverse people is like prescribing the same medication to different patients.**
+
+What's the deeper issue?
+
+Training departments design courses from "what I want to teach" rather than "what learners need."
+
+The instructor thinks: "This knowledge point is important, I need to explain it clearly."
+The learner thinks: "Why do I need to know this?"
+
+There's often a massive gap between these two perspectives.
+
+From MBCT's view, effective training systems need three conditions:
+1. **Bound to work scenarios** — learn it today, use it today, remember it today
+2. **Bound to personal development** — learning is for yourself, not for the hotel
+3. **Bound to performance rewards** — learning is useful, learning well is rewarded
+
+---
+
+## 4. The Right Solution
+
+### Step 1: Build Position Competency Models — "What Standard Do I Need to Reach?"
+
+We helped the hotel build a "position competency framework":
+
+Each position has 5 capability levels, each with clear behavioral standards and assessment criteria.
+
+Take "Front Desk Reception" as an example:
+
+| Level | Capability | Behavioral Standard |
+|-------|-----------|---------------------|
+| L1 | Basic operations | Can independently complete check-in/check-out |
+| L2 | Standardized service | Can handle complaints per standard procedures |
+| L3 | Personalized service | Can provide differentiated service based on guest characteristics |
+| L4 | Problem resolution | Can handle complex complaints and emergencies |
+| L5 | Train others | Can independently mentor new hires |
+
+From day one, employees know "where I am now" and "where I'm going."
+
+### Step 2: Design Learning Paths — "How Should I Learn?"
+
+Each capability level corresponds to a learning module:
+
+- **L1 (Basic operations)**: 2-day intensive training + 1-week hands-on mentoring
+- **L2 (Standardized service)**: Monthly case studies + scenario simulations
+- **L3 (Personalized service)**: Cross-training + rotation experiences
+- **L4 (Problem resolution)**: External benchmarking trips + industry visits
+- **L5 (Train others)**: TTT (Train the Trainer) certification
+
+The core logic: **Learn fundamentals first, then advanced; first be a student, then be a teacher.**
+
+### Step 3: Implement "Micro-Training" for Immediate Application
+
+We recommended the hotel abandon "3-day intensive training" in favor of "10 minutes of micro-training daily":
+
+- Daily shift handover: Front desk manager shares one "today's case"
+- Weekly "scenario role-play": simulate a complaint scenario
+- Monthly "service review": summarize three things done well this month
+
+This "fragmented, scenario-based, just-in-time" training approach is far more effective than one-shot "cramming."
+
+### Step 4: Connect Learning to Career Progression
+
+The most important change: **bridge training directly to promotion.**
+
+To advance from L2 to L3, employees must complete L2 coursework and pass assessment.
+To advance from L3 to L4, must have mentoring records.
+To advance from L5, must independently deliver one internal training session.
+
+When learning directly affects promotion, employee motivation comes naturally.
+
+---
+
+## 5. Results
+
+One year after implementation:
+- Training satisfaction jumped from 45% to 82%
+- Internal promotion rate increased from 18% to 40%
+- Guest satisfaction scores improved by 0.3 points
+- Training costs actually dropped 15% (fewer ineffective external trainers)
+
+Liu said: "I used to think training was a cost center. Now I realize training is an investment."
+
+---
+
+## 6. Key Takeaways
+
+The core lesson: **Training isn't "completing a task" — it's "building capabilities."**
+
+The old way: "spend money to complete the task" — training becomes a cost center.
+
+MBCT's way: **Tie training to career development, let employees learn for themselves, make learning rewarding.**
+
+Core principle: **The best training is when learners don't realize they're being trained.** When learning is embedded in work scenarios and becomes part of the job, training stops being a burden.
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'team',
     tags: ["员工流失", "双轨体系", "职业发展"],
     author: '迈创兄弟',
@@ -1365,11 +2414,181 @@ AI擅长：重复性工作、数据分析、标准化流程。
 MBCT的做法是：**AI处理标准化，人做情感化；AI提高效率，人创造价值**。
 
 核心原则：**最好的智能化，是让客人感受不到智能的存在**——他们只感受到"服务变得更贴心了"。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about AI智能体时代：酒店从"数字化"到"智能化"的跃迁.
+## 1. The Story
 
-[Full English translation coming soon]`,
+Mr. Zhang runs a 150-room conference hotel in Hangzhou. Guest mix: 60% conference groups, 30% tourist FITs, 10% long-stay guests.
+
+Last year, he installed a "smart hotel system" — smart door locks, self-check-in kiosks, in-room voice control. The vendor promised: "This system will boost efficiency by over 30%."
+
+A year later, the smart devices were installed — but Zhang noticed:
+- Voice control frequently misheard commands, guests just did things manually anyway
+- Self-check-in kiosks had a 10% daily abandonment rate, those guests just joined the front desk queue
+- Door lock linkage constantly failed, guests couldn't get in with their cards
+
+What left him even more confused: Where were the promised "AI features"? All he saw were a bunch of "automatic switches" — nothing particularly "intelligent."
+
+Zhang later reflected: "Spent hundreds of thousands on equipment and software, but barely any features that are actually smart."
+
+---
+
+## 2. Why Traditional Approaches Fall Short
+
+Traditional hotel smartification usually follows three paths:
+
+**Method 1: Device stacking**
+
+Smart locks, smart curtains, smart speakers, smart mirrors — if it exists, install it.
+
+Problem: Devices don't coordinate with each other, each does its own thing, creating guest confusion. "You say one command, the lights come on but the curtains don't close and the AC doesn't adjust — now you're worse off trying to control three devices separately."
+
+**Method 2: System buying**
+
+Install a "smart hotel brain" that connects all devices to one platform.
+
+Problem: Systems are "centralized" — all commands route through the center, creating latency and stability issues. When the center goes down, the whole building goes down.
+
+**Method 3: Big brand selection**
+
+Choose an international vendor's solution — "expensive has to be better."
+
+Problem: International vendor systems are usually "global one-size-fits-all," with poor localization. For example, Chinese speech recognition is demonstrably less accurate than domestic vendors'.
+
+The common thread: **All of these equate "smart" with "automated" — using preset rules to control devices, rather than letting systems learn and decide for themselves.**
+
+---
+
+## 3. The MBCT Perspective
+
+2026 saw a major breakthrough in AI: **Agentic AI** matured significantly.
+
+Simply put: Traditional AI is "you tell it what to do, it does exactly that."
+Agentic AI is "you tell it the goal, it decides how to achieve it."
+
+Example:
+
+**Traditional AI**: You say "set AC to 26°C," it sets the AC to 26°C.
+
+**Agentic AI**: You say "make the guest comfortable for sleep," it:
+1. Checks guest historical preferences (prefers 24°C)
+2. Checks current room temperature, humidity, noise levels
+3. Considers guest sleep cycles, automatically adjusts to optimal state
+4. At dawn, detects guest tossing, automatically reduces fan speed
+
+This is the leap from "automation" to "intelligence."
+
+**Three Layers of Hotel AI Agents**
+
+| Layer | Capability | Hotel Scenario |
+|-------|-----------|----------------|
+| Data layer | Collect, integrate, analyze data | Guest preferences, operational data, market intelligence |
+| Semantic layer | Understand natural language, intent recognition | "I want to sleep well" → adjust temp + close curtains + dim lights |
+| Agent layer | Autonomous decision-making, auto-execution | Auto work order dispatch, auto pricing, auto report generation |
+
+Most hotels' current "smart hotels" are still stuck at the data layer. Only leading edge operators are beginning to explore the semantic layer. The agent layer is the future direction.
+
+---
+
+## 4. The Right Solution
+
+### Step 1: From "Control" to "Understanding" — Smart Isn't Controlling Devices, It's Understanding Needs
+
+We designed a hotel AI agent framework for Zhang's property:
+
+**Scenario 1: In-room maintenance requests**
+
+Traditional: Guest calls front desk, front desk logs the request, dispatches work order to engineering.
+
+Agent approach: Guest says "the AC isn't cooling," the agent auto-identifies room number, checks historical maintenance records, dispatches work order to the most appropriate engineer, and proactively notifies the guest of estimated arrival time.
+
+**Scenario 2: Revenue management**
+
+Traditional: Revenue manager checks reports daily, adjusts pricing based on experience.
+
+Agent approach: Agent monitors competitor prices, occupancy rates, booking pace, weather conditions, conference events in real-time, automatically generates pricing recommendations. Revenue manager confirms with one click.
+
+**Scenario 3: Guest relationship care**
+
+Traditional: Guest receives a standard marketing SMS after checkout.
+
+Agent approach: Agent analyzes guest preferences during their stay, sends a personalized message when the guest might next visit Hangzhou: "Mr. Zhang, Hangzhou has cooled down these past two days. The teahouse you liked during your last visit just launched winter specials."
+
+### Step 2: Human-Machine Collaboration Model — AI Handles Standardization, Humans Handle Emotion
+
+One key recommendation to Zhang: **not "AI replaces humans" but "AI + humans."**
+
+AI excels at: repetitive tasks, data analysis, standardized processes.
+Humans excel at: emotional connection, creative decisions, complex problem handling.
+
+The agent framework we designed follows:
+- AI handles 80% of standardized affairs (check-in registration, room status management, work order dispatch, data reporting)
+- Humans handle 20% of emotional affairs (complaint handling, guest relationship care, special needs)
+
+Result: Labor costs drop 40%, but service warmth actually increases — because employees are freed from "chaotic administrative work" to focus on "meaningful human connection."
+
+### Step 3: Incremental Smartification — Don't Install One "Big System" All at Once
+
+Many hotel smartification failures come from "going all-in at once" — deploying many systems simultaneously, staff can't adapt.
+
+We recommend a three-phase approach:
+
+**Phase 1 (Months 1-3): Core scenario smartification**
+Only three things:
+- Self check-in + smart door lock linkage
+- AI customer service (handles 80% of common questions)
+- Smart scheduling (auto-generates schedules based on occupancy)
+
+**Phase 2 (Months 4-6): Operational scenario smartification**
+- Smart revenue management
+- Smart energy management
+- Smart inventory management
+
+**Phase 3 (Months 7-12): Experience scenario smartification**
+- In-room AI agent (voice + environment + service linkage)
+- Personalized recommendation system
+- Member lifecycle management
+
+---
+
+## 5. The Emotional Value Angle
+
+Zhang told me later his biggest mindset shift: **he stopped asking "can AI replace humans" and started thinking "how do AI and humans collaborate."**
+
+Before, he always felt AI was coming for people's jobs — creating employee resistance.
+
+Now he gets it: AI is employees' "assistant," not their "opponent." When employees are freed from tedious administrative work, they can do higher-value things — like chatting with guests, understanding their needs, creating the warmth AI simply cannot replicate.
+
+From MBCT's view, the most important emotional value of AI smartification is **"freeing employees from exhaustion."**
+
+When employees aren't consumed by repetitive tasks, they have energy for warm service.
+
+---
+
+## 6. Results
+
+One year after implementation:
+- Front desk headcount reduced 35% (from 11 to 7), but guest satisfaction improved from 4.5 to 4.8
+- Energy costs dropped 22%
+- Engineering response time shrank from 45 minutes to 15 minutes
+
+More importantly, employee satisfaction increased significantly — they no longer need to handle tedious repetitive issues, can focus on "service" itself.
+
+---
+
+## 7. Key Takeaways
+
+The core lesson: **AI smartification's essence is "understanding needs," not "controlling devices."**
+
+The old way: "use technology to replace human labor" — but replacing human efficiency loses service warmth.
+
+MBCT's way: **AI handles standardization, humans handle emotion; AI boosts efficiency, humans create value.**
+
+Core principle: **The best smartification is when guests don't sense intelligence exists** — they only feel "service has become more thoughtful."
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'operations',
     tags: ["AI智能体", "数字化转型", "智能化"],
     author: '迈创兄弟',
@@ -1571,11 +2790,195 @@ OTA的规则变了——以前携程排名靠销量，现在靠综合评分和�
 MBCT的做法是：**建立指标体系、打通数据孤岛、用数据说话**。
 
 核心原则：**数据是工具，决策是人**。最好的数据化，是让数据帮人类做更好的判断，而不是替代人类做判断。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 从凭经验到凭数据：酒店运营决策的量化革命.
+## 1. The Story
 
-[Full English translation coming soon]`,
+Mr. Chen runs a 100-room business hotel in Chengdu. 15 years in the industry.
+
+He had a nickname — "Chen the Oracle" — because his instincts were usually right. From experience, he could forecast next month's occupancy. From feel, he could judge channel effectiveness. From intuition, he knew which employee to promote.
+
+But last year, his "instincts started failing."
+
+OTA rules changed — previously Ctrip rankings relied on volume, now they weigh comprehensive scores and repeat purchase rates. Customer mix changed — previously primarily business FITs, now conference groups and tour groups each make up half. Staff demographics changed — post-95 employees don't follow orders the way post-80s did, management approaches need adjusting.
+
+Chen told me: "Before, my decisions based on experience were right about 80% of the time. Now they're right less than 60% of the time."
+
+What's the problem?
+
+Experience isn't useless — it's just that **the environment experience relies on has changed.**
+
+---
+
+## 2. Why Traditional Approaches Fall Short
+
+When facing datafication trends, traditional hoteliers have three attitudes:
+
+**Attitude 1: Rejection**
+
+"Data is dead, people are alive. Hotels are a service industry — it's about people, not numbers."
+
+Problem: This attitude is fundamentally "path dependency" — applying past success formulas to future challenges. Might work short-term, definitely fails long-term.
+
+**Attitude 2: Anxiety**
+
+"I don't understand data, but I know it matters. I need to hire data analysts, build BI systems, create data centers."
+
+Problem: This attitude is fundamentally "technology worship" — thinking systems solve problems. Without data thinking, systems are just decoration.
+
+**Attitude 3: Wait-and-see**
+
+"I'll wait and see, wait for the industry to mature."
+
+Problem: This attitude is fundamentally "opportunism" — by the time everyone knows how to do it, your window of opportunity is gone.
+
+The common thread: **None of these approaches treat "data thinking" as a fundamental capability to develop.**
+
+---
+
+## 3. The MBCT Perspective
+
+We ran a "data maturity assessment" on Chen's hotel:
+
+| Dimension | Current State | Score (1-5) |
+|-----------|-------------|-------------|
+| Data collection | Has systems, but data is scattered | 2 |
+| Data analysis | Occasionally looks at reports, no system | 2 |
+| Data-driven decisions | Experience primary, data secondary | 2 |
+| Data culture | Leadership doesn't prioritize, middle management doesn't use | 1 |
+
+Total: 6 out of 20 — "data infancy."
+
+More importantly, we discovered an interesting phenomenon: **Chen's hotel actually has plenty of data** — PMS has data, OTA backend has data, membership system has data, even staff scheduling system has data. But this data is scattered across different systems — nobody's consolidated it for analysis.
+
+This is the classic symptom of "has data, no analysis."
+
+**The deeper problem?**
+
+**Data itself doesn't create value — integration, analysis, and decision-making create value.**
+
+Most hotels aren't lacking data. They're lacking knowledge of how to use data.
+
+---
+
+## 4. The Right Solution
+
+### Step 1: Build a Core Metrics System — The "North Star Metric"
+
+We helped Chen establish a "hotel operational core metrics framework":
+
+**Revenue Metrics**
+- RevPAR (Revenue Per Available Room) = Occupancy Rate × ADR
+- GOP (Gross Operating Profit) = Total Revenue − Operating Costs
+- GOP Margin = GOP ÷ Total Revenue
+
+**Operational Metrics**
+- Occupancy Rate: Rooms occupied today ÷ Total rooms
+- ADR: Total room revenue ÷ Rooms sold
+- Guest source mix: Channel breakdown (OTA/Direct/Group/FIT)
+
+**Service Metrics**
+- Complaint rate = Complaints ÷ Total check-ins
+- Housekeeping pass rate = Passed inspections ÷ Total cleanings
+- Maintenance response time: Average time from report to resolution
+
+**Membership Metrics**
+- Repeat rate: Return guests ÷ Total guests
+- Member activity: Monthly active members ÷ Total members
+- Member contribution rate: Member orders ÷ Total orders
+
+### Step 2: The Three-Step Data Collection — "Collect-Clean-Use"
+
+**Step 1: Collect**
+
+Break down data silos — consolidate PMS, OTA, finance, and membership system data into one platform.
+
+Tools: Cloud PMS (like Shiji, Xishan) have built-in data consolidation, or use BI tools (FanRuan, Power BI) for data connections.
+
+**Step 2: Clean**
+
+After data consolidation, clean it:
+- Deduplication: Same order counted multiple times across systems
+- Standardization: Unify definitions (e.g., how "occupancy rate" is calculated)
+- Validation: Identify and handle outliers
+
+**Step 3: Use**
+
+After cleaning, build a "data dashboard" letting management see key metrics daily.
+
+Core principle: **Data must be visible, trackable, and alertable.**
+
+### Step 3: Data-Driven Decision Process — "Six-Step Method"
+
+We helped Chen build a data-driven decision workflow:
+
+\`\`\`
+1. Collect: Yesterday's/last week's operational data
+2. Compare: vs. same period last year, vs. budget, vs. competitors
+3. Analyze: Find gaps, root causes, opportunities
+4. Decide: Form action plans based on data
+5. Execute: Implement action plans
+6. Review: Assess results, enter next cycle
+\`\`\`
+
+### Step 4: Build Data Culture — "Top to Bottom"
+
+The biggest barrier to datafication isn't technology — it's **culture.**
+
+We suggested Chen start with three initiatives:
+
+**First: Review data daily**
+Management spends 10 minutes each morning looking at the data dashboard, understanding what happened yesterday.
+
+**Second: Support claims with data**
+When discussing issues in meetings, require "support claims with data" — not "I think."
+
+**Third: Reward data innovation**
+Publicly recognize and reward anyone who uses data to discover an optimization opportunity.
+
+---
+
+## 5. The Emotional Value Angle
+
+Chen told me later his biggest change: **he stopped fearing data and started "having conversations with data."**
+
+Before, he felt data was "cold, impersonal." Now he realizes data is "eloquent" — it tells you where guests come from, what they like, when they'll likely return.
+
+From MBCT's view, the most important emotional value of datafication is **certainty.**
+
+When you know why guests come and why they leave, anxiety fades away.
+
+Data gives managers a "basis for judgment" — not "the judgment result itself." The basis is certain; the judgment still requires human decision-making.
+
+So datafication isn't "turning people into machines" — it's "giving human judgment more confidence."
+
+---
+
+## 6. Results
+
+One year after implementation:
+- Chen's decision accuracy improved from 60% to 82%
+- Hotel RevPAR increased 12%
+- GOP margin improved 5 percentage points
+- Guest repeat rate increased 18%
+
+More importantly, Chen's mindset shifted — he stopped saying "going with experience" and started saying "checking the data."
+
+---
+
+## 7. Key Takeaways
+
+The core lesson: **Datafication's essence is "using data to support decisions" — not "using data to replace decisions."**
+
+The old way: "trust intuition, shoot from the hip" — results are "at the mercy of fate."
+
+MBCT's way: **Build metric systems, break down data silos, let data speak.**
+
+Core principle: **Data is a tool, decisions are human.** The best datafication is when data helps humans make better judgments — not when it replaces human judgment.
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'operations',
     tags: ["AI智能体", "数字化转型", "智能化"],
     author: '迈创兄弟',
@@ -1755,11 +3158,174 @@ This article discusses key insights about 从凭经验到凭数据：酒店运�
 MBCT的做法是：**让用户在内容里看到自己梦想中的生活，然后产生"我也要去"的冲动**。
 
 核心原则：**最好的内容，是让用户感受不到这是广告**——他们只感受到"这种生活好美，我也想要"。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 抖音小红书成酒店"白月光"：内容营销怎么玩才有效？.
+## 1. What Happened
 
-[Full English translation coming soon]`,
+General Manager Zhao runs a 65-room boutique inn in Chongqing. After two years, he had a problem—80% of his guests came from Ctrip, and the other 20% just walked in.
+
+He wanted to change this, so at the beginning of 2024, he went all-in on "full-channel marketing"—TikTok, Xiaohongshu, WeChat Official Account, and Video Account. All of them.
+
+Eight months later, after spending nearly 200,000 RMB on operations and advertising, here's what he found:
+
+- TikTok: 1 million views, but only 15 actual bookings
+- Xiaohongshu: 3,000 saves, but less than 100 actual inquiries
+- WeChat Official Account: Gained 5,000 followers, but almost zero engagement
+- Video Account: Basically no organic traffic
+
+He spent all that money, but almost no "real guests" increased. Zhao was confused: "Is my content not good enough? Or is it a platform choice problem?"
+
+---
+
+## 2. Why Traditional Approaches Fail
+
+When hotels struggle with content marketing, they usually try one of three things:
+
+**Approach 1: Flood the channels with content**
+
+Post 10 TikTok videos, 5 Xiaohongshu notes, and 3 Moments updates every day. The idea is "volume will eventually lead to quality."
+
+Problem: More content doesn't mean better content. Guests swipe past your posts without even liking them.
+
+**Approach 2: Buy traffic**
+
+Boost posts with Dou+, buy Xiaohongshu "potato fries," and hire influencers. The idea is "spend money to get guests."
+
+Problem: Purchased traffic has low retention and even lower repeat rates. And traffic costs keep going up—the more you buy, the more you lose.
+
+**Approach 3: Copy viral content**
+
+Whatever's trending, they copy it. Today it's "immersive hotel stay," tomorrow it's "hotel money-saving tips."
+
+Problem: You're always half a step behind. By the time you copy something, the trend has already passed. Plus, copied content has no differentiation—it's hard to build a brand identity this way.
+
+The common problem with all three: **They treat "content marketing" like "traffic purchasing."**
+
+---
+
+## 3. The MBCT Perspective
+
+We helped Zhao map out his "traffic funnel":
+
+\`\`\`
+Exposure → Click → Save → Inquiry → Booking
+\`\`\`
+
+The problem was between steps one and two—he had exposure, but barely any clicks.
+
+After analyzing his content strategy, we found the root issue:
+
+**His content was "hotels doing advertising," not "guests sharing experiences."**
+
+For example, he posted a 30-second "hotel room tour" on TikTok with the caption "Chongqing's most beautiful boutique inn welcomes you." The video was professionally shot with great music, but the problem was—it looked like an ad.
+
+And when users are scrolling TikTok, their reaction to ads is to swipe past.
+
+**What's the deeper problem?**
+
+When hotels do content marketing, the most common mistake is **using advertising thinking for content creation.**
+
+Advertising logic: "I want you to know my product is good."
+Content logic: "I want you to feel 'I want this experience too.'"
+
+These two logics are completely different. Advertising is "I say you're good." Content is "others say you're good, and the user decides for themselves."
+
+From the MBCT perspective, the core of content marketing isn't "showcasing products"—it's **"inspiring longing."**
+
+When someone is scrolling TikTok, they're not "shopping"—they're "daydreaming." Every video they see is a fragment of their dream life.
+
+The job of hotel content marketing is to let users see "the life they dream about" in your video, and then think "I want to go there too."
+
+---
+
+## 4. What Actually Works
+
+### Step 1: Redefine "Effective Channels"—It's Not About Traffic Volume, It's About Conversion Path
+
+We helped Zhao identify three channels with the clearest conversion paths:
+
+**Xiaohongshu: Save → Inquiry → Booking**
+
+Xiaohongshu users have a clear "seed-planting to harvesting" habit. When a user sees beautiful photos of an inn on Xiaohongshu, they'll save it, then message to ask "Is this room type still available?" This is the shortest conversion path.
+
+**TikTok: Viral Video → Search → Booking**
+
+TikTok content needs "search penetration." When someone sees your video and is interested, they'll search for your inn. So the core of TikTok isn't "immediate conversion"—it's "planting search seeds."
+
+**WeChat: Repeat Guests → Referrals**
+
+WeChat is a "private domain precipitation" tool, not a "new customer acquisition" tool. After guests check in, they add your WeChat. Next time they want to visit, they book directly through WeChat or recommend you to friends.
+
+### Step 2: Channel-Specific Content Strategy
+
+**Xiaohongshu: Sell "Lifestyle," Not "Hotel Propaganda"**
+
+Instead of "here's what our rooms look like," it's "waking up in this Chongqing inn, the first thing I saw was the mountain." Content should make users feel "I want this" rather than "this hotel is pretty good."
+
+Specific content angles:
+- "I took the best photo of my life at this Chongqing inn"
+- "48 hours escaping the city—I found this lifestyle at the mountain's foot"
+- "Girls' trip here—every photo was Instagram-worthy"
+
+**TikTok: Tell "Stories," Don't "Showcase"**
+
+A good TikTok video needs a "hook"—something that makes viewers want to keep watching. For example: "I spent 200 RMB for one night at this Chongqing inn. Guess what I found?"
+
+Specific content angles:
+- "Hotel hunt vlog: An inn hidden in the mountains, and the owner turned out to be a post-95s kid"
+- "Weekend escape plan: 2-hour drive, spending a phone-free weekend in the mountains"
+- "Things hotel owners won't tell you"
+
+### Step 3: Build a Data Tracking Mechanism
+
+Every channel got UTM parameters to track where each inquiry came from.
+
+Monthly review: Which channel has the highest exposure-to-inquiry conversion rate? Which has the highest guest spend? Which has the best repeat rate?
+
+The data told us: Not every channel is worth investing in. Focus money on channels with the shortest conversion paths.
+
+---
+
+## 5. The Emotional Value Perspective
+
+Zhao later told me his biggest change was: **No longer "selling hotels," but "selling experiences."**
+
+Before, when he posted content, he was thinking "how do I get more people to know my hotel."
+Now, when he posts, he thinks "how do I get users already dreaming while watching the video?"
+
+From the MBCT perspective, the most important emotional value in content marketing is **"inspiring longing."**
+
+When users see your content, they don't feel "how's this hotel"—they feel "what would my life be like if I stayed here?"
+
+This longing is the strongest driver for bookings.
+
+---
+
+## 6. The Results
+
+Six months after implementing these changes:
+- Xiaohongshu: From "0 inquiries" to "40+ per month," 8% conversion rate
+- TikTok: Views dropped 30%, but search traffic increased 200%
+- WeChat: Repeat rate went from 15% to 38%, referral rate from 5% to 18%
+- Total marketing spend dropped from 200K RMB/quarter to 120K RMB/quarter, but effective bookings increased 45%
+
+Most importantly, Zhao finally knew **where to spend his money.**
+
+---
+
+## 7. Key Takeaways
+
+The core lesson: **The essence of content marketing is "inspiring longing," not "showcasing products."**
+
+Traditional approach: Using advertising thinking for content, resulting in "self-indulgent" posts.
+
+MBCT approach: Let users see their dream life in your content, then feel "I want to do that too."
+
+Core principle: **The best content makes users forget they're being marketed to**—they just feel "this life looks so beautiful, I want it too."
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'marketing',
     tags: ["内容营销", "抖音", "小红书"],
     author: '迈创兄弟',
@@ -1898,11 +3464,134 @@ OTA是一个"中间商"——它帮你找到客人，但它也在你和客人之
 MBCT的做法是：**让客人在离店之后，依然对你有生活方式上的记忆和归属**。
 
 核心原则：**最好的私域，是让客人感受不到"被营销"**——他只是觉得"这家酒店挺有意思的，下次还来"。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about OTA佣金一年吃掉90万：直订体系搭建实战手册.
+## 1. What Happened
 
-[Full English translation coming soon]`,
+General Manager Li runs a 98-room economy hotel in Nanjing. Good location, near a metro station. Most guests are tourists and business travelers.
+
+Last year, he did the math: just Ctrip and Meituan, the annual commission spending was close to 900,000 RMB—8% of total revenue.
+
+"Out of every 10 guests who walk through the door, almost 2 of them are working for the platform," Li said.
+
+His first instinct was "self-rescue"—have the front desk push membership cards, guide departing guests to follow the official WeChat account. But the results were minimal. Less than 5% of guests were willing to get a card.
+
+The core problem: He'd gotten so used to the OTA traffic model that he didn't know how to break free.
+
+---
+
+## 2. Why Traditional Approaches Fail
+
+When facing OTA commission pressure, traditional approaches usually look like this:
+
+**Approach 1: Raise prices to offset commissions**
+
+Raise room rates by 8%, passing commission costs to guests.
+
+Problem: When guests compare prices, they find you more expensive than competitors. Bookings drop even more.
+
+**Approach 2: Reduce OTA dependency, aggressively push membership cards**
+
+Front desk pushes, room pushes, checkout pushes. Repeat after repeat to get guests to sign up for membership.
+
+Problem: Guests sign up for cards because it's a good deal. But when it comes to OTAs, they can always find a bigger discount elsewhere. After getting the card, next time they open the OTA and search, they'll just book whoever is cheaper.
+
+**Approach 3: Go all-in on private domain**
+
+Rely entirely on WeChat, official accounts, and Enterprise WeChat. Abandon OTAs entirely.
+
+Problem: Private domain takes time to build. Without incoming traffic in the short term, the hotel might not survive until the private domain matures.
+
+The common problem with all three: **Treating OTAs and direct booking as an "either/or"dichotomy."**
+
+---
+
+## 3. The MBCT Perspective
+
+When we got involved, we first did a detailed analysis of the guest source structure.
+
+**We found a key piece of data:**
+
+Among this hotel's historical guests, 35% were "repeat guests"—they'd originally booked through OTA, but when they came back the second or third time, they called directly or just walked in.
+
+What does this tell us?
+
+It means the hotel's service itself wasn't the problem—guests liked the product. The issue was that during that second conversion, the hotel didn't give guests enough of a "reason" to skip the OTA.
+
+**Where does the problem really lie?**
+
+An OTA is an "intermediary"—it helps you find guests, but it also builds a wall between you and your guests. After every transaction, the connection between guest and hotel breaks until the next time they want to stay at a hotel and search on the OTA.
+
+And what OTAs want is exactly this—making it so you and your guests can never communicate directly.
+
+**What's the deeper problem?**
+
+Guests don't want to be locked into OTAs, but the hotel also hasn't given guests a "reason to stay" in the hotel's private domain.
+
+Membership cards, discount coupons, point redemptions—these traditional methods solve the "interest" problem, but they don't solve the "emotional connection" problem.
+
+From the MBCT perspective, the real question isn't how to "steal guests from OTAs," but **how to make guests remember you with a lifestyle connection even after they leave.**
+
+---
+
+## 4. What Actually Works
+
+### Step 1: Redefine "Private Domain"—It's Not About Collecting Data, It's About Building Emotional Connections
+
+We created a "post-stay care system" for the hotel:
+
+**Within 30 minutes after checkout**: Guests receive a personalized message:
+"Mr. Zhang, smooth checkout today. It's a bit chilly in Nanjing, take care on your way. Next time you visit Nanjing, feel free to contact us directly—we'll reserve a room for you at no extra charge."
+
+The purpose of this message isn't to sell—it's to make guests feel: "This hotel remembers me, and cares about me."
+
+**Third day after departure**: Send a weather reminder for the next day.
+
+**Seventh day after departure**: Push a niche local travel guide—not a hotel promotional piece.
+
+The core logic of this system: **Stay visible in guests' line of sight consistently, but not as "sales"—as a "friend."**
+
+### Step 2: Build a "Lifestyle Community"—Let Guests "Live in Your Circle"
+
+We helped the hotel create a "Nanjing Lifestyle Club" WeChat group:
+- No room rate promotions in the group—just share "This week's 5 most worthwhile places in Nanjing"
+- One offline gathering per month
+
+After three months, the hotel's WeChat customer service had over 2,000 active contacts. When visiting Nanjing again, over 70% booked directly through WeChat—no OTA needed.
+
+### Step 3: Design "Direct Booking Exclusive Benefits"—Make Skipping OTA a Natural Choice
+
+- Direct bookers enjoy "no-inspection checkout" (just leave, no room check)
+- Direct bookers enjoy "late checkout" (can stay until 2 PM)
+- Direct bookers enjoy a "special welcome gift" (local snacks + handwritten welcome card)
+
+The core of these benefits isn't discounts—it's "experience upgrades." Direct bookers get services that OTAs simply can't provide.
+
+---
+
+## 5. The Results
+
+Six months after implementation:
+- Direct booking ratio: 12% → 35%
+- OTA commission spending: 900K → 470K RMB
+- Hotel net profit: Increased by 430K RMB
+- Guest repeat rate: Increased by 41%
+
+---
+
+## 6. Key Takeaways
+
+The core lesson: **The essence of private domain operations isn't "collecting data"—it's "managing lifestyle relationships."**
+
+Traditional approach: "Exchange benefits for customers," but benefits are temporary.
+
+MBCT approach: **Keep guests emotionally connected to your lifestyle even after they leave.**
+
+Core principle: **The best private domain makes guests forget they're being marketed to**—they just feel "this hotel is pretty interesting, I'll come back next time."
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'marketing',
     tags: ["内容营销", "抖音", "小红书"],
     author: '迈创兄弟',
@@ -2038,11 +3727,131 @@ MBCT最关键的建议是：**技术负责"不犯错"，人负责"打动人"**�
 MBCT的思路是：**先选平台，再选工具，最后优化流程**。
 
 核心原则：**技术可以标准化，但人感必须个性化**。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about PMS从管理工具到AI基础设施：2026年系统进化论.
+## 1. What Happened
 
-[Full English translation coming soon]`,
+General Manager Wang runs an 80-room boutique hotel in Chengdu. In 2019, he spent 80,000 RMB on a "smart hotel system."
+
+Three years later, that system became his nightmare: The front desk had to use three different software programs, the housekeeping system couldn't sync in real-time, and the financial system's export format was incompatible with the tax system. Every time the system had a problem, the entire hotel operation would collapse.
+
+"Spent hundreds of thousands on equipment and software, but the functions that actually work can be counted on one hand," Wang said.
+
+This is the most typical problem in hotel digital transformation—**system silos.**
+
+---
+
+## 2. Why Traditional Approaches Fail
+
+When facing system silos, traditional approaches usually look like this:
+
+**Approach 1: Keep buying more**
+
+Whatever function is missing, buy a supplier's product to fill the gap. Five years down the road, some hotels haveseven or eight different different systems installed, but none of them connect to each other.
+
+**Approach 2: Build system integrations**
+
+Hire an integrator to connect all systems via APIs.
+
+Problem: Integrations are temporary—when one system upgrades, the interface might stop working. Maintenance costs are extremely high.
+
+**Approach 3: Switch to a big brand**
+
+Get a big system that "has everything."
+
+Problem: Big brand systems are often feature-heavy with high learning curves, and the localization isn't great. Many functions are things Chinese hotels will never use.
+
+The common problem with all three: **Treating symptoms, not the disease.** The root cause of system silos is a "selection strategy" problem, not an "integration technology" problem.
+
+---
+
+## 3. The MBCT Perspective
+
+In 2026, the PMS market is undergoing a fundamental transformation: **From "management tool" to "AI infrastructure."**
+
+Traditional PMS design logic is "management"—helping hotels record room status, process orders, and manage memberships.
+
+AI-native PMS design logic is "empowerment"—helping hotels understand guests, optimize operations, and predict the future.
+
+**What's the core difference?**
+
+| Dimension | Traditional PMS | AI-Native PMS |
+|-----------|-----------------|---------------|
+| Data | Records the past | Predicts the future |
+| Decisions | Humans make | Human + AI collaboration |
+| Personalization | Standardized service | Personalized for each guest |
+| Iteration | Feature iteration | Intelligent iteration |
+
+For example: A traditional PMS tells you "last week's occupancy rate was 75%."
+An AI-native PMS tells you "based on this week's booking progress and competitor pricing, Wednesday occupancy is expected to drop to 68%. Suggest lowering price by 5% today, which could bring in 8 additional bookings."
+
+This is the leap from "recording" to "predicting."
+
+---
+
+## 4. What Actually Works
+
+### Step 1: Choose "Platform-Type" Systems, Not "Feature-Type" Systems
+
+Our first suggestion to Wang: Pick a "platform-type" PMS that can connect with other tools and form data interoperability.
+
+Specifically:
+- Choose a PMS with rich interfaces and complete APIs
+- Use this PMS as the core, then gradually connect other tools
+- Core principle: **Connect the data first, then optimize features**
+
+### Step 2: Roll Out in Phases—"Small Steps, Fast Pace"
+
+We suggested Wang roll out in three phases:
+
+**Phase 1 (Months 1-3): Core process digitalization**
+- Self-check-in + smart lock integration
+- PMS achieves guest history recording
+
+**Phase 2 (Months 4-6): Efficiency tool integration**
+- WeChat customer service integration
+- Energy management system integration
+
+**Phase 3 (Months 7-12): Data-driven optimization**
+- Optimize pricing strategy based on data analysis
+- Implement precision marketing based on guest profiles
+
+### Step 3: Human-Centric Digitalization—Let Technology Free Up Human Emotional Capacity
+
+The most important MBCT suggestion: **Technology handles "not making mistakes," humans handle "touching hearts."**
+
+We created a "Guest Memory Card" for Wang's hotel:
+- Second stay: Front desk screen pops up "Mr. Zhang, welcome back. We've arranged the 18th floor for you, same as before."
+- Third stay: System prompts "Mr. Zhang drank Longjing tea both previous times—the tea packets are already prepared."
+
+This design's cost: Built into the PMS, no extra investment needed.
+
+---
+
+## 5. The Results
+
+After Wang re-did his digital transformation following this approach, two years later:
+- Hotel digital coverage: 30% → 85%
+- Average front desk check-in time: 8 minutes → 3 minutes
+- Guest ratings: 4.5 → 4.8
+
+Most importantly, employees stopped complaining that "the system is hard to use."
+
+---
+
+## 6. Key Takeaways
+
+The core lesson: **PMS selection needs to shift from "feature thinking" to "platform thinking."**
+
+Traditional approach: "Whatever function is missing, buy that"—fragmented thinking.
+
+MBCT approach: **First choose the platform, then choose tools, finally optimize processes.**
+
+Core principle: **Technology can be standardized, but human touch must be personalized.**
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'digital',
     tags: ["PMS系统", "AI基础设施", "系统进化"],
     author: '迈创兄弟',
@@ -2195,11 +4004,148 @@ This article discusses key insights about PMS从管理工具到AI基础设施：
 MBCT的做法是：**建立三层标准化（代码→流程→口径），让数据真正可信**。
 
 核心原则：**没有标准的数据是垃圾，有标准的数据才是资产**。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 酒店数据治理：从"数据不准"到"决策可信"的三层标准化.
+## 1. What Happened
 
-[Full English translation coming soon]`,
+General Manager Zhang runs a 120-room conference hotel in Hangzhou. He's always taken data seriously—the PMS has data, finance has data, and OTA backends have data too.
+
+But he discovered a problem: **The numbers don't match.**
+
+For example, the PMS showed a monthly occupancy rate of 78%, but the finance system showed 82%. Zhang asked finance, they said "the PMS data is wrong." Asked front desk, they said "finance miscalculated."
+
+In the end, nobody could say which number was correct.
+
+This situation is extremely common in the hotel industry—**too many systems, scattered data, inconsistent standards.**
+
+Zhang later did a full audit and found data problems of every variety:
+- The same "occupancy rate," three different numbers across PMS, finance, and OTA
+- The same "guest name," full name in some systems, pinyin in others
+- The same "room type," called "deluxe room" by one OTA, "superior deluxe room" by another
+
+"I have all this data, but I don't know which to trust," Zhang said.
+
+---
+
+## 2. Why Traditional Approaches Fail
+
+When facing data quality problems, traditional approaches usually look like this:
+
+**Approach 1: Ignore it**
+
+"A little discrepancy doesn't matter, the big picture is right."
+
+Problem: The slightest error can lead to massive mistakes. Wrong decisions often stem from wrong data.
+
+**Approach 2: Manual verification**
+
+Assign a dedicated person to verify all system data every day, adjusting whenever inconsistencies are found.
+
+Problem: Manual verification is expensive, and human attention is limited—there's always something missed.
+
+**Approach 3: Switch systems**
+
+Get a "more advanced" new system, thinking the new system will solve data problems.
+
+Problem: If the new system doesn't use unified standards to define data, the problems just move to a different location.
+
+The common problem with all three: **Treating symptoms, not the disease.** Data quality problems stem from "no standards," not "bad systems."
+
+---
+
+## 3. The MBCT Perspective
+
+We did a data audit for Zhang's hotel and found the root cause was "three levels of missing standards":
+
+**Level 1: Missing code standards**
+
+The same room type has different codes in different systems:
+- PMS: RM202
+- OTA: type_b
+- Finance: F02
+
+This makes data impossible to correlate.
+
+**Level 2: Missing process standards**
+
+Occupancy rate is calculated differently:
+- Some systems: Rooms sold ÷ Total rooms
+- Some systems: Number of guests ÷ Total capacity
+
+Same metric, different results.
+
+**Level 3: Missing definition standards**
+
+The definition of "valid guest" isn't unified:
+- Some systems include long-stay guests
+- Some don't
+
+This causes statistical deviations.
+
+The essence of data quality problems is: **Inconsistent standards.** Solving this can't be done by switching systems—only by establishing standards.
+
+---
+
+## 4. What Actually Works
+
+### Step 1: Build a "Data Dictionary"—Unified Code Standards
+
+We created a "data dictionary" for Zhang, defining standard codes and definitions for every data item:
+
+| Data Item | Standard Code | Standard Definition | Data Source |
+|-----------|--------------|-------------------|-------------|
+| Room Type | ROOM_STANDARD | Unified "Economy/Comfort/Deluxe" | PMS |
+| Guest Type | GUEST_TYPE | FIT/Group/Member/Corporate | PMS |
+| Sales Channel | CHANNEL | OTA/Direct/Group/FIT | PMS |
+| Occupancy Rate | OCC_RATE | Rooms occupied ÷ Available rooms | PMS unified calculation |
+
+### Step 2: Build a "Data Verification Mechanism"—Process Standardization
+
+Every morning at 9 AM, the system automatically generates a "data verification report" showing key metrics across all systems:
+
+\`\`\`
+Occupancy rate: PMS 78% / Finance 82% / OTA 79% — Average 79%, deviation 3%
+Average daily rate: PMS 268 RMB / Finance 265 RMB / OTA 270 RMB — Average 268 RMB, deviation 2%
+\`\`\`
+
+The system automatically flags any metric with over 5% deviation and sends it to the data owner for investigation.
+
+### Step 3: Establish a "Data Ownership" System—Clear Accountability
+
+Every data metric is assigned to a department:
+
+- Occupancy rate, RevPAR: Front Desk department
+- GOP, GOP rate: Finance department
+- Member repeat rate: Sales department
+
+When data from any department has problems, that department is responsible for investigation and correction.
+
+---
+
+## 5. The Results
+
+One year after implementation:
+- Data inconsistency rate: 35% → 5%
+- Decision-making efficiency: Improved 50% (no more time wasted verifying data)
+- Hotel RevPAR: Increased 8% (pricing decisions based on reliable data)
+
+Most importantly, Zhang finally knew **which data to trust.**
+
+---
+
+## 6. Key Takeaways
+
+The core lesson: **The essence of data governance is "establishing standards," not "switching systems."**
+
+Traditional approach: "Data has problems? Switch systems." Results in changing the location of problems, not solving them.
+
+MBCT approach: **Establish three-level standardization (code → process → definition), making data truly trustworthy.**
+
+Core principle: **Data without standards is garbage; data with standards is an asset.**
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'digital',
     tags: ["PMS系统", "AI基础设施", "系统进化"],
     author: '迈创兄弟',
@@ -2340,11 +4286,136 @@ MBCT认为，节能的最高境界是**"客人感受不到节能，只感受到�
 MBCT的做法是：**建立用能场景画像，让设备自己知道该怎么做**。
 
 核心原则：**节能不是牺牲舒适，而是精准匹配舒适**。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 酒店能耗占营收15%：用能画像系统一年省126万实战.
+## 1. What Happened
 
-[Full English translation coming soon]`,
+General Manager Fang runs a 200-room conference hotel in Wuhan. Guest mix: 60% conference groups, 30% tourist FIT, 10% long-stay guests.
+
+Last year, he saw a competitor's electricity bill and immediately signed an EMC (Energy Management Contract). The contract promised "we'll help you save electricity; if you don't save money, you don't pay."
+
+The result? The energy-saving equipment was installed and the algorithm was deployed, but after a whole year, energy costs only dropped by 8%—far below the promised 25%.
+
+Fang did the math: The EMC company took 40% of the savings, leaving him with only 4.8% of the energy cost reduction.
+
+"Most of the money saved ended up in their pockets," Fang said.
+
+---
+
+## 2. Why Traditional Approaches Fail
+
+When facing high energy costs, traditional approaches usually look like this:
+
+**Approach 1: EMC contracts**
+
+Let professional energy companies handle it—"no savings, no charge."
+
+Problem: EMC company algorithms are generic models that may not fit your specific hotel. Plus, contract terms often have loopholes—what counts as "savings" and how much, is all determined by them.
+
+**Approach 2: Simple cutbacks**
+
+Turn off lights when people leave, reduce AC usage. "Saving electricity means turning things off."
+
+Problem: This sacrifices guest comfort. Complaints about "room too cold/too hot" damage reputation—the cure is worse than the disease.
+
+**Approach 3: Equipment upgrades**
+
+Switch to LED lights, variable-frequency AC, energy-efficient water heaters.
+
+Problem: Equipment upgrades are one-time investments, but without refined management, energy-saving effects are limited.
+
+The common problem with all three: **Treating "energy saving" as a technical problem to solve, instead of an operational problem to manage.**
+
+---
+
+## 3. The MBCT Perspective
+
+When we took on this project, the first thing we did was analyze this hotel's electricity cost structure.
+
+**We found three key problems:**
+
+**Problem 1: Huge peak-to-valley energy variance**
+
+Monthly peak electricity costs were 40% different from valley costs. Peak season: 1.2 RMB per kWh; off-season: average 0.6 RMB per kWh.
+
+**Problem 2: Uneven area energy consumption**
+
+Banquet halls and conference rooms accounted for 45% of total energy consumption, but utilization was only 30%. Nobody was monitoring these areas in real time—they were just "left on."
+
+**Problem 3: No "usage profile"**
+
+The EMC company provided a generic model, but every hotel's usage pattern is completely different. Using a generic model is like "applying a formula"—results naturally fall short.
+
+**Where does the problem really lie?**
+
+Traditional hotel energy management logic is "monitoring + alerts"—when a problem occurs, an alarm sounds, and someone handles it.
+
+But truly effective energy management should be **"prediction + proactive intervention"**—adjusting before problems occur.
+
+---
+
+## 4. What Actually Works
+
+### Step 1: Build a "Usage Scenario Profile"—Customized Algorithm
+
+We created a three-month "usage scenario profile" for the hotel:
+
+| Scenario | Energy Strategy |
+|----------|-----------------|
+| 2 hours before banquet events | Pre-start AC so temperature is perfect when guests arrive |
+| Unbooked conference rooms | Auto shut off lights and AC |
+| Off-season room floors | Only activate AC in occupied rooms |
+
+### Step 2: Install "Edge Computing Sensors"—Let Equipment Think for Itself
+
+We installed temperature sensors and motion detectors in each area:
+- When area temperature exceeds setpoint by 2 degrees AND people are detected, AC automatically adjusts down
+- When an area has no motion for 1 hour, lights and AC automatically enter energy-saving mode
+
+### Step 3: Build an "Energy Review Mechanism"—Let Data Guide Operations
+
+Every month, hotel management receives an "energy usage report":
+- Energy consumption by area
+- Energy-to-revenue ratio
+- Anomaly analysis
+- Optimization recommendations
+
+### Step 4: Lifestyle Rhythm Design—Make Energy Saving Feel Invisible
+
+MBCT believes the ultimate form of energy saving is **"guests can't feel the energy saving, only the comfort."**
+
+Fang's hotel redesigned guest room energy logic based on "guest daily rhythms":
+- **Before arrival**: Booking system syncs room status; rooms with reservations get pre-adjusted temperature 1 hour in advance
+- **After arrival**: Door sensor detects guest leaving; after 2 hours, enters "energy-saving mode" (not off, just maintaining base)
+- **Sleep hours**: After 11 PM, AC automatically switches to "sleep curve" (temperature gradually adjusts per human sleep cycle)
+
+---
+
+## 5. The Results
+
+One year after implementation:
+- Annual electricity costs: 4.2M → 2.94M RMB, down 30%
+- Guest complaints about "room too cold/hot": Down 67%
+- Equipment failure rate: Down 40%
+- Carbon emissions: Reduced by 126 tons
+
+Most importantly, the hotel established a "usage optimization model"—not a static plan, but a continuously improving mechanism.
+
+---
+
+## 6. Key Takeaways
+
+The core lesson: **The essence of energy management isn't "saving electricity," it's "precise matching of energy use to service value."**
+
+Traditional approach: "Monitor and alert," fix problems after they occur.
+
+MBCT approach: **Build usage scenario profiles, let equipment know what to do on its own.**
+
+Core principle: **Energy saving isn't sacrificing comfort—it's precisely matching comfort.** When energy supply follows lifestyle rhythms, savings happen naturally and comfort improves.
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'cost',
     tags: ["能耗管理", "成本管控", "IoT"],
     author: '迈创兄弟',
@@ -2509,11 +4580,160 @@ AI擅长：重复性、数据性、规则性的工作。
 MBCT的做法是：**AI做标准化，人做情感化；AI提高效率，人创造价值**。
 
 核心原则：**最好的AI化，是让人从疲惫中解脱出来，而不是让人失业**。当员工不再被繁琐的事务消耗，他们才能真正做"有温度的服务"。`,
-    contentEn: `## Overview
+    contentEn: `---
 
-This article discusses key insights about 存量时代的人工成本优化：AI替代还是人机协同？.
+## 1. What Happened
 
-[Full English translation coming soon]`,
+General Manager Chen runs a 150-room business hotel in Chengdu. Staff headcount: 58.
+
+Last year, he noticed labor costs had reached 38% of revenue, and were growing 5% annually. "If we don't control labor costs, they'll eat up all the hotel's profits."
+
+His first instinct was: **Use AI to replace people.**
+
+He deployed self-check-in kiosks, replacing half the front desk workload. Added AI customer service, replacing phone operators. Implemented smart scheduling systems, reducing night shift staffing.
+
+A year later, headcount dropped from 58 to 42. But when Chen did the math, he found: **Labor costs only dropped 12%—far below expectations. And guest satisfaction dropped from 4.5 to 4.1, with complaint rates rising 40%.**
+
+What went wrong?
+
+He hired a consulting advisor to diagnose the problem. Here's what they said that really struck him: "You used AI to replace people, but you replaced their hands, not their brains."
+
+---
+
+## 2. Why Traditional Approaches Fail
+
+When facing labor cost pressure, traditional approaches usually look like this:
+
+**Approach 1: Layoffs**
+
+Reduce headcount, compress roles. "One person, one position," or even "one person, two positions."
+
+Problem: Obvious short-term results, but greater long-term damage—employees overworked, quality drops, turnover rises, a vicious cycle forms.
+
+**Approach 2: Automation replacement**
+
+Install self-check-in kiosks, robots, AI customer service. "Use machines wherever possible instead of people."
+
+Problem: Automation suits "standardized" work, but hotel services havesignificant non-standard elements—guest emotions, special needs, unexpected situations—all require human handling.
+
+**Approach 3: Flexible staffing**
+
+Use hourly workers, outsourcing, and interns instead of full-time employees. "Use exactly what you need."
+
+Problem: Flexible staffing reduces visible costs but increases hidden ones—training costs, quality risks, management difficulty.
+
+The common problem with all three: **Treating "labor costs" as a static number to control, rather than a dynamic system to optimize.**
+
+---
+
+## 3. The MBCT Perspective
+
+When we got involved in Chen's project, the first thing we did was: **Position value assessment.**
+
+We divided the 58 employees' work into two categories:
+
+**Category 1: Standardized work** (replaceable)
+- Check-in processing (60% replaceable)
+- Room status updates (80% replaceable)
+- Simple inquiries (70% replaceable)
+- Data entry (90% replaceable)
+
+**Category 2: Emotional work** (non-replaceable)
+- Complaint handling (20% replaceable)
+- Guest care (10% replaceable)
+- Emergency response (5% replaceable)
+- Relationship maintenance (0% replaceable)
+
+What we found: **Of Chen's 58 employees, 32 did standardized work and 26 did emotional work.**
+
+But the problem was: 40% of the emotional workers' time was occupied by standardized tasks—they should have been "doing service" but were forced to "doing data entry."
+
+**What's the deeper problem?**
+
+The correct logic for AI replacement isn't "replace people with machines," it's **"let AI do what AI does best, let humans do what humans do best."**
+
+AI excels at: Repetitive, data-based, rule-based work.
+Humans excel at: Emotional, creative, complex work.
+
+When AI takes on standardized work, humans can truly do "warm service."
+
+---
+
+## 4. What Actually Works
+
+### Step 1: Design a Human-Machine Collaboration Model—"AI Does Standardization, Humans Do Emotion"
+
+We created a "human-machine collaboration model" for Chen:
+
+**Front Desk Scenario**
+
+| Task | AI Handles | Human Handles |
+|------|-----------|---------------|
+| Check-in | ✅ Self-service/face scan | Complex situations |
+| Simple inquiries | ✅ AI customer service | Escalated complex issues |
+| Complaint handling | ❌ | ✅ Human handling |
+| Guest care | ❌ | ✅ Human handling |
+
+**Core principle**: AI handles 80% of standardized affairs, humans handle 20% of emotional affairs.
+
+### Step 2: Role Redesign—From "Executor" to "Decision-Maker"
+
+We transformed hotel positions from "execution-type" to "decision-type":
+
+**Original front desk**: Check-in registration, answering phones, data entry.
+**New front desk**: Handle complex situations AI can't manage, provide "warm service."
+
+Original front desk was an "operator," repeating the same actions every day.
+New front desk is an "experience officer," solving guests' special needs every day.
+
+The key to this transformation: **Training.** We created "AI-era service skills training" for the hotel, teaching employees how to provide higher-value service with AI assistance.
+
+### Step 3: Adjust Performance Assessment—From "Workload" to "Satisfaction"
+
+Original performance: How many guests served, how many records entered.
+
+New performance: What's guest satisfaction, how many repeat guests generated, how many complex complaints resolved.
+
+When assessment criteria change, employee behavior naturally changes—they no longer pursue "speed" but "quality."
+
+### Step 4: Organizational Culture Upgrade—From "Control" to "Empowerment"
+
+The most critical step: Changing management philosophy.
+
+Before: Boss controls employees, employees follow orders.
+Now: Employees empower AI, AI serves employees, employees serve guests.
+
+Chen later told me he noticed an interesting phenomenon: **When employees were freed fromtedious affairs, their work enthusiasm was actually higher.**
+
+Because they were no longer "extensions of machines," but "masters of service."
+
+---
+
+## 5. The Results
+
+One year after implementation:
+- Front desk headcount: Reduced 35% (11 → 7), but guest satisfaction: 4.1 → 4.7
+- Total labor costs: Down 18%, but labor efficiency: Up 45%
+- Employee turnover rate: 38% → 15%
+- Guest repeat rate: Up 22%
+
+Most importantly, the hotel developed a new service culture—**a human-AI collaborative service model.**
+
+---
+
+## 6. Key Takeaways
+
+The core lesson: **The correct logic for AI replacement isn't "replacing people," it's "dividing labor."**
+
+Traditional approach: "Replace people with machines," resulting in "human-machine opposition."
+
+MBCT approach: **AI does standardization, humans do emotion; AI improves efficiency, humans create value.**
+
+Core principle: **The best AI transformation frees people from exhaustion, not from employment.** When employees are no longer consumed bytedious affairs, they can truly provide "warm service."
+
+---
+
+*Source: marvelbros.com/zh/lean*`,
     category: 'cost',
     tags: ["能耗管理", "成本管控", "IoT"],
     author: '迈创兄弟',
@@ -2526,7 +4746,7 @@ This article discusses key insights about 存量时代的人工成本优化：AI
 ]
 
 export function getArticleBySlug(slug: string): ArticleData | undefined {
-  return articlesData.find(a => a.slug === slug)
+  return articlesData.filter(a => a.slug === slug)[0]
 }
 
 export function getAllSlugs(): string[] {
