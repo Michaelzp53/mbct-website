@@ -26,6 +26,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 406,
+      type: 'article',
+      title: '北京酒店业大洗牌：禁止新开三星以下酒店，2030年打造10个高端集群',
+      titleEn: 'Beijing\'s Hotel Shakeout: No New 3-Star Hotels Allowed',
+      slug: 'beijing-hotel-policy-2026',
+      summary: '2026年4月，北京正式出台酒店业"限星令"——停止批准新建三星级及以下酒店。目标2030年打造10个高端酒店集群、600家高品质酒店、连锁化率60%。',
+      summaryEn: 'In April 2026, Beijing officially banned new 3-star-and-below hotels. Targets: 10 premium clusters, 600 high-quality hotels, 60% chain rate by 2030.',
+      author: 'MBCT内容团队',
+      date: '2026-05-10',
+      readTime: 8,
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+    },
+    {
       id: 405,
       type: 'article',
       title: '万豪希尔顿首次警告：ChatGPT等AI平台正在威胁酒店直订渠道',
