@@ -297,6 +297,15 @@ const hotArticles = [
 export default async function LeanPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
   const isZh = lang === 'zh'
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const filteredArticles = searchQuery
+    ? articlesData.filter((article) =>
+        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.excerpt?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.tags?.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+      )
+    : []
 
   const ui = {
     pageTitle: isZh ? '管享精道' : 'Lean Insights',
@@ -339,10 +348,37 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
               <input
                 type="text"
                 placeholder={ui.searchPlaceholder}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-6 py-4 bg-card border border-border rounded-2xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b] transition-colors pl-14"
               />
               <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             </div>
+            {searchQuery && (
+              <div className="mt-4 bg-card border border-border rounded-xl p-4">
+                <p className="text-sm text-muted-foreground mb-2">
+                  {isZh ? '搜索结果：' : 'Search Results:'}
+                </p>
+                {filteredArticles.length > 0 ? (
+                  <div className="space-y-2">
+                    {filteredArticles.map((article) => (
+                      <a
+                        key={article.slug}
+                        href={`/${lang}/lean/article/${article.slug}`}
+                        className="block p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                      >
+                        <p className="font-medium text-foreground">{article.title}</p>
+                        <p className="text-xs text-muted-foreground">{article.excerpt?.substring(0, 100)}...</p>
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    {isZh ? '未找到相关文章' : 'No articles found'}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -444,6 +480,63 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
             )
           })}
         </div>
+
+        {/* Featured Q&A Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <MessageCircle className="w-6 h-6 text-[#f59e0b]" />
+            {isZh ? '精选问答' : 'Featured Q&A'}
+          </h2>
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+            <a
+              href={`/${lang}/lean/qa/front-desk-waiting-5min`}
+              className="block p-6 hover:bg-muted/30 transition-colors border-b border-border"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-5 h-5 text-[#f59e0b]" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-foreground mb-1">
+                    {isZh ? '前台排队超过5分钟，这是什么浪费类型？' : 'Front desk queue exceeds 5 minutes — what waste type is this?'}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {isZh ? '迈创兄弟解答：这是典型的"等待浪费"...' : 'MarvelBros: This is typical "Waiting" waste...'}
+                  </p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+              </div>
+            </a>
+            <a
+              href={`/${lang}/lean/qa/housekeeping-defect-rate`}
+              className="block p-6 hover:bg-muted/30 transition-colors"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-5 h-5 text-[#f59e0b]" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-foreground mb-1">
+                    {isZh ? '客房清洁返工率高，如何用精益方法解决？' : 'High housekeeping rework rate — how to solve with Lean?'}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {isZh ? '迈创兄弟解答：建立标准化检查清单...' : 'MarvelBros: Establish standardized checklists...'}
+                  </p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+              </div>
+            </a>
+          </div>
+          <div className="mt-4 text-center">
+            <a
+              href={`/${lang}/lean/qa/front-desk-waiting-5min`}
+              className="text-sm text-[#f59e0b] hover:text-[#f59e0b]/80 transition-colors"
+            >
+              {isZh ? '查看更多问答 →' : 'View more Q&A →'}
+            </a>
+          </div>
+        </div>
+
 
         {/* Ask Button */}
         <div className="mt-16 text-center">
