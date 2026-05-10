@@ -187,97 +187,6 @@ const articlesData = [
     views: 0,
     likes: 0,
   },
-  {
-    id: 7,
-    slug: 'energy-cost-optimization',
-    titleZh: '酒店能耗成本占营收15%：用能画像系统实战',
-    titleEn: 'Hotel Energy Costs at 15% of Revenue: Energy Profile System',
-    summaryZh: '武汉会议型酒店通过用能场景画像、边缘计算传感器和能耗复盘机制，将年度电费从420万降至294万。',
-    summaryEn: 'A Wuhan conference hotel reduced annual electricity costs from 4.2M to 2.94M yuan through energy profiling.',
-    category: 'cost',
-    date: '2026-05-05',
-    readTime: 13,
-    views: 1123,
-    likes: 76,
-  },
-  {
-    id: 6,
-    slug: 'digital-transformation-human-touch',
-    titleZh: '酒店数字化转型：从买系统到建生态的避坑指南',
-    titleEn: 'Hotel Digital Transformation: From Buying Systems to Building Ecosystems',
-    summaryZh: '成都精品酒店通过数字化成熟度评估、分阶段实施路线图和人机协同模型，将前台处理效率提升40%。',
-    summaryEn: 'A Chengdu boutique hotel improved front desk efficiency by 40% through digital maturity assessment.',
-    category: 'digital',
-    date: '2026-05-08',
-    readTime: 16,
-    views: 1567,
-    likes: 98,
-  },
-  {
-    id: 5,
-    slug: 'ota-commission-optimization',
-    titleZh: 'OTA佣金一年吃掉90万：直订体系搭建实战',
-    titleEn: 'OTA Commissions Eating 900K Annually: Building Direct Booking System',
-    summaryZh: '南京经济型酒店通过直订激励体系、生活方式社群和住宿积分系统，将直订比例从12%提升至35%。',
-    summaryEn: 'A Nanjing economy hotel increased direct bookings from 12% to 35% through incentives and loyalty programs.',
-    category: 'marketing',
-    date: '2026-05-10',
-    readTime: 14,
-    views: 3420,
-    likes: 198,
-  },
-  {
-    id: 4,
-    slug: 'front-desk-wait-optimization',
-    titleZh: '前台等待12分钟→3分钟：情绪预判系统实战',
-    titleEn: 'Front Desk Wait Time: 12min to 3min with Emotional Anticipation System',
-    summaryZh: '杭州商务酒店通过情绪预判系统、预退房系统和等待增值体验设计，将前台等待时间从12分钟降至3分钟。',
-    summaryEn: 'A Hangzhou business hotel reduced front desk wait time from 12 to 3 minutes through emotional anticipation.',
-    category: 'operations',
-    date: '2026-05-12',
-    readTime: 10,
-    views: 1876,
-    likes: 132,
-  },
-  {
-    id: 3,
-    slug: 'employee-turnover-optimization',
-    titleZh: '90后员工流失率从45%降到15%：双轨职业体系实战',
-    titleEn: 'Reducing Gen-Z Employee Turnover from 45% to 15%: Dual-Track Career System',
-    summaryZh: '宁波单体酒店通过双轨职业体系、师徒制和成长仪表盘，将员工流失率从45%降至15%，内部晋升率达40%。',
-    summaryEn: 'A Ningbo hotel reduced turnover from 45% to 15% through dual-track careers and mentorship.',
-    category: 'team',
-    date: '2026-05-15',
-    readTime: 12,
-    views: 2341,
-    likes: 156,
-  },
-  {
-    id: 2,
-    slug: 'hotel-construction-pitfall-guide',
-    titleZh: '酒店筹建避坑指南：从选址到开业的72个检查点',
-    titleEn: 'Hotel Construction Pitfall Guide: 72 Checkpoints from Site Selection to Opening',
-    summaryZh: '杭州投资人通过选址评估表、设计阶段避坑清单和施工过程管理，将筹建周期从14个月缩短至10个月。',
-    summaryEn: 'A Hangzhou investor reduced construction cycle from 14 to 10 months through site evaluation and checklists.',
-    category: 'preparation',
-    date: '2026-05-18',
-    readTime: 18,
-    views: 956,
-    likes: 64,
-  },
-  {
-    id: 1,
-    slug: 'hotel-investment-decision-guide',
-    titleZh: '酒店投资决策指南：如何用三维模型选出最优方案',
-    titleEn: 'Hotel Investment Decision Guide: How to Choose the Optimal Solution Using a 3D Model',
-    summaryZh: '苏州投资人通过财务、运营、风险三维决策模型，从4个方案中选出最优解，投资回报期从4.2年缩短至3.1年。',
-    summaryEn: 'A Suzhou investor selected the optimal solution from 4 options using financial, operational, and risk analysis.',
-    category: 'investment',
-    date: '2026-05-20',
-    readTime: 15,
-    views: 1280,
-    likes: 86,
-  },
 ]
 
 // 7大分类（老马叔叔确认顺序）
@@ -290,7 +199,7 @@ const categories = [
     descEn: 'Hotel investment, site evaluation, franchise vs independent, asset analysis, ROI calculation, financing advisory',
     color: '#ef4444',
     icon: '💰',
-    articleCount: 14
+    articleCount: 2
   },
   { 
     id: 'preparation', 
@@ -300,7 +209,7 @@ const categories = [
     descEn: 'Full process from site selection to opening, construction pitfalls, design review, project management',
     color: '#f97316',
     icon: '🏗️',
-    articleCount: 10
+    articleCount: 2
   },
   { 
     id: 'team', 
@@ -310,7 +219,7 @@ const categories = [
     descEn: 'Staff training, turnover control, incentive mechanisms, corporate culture, mentorship',
     color: '#8b5cf6',
     icon: '👥',
-    articleCount: 17
+    articleCount: 2
   },
   { 
     id: 'operations', 
@@ -320,7 +229,7 @@ const categories = [
     descEn: 'Daily operations optimization, service enhancement, efficiency improvement, customer experience, process reengineering',
     color: '#22c55e',
     icon: '⚙️',
-    articleCount: 22
+    articleCount: 2
   },
   { 
     id: 'marketing', 
@@ -330,7 +239,7 @@ const categories = [
     descEn: 'Guest acquisition channels, brand building, private domain traffic, OTA optimization, membership systems',
     color: '#3b82f6',
     icon: '📢',
-    articleCount: 12
+    articleCount: 2
   },
   { 
     id: 'digital', 
@@ -340,7 +249,7 @@ const categories = [
     descEn: 'PMS systems, revenue management, digital tools, smart devices, data-driven decisions',
     color: '#06b6d4',
     icon: '💻',
-    articleCount: 16
+    articleCount: 2
   },
   { 
     id: 'cost', 
@@ -350,7 +259,7 @@ const categories = [
     descEn: 'Energy management, procurement optimization, labor costs, financial control, budget management',
     color: '#f59e0b',
     icon: '📊',
-    articleCount: 13
+    articleCount: 2
   },
 ]
 
