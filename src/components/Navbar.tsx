@@ -21,13 +21,13 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
+    { href: `/${lang}/about`, label: lang === 'zh' ? '关于我们' : 'About' },
     { href: `/${lang}/knowledge`, label: lang === 'zh' ? '行业动态' : 'Knowledge' },
+    { href: `/${lang}/services`, label: lang === 'zh' ? '核心业务' : 'Services' },
+    { href: `/${lang}/cases`, label: lang === 'zh' ? '案例展示' : 'Cases' },
     { href: `/${lang}/lean`, label: lang === 'zh' ? '管享精道' : 'Lean Insights' },
-    { href: `/${lang}/about`, label: nav.about },
-    { href: `/${lang}/services`, label: nav.services },
-    { href: `/${lang}/cases`, label: nav.cases },
-    { href: `/${lang}/contact`, label: nav.contact },
-    { href: `/${lang}/contact?type=plan`, label: nav.getPlan },
+    { href: `/${lang}/contact?type=plan`, label: lang === 'zh' ? '获取方案' : 'Get Plan' },
+    { href: `/${lang}/contact`, label: lang === 'zh' ? '联系我们' : 'Contact' },
   ]
 
   return (
