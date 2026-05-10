@@ -3,59 +3,51 @@ import { ArrowLeft, MessageCircle, HelpCircle, Send, User, Building2 } from 'luc
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 
-// 支柱分类
+// Pillar Categories
 const pillars = [
-  { id: 'guest-service', label: '客人精益化服务', labelEn: 'Guest Lean Service' },
-  { id: 'emotional-value', label: '人感服务与情绪价值', labelEn: 'Human Touch & Emotion' },
-  { id: 'diagnosis', label: '问题诊断与改善', labelEn: 'Diagnosis & Improvement' },
-  { id: 'team-management', label: '团队精益化管理', labelEn: 'Team Lean Management' },
-  { id: 'cost-optimization', label: '成本收益优化', labelEn: 'Cost & Revenue' },
+  { id: 'guest-service', label: 'Guest Lean Service' },
+  { id: 'emotional-value', label: 'Human Touch & Emotion' },
+  { id: 'diagnosis', label: 'Diagnosis & Improvement' },
+  { id: 'team-management', label: 'Team Lean Management' },
+  { id: 'cost-optimization', label: 'Cost & Revenue' },
 ]
 
-// 浪费类型
+// Waste Types (7 Lean Wastes in Hospitality)
 const wasteTypes = [
-  { id: 'waiting', label: '等待' },
-  { id: 'defects', label: '缺陷' },
-  { id: 'over-processing', label: '过度处理' },
-  { id: 'transportation', label: '搬运' },
-  { id: 'inventory', label: '库存' },
-  { id: 'motion', label: '动作' },
-  { id: 'over-production', label: '过量生产' },
+  { id: 'waiting', label: 'Waiting' },
+  { id: 'defects', label: 'Defects' },
+  { id: 'over-processing', label: 'Over-processing' },
+  { id: 'transportation', label: 'Transportation' },
+  { id: 'inventory', label: 'Inventory' },
+  { id: 'motion', label: 'Motion' },
+  { id: 'over-production', label: 'Over-production' },
 ]
 
 export default async function AskPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
-  const isZh = lang === 'zh'
 
+  // All English for international readers
   const ui = {
-    back: isZh ? '返回精益问答' : 'Back to Lean Q&A',
-    title: isZh ? '向迈创兄弟提问' : 'Ask MarvelBros',
-    subtitle: isZh
-      ? '描述您酒店管理中遇到的问题，越具体回答越精准'
-      : 'Describe your hotel management challenge. The more specific, the better the answer.',
-    questionTitle: isZh ? '问题标题' : 'Question Title',
-    titlePlaceholder: isZh ? '一句话概括您的问题（不超过50字）' : 'Summarize your question in one sentence',
-    titleRequired: isZh ? '必填' : 'Required',
-    questionDetail: isZh ? '问题详情' : 'Question Details',
-    detailPlaceholder: isZh
-      ? '请详细描述：\n1. 您的酒店类型和规模\n2. 遇到的具体问题\n3. 已尝试过的解决方法\n4. 期望达到的效果'
-      : 'Please describe:\n1. Your hotel type and scale\n2. Specific problem\n3. Solutions already tried\n4. Desired outcome',
-    pillarLabel: isZh ? '支柱分类' : 'Pillar Category',
-    pillarRequired: isZh ? '必选：选择最相关的精益支柱' : 'Required: Select the most relevant lean pillar',
-    wasteLabel: isZh ? '浪费类型（可选）' : 'Waste Type (Optional)',
-    wasteHint: isZh ? '如果您能识别问题对应的浪费类型，有助于更精准回复' : 'Identifying the waste type helps us respond more precisely',
-    nickname: isZh ? '您的昵称（可选）' : 'Your Nickname (Optional)',
-    nicknamePlaceholder: isZh ? '如何称呼您？' : 'How should we address you?',
-    hotelName: isZh ? '酒店名称（可选）' : 'Hotel Name (Optional)',
-    hotelPlaceholder: isZh ? '例：XX精品酒店' : 'e.g., XX Boutique Hotel',
-    submit: isZh ? '提交问题' : 'Submit Question',
-    privacy: isZh
-      ? '提交即表示您同意公开此问题（匿名展示），便于其他酒店管理者参考学习'
-      : 'By submitting, you agree to make this question public (anonymized) for other hotel managers to learn from',
-    successTitle: isZh ? '问题已收到！' : 'Question Received!',
-    successMessage: isZh
-      ? '迈创兄弟将在48小时内为您娓娓道来。精选问答将展示在精益问答板块。'
-      : 'MarvelBros will respond within 48 hours. Selected Q&A will be featured in the Lean Q&A section.',
+    back: 'Back to Lean Q&A',
+    title: 'Ask MarvelBros',
+    subtitle: 'Describe your hotel management challenge. The more specific, the better the answer.',
+    questionTitle: 'Question Title',
+    titlePlaceholder: 'Summarize your question in one sentence (max 50 chars)',
+    titleRequired: 'Required',
+    questionDetail: 'Question Details',
+    detailPlaceholder: 'Please describe:\n1. Your hotel type and scale\n2. Specific problem you face\n3. Solutions already tried\n4. Desired outcome',
+    pillarLabel: 'Pillar Category',
+    pillarRequired: 'Required: Select the most relevant lean pillar',
+    wasteLabel: 'Waste Type (Optional)',
+    wasteHint: 'Identifying the waste type helps us respond more precisely',
+    nickname: 'Your Nickname (Optional)',
+    nicknamePlaceholder: 'How should we address you?',
+    hotelName: 'Hotel Name (Optional)',
+    hotelPlaceholder: 'e.g., XX Boutique Hotel',
+    submit: 'Submit Question',
+    privacy: 'By submitting, you agree to make this question public (anonymized) for other hotel managers to learn from',
+    successTitle: 'Question Received!',
+    successMessage: 'MarvelBros will respond within 48 hours. Selected Q&A will be featured in the Lean Insights section.',
   }
 
   return (
@@ -77,7 +69,7 @@ export default async function AskPage({ params }: { params: Promise<{ lang: stri
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
             <MessageCircle className="w-4 h-4 text-[#f59e0b]" />
             <span className="text-[#f59e0b] text-sm font-medium">
-              {isZh ? '迈创兄弟 · 娓娓道来' : 'MarvelBros · Lean Insights'}
+              MarvelBros · Lean Insights
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -102,7 +94,7 @@ export default async function AskPage({ params }: { params: Promise<{ lang: stri
               placeholder={ui.titlePlaceholder}
               className="w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b] transition-colors"
             />
-            <p className="text-xs text-muted-foreground">{isZh ? '0/50' : '0/50'}</p>
+            <p className="text-xs text-muted-foreground">0/50</p>
           </div>
 
           {/* Question Detail */}
@@ -137,7 +129,7 @@ export default async function AskPage({ params }: { params: Promise<{ lang: stri
                     className="w-4 h-4 accent-[#f59e0b]"
                   />
                   <span className="text-sm font-medium text-foreground">
-                    {isZh ? pillar.label : pillar.labelEn}
+                    {pillar.label}
                   </span>
                 </label>
               ))}

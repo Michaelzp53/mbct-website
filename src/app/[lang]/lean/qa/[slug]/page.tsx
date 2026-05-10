@@ -3,108 +3,107 @@ import { ArrowLeft, MessageCircle, ThumbsUp, Clock, User, BadgeCheck, Share2, Bo
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
-// 支柱分类
+// Pillar Categories
 const pillars = [
-  { id: 'guest-service', label: '客人精益化服务', labelEn: 'Guest Lean Service' },
-  { id: 'emotional-value', label: '人感服务与情绪价值', labelEn: 'Human Touch & Emotion' },
-  { id: 'diagnosis', label: '问题诊断与改善', labelEn: 'Diagnosis & Improvement' },
-  { id: 'team-management', label: '团队精益化管理', labelEn: 'Team Lean Management' },
-  { id: 'cost-optimization', label: '成本收益优化', labelEn: 'Cost & Revenue' },
+  { id: 'guest-service', label: 'Guest Lean Service' },
+  { id: 'emotional-value', label: 'Human Touch & Emotion' },
+  { id: 'diagnosis', label: 'Diagnosis & Improvement' },
+  { id: 'team-management', label: 'Team Lean Management' },
+  { id: 'cost-optimization', label: 'Cost & Revenue' },
 ]
 
-// 浪费类型
+// Waste Types
 const wasteTypes = [
-  { id: 'waiting', label: '等待' },
-  { id: 'defects', label: '缺陷' },
-  { id: 'over-processing', label: '过度处理' },
-  { id: 'transportation', label: '搬运' },
-  { id: 'inventory', label: '库存' },
-  { id: 'motion', label: '动作' },
-  { id: 'over-production', label: '过量生产' },
+  { id: 'waiting', label: 'Waiting' },
+  { id: 'defects', label: 'Defects' },
+  { id: 'over-processing', label: 'Over-processing' },
+  { id: 'transportation', label: 'Transportation' },
+  { id: 'inventory', label: 'Inventory' },
+  { id: 'motion', label: 'Motion' },
+  { id: 'over-production', label: 'Over-production' },
 ]
 
-// 示例Q&A详情数据
+// Sample Q&A Detail Data (All English)
 const qaDetail = {
   id: 1,
   slug: 'front-desk-waiting-5min',
-  question: '我酒店前台经常排队超过5分钟，客人抱怨很大，这是哪种浪费？怎么改善？',
-  questionEn: 'My hotel front desk queue often exceeds 5 minutes. What waste type is this and how to improve?',
-  questionDetail: '我们是一家120间房的商务酒店，前台只有2个人值班。每到下午2-4点入住高峰，客人排队经常超过5分钟，投诉很多。我们已经尝试过增加1个临时工，但效果不明显，因为培训成本高，临时工效率低。请问这是精益中的哪种浪费？有没有系统性的改善方法？',
+  question: 'My hotel front desk queue often exceeds 5 minutes. Guests complain a lot. What type of waste is this and how can I improve?',
+  questionDetail: `We are a 120-room business hotel with only 2 front desk staff. During peak check-in hours (2-4 PM), guests often wait over 5 minutes, generating many complaints. We tried adding 1 temporary worker, but the effect was minimal because training costs are high and temporary staff efficiency is low. What type of lean waste is this? Are there systematic improvement methods?`,
   pillar: 'guest-service',
   wasteType: 'waiting',
-  author: '匿名酒店业主',
+  author: 'Anonymous Hotel Owner',
   date: '2026-05-08',
   likes: 12,
   views: 156,
   isOfficial: true,
   answer: {
-    author: '迈创兄弟顾问团队',
+    author: 'MarvelBros Advisory Team',
     date: '2026-05-08',
-    content: `您好，这是非常典型的**「等待浪费」**，也是酒店业最常见的精益改善切入点。
+    content: `Hello, this is a very typical example of **"Waiting Waste"** — also the most common lean improvement entry point in the hotel industry.
 
-## 问题诊断
+## Problem Diagnosis
 
-您描述的场景符合等待浪费的三个特征：
-1. **客人等待**：排队超过5分钟，体验受损
-2. **员工等待**：非高峰时段前台人员闲置
-3. **资源等待**：房间已准备好但无法及时交付
+Your scenario exhibits three characteristics of waiting waste:
+1. **Guest waiting**: Queue exceeds 5 minutes, experience damaged
+2. **Staff waiting**: Front desk staff idle during non-peak hours
+3. **Resource waiting**: Rooms ready but cannot be delivered promptly
 
-## 改善方案
+## Improvement Plan
 
-### 第一步：数据化现状（1周）
-- 记录每小时的入住/退房数量
-- 统计每位客人的办理时长（平均、最长、最短）
-- 识别真正的瓶颈环节（是登记？是付款？是房卡制作？）
+### Step 1: Data Collection (1 week)
+- Record hourly check-in/check-out volumes
+- Calculate average, longest, and shortest processing time per guest
+- Identify the true bottleneck (registration? payment? key card production?)
 
-### 第二步：流程优化（2周）
-1. **预入住机制**：提前电话确认到店时间，错峰办理
-2. **自助入住机**：投资1台自助机，分流30%简单入住
-3. **移动前台**：高峰时段用平板在大堂流动办理
-4. **并行作业**：一人负责登记，一人负责房卡和讲解
+### Step 2: Process Optimization (2 weeks)
+1. **Pre-check-in mechanism**: Call ahead to confirm arrival time and stagger check-ins
+2. **Self-check-in kiosk**: Invest in 1 kiosk to divert 30% of simple check-ins
+3. **Mobile front desk**: Use tablets in the lobby during peak hours for mobile processing
+4. **Parallel operations**: One staff handles registration, another handles key cards and briefing
 
-### 第三步：弹性排班（持续）
-- 根据入住曲线调整班次：13:00-15:00安排3人，15:00-17:00安排4人
-- 交叉培训：客房部、礼宾部员工兼职前台高峰支援
+### Step 3: Flexible Scheduling (ongoing)
+- Adjust shifts based on check-in curves: 3 staff 1:00-3:00 PM, 4 staff 3:00-5:00 PM
+- Cross-training: Housekeeping and concierge staff support front desk during peaks
 
-### 第四步：标准作业（SOP）
-- 制定「高峰时段前台作业指导书」
-- 目标：简单入住3分钟完成，复杂入住5分钟完成
+### Step 4: Standard Work (SOP)
+- Develop "Peak Hour Front Desk Operation Guide"
+- Target: Simple check-in completed in 3 minutes, complex check-in in 5 minutes
 
-## 预期效果
+## Expected Results
 
-按我们服务过的类似酒店经验：
-- 排队时间从5分钟降至2分钟以内
-- 前台人力成本不增加（通过弹性排班）
-- 客人满意度提升15-20个百分点
+Based on our experience with similar hotels:
+- Queue time reduced from 5 minutes to under 2 minutes
+- Front desk labor cost unchanged (through flexible scheduling)
+- Guest satisfaction improved by 15-20 percentage points
 
-如需更详细的「前台精益改善工具包」，可以在评论区留下您的邮箱，我们发送给您。`,
+For a more detailed "Front Desk Lean Improvement Toolkit," leave your email in the comments and we will send it to you.`,
     tools: [
-      { name: '前台等待时间分析表', url: '#' },
-      { name: '弹性排班模板', url: '#' },
+      { name: 'Front Desk Waiting Time Analysis Sheet', url: '#' },
+      { name: 'Flexible Scheduling Template', url: '#' },
     ],
   },
   related: [
-    { slug: 'housekeeping-defect-rate', title: '客房清洁检查总有疏漏，如何用精益方法降低缺陷率？' },
-    { slug: 'ota-commission-optimization', title: 'OTA佣金越来越高，有没有精益化的收益管理思路？' },
-    { slug: 'staff-turnover-lean', title: '90后员工流失率太高，培训完就离职怎么办？' },
+    { slug: 'housekeeping-defect-rate', title: 'Housekeeping inspections always miss something. How to reduce defect rate using lean methods?' },
+    { slug: 'ota-commission-optimization', title: 'OTA commissions keep rising. Any lean revenue management strategies?' },
+    { slug: 'staff-turnover-lean', title: 'Gen-Z staff turnover is too high. Training investment feels wasted. What to do?' },
   ],
 }
 
 export default async function QADetailPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params
-  const isZh = lang === 'zh'
-  const qa = qaDetail // 实际应从数据库或API获取
+  const qa = qaDetail // In production, fetch from database or API
 
+  // All English UI for international readers
   const ui = {
-    back: isZh ? '返回精益问答' : 'Back to Lean Q&A',
-    officialAnswer: isZh ? '迈创兄弟官方回复' : 'Official Answer',
-    likes: isZh ? '共鸣' : 'Resonates',
-    views: isZh ? '浏览' : 'Views',
-    related: isZh ? '相关精益问答' : 'Related Q&A',
-    askQuestion: isZh ? '我有类似问题' : 'I have a similar question',
-    bookmark: isZh ? '收藏' : 'Bookmark',
-    share: isZh ? '分享' : 'Share',
-    tools: isZh ? '改善工具' : 'Improvement Tools',
+    back: 'Back to Lean Q&A',
+    officialAnswer: 'Official Answer from MarvelBros',
+    likes: 'Resonates',
+    views: 'Views',
+    related: 'Related Q&A',
+    askQuestion: 'I have a similar question',
+    bookmark: 'Bookmark',
+    share: 'Share',
+    tools: 'Improvement Tools',
   }
 
   return (
@@ -133,7 +132,7 @@ export default async function QADetailPage({ params }: { params: Promise<{ lang:
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            {isZh ? qa.question : qa.questionEn}
+            {qa.question}
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -250,12 +249,10 @@ export default async function QADetailPage({ params }: { params: Promise<{ lang:
         {/* Bottom CTA */}
         <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-[#f59e0b]/10 to-[#f59e0b]/5 border border-[#f59e0b]/30">
           <h3 className="text-xl font-bold text-foreground mb-4">
-            {isZh ? '还有疑问？' : 'Still have questions?'}
+            Still have questions?
           </h3>
           <p className="text-muted-foreground mb-6">
-            {isZh
-              ? '向迈创兄弟提问，我们将在48小时内为您娓娓道来'
-              : 'Ask MarvelBros. We will respond within 48 hours.'}
+            Ask MarvelBros. We will respond within 48 hours with lean insights tailored to your challenge.
           </p>
           <Link href={`/${lang}/lean/ask`}>
             <Button
@@ -271,7 +268,7 @@ export default async function QADetailPage({ params }: { params: Promise<{ lang:
   )
 }
 
-// 静态导出需要 generateStaticParams
+// Static export requires generateStaticParams
 export function generateStaticParams() {
   return [
     { lang: 'zh', slug: 'front-desk-waiting-5min' },

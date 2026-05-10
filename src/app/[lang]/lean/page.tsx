@@ -3,38 +3,37 @@ import { MessageCircle, HelpCircle, ArrowRight, Clock, User, ThumbsUp, Filter, S
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
-// 支柱分类
+// Pillar Categories
 const pillars = [
-  { id: 'all', label: '全部', labelEn: 'All' },
-  { id: 'guest-service', label: '客人精益化服务', labelEn: 'Guest Lean Service' },
-  { id: 'emotional-value', label: '人感服务与情绪价值', labelEn: 'Human Touch & Emotion' },
-  { id: 'diagnosis', label: '问题诊断与改善', labelEn: 'Diagnosis & Improvement' },
-  { id: 'team-management', label: '团队精益化管理', labelEn: 'Team Lean Management' },
-  { id: 'cost-optimization', label: '成本收益优化', labelEn: 'Cost & Revenue' },
+  { id: 'all', label: 'All' },
+  { id: 'guest-service', label: 'Guest Lean Service' },
+  { id: 'emotional-value', label: 'Human Touch & Emotion' },
+  { id: 'diagnosis', label: 'Diagnosis & Improvement' },
+  { id: 'team-management', label: 'Team Lean Management' },
+  { id: 'cost-optimization', label: 'Cost & Revenue' },
 ]
 
-// 浪费类型
+// Waste Types (7 Lean Wastes in Hospitality)
 const wasteTypes = [
-  { id: 'waiting', label: '等待' },
-  { id: 'defects', label: '缺陷' },
-  { id: 'over-processing', label: '过度' },
-  { id: 'transportation', label: '搬运' },
-  { id: 'inventory', label: '库存' },
-  { id: 'motion', label: '动作' },
-  { id: 'over-production', label: '过量' },
+  { id: 'waiting', label: 'Waiting' },
+  { id: 'defects', label: 'Defects' },
+  { id: 'over-processing', label: 'Over-processing' },
+  { id: 'transportation', label: 'Transportation' },
+  { id: 'inventory', label: 'Inventory' },
+  { id: 'motion', label: 'Motion' },
+  { id: 'over-production', label: 'Over-production' },
 ]
 
-// 示例Q&A数据
+// Sample Q&A Data (All English for international readers)
 const qaList = [
   {
     id: 1,
     slug: 'front-desk-waiting-5min',
-    question: '我酒店前台经常排队超过5分钟，客人抱怨很大，这是哪种浪费？怎么改善？',
-    questionEn: 'My hotel front desk queue often exceeds 5 minutes. What waste type is this?',
-    answer: '这是典型的「等待浪费」。建议：1) 分析高峰时段入住/退房规律，弹性排班；2) 引入自助入住机分流；3) 提前电话确认到店时间，错峰办理。',
+    question: 'My hotel front desk queue often exceeds 5 minutes. Guests complain a lot. What type of waste is this and how can I improve?',
+    answer: 'This is a classic example of "Waiting Waste." Recommendations: 1) Analyze peak check-in/check-out patterns and implement flexible staffing; 2) Introduce self-check-in kiosks to分流; 3) Call ahead to confirm arrival times and stagger check-ins.',
     pillar: 'guest-service',
     wasteType: 'waiting',
-    author: '匿名酒店业主',
+    author: 'Anonymous Hotel Owner',
     date: '2026-05-08',
     likes: 12,
     isOfficial: true,
@@ -42,12 +41,11 @@ const qaList = [
   {
     id: 2,
     slug: 'housekeeping-defect-rate',
-    question: '客房清洁检查总有疏漏，客人投诉卫生问题，如何用精益方法降低缺陷率？',
-    questionEn: 'Housekeeping inspections always miss something. How to reduce defect rate?',
-    answer: '建议建立「标准化作业指导书(SOP)」+「检查清单(Checklist)」双保险。将客房分为12个检查区域，每区设置照片标准，新员工培训从对照照片开始。',
+    question: 'Housekeeping inspections always miss something. Guests complain about hygiene issues. How can I reduce defect rates using lean methods?',
+    answer: 'Establish a "Standard Operating Procedure (SOP)" + "Checklist" double-check system. Divide rooms into 12 inspection zones, each with photo standards. New staff training starts with photo comparison.',
     pillar: 'diagnosis',
     wasteType: 'defects',
-    author: '某连锁店长',
+    author: 'Chain Hotel Manager',
     date: '2026-05-07',
     likes: 8,
     isOfficial: true,
@@ -55,12 +53,11 @@ const qaList = [
   {
     id: 3,
     slug: 'staff-turnover-lean',
-    question: '90后员工流失率太高，培训完就离职，感觉投入都浪费了，怎么办？',
-    questionEn: 'Gen-Z staff turnover is too high. Training investment feels wasted.',
-    answer: '这是「人才动作浪费」。建议从三方面入手：1) 入职即配导师制，降低适应期焦虑；2) 建立技能可视化成长路径，让员工看到未来；3) 月度「改善提案」机制，给年轻人参与感。',
+    question: 'Gen-Z staff turnover is too high. They leave after training. It feels like all the investment is wasted. What can I do?',
+    answer: 'This is "Talent Motion Waste." Three approaches: 1) Implement a mentorship program from day one to reduce onboarding anxiety; 2) Create a visible skill growth path so employees see their future; 3) Monthly "improvement proposal" mechanism to give young staff a sense of participation.',
     pillar: 'team-management',
     wasteType: 'motion',
-    author: '人力资源经理',
+    author: 'HR Manager',
     date: '2026-05-06',
     likes: 15,
     isOfficial: true,
@@ -68,12 +65,11 @@ const qaList = [
   {
     id: 4,
     slug: 'ota-commission-optimization',
-    question: 'OTA佣金越来越高，直销渠道做不起来，有没有精益化的收益管理思路？',
-    questionEn: 'OTA commission keeps rising. Any lean revenue management ideas?',
-    answer: '核心思路：把「客人触点」从OTA转移到私域。具体：1) 入住时引导加企业微信，送延迟退房；2) 离店后3天内发送「专属会员价」；3) 建立「老客专属预订通道」，价格与OTA持平但含早餐。',
+    question: 'OTA commissions keep rising while direct booking channels struggle. Any lean revenue management strategies?',
+    answer: 'Core strategy: Shift "guest touchpoints" from OTAs to private domains. Specifically: 1) During check-in, guide guests to add your WeChat business account, offer late checkout as incentive; 2) Within 3 days after departure, send "exclusive member rates"; 3) Establish a "loyal guest exclusive booking channel" with rates matching OTAs but including breakfast.',
     pillar: 'cost-optimization',
     wasteType: 'over-processing',
-    author: '单体酒店老板',
+    author: 'Independent Hotel Owner',
     date: '2026-05-05',
     likes: 23,
     isOfficial: true,
@@ -81,12 +77,11 @@ const qaList = [
   {
     id: 5,
     slug: 'emotional-service-design',
-    question: '想做人感服务，但员工觉得"假"，客人觉得"尬"，怎么设计自然的情绪价值？',
-    questionEn: 'Want human-touch service but feels fake. How to design natural emotional value?',
-    answer: '情绪价值不是「演出来」的，是「设计出来」的。三步：1) 识别客人旅程中的3个「情绪低谷时刻」；2) 在这些时刻设计「超预期小触点」；3) 给员工「授权额度」，允许他们为客人创造惊喜。',
+    question: 'I want to provide human-touch service, but staff find it "fake" and guests find it "awkward." How do I design natural emotional value?',
+    answer: 'Emotional value is not "acted out"—it is "designed." Three steps: 1) Identify 3 "emotional low points" in the guest journey; 2) Design "unexpected small touchpoints" at these moments; 3) Give staff an "empowerment budget" allowing them to create surprises for guests.',
     pillar: 'emotional-value',
     wasteType: 'over-processing',
-    author: '精品酒店投资人',
+    author: 'Boutique Hotel Investor',
     date: '2026-05-04',
     likes: 19,
     isOfficial: true,
@@ -97,19 +92,18 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
   const { lang } = await params
   const isZh = lang === 'zh'
 
+  // For Lean Insights page: English-first for international readers
   const ui = {
-    pageTitle: isZh ? '管享精道 · 精益问答' : 'Lean Insights · Q&A',
-    pageSubtitle: isZh
-      ? '酒店管理者提问，迈创兄弟娓娓道来——用精益思维解决真实管理难题'
-      : 'Hotel managers ask, MarvelBros answers — solving real management challenges with lean thinking',
-    askButton: isZh ? '向迈创兄弟提问' : 'Ask MarvelBros',
-    searchPlaceholder: isZh ? '搜索问题...' : 'Search questions...',
-    filterPillar: isZh ? '支柱分类' : 'Pillars',
-    filterWaste: isZh ? '浪费类型' : 'Waste Types',
-    officialAnswer: isZh ? '迈创兄弟官方回复' : 'Official Answer',
-    viewDetail: isZh ? '查看详情' : 'View Detail',
-    likes: isZh ? '共鸣' : 'Resonates',
-    noMore: isZh ? '— 更多问答即将上线 —' : '— More Q&A coming soon —',
+    pageTitle: 'Lean Insights · Q&A',
+    pageSubtitle: 'Hotel managers ask, MarvelBros answers — solving real management challenges with lean thinking',
+    askButton: 'Ask MarvelBros',
+    searchPlaceholder: 'Search questions...',
+    filterPillar: 'Pillars',
+    filterWaste: 'Waste Types',
+    officialAnswer: 'Official Answer from MarvelBros',
+    viewDetail: 'View Detail',
+    likes: 'Resonates',
+    noMore: '— More Q&A coming soon —',
   }
 
   return (
@@ -120,7 +114,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
             <MessageCircle className="w-4 h-4 text-[#f59e0b]" />
             <span className="text-[#f59e0b] text-sm font-medium">
-              {isZh ? '迈创兄弟 · 娓娓道来' : 'MarvelBros · Lean Insights'}
+              MarvelBros · Lean Insights
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -166,7 +160,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                 variant="outline"
                 className="cursor-pointer hover:bg-[#f59e0b]/10 hover:text-[#f59e0b] hover:border-[#f59e0b]/50 transition-all text-sm px-3 py-1"
               >
-                {isZh ? pillar.label : pillar.labelEn}
+                {pillar.label}
               </Badge>
             ))}
           </div>
@@ -200,7 +194,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-foreground mb-2">
-                      {isZh ? qa.question : qa.questionEn}
+                      {qa.question}
                     </h3>
                     <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                       <span className="flex items-center gap-1">
@@ -265,12 +259,10 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
         <section className="mt-16 text-center">
           <div className="p-8 rounded-2xl bg-gradient-to-br from-[#f59e0b]/10 to-[#f59e0b]/5 border border-[#f59e0b]/30">
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              {isZh ? '还没找到答案？' : 'Not finding your answer?'}
+              Not finding your answer?
             </h2>
             <p className="text-muted-foreground mb-6">
-              {isZh
-                ? '向迈创兄弟提问，我们将在48小时内为您娓娓道来'
-                : 'Ask MarvelBros. We will respond within 48 hours.'}
+              Ask MarvelBros. We will respond within 48 hours with lean insights tailored to your challenge.
             </p>
             <Link href={`/${lang}/lean/ask`}>
               <Button
