@@ -22,6 +22,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
     { href: `/${lang}/knowledge`, label: lang === 'zh' ? '行业动态' : 'Knowledge' },
+    { href: `/${lang}/lean`, label: lang === 'zh' ? '管享精道' : 'Lean Insights' },
     { href: `/${lang}/about`, label: nav.about },
     { href: `/${lang}/services`, label: nav.services },
     { href: `/${lang}/cases`, label: nav.cases },
