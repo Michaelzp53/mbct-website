@@ -12,6 +12,61 @@ function getIpHash(request: Request): string {
   return Math.abs(hash).toString(16).padStart(16, '0');
 }
 
+// Email notification helper
+async function sendEmailNotification(question: any) {
+  try {
+    const emailData = {
+      to: 'info@marvelbros.com',
+      subject: `【管享精道新提问】${question.title || '新提问'}`,
+      text: `管享精道收到新提问：
+
+标题：${question.title || '无标题'}
+详情：${question.detail || '无详情'}
+分类：${question.pillar || '未分类'}
+浪费类型：${Array.isArray(question.waste_types) ? question.waste_types.join(', ') : (question.waste_types || '未指定')}
+昵称：${question.nickname || '匿名'}
+酒店：${question.hotel_name || '未填写'}
+时间：${question.created_at || new Date().toISOString()}
+
+请登录后台查看完整信息并安排回复。`,
+      html: `<h2>管享精道收到新提问</h2>
+<p><strong>标题：</strong>${question.title || '无标题'}</p>
+<p><strong>详情：</strong>${question.detail || '无详情'}</p>
+<p><strong>分类：</strong>${question.pillar || '未分类'}</p>
+<p><strong>浪费类型：</strong>${Array.isArray(question.waste_types) ? question.waste_types.join(', ') : (question.waste_types || '未指定')}</p>
+<p><strong>昵称：</strong>${question.nickname || '匿名'}</p>
+<p><strong>酒店：</strong>${question.hotel_name || '未填写'}</p>
+<p><strong>时间：</strong>${question.created_at || new Date().toISOString()}</p>
+<p>请登录后台查看完整信息并安排回复。</p>`,
+    };
+
+    // Try to send via Vercel's built-in email or external service
+    // Using a simple fetch to a webhook or email service
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (resendApiKey) {
+      await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${resendApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: '管享精道 <questions@marvelbros.com>',
+          to: ['info@marvelbros.com'],
+          subject: emailData.subject,
+          text: emailData.text,
+          html: emailData.html,
+        }),
+      });
+    } else {
+      // Log for now if no email service configured
+      console.log('[EMAIL_NOTIFICATION]', emailData);
+    }
+  } catch (err) {
+    console.error('Email notification failed:', err);
+  }
+}
+
 // POST: 提交提问
 export async function POST(request: Request) {
   try {
@@ -30,8 +85,13 @@ export async function POST(request: Request) {
       RETURNING *
     `;
 
+    const question = result.rows[0];
+
+    // Send email notification
+    await sendEmailNotification(question);
+
     return NextResponse.json({
-      question: result.rows[0],
+      question: question,
       success: true,
     });
   } catch (error) {
