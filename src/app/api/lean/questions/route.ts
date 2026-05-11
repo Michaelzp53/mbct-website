@@ -24,6 +24,7 @@ async function sendEmailNotification(question: any) {
     const htmlBody = `<h2>管享精道收到新提问</h2><p><strong>标题：</strong>${question.title || '无标题'}</p><p><strong>详情：</strong>${question.detail || '无详情'}</p><p><strong>分类：</strong>${question.pillar || '未分类'}</p><p><strong>浪费类型：</strong>${Array.isArray(question.waste_types) ? question.waste_types.join(', ') : (question.waste_types || '未指定')}</p><p><strong>昵称：</strong>${question.nickname || '匿名'}</p><p><strong>酒店：</strong>${question.hotel_name || '未填写'}</p><p><strong>时间：</strong>${question.created_at || new Date().toISOString()}</p><p>请登录后台查看完整信息并安排回复。</p>`;
 
     if (tencentSecretId && tencentSecretKey) {
+      console.log('[EMAIL] 开始发送邮件，SecretId:', tencentSecretId.substring(0, 10) + '...');
       // 腾讯云 SES API v2
       const timestamp = Math.floor(Date.now() / 1000);
       const date = new Date().toISOString().split('T')[0];
@@ -73,6 +74,7 @@ async function sendEmailNotification(question: any) {
       });
 
       const result = await response.json();
+      console.log('[EMAIL] 腾讯云响应:', JSON.stringify(result).substring(0, 200));
       if (result.Response?.Error) {
         console.error('Tencent SES Error:', result.Response.Error);
       } else {
