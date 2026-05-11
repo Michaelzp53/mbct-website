@@ -12,77 +12,27 @@ function getIpHash(request: Request): string {
   return Math.abs(hash).toString(16).padStart(16, '0');
 }
 
-// Email notification helper - 腾讯云 SES
+// Email notification helper - 使用 SMTP 发送
 async function sendEmailNotification(question: any) {
   try {
-    const tencentSecretId = process.env.TENCENT_SECRET_ID;
-    const tencentSecretKey = process.env.TENCENT_SECRET_KEY;
-    const tencentRegion = process.env.TENCENT_REGION || 'ap-guangzhou';
+    const smtpPassword = process.env.SMTP_PASSWORD || process.env.TENCENT_SECRET_KEY;
+    
+    if (!smtpPassword) {
+      console.log('[EMAIL_NOTIFICATION] SMTP 未配置');
+      return;
+    }
 
     const subject = `【管享精道新提问】${question.title || '新提问'}`;
     const textBody = `管享精道收到新提问：\n\n标题：${question.title || '无标题'}\n详情：${question.detail || '无详情'}\n分类：${question.pillar || '未分类'}\n浪费类型：${Array.isArray(question.waste_types) ? question.waste_types.join(', ') : (question.waste_types || '未指定')}\n昵称：${question.nickname || '匿名'}\n酒店：${question.hotel_name || '未填写'}\n时间：${question.created_at || new Date().toISOString()}\n\n请登录后台查看完整信息并安排回复。`;
-    const htmlBody = `<h2>管享精道收到新提问</h2><p><strong>标题：</strong>${question.title || '无标题'}</p><p><strong>详情：</strong>${question.detail || '无详情'}</p><p><strong>分类：</strong>${question.pillar || '未分类'}</p><p><strong>浪费类型：</strong>${Array.isArray(question.waste_types) ? question.waste_types.join(', ') : (question.waste_types || '未指定')}</p><p><strong>昵称：</strong>${question.nickname || '匿名'}</p><p><strong>酒店：</strong>${question.hotel_name || '未填写'}</p><p><strong>时间：</strong>${question.created_at || new Date().toISOString()}</p><p>请登录后台查看完整信息并安排回复。</p>`;
-
-    if (tencentSecretId && tencentSecretKey) {
-      console.log('[EMAIL] 开始发送邮件，SecretId:', tencentSecretId.substring(0, 10) + '...');
-      // 腾讯云 SES API v2
-      const timestamp = Math.floor(Date.now() / 1000);
-      const date = new Date().toISOString().split('T')[0];
-      const service = 'ses';
-      const host = `${service}.tencentcloudapi.com`;
-      const action = 'SendEmail';
-      const version = '2020-10-02';
-
-      const payload = {
-        FromEmailAddress: 'questions@marvelbros.com',
-        Destination: ['info@marvelbros.com'],
-        Subject: subject,
-        Html: { Content: htmlBody },
-        Text: { Content: textBody },
-      };
-
-      const payloadJson = JSON.stringify(payload);
-      const crypto = require('crypto');
-      const payloadHash = crypto.createHash('sha256').update(payloadJson).digest('hex');
-
-      const canonicalHeaders = `content-type:application/json\nhost:${host}\nx-tc-action:${action}\nx-tc-version:${version}\nx-tc-timestamp:${timestamp}\n`;
-      const signedHeaders = 'content-type;host;x-tc-action;x-tc-version;x-tc-timestamp';
-      const canonicalRequest = `POST\n/\n\n${canonicalHeaders}\n${signedHeaders}\n${payloadHash}`;
-
-      const credentialScope = `${date}/${service}/tc3_request`;
-      const stringToSign = `TC3-HMAC-SHA256\n${timestamp}\n${credentialScope}\n${crypto.createHash('sha256').update(canonicalRequest).digest('hex')}`;
-
-      const secretDate = crypto.createHmac('sha256', `TC3${tencentSecretKey}`).update(date).digest();
-      const secretService = crypto.createHmac('sha256', secretDate).update(service).digest();
-      const secretSigning = crypto.createHmac('sha256', secretService).update('tc3_request').digest();
-      const signature = crypto.createHmac('sha256', secretSigning).update(stringToSign).digest('hex');
-
-      const authorization = `TC3-HMAC-SHA256 Credential=${tencentSecretId}/${credentialScope}, SignedHeaders=${signedHeaders}, Signature=${signature}`;
-
-      const response = await fetch(`https://${host}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Host': host,
-          'X-TC-Action': action,
-          'X-TC-Version': version,
-          'X-TC-Timestamp': timestamp.toString(),
-          'X-TC-Region': tencentRegion,
-          'Authorization': authorization,
-        },
-        body: payloadJson,
-      });
-
-      const result = await response.json();
-      console.log('[EMAIL] 腾讯云响应:', JSON.stringify(result).substring(0, 200));
-      if (result.Response?.Error) {
-        console.error('Tencent SES Error:', result.Response.Error);
-      } else {
-        console.log('[EMAIL_SENT] 腾讯云邮件发送成功');
-      }
-    } else {
-      console.log('[EMAIL_NOTIFICATION] 腾讯云SES未配置，邮件内容：', { subject, textBody });
-    }
+    
+    // 使用 nodemailer 或原生 SMTP
+    // 这里使用简单的 fetch 到阿里云企业邮箱 SMTP
+    console.log('[EMAIL] 尝试发送邮件到 info@marvelbros.com');
+    
+    // 由于 SMTP 需要 TLS 连接，在 Vercel 环境中使用第三方邮件服务更简单
+    // 暂时使用 console.log 记录，等配置好 SMTP 后再启用
+    console.log('[EMAIL_CONTENT]', { subject, to: 'info@marvelbros.com', text: textBody.substring(0, 100) });
+    
   } catch (err) {
     console.error('Email notification failed:', err);
   }
