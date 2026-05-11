@@ -295,8 +295,8 @@ const hotArticles = [
   },
 ]
 
-export default function LeanPage({ params }: { params: { lang: string } }) {
-  const { lang } = params
+export default async function LeanPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
   const isZh = lang === 'zh'
 
   const ui = {
