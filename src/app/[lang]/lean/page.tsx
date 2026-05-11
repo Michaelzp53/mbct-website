@@ -1,5 +1,9 @@
+'use client'
+
+import { useState } from 'react'
+
 import Link from 'next/link'
-import { ArrowRight, ChevronRight, Search, Clock, Eye, ThumbsUp, BookOpen } from 'lucide-react'
+import { ArrowRight, ChevronRight, Search, Clock, Eye, ThumbsUp, BookOpen, MessageSquare } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
@@ -294,16 +298,15 @@ const hotArticles = [
   },
 ]
 
-export default async function LeanPage({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params
+export default function LeanPage({ params }: { params: { lang: string } }) {
+  const { lang } = params
   const isZh = lang === 'zh'
   const [searchQuery, setSearchQuery] = useState('')
 
   const filteredArticles = searchQuery
     ? articlesData.filter((article) =>
-        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        article.excerpt?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        article.tags?.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+        (isZh ? article.titleZh : article.titleEn).toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (isZh ? article.summaryZh : article.summaryEn).toLowerCase().includes(searchQuery.toLowerCase())
       )
     : []
 
@@ -367,8 +370,8 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                         href={`/${lang}/lean/article/${article.slug}`}
                         className="block p-3 rounded-lg hover:bg-muted/50 transition-colors"
                       >
-                        <p className="font-medium text-foreground">{article.title}</p>
-                        <p className="text-xs text-muted-foreground">{article.excerpt?.substring(0, 100)}...</p>
+                        <p className="font-medium text-foreground">{isZh ? article.titleZh : article.titleEn}</p>
+                        <p className="text-xs text-muted-foreground">{(isZh ? article.summaryZh : article.summaryEn).substring(0, 100)}...</p>
                       </a>
                     ))}
                   </div>
@@ -484,7 +487,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
         {/* Featured Q&A Section */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
-            <MessageCircle className="w-6 h-6 text-[#f59e0b]" />
+            <MessageSquare className="w-6 h-6 text-[#f59e0b]" />
             {isZh ? '精选问答' : 'Featured Q&A'}
           </h2>
           <div className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -494,7 +497,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-5 h-5 text-[#f59e0b]" />
+                  <MessageSquare className="w-5 h-5 text-[#f59e0b]" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-foreground mb-1">
@@ -513,7 +516,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-5 h-5 text-[#f59e0b]" />
+                  <MessageSquare className="w-5 h-5 text-[#f59e0b]" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-foreground mb-1">

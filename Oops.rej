@@ -1,0 +1,7 @@
+@@ -1,3 +1,6 @@
++'use client'
++
++import { useState } from 'react'
+ import Link from 'next/link'
+ import { ArrowRight, ChevronRight, Search, Clock, Eye, ThumbsUp, BookOpen } from 'lucide-react'
+ import { Badge } from '@/components/ui/badge'
