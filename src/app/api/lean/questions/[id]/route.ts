@@ -1,5 +1,5 @@
-import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
+import { updateQuestionStatus, getQuestions } from '../store';
 
 // PATCH: 更新提问状态
 export async function PATCH(request: Request) {
@@ -11,25 +11,19 @@ export async function PATCH(request: Request) {
     }
 
     // 验证状态值
-    const validStatuses = ['positive', 'negative', 'answered', 'pending'];
+    const validStatuses = ['positive', 'negative', 'converted', 'pending'];
     if (!validStatuses.includes(status)) {
       return NextResponse.json({ error: `Invalid status. Must be one of: ${validStatuses.join(', ')}` }, { status: 400 });
     }
 
-    // 更新状态
-    const result = await sql`
-      UPDATE questions 
-      SET status = ${status}, updated_at = NOW()
-      WHERE id = ${id}
-      RETURNING *
-    `;
+    const question = updateQuestionStatus(Number(id), status);
 
-    if (result.rows.length === 0) {
+    if (!question) {
       return NextResponse.json({ error: 'Question not found' }, { status: 404 });
     }
 
     return NextResponse.json({
-      question: result.rows[0],
+      question: question,
       success: true,
     });
   } catch (error) {
@@ -48,7 +42,11 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ error: 'id is required' }, { status: 400 });
     }
 
-    await sql`DELETE FROM questions WHERE id = ${id}`;
+    const questions = getQuestions();
+    const index = questions.findIndex(q => q.id === Number(id));
+    if (index > -1) {
+      questions.splice(index, 1);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

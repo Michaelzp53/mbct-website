@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres'
+import { getQuestions } from '../../api/lean/questions/store'
 import QuestionsAdminClient from './QuestionsAdminClient'
 
 interface Question {
@@ -14,13 +14,6 @@ interface Question {
 }
 
 export default async function QuestionsAdminPage() {
-  let questions: Question[] = []
-  try {
-    const result = await sql`SELECT * FROM questions ORDER BY created_at DESC`
-    questions = result.rows as Question[]
-  } catch (err) {
-    console.error('Failed to load questions:', err)
-  }
-
+  const questions = getQuestions() as Question[]
   return <QuestionsAdminClient questions={questions} />
 }
