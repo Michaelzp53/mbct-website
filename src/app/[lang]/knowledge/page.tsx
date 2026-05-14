@@ -648,10 +648,38 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       readTime: '5分钟',
       tag: '行业报告',
     },
+    {
+      id: 409,
+      type: 'report',
+      title: '2026年Q2酒店行业趋势报告：存量竞争深水区，谁在突围？',
+      slug: 'q2-hotel-industry-trends-2026',
+      summary: '2026年Q2全国酒店市场景气指数-9，较Q1回升12点。存量改造成主战场：69.3%存量酒店运营超5年，改造项目占新开业45%。三大趋势：品牌连锁化加速、资产价值重构、资产证券化加速。',
+      firstLine: '2026年第二季度，全国酒店市场景气指数录得-9，较上季度回升12个指数点，市场信心正在缓慢修复。',
+      author: 'MBCT秘书处',
+      date: '2026-05-14',
+      readTime: '15分钟',
+      tag: '行业报告',
+      featured: true,
+    },
   ]
 
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
+    {
+      id: 404,
+      type: 'case',
+      title: '从亏损80万到盈利120万：杭州中端酒店18个月成本重构实录',
+      slug: 'hangzhou-hotel-cost-restructuring-18-months',
+      summary: '杭州某中端酒店120间客房，2019年开业，2024年亏损80万，2026年盈利120万。18个月里，它没有做大规模翻新，没有更换品牌，只是系统性地重构了成本结构。',
+      firstLine: '2026年酒店行业进入存量竞争时代，成本压力成为悬在每一家酒店头上的达摩克利斯之剑。',
+      author: 'MBCT迈创兄弟',
+      date: '2026-05-13',
+      readTime: '12分钟',
+      tag: '案例研究',
+      featured: true,
+      hot: true,
+    },
+
     {
       id: 403,
       type: 'case',
