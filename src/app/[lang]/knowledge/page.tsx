@@ -453,6 +453,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-04-22新增1篇
   const reports = [
     {
+      id: 409,
+      type: 'report',
+      title: '2026年Q2酒店行业趋势报告：存量竞争深水区，谁在突围？',
+      slug: 'q2-hotel-industry-trends-2026',
+      summary: '2026年Q2全国酒店市场景气指数-9，较Q1回升12点。存量改造成主战场：69.3%存量酒店运营超5年，改造项目占新开业45%。三大趋势：品牌连锁化加速、资产价值重构、资产证券化加速。',
+      firstLine: '2026年第二季度，全国酒店市场景气指数录得-9，较上季度回升12个指数点，市场信心正在缓慢修复。',
+      author: 'MBCT秘书处',
+      date: '2026-05-14',
+      readTime: '15分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+    {
       id: 319,
       type: 'report',
       title: '下沉市场连锁化率19%，单体酒店出路在哪？',
@@ -647,19 +660,6 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-03',
       readTime: '5分钟',
       tag: '行业报告',
-    },
-    {
-      id: 409,
-      type: 'report',
-      title: '2026年Q2酒店行业趋势报告：存量竞争深水区，谁在突围？',
-      slug: 'q2-hotel-industry-trends-2026',
-      summary: '2026年Q2全国酒店市场景气指数-9，较Q1回升12点。存量改造成主战场：69.3%存量酒店运营超5年，改造项目占新开业45%。三大趋势：品牌连锁化加速、资产价值重构、资产证券化加速。',
-      firstLine: '2026年第二季度，全国酒店市场景气指数录得-9，较上季度回升12个指数点，市场信心正在缓慢修复。',
-      author: 'MBCT秘书处',
-      date: '2026-05-14',
-      readTime: '15分钟',
-      tag: '行业报告',
-      featured: true,
     },
   ]
 
