@@ -831,7 +831,11 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-
+  // 热门话题：自动选择所有文章中日期最新的文章
+  const allArticles = [...articles, ...reports, ...cases]
+  const featuredArticle = allArticles.reduce((latest, article) => {
+    return new Date(article.date) > new Date(latest.date) ? article : latest
+  }, allArticles[0])
 
   const categories = [
     {
@@ -939,27 +943,27 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                   热门话题
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  {articles[0].title}
+                  {featuredArticle.title}
                 </h2>
                 <p className="text-muted-foreground mb-6 text-lg">
-                  {articles[0].summary}
+                  {featuredArticle.summary}
                 </p>
                 <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-6">
                   <span className="flex items-center gap-2">
                     <User className="w-4 h-4" />
-                    {articles[0].author}
+                    {featuredArticle.author}
                   </span>
                   <span className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    {articles[0].date}
+                    {featuredArticle.date}
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    {articles[0].readTime}分钟
+                    {featuredArticle.readTime}分钟
                   </span>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/${encodeURIComponent(articles[0].slug)}`}
+                  href={`/${lang}/knowledge/${encodeURIComponent(featuredArticle.slug)}`}
                   className="inline-flex items-center px-6 py-3 text-foreground font-bold rounded-lg transition-all"
                   style={{ background: 'linear-gradient(135deg, #4285f4, #34a853, #fbbc04, #ea4335)' }}
                 >
