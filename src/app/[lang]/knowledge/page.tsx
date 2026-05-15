@@ -26,6 +26,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 411,
+      type: 'article',
+      title: 'AI驱动的酒店业投资决策：从私域运营到成本优化的全链路策略',
+      titleEn: 'AI-Driven Hotel Investment Decision: From Private Domain Operations to Cost Optimization',
+      slug: 'ai-driven-hotel-investment-decision-2026-05-15',
+      summary: '提供系统化的AI驱动投资决策框架，涵盖私域运营、内容生产、直播带看等全链路策略，帮助酒店业投资人抓住价值增长点。',
+      firstLine: '本文提供AI驱动的酒店业投资决策全链路策略，包括私域运营、内容生产、直播带看等关键环节。',
+      author: 'MBCT内容团队',
+      date: '2026-05-15',
+      readTime: 15,
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+    },
+    {
       id: 410,
       type: 'article',
       title: 'AI赋能酒店业：从“活人感”到“情绪价值”的创新路径',
