@@ -348,3 +348,66 @@ html {
   color: #f3f4f6 !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
+/* ============================================
+   深色模式全面覆盖 - 修复文章页面暗色显示
+   使用 html.dark 前缀确保选择器正确匹配
+   ============================================ */
+
+/* 全局暗色背景 */
+html.dark body {
+  background-color: #1a1a2e !important;
+  color: #e8e8e8 !important;
+}
+
+/* 所有段落在暗色模式下的文字颜色 */
+html.dark p,
+html.dark span,
+html.dark li {
+  color: #e8e8e8 !important;
+}
+
+/* 标题在暗色模式下 */
+html.dark h1 { color: #ffffff !important; }
+html.dark h2 { color: #ffffff !important; }
+html.dark h3 { color: #f3f4f6 !important; }
+html.dark h4 { color: #e5e7eb !important; }
+html.dark h5 { color: #d1d5db !important; }
+html.dark h6 { color: #e8e8e8 !important; }
+
+/* 链接在暗色模式下 */
+html.dark a {
+  color: #93c5fd !important;
+}
+html.dark a:hover {
+  color: #bfdbfe !important;
+}
+
+/* 标签和徽章在暗色模式下 */
+html.dark .bg-white {
+  background-color: #1f2937 !important;
+}
+html.dark .bg-gray-50,
+html.dark .bg-gray-100 {
+  background-color: #1f2937 !important;
+}
+
+/* 白色文字变亮 */
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark .text-gray-700,
+html.dark .text-gray-600 {
+  color: #f3f4f6 !important;
+}
+
+/* 边框在暗色模式下 */
+html.dark .border-gray-200 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 修复常见组件 */
+html.dark input,
+html.dark textarea {
+  background-color: #1f2937 !important;
+  color: #f3f4f6 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
