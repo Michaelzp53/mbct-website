@@ -26,6 +26,37 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 410,
+      type: 'article',
+      title: 'AI赋能酒店业：从“活人感”到“情绪价值”的创新路径',
+      titleEn: 'AI Empowers Hospitality: From "Human Feel" to "Emotional Value" Innovation Path',
+      slug: 'ai-empowers-hospitality-emotional-value-2026-05-15',
+      summary: '探索AI在酒店业中的应用，包括智能客服、AI预订推荐、客房环境感知等场景，以及情绪价值驱动的创新路径。',
+      firstLine: '本文聚焦AI技术在酒店运营中的落地案例，并提出将情绪价值纳入KPI的路径设计。',
+      author: 'MBCT内容团队',
+      date: '2026-05-15',
+      readTime: 12,
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+    },
+    {
+      id: 409,
+      type: 'article',
+      title: 'AI赋能酒旅业：从“活人感”到“情绪价值”的创新路径',
+      titleEn: 'AI Empowers Hospitality: From "Human Feel" to "Emotional Value" Innovation Path',
+      slug: 'ai-empowers-hospitality-emotional-value-2026-05-15-zh',
+      summary: '解析2026年网络热词“活人感”“情绪价值”等在酒旅消费场景的映射，并展示AI提升客房入住率、客单价的具体数字。',
+      firstLine: 'AI技术在酒旅运营中的四大场景落地案例，结合情绪价值转化为可量化KPI。',
+      author: 'MBCT内容团队',
+      date: '2026-05-15',
+      readTime: 12,
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+    },
+
+    {
       id: 406,
       type: 'article',
       title: '北京酒店业大洗牌：禁止新开三星以下酒店，2030年打造10个高端集群',
