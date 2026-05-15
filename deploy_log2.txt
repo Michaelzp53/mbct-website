@@ -1,0 +1,140 @@
+Retrieving project…
+Deploying michaelzp53s-projects/mbct-website
+Uploading [--------------------] (0.0B/16.1MB)
+Uploading [=====---------------] (4.0MB/16.1MB)
+Uploading [==========----------] (8.1MB/16.1MB)
+Uploading [===============-----] (12.1MB/16.1MB)
+Uploading [====================] (16.1MB/16.1MB)
+Inspect: https://vercel.com/michaelzp53s-projects/mbct-website/45ns6fLJgh4TkKqZWuhEnm1E9MGk [25s]
+Production: https://mbct-website-5iyvsmeoj-michaelzp53s-projects.vercel.app [25s]
+https://mbct-website-5iyvsmeoj-michaelzp53s-projects.vercel.appBuilding...
+Building...
+Building: Running build in Washington, D.C., USA (East) – iad1
+Building: Build machine configuration: 2 cores, 8 GB
+Building: Retrieving list of deployment files...
+Building: Skipping build cache, deployment was triggered without cache.
+Building: Concatenating deployment archive files...
+Building: Extracting deployment files...
+Building: Extracted 2545 deployment files...
+Building: Running "vercel build"
+Building: Vercel CLI 53.3.2
+Building: Installing dependencies...
+Building: npm warn deprecated @vercel/postgres@0.10.0: @vercel/postgres is deprecated. If you are setting up a new database, you can choose an alternate storage solution from the Vercel Marketplace. If you had an existing Vercel Postgres database, it should have been migrated to Neon as a native Vercel integration. You can find more details and the guide to migrate to Neon's SDKs here: https://neon.com/docs/guides/vercel-postgres-transition-guide
+Building: npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+Building: added 732 packages in 22s
+Building: 245 packages are looking for funding
+Building: run `npm fund` for details
+Building: Detected Next.js version: 16.2.1
+Building: Running "npm run build"
+Building: > mbct-website@0.1.0 build
+Building: > next build
+Building: Applying modifyConfig from Vercel
+Building: Attention: Next.js now collects completely anonymous telemetry regarding usage.
+Building: This information is used to shape Next.js' roadmap and prioritize features.
+Building: You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+Building: https://nextjs.org/telemetry
+Building: ▲ Next.js 16.2.1 (Turbopack)
+Building: - Environments: .env
+Building: Creating an optimized production build ...
+Building: Found 2 warnings while optimizing generated CSS:
+Building: Issue #1:
+Building: │ }
+Building: │ .dark .bg-white,
+Building: │ .dark .bg-\\[\\#ffffff\\] {
+Building: ┆                ^-- Unexpected token in attribute selector: IDHash("ffffff\\")
+Building: ┆
+Building: │   background-color: var(--background) !important;
+Building: │ }
+Building: Issue #2:
+Building: │   background-color: var(--background) !important;
+Building: │ }
+Building: │ .dark .text-\\[\\#333333\\],
+Building: ┆                  ^-- Unexpected token in attribute selector: Hash("333333\\")
+Building: ┆
+Building: │ .dark .text-\\[#333333\\] {
+Building: │   color: var(--foreground) !important;
+Building: > Build error occurred
+Building: Error: Turbopack build failed with 1 errors:
+Building: ./src/app/api/lean/questions/route.ts:54:1
+Building: 'import', and 'export' cannot be used outside of module code
+Building: 52 |
+Building: 53 | // POST: 提交提问
+Building: > 54 | export async function POST(request: Request) {
+Building: | ^^^^^^
+Building: 55 |   try {
+Building: 56 |     const { title, detail, pillar, wasteTypes, nickname, hotelName } = await request.json();
+Building: 57 |
+Building: Parsing ecmascript source code failed
+Building: at <unknown> (./src/app/api/lean/questions/route.ts:54:1)
+Building: Error: Command "npm run build" exited with 1
+2026-05-15T12:35:29.435Z  Running build in Washington, D.C., USA (East) – iad1
+2026-05-15T12:35:29.436Z  Build machine configuration: 2 cores, 8 GB
+2026-05-15T12:35:29.446Z  Retrieving list of deployment files...
+2026-05-15T12:35:29.450Z  Skipping build cache, deployment was triggered without cache.
+2026-05-15T12:35:29.925Z  Concatenating deployment archive files...
+2026-05-15T12:35:29.927Z  Extracting deployment files...
+2026-05-15T12:35:32.647Z  Extracted 2545 deployment files...
+2026-05-15T12:35:33.004Z  Running "vercel build"
+2026-05-15T12:35:33.029Z  Vercel CLI 53.3.2
+2026-05-15T12:35:33.483Z  Installing dependencies...
+2026-05-15T12:35:40.495Z  npm warn deprecated @vercel/postgres@0.10.0: @vercel/postgres is deprecated. If you are setting up a new database, you can choose an alternate storage solution from the Vercel Marketplace. If you had an existing Vercel Postgres database, it should have been migrated to Neon as a native Vercel integration. You can find more details and the guide to migrate to Neon's SDKs here: https://neon.com/docs/guides/vercel-postgres-transition-guide
+2026-05-15T12:35:40.663Z  npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2026-05-15T12:35:55.320Z  
+2026-05-15T12:35:55.321Z  added 732 packages in 22s
+2026-05-15T12:35:55.321Z  
+2026-05-15T12:35:55.321Z  245 packages are looking for funding
+2026-05-15T12:35:55.321Z  run `npm fund` for details
+2026-05-15T12:35:55.393Z  Detected Next.js version: 16.2.1
+2026-05-15T12:35:55.395Z  Running "npm run build"
+2026-05-15T12:35:55.501Z  
+2026-05-15T12:35:55.501Z  > mbct-website@0.1.0 build
+2026-05-15T12:35:55.501Z  > next build
+2026-05-15T12:35:55.502Z  
+2026-05-15T12:35:56.041Z  Applying modifyConfig from Vercel
+2026-05-15T12:35:56.047Z  Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-05-15T12:35:56.047Z  This information is used to shape Next.js' roadmap and prioritize features.
+2026-05-15T12:35:56.047Z  You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-05-15T12:35:56.048Z  https://nextjs.org/telemetry
+2026-05-15T12:35:56.048Z  
+2026-05-15T12:35:56.067Z  ▲ Next.js 16.2.1 (Turbopack)
+2026-05-15T12:35:56.068Z  - Environments: .env
+2026-05-15T12:35:56.068Z  
+2026-05-15T12:35:56.106Z  Creating an optimized production build ...
+2026-05-15T12:36:01.619Z  Found 2 warnings while optimizing generated CSS:
+2026-05-15T12:36:01.619Z  
+2026-05-15T12:36:01.619Z  Issue #1:
+2026-05-15T12:36:01.619Z  │ }
+2026-05-15T12:36:01.619Z  │ .dark .bg-white,
+2026-05-15T12:36:01.620Z  │ .dark .bg-\\[\\#ffffff\\] {
+2026-05-15T12:36:01.620Z  ┆                ^-- Unexpected token in attribute selector: IDHash("ffffff\\")
+2026-05-15T12:36:01.620Z  ┆
+2026-05-15T12:36:01.620Z  │   background-color: var(--background) !important;
+2026-05-15T12:36:01.620Z  │ }
+2026-05-15T12:36:01.620Z  
+2026-05-15T12:36:01.621Z  Issue #2:
+2026-05-15T12:36:01.621Z  │   background-color: var(--background) !important;
+2026-05-15T12:36:01.621Z  │ }
+2026-05-15T12:36:01.621Z  │ .dark .text-\\[\\#333333\\],
+2026-05-15T12:36:01.621Z  ┆                  ^-- Unexpected token in attribute selector: Hash("333333\\")
+2026-05-15T12:36:01.621Z  ┆
+2026-05-15T12:36:01.621Z  │ .dark .text-\\[#333333\\] {
+2026-05-15T12:36:01.621Z  │   color: var(--foreground) !important;
+2026-05-15T12:36:01.621Z  
+2026-05-15T12:36:07.760Z  
+2026-05-15T12:36:07.761Z  > Build error occurred
+2026-05-15T12:36:07.764Z  Error: Turbopack build failed with 1 errors:
+2026-05-15T12:36:07.765Z  ./src/app/api/lean/questions/route.ts:54:1
+2026-05-15T12:36:07.765Z  'import', and 'export' cannot be used outside of module code
+2026-05-15T12:36:07.765Z  52 |
+2026-05-15T12:36:07.765Z  53 | // POST: 提交提问
+2026-05-15T12:36:07.765Z  > 54 | export async function POST(request: Request) {
+2026-05-15T12:36:07.765Z  | ^^^^^^
+2026-05-15T12:36:07.765Z  55 |   try {
+2026-05-15T12:36:07.765Z  56 |     const { title, detail, pillar, wasteTypes, nickname, hotelName } = await request.json();
+2026-05-15T12:36:07.766Z  57 |
+2026-05-15T12:36:07.766Z  
+2026-05-15T12:36:07.766Z  Parsing ecmascript source code failed
+2026-05-15T12:36:07.768Z  
+2026-05-15T12:36:07.768Z  
+2026-05-15T12:36:07.769Z  at <unknown> (./src/app/api/lean/questions/route.ts:54:1)
+2026-05-15T12:36:07.834Z  Error: Command "npm run build" exited with 1

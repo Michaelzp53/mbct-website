@@ -155,8 +155,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
         <ArticleInteractions
           slug={slug}
           initialLikes={articleData.likes}
-          initialComments={articleData.comments}
-          lang={lang}
+          initialComments={[]}
           isZh={isZh}
         />
       </div>

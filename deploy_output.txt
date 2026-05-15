@@ -1,0 +1,8 @@
+Retrieving project…
+Deploying michaelzp53s-projects/mbct-website
+Uploading [--------------------] (0.0B/16.2MB)
+Uploading [=====---------------] (4.0MB/16.2MB)
+Uploading [==========----------] (8.1MB/16.2MB)
+Uploading [===============-----] (12.1MB/16.2MB)
+Uploading [====================] (16.2MB/16.2MB)
+Error: Resource is limited - try again in 24 hours (more than 100, code: "api-deployments-free-per-day").

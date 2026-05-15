@@ -64,6 +64,13 @@ export async function POST(request: Request) {
 
     const ipHash = getIpHash(request);
 
+    // Ensure article record exists
+    let article = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
+    if (article.rows.length === 0) {
+      await sql`INSERT INTO articles (slug, title, category, views, likes) VALUES (${slug}, ${slug}, 'unknown', 0, 0)`;
+      article = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
+    }
+
     // 检查是否已点赞
     const existing = await sql`SELECT * FROM like_records WHERE article_slug = ${slug} AND ip_hash = ${ipHash}`;
     
@@ -77,10 +84,10 @@ export async function POST(request: Request) {
     // 增加点赞数
     await sql`UPDATE articles SET likes = likes + 1 WHERE slug = ${slug}`;
 
-    const article = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
+    const updated = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
 
     return NextResponse.json({
-      likes: article.rows[0].likes,
+      likes: updated.rows[0].likes,
       hasLiked: true,
     });
   } catch (error) {

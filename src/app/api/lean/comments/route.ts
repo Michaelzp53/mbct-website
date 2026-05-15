@@ -10,10 +10,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    // 确保文章记录存在
-    const article = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
+    // 确保文章记录存在，若不存在则创建默认记录
+    let article = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
     if (article.rows.length === 0) {
       await sql`INSERT INTO articles (slug, title, category, views, likes) VALUES (${slug}, ${slug}, 'unknown', 0, 0)`;
+      article = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
     }
 
     // 插入评论
