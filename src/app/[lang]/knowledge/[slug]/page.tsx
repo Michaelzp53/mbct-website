@@ -3019,7 +3019,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background py-24">
+    <div className="min-h-screen bg-background dark:bg-[#1a1a2e] py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <Link
@@ -3032,7 +3032,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <ThemeToggle lang={lang} />
         </div>
 
-        <article className="bg-card rounded-2xl border border-border p-8 md:p-12">
+        <article className="bg-card dark:bg-[#16213e] rounded-2xl border border-border p-8 md:p-12">
           <div className="mb-6">
             <span className="px-3 py-1 rounded-full bg-[#f59e0b]/20 text-[#f59e0b] text-sm font-medium">
               {article.tag}
