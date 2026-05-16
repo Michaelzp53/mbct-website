@@ -2,19 +2,19 @@ import Link from 'next/link'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params
-  const isZh = lang === 'zh'
+ const { lang } = await params
+ const isZh = lang === 'zh'
 
-  const article = {
-    title: isZh ? '北京酒店业大洗牌：禁止新开三星以下酒店，2030年打造10个高端集群' : 'Beijing\'s Hotel Shakeout: No New 3-Star Hotels Allowed',
-    summary: isZh 
-      ? '2026年4月，北京正式出台酒店业"限星令"——停止批准新建三星级及以下酒店。这项政策指向2030年目标：10个高端酒店集群、600家高品质酒店、连锁化率60%。'
-      : 'In April 2026, Beijing officially banned new 3-star-and-below hotels. The policy targets 10 premium clusters, 600 high-quality hotels, and 60% chain rate by 2030.',
-    author: 'MBCT内容团队',
-    date: '2026-05-10',
-    readTime: isZh ? '8分钟' : '8 min',
-    tag: isZh ? '行业分析' : 'Industry Analysis',
-    content: isZh ? `
+ const article = {
+ title: isZh ? '北京酒店业大洗牌：禁止新开三星以下酒店，2030年打造10个高端集群' : 'Beijing\'s Hotel Shakeout: No New 3-Star Hotels Allowed',
+ summary: isZh 
+ ? '2026年4月，北京正式出台酒店业"限星令"——停止批准新建三星级及以下酒店。这项政策指向2030年目标：10个高端酒店集群、600家高品质酒店、连锁化率60%。'
+ : 'In April 2026, Beijing officially banned new 3-star-and-below hotels. The policy targets 10 premium clusters, 600 high-quality hotels, and 60% chain rate by 2030.',
+ author: 'MBCT内容团队',
+ date: '2026-05-10',
+ readTime: isZh ? '8分钟' : '8 min',
+ tag: isZh ? '行业分析' : 'Industry Analysis',
+ content: isZh ? `
 ## 一、政策出台：三星以下新酒店，停了
 
 2026年4月，北京市文化和旅游局联合市规划委员会正式发布《关于推动北京市酒店业高质量发展的实施方案》。这份文件最核心的内容只有一条：**停止批准新建三星级及以下星级酒店**。
@@ -157,10 +157,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 **关于MBCT**：卖创兄弟商业科技，专注于酒店业资讯与分析。
 
 ※ 本文部分内容由 AI 辅助生成
-    ` : `
+ ` : `
 ## I. The Policy: No New 3-Star-and-Below Hotels
 
-In April 2026, the Beijing Municipal Cultural and Tourism Bureau officially released the "Implementation Plan for Promoting High-Quality Development of Beijing's Hotel Industry" — with one core mandate: **Stop approving new 3-star and below hotels**.
+In April 2026, the Beijing Municipal Cultural and Tourism Bureau officially released the"Implementation Plan for Promoting High-Quality Development of Beijing's Hotel Industry" — with one core mandate: **Stop approving new 3-star and below hotels**.
 
 This isn't a draft for comment. It's a live policy directive already in execution.
 
@@ -177,8 +177,8 @@ This isn't a draft for comment. It's a live policy directive already in executio
 
 **Options for existing hotels:**
 - Encourage upgrade and renovation
-- Apply for "Quality Enhancement" certification
-- Enter "orderly exit" list if not upgradable
+- Apply for"Quality Enhancement" certification
+- Enter"orderly exit" list if not upgradable
 
 ## II. Targets for 2030
 
@@ -188,7 +188,7 @@ Currently Beijing's hotel chain rate is ~45%, below Shanghai's 52%. The policy a
 
 **Target 2: 600 High-Quality Hotels**
 
-Beijing currently has ~400 "high-quality" hotels. The gap is ~200 hotels — roughly 50 new high-quality hotels per year.
+Beijing currently has ~400"high-quality" hotels. The gap is ~200 hotels — roughly 50 new high-quality hotels per year.
 
 **Target 3: 10 Premium Hotel Clusters**
 
@@ -215,7 +215,7 @@ Beijing's ~1,800 existing 3-star-and-below hotels face three paths:
 Hotels with viable conditions can renovate and join chain brands, targeting 4-star or above. Government offers subsidies and priority approvals.
 
 **Path 2: Quality Certification**
-Hotels that can't star-up but have character can apply for "Beijing Quality" certification.
+Hotels that can't star-up but have character can apply for"Beijing Quality" certification.
 
 **Path 3: Orderly Exit**
 Hotels with neither upgrade potential nor special character will be guided to exit.
@@ -234,7 +234,7 @@ The premium demand is real. The policy is designed to let supply catch up.
 ## V. Industry Landscape
 
 **International Chains:**
-- **Marriott**: ~25 hotels in Beijing, "high-end + select-service" strategy
+- **Marriott**: ~25 hotels in Beijing,"high-end + select-service" strategy
 - **Hilton**: ~18 hotels in Beijing, full brand portfolio
 - **IHG**: ~15 hotels in Beijing, business/MICE focus
 
@@ -253,7 +253,7 @@ The premium demand is real. The policy is designed to let supply catch up.
 **For Hotel Managers:**
 1. Digitize operations: Smart management tools are becoming essential
 2. Differentiate through service: Premium isn't about being expensive — it's about being worth it
-3. Reinvent your talent model: Future hotels need "experience designers"
+3. Reinvent your talent model: Future hotels need"experience designers"
 
 **For Investors:**
 1. Watch urban renewal projects: Old property conversions offer policy-backed opportunities
@@ -262,7 +262,7 @@ The premium demand is real. The policy is designed to let supply catch up.
 
 ## Conclusion
 
-Beijing's "star-rating ban" is a signal of supply-side reform arriving in China's hotel industry.
+Beijing's"star-rating ban" is a signal of supply-side reform arriving in China's hotel industry.
 
 Going forward in Beijing:
 - No new economy hotels
@@ -280,173 +280,173 @@ The answer isn't in the policy. It's in your choices.
 **About MBCT**: Marvel Bros. Commercial Technology — Hotel Industry Insights & Analysis.
 
 ※ Portions of this article were AI-assisted.
-    `,
-  }
+ `,
+ }
 
-  // 解析markdown内容
-  const parseContent = (content: string) => {
-    const lines = content.trim().split('\n')
-    const elements: React.ReactNode[] = []
-    let inTable = false
-    let tableRows: string[] = []
-    let inList = false
-    let listItems: string[] = []
-    let key = 0
+ // 解析markdown内容
+ const parseContent = (content: string) => {
+ const lines = content.trim().split('\n')
+ const elements: React.ReactNode[] = []
+ let inTable = false
+ let tableRows: string[] = []
+ let inList = false
+ let listItems: string[] = []
+ let key = 0
 
-    const flushTable = () => {
-      if (tableRows.length === 0) return
-      const headerCells = tableRows[0].split('|').filter(c => c.trim()).map(c => c.trim())
-      const dataRows = tableRows.slice(2)
-      elements.push(
-        <div key={`table-${key++}`} className="overflow-x-auto my-8">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-brand-navy text-white">
-                {headerCells.map((cell, i) => (
-                  <th key={i} className="px-4 py-3 text-left text-sm font-semibold">{cell}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {dataRows.map((row, ri) => {
-                const cells = row.split('|').filter(c => c.trim()).map(c => c.trim())
-                return (
-                  <tr key={ri} className={ri % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    {cells.map((cell, ci) => (
-                      <td key={ci} className="px-4 py-3 text-sm border-b">{cell}</td>
-                    ))}
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
-      )
-      tableRows = []
-      inTable = false
-    }
+ const flushTable = () => {
+ if (tableRows.length === 0) return
+ const headerCells = tableRows[0].split('|').filter(c => c.trim()).map(c => c.trim())
+ const dataRows = tableRows.slice(2)
+ elements.push(
+ <div key={`table-${key++}`} className="overflow-x-auto my-8">
+ <table className="w-full border-collapse">
+ <thead>
+ <tr className="bg-brand-navy text-white">
+ {headerCells.map((cell, i) => (
+ <th key={i} className="px-4 py-3 text-left text-sm font-semibold">{cell}</th>
+ ))}
+ </tr>
+ </thead>
+ <tbody>
+ {dataRows.map((row, ri) => {
+ const cells = row.split('|').filter(c => c.trim()).map(c => c.trim())
+ return (
+ <tr key={ri} className={ri % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+ {cells.map((cell, ci) => (
+ <td key={ci} className="px-4 py-3 text-sm border-b">{cell}</td>
+ ))}
+ </tr>
+ )
+ })}
+ </tbody>
+ </table>
+ </div>
+ )
+ tableRows = []
+ inTable = false
+ }
 
-    const flushList = () => {
-      if (listItems.length === 0) return
-      elements.push(
-        <ul key={`list-${key++}`} className="list-disc pl-6 space-y-2 my-4">
-          {listItems.map((item, i) => (
-            <li key={i} className="text-gray-700 leading-relaxed">{item}</li>
-          ))}
-        </ul>
-      )
-      listItems = []
-      inList = false
-    }
+ const flushList = () => {
+ if (listItems.length === 0) return
+ elements.push(
+ <ul key={`list-${key++}`} className="list-disc pl-6 space-y-2 my-4">
+ {listItems.map((item, i) => (
+ <li key={i} className="text-gray-700 leading-relaxed">{item}</li>
+ ))}
+ </ul>
+ )
+ listItems = []
+ inList = false
+ }
 
-    for (const line of lines) {
-      const trimmed = line.trim()
-      
-      if (trimmed.startsWith('## ')) {
-        flushTable()
-        flushList()
-        elements.push(
-          <h2 key={`h2-${key++}`} className="text-2xl font-bold text-brand-navy mt-12 mb-6">
-            {trimmed.replace('## ', '')}
-          </h2>
-        )
-      } else if (trimmed.startsWith('### ')) {
-        flushTable()
-        flushList()
-        elements.push(
-          <h3 key={`h3-${key++}`} className="text-xl font-bold text-brand-navy mt-8 mb-4">
-            {trimmed.replace('### ', '')}
-          </h3>
-        )
-      } else if (trimmed.startsWith('**') && trimmed.endsWith('**') && trimmed.length < 100) {
-        flushTable()
-        flushList()
-        elements.push(
-          <p key={`bold-${key++}`} className="font-bold text-brand-navy my-4">{trimmed.replace(/\*\*/g, '')}</p>
-        )
-      } else if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
-        flushList()
-        inTable = true
-        tableRows.push(trimmed)
-      } else if (trimmed.startsWith('- ')) {
-        flushTable()
-        inList = true
-        listItems.push(trimmed.replace('- ', ''))
-      } else if (trimmed.startsWith('---')) {
-        flushTable()
-        flushList()
-        elements.push(<hr key={`hr-${key++}`} className="my-8 border-gray-200" />)
-      } else if (trimmed.length > 0) {
-        flushTable()
-        flushList()
-        elements.push(
-          <p key={`p-${key++}`} className="text-gray-700 leading-relaxed my-4">{trimmed}</p>
-        )
-      }
-    }
-    
-    flushTable()
-    flushList()
-    return elements
-  }
+ for (const line of lines) {
+ const trimmed = line.trim()
+ 
+ if (trimmed.startsWith('## ')) {
+ flushTable()
+ flushList()
+ elements.push(
+ <h2 key={`h2-${key++}`} className="text-2xl font-bold text-brand-navy mt-12 mb-6">
+ {trimmed.replace('## ', '')}
+ </h2>
+ )
+ } else if (trimmed.startsWith('### ')) {
+ flushTable()
+ flushList()
+ elements.push(
+ <h3 key={`h3-${key++}`} className="text-xl font-bold text-brand-navy mt-8 mb-4">
+ {trimmed.replace('### ', '')}
+ </h3>
+ )
+ } else if (trimmed.startsWith('**') && trimmed.endsWith('**') && trimmed.length < 100) {
+ flushTable()
+ flushList()
+ elements.push(
+ <p key={`bold-${key++}`} className="font-bold text-brand-navy my-4">{trimmed.replace(/\*\*/g, '')}</p>
+ )
+ } else if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
+ flushList()
+ inTable = true
+ tableRows.push(trimmed)
+ } else if (trimmed.startsWith('- ')) {
+ flushTable()
+ inList = true
+ listItems.push(trimmed.replace('- ', ''))
+ } else if (trimmed.startsWith('---')) {
+ flushTable()
+ flushList()
+ elements.push(<hr key={`hr-${key++}`} className="my-8 border-gray-200" />)
+ } else if (trimmed.length > 0) {
+ flushTable()
+ flushList()
+ elements.push(
+ <p key={`p-${key++}`} className="text-gray-700 leading-relaxed my-4">{trimmed}</p>
+ )
+ }
+ }
+ 
+ flushTable()
+ flushList()
+ return elements
+ }
 
-  return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy py-16 md:py-24">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-        </div>
-        
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto">
-            <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-brand-gold hover:text-brand-gold/80 mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              {isZh ? '返回文章列表' : 'Back to Articles'}
-            </Link>
-            
-            <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block px-3 py-1 text-sm font-medium bg-[#f97316] text-white rounded-full">
-                {article.tag}
-              </span>
-              <span className="text-gray-400 text-sm">{article.date} · {article.readTime}</span>
-            </div>
-            
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              {article.title}
-            </h1>
-            
-            <p className="text-xl text-gray-300">
-              {article.summary}
-            </p>
-          </div>
-        </div>
-      </section>
+ return (
+ <main className="min-h-screen">
+ {/* Hero Section */}
+ <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy py-16 md:py-24">
+ <div className="absolute inset-0 opacity-10">
+ <div className="absolute inset-0" style={{
+ backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+ backgroundSize: '40px 40px'
+ }} />
+ </div>
+ 
+ <div className="container mx-auto px-4 relative">
+ <div className="max-w-4xl mx-auto">
+ <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-brand-gold hover:text-brand-gold/80 mb-6">
+ <ArrowLeft className="w-4 h-4 mr-2" />
+ {isZh ? '返回文章列表' : 'Back to Articles'}
+ </Link>
+ 
+ <div className="flex items-center gap-3 mb-4">
+ <span className="inline-block px-3 py-1 text-sm font-medium bg-[#f97316] text-white rounded-full">
+ {article.tag}
+ </span>
+ <span className="text-gray-400 text-sm">{article.date} · {article.readTime}</span>
+ </div>
+ 
+ <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+ {article.title}
+ </h1>
+ 
+ <p className="text-xl text-gray-300">
+ {article.summary}
+ </p>
+ </div>
+ </div>
+ </section>
 
-      {/* Content */}
-      <article className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-brand-navy prose-a:text-brand-gold">
-            {parseContent(article.content)}
-          </div>
-          
-          {/* Author */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-brand-navy flex items-center justify-center text-white font-bold">
-                M
-              </div>
-              <div>
-                <p className="font-semibold text-brand-navy">{article.author}</p>
-                <p className="text-sm text-gray-500">{isZh ? 'MBCT内容团队' : 'MBCT Content Team'}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
-  )
+ {/* Content */}
+ <article className="py-12 md:py-16">
+ <div className="container mx-auto px-4 max-w-4xl">
+ <div className="prose prose-lg max-w-none prose-headings:text-brand-navy prose-a:text-brand-gold">
+ {parseContent(article.content)}
+ </div>
+ 
+ {/* Author */}
+ <div className="mt-12 pt-8 border-t border-gray-200">
+ <div className="flex items-center gap-4">
+ <div className="w-12 h-12 rounded-full bg-brand-navy flex items-center justify-center text-white font-bold">
+ M
+ </div>
+ <div>
+ <p className="font-semibold text-brand-navy">{article.author}</p>
+ <p className="text-sm text-muted-foreground">{isZh ? 'MBCT内容团队' : 'MBCT Content Team'}</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </article>
+ </main>
+ )
 }

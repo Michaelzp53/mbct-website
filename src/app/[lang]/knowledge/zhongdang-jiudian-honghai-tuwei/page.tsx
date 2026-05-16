@@ -2,19 +2,19 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params
-  const isZh = lang === 'zh'
+ const { lang } = await params
+ const isZh = lang === 'zh'
 
-  const article = {
-    title: isZh ? '中档酒店红海突围：连锁化、品牌化、差异化三大策略' : 'Mid-Scale Hotel Breakthrough in the Red Ocean: Three Strategies',
-    summary: isZh 
-      ? '中国酒店业中，中档酒店（客房单价200-400元）数量最多、竞争最激烈、同质化最严重。本文从连锁化、品牌化、差异化三大策略，为中档酒店投资人提供突围路径。'
-      : 'Mid-scale hotels are the most numerous and competitive in China. This article provides three strategies for breakthrough.',
-    author: 'MBCT内容团队',
-    date: '2026-05-11',
-    readTime: isZh ? '15分钟' : '15 min',
-    tag: isZh ? '行业分析' : 'Industry Analysis',
-    content: isZh ? `
+ const article = {
+ title: isZh ? '中档酒店红海突围：连锁化、品牌化、差异化三大策略' : 'Mid-Scale Hotel Breakthrough in the Red Ocean: Three Strategies',
+ summary: isZh 
+ ? '中国酒店业中，中档酒店（客房单价200-400元）数量最多、竞争最激烈、同质化最严重。本文从连锁化、品牌化、差异化三大策略，为中档酒店投资人提供突围路径。'
+ : 'Mid-scale hotels are the most numerous and competitive in China. This article provides three strategies for breakthrough.',
+ author: 'MBCT内容团队',
+ date: '2026-05-11',
+ readTime: isZh ? '15分钟' : '15 min',
+ tag: isZh ? '行业分析' : 'Industry Analysis',
+ content: isZh ? `
 ## 引言：中档酒店数量最多、同质化最严重
 
 中国酒店业中，中档酒店（客房单价200-400元）数量最多、竞争最激烈、同质化最严重。
@@ -174,7 +174,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 ---
 
 *文章来源：管享精道 | MBCT迈创兄弟商业科技*
-    ` : `
+ ` : `
 ## Introduction
 
 Mid-scale hotels (room rates 200-400 RMB) are the most numerous and competitive segment in China's hotel industry.
@@ -205,23 +205,23 @@ For investors, **differentiation is the only way out**.
 
 ## Strategy 2: Brand Building
 
-**Not "logo + slogan", but "memory point + recognition"**.
+**Not"logo + slogan", but"memory point + recognition"**.
 
 **Three levels of branding:**
 | Level | Content | Example |
 |-------|---------|---------|
-| Visual | Logo, color, design | Hanting's "Zen" style |
-| Experience | Service features, culture | Atour's "humanistic" experience |
-| Emotional | Values, connection | Vienna's "music" emotion |
+| Visual | Logo, color, design | Hanting's"Zen" style |
+| Experience | Service features, culture | Atour's"humanistic" experience |
+| Emotional | Values, connection | Vienna's"music" emotion |
 
 ---
 
 ## Strategy 3: Differentiation
 
-**Not "do everything", but "do one thing extremely well"**.
+**Not"do everything", but"do one thing extremely well"**.
 
 **Case study:**
-A mid-scale hotel chose "tea culture" as differentiation:
+A mid-scale hotel chose"tea culture" as differentiation:
 - Lobby: Tea room design with free tea
 - Rooms: Tea sets and local tea leaves
 - Restaurant: Tea-themed dishes
@@ -239,7 +239,7 @@ Results:
 
 ### Dos
 1. **Focus**: Don't try to serve everyone
-2. **Differentiate**: Don't follow the "standardization" trend
+2. **Differentiate**: Don't follow the"standardization" trend
 3. **Persist**: Differentiation requires long-term commitment
 
 ### Don'ts
@@ -252,179 +252,179 @@ Results:
 ## Action Checklist
 
 1. Analyze your competitors within 3km
-2. Find your "keyword" — one word to describe your hotel
+2. Find your"keyword" — one word to describe your hotel
 3. Design a differentiated experience
 
 ---
 
 *Source: Lean Insights | MBCT Marvel Bros Commercial Technology*
-    `,
-  }
+ `,
+ }
 
-  // 解析markdown内容
-  const parseContent = (content: string) => {
-    const lines = content.trim().split('\n')
-    const elements: React.ReactNode[] = []
-    let inTable = false
-    let tableRows: string[] = []
-    let inList = false
-    let listItems: string[] = []
-    let key = 0
+ // 解析markdown内容
+ const parseContent = (content: string) => {
+ const lines = content.trim().split('\n')
+ const elements: React.ReactNode[] = []
+ let inTable = false
+ let tableRows: string[] = []
+ let inList = false
+ let listItems: string[] = []
+ let key = 0
 
-    const flushTable = () => {
-      if (tableRows.length === 0) return
-      const headerCells = tableRows[0].split('|').filter(c => c.trim()).map(c => c.trim())
-      const dataRows = tableRows.slice(2)
-      elements.push(
-        <div key={`table-${key++}`} className="overflow-x-auto my-8">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-brand-navy text-white">
-                {headerCells.map((cell, i) => (
-                  <th key={i} className="px-4 py-3 text-left text-sm font-semibold">{cell}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {dataRows.map((row, ri) => {
-                const cells = row.split('|').filter(c => c.trim()).map(c => c.trim())
-                return (
-                  <tr key={ri} className={ri % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    {cells.map((cell, ci) => (
-                      <td key={ci} className="px-4 py-3 text-sm border-b">{cell}</td>
-                    ))}
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
-      )
-      tableRows = []
-      inTable = false
-    }
+ const flushTable = () => {
+ if (tableRows.length === 0) return
+ const headerCells = tableRows[0].split('|').filter(c => c.trim()).map(c => c.trim())
+ const dataRows = tableRows.slice(2)
+ elements.push(
+ <div key={`table-${key++}`} className="overflow-x-auto my-8">
+ <table className="w-full border-collapse">
+ <thead>
+ <tr className="bg-brand-navy text-white">
+ {headerCells.map((cell, i) => (
+ <th key={i} className="px-4 py-3 text-left text-sm font-semibold">{cell}</th>
+ ))}
+ </tr>
+ </thead>
+ <tbody>
+ {dataRows.map((row, ri) => {
+ const cells = row.split('|').filter(c => c.trim()).map(c => c.trim())
+ return (
+ <tr key={ri} className={ri % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+ {cells.map((cell, ci) => (
+ <td key={ci} className="px-4 py-3 text-sm border-b">{cell}</td>
+ ))}
+ </tr>
+ )
+ })}
+ </tbody>
+ </table>
+ </div>
+ )
+ tableRows = []
+ inTable = false
+ }
 
-    const flushList = () => {
-      if (listItems.length === 0) return
-      elements.push(
-        <ul key={`list-${key++}`} className="list-disc pl-6 space-y-2 my-4">
-          {listItems.map((item, i) => (
-            <li key={i} className="text-gray-700 leading-relaxed">{item}</li>
-          ))}
-        </ul>
-      )
-      listItems = []
-      inList = false
-    }
+ const flushList = () => {
+ if (listItems.length === 0) return
+ elements.push(
+ <ul key={`list-${key++}`} className="list-disc pl-6 space-y-2 my-4">
+ {listItems.map((item, i) => (
+ <li key={i} className="text-gray-700 leading-relaxed">{item}</li>
+ ))}
+ </ul>
+ )
+ listItems = []
+ inList = false
+ }
 
-    for (const line of lines) {
-      const trimmed = line.trim()
-      
-      if (trimmed.startsWith('## ')) {
-        flushTable()
-        flushList()
-        elements.push(
-          <h2 key={`h2-${key++}`} className="text-2xl font-bold text-brand-navy mt-12 mb-6">
-            {trimmed.replace('## ', '')}
-          </h2>
-        )
-      } else if (trimmed.startsWith('### ')) {
-        flushTable()
-        flushList()
-        elements.push(
-          <h3 key={`h3-${key++}`} className="text-xl font-bold text-brand-navy mt-8 mb-4">
-            {trimmed.replace('### ', '')}
-          </h3>
-        )
-      } else if (trimmed.startsWith('**') && trimmed.endsWith('**') && trimmed.length < 100) {
-        flushTable()
-        flushList()
-        elements.push(
-          <p key={`bold-${key++}`} className="font-bold text-brand-navy my-4">{trimmed.replace(/\*\*/g, '')}</p>
-        )
-      } else if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
-        flushList()
-        inTable = true
-        tableRows.push(trimmed)
-      } else if (trimmed.startsWith('- ')) {
-        flushTable()
-        inList = true
-        listItems.push(trimmed.replace('- ', ''))
-      } else if (trimmed.startsWith('---')) {
-        flushTable()
-        flushList()
-        elements.push(<hr key={`hr-${key++}`} className="my-8 border-gray-200" />)
-      } else if (trimmed.length > 0) {
-        flushTable()
-        flushList()
-        elements.push(
-          <p key={`p-${key++}`} className="text-gray-700 leading-relaxed my-4">{trimmed}</p>
-        )
-      }
-    }
-    
-    flushTable()
-    flushList()
-    return elements
-  }
+ for (const line of lines) {
+ const trimmed = line.trim()
+ 
+ if (trimmed.startsWith('## ')) {
+ flushTable()
+ flushList()
+ elements.push(
+ <h2 key={`h2-${key++}`} className="text-2xl font-bold text-brand-navy mt-12 mb-6">
+ {trimmed.replace('## ', '')}
+ </h2>
+ )
+ } else if (trimmed.startsWith('### ')) {
+ flushTable()
+ flushList()
+ elements.push(
+ <h3 key={`h3-${key++}`} className="text-xl font-bold text-brand-navy mt-8 mb-4">
+ {trimmed.replace('### ', '')}
+ </h3>
+ )
+ } else if (trimmed.startsWith('**') && trimmed.endsWith('**') && trimmed.length < 100) {
+ flushTable()
+ flushList()
+ elements.push(
+ <p key={`bold-${key++}`} className="font-bold text-brand-navy my-4">{trimmed.replace(/\*\*/g, '')}</p>
+ )
+ } else if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
+ flushList()
+ inTable = true
+ tableRows.push(trimmed)
+ } else if (trimmed.startsWith('- ')) {
+ flushTable()
+ inList = true
+ listItems.push(trimmed.replace('- ', ''))
+ } else if (trimmed.startsWith('---')) {
+ flushTable()
+ flushList()
+ elements.push(<hr key={`hr-${key++}`} className="my-8 border-gray-200" />)
+ } else if (trimmed.length > 0) {
+ flushTable()
+ flushList()
+ elements.push(
+ <p key={`p-${key++}`} className="text-gray-700 leading-relaxed my-4">{trimmed}</p>
+ )
+ }
+ }
+ 
+ flushTable()
+ flushList()
+ return elements
+ }
 
-  return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy py-16 md:py-24">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-        </div>
-        
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto">
-            <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-brand-gold hover:text-brand-gold/80 mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              {isZh ? '返回文章列表' : 'Back to Articles'}
-            </Link>
-            
-            <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block px-3 py-1 text-sm font-medium bg-[#f97316] text-white rounded-full">
-                {article.tag}
-              </span>
-              <span className="text-gray-400 text-sm">{article.date} · {article.readTime}</span>
-            </div>
-            
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              {article.title}
-            </h1>
-            
-            <p className="text-xl text-gray-300">
-              {article.summary}
-            </p>
-          </div>
-        </div>
-      </section>
+ return (
+ <main className="min-h-screen">
+ {/* Hero Section */}
+ <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy py-16 md:py-24">
+ <div className="absolute inset-0 opacity-10">
+ <div className="absolute inset-0" style={{
+ backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+ backgroundSize: '40px 40px'
+ }} />
+ </div>
+ 
+ <div className="container mx-auto px-4 relative">
+ <div className="max-w-4xl mx-auto">
+ <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-brand-gold hover:text-brand-gold/80 mb-6">
+ <ArrowLeft className="w-4 h-4 mr-2" />
+ {isZh ? '返回文章列表' : 'Back to Articles'}
+ </Link>
+ 
+ <div className="flex items-center gap-3 mb-4">
+ <span className="inline-block px-3 py-1 text-sm font-medium bg-[#f97316] text-white rounded-full">
+ {article.tag}
+ </span>
+ <span className="text-gray-400 text-sm">{article.date} · {article.readTime}</span>
+ </div>
+ 
+ <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+ {article.title}
+ </h1>
+ 
+ <p className="text-xl text-gray-300">
+ {article.summary}
+ </p>
+ </div>
+ </div>
+ </section>
 
-      {/* Content */}
-      <article className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="prose prose-lg max-w-none prose-headings:text-brand-navy prose-a:text-brand-gold">
-            {parseContent(article.content)}
-          </div>
-          
-          {/* Author */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-brand-navy flex items-center justify-center text-white font-bold">
-                M
-              </div>
-              <div>
-                <p className="font-semibold text-brand-navy">{article.author}</p>
-                <p className="text-sm text-gray-500">{isZh ? 'MBCT内容团队' : 'MBCT Content Team'}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
-  )
+ {/* Content */}
+ <article className="py-12 md:py-16">
+ <div className="container mx-auto px-4 max-w-4xl">
+ <div className="prose prose-lg max-w-none prose-headings:text-brand-navy prose-a:text-brand-gold">
+ {parseContent(article.content)}
+ </div>
+ 
+ {/* Author */}
+ <div className="mt-12 pt-8 border-t border-gray-200">
+ <div className="flex items-center gap-4">
+ <div className="w-12 h-12 rounded-full bg-brand-navy flex items-center justify-center text-white font-bold">
+ M
+ </div>
+ <div>
+ <p className="font-semibold text-brand-navy">{article.author}</p>
+ <p className="text-sm text-muted-foreground">{isZh ? 'MBCT内容团队' : 'MBCT Content Team'}</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </article>
+ </main>
+ )
 }

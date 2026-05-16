@@ -116,7 +116,7 @@ AI系统不仅能够呈现数据，更能够基于数据进行分析、预测、
               <span className="px-3 py-1 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] text-sm font-medium">{article.tag}</span>
               <span className="text-gray-500 text-sm">{article.date}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{article.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{article.title}</h1>
             <p className="text-xl text-muted-foreground mb-6">{article.summary}</p>
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-6 text-sm text-gray-500">
@@ -135,7 +135,7 @@ AI系统不仅能够呈现数据，更能够基于数据进行分析、预测、
             <div className="prose prose-invert prose-lg max-w-none"
               dangerouslySetInnerHTML={{ 
                 __html: article.content
-                  .replace(/## (.*)/g, '<h2 class="text-2xl font-bold text-white mt-8 mb-4">$1</h2>')
+                  .replace(/## (.*)/g, '<h2 class="text-2xl font-bold text-foreground mt-8 mb-4">$1</h2>')
                   .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#3b82f6]">$1</strong>')
                   .replace(/\n\n/g, '</p><p class="text-gray-300 mb-4 leading-relaxed">')
                   .replace(/^/, '<p class="text-gray-300 mb-4 leading-relaxed">')

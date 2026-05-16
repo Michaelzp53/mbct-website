@@ -3007,10 +3007,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-[#0f172a] flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">文章未找到</h1>
-          <Link href={`/${lang}/knowledge`} className="text-[#f59e0b] hover:underline">
+          <h1 className="text-4xl font-bold text-foreground mb-4">文章未找到</h1>
+          <Link href={`/${lang}/knowledge`} className="text-primary hover:underline">
             返回前沿导航
           </Link>
         </div>
@@ -3019,12 +3019,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-background dark:bg-[#1a1a2e] py-24">
+    <div className="min-h-screen bg-background py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <Link
             href={`/${lang}/knowledge`}
-            className="inline-flex items-center gap-2 text-[#f59e0b] hover:text-[#f59e0b]/80 transition-colors"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             返回前沿导航
@@ -3032,9 +3032,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <ThemeToggle lang={lang} />
         </div>
 
-        <article className="bg-card dark:bg-[#16213e] rounded-2xl border border-border p-8 md:p-12">
+        <article className="bg-card rounded-2xl border border-border p-8 md:p-12">
           <div className="mb-6">
-            <span className="px-3 py-1 rounded-full bg-[#f59e0b]/20 text-[#f59e0b] text-sm font-medium">
+            <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium">
               {article.tag}
             </span>
           </div>
@@ -3071,7 +3071,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <ArticleComments slug={slug} />
 
           <div className="mt-12 pt-8 border-t border-border text-center">
-            <div className="flex items-center justify-center gap-2 text-[#f59e0b] mb-4">
+            <div className="flex items-center justify-center gap-2 text-primary mb-4">
               <BookOpen className="w-5 h-5" />
               <span className="font-medium">迈创兄弟</span>
             </div>

@@ -61,7 +61,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
               <span className="px-3 py-1 rounded-full bg-[#8b5cf6]/10 text-[#8b5cf6] text-sm font-medium">{article.tag}</span>
               <span className="text-gray-500 text-sm">{article.date}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{article.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{article.title}</h1>
             <p className="text-xl text-muted-foreground mb-6">{article.summary}</p>
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-6 text-sm text-gray-500">
