@@ -134,15 +134,6 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* English content fallback: show Chinese if English is empty */}
-        {!isZh && !articleData.contentEn?.trim() && (
-          <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
-            <p className="text-sm text-amber-700 dark:text-amber-400">
-              English version coming soon. Displaying Chinese content below.
-            </p>
-          </div>
-        )}
-
         <article className="prose prose-lg max-w-none dark:prose-invert">
           <div
             className="text-foreground leading-relaxed"
