@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
+import { ArticleMarkdown } from '@/components/article-markdown'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -12,8 +13,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
     date: '2026-05-02',
     readTime: '10分钟',
     tag: '案例研究',
-    content: `
-## 最近跟几位投资人喝茶，聊到今年的新项目，气氛有点微妙——有人踩了坑，有人还在观望，有人正打算ALL IN。
+    content: `## 最近跟几位投资人喝茶，聊到今年的新项目，气氛有点微妙——有人踩了坑，有人还在观望，有人正打算ALL IN。
 
 我认真研究了一下2026年酒店业的几个"热门赛道"，发现里面藏着几个看起来很美、实际上很坑的**伪热点**。今天就把这些写出来，给大家提个醒。
 
@@ -132,7 +132,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
         <article>
           {/* Article Header */}
           <header className="mb-10">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#8b5cf6]/10 text-[#8b5cf6] text-sm font-medium mb-4">
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
               {article.tag}
             </span>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
@@ -156,16 +156,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
           </header>
 
           {/* Article Content */}
-          <div className="prose prose-lg max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br/>').replace(/##\s(.+)/g, '<h2 class="text-2xl font-bold text-foreground mt-10 mb-4">$1</h2>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/<br\/><br\/>/g, '</p><p class="text-foreground leading-relaxed mb-6">') }} />
-          </div>
+          <ArticleMarkdown content={article.content} />
 
           {/* CTA */}
-          <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-[#8b5cf6]/10 to-blue-50 dark:from-[#8b5cf6]/20 dark:to-blue-900/20 border border-[#8b5cf6]/20">
+          <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-primary/10 to-secondary border border-primary/20">
             <p className="text-muted-foreground mb-4">
               {isZh ? '想了解酒店投资可行性分析或运营诊断？' : 'Want to understand hotel investment feasibility or operational diagnosis?'}
             </p>
-            <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-6 py-3 bg-[#8b5cf6] text-white font-medium rounded-lg hover:bg-[#7c3aed] transition-colors">
+            <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:opacity-90 transition-colors">
               {isZh ? '联系我们' : 'Contact Us'}
               <ArrowLeft className="w-4 h-4 rotate-180" />
             </Link>
