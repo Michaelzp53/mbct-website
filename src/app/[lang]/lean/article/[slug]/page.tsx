@@ -134,11 +134,20 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* English content fallback: show Chinese if English is empty */}
+        {!isZh && !articleData.contentEn?.trim() && (
+          <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
+            <p className="text-sm text-amber-700 dark:text-amber-400">
+              English version coming soon. Displaying Chinese content below.
+            </p>
+          </div>
+        )}
+
         <article className="prose prose-lg max-w-none dark:prose-invert">
           <div
             className="text-foreground leading-relaxed"
             dangerouslySetInnerHTML={{
-              __html: (isZh ? articleData.contentZh : articleData.contentEn)
+              __html: (isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh))
                 .replace(/## (.*)/g, '<h2 class="text-2xl font-bold mt-8 mb-4">$1</h2>')
                 .replace(/### (.*)/g, '<h3 class="text-xl font-bold mt-6 mb-3">$1</h3>')
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
