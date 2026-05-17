@@ -7,6 +7,19 @@ import SearchBox from './SearchBox'
 // 文章数据
 const articlesData = [
   {
+    id: 114,
+    slug: 'hotel-asset-repositioning-stock-era',
+    titleZh: '【管享精道-投资决策】存量时代酒店资产重塑：从「翻新」到「价值重构」的完整路径',
+    titleEn: 'Hotel Asset Repositioning in the Stock Era: From Renovation to Value Reconstruction',
+    summaryZh: '2026年，中国酒店业正式进入存量时代。新增供应减速、资产价格回调、消费结构分化——三个因素叠加，让"买地盖楼"的故事正式退场。本文拆解一家真实项目的完整路径：从接手一座经营了12年的三星级酒店，到它以四星级中端定位重新开业，RevPAR从180元提升至380元。',
+    summaryEn: 'In 2026, China\'s hospitality industry officially entered the stock era. This article deconstructs a real project: from taking over a 12-year-old three-star hotel to its reopening as a four-star mid-scale property, with RevPAR climbing from 180 RMB to 380 RMB.',
+    category: 'investment',
+    date: '2026-05-17',
+    readTime: 15,
+    views: 0,
+    likes: 0,
+  },
+  {
     id: 100,
     slug: '2025-jiudian-touzi-renqing-xingshi-zhao-zhun-saidao',
     titleZh: '2025酒店投资：认清形势，找准赛道',

@@ -58,7 +58,7 @@ export async function POST(request: Request) {
 
     const ipHash = getIpHash(request);
 
-    const question = addQuestion({
+    const question = await addQuestion({
       title: title.trim(),
       detail: detail.trim(),
       pillar: pillar || '',
@@ -84,7 +84,7 @@ export async function POST(request: Request) {
 // GET: 获取问题列表
 export async function GET() {
   try {
-    const questions = getQuestions();
+    const questions = await getQuestions();
     return NextResponse.json({ questions });
   } catch (error) {
     console.error('Question API Error:', error);

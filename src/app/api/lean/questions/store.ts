@@ -1,4 +1,5 @@
-// 临时内存存储，后续迁移到数据库
+import { sql } from '@vercel/postgres';
+
 interface Question {
   id: number;
   title: string;
@@ -12,36 +13,79 @@ interface Question {
   created_at: string;
 }
 
-let questions: Question[] = [];
-let nextId = 1;
-
-export function addQuestion(data: Omit<Question, 'id' | 'status' | 'created_at'>): Question {
-  const question: Question = {
-    ...data,
-    id: nextId++,
-    status: 'pending',
-    created_at: new Date().toISOString(),
+export async function addQuestion(data: Omit<Question, 'id' | 'status' | 'created_at'>): Promise<Question> {
+  const wasteTypesStr = `{${(data.waste_types || []).map((w: string) => `"${w}"`).join(',')}}`;
+  const result = await sql`
+    INSERT INTO questions (title, detail, pillar, waste_types, nickname, hotel_name, ip_hash, status, created_at)
+    VALUES (${data.title}, ${data.detail}, ${data.pillar}, ${wasteTypesStr}::text[], ${data.nickname}, ${data.hotel_name}, ${data.ip_hash}, 'pending', NOW())
+    RETURNING *
+  `;
+  const row = result.rows[0];
+  return {
+    id: row.id,
+    title: row.title,
+    detail: row.detail,
+    pillar: row.pillar,
+    waste_types: row.waste_types || [],
+    nickname: row.nickname,
+    hotel_name: row.hotel_name,
+    ip_hash: row.ip_hash,
+    status: row.status,
+    created_at: row.created_at,
   };
-  questions.unshift(question);
-  // 只保留最近 100 条
-  if (questions.length > 100) {
-    questions = questions.slice(0, 100);
-  }
-  return question;
 }
 
-export function getQuestions(): Question[] {
-  return questions;
+export async function getQuestions(): Promise<Question[]> {
+  const result = await sql`SELECT * FROM questions ORDER BY created_at DESC LIMIT 100`;
+  return result.rows.map(row => ({
+    id: row.id,
+    title: row.title,
+    detail: row.detail,
+    pillar: row.pillar,
+    waste_types: row.waste_types || [],
+    nickname: row.nickname,
+    hotel_name: row.hotel_name,
+    ip_hash: row.ip_hash,
+    status: row.status,
+    created_at: row.created_at,
+  }));
 }
 
-export function getQuestionById(id: number): Question | undefined {
-  return questions.find(q => q.id === id);
+export async function getQuestionById(id: number): Promise<Question | undefined> {
+  const result = await sql`SELECT * FROM questions WHERE id = ${id}`;
+  if (result.rows.length === 0) return undefined;
+  const row = result.rows[0];
+  return {
+    id: row.id,
+    title: row.title,
+    detail: row.detail,
+    pillar: row.pillar,
+    waste_types: row.waste_types || [],
+    nickname: row.nickname,
+    hotel_name: row.hotel_name,
+    ip_hash: row.ip_hash,
+    status: row.status,
+    created_at: row.created_at,
+  };
 }
 
-export function updateQuestionStatus(id: number, status: string): Question | undefined {
-  const question = questions.find(q => q.id === id);
-  if (question) {
-    question.status = status;
-  }
-  return question;
+export async function updateQuestionStatus(id: number, status: string): Promise<Question | undefined> {
+  const result = await sql`
+    UPDATE questions SET status = ${status} WHERE id = ${id}
+    RETURNING *
+  `;
+  if (result.rows.length === 0) return undefined;
+  const row = result.rows[0];
+  return {
+    id: row.id,
+    title: row.title,
+    detail: row.detail,
+    pillar: row.pillar,
+    waste_types: row.waste_types || [],
+    nickname: row.nickname,
+    hotel_name: row.hotel_name,
+    ip_hash: row.ip_hash,
+    status: row.status,
+    created_at: row.created_at,
+  };
 }

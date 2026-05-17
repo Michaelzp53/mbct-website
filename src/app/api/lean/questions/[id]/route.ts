@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { updateQuestionStatus, getQuestions } from '../store';
+import { updateQuestionStatus } from '../store';
+import { sql } from '@vercel/postgres';
 
 // PATCH: 更新提问状态
 export async function PATCH(request: Request) {
@@ -16,7 +17,7 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ error: `Invalid status. Must be one of: ${validStatuses.join(', ')}` }, { status: 400 });
     }
 
-    const question = updateQuestionStatus(Number(id), status);
+    const question = await updateQuestionStatus(Number(id), status);
 
     if (!question) {
       return NextResponse.json({ error: 'Question not found' }, { status: 404 });
@@ -42,11 +43,7 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ error: 'id is required' }, { status: 400 });
     }
 
-    const questions = getQuestions();
-    const index = questions.findIndex(q => q.id === Number(id));
-    if (index > -1) {
-      questions.splice(index, 1);
-    }
+    await sql`DELETE FROM questions WHERE id = ${Number(id)}`;
 
     return NextResponse.json({ success: true });
   } catch (error) {

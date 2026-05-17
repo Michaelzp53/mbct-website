@@ -14,6 +14,6 @@ interface Question {
 }
 
 export default async function QuestionsAdminPage() {
-  const questions = getQuestions() as Question[]
+  const questions = await getQuestions()
   return <QuestionsAdminClient questions={questions} />
 }
