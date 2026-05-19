@@ -27,6 +27,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 412,
+      type: 'article',
+      title: '万豪希尔顿押注疗愈经济：国际酒店集团为何集体涌入康养赛道？',
+      titleEn: 'Marriott and Hilton Bet Big on the Wellness Economy: Why International Hotel Groups Are Flooding Into the Wellness Track',
+      slug: 'marriott-hilton-wellness-economy-2026-05-19',
+      summary: '2026年5月，万豪与Lefay合资、希尔顿西嘉亚太首店落地，全球康养疗愈酒店市场规模161.8亿美元预计2032年突破280.5亿美元。本文深度分析国际品牌战略逻辑、中国市场的供需错配机会，以及对投资人和运营管理者的实战启示。',
+      firstLine: '万豪与Lefay合资、希尔顿西嘉亚太首店落地，全球康养疗愈酒店市场窗口期正在进行。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-19',
+      readTime: 15,
+      tag: isZh ? '热点解读' : 'Hotspot Analysis',
+      tagColor: 'bg-[#ef4444]',
+      tagTextColor: 'text-white',
+    },
+    {
       id: 411,
       type: 'article',
       title: 'AI驱动的酒店业投资决策：从私域运营到成本优化的全链路策略',
