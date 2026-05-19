@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { ArrowRight, Users, Target, TrendingUp, Shield } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
 import BentoServices from '@/components/BentoServices'
+import ScrollFade from '@/components/scroll-fade'
+import SectionWithBg from '@/components/SectionWithBg'
 import { getDict } from '@/lib/dicts'
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -79,8 +81,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <BentoServices lang={lang} />
       
       {/* Pain Points Section */}
-      <section className="py-16 section-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionWithBg bgImage="/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg" overlayOpacity={0.88}>
+        <ScrollFade>
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
               <Users className="w-4 h-4 text-primary" />
@@ -88,127 +90,137 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 {lang === 'zh' ? '理解 · 共情 · 解决' : 'Understand · Empathize · Solve'}
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {lang === 'zh' ? '我们懂你的困境' : 'We Understand Your Challenges'}
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-slate-300">
               {lang === 'zh' ? '三种角色，三种痛点，一种解决方案' : 'Three Roles, Three Pain Points, One Solution'}
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {personas.map((persona, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-card border border-border card-themed">
-                <h3 className="text-xl font-bold text-card-foreground mb-2">{persona.title}</h3>
-                <p className="text-primary mb-3 text-sm">{persona.subtitle}</p>
-                <p className="text-muted-foreground text-sm italic leading-relaxed">"{persona.quote}"</p>
+        </ScrollFade>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {personas.map((persona, index) => (
+            <ScrollFade key={index} delay={index * 150}>
+              <div className="p-6 rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-2">{persona.title}</h3>
+                <p className="text-amber-400 mb-3 text-sm">{persona.subtitle}</p>
+                <p className="text-slate-300 text-sm italic leading-relaxed">"{persona.quote}"</p>
               </div>
-            ))}
-          </div>
+            </ScrollFade>
+          ))}
         </div>
-      </section>
+      </SectionWithBg>
 
       {/* Growth Flywheel Section */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionWithBg bgImage="/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg" overlayOpacity={0.88}>
+        <ScrollFade>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {lang === 'zh' ? '迈创兄弟增长飞轮' : 'The Marvelbros Growth Flywheel'}
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm">
+            <p className="text-slate-300 max-w-2xl mx-auto text-sm">
               {lang === 'zh' 
                 ? '从洞察到规模化，构建酒店增长的完整闭环'
                 : 'From insight to scale—building the complete hotel growth loop'}
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 rounded-xl bg-card border border-border card-themed">
+        </ScrollFade>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <ScrollFade delay={0}>
+            <div className="p-5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#4285f420' }}>
                 <Target className="w-5 h-5" style={{ color: '#4285f4' }} />
               </div>
-              <h3 className="text-lg font-bold text-card-foreground mb-1">
+              <h3 className="text-lg font-bold text-white mb-1">
                 {lang === 'zh' ? '洞察模块' : 'Insight Module'}
               </h3>
-              <p className="text-xs text-primary mb-2">
+              <p className="text-xs text-amber-400 mb-2">
                 {lang === 'zh' ? '科学决策层' : 'Data-Driven'}
               </p>
-              <p className="text-muted-foreground text-xs">
+              <p className="text-slate-300 text-xs">
                 {lang === 'zh' 
                   ? 'AI 可行性研究、诊断，让决策有数据支撑'
                   : 'AI feasibility studies and diagnostics'}
               </p>
             </div>
-            
-            <div className="p-5 rounded-xl bg-card border border-border card-themed">
+          </ScrollFade>
+          
+          <ScrollFade delay={100}>
+            <div className="p-5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#34a85320' }}>
                 <TrendingUp className="w-5 h-5" style={{ color: '#34a853' }} />
               </div>
-              <h3 className="text-lg font-bold text-card-foreground mb-1">
+              <h3 className="text-lg font-bold text-white mb-1">
                 {lang === 'zh' ? '增长引擎' : 'Growth Engine'}
               </h3>
-              <p className="text-xs text-primary mb-2">
+              <p className="text-xs text-amber-400 mb-2">
                 {lang === 'zh' ? '系统驱动层' : 'System-Driven'}
               </p>
-              <p className="text-muted-foreground text-xs">
+              <p className="text-slate-300 text-xs">
                 {lang === 'zh'
                   ? 'AI 管理、私域运营，数据驱动增长'
                   : 'AI PMS and private domain ops'}
               </p>
             </div>
-            
-            <div className="p-5 rounded-xl bg-card border border-border card-themed">
+          </ScrollFade>
+          
+          <ScrollFade delay={200}>
+            <div className="p-5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#f59e0b20' }}>
                 <Shield className="w-5 h-5" style={{ color: '#f59e0b' }} />
               </div>
-              <h3 className="text-lg font-bold text-card-foreground mb-1">
+              <h3 className="text-lg font-bold text-white mb-1">
                 {lang === 'zh' ? '规模化模块' : 'Scale Module'}
               </h3>
-              <p className="text-xs text-primary mb-2">
+              <p className="text-xs text-amber-400 mb-2">
                 {lang === 'zh' ? '资产沉淀层' : 'Asset Building'}
               </p>
-              <p className="text-muted-foreground text-xs">
+              <p className="text-slate-300 text-xs">
                 {lang === 'zh'
                   ? '品牌创建、效果跟进，增长能力资产化'
                   : 'Brand building and growth assets'}
               </p>
             </div>
-            
-            <div className="p-5 rounded-xl bg-card border border-border card-themed">
+          </ScrollFade>
+          
+          <ScrollFade delay={300}>
+            <div className="p-5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#764ba220' }}>
                 <Users className="w-5 h-5" style={{ color: '#764ba2' }} />
               </div>
-              <h3 className="text-lg font-bold text-card-foreground mb-1">
+              <h3 className="text-lg font-bold text-white mb-1">
                 {lang === 'zh' ? '支撑服务' : 'Support'}
               </h3>
-              <p className="text-xs text-primary mb-2">
+              <p className="text-xs text-amber-400 mb-2">
                 {lang === 'zh' ? '基础服务层' : 'Foundation'}
               </p>
-              <p className="text-muted-foreground text-xs">
+              <p className="text-slate-300 text-xs">
                 {lang === 'zh'
                   ? '顾问、融资、行业研究，全周期陪伴'
                   : 'Consulting, financing, research'}
               </p>
             </div>
-          </div>
+          </ScrollFade>
         </div>
-      </section>
+      </SectionWithBg>
 
       {/* Results Section */}
-      <section className="py-16 section-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <SectionWithBg bgImage="/hero-hung-li-1HbWj9BDbjE-unsplash.jpg" overlayOpacity={0.88}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <ScrollFade>
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-4">
-                <Shield className="w-4 h-4 text-[#f59e0b]" />
-                <span className="text-[#f59e0b] text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 mb-4">
+                <Shield className="w-4 h-4 text-amber-400" />
+                <span className="text-amber-400 text-sm font-medium">
                   {lang === 'zh' ? '效果跟进' : 'Performance Tracking'}
                 </span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 {lang === 'zh' ? '以结果为尺，量增长之路' : 'Measured by Results, Growth by Design'}
               </h2>
-              <p className="text-muted-foreground mb-5 text-sm">
+              <p className="text-slate-300 mb-5 text-sm">
                 {lang === 'zh'
                   ? '真正的伙伴关系建立在共同的成果之上。当您的酒店增长时，我们才值得被认可。'
                   : 'True partnerships are built on shared outcomes. We only earn our worth when your hotel grows.'}
@@ -216,133 +228,137 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               
               <div className="space-y-3 mb-5">
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-background text-xs font-bold">1</span>
+                  <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-slate-900 text-xs font-bold">1</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-slate-300 text-sm">
                     {lang === 'zh' ? '诊断阶段：免费/低价，确诊增长机会' : 'Diagnosis: Free/low cost to identify opportunities'}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-background text-xs font-bold">2</span>
+                  <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-slate-900 text-xs font-bold">2</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-slate-300 text-sm">
                     {lang === 'zh' ? '方案阶段：成本价，客户认可机会' : 'Solution: Cost-plus—only succeeds if you succeed'}
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-background text-xs font-bold">3</span>
+                  <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-slate-900 text-xs font-bold">3</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-slate-300 text-sm">
                     {lang === 'zh' ? '承诺可量化的结果，直到达标为止' : 'We commit to measurable results'}
                   </p>
                 </div>
               </div>
-              
-
             </div>
-            
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-lg font-bold text-card-foreground mb-4">
+          </ScrollFade>
+          
+          <ScrollFade delay={150}>
+            <div className="bg-slate-900/60 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <h3 className="text-lg font-bold text-white mb-4">
                 {lang === 'zh' ? '我们的承诺' : 'Our Commitment'}
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
-                    <Target className="w-4 h-4 text-[#f59e0b]" />
+                  <div className="w-8 h-8 rounded-full bg-amber-400/10 flex items-center justify-center flex-shrink-0">
+                    <Target className="w-4 h-4 text-amber-400" />
                   </div>
                   <div>
-                    <h4 className="text-card-foreground font-medium text-sm">
+                    <h4 className="text-white font-medium text-sm">
                       {lang === 'zh' ? '目标导向' : 'Goal Oriented'}
                     </h4>
-                    <p className="text-muted-foreground text-xs">
+                    <p className="text-slate-300 text-xs">
                       {lang === 'zh' ? '以可量化的增长目标为合作基础' : 'Measurable growth targets as partnership foundation'}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#34a853]/10 flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-4 h-4 text-[#34a853]" />
+                  <div className="w-8 h-8 rounded-full bg-emerald-400/10 flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-4 h-4 text-emerald-400" />
                   </div>
                   <div>
-                    <h4 className="text-card-foreground font-medium text-sm">
+                    <h4 className="text-white font-medium text-sm">
                       {lang === 'zh' ? '风险共担' : 'Risk Sharing'}
                     </h4>
-                    <p className="text-muted-foreground text-xs">
+                    <p className="text-slate-300 text-xs">
                       {lang === 'zh' ? '效果未达预期，我们共同复盘调整，直到达成目标' : 'If results fall short, we review and adjust together until targets are met'}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#3b82f6]/10 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-4 h-4 text-[#3b82f6]" />
+                  <div className="w-8 h-8 rounded-full bg-blue-400/10 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-4 h-4 text-blue-400" />
                   </div>
                   <div>
-                    <h4 className="text-card-foreground font-medium text-sm">
+                    <h4 className="text-white font-medium text-sm">
                       {lang === 'zh' ? '持续精进' : 'Continuous Improvement'}
                     </h4>
-                    <p className="text-muted-foreground text-xs">
+                    <p className="text-slate-300 text-xs">
                       {lang === 'zh' ? '达成目标后，我们继续寻找提升空间，追求更好表现' : 'After reaching targets, we keep finding ways to improve and perform even better'}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollFade>
         </div>
-      </section>
+      </SectionWithBg>
 
       {/* Team Section */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionWithBg bgImage="/hero-crew-szCvt1gP2d4-unsplash.jpg" overlayOpacity={0.88}>
+        <ScrollFade>
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-              {lang === 'zh' ? '迈创兄弟团队' : 'The Marvelbros Team'}
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              {lang === 'zh' ? 'MBCT 迈创兄弟专家' : 'The Marvelbros Team'}
             </h2>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-slate-300 text-sm">
               {lang === 'zh' ? '不是"顾问"，是并肩作战的战友' : 'Not just consultants—battle-tested partners'}
             </p>
           </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {team.map((member, index) => (
-              <div key={index} className="p-4 rounded-xl bg-card border border-border card-themed text-center">
+        </ScrollFade>
+        
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {team.map((member, index) => (
+            <ScrollFade key={index} delay={index * 100}>
+              <div className="p-4 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10 text-center">
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 text-xl font-bold"
                   style={{ backgroundColor: `${member.color}20`, color: member.color }}
                 >
                   {member.letter}
                 </div>
-                <h3 className="text-sm font-bold text-card-foreground mb-1">{member.title}</h3>
-                <p className="text-muted-foreground text-xs">{member.desc}</p>
+                <h3 className="text-sm font-bold text-white mb-1">{member.title}</h3>
+                <p className="text-slate-300 text-xs">{member.desc}</p>
               </div>
-            ))}
-          </div>
+            </ScrollFade>
+          ))}
         </div>
-      </section>
+      </SectionWithBg>
 
       {/* CTA Section */}
-      <section className="py-16 section-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            {lang === 'zh' ? '准备好让酒店增长了吗？' : 'Ready to Grow Your Hotel?'}
-          </h2>
-          <p className="text-muted-foreground mb-6 text-sm">
-            {lang === 'zh'
-              ? '预约一次免费的增长诊断'
-              : 'Book a free growth diagnosis'}
-          </p>
-          <Link
-            href={ctaLink}
-            className="inline-flex items-center justify-center px-6 py-3 btn-gradient-primary font-bold rounded-lg"
-          >
-            {lang === 'zh' ? '立即预约诊断' : 'Book Free Diagnosis'}
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Link>
-        </div>
-      </section>
+      <SectionWithBg bgImage="/hero-rod-long-2P_ifaetDm0-unsplash.jpg" overlayOpacity={0.88}>
+        <ScrollFade>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              {lang === 'zh' ? '准备好让酒店增长了吗？' : 'Ready to Grow Your Hotel?'}
+            </h2>
+            <p className="text-slate-300 mb-6 text-sm">
+              {lang === 'zh'
+                ? '预约一次免费的增长诊断'
+                : 'Book a free growth diagnosis'}
+            </p>
+            <Link
+              href={ctaLink}
+              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all"
+            >
+              {lang === 'zh' ? '立即预约诊断' : 'Book Free Diagnosis'}
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </div>
+        </ScrollFade>
+      </SectionWithBg>
     </div>
   )
 }

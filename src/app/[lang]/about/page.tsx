@@ -1,5 +1,6 @@
 import { Target, Heart, Lightbulb, Award, TrendingUp } from 'lucide-react'
 import { getDict } from '@/lib/dicts'
+import PageHero from '@/components/PageHero'
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -72,18 +73,14 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   ]
 
   return (
-    <div className="min-h-screen bg-background py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero */}
-        <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            {lang === 'zh' ? '关于 迈创兄弟' : 'About MBCT'}
-          </h1>
-          <p className="text-lg md:text-xl text-[#f59e0b]">
-            {lang === 'zh' ? '迈创兄弟商业科技有限公司' : 'MarvelBros Commercial & Technology Co., Ltd.'}
-          </p>
-        </div>
+    <div className="min-h-screen bg-background">
+      <PageHero
+        title={lang === 'zh' ? '关于 MBCT 迈创兄弟' : 'About MBCT'}
+        subtitle={lang === 'zh' ? 'MBCT 迈创兄弟商业科技' : 'MarvelBros Commercial & Technology Co., Ltd.'}
+        bgImage="/hero-crew-szCvt1gP2d4-unsplash.jpg"
+      />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Vision & Mission */}
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -151,7 +148,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         {/* Team Section */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">
-            {lang === 'zh' ? '迈创兄弟团队' : 'The MBCT Team'}
+            {lang === 'zh' ? 'MBCT 迈创兄弟专家' : 'The MBCT Team'}
           </h2>
           <p className="text-muted-foreground text-center mb-8 text-sm md:text-base">
             {lang === 'zh' ? '不是"顾问"，是并肩作战的战友' : 'Not just consultants—battle-tested partners'}

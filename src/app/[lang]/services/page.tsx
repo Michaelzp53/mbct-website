@@ -3,6 +3,7 @@ import { Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, G
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CTASection } from '@/components/CTASection'
 import { getDict } from '@/lib/dicts'
+import PageHero from '@/components/PageHero'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Building2, TrendingUp, Shield, Sparkles, BarChart3, Users, Megaphone, GraduationCap, Landmark, BookOpen,
@@ -41,13 +42,11 @@ export default async function ServicesPage({
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="py-16 section-light">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{dict.nav.services}</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{dict.services.subtitle}</p>
-        </div>
-      </section>
+      <PageHero
+        title={dict.nav.services}
+        subtitle={dict.services.subtitle}
+        bgImage="/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg"
+      />
 
       {/* Services Grid */}
       <section className="py-16 bg-background">

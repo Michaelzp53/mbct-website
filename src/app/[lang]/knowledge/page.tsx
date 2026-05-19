@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { BookOpen, FileText, BarChart3, Newspaper, ArrowRight, Clock, User, Calendar } from 'lucide-react'
+import PageHero from '@/components/PageHero'
 
 export default async function KnowledgePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -18,7 +19,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     caseTitle: isZh ? '案例研究' : 'Case Studies',
     caseDesc: isZh ? '实战项目复盘,数据脱敏处理' : 'Real project retrospectives with anonymized data',
     leanTitle: isZh ? '管享精道' : 'Lean Insights',
-    leanDesc: isZh ? '酒店管理者精益问答——迈创兄弟娓娓道来' : 'Lean management Q&A for hotel leaders',
+    leanDesc: isZh ? '酒店管理者精益问答——听迈创兄弟娓娓道来' : 'Lean management Q&A for hotel leaders',
     searchPlaceholder: isZh ? '搜索文章...' : 'Search articles...',
     readMore: isZh ? '阅读全文' : 'Read More',
     minRead: isZh ? '分钟' : 'min read',
@@ -911,8 +912,14 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   ]
 
   return (
-    <div className="min-h-screen bg-background py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background">
+      <PageHero
+        title={ui.pageTitle}
+        subtitle={isZh ? 'MBCT研究院出品,用数据说话,为酒店行业提供前瞻洞察与实战指南' : 'From MBCT Institute - data-driven insights and practical guides for the hotel industry'}
+        bgImage="/hero-pexels-jimmy-liao.jpg"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">

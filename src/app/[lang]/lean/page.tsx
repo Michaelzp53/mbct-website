@@ -3,6 +3,7 @@ import { ArrowRight, ChevronRight, Search, Clock, Eye, ThumbsUp, BookOpen, Messa
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import SearchBox from './SearchBox'
+import PageHero from '@/components/PageHero'
 
 // 文章数据
 const articlesData = [
@@ -498,7 +499,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
   const ui = {
     pageTitle: isZh ? '管享精道' : 'Lean Insights',
     pageSubtitle: isZh
-      ? '酒店管理者精益问答——迈创兄弟娓娓道来'
+      ? '酒店管理者精益问答——听迈创兄弟娓娓道来'
       : 'Lean management Q&A for hotel leaders — MarvelBros shares insights',
     allArticles: isZh ? '全部文章' : 'All Articles',
     articleCount: isZh ? '篇' : ' articles',
@@ -511,6 +512,12 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
 
   return (
     <div className="min-h-screen bg-background">
+      <PageHero
+        title={ui.pageTitle}
+        subtitle={ui.pageSubtitle}
+        bgImage="/hero-hung-li-1HbWj9BDbjE-unsplash.jpg"
+      />
+
       {/* Header */}
       <div className="bg-gradient-to-br from-[#f59e0b]/10 via-background to-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

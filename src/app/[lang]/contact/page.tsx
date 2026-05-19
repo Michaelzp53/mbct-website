@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { ContactForm } from '@/components/ContactForm'
 import { getDict } from '@/lib/dicts'
+import PageHero from '@/components/PageHero'
 
 export async function generateMetadata({
   params,
@@ -23,13 +24,11 @@ export default async function ContactPage({
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="py-16 section-light">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{dict.contact.title}</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{dict.contact.subtitle}</p>
-        </div>
-      </section>
+      <PageHero
+        title={dict.contact.title}
+        subtitle={dict.contact.subtitle}
+        bgImage="/hero-rod-long-2P_ifaetDm0-unsplash.jpg"
+      />
 
       {/* Contact Section */}
       <section className="py-16 bg-background">

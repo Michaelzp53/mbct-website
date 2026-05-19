@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { CTASection } from '@/components/CTASection'
 import { getDict } from '@/lib/dicts'
+import PageHero from '@/components/PageHero'
 
 export async function generateMetadata({
   params,
@@ -33,13 +34,11 @@ export default async function CasesPage({
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="py-16 section-light">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">{dict.nav.cases}</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{dict.cases.subtitle}</p>
-        </div>
-      </section>
+      <PageHero
+        title={dict.nav.cases}
+        subtitle={dict.cases.subtitle}
+        bgImage="/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg"
+      />
 
       {/* Cases Grid */}
       <section className="py-16 bg-background">
