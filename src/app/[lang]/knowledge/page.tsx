@@ -27,6 +27,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 413,
+      type: 'article',
+      title: '2026年酒店投资回报正在回归理性：RevPAR修复的三条主线',
+      titleEn: 'Hotel Investment Returns in 2026 Are Returning to Rationality: Three Main Lines of RevPAR Repair',
+      slug: 'revpar-recovery-three-tracks-2026-05-20',
+      summary: '2026年中国酒店行业正在从"拼扩张"转向"拼回报"，RevPAR修复有三条主线：价格修复、渠道效率修复、产品与服务修复。本文深度分析三条主线的逻辑与实操路径，为投资人和运营管理者提供决策框架。',
+      firstLine: '真正决定回报的，不是入住率的单一复苏，而是RevPAR的修复方式。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-20',
+      readTime: 12,
+      tag: isZh ? '趋势分析' : 'Trend Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+    },
+    {
       id: 412,
       type: 'article',
       title: '万豪希尔顿押注疗愈经济：国际酒店集团为何集体涌入康养赛道？',

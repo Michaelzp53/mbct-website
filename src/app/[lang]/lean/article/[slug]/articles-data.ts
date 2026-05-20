@@ -10550,6 +10550,248 @@ Author: MBCT（MarvelBros C&T）
     readTime: 18,
     views: 0, likes: 0, comments: 0,
   },
+  {
+    id: 118,
+    slug: 'hotel-operating-levers-2026-05-20',
+    titleZh: '酒店经营三大杠杆：价格、渠道、服务如何一起发力？',
+    titleEn: 'The Three Operating Levers: How Pricing, Distribution, and Service Must Work Together',
+    contentZh: `有个总经理跟我说了这么一句话："我今年把价格调低了，渠道也加了，员工福利也提了，怎么利润还是不见涨？"
+
+我问他：你调价格的时候，看了渠道结构吗？你加渠道的时候，看了转化率吗？你提员工福利的时候，做了服务动作标准化吗？
+
+他愣住了。
+
+这不是个例。大多数酒店的经营困境，本质上是单点优化的失效——价格、渠道、服务是三个相互咬合的齿轮，单独转动任何一个，都会因为另外两个的惯性而空转。三者联动，才能真正撬动经营结果。
+
+今天这篇文章，不讲大道理，就讲三个杠杆怎么一起发力。
+
+一、价格杠杆：调价之前，先看你的渠道结构
+
+很多总经理调价格，是凭感觉——"隔壁降了300，我得跟上"、"这周入住率低，打个折吧"。这种调法，十次有九次是无效的。
+
+真正有效的价格策略，有一个前提：你的渠道结构必须健康。
+
+我见过一家酒店，OTA渠道占比超过65%，佣金率20%以上。等老板意识到问题的时候，每年给OTA打工的费用已经超过了一间客房的装修成本。问题出在哪？他的直销渠道几乎没有运营，官网常年没有促销活动，微信公众号粉丝10万但月订单不足30单——渠道结构单一，使得所有调价动作都变成了"给OTA打工"。
+
+价格杠杆的正确用法，分三步。
+
+第一步：审计你的渠道结构。拿出过去三个月的收入明细，按渠道拆分，计算每个渠道的收入占比和佣金率。如果OTA占比超过50%，这本身就是一个危险信号。
+
+第二步：找到你的价格基准线。最优可用房价（BAR）是你的锚点。所有渠道价格都不应该低于BAR太多，否则就是在自毁价格体系。
+
+第三步：按日期和客群设规则，而不是凭感觉调价。周中/周末、淡季/旺季、早鸟/当天，商旅/休闲——不同维度叠加，才能找到最优价格组合。
+
+MBCT在多个项目中的经验表明，当酒店建立了渠道健康度评估机制后，往往会发现：调价不是最重要的事，渠道结构优化带来的边际收益往往更高。
+
+二、渠道杠杆：渠道不是越多越好，是结构合理才有效
+
+加渠道是容易的。开个携程店、挂上美团、在飞猪也来一个——三天就能上线。但渠道管理是难的。
+
+渠道管理的核心问题是：每个渠道都有自己的游戏规则和成本结构。OTA佣金高，但获客效率也高；直销渠道零佣金，但需要投入运营资源；协议客户稳定，但合同管理复杂；会员体系是长期资产，但需要持续激活。
+
+把这四类渠道放在一起，不是做加法，是做权重分配。
+
+我见过最夸张的一个案例：某三线城市中端酒店，在7个OTA平台同时上线，但每个平台的月度订单量都不超过50间夜。7个平台加起来，月均OTA收入不足总收入的15%，但佣金支出却占到了客房收入的19%。换句话说：花这么多时间精力维护7个平台，不如集中精力把1-2个平台做精。
+
+这就是"渠道效率"的概念。
+
+渠道效率的核心指标有三个：
+
+第一，佣金率——每一间夜的收入，有多少比例被渠道拿走？超过18%就要警惕。
+
+第二，转化率——浏览量到下单量的比例。低于2%的OTA平台，要么是流量不匹配，要么是页面内容有问题。
+
+第三，复购率——这个渠道带来的客人，有多少会成为回头客？协议客户的复购率通常高于OTA散客。
+
+拿着这三个指标去审计你的渠道，你会惊讶地发现：可能一半的渠道都在消耗你的运营资源，但贡献甚微。
+
+三、服务杠杆：服务不是成本，是复购的发动机
+
+服务这件事，在很多酒店管理者的账本上，被归类为"成本项"。降本的时候，先砍服务培训；压缩预算的时候，先砍客户维护。
+
+这是最常见的经营误区之一。
+
+服务的价值，不是直接体现在收入数字上，而是体现在两个间接效应里：复购率和口碑传播。
+
+我给你算一笔账：OTA上，一个新客的获取成本（佣金）大约是客房收入的15%-25%；而一个老客的回头，平台不收任何佣金。如果你的会员复购率能从15%提升到25%，相当于你的有效客房收入增加了约10%（以20%平均佣金率计算）。
+
+服务就是驱动这个复购率的核心变量。
+
+但服务提升不等于大投入。MBCT的经验是：大多数中端酒店的服务短板，不在硬件，在执行。
+
+具体来说，前台接待的前三分钟、客房打扫的细节检查、早餐时间的客户需求响应、投诉处理的速度和态度——这四个触点做好了，服务体验就会有显著提升，而且不需要额外的资金投入，需要的是培训和检查机制。
+
+有一个简单的自检方法：每月随机抽取20条OTA差评，分类统计差评关键词。如果"前台态度"出现超过5次，这就是最优先要改的触点，而不是去购买新的客房用品或者改造大堂。
+
+四、三个杠杆怎么一起发力：一个真实案例
+
+说个真实发生的事。
+
+某二线城市中端酒店，120间客房，开业第三年。总经理老张来找我的时候，情况是这样的：入住率60%左右，ADR约280元，RevPAR约168元，OTA占比超过55%，会员复购率12%，月度净亏损约8万元。
+
+老张之前做的事情：降过一次价，加过一个OTA平台，给员工提过一次福利。
+
+结果呢？降价后ADR降到260元，入住率短暂提升到68%，随后又跌回62%，OTA占比反而升到了58%。
+
+我给他的方案，核心就是三个杠杆一起动。
+
+价格：重新梳理价格体系，建立BAR基准，取消所有低于BAR的促销房型，同时针对协议客户推出阶梯价格协议，鼓励提前预订。
+
+渠道：关停两个低效OTA平台（佣金率22%以上，转化率不足1.5%），将运营精力集中到携程和美团两个主力平台；同时启动官网和小程序改版，上线会员专享价，将直销渠道占比目标设定为从5%提升到20%。
+
+服务：从前台接待SOP入手，重新培训"入住前三分钟"标准动作；建立客户投诉24小时回访机制；每月随机抽查10间客房做卫生检查。
+
+三个月后的数据：入住率稳定在65%，ADR回升到295元，OTA占比下降到45%，直销占比提升到12%，会员复购率从12%提升到21%。RevPAR约192元，环比提升约14%，当月实现盈亏平衡。
+
+六个月的最终结果：入住率68%，ADR305元，RevPAR约207元，OTA占比40%，直销占比18%，会员复购率26%，月度净利润约6万元。
+
+这就是三个杠杆联动发力的结果。单独看任何一个动作，调价、砍渠道，做服务培训——都不会有这个效果。
+
+结语
+
+三个杠杆，不是三选一，是一起调。
+
+如果你现在只能做一件事，我的建议是：先做渠道审计。把佣金率、转化率、复购率三个指标拉出来，你就已经迈出了最重要的一步——因为数据会告诉你，问题到底在哪。
+
+如果你能做两件事，在渠道审计的基础上，加上价格基准线的梳理。
+
+如果你愿意投入足够的精力，三件事一起做——但要做好心理准备，协同见效需要时间，通常是三到六个月。
+
+单点优化只会让你越忙越累，三杠联动才能让经营回到正轨。
+
+作者：MBCT（MarvelBros C&T）
+
+关于MBCT：MBCT（MarvelBros C&T）专注于酒店行业全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
+
+九大业务支撑：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
+
+网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告
+
+邮箱：contactme@marvelbros.com / info@marvelbros.com
+
+管享精道：www.marvelbros.com/gxjzd`,
+    contentEn: `A general manager once told me: "This year I lowered my rates, added more distribution channels, and improved employee benefits. Why isn't my profit going up?"
+
+I asked him: When you adjusted your rates, did you look at your channel mix? When you added channels, did you check your conversion rates? When you raised employee benefits, did you standardize service procedures?
+
+He went quiet.
+
+This isn't an isolated case. Most hotels' operational challenges stem from single-point optimization failing. Pricing, distribution, and service are three interlocking gears — spinning any one of them alone just spins against the inertia of the others. Only when all three move together can you truly lever your operational results.
+
+Today I'm not here to lecture you on theory. I'm here to show you how these three levers work in practice.
+
+1. The Pricing Lever: Before Adjusting Rates, Audit Your Channel Mix First
+
+Most GMs adjust rates on gut feel — "The competitor down the street dropped 300 RMB, I have to match them." "Occupancy is low this week, let's run a promotion." Nine times out of ten, this approach doesn't work.
+
+Effective pricing strategy has one prerequisite: your channel mix must be healthy.
+
+I once saw a hotel where OTA accounted for over 65% of revenue, with a commission rate above 20%. By the time the owner realized the problem, annual OTA commissions had exceeded the cost of furnishing one guest room. The root cause? Their direct sales channels had essentially zero operations — the official website had no promotional campaigns, their WeChat mini-program had 100,000 followers but less than 30 monthly orders. A single-dimension channel structure meant every pricing action was essentially subsidizing the OTA.
+
+The correct approach to the pricing lever has three steps.
+
+Step 1: Audit your channel mix. Pull revenue data from the past three months, break it down by channel, and calculate each channel's revenue share and commission rate. If OTA exceeds 50%, that's a danger signal on its own.
+
+Step 2: Find your rate baseline. Your Best Available Rate (BAR) is your anchor. No channel rate should fall significantly below BAR, or you're undermining your own pricing system.
+
+Step 3: Set rules by date and customer segment, not gut feel. Weekday/weekend, off-peak/peak, early-bird/same-day, business/travel — layering these dimensions is how you find the optimal rate combination.
+
+MBCT's experience across multiple projects shows: once a hotel establishes a channel health assessment mechanism, the discovery is often that channel mix optimization delivers higher marginal returns than rate adjustments alone.
+
+2. The Distribution Lever: More Channels Isn't Better — The Right Mix Is
+
+Adding channels is easy. Open a Ctrip store, list on Meituan, put one on Fliggy — live in three days. Channel management is hard.
+
+The core challenge in channel management is: each channel has its own rules and cost structure. OTA commissions are high, but so is their customer acquisition efficiency. Direct channels have zero commission but require operational investment. Corporate accounts are stable but contract management is complex. Membership programs are long-term assets but need constant activation.
+
+Putting these four channel types together isn't about addition — it's about weight allocation.
+
+The most extreme case I've seen: a mid-range hotel in a third-tier city was simultaneously listed on 7 OTA platforms, but each platform averaged fewer than 50 room nights per month. All 7 platforms combined generated less than 15% of total revenue — yet commission expenses consumed 19% of room revenue. In other words: maintaining 7 platforms consumed enormous operational resources while delivering minimal returns. Consolidating to 1-2 strong platforms would have been far more effective.
+
+This is the concept of "channel efficiency."
+
+Channel efficiency has three core metrics:
+
+First, commission rate — what percentage of each room night's revenue goes to the channel? If it exceeds 18%, you should be concerned.
+
+Second, conversion rate — the ratio of page views to completed bookings. For OTA platforms below 2% conversion, either the traffic doesn't match your property or your listing content has issues.
+
+Third, repeat customer rate — what percentage of guests from this channel become repeat guests? Corporate account repeat rates typically exceed OTA individual traveler rates.
+
+Run these three metrics against your channel audit and you'll likely discover: half your channels are consuming operational resources while delivering minimal contribution.
+
+3. The Service Lever: Service Isn't a Cost — It's the Engine of Repeat Business
+
+Service, in many hotel managers' books, is classified as a "cost item." When cutting costs, the first thing to go is service training. When trimming budgets, customer retention programs get cut.
+
+This is one of the most common operational misconceptions.
+
+Service's value isn't reflected directly in revenue figures — it shows up in two indirect effects: repeat rate and word-of-mouth.
+
+Let me do the math for you: on OTA, acquiring a new customer costs (in commissions) roughly 15%-25% of room revenue; a returning guest generates platform-zero commission. If your membership repeat rate climbs from 15% to 25%, that's roughly equivalent to a 10% increase in effective room revenue (assuming 20% average commission rate).
+
+Service is the core variable driving that repeat rate.
+
+But service improvement doesn't require massive investment. MBCT's experience is: for most mid-range hotels, the service gap isn't in hardware — it's in execution.
+
+Specifically: the first three minutes of front desk reception, detail inspection during room cleaning, breakfast period guest response, complaint handling speed and attitude — get these four touchpoints right and service experience improves noticeably. No additional capital investment required. What it needs is training and inspection systems.
+
+Here's a simple self-check: every month, randomly sample 20 OTA negative reviews and categorize the complaint keywords. If "front desk attitude" appears more than 5 times, that's your highest-priority improvement — not buying new room amenities or renovating the lobby.
+
+4. How All Three Levers Work together: A Real Case Study
+
+Let me tell you what actually happened.
+
+A mid-range hotel in a second-tier city, 120 rooms, in its third year of operation. When the GM (let's call him Zhang) came to me, here's what the situation looked like: 60% occupancy, ADR around 280 RMB, RevPAR about 168 RMB, OTA over 55% of revenue, membership repeat rate 12%, monthly net loss approximately 80,000 RMB.
+
+What Zhang had done previously: cut rates once, added one OTA platform, raised employee benefits once.
+
+The result? After the rate cut, ADR dropped to 260 RMB, occupancy briefly climbed to 68%, then fell back to 62%, and OTA share actually increased to 58%.
+
+My solution for Zhang centered on all three levers moving together.
+
+Pricing: Restructured the rate system, established a BAR baseline, cancelled all promotional rates below BAR, and introduced tiered pricing agreements for corporate clients, incentivizing advance bookings.
+
+Distribution: Shut down two underperforming OTA platforms (commission rate above 22%, conversion rate below 1.5%), concentrated operational energy on Ctrip and Meituan as the two primary platforms; simultaneously launched official website and mini-program redesign with member-exclusive rates, setting a direct channel share target to grow from 5% to 20%.
+
+Service: Retrained front desk staff on "first three minutes" SOP; established a 24-hour guest complaint follow-up mechanism; conducted monthly random inspections of 10 guest rooms for cleanliness standards.
+
+Three months later: occupancy stabilized at 65%, ADR recovered to 295 RMB, OTA share dropped to 45%, direct sales share grew to 12%, membership repeat rate climbed from 12% to 21%. RevPAR approximately 192 RMB, up roughly 14% quarter-over-quarter, achieving monthly break-even.
+
+Six-month final results: occupancy 68%, ADR 305 RMB, RevPAR approximately 207 RMB, OTA 40%, direct sales 18%, membership repeat rate 26%, monthly net profit approximately 60,000 RMB.
+
+This is the result of three levers moving together. Any single action — rate adjustment, channel pruning, or service training — would not have produced these results.
+
+Conclusion
+
+The three levers aren't a choice of one or the other — they move together.
+
+If you can only do one thing right now, my recommendation: start with a channel audit. Pull the three metrics — commission rate, conversion rate, repeat customer rate — and you've already taken the most important step. Because the data will show you exactly where the problem lies.
+
+If you can do two things: on top of the channel audit, add rate baseline mapping.
+
+If you're willing to invest serious effort: do all three. But be prepared — coordinated results take time. Usually three to six months.
+
+Single-point optimization just makes you busier with less to show for it. Three-lever coordination is what gets operations back on track.
+
+Author: MBCT (MarvelBros C&T)
+
+About: MBCT specializes in comprehensive hotel industry solutions and consulting services, dedicated to driving hotel performance through the dual-track improvement of "Efficiency + Experience".
+
+Services: Branding & Pricing | Client Reception | On-site Negotiation | Implementation | Financial Analysis | Data Analytics | Logistics
+
+Website: www.marvelbros.com | Get free online consultation and diagnostic reports
+
+Email: contactme@marvelbros.com / info@marvelbros.com
+
+Guan Xiang Jing Dao: www.marvelbros.com/gxjzd`,
+    category: "operations",
+    tags: ["运营升级", "价格策略", "渠道管理", "服务提升"],
+    author: "MBCT（MarvelBros C&T）",
+    date: "2026-05-20",
+    readTime: 12,
+    views: 0, likes: 0, comments: 0,
+  },
 
 ]
 
