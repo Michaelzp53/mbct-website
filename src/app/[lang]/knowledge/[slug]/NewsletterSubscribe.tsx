@@ -14,7 +14,7 @@ export default function NewsletterSubscribe({ lang }: NewsletterSubscribeProps) 
   const [isSuccess, setIsSuccess] = useState(false)
 
   const texts = {
-    freeTag: isZh ? '免费订阅' : 'Free Subscription',
+    insightTag: isZh ? '每周洞察' : 'Weekly Insights',
     title: isZh ? '获取每周行业洞察' : 'Get Weekly Industry Insights',
     subtitle: isZh ? '留下邮箱，每周获取最新文章推送与行业报告' : 'Leave your email for weekly article updates and industry reports',
     placeholder: isZh ? '输入您的邮箱' : 'Enter your email',
@@ -56,7 +56,7 @@ export default function NewsletterSubscribe({ lang }: NewsletterSubscribeProps) 
       <div className="text-center mb-6">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-4">
           <Mail className="w-4 h-4 text-[#f59e0b]" />
-          <span className="text-[#f59e0b] text-sm font-medium">{texts.freeTag}</span>
+          <span className="text-[#f59e0b] text-sm font-medium">{texts.insightTag}</span>
         </div>
         <h3 className="text-xl font-bold text-foreground mb-2">{texts.title}</h3>
         <p className="text-muted-foreground text-sm">{texts.subtitle}</p>

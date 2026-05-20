@@ -121,7 +121,7 @@ export default function RegisterModal({ isOpen, onClose, onSuccess, articleTitle
             <div className="mt-6 pt-6 border-t border-gray-700">
               <p className="text-sm text-gray-400 mb-3">注册即表示同意我们的《服务条款》和《隐私政策》</p>
               <div className="flex flex-wrap gap-2">
-                {['解锁完整文章', '免费订阅周报', '优先获取新内容'].map((benefit) => (
+                {['解锁完整文章', '订阅每周洞察', '优先获取新内容'].map((benefit) => (
                   <span key={benefit} className="px-3 py-1 bg-[#0f172a] rounded-full text-xs text-[#f59e0b]">
                     {benefit}
                   </span>

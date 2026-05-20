@@ -100,8 +100,8 @@ export default async function PrivacyPage({
               </h2>
               <p>
                 {lang === 'zh'
-                  ? '如对本隐私政策有任何疑问，请联系我们：contactme@marvelbros.com'
-                  : 'If you have any questions about this Privacy Policy, please contact us: contactme@marvelbros.com'}
+                  ? '如对本隐私政策有任何疑问，请联系我们：info@marvelbros.com'
+                  : 'If you have any questions about this Privacy Policy, please contact us: info@marvelbros.com'}
               </p>
             </section>
           </div>

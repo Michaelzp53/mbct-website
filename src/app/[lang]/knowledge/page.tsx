@@ -1023,13 +1023,13 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="lg:w-2/3">
                 <span className="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-[#f59e0b]/20 dark:text-[#f59e0b] text-sm font-medium mb-4">
-                  热门话题
+                  {isZh ? '热门话题' : 'Featured'}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                  {featuredArticle.title}
+                  {isZh ? featuredArticle.title : ((featuredArticle as {titleEn?: string}).titleEn || featuredArticle.title)}
                 </h2>
                 <p className="text-muted-foreground mb-6 text-lg">
-                  {featuredArticle.summary}
+                  {isZh ? featuredArticle.summary : ((featuredArticle as {summaryEn?: string}).summaryEn || featuredArticle.summary)}
                 </p>
                 <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-6">
                   <span className="flex items-center gap-2">
@@ -1042,7 +1042,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                   </span>
                   <span className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    {featuredArticle.readTime}分钟
+                    {featuredArticle.readTime}{isZh ? '分钟' : ' min read'}
                   </span>
                 </div>
                 <Link
@@ -1050,7 +1050,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                   className="inline-flex items-center px-6 py-3 text-foreground font-bold rounded-lg transition-all"
                   style={{ background: 'linear-gradient(135deg, #4285f4, #34a853, #fbbc04, #ea4335)' }}
                 >
-                  阅读全文
+                  {isZh ? '阅读全文' : 'Read More'}
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </div>

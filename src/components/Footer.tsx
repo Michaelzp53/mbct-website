@@ -46,11 +46,11 @@ export function Footer({ lang, dict }: FooterProps) {
               {f.description}
             </p>
             <div className="flex flex-col gap-2 mt-6">
-              <a href="mailto:contactme@marvelbros.com" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
+              <a href="mailto:info@marvelbros.com" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
                 <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0 2 .9 2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
-                <span>contactme@marvelbros.com</span>
+                <span>info@marvelbros.com</span>
               </a>
               <a href="tel:18941579333" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
                 <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">

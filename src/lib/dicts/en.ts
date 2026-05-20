@@ -212,14 +212,14 @@ export const en = {
     },
   },
   cta: {
-    title: 'Ready to Grow Your Hotel?',
-    subtitle: 'MBCT Marvelbros Commercial Technology—AI-powered full-lifecycle hospitality advisory. Book a free growth diagnosis: 30-60 minutes to understand your current situation and needs.',
-    cta1: 'Book a Diagnosis',
+    title: 'If you are already thinking about the next move, start with one clear conversation',
+    subtitle: 'Before discussing many solutions, it is more important to clarify the real issue in the project. MBCT will first help identify the problem clearly, then choose the most suitable path forward.',
+    cta1: 'Book an Initial Project Conversation',
     cta2: 'Call: 18941579333',
   },
   contact: {
-    title: 'Contact Us',
-    subtitle: 'Start Your Hotel Digital Transformation Journey',
+    title: 'Clarify the current project situation first, then decide what should happen next',
+    subtitle: 'You do not need a perfect brief to start. Share the project stage, your main objective, and the hardest issue to move forward, and we will help you decide the most suitable point of entry.',
     form: {
       name: 'Your Name',
       phone: 'Phone Number',
@@ -248,7 +248,7 @@ export const en = {
     ],
     info: {
       phone: '18941579333',
-      email: 'contactme@marvelbros.com',
+      email: 'info@marvelbros.com',
       address: 'Hong Kong SAR, China (HQ) | Futian District, Shenzhen (Office)',
     },
   },

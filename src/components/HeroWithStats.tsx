@@ -137,25 +137,24 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-primary text-sm font-medium">
-                {isZh ? 'AI 原生 · 数据驱动 · 陪跑式服务' : 'AI-Native · Data-Driven · Partnership'}
+                {isZh ? '酒店项目判断 · 经营增长 · AI 落地' : 'Hotel judgment · Operating growth · AI implementation'}
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              {isZh ? '让数据成为' : 'Let Data Be Your'}
+              {isZh ? '帮助酒店把关键问题' : 'Helping hotels make'}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">
-                {isZh ? '增长的灯塔' : 'Growth Beacon'}
+                {isZh ? '看清、定准、推进' : 'critical decisions clearer'}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-xl mx-auto lg:mx-0 drop-shadow">
-              {isZh ? 'AI 原生植入的文旅酒店全域' : 'AI-native hospitality data'}
-              <span className="text-amber-400 font-medium">{isZh ? '"数据精益化管理"终端' : ' "Lean Management" Terminal'}</span>
-              <br />
-              {isZh ? '陪跑式服务，风险共担' : 'Partnership service, shared risk'}
+              {isZh
+                ? '从投前判断，到经营增长，再到 AI 落地，MBCT 不是为了把事情做得更复杂，而是为了让关键问题看得更清楚、推进得更有效。'
+                : 'From pre-investment judgment to operating growth and AI implementation, MBCT exists to make critical issues clearer and progress more effective.'}
             </p>
 
             {/* CTA Buttons */}
@@ -164,14 +163,14 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
                 href={`/${lang}/contact?type=plan`}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-amber-500/25 transition-all"
               >
-                {isZh ? '获取定制方案' : 'Get Custom Plan'}
+                {isZh ? '预约项目沟通' : 'Book an Initial Project Conversation'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href={`/${lang}/services`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-medium rounded-xl hover:border-amber-400 hover:text-amber-400 transition-all"
               >
-                {isZh ? '了解服务' : 'Our Services'}
+                {isZh ? '查看解决方案' : 'View Solutions'}
               </Link>
             </div>
           </div>
@@ -183,7 +182,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
               <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-amber-400/20 via-transparent to-purple-500/20 opacity-50" />
               
               <div className="relative">
-                <h3 className="text-lg font-medium text-slate-300 mb-6">{isZh ? '客户业绩提升' : 'Client Performance'}</h3>
+                <h3 className="text-lg font-medium text-slate-300 mb-6">{isZh ? '项目判断与经营结果' : 'Project Judgment & Outcomes'}</h3>
                 
                 <div className="grid grid-cols-2 gap-6">
                   {stats.map((stat) => {
@@ -208,7 +207,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
                 {/* Bottom Note */}
                 <div className="mt-6 pt-6 border-t border-white/10 text-center">
                   <p className="text-sm text-slate-300">
-                    {isZh ? '基于 ' : 'Based on '} <span className="text-amber-400">300+</span> {isZh ? '家酒店真实数据' : 'Real Hotels'}
+                    {isZh ? '基于 ' : 'Based on '} <span className="text-amber-400">300+</span> {isZh ? '家酒店与项目场景的持续观察' : 'hotel and project scenarios observed over time'}
                   </p>
                 </div>
               </div>

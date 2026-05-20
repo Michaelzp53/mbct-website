@@ -1,144 +1,189 @@
 import Link from 'next/link'
-import { ArrowRight, Users, Target, TrendingUp, Shield } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Compass, Target, TrendingUp, Shield, Users, Briefcase, Building2 } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
-import BentoServices from '@/components/BentoServices'
 import ScrollFade from '@/components/scroll-fade'
 import SectionWithBg from '@/components/SectionWithBg'
-import { getDict } from '@/lib/dicts'
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
-  const dict = getDict(lang)
-  
-  const personas = [
+  const isZh = lang === 'zh'
+
+  const capabilityGroups = [
     {
-      title: lang === 'zh' ? '投资人' : 'Investors',
-      subtitle: lang === 'zh' ? '孤独的决策者' : 'The Lone Decision Maker',
-      quote: lang === 'zh' 
-        ? '几千万的投资，市场调研的数据却停留在半年前。您需要的不是另一个写报告的顾问，而是一个能陪您扛结果的伙伴。'
-        : 'Your feasibility study data is six months stale. What you need isn\'t another report-writing consultant—it\'s a partner who shares your risk.',
+      icon: Compass,
+      title: isZh ? '投前决策' : 'Investment Decisions',
+      summary: isZh
+        ? '判断项目该不该投、怎么投、风险在哪里。'
+        : 'Clarify whether a project should move forward, how it should be structured, and where the risks sit.',
+      items: isZh
+        ? ['可行性研究', '市场与竞争判断', '投资测算与回报模型']
+        : ['Feasibility studies', 'Market and competitive assessment', 'Return modeling and investment scenarios'],
+      color: '#4285f4',
     },
     {
-      title: lang === 'zh' ? '经营管理者' : 'Hotel Managers',
-      subtitle: lang === 'zh' ? '被困住的总经理' : 'The Trapped GM',
-      quote: lang === 'zh'
-        ? 'OTA的账单像流水，70%的订单，15%的佣金，一年200万就这么流走了。您需要的不是更多工具，是一个7×24小时的AI运营团队。'
-        : '70% of your bookings through OTAs at 15% commission—that\'s ¥2M flowing out the door annually. What you need isn\'t more tools, it\'s a 24/7 AI operations team.',
+      icon: TrendingUp,
+      title: isZh ? '经营增长' : 'Operating Growth',
+      summary: isZh
+        ? '围绕 RevPAR、直销、复购与团队执行，把增长做成持续系统。'
+        : 'Build a repeatable system around RevPAR, direct bookings, retention, and execution discipline.',
+      items: isZh
+        ? ['运营诊断与增长', '私域与会员增长', '品牌定位与升级']
+        : ['Operations diagnosis and growth', 'Private-domain and membership growth', 'Brand positioning and upgrades'],
+      color: '#34a853',
     },
     {
-      title: lang === 'zh' ? '创始人' : 'Founders',
-      subtitle: lang === 'zh' ? '理想主义者的困境' : 'The Idealist\'s Dilemma',
-      quote: lang === 'zh'
-        ? '您想做一家有故事、有温度、有灵魂的酒店。情怀和盈利，可以兼得。我们用数据找到您的「审美niche」。'
-        : 'You want to build a hotel with soul—story, warmth, and character. Profit and passion don\'t have to be opposites. We find your aesthetic niche through data.',
-    },
-  ]
-  
-  const team = [
-    {
-      letter: 'M',
-      title: lang === 'zh' ? 'Marvel / 创始人' : 'Marvel / Founder',
-      desc: lang === 'zh' 
-        ? '酒店行业需要一次革命，而不是改良。10年咨询经验，坚信数据驱动的力量。'
-        : 'The hotel industry needs a revolution, not incremental tweaks. 10 years of consulting experience, unwavering belief in data-driven decisions.',
+      icon: Shield,
+      title: isZh ? 'AI 落地' : 'AI Implementation',
+      summary: isZh
+        ? '把 AI 从概念变成经营动作、数据机制与组织效率。'
+        : 'Turn AI from a concept into operating routines, management visibility, and team efficiency.',
+      items: isZh
+        ? ['AI 管理系统', '数据看板与流程机制', '陪跑式顾问支持']
+        : ['AI management systems', 'Dashboards and operating mechanisms', 'Execution partnership and advisory support'],
       color: '#f59e0b',
-    },
-    {
-      letter: 'B',
-      title: lang === 'zh' ? 'Business / 商业筹划总监' : 'Business / Business Director',
-      desc: lang === 'zh'
-        ? '好的战略必须能落地，好的落地必须有效果。前顶级投行分析师。'
-        : 'Good strategy means nothing without execution. Good execution means nothing without results. Former top-tier investment bank analyst.',
-      color: '#3b82f6',
-    },
-    {
-      letter: 'C',
-      title: lang === 'zh' ? 'Consultant / 资深顾问团队' : 'Consultant / Senior Advisory Team',
-      desc: lang === 'zh'
-        ? '每一个数据背后，都是一个真实的人。5位10年+经验酒店行业专家。'
-        : 'Behind every data point is a real person. 5 senior hotel industry experts with over a decade of experience each.',
-      color: '#22c55e',
-    },
-    {
-      letter: 'T',
-      title: lang === 'zh' ? 'Technical / 技术交付团队' : 'Technical / Tech Delivery Team',
-      desc: lang === 'zh'
-        ? '技术的价值，是让复杂变简单。基于OpenClaw自研AI Copilot系统。'
-        : 'The value of technology is making the complex simple. Built on OpenClaw\'s proprietary AI Copilot system.',
-      color: '#8b5cf6',
     },
   ]
 
-  const ctaLink = `/${lang}/contact`
-  
+  const fitCases = [
+    isZh ? '新项目需要判断是否值得投、如何筹开更稳。' : 'A new project needs sharper go/no-go judgment and a more stable opening path.',
+    isZh ? '存量酒店增长遇到瓶颈，RevPAR、直销或复购停滞。' : 'An existing hotel has stalled on RevPAR, direct bookings, or repeat business.',
+    isZh ? '团队执行很忙，但数据、节奏与结果没有形成闭环。' : 'The team is active, but data, operating rhythm, and results are not yet connected.',
+  ]
+
+  const whyMbct = [
+    {
+      icon: Briefcase,
+      title: isZh ? '既懂投资，也懂经营' : 'Understands investment and operations',
+      desc: isZh
+        ? '不是只会写报告，也不是只会做系统，而是把投前判断、经营动作与后续执行放在同一张图里。'
+        : 'Not just reports and not just software. We connect investment judgment, operating actions, and implementation in one commercial logic.',
+    },
+    {
+      icon: Building2,
+      title: isZh ? '只做酒店，不做泛咨询' : 'Hospitality-focused, not generic consulting',
+      desc: isZh
+        ? '品牌、流量、收益、组织、成本都围绕酒店经营场景展开，更容易落地。'
+        : 'Brand, traffic, revenue, teams, and cost structures are all handled through real hospitality operating scenarios.',
+    },
+    {
+      icon: Users,
+      title: isZh ? '不是卖工具，而是盯结果' : 'Built around outcomes, not tools',
+      desc: isZh
+        ? '先判断问题本质，再决定是做诊断、做方案，还是进入完整合作。'
+        : 'We start by diagnosing the real issue, then decide whether the right next step is advice, a diagnostic review, or a full engagement.',
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-background">
       <HeroWithStats lang={lang} />
-      <BentoServices lang={lang} />
-
-      <SectionWithBg bgImage="/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg" overlayOpacity={0.88}>
-        <ScrollFade>
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
-              <Users className="w-4 h-4 text-primary" />
-              <span className="text-primary text-sm font-medium">{lang === 'zh' ? '理解 · 共情 · 解决' : 'Understand · Empathize · Solve'}</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{lang === 'zh' ? '我们懂你的困境' : 'We Understand Your Challenges'}</h2>
-            <p className="text-slate-300">{lang === 'zh' ? '三种角色，三种痛点，一种解决方案' : 'Three Roles, Three Pain Points, One Solution'}</p>
-          </div>
-        </ScrollFade>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {personas.map((persona, index) => (
-            <ScrollFade key={index} delay={index * 150}>
-              <div className="p-6 rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-2">{persona.title}</h3>
-                <p className="text-amber-400 mb-3 text-sm">{persona.subtitle}</p>
-                <p className="text-slate-300 text-sm italic leading-relaxed">“{persona.quote}”</p>
-              </div>
-            </ScrollFade>
-          ))}
-        </div>
-      </SectionWithBg>
 
       <SectionWithBg bgImage="/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg" overlayOpacity={0.88}>
         <ScrollFade>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{lang === 'zh' ? 'MBCT 增长飞轮' : 'MBCT Growth Flywheel'}</h2>
-            <p className="text-slate-300 max-w-2xl mx-auto text-sm">{lang === 'zh' ? '从洞察到规模化，构建酒店增长的完整闭环' : 'From insight to scale—building the complete hotel growth loop'}</p>
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
+              <Target className="w-4 h-4 text-primary" />
+              <span className="text-primary text-sm font-medium">
+                {isZh ? '从业务罗列，回到增长主线' : 'From service lists back to the growth logic'}
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {isZh ? 'MBCT 的核心能力，不止是做很多事' : 'MBCT is not defined by doing many things'}
+            </h2>
+            <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+              {isZh
+                ? '我们更擅长的是：把酒店投资判断、经营增长和 AI 落地，组织成一套能执行、能复盘、能持续优化的增长系统。'
+                : 'What matters more is our ability to organize hotel investment judgment, operating growth, and AI implementation into one system that can be executed, reviewed, and improved.'}
+            </p>
           </div>
         </ScrollFade>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <ScrollFade delay={0}><div className="p-5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10"><div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#4285f420' }}><Target className="w-5 h-5" style={{ color: '#4285f4' }} /></div><h3 className="text-lg font-bold text-white mb-1">{lang === 'zh' ? '洞察模块' : 'Insight Module'}</h3><p className="text-xs text-amber-400 mb-2">{lang === 'zh' ? '科学决策层' : 'Data-Driven'}</p><p className="text-slate-300 text-xs">{lang === 'zh' ? 'AI 可行性研究、诊断，让决策有数据支撑' : 'AI feasibility studies and diagnostics'}</p></div></ScrollFade>
-          <ScrollFade delay={100}><div className="p-5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10"><div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#34a85320' }}><TrendingUp className="w-5 h-5" style={{ color: '#34a853' }} /></div><h3 className="text-lg font-bold text-white mb-1">{lang === 'zh' ? '增长引擎' : 'Growth Engine'}</h3><p className="text-xs text-amber-400 mb-2">{lang === 'zh' ? '系统驱动层' : 'System-Driven'}</p><p className="text-slate-300 text-xs">{lang === 'zh' ? 'AI 管理、私域运营，数据驱动增长' : 'AI PMS and private domain ops'}</p></div></ScrollFade>
-          <ScrollFade delay={200}><div className="p-5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10"><div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#f59e0b20' }}><Shield className="w-5 h-5" style={{ color: '#f59e0b' }} /></div><h3 className="text-lg font-bold text-white mb-1">{lang === 'zh' ? '规模化模块' : 'Scale Module'}</h3><p className="text-xs text-amber-400 mb-2">{lang === 'zh' ? '资产沉淀层' : 'Asset Building'}</p><p className="text-slate-300 text-xs">{lang === 'zh' ? '品牌创建、效果跟进，增长能力资产化' : 'Brand building and growth assets'}</p></div></ScrollFade>
-          <ScrollFade delay={300}><div className="p-5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10"><div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: '#764ba220' }}><Users className="w-5 h-5" style={{ color: '#764ba2' }} /></div><h3 className="text-lg font-bold text-white mb-1">{lang === 'zh' ? '支撑服务' : 'Support'}</h3><p className="text-xs text-amber-400 mb-2">{lang === 'zh' ? '基础服务层' : 'Foundation'}</p><p className="text-slate-300 text-xs">{lang === 'zh' ? '顾问、融资、行业研究，全周期陪伴' : 'Consulting, financing, research'}</p></div></ScrollFade>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {capabilityGroups.map((group, index) => {
+            const Icon = group.icon
+            return (
+              <ScrollFade key={group.title} delay={index * 120}>
+                <div className="h-full rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-white/10 p-6">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${group.color}22` }}
+                  >
+                    <Icon className="w-6 h-6" style={{ color: group.color }} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{group.title}</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-5">{group.summary}</p>
+                  <div className="space-y-3">
+                    {group.items.map((item) => (
+                      <div key={item} className="flex items-start gap-3 text-sm text-slate-200">
+                        <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ScrollFade>
+            )
+          })}
         </div>
       </SectionWithBg>
 
-      <SectionWithBg bgImage="/hero-hung-li-1HbWj9BDbjE-unsplash.jpg" overlayOpacity={0.88}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <SectionWithBg bgImage="/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg" overlayOpacity={0.88}>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
           <ScrollFade>
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 mb-4">
-                <Shield className="w-4 h-4 text-amber-400" />
-                <span className="text-amber-400 text-sm font-medium">{lang === 'zh' ? '效果跟进' : 'Performance Tracking'}</span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{lang === 'zh' ? '以结果为尺，量增长之路' : 'Measured by Results, Growth by Design'}</h2>
-              <p className="text-slate-300 mb-5 text-sm">{lang === 'zh' ? '真正的伙伴关系建立在共同的成果之上。当您的酒店增长时，我们才值得被认可。' : 'True partnerships are built on shared outcomes. We only earn our worth when your hotel grows.'}</p>
-              <div className="space-y-3 mb-5">
-                <div className="flex items-start gap-3"><div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5"><span className="text-slate-900 text-xs font-bold">1</span></div><p className="text-slate-300 text-sm">{lang === 'zh' ? '诊断阶段：免费/低价，确诊增长机会' : 'Diagnosis: Free/low cost to identify opportunities'}</p></div>
-                <div className="flex items-start gap-3"><div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5"><span className="text-slate-900 text-xs font-bold">2</span></div><p className="text-slate-300 text-sm">{lang === 'zh' ? '方案阶段：成本价，客户认可机会' : 'Solution: Cost-plus—only succeeds if you succeed'}</p></div>
-                <div className="flex items-start gap-3"><div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5"><span className="text-slate-900 text-xs font-bold">3</span></div><p className="text-slate-300 text-sm">{lang === 'zh' ? '承诺可量化的结果，直到达标为止' : 'We commit to measurable results'}</p></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                {isZh ? '为什么是 MBCT？' : 'Why MBCT?'}
+              </h2>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mb-8">
+                {isZh
+                  ? '传统顾问常停在建议，纯技术公司常停在工具。MBCT 更适合需要判断、执行与复盘同时在线的酒店项目。'
+                  : 'Traditional advisors often stop at recommendations. Pure technology vendors often stop at tools. MBCT is built for hotel projects that need judgment, execution, and review working together.'}
+              </p>
+              <div className="space-y-4">
+                {whyMbct.map((item) => {
+                  const Icon = item.icon
+                  return (
+                    <div key={item.title} className="rounded-2xl bg-slate-900/60 border border-white/10 p-5">
+                      <div className="flex items-start gap-4">
+                        <div className="w-11 h-11 rounded-xl bg-amber-400/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-amber-400" />
+                        </div>
+                        <div>
+                          <h3 className="text-white font-semibold mb-2">{item.title}</h3>
+                          <p className="text-slate-300 text-sm leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </ScrollFade>
-          <ScrollFade delay={150}>
-            <div className="bg-slate-900/60 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <h3 className="text-lg font-bold text-white mb-4">{lang === 'zh' ? '我们的承诺' : 'Our Commitment'}</h3>
+
+          <ScrollFade delay={140}>
+            <div className="rounded-2xl bg-slate-900/60 border border-white/10 p-6 md:p-7">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/20 mb-5">
+                <Users className="w-4 h-4 text-amber-400" />
+                <span className="text-amber-400 text-sm font-medium">
+                  {isZh ? '适合什么项目先来聊' : 'Good fit for an initial conversation'}
+                </span>
+              </div>
               <div className="space-y-4">
-                <div className="flex items-start gap-3"><div className="w-8 h-8 rounded-full bg-amber-400/10 flex items-center justify-center flex-shrink-0"><Target className="w-4 h-4 text-amber-400" /></div><div><h4 className="text-white font-medium text-sm">{lang === 'zh' ? '目标导向' : 'Goal Oriented'}</h4><p className="text-slate-300 text-xs">{lang === 'zh' ? '以可量化的增长目标为合作基础' : 'Measurable growth targets as partnership foundation'}</p></div></div>
-                <div className="flex items-start gap-3"><div className="w-8 h-8 rounded-full bg-emerald-400/10 flex items-center justify-center flex-shrink-0"><Shield className="w-4 h-4 text-emerald-400" /></div><div><h4 className="text-white font-medium text-sm">{lang === 'zh' ? '风险共担' : 'Risk Sharing'}</h4><p className="text-slate-300 text-xs">{lang === 'zh' ? '效果未达预期，我们共同复盘调整，直到达成目标' : 'If results fall short, we review and adjust together until targets are met'}</p></div></div>
-                <div className="flex items-start gap-3"><div className="w-8 h-8 rounded-full bg-blue-400/10 flex items-center justify-center flex-shrink-0"><TrendingUp className="w-4 h-4 text-blue-400" /></div><div><h4 className="text-white font-medium text-sm">{lang === 'zh' ? '持续精进' : 'Continuous Improvement'}</h4><p className="text-slate-300 text-xs">{lang === 'zh' ? '达成目标后，我们继续寻找提升空间，追求更好表现' : 'After reaching targets, we keep finding ways to improve and perform even better'}</p></div></div>
+                {fitCases.map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <Link
+                  href={`/${lang}/services`}
+                  className="inline-flex items-center gap-2 text-amber-400 font-semibold hover:opacity-80 transition-opacity"
+                >
+                  {isZh ? '查看解决方案' : 'See the solution structure'}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </ScrollFade>
@@ -148,13 +193,31 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <SectionWithBg bgImage="/hero-rod-long-2P_ifaetDm0-unsplash.jpg" overlayOpacity={0.88}>
         <ScrollFade>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{lang === 'zh' ? '准备好让酒店增长了吗？' : 'Ready to Grow Your Hotel?'}</h2>
-            <p className="text-slate-300 mb-6 text-sm">{lang === 'zh' ? '预约一次免费的增长诊断' : 'Book a free growth diagnosis'}</p>
-            <Link href={ctaLink} className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all">{lang === 'zh' ? '立即预约诊断' : 'Book Free Diagnosis'}<ArrowRight className="ml-2 w-4 h-4" /></Link>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              {isZh ? '如果项目正在卡住，就从一次项目沟通开始' : 'If the project is stuck, start with an initial project conversation'}
+            </h2>
+            <p className="text-slate-300 mb-6 text-sm md:text-base leading-relaxed">
+              {isZh
+                ? '先把项目现状、目标和关键卡点讲清楚，再决定更适合做诊断、做方案，还是进入完整合作。'
+                : 'Share the current situation, target outcomes, and key bottlenecks first. Then decide whether the right next step is a diagnostic review, a working plan, or a full engagement.'}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href={`/${lang}/contact?type=plan`}
+                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all"
+              >
+                {isZh ? '预约项目沟通' : 'Book an Initial Project Conversation'}
+              </Link>
+              <Link
+                href={`/${lang}/services`}
+                className="inline-flex items-center justify-center px-6 py-3 border border-white/25 text-white rounded-lg hover:border-amber-400 hover:text-amber-400 transition-colors"
+              >
+                {isZh ? '查看解决方案' : 'View Solutions'}
+              </Link>
+            </div>
           </div>
         </ScrollFade>
       </SectionWithBg>
     </div>
   )
 }
-
