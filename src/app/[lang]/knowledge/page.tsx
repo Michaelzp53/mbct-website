@@ -530,6 +530,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-04-22新增1篇
   const reports = [
     {
+      id: 414,
+      type: 'report',
+      title: '存量时代，酒店增长不靠多开店，而靠把单店模型做厚',
+      slug: 'inventory-era-hotel-growth-2026-05-21',
+      summary: '2026年，中国酒店业正站在一个前所未有的十字路口。行业规模持续膨胀，但无数业主的真实体感是：酒店越开越多，利润却没有同步变厚。本文深度分析存量时代酒店增长的核心逻辑——把单店模型做厚。',
+      firstLine: '2026年，中国酒店业正站在一个前所未有的十字路口。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-21',
+      readTime: '15分钟',
+      tag: '趋势分析',
+      featured: true,
+    },
+    {
       id: 409,
       type: 'report',
       title: '2026年Q2酒店行业趋势报告：存量竞争深水区，谁在突围？',
