@@ -4,533 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import SearchBox from './SearchBox'
 import PageHero from '@/components/PageHero'
-
-// 文章数据
-const articlesData = [
-  {
-    id: 36,
-    slug: 'team-building-2026-05-13-2',
-    titleZh: '【管享精道-团队建设】酒店员工培训"降本不降质"的实战路径：AI时代的新人养成公式',
-    titleEn: 'Team Building: Cost-Effective Hotel Staff Training in the AI Era',
-    summaryZh: '酒店员工培训"降本不降质"的实战路径：AI时代的新人养成公式',
-    summaryEn: '',
-    category: 'team-building',
-    date: '2026-05-13',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 37,
-    slug: 'cost-optimization-2026-05-13-3',
-    titleZh: '【管享精道-成本优化】2026酒店成本优化实战指南：从"砍预算"到"智能降本"的5个关键跃迁',
-    titleEn: 'Cost Optimization: 5 Key Leaps from Budget Cutting to Smart Cost Reduction',
-    summaryZh: '2026酒店成本优化实战指南：从"砍预算"到"智能降本"的5个关键跃迁',
-    summaryEn: '',
-    category: 'cost-optimization',
-    date: '2026-05-13',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 38,
-    slug: 'investment-2026-05-13-4',
-    titleZh: '【管享精道-投资决策】酒店投资决策的3个核心维度：别让"感觉"杀死你的回报率',
-    titleEn: 'Investment Decision: 3 Core Dimensions for Hotel Investment',
-    summaryZh: '酒店投资决策的3个核心维度：别让"感觉"杀死你的回报率',
-    summaryEn: '',
-    category: 'investment',
-    date: '2026-05-13',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 39,
-    slug: 'sales-2026-05-13-5',
-    titleZh: '【管享精道-销售策略】酒店收益管理实战：动态定价的5个关键节点与OTA成本优化指南',
-    titleEn: 'Sales Strategy: Revenue Management and OTA Cost Optimization',
-    summaryZh: '酒店收益管理实战：动态定价的5个关键节点与OTA渠道成本优化指南',
-    summaryEn: '',
-    category: 'sales',
-    date: '2026-05-13',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 40,
-    slug: 'team-building-new-gm-five-pitfalls-2026-05-16',
-    titleZh: '【管享精道-团队建设】酒店总经理入职第一年最容易踩的五个坑',
-    titleEn: '【Guan Xiang Jing Dao - Team Building】The Five Pitfalls New Hotel General Managers Fall Into in Their First Year',
-    summaryZh: '# 前言',
-    summaryEn: '',
-    category: 'team',
-    date: '2026-05-16',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 41,
-    slug: 'preparation-ai-empowerment-hotel-opening-2026-05-16',
-    titleZh: '【管享精道-筹备筹开】AI赋能：助力酒店筹备开业的创新路径',
-    titleEn: '【Guan Xiang Jing Dao - Preparation】AI Empowerment: Innovative Paths for Hotel Preparation and Opening',
-    summaryZh: '# 前言',
-    summaryEn: '',
-    category: 'preparation',
-    date: '2026-05-16',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 42,
-    slug: 'operations-ai-hotel-industry-upgrade-2026-05-16',
-    titleZh: '【管享精道-运营提升】AI赋能酒店业运营提升：从数据驱动到可持续体验',
-    titleEn: '【Guan Xiang Jing Dao - Operations】AI-Empowered Hotel Operations: From Data-Driven to Sustainable Experience',
-    summaryZh: '# 前言',
-    summaryEn: '',
-    category: 'operations',
-    date: '2026-05-16',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 43,
-    slug: 'digital-platform-ai-staff-quality-2026-05-16',
-    titleZh: '【管享精道-素质提升】AI赋能：提升酒店员工素质的创新路径',
-    titleEn: '【Guan Xiang Jing Dao - Digital Platform】AI Empowerment: Innovative Paths to Enhance Hotel Staff Quality',
-    summaryZh: '酒店业务的核心竞争力越来越靠人。在数字化、AI纵深渗透的时代，如何让前线员工保持高素质、快速适应新技术，是提升整体服务质量的关键。本文从招聘、培训、绩效、文化四个维度，梳理AI赋能酒店员工素质提升的可操作路径。',
-    summaryEn: '',
-    category: 'digital',
-    date: '2026-05-16',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-
-  {
-    id: 117,
-    slug: 'hotel-wellness-transformation-guide',
-    titleZh: '【管享精道-运营升级】酒店康养化改造：从空间设计到服务体系的完整落地指南',
-    titleEn: 'Hotel Wellness Transformation: A Complete Guide from Space Design to Service System Implementation',
-    summaryZh: '2026年5月，万豪与Lefay合资、希尔顿西嘉亚太首店落地，康养疗愈酒店市场窗口期正在进行。本文从实操角度，系统梳理从空间设计到服务体系的完整落地框架：重新定义康养为营收引擎、五感协同的空间设计、从标准化到个性化的服务体系、分三阶段推进的落地路径。',
-    summaryEn: "In May 2026, Marriott's joint venture with Lefay and Hilton's Signia APAC debut confirm the wellness hotel market window is already here. This article systematically maps a complete implementation framework from space design to service systems.",
-    category: 'operations',
-    date: '2026-05-19',
-    readTime: 18,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 116,
-    slug: 'wellness-service-team-building',
-    titleZh: '【管享精道-素质提升】康养服务团队培养：从招募到进阶的完整路径',
-    titleEn: 'Building a Wellness Service Team: The Complete Path from Recruitment to Development',
-    summaryZh: '某度假酒店斥资打造高端康养中心，设施一流，半年后复购率却不足15%。根因不在硬件，在团队。本文拆解康养顾问的人才画像、精准招募渠道、三级培训体系、绩效考核权重和留存策略，提供从0到1构建康养团队的完整路径。',
-    summaryEn: 'A resort invested heavily in a wellness center with first-class facilities, yet its repurchase rate remained below 15% after six months. The root cause was the team. This article deconstructs the complete path to building a wellness service team.',
-    category: 'team',
-    date: '2026-05-19',
-    readTime: 10,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 115,
-    slug: 'wellness-hotel-development-key-decisions',
-    titleZh: '【管享精道-筹备筹开】康养酒店筹建：从选址到开业的关键决策节点',
-    titleEn: 'Health & Wellness Hotel Development: Key Decision Points from Site Selection to Opening',
-    summaryZh: '全球康养疗愈酒店市场2025年已达161.8亿美元，预计2032年将突破280.5亿美元。但康养酒店的筹建逻辑与传统酒店截然不同——从选址到开业，至少有五个决策节点决定了项目是"健康地活着"还是"开业即亏损"。',
-    summaryEn: 'The global wellness hotel market reached USD 16.18 billion in 2025 and is projected to exceed USD 28.05 billion by 2032. However, wellness hotel development logic differs fundamentally from traditional hotels.',
-    category: 'preparation',
-    date: '2026-05-19',
-    readTime: 12,
-    views: 0,
-    likes: 0,
-  },
-
-  {
-    id: 114,
-    slug: 'hotel-asset-repositioning-stock-era',
-    titleZh: '【管享精道-投资决策】存量时代酒店资产重塑：从「翻新」到「价值重构」的完整路径',
-    titleEn: 'Hotel Asset Repositioning in the Stock Era: From Renovation to Value Reconstruction',
-    summaryZh: '2026年，中国酒店业正式进入存量时代。新增供应减速、资产价格回调、消费结构分化——三个因素叠加，让"买地盖楼"的故事正式退场。本文拆解一家真实项目的完整路径：从接手一座经营了12年的三星级酒店，到它以四星级中端定位重新开业，RevPAR从180元提升至380元。',
-    summaryEn: 'In 2026, China\'s hospitality industry officially entered the stock era. This article deconstructs a real project: from taking over a 12-year-old three-star hotel to its reopening as a four-star mid-scale property, with RevPAR climbing from 180 RMB to 380 RMB.',
-    category: 'investment',
-    date: '2026-05-17',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 100,
-    slug: '2025-jiudian-touzi-renqing-xingshi-zhao-zhun-saidao',
-    titleZh: '2025酒店投资：认清形势，找准赛道',
-    titleEn: 'Hotel Investment in 2025: Read the Market, Find Your Niche',
-    summaryZh: '2025年的酒店投资市场，正在经历一场深刻的结构性调整。过去十年，酒店投资的核心逻辑是"地段+品牌=成功"，但在今天，这个公式已经不再成立。',
-    summaryEn: 'The hotel investment market in 2025 is undergoing a profound structural adjustment. For the past decade, the core logic of hotel investment was "location + brand = success." Today, that formula no longer holds.',
-    category: 'investment',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 101,
-    slug: 'guanxiangjingdao-de-qingxujiazhi-cong-fuwu-dao-xinling-gongming',
-    titleZh: '管享精道的情绪价值：从服务到心灵共鸣',
-    titleEn: 'The Emotional Value of Lean Insights: From Service to Spiritual Resonance',
-    summaryZh: '在标准化服务时代，酒店如何创造让人铭记的情绪价值？',
-    summaryEn: 'In the era of standardized service, how can hotels create memorable emotional value?',
-    category: 'investment',
-    date: '2026-05-11',
-    readTime: 12,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 102,
-    slug: 'wenhua-chenjinshi-tiyan-jiudianye-de-xin-jingzhengli',
-    titleZh: '文化沉浸式体验：酒店业的新竞争力',
-    titleEn: 'Cultural Immersive Experience: The New Competitive Edge in Hospitality',
-    summaryZh: '当硬件趋同，文化沉浸式体验成为酒店差异化的新战场。',
-    summaryEn: 'When hardware converges, cultural immersive experiences become the new battlefield for hotel differentiation.',
-    category: 'investment',
-    date: '2026-05-11',
-    readTime: 12,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 103,
-    slug: 'jiudian-touzi-huibaolv-zenme-suan',
-    titleZh: '酒店投资回报率怎么算？多数人第一步就错了',
-    titleEn: 'How to Calculate Hotel ROI? Most People Get the First Step Wrong',
-    summaryZh: '投资人算回报只算 RevPAR，忽略了隐性成本和退出机制。',
-    summaryEn: 'Investors calculate returns using only RevPAR, ignoring hidden costs and exit mechanisms.',
-    category: 'investment',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 104,
-    slug: 'cunliang-gaoduan-jiudian-fanhong-zhinan',
-    titleZh: '存量高端酒店翻红指南：华住"美好家族"模式拆解',
-    titleEn: 'Revitalizing Legacy Upscale Hotels: Deconstructing Huazhu\'s "Meihao Family" Model',
-    summaryZh: '大量存量高端酒店想改造但不知道从哪下手，没有资金又缺经验。',
-    summaryEn: 'Numerous legacy upscale hotels want to renovate but don\'t know where to start, lacking both funds and experience.',
-    category: 'preparation',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 105,
-    slug: 'jiudian-gaizao-bikeng-zhinan',
-    titleZh: '酒店改造避坑指南：那些年我们交过的学费',
-    titleEn: 'Hotel Renovation Pitfall Guide: Lessons We Paid For',
-    summaryZh: '改造失败的案例教训：设计不合理、机电不过关、预算超支。',
-    summaryEn: 'Lessons from renovation failures: unreasonable design, inadequate M&E, budget overruns.',
-    category: 'preparation',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 106,
-    slug: 'jiudian-nenghao-chengben-shendu-pouxi',
-    titleZh: '酒店能耗成本深度剖析：那些你以为正常的浪费，正在吃掉你的利润',
-    titleEn: 'Hotel Energy Costs Under the Microscope: The Waste You Think Is Normal Is Eating Your Profits',
-    summaryZh: '能源费用是酒店运营第二大成本，但多数业主只知道看账单，不知道能耗漏在哪、如何堵住。',
-    summaryEn: 'Energy costs are the second largest operating expense for hotels, yet most owners only look at bills without knowing where energy leaks or how to plug them.',
-    category: 'operations',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 107,
-    slug: 'jiudian-renli-zi-yuan-chengben-youhua',
-    titleZh: '酒店人力资源成本优化：不是裁员，而是让每个人产生更多价值',
-    titleEn: 'Hotel HR Cost Optimization: Not Layoffs, But Making Everyone More Valuable',
-    summaryZh: '人力成本占运营成本30-40%，但简单裁员伤害服务品质；如何在保证服务质量的同时优化人力成本。',
-    summaryEn: 'Labor costs account for 30-40% of operating expenses, but simple layoffs hurt service quality; how to optimize HR costs while maintaining service standards.',
-    category: 'operations',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 108,
-    slug: 'jiudian-shouru-zhiyou-fangfei',
-    titleZh: '酒店收入只有房费？是你没看到这三座金矿',
-    titleEn: 'Hotel Revenue Only from Room Rates? You\'re Missing Three Gold Mines',
-    summaryZh: '过度依赖客房收入，淡旺季波动大，投资人需要稳定现金流。',
-    summaryEn: 'Over-reliance on room revenue with high seasonal fluctuations; investors need stable cash flow.',
-    category: 'marketing',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 109,
-    slug: 'kefang-shangpinhua-guanli',
-    titleZh: '客房商品化管理：被忽视的利润增长点',
-    titleEn: 'Room Commoditization Management: An Overlooked Profit Growth Point',
-    summaryZh: '客房Minibar/售货机长期管理混乱，库存不清、补货不及时。',
-    summaryEn: 'Room minibar/vending machines are chronically mismanaged with unclear inventory and delayed restocking.',
-    category: 'marketing',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 110,
-    slug: 'jiudian-rencai-liushi-lu-gaoda-30',
-    titleZh: '酒店人才流失率高达30%：老板们到底在痛什么？',
-    titleEn: 'Hotel Talent Turnover at 30%: What Are Owners Really Worried About?',
-    summaryZh: '一线员工流动性大，培训成本高，好不容易培养出来的人留不住。',
-    summaryEn: 'High frontline turnover, expensive training costs, and difficulty retaining trained staff.',
-    category: 'team',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 111,
-    slug: 'cong-yongren-dao-yuren',
-    titleZh: '从"用人"到"育人"：酒店人才培养的底层逻辑',
-    titleEn: 'From "Using" to "Developing" People: The Fundamentals of Hotel Talent Development',
-    summaryZh: '培训流于形式，员工知道但做不到，标准化执行难。',
-    summaryEn: 'Training becomes formalistic; employees know but cannot execute, making standardization difficult.',
-    category: 'team',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 112,
-    slug: 'jiudian-fuwu-weishenme-yuelaiyue-leng',
-    titleZh: '酒店服务为什么越来越"冷"？找回人感温度的三个支点',
-    titleEn: 'Why Is Hotel Service Getting "Colder"? Three Pillars to Restore Human Warmth',
-    summaryZh: '标准化流程让服务变机械，客人感受不到温度，复购率低。',
-    summaryEn: 'Standardized processes make service mechanical; guests feel no warmth, leading to low repeat rates.',
-    category: 'operations',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 113,
-    slug: 'cong-biaozhunhua-dao-bei-ji-zhu',
-    titleZh: '从"标准化"到"被记住"：酒店情绪价值设计指南',
-    titleEn: 'From "Standardization" to "Being Remembered": A Hotel Emotional Value Design Guide',
-    summaryZh: '酒店都在讲服务标准化，但客人记住的是"那个瞬间"，如何设计情绪峰值。',
-    summaryEn: 'Hotels focus on service standardization, but guests remember "that moment" — how to design emotional peaks.',
-    category: 'operations',
-    date: '2026-05-11',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  // 2026-05-10 旧文章（14篇）
-  {
-    id: 1,
-    slug: 'hotel-investment-pitfalls-2026',
-    titleZh: '2026酒店投资：为什么有的酒店只赚热闹不赚钱？',
-    titleEn: 'Hotel Investment in 2026: Why Some Hotels Pack the House but Still Don\'t Make Money',
-    summaryZh: '陈总在苏州看中了一个地铁上盖物业，3500平米，位置绝佳。他找了三个 "懂行" 的朋友帮忙参谋。',
-    summaryEn: 'Mr. Chen had his eyes on a prime subway-adjacent property in Suzhou — 3,500 square meters, killer location.',
-    category: 'investment',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 2,
-    slug: 'hotel-reits-exit-strategy-2026',
-    titleZh: '酒店资产REITs时代来临：持有型项目的退出新路径',
-    titleEn: 'The Hotel Asset REITs Era: New Exit Paths for Held Properties',
-    summaryZh: '王总在2019年收购了一栋上海外高桥的物业，改造成精品酒店，估值2.3亿。',
-    summaryEn: 'Mr. Wang acquired a property in Shanghai\'s Waigaoqiao in 2019, converted it to a boutique hotel, valued at 230M yuan.',
-    category: 'investment',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 3,
-    slug: 'hotel-construction-timeline-72-checkpoints-2026',
-    titleZh: '筹建周期从14个月缩到10个月：72个检查点实战手册',
-    titleEn: 'Cutting Project Timelines from 14 Months to 10: A 72-Point Pre-Opening Checklist',
-    summaryZh: '孙总在杭州投资了一个酒店改造项目，物业是之前的一个快捷酒店，2200平米，他想把改成中端精选酒店。',
-    summaryEn: 'Mr. Sun invested in a hotel renovation project in Hangzhou, converting a former budget hotel to mid-scale.',
-    category: 'preparation',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 4,
-    slug: 'hotel-pms-selection-guide-2026',
-    titleZh: '新店PMS选型指南：2026年系统怎么选才不踩坑？',
-    titleEn: 'New Hotel PMS Selection Guide: How to Pick a 2026 System Without Getting Burned',
-    summaryZh: '张总在成都新开了一家80间客房的精品酒店，开业前三个月开始选PMS系统。',
-    summaryEn: 'Mr. Zhang opened an 80-room boutique hotel in Chengdu and started selecting a PMS three months before opening.',
-    category: 'preparation',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 5,
-    slug: 'hotel-gen-z-retention-dual-track-2026',
-    titleZh: '90后员工干不满3个月就辞职？双轨职业体系实战',
-    titleEn: 'Gen Z Employees Quitting Within 3 Months: A Dual-Track Career System That Actually Works',
-    summaryZh: '周经理在宁波经营一家68间客房的城市商务酒店，属于单体店，没有连锁品牌背书。',
-    summaryEn: 'Manager Zhou runs a 68-room urban business hotel in Ningbo, an independent property without chain brand backing.',
-    category: 'team',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 6,
-    slug: 'hotel-training-system-lifelong-learning-2026',
-    titleZh: '酒店培训体系：从"新兵训练营"到"终身学习"',
-    titleEn: 'Hotel Training Systems: From Boot Camp to Lifetime Learning',
-    summaryZh: '刘总在南京经营一家120间客房的商务酒店，员工60人。',
-    summaryEn: 'Mr. Liu runs a 120-room business hotel in Nanjing with 60 employees.',
-    category: 'team',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 7,
-    slug: 'hotel-ai-agent-intelligent-upgrade-2026',
-    titleZh: 'AI智能体时代：酒店从"数字化"到"智能化"的跃迁',
-    titleEn: 'The AI Agent Era: Hotels Making the Leap from Digital to Intelligent',
-    summaryZh: '张总在杭州经营一家150间客房的会议型酒店，客源结构是60%会议团、30%旅游散客、10%长住客。',
-    summaryEn: 'Mr. Zhang runs a 150-room conference hotel in Hangzhou. Guest mix: 60% conference groups, 30% tourist FITs, 10% long-stay.',
-    category: 'operations',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 8,
-    slug: 'hotel-data-driven-operations-2026',
-    titleZh: '从凭经验到凭数据：酒店运营决策的量化革命',
-    titleEn: 'From Gut Feel to Data: The Quant Revolution in Hotel Operations Decision-Making',
-    summaryZh: '陈总在成都经营一家100间客房的商务酒店，他在这个行业干了15年。',
-    summaryEn: 'Mr. Chen runs a 100-room business hotel in Chengdu. He has been in the industry for 15 years.',
-    category: 'operations',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 9,
-    slug: 'hotel-social-media-marketing-2026',
-    titleZh: '抖音小红书成酒店"白月光"：内容营销怎么玩才有效？',
-    titleEn: 'TikTok & Xiaohongshu Become Hotels\' "Moonlight": How to Make Content Marketing Actually Work',
-    summaryZh: '赵总在重庆经营一家65间客房的精品民宿，开业两年，客源结构一直不健康——80%依赖携程，20%来自walk-in。',
-    summaryEn: 'GM Zhao runs a 65-room boutique inn in Chongqing. After two years, 80% of guests came from Ctrip, 20% walked in.',
-    category: 'marketing',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 10,
-    slug: 'hotel-ota-commission-direct-booking-2026',
-    titleZh: 'OTA佣金一年吃掉90万：直订体系搭建实战手册',
-    titleEn: 'OTA Commissions Eat 900K RMB a Year: A Practical Guide to Building a Direct Booking System',
-    summaryZh: '李总在南京经营一家98间客房的经济型酒店，位置不错，靠近地铁口，客源以旅游和商务散客为主。',
-    summaryEn: 'Mr. Li runs a 98-room economy hotel in Nanjing, near a subway exit, serving tourist and business travelers.',
-    category: 'marketing',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 11,
-    slug: 'hotel-pms-ai-infrastructure-2026',
-    titleZh: 'PMS从管理工具到AI基础设施：2026年系统进化论',
-    titleEn: 'PMS Evolution: From Management Tool to AI Infrastructure in 2026',
-    summaryZh: '王总在成都经营一家80间客房的精品酒店，2019年他花了8万块上了一套"智慧酒店系统"。',
-    summaryEn: 'Mr. Wang runs an 80-room boutique hotel in Chengdu. In 2019, he spent 80K yuan on a "smart hotel system."',
-    category: 'digital',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 12,
-    slug: 'hotel-data-governance-standardization-2026',
-    titleZh: '酒店数据治理：从"数据不准"到"决策可信"的三层标准化',
-    titleEn: 'Hotel Data Governance: From Unreliable Data to Decisions You Can Trust',
-    summaryZh: '张总在杭州经营一家120间客房的会议型酒店，他一直很重视数据——PMS有数据，财务有数据，OTA后台也有数据。',
-    summaryEn: 'Mr. Zhang runs a 120-room conference hotel in Hangzhou. He values data — PMS, finance, OTA backends all have data.',
-    category: 'digital',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 13,
-    slug: 'hotel-energy-cost-optimization-2026',
-    titleZh: '酒店能耗占营收15%：用能画像系统一年省126万实战',
-    titleEn: 'Hotel Energy Costs at 15% of Revenue: How a Usage Profile System Saved 1.26M RMB',
-    summaryZh: '方总在武汉经营一家200间客房的会议型酒店，客源结构是：60%会议团、30%旅游散客、10%长住客。',
-    summaryEn: 'Mr. Fang runs a 200-room conference hotel in Wuhan. Guest mix: 60% conference groups, 30% tourist FITs, 10% long-stay.',
-    category: 'cost',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 14,
-    slug: 'hotel-labor-cost-ai-collaboration-2026',
-    titleZh: '存量时代的人工成本优化：AI替代还是人机协同？',
-    titleEn: 'Labor Cost Optimization in the Stock Era: AI Replacement or Human-Machine Collaboration',
-    summaryZh: '陈总在成都经营一家150间客房的商务酒店，员工编制58人。',
-    summaryEn: 'Mr. Chen runs a 150-room business hotel in Chengdu with 58 staff members.',
-    category: 'cost',
-    date: '2026-05-10',
-    readTime: 15,
-    views: 0,
-    likes: 0,
-  },
-]
+import { articlesData } from './article/[slug]/articles-data'
 
 // 7大分类（老马叔叔确认顺序）
 const categories = [
@@ -541,8 +15,7 @@ const categories = [
     descZh: '酒店投资、选址评估、加盟vs单体、资产价值分析、投资回报测算、融资顾问',
     descEn: 'Hotel investment, site evaluation, franchise vs independent, asset analysis, ROI calculation, financing advisory',
     color: '#ef4444',
-    icon: '💰',
-    articleCount: 6
+    icon: '💰'
   },
   { 
     id: 'preparation', 
@@ -551,8 +24,7 @@ const categories = [
     descZh: '从选址到开业的全流程管理、筹建避坑、设计审查、施工管理',
     descEn: 'Full process from site selection to opening, construction pitfalls, design review, project management',
     color: '#f97316',
-    icon: '🏗️',
-    articleCount: 4
+    icon: '🏗️'
   },
   { 
     id: 'team', 
@@ -561,8 +33,7 @@ const categories = [
     descZh: '员工培训、流失率控制、激励机制、企业文化、师徒制',
     descEn: 'Staff training, turnover control, incentive mechanisms, corporate culture, mentorship',
     color: '#8b5cf6',
-    icon: '👥',
-    articleCount: 4
+    icon: '👥'
   },
   { 
     id: 'operations', 
@@ -571,8 +42,7 @@ const categories = [
     descZh: '日常运营优化、服务提升、效率改进、客户体验、流程再造',
     descEn: 'Daily operations optimization, service enhancement, efficiency improvement, customer experience, process reengineering',
     color: '#22c55e',
-    icon: '⚙️',
-    articleCount: 6
+    icon: '⚙️'
   },
   { 
     id: 'marketing', 
@@ -581,8 +51,7 @@ const categories = [
     descZh: '客源渠道、品牌建设、私域流量、OTA优化、会员体系',
     descEn: 'Guest acquisition channels, brand building, private domain traffic, OTA optimization, membership systems',
     color: '#3b82f6',
-    icon: '📢',
-    articleCount: 4
+    icon: '📢'
   },
   { 
     id: 'digital', 
@@ -591,8 +60,7 @@ const categories = [
     descZh: 'PMS系统、收益管理、数字化工具、智能设备、数据决策',
     descEn: 'PMS systems, revenue management, digital tools, smart devices, data-driven decisions',
     color: '#06b6d4',
-    icon: '💻',
-    articleCount: 4
+    icon: '💻'
   },
   { 
     id: 'cost', 
@@ -601,41 +69,22 @@ const categories = [
     descZh: '能耗管理、采购优化、人力成本、财务管控、预算管理',
     descEn: 'Energy management, procurement optimization, labor costs, financial control, budget management',
     color: '#f59e0b',
-    icon: '📊',
-    articleCount: 2
+    icon: '📊'
   },
 ]
 
-// 热门文章（显示在一级页面底部）
-const hotArticles = [
-  {
-    id: 14,
-    slug: 'hotel-ai-agent-intelligent-upgrade-2026',
-    titleZh: 'AI智能体时代：酒店从"数字化"到"智能化"的跃迁',
-    titleEn: 'The AI Agent Era: Hotels Making the Leap from Digital to Intelligent',
-    category: 'operations',
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 12,
-    slug: 'hotel-social-media-marketing-2026',
-    titleZh: '抖音小红书成酒店"白月光"：内容营销怎么玩才有效？',
-    titleEn: 'TikTok & Xiaohongshu Become Hotels\' "Moonlight": How to Make Content Marketing Actually Work',
-    category: 'marketing',
-    views: 0,
-    likes: 0,
-  },
-  {
-    id: 10,
-    slug: 'hotel-investment-pitfalls-2026',
-    titleZh: '2026酒店投资：为什么有的酒店只赚热闹不赚钱？',
-    titleEn: 'Hotel Investment in 2026: Why Some Hotels Pack the House but Still Don\'t Make Money',
-    category: 'investment',
-    views: 0,
-    likes: 0,
-  },
-]
+const categoryCounts: Record<string, number> = categories.reduce((acc, cat) => {
+  acc[cat.id] = articlesData.filter(article => article.category === cat.id).length
+  return acc
+}, {} as Record<string, number>)
+
+const latestArticlesByCategory: Record<string, typeof articlesData[number] | undefined> = categories.reduce((acc, cat) => {
+  acc[cat.id] = [...articlesData]
+    .filter(article => article.category === cat.id)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime() || b.id - a.id)[0]
+  return acc
+}, {} as Record<string, typeof articlesData[number] | undefined>)
+
 
 export default async function LeanPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -690,7 +139,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
         {/* Category Sections - Vertical Layout */}
         <div className="space-y-8">
           {categories.map((cat) => {
-            const latestArticle = articlesData.find(a => a.category === cat.id)
+            const latestArticle = latestArticlesByCategory[cat.id]
             
             return (
               <section
@@ -713,7 +162,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                       {isZh ? cat.labelZh : cat.labelEn}
                     </h2>
                     <p className="text-sm text-muted-foreground">
-                      {cat.articleCount}{ui.articleCount}
+                      {categoryCounts[cat.id] ?? 0}{ui.articleCount}
                     </p>
                   </div>
                   <Link href={`/${lang}/lean/category/${cat.id}`}>
@@ -743,8 +192,13 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <Badge 
-                        className="text-white border-0 text-xs"
-                        style={{ backgroundColor: cat.color }}
+                        variant="secondary"
+                        className="text-xs"
+                        style={{
+                          backgroundColor: `${cat.color}15`,
+                          color: cat.color,
+                          borderColor: `${cat.color}35`,
+                        }}
                       >
                         {isZh ? '最新' : 'Latest'}
                       </Badge>

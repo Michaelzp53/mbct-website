@@ -3,6 +3,7 @@ import { ArrowLeft, Clock, User, Eye, MessageSquare, ThumbsUp, Tag } from 'lucid
 import { Badge } from '@/components/ui/badge'
 import { getArticleBySlug, getAllSlugs } from './articles-data'
 import ArticleInteractions from './ArticleInteractions'
+import { ArticleMarkdown } from '@/components/article-markdown'
 
 // 7大分类
 const categories = [
@@ -134,22 +135,9 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <article className="prose prose-lg max-w-none dark:prose-invert">
-          <div
-            className="text-foreground leading-relaxed"
-            dangerouslySetInnerHTML={{
-              __html: (isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh))
-                .replace(/## (.*)/g, '<h2 class="text-2xl font-bold mt-8 mb-4">$1</h2>')
-                .replace(/### (.*)/g, '<h3 class="text-xl font-bold mt-6 mb-3">$1</h3>')
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\* (.*)/g, '<li class="ml-4 mb-1">$1</li>')
-                .replace(/\[ \] (.*)/g, '<div class="flex items-center gap-2 mb-2"><input type="checkbox" class="w-4 h-4" /><span>$1</span></div>')
-                .replace(/\| (.*?) \|/g, '<td class="border px-3 py-2">$1</td>')
-                .replace(/\n\n/g, '<br/><br/>')
-                .replace(/\n/g, '<br/>')
-            }}
-          />
-        </article>
+        <ArticleMarkdown
+          content={isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)}
+        />
 
         {/* Interactive: Like & Comment (Client Component) */}
         <ArticleInteractions
