@@ -1011,60 +1011,8 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   ]
 
-  // 管享精道 - 2026-05-23新增3篇
-  const guanxiangjingdao = [
-    {
-      id: 423,
-      type: 'guanxiang',
-      title: '新店开业90天爬坡慢，不是流量不够，而是开业动作顺序错了',
-      titleEn: "If a New Hotel's First 90 Days Are Slow, the Real Problem Is the Opening Sequence, Not Lack of Traffic",
-      slug: 'new-hotel-ramp-up-sequence-2026-05-23',
-      summary: '开业第一周看起来很忙，实际上系统很乱。很多新店不是缺客，而是接不住客。',
-      summaryEn: 'The first week after opening looks busy, but the system is actually chaotic. Many new hotels have guests, but cannot handle them.',
-      firstLine: '开业典礼结束的那一刻，礼花还没扫干净，大堂已经开始排队入住。',
-      date: '2026-05-23',
-      readTime: 10,
-      tag: '筹备筹开',
-      tagColor: 'bg-[#10b981]',
-      author: 'MBCT（MarvelBros C&T）',
-      featured: false,
-    },
-    {
-      id: 424,
-      type: 'guanxiang',
-      title: '点评分上不去，很多酒店不是服务差，而是复盘机制太弱',
-      titleEn: 'When Ratings Stall, the Real Issue Is Often Weak Review Loops, Not Bad Service',
-      slug: 'hotel-rating-review-loop-2026-05-23',
-      summary: '服务不是没人做，而是没有持续被校正。评分提升不靠一次培训，而靠连续30天的管理动作稳定输出。',
-      summaryEn: 'Service is not lacking people, but continuous correction. Rating improvement depends not on one training, but on 30 consecutive days of stable management actions.',
-      firstLine: '那天开完班后会，前厅的小刘跟我说了一句话。',
-      date: '2026-05-23',
-      readTime: 10,
-      tag: '运营升级',
-      tagColor: 'bg-[#3b82f6]',
-      author: 'MBCT（MarvelBros C&T）',
-      featured: false,
-    },
-    {
-      id: 425,
-      type: 'guanxiang',
-      title: '酒店数字化总是落不了地，问题往往不在系统，而在管理动作没接上',
-      titleEn: 'Hotel Digitalization Often Fails Not Because of the System, but Because Management Actions Never Catch Up',
-      slug: 'hotel-digitalization-management-2026-05-23',
-      summary: '系统上了，数据有了，但管理动作没有跟着变。数字平台不是IT项目，而是经营项目。',
-      summaryEn: 'Systems are purchased, data is available, but management actions have not changed accordingly. Digital platform is not an IT project, but a business project.',
-      firstLine: '酒店行业缺系统吗？不缺。',
-      date: '2026-05-23',
-      readTime: 10,
-      tag: '数字平台',
-      tagColor: 'bg-[#8b5cf6]',
-      author: 'MBCT（MarvelBros C&T）',
-      featured: false,
-    },
-  ]
-
   // 热门话题：自动选择所有文章中日期最新的文章
-  const allArticles = [...articles, ...reports, ...cases, ...guanxiangjingdao]
+  const allArticles = [...articles, ...reports, ...cases]
   const featuredArticle = allArticles.reduce((latest, article) => {
     return new Date(article.date) > new Date(latest.date) ? article : latest
   }, allArticles[0])
@@ -1093,14 +1041,6 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       desc: ui.caseDesc,
       count: cases.length,
       color: '#22c55e',
-    },
-    {
-      id: 'guanxiang',
-      icon: BookOpen,
-      title: ui.leanTitle,
-      desc: ui.leanDesc,
-      count: guanxiangjingdao.length,
-      color: '#8b5cf6',
     },
   ]
 
