@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import SearchBox from './SearchBox'
 import PageHero from '@/components/PageHero'
-import { articlesData } from './article/[slug]/articles-data'
+import { allArticlesData } from './article/[slug]/articles-data'
 
 // 7大分类（老马叔叔确认顺序）
 const categories = [
@@ -74,16 +74,16 @@ const categories = [
 ]
 
 const categoryCounts: Record<string, number> = categories.reduce((acc, cat) => {
-  acc[cat.id] = articlesData.filter(article => article.category === cat.id).length
+  acc[cat.id] = allArticlesData.filter(article => article.category === cat.id).length
   return acc
 }, {} as Record<string, number>)
 
-const latestArticlesByCategory: Record<string, typeof articlesData[number] | undefined> = categories.reduce((acc, cat) => {
-  acc[cat.id] = [...articlesData]
+const latestArticlesByCategory: Record<string, typeof allArticlesData[number] | undefined> = categories.reduce((acc, cat) => {
+  acc[cat.id] = [...allArticlesData]
     .filter(article => article.category === cat.id)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime() || b.id - a.id)[0]
   return acc
-}, {} as Record<string, typeof articlesData[number] | undefined>)
+}, {} as Record<string, typeof allArticlesData[number] | undefined>)
 
 
 export default async function LeanPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -131,7 +131,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
           </div>
 
           {/* Search Bar */}
-          <SearchBox lang={lang} isZh={isZh} articlesData={articlesData} />
+          <SearchBox lang={lang} isZh={isZh} allArticlesData={allArticlesData} />
         </div>
       </div>
 

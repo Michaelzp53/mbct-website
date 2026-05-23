@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft, Search, Clock, User, Eye, ThumbsUp, MessageSquare, ChevronRight, Tag, BookOpen } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { articlesData } from '../../article/[slug]/articles-data'
+import { allArticlesData } from '../../article/[slug]/articles-data'
 
 type SortMode = 'latest' | 'hottest' | 'mostComments'
 
@@ -18,7 +18,7 @@ const categories = [
 ]
 
 function sortArticles(mode: SortMode) {
-  return [...articlesData].sort((a, b) => {
+  return [...allArticlesData].sort((a, b) => {
     if (mode === 'hottest') {
       if (b.views !== a.views) return b.views - a.views
       if (b.likes !== a.likes) return b.likes - a.likes
@@ -136,7 +136,7 @@ export default async function CategoryPage({ params, searchParams }: { params: P
                           {isZh ? cat.labelZh : cat.labelEn}
                         </span>
                         <span className="ml-auto text-xs text-muted-foreground">
-                          {articlesData.filter(a => a.category === cat.id).length}
+                          {allArticlesData.filter(a => a.category === cat.id).length}
                         </span>
                       </Link>
                     ))}

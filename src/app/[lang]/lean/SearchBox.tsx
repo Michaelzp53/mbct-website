@@ -11,11 +11,11 @@ interface Article {
   summaryEn: string
 }
 
-export default function SearchBox({ lang, isZh, articlesData }: { lang: string; isZh: boolean; articlesData: Article[] }) {
+export default function SearchBox({ lang, isZh, allArticlesData }: { lang: string; isZh: boolean; allArticlesData: Article[] }) {
   const [searchQuery, setSearchQuery] = useState('')
 
   const filteredArticles = searchQuery
-    ? articlesData.filter((article) =>
+    ? allArticlesData.filter((article) =>
         (isZh ? article.titleZh : article.titleEn).toLowerCase().includes(searchQuery.toLowerCase()) ||
         (isZh ? article.summaryZh : article.summaryEn).toLowerCase().includes(searchQuery.toLowerCase())
       )
