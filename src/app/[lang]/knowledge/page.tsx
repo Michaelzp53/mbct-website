@@ -997,7 +997,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
         featured: true,
       },
       {
-        id: 420,
+        id: 423,
         title: '新店开业90天爬坡慢，不是流量不够，而是开业动作顺序错了',
         titleEn: "If a New Hotel's First 90 Days Are Slow, the Real Problem Is the Opening Sequence, Not Lack of Traffic",
         slug: 'new-hotel-ramp-up-sequence-2026-05-23',
@@ -1009,7 +1009,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
         featured: false,
       },
       {
-        id: 421,
+        id: 424,
         title: '点评分上不去，很多酒店不是服务差，而是复盘机制太弱',
         titleEn: 'When Ratings Stall, the Real Issue Is Often Weak Review Loops, Not Bad Service',
         slug: 'hotel-rating-review-loop-2026-05-23',
@@ -1021,7 +1021,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
         featured: false,
       },
       {
-        id: 422,
+        id: 425,
         title: '酒店数字化总是落不了地，问题往往不在系统，而在管理动作没接上',
         titleEn: 'Hotel Digitalization Often Fails Not Because of the System, but Because Management Actions Never Catch Up',
         slug: 'hotel-digitalization-management-2026-05-23',
