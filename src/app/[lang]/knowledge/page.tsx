@@ -530,6 +530,20 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-04-22新增1篇
   const reports = [
     {
+      id: 421,
+      type: 'report',
+      title: '40万家酒店贴身肉博，下沉市场的投资逻辑为什么和一二线完全不同',
+      titleEn: '400,000 Hotels in Brutal Competition: Why the Investment Logic of Lower-Tier Markets is Completely Different',
+      slug: '40wan-hotel-sinking-market-investment-2026-05-24',
+      summary: '2025年，全国酒店数量突破40.48万家，三线及以下城市新增供给占比超过55%。本文结合《2026中国酒店投资白皮书》核心洞察，系统拆解三四线城市投资框架、头部集团下沉失败根因，以及可跑通的本地化运营模型。',
+      firstLine: '2025年，全国酒店数量突破40.48万家，客房规模达1979万间。这个数字意味着中国每3300人就拥有一家酒店，意味着行业已经从前些年的增量时代，全面转入存量厮杀的贴身肉搏。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-24',
+      readTime: '25分钟',
+      tag: '行业分析',
+      featured: true,
+    },
+    {
       id: 420,
       type: 'report',
       title: '2026年酒店开业爬坡期：不是流量不够，而是筹备顺序错了',
