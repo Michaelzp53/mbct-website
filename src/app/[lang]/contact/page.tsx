@@ -134,7 +134,17 @@ export default async function ContactPage({
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground mb-1">{label}</p>
-                        <p className="text-sm text-foreground font-medium leading-relaxed">{value}</p>
+                        {label === dict.contact.form.email ? (
+                          <a href={`mailto:${value}`} className="text-sm text-foreground font-medium leading-relaxed hover:text-primary transition-colors">
+                            {value}
+                          </a>
+                        ) : label === dict.contact.form.phone ? (
+                          <a href={`tel:${value}`} className="text-sm text-foreground font-medium leading-relaxed hover:text-primary transition-colors">
+                            {value}
+                          </a>
+                        ) : (
+                          <p className="text-sm text-foreground font-medium leading-relaxed">{value}</p>
+                        )}
                       </div>
                     </div>
                   ))}

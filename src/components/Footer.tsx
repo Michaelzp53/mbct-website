@@ -114,7 +114,7 @@ export function Footer({ lang, dict }: FooterProps) {
               <Link href={`/${lang}/terms`} className="text-muted-foreground hover:text-primary transition-colors">
                 {f.terms}
               </Link>
-              <Link href={`/${lang}/sitemap`} className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/sitemap.xml" className="text-muted-foreground hover:text-primary transition-colors">
                 {f.sitemap}
               </Link>
             </div>

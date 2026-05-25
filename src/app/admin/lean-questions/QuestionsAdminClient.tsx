@@ -41,9 +41,9 @@ export default function QuestionsAdminClient({ questions: initialQuestions }: { 
   const [updating, setUpdating] = useState<number | null>(null)
 
   const total = questions.length
-  const positive = questions.filter(q => q.status === 'positive' || !q.status).length
+  const positive = questions.filter(q => q.status === 'pending' || q.status === 'positive' || !q.status).length
   const negative = questions.filter(q => q.status === 'negative').length
-  const answered = questions.filter(q => q.status === 'answered').length
+  const answered = questions.filter(q => q.status === 'converted' || q.status === 'answered').length
 
   const updateStatus = useCallback(async (id: number, status: string) => {
     setUpdating(id)
@@ -123,12 +123,12 @@ export default function QuestionsAdminClient({ questions: initialQuestions }: { 
                         className={
                           q.status === 'negative'
                             ? 'bg-red-500/10 text-red-500 border-red-500/30'
-                            : q.status === 'answered'
+                            : q.status === 'converted' || q.status === 'answered'
                             ? 'bg-[#f59e0b]/10 text-[#f59e0b] border-[#f59e0b]/30'
                             : 'bg-green-500/10 text-green-500 border-green-500/30'
                         }
                       >
-                        {q.status === 'negative' ? '负面' : q.status === 'answered' ? '已回答' : '正向'}
+                        {q.status === 'negative' ? '负面' : q.status === 'converted' || q.status === 'answered' ? '已转文章' : '待筛选'}
                       </Badge>
                     </div>
                     <p className="text-sm text-muted-foreground mb-3 line-clamp-3">{q.detail}</p>
@@ -156,12 +156,12 @@ export default function QuestionsAdminClient({ questions: initialQuestions }: { 
                     <Button
                       variant="outline"
                       size="sm"
-                      disabled={updating === q.id || q.status === 'positive'}
-                      onClick={() => updateStatus(q.id, 'positive')}
+                      disabled={updating === q.id || q.status === 'pending'}
+                      onClick={() => updateStatus(q.id, 'pending')}
                       className="text-green-500 border-green-500/30 hover:bg-green-500/10"
                     >
                       {updating === q.id ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : <ThumbsUp className="w-4 h-4 mr-1" />}
-                      正向
+                      待筛选
                     </Button>
                     <Button
                       variant="outline"
@@ -176,8 +176,8 @@ export default function QuestionsAdminClient({ questions: initialQuestions }: { 
                     <Button
                       variant="outline"
                       size="sm"
-                      disabled={updating === q.id || q.status === 'answered'}
-                      onClick={() => updateStatus(q.id, 'answered')}
+                      disabled={updating === q.id || q.status === 'converted'}
+                      onClick={() => updateStatus(q.id, 'converted')}
                       className="text-[#f59e0b] border-[#f59e0b]/30 hover:bg-[#f59e0b]/10"
                     >
                       {updating === q.id ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : <CheckCircle className="w-4 h-4 mr-1" />}

@@ -530,6 +530,20 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-04-22新增1篇
   const reports = [
     {
+      id: 422,
+      type: 'report',
+      title: '数字化进入实战兑现期：2026年中国酒店业技术投入的三大转变',
+      titleEn: '',
+      slug: 'digitalization-three-shifts-2026-05-25',
+      summary: '2024年至2026年是中国酒店业数字化进程中最具转折意义的三年。70.4%的酒店计划增加技术投入，领先型企业意愿91.7% vs 中小企业63.3%。三大转变：从硬件驱动到数据驱动，从部门应用到全域协同，从大型酒店优先到中腰部补课。',
+      firstLine: '2024年至2026年，是中国酒店业数字化进程中最具转折意义的三年。进入2025年，随着PMS系统普及率突破85%、OTA平台数据接口标准化程度提升，以及生成式AI在客户服务场景的批量落地，数字化开始从"配置题"真正转向"经营题"。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-25',
+      readTime: '12分钟',
+      tag: '行业分析',
+      featured: false,
+    },
+    {
       id: 421,
       type: 'report',
       title: '40万家酒店贴身肉博，下沉市场的投资逻辑为什么和一二线完全不同',

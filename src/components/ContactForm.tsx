@@ -14,13 +14,38 @@ export function ContactForm({ dict }: ContactFormProps) {
   })
   const [privacy, setPrivacy] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!privacy) return
+
     setStatus('loading')
-    await new Promise((r) => setTimeout(r, 1500))
-    setStatus('success')
+    setErrorMessage('')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null)
+        setErrorMessage(data?.error || dict.contact.form.error)
+        setStatus('error')
+        return
+      }
+
+      setStatus('success')
+      setForm({
+        name: '', phone: '', email: '', company: '', service: '', message: '',
+      })
+      setPrivacy(false)
+    } catch {
+      setErrorMessage(dict.contact.form.error)
+      setStatus('error')
+    }
   }
 
   return (
@@ -32,6 +57,12 @@ export function ContactForm({ dict }: ContactFormProps) {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          {status === 'error' && errorMessage && (
+            <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-500">
+              {errorMessage}
+            </div>
+          )}
+
           {/* Name + Phone */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>

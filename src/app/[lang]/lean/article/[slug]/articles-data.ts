@@ -12140,8 +12140,10 @@ MBCT视角：节能改造的本质是"重新管理"
 
 // @ts-ignore - JSON import
 import newArticles20250523 from './articles-2026-05-23.json';
+// @ts-ignore - JSON import
+import newArticles20250525 from './articles-2026-05-25.json';
 
-const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[])];
+const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]), ...(newArticles20250525 as ArticleData[])];
 export const allArticlesData = allArticles;
 
 export function getArticleBySlug(slug: string) {
