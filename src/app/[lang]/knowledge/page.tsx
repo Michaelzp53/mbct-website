@@ -527,8 +527,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-  // 行业报告 - 2026-04-22新增1篇
+  // 行业报告 - 2026-05-26新增1篇
   const reports = [
+    {
+      id: 423,
+      type: 'report',
+      title: '2026年中国酒店投资白皮书解读：40万+酒店如何在贴身肉博中突围',
+      titleEn: '2026 China Hotel Investment White Paper: How 400,000+ Hotels Break Through Brutal Competition',
+      slug: '2026-china-hotel-investment-whitepaper-interpretation',
+      summary: '2026年中国酒店业正经历前所未有的深度调整期。全国住宿设施总量已突破40万家，供需失衡已成行业新常态。本文深度解读《2026年中国酒店投资白皮书》核心洞察，为投资人和运营管理者提供三条突围路径。',
+      summaryEn: 'China hotel industry is experiencing unprecedented adjustment. With 400,000+ properties nationwide, supply-demand imbalance is the new normal. This article provides three breakthrough paths for investors and operators.',
+      firstLine: '中国酒店业正经历前所未有的深度调整期。据中国饭店协会2026年初统计，全国住宿设施总量已突破40万家，标准化酒店房间数超过2000万间，而全国平均客房入住率仅为55%—65%，供需失衡已成行业新常态。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-26',
+      readTime: '16分钟',
+      tag: '行业报告',
+      featured: true,
+    },
     {
       id: 422,
       type: 'report',

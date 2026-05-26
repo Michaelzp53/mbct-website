@@ -24,6 +24,549 @@ export interface ArticleData {
 
 export const articlesData: ArticleData[] = [
   {
+    id: 130,
+    slug: 'hotel-website-necessity-2026',
+    titleZh: '酒店官网还有必要做吗？2026年的答案是：比以前更重要',
+    titleEn: 'Is a Hotel Website Still Necessary? The 2026 Answer: More Important Than Ever',
+    summaryZh: '某三线城市商务酒店，位置一般，装修也不算豪华。但这家酒店的管理团队做了一个决定：把官网做成全城最好的酒店预订体验。两年后，官网月均direct booking节省佣金约30万元，复购率从12%提升至31%。',
+    summaryEn: 'A business hotel in a third-tier city built the best website booking experience in town. Two years later, direct booking saves 300K RMB annually in OTA commissions, repeat rate climbed from 12% to 31%.',
+    contentZh: `某三线城市商务酒店，位置一般，装修也不算豪华。但这家酒店的管理团队做了一个决定：把官网做成全城最好的酒店预订体验。
+
+两年后，这家酒店的数字渠道数据显示：官网月均direct booking带来的收入，折算为节省的OTA佣金，相当于每年30万元。同时，官网注册会员超过8000人，复购率从12%提升至31%。
+
+这不是个案。在OTA佣金普遍高达15%到25%的今天，官网直销的价值被严重低估。
+
+---
+
+## 官网的三个核心价值
+
+### 价值一：直销入口——零佣金，利润最高的预订渠道
+
+每在携程或美团上成交一单，酒店就要支付15%到25%的佣金。对于一家月均200万营收的酒店，如果官网直销占比能从10%提升到30%，每年节省的佣金超过50万。
+
+这不是"有官网就更好"的锦上添花，而是直接决定利润率的核心渠道。
+
+### 价值二：品牌展示——OTA页面是标准化的，官网是差异化的
+
+OTA平台的页面模板是统一的，每家酒店的表现形式高度雷同。客人比较价格和评分，但很难从OTA页面感知到一家酒店真正独特的气质。
+
+官网则完全不同。你可以用视频、用故事、用设计语言，讲清楚你是谁、你为什么不同、谁应该选择你。这是建立品牌溢价能力的地方。
+
+### 价值三：数据主权——官网预订的客户数据完全属于酒店
+
+在OTA平台预订的客人，数据属于平台。酒店无法获取其联系方式、消费偏好、入住习惯，无法进行二次营销。
+
+官网预订的客户，是酒店真正拥有的资产。通过会员体系、邮件营销、私域运营，这些数据可以反复使用，成为提升复购率和客户终身价值的核心资产。
+
+---
+
+## 2026年酒店官网的四个必备要素
+
+### 要素一：移动端优先
+
+超过70%的酒店搜索和预订行为发生在手机端。如果官网在移动端打开超过3秒还没显示核心内容，或预订按钮找不到，大量潜在客户会直接跳到OTA下单。
+
+移动端优先不是"做一个手机版网站"，而是整个网站架构和交互逻辑以手机用户为基础设计。
+
+### 要素二：预订引擎集成——比OTA更简单的预订流程
+
+很多酒店官网的预订流程比OTA还复杂：需要注册、步骤繁琐、不支持即时确认。客人发现官网预订比携程还麻烦，当然选择去携程。
+
+官网预订引擎的核心竞争力是"更简单"：一键查询、即时确认、无隐藏费用、支持取消和变更政策展示。如果能做到这一点，官网的转化率可以远超OTA详情页。
+
+### 要素三：内容营销——博客、攻略、活动，提升SEO和停留时长
+
+单纯的"关于我们+房间展示"官网，正在失去竞争力。2026年的酒店官网，需要持续输出高质量内容：本地攻略、旅行主题内容、酒店活动资讯、会员专属内容。
+
+内容营销有两个核心价值：第一，提升官网在搜索引擎的自然排名，带来持续免费流量；第二，增加客人在官网的停留时长和浏览深度，让他们在"逛"的过程中建立情感连接。
+
+### 要素四：会员入口——引导注册，沉淀私域流量
+
+官网首页必须设置清晰的会员注册入口，并在每个服务触点引导客人成为会员。会员权益不需要多复杂，但需要明确且有感知：专属价格、积分兑换、提前入住、会员日优惠……
+
+会员体系是将一次性访客转化为可持续运营资产的唯一路径。
+
+---
+
+## 官网不是成本，是最低佣金的销售渠道
+
+很多酒店管理者认为"做官网太贵、维护太麻烦"。我们来算一笔账：
+
+一家年收入2000万的酒店，如果将官网直销占比提升到25%，每年节省的OTA佣金约75万到100万。官网的建设与维护成本，一年通常不超过5到10万。
+
+这不是成本，这是ROI最高的一项投资。
+
+---
+
+## MBCT官网建设与优化服务
+
+MBCT为酒店提供官网全流程服务，从策略定位到技术实现：
+
+**服务一：官网策略规划**
+基于酒店定位、目标客群和竞争分析，制定官网的定位策略、内容策略和转化策略。
+
+**服务二：网站设计与开发**
+响应式设计、移动端优先、预订引擎集成、会员系统搭建——技术团队完成从设计到上线的全流程。
+
+**服务三：内容运营支持**
+SEO优化建议、内容框架规划、定期内容更新支持——让官网持续产生流量和转化。
+
+**服务四：数据分析与优化**
+通过流量分析和转化漏斗，持续优化官网的用户体验和预订转化率。
+
+---
+
+## 结语
+
+官网不是过去的遗产，而是当下最低成本的直销渠道。2026年，一个好的官网比以往任何时候都更重要。
+
+把官网建好、维护好、经营好——这是酒店在数字时代最值得投入的一件事。`,
+    contentEn: `A business hotel in a third-tier city with an average location and no luxurious decor. But this hotel's management team made one decision: build the best hotel booking experience on the website in the entire city.
+
+Two years later, the hotel's digital channel data showed: direct booking through the website generated monthly revenue equivalent to saving 300,000 RMB in OTA commissions annually. Simultaneously, website-registered members exceeded 8,000, with the repeat customer rate rising from 12% to 31%.
+
+This is not an isolated case. With OTA commissions generally ranging from 15% to 25% today, the value of official website direct sales is severely underestimated.
+
+---
+
+## Three Core Values of a Hotel Website
+
+### Value 1: Direct Sales Portal — Zero Commission, the Highest Margin Booking Channel
+
+For every booking completed on Ctrip or Meituan, the hotel pays a 15% to 25% commission. For a hotel with average monthly revenue of 2 million RMB, if website direct sales share increases from 10% to 30%, the annual commission savings exceed 500,000 RMB.
+
+### Value 2: Brand Display — OTA Pages Are Standardized, the Website Is Differentiated
+
+OTA platform page templates are unified, and every hotel's presentation format is highly similar. The website is completely different. You can use video, storytelling, and design language to clearly explain who you are, why you are different, and who should choose you.
+
+### Value 3: Data Ownership — Customer Data from Website Bookings Fully Belongs to the Hotel
+
+Guests who book through OTA platforms — their data belongs to the platform. Customers who book through the website are assets the hotel truly owns. Through member systems, email marketing, and private domain operations, this data can be used repeatedly.
+
+---
+
+## Four Essential Elements for a Hotel Website in 2026
+
+### Element 1: Mobile-First
+
+Over 70% of hotel searches and bookings occur on mobile devices. If the website takes more than 3 seconds to display core content on mobile, a large number of potential customers will directly jump to OTA to book.
+
+### Element 2: Booking Engine Integration — A Simpler Booking Process Than OTA
+
+The core competitive advantage of a website booking engine is "simpler": one-tap search, instant confirmation, no hidden fees, clear cancellation and modification policy display.
+
+### Element 3: Content Marketing — Blogs, Guides, Events to Boost SEO and Dwell Time
+
+A hotel website in 2026 needs to continuously output high-quality content: local guides, travel-themed content, hotel event information, and member-exclusive content.
+
+### Element 4: Member Portal — Guide Registration, Build Private Domain Traffic
+
+The website homepage must have a clear member registration entrance, and guide guests to become members at every service touchpoint.
+
+---
+
+## The Website Is Not a Cost — It Is the Lowest-Commission Sales Channel
+
+For a hotel with annual revenue of 20 million RMB, if website direct sales share increases to 25%, the annual OTA commission savings are approximately 750,000 to 1,000,000 RMB. The annual cost of website construction and maintenance typically does not exceed 50,000 to 100,000 RMB.
+
+This is not a cost — it is the investment with the highest ROI.
+
+---
+
+## MBCT Website Construction and Optimization Services
+
+MBCT provides comprehensive website services for hotels:
+
+**Service 1: Website Strategy Planning**
+Based on hotel positioning, target segments, and competitive analysis, develop website positioning strategy, content strategy, and conversion strategy.
+
+**Service 2: Website Design and Development**
+Responsive design, mobile-first approach, booking engine integration, member system setup.
+
+**Service 3: Content Operations Support**
+SEO optimization recommendations, content framework planning, and regular content update support.
+
+**Service 4: Data Analysis and Optimization**
+Through traffic analysis and conversion funnels, continuously optimize the website's user experience and booking conversion rate.
+
+---
+
+## Conclusion
+
+The website is not a relic of the past — it is the lowest-cost direct sales channel of the present. In 2026, a good website is more important than ever.`,    category: 'digital',
+    tags: ["数字平台", "官网运营", "直销渠道"],
+    author: 'MBCT（MarvelBros C&T）',
+    date: '2026-05-26',
+    readTime: 8,
+    views: 0,
+    likes: 0,
+    comments: 0,
+  },
+  {
+    id: 129,
+    slug: 'hotel-customer-journey-breakpoints',
+    titleZh: '入住率上不去？先看看你的"客户旅程"断在哪里',
+    titleEn: 'Low Occupancy? First Check Where Your "Customer Journey" Is Breaking',
+    summaryZh: '某度假酒店OTA评分4.8，硬件条件一流，位置也绝佳。但老板始终困惑：评分这么高，为什么复购率只有8%？问题不在硬件，不在位置，甚至不完全在服务——问题在于从未审视过客人的完整"客户旅程"。',
+    summaryEn: 'A resort hotel with 4.8 OTA rating, excellent hardware, prime location. Yet repeat rate is only 8%. The problem isn\'t hardware, location, or even service — it\'s never examining the complete "customer journey."',
+    contentZh: `某度假酒店OTA评分4.8，硬件条件一流，位置也绝佳。但老板始终困惑：评分这么高，为什么复购率只有8%？新客开发成本越来越高，老客人却像"一次性"用完就消失了。
+
+问题不在硬件，不在位置，甚至不完全在服务——问题在于这位老板从未审视过客人的完整"客户旅程"。
+
+---
+
+## 什么是客户旅程？
+
+客户旅程是指一位客人从"第一次听说你"到"离店后还会不会回来"的完整经历。这个旅程被切分为五个关键阶段，每个阶段都有各自的核心任务和常见断点。
+
+当客人感到"旅程不顺畅"时，他不会投诉，只会悄悄离开，然后再也不回来。
+
+---
+
+## 五个阶段与常见断点
+
+### 第一阶段：发现
+
+**核心任务**：让目标客户在搜索时找到你，并且有足够的理由选择你。
+
+**常见断点**：
+- 搜索排名靠后，被竞品拦截
+- OTA详情页或官网的内容没有说服力，首图不吸引人
+- 关键词策略错误，没有触达真正的目标客群
+
+**真相**：客人第一次接触你的入口，往往决定了后续一切。如果在"发现"阶段就没有竞争力，后续阶段无从谈起。
+
+### 第二阶段：预订
+
+**核心任务**：让有意向的客人在决策窗口期内完成预订，不因流程问题流失。
+
+**常见断点**：
+- 预订流程步骤过多，或需要注册才能下单
+- 价格不透明，客人无法快速确认最终费用
+- 缺乏即时确认反馈，客人等待时间过长后放弃
+
+**真相**：每增加一个预订步骤，转化率下降约30%。如果你的预订流程超过5步，很多客人会在中途离开。
+
+### 第三阶段：入住前
+
+**核心任务**：帮助客人做好行前准备，减少信息不对称带来的焦虑。
+
+**常见断点**：
+- 没有入住前的主动联系，客人不知道如何到达、几点入住
+- 特殊需求（停车场、婴儿床、加床）没有提前确认
+- 没有介绍酒店周边设施和特色，客人体验从进门的陌生开始
+
+**真相**：从预订到入住，通常有1到7天的等待期。这是建立期待感的黄金窗口，但大多数酒店完全放弃了这个触点。
+
+### 第四阶段：入住中
+
+**核心任务**：在核心体验环节创造惊喜，超出客人预期。
+
+**常见断点**：
+- 服务响应速度慢（超过10分钟未响应）
+- 个性化需求没有被记住（如上次入住的枕头软硬偏好）
+- 投诉处理不专业，客人感觉被敷衍
+
+**真相**：客人记住一家酒店的不是平均分，而是峰值时刻和低谷时刻。低谷时刻（问题未解决）的记忆权重是峰值时刻的3倍。
+
+### 第五阶段：离店后
+
+**核心任务**：保持连接，引导复购，将一次性客人转化为忠实会员。
+
+**常见断点**：
+- 离店后完全失联，客人迅速忘记你
+- 没有离店后的感谢和回访
+- 会员体系门槛高或权益不清晰，客人没有注册动力
+
+**真相**：获取一个新客的成本是维护一个老客成本的5到7倍。但大多数酒店把90%的精力放在了获客上，对存量客户的运营几乎为零。
+
+---
+
+## 回到开头的案例
+
+那家复购率只有8%的酒店，诊断后发现问题集中在第三和第五阶段：入住前没有主动联系客人告知交通和周边信息，离店后也没有任何回访或复购引导。客人对酒店的好感是真实的，但好感没有被转化为持续的连接，时间一长，自然被竞品覆盖。
+
+---
+
+## MBCT客户旅程优化工具
+
+MBCT为合作酒店提供完整的客户旅程诊断与优化服务，包含以下核心模块：
+
+**模块一：客户旅程地图绘制**
+
+通过历史数据分析、客人访谈和OTA评论挖掘，绘制完整的客户旅程地图，识别每个阶段的关键触点、客人期望和当前差距。
+
+**模块二：关键指标建立（KPI体系）**
+
+为每个旅程阶段建立量化指标，例如：
+- 发现阶段：搜索排名、OTA详情页转化率
+- 预订阶段：预订完成率、放弃率、路径分析
+- 入住前：提前联系触达率、需求确认率
+- 入住中：服务响应时长、好评率、投诉率
+- 离店后：复购率、会员注册率、沉睡客户激活率
+
+**模块三：优化动作落地**
+
+基于诊断结果，制定每个断点的具体优化方案，包括话术设计、流程调整、系统工具部署和培训计划。
+
+---
+
+## 提升入住率的最快路径
+
+提升入住率，不是拼命做促销、打价格战。**最快的路径是修复已有客户的旅程断点。**
+
+一个复购率从8%提升到20%的酒店，相当于在不打任何广告的情况下，让收入增长了一截。而这，只需要把客人已经走过的旅程重新修一遍。`,
+    contentEn: `A resort hotel with a 4.8 OTA rating, excellent hardware conditions, and a prime location. Yet the owner was always puzzled: with such high ratings, why is the repeat customer rate only 8%? New customer acquisition costs keep rising, while old guests seem to "disappear" after a single stay.
+
+The problem is not the hardware, not the location, and not even entirely the service — the problem is that this owner has never examined the complete "customer journey" of their guests.
+
+---
+
+## What Is the Customer Journey?
+
+The customer journey refers to the complete experience of a guest from "first hearing about you" to "whether they will return after leaving." This journey is divided into five key stages, each with its own core tasks and common breakpoints.
+
+---
+
+## Five Stages and Common Breakpoints
+
+### Stage 1: Discovery
+
+**Core task**: Ensure target customers find you during their search, and have sufficient reason to choose you.
+
+**Common breakpoints**:
+- Search rankings are too low, getting intercepted by competitors
+- OTA detail pages or website content lack persuasiveness; main images are unappealing
+- Keyword strategy is incorrect, failing to reach the true target guest segment
+
+### Stage 2: Booking
+
+**Core task**: Enable guests with booking intent to complete their reservation within the decision window.
+
+**Common breakpoints**:
+- Booking process has too many steps, or requires registration before ordering
+- Pricing is not transparent
+- No immediate confirmation feedback
+
+**Truth**: Each additional booking step reduces conversion rate by approximately 30%.
+
+### Stage 3: Pre-Arrival
+
+**Core task**: Help guests prepare for their trip and reduce anxiety.
+
+**Common breakpoints**:
+- No proactive pre-arrival contact
+- Special needs not confirmed in advance
+- No introduction to hotel surroundings
+
+### Stage 4: During Stay
+
+**Core task**: Create surprises at core experience touchpoints.
+
+**Common breakpoints**:
+- Slow service response (over 10 minutes)
+- Personalized needs not remembered
+- Unprofessional complaint handling
+
+**Truth**: Memory weight of low points is 3 times that of peak moments.
+
+### Stage 5: Post-Departure
+
+**Core task**: Maintain connection, guide repeat bookings, transform one-time guests into loyal members.
+
+**Common breakpoints**:
+- Complete loss of contact after departure
+- No post-departure thank-you or follow-up
+- Member system thresholds too high
+
+**Truth**: Acquiring a new customer costs 5 to 7 times more than maintaining an existing one.
+
+---
+
+## MBCT Customer Journey Optimization Tools
+
+**Module 1: Customer Journey Mapping**
+Through historical data analysis, guest interviews, and OTA review mining.
+
+**Module 2: Key Metrics Establishment (KPI System)**
+Establish quantitative metrics for each journey stage.
+
+**Module 3: Optimization Implementation**
+Develop specific optimization plans for each breakpoint.
+
+---
+
+## The Fastest Path to Improving Occupancy Rate
+
+Improving occupancy rate is not about desperately running promotions or engaging in price wars. **The fastest path is fixing the breakpoints in your existing customer journey.**
+
+A hotel that increases its repeat customer rate from 8% to 20% effectively grows its revenue without spending a single yuan on advertising.`,    category: 'operations',
+    tags: ["运营升级", "客户旅程", "复购率"],
+    author: 'MBCT（MarvelBros C&T）',
+    date: '2026-05-26',
+    readTime: 8,
+    views: 0,
+    likes: 0,
+    comments: 0,
+  },
+  {
+    id: 128,
+    slug: 'hotel-pre-opening-five-things-overlooked',
+    titleZh: '酒店开业前最容易被忽视的五件事',
+    titleEn: 'The Five Things Most Easily Overlooked Before a Hotel Opens',
+    summaryZh: '某四线城市新开业酒店，开业第三天就遭遇了一场"灾难"——厨房出餐速度严重滞后，客人等餐时间超过40分钟，退菜率高达30%。调查后发现，厨房的动线设计存在根本性问题。筹备期的问题一旦进入运营期，修复成本往往是预防成本的5到10倍。',
+    summaryEn: 'A newly opened hotel in a fourth-tier city experienced a disaster on its third day — kitchen workflow fundamental problems, 40+ minute wait times, 30% dish rejection rate. Preparation phase issues cost 5-10x more to fix once in operations.',
+    contentZh: `某四线城市新开业酒店，开业第三天就遭遇了一场"灾难"——厨房出餐速度严重滞后，客人等餐时间超过40分钟，退菜率高达30%。调查后发现，厨房的动线设计存在根本性问题：洗碗区与传菜通道交叉，热厨与凉菜间距离过远，冷链进货口正对垃圾清运区。
+
+这不是厨师手艺问题，而是设计阶段留下的硬伤。改造费用最终超过100万，开业时间被迫推迟整整一个月。
+
+这是真实案例，而且类似的故事每天都在上演。
+
+筹备期的问题一旦进入运营期，修复成本往往是预防成本的5到10倍。以下五件事，是酒店开业前最容易被忽视、却代价最高的"坑"。
+
+---
+
+## 第一件：消防验收标准没有提前对接，开业前被迫整改
+
+消防验收是开业的前置条件，但很多投资人对当地消防政策理解不准确。不同地区对疏散通道宽度喷淋密度宴会厅负载上限的要求存在差异，施工完成后再发现不符合标准，整改费用少则几十万，多则重新报审、延误开业。
+
+**预防方法**：在设计方案定稿前，邀请当地消防主管部门进行预审。很多城市提供"图纸预审"服务，费用几千元，却能规避几十万的后期整改成本。
+
+---
+
+## 第二件：员工宿舍和停车位没有规划，招人难留人更难
+
+一家酒店开业后，前台和餐厅员工流失率在半年内超过60%。调查后发现，酒店没有员工宿舍，通勤时间超过1.5小时。Parking问题同样突出：酒店位于市中心，地下车库仅有30个车位，客人经常因停车问题给差评。
+
+住宿和停车看起来是"配套问题"，实际上是招聘竞争力和客户满意度的核心要素。
+
+**预防方法**：在筹备预算阶段，将员工宿舍或住宿补贴、停车位配比纳入专项规划。对于高成本地段的酒店，考虑与周边停车场或公寓楼建立协议合作。
+
+---
+
+## 第三件：IT系统选型太晚，开业时系统还没跑通
+
+很多酒店在开业前两个月才开始选PMS系统，结果系统刚上线就遇上开业高峰，工程师疲于处理bug，前台手工登记入住，退房结算一片混乱。POS系统与PMS不通、门锁系统无法联动、会员积分规则错误——这些问题本应在筹备期发现并修复。
+
+**预防方法**：IT系统选型至少在开业前6个月启动，留出充分的测试和联调时间。建议分三个阶段验收：单体测试（各系统独立运行）、联动测试（系统间数据互通）、压力测试（模拟高峰期并发操作）。
+
+---
+
+## 第四件：软装采购周期低估，开业日期一再推迟
+
+家具、窗帘、灯具、艺术品——这些软装物料的采购周期往往被严重低估。进口家具从下单到到货通常需要3到4个月，定制艺术品和灯具时间更长。很多酒店项目因为软装到货延迟，被迫将开业时间推迟1到2个月。
+
+**预防方法**：在项目总进度表中，为软装采购单独设立里程碑，设置最晚下单日期。关键是识别"长周期物料"（进口家具、定制灯具、特殊面料），提前锁单，不能和普通物料同等对待。
+
+---
+
+## 第五件：试营业没有做，直接正式开业，问题集中爆发
+
+有些投资人认为"试营业是浪费时间，直接开业才有收入"。结果开业第一周集中爆发所有隐藏问题——服务流程不熟、菜品不稳定、系统报错频发——在客源最宝贵的第一印象期，留下的全是差评。
+
+**预防方法**：正式开业前至少进行2到4周的试营业，模拟完整服务流程。建议用内部员工+真实客人（非免费邀请）混合压力测试，重点验证：入住退房效率、餐厅出餐速度、投诉处理流程、紧急事件响应。
+
+---
+
+## MBCT筹备期介入的三个关键节点
+
+### 节点一：设计方案确认前
+
+这个阶段的核心任务是**动线和功能分区审核**。一次高质量的设计审核，可以识别出80%以上的运营硬伤。
+
+### 节点二：系统选型阶段
+
+IT系统选型不仅是选一个PMS，而是建立整个数字化运营的底座。MBCT建议在系统选型阶段完成**PMS/POS/门锁系统联调方案**的确认。
+
+### 节点三：试营业前
+
+试营业前2周，是SOP演练和问题清单清理的最后窗口。
+
+---
+
+## 好的开始，是成功的一半
+
+筹备期的投入，是整项目中ROI最高的部分。花1万元在设计阶段规避一个问题，远比花10万元在运营阶段修复同一个问题更有价值。
+
+MBCT筹备期咨询团队，帮助酒店在设计阶段、系统选型阶段和试运营阶段进行全流程审核，在正确的时间节点做正确的事，让开业真正成为一件胸有成竹的事。`,
+    contentEn: `A newly opened hotel in a fourth-tier city experienced a "disaster" on its third day of operation — the kitchen's food output speed severely lagged, with guests waiting over 40 minutes for meals and a dish rejection rate as high as 30%. The investigation revealed a fundamental problem with the kitchen's workflow design: the dishwashing area intersected with the food delivery corridor, the hot kitchen was too far from the cold dish station, and the cold chain receiving entrance faced directly toward the garbage collection area.
+
+This was not a chef skill issue — it was an inherited structural flaw from the design phase. Renovation costs ultimately exceeded 1 million RMB, and the opening date was forced to be delayed by a full month.
+
+This is a real case, and similar stories play out every day.
+
+Issues during the preparation phase, once they enter the operations phase, often cost 5 to 10 times more to fix than they would have to prevent. The following five items are the most easily overlooked — and most costly — "pitfalls" before a hotel opens.
+
+---
+
+## 1. Fire Safety Inspection Standards Not Confirmed in Advance
+
+Fire safety inspection is a prerequisite for opening, but many investors have inaccurate understanding of local fire safety policies. Different regions have varying requirements. Discovering non-compliance after construction is completed means rectification costs ranging from hundreds of thousands of RMB to full re-application and delayed openings.
+
+**Prevention**: Before finalizing the design plan, invite the local fire safety authority for pre-review. Many cities offer "drawing pre-review" services for a few thousand RMB.
+
+---
+
+## 2. No Staff Dormitory or Parking Planning
+
+After a hotel opened, the turnover rate for front desk and restaurant staff exceeded 60% within six months. The hotel had no staff dormitory, and commuting time exceeded 1.5 hours. Parking issues were equally prominent.
+
+**Prevention**: During the preparation budget phase, include staff dormitory or housing subsidy and parking space ratios in special planning.
+
+---
+
+## 3. IT System Selection Starts Too Late
+
+Many hotels begin selecting their PMS only two months before opening. The system encounters bugs right as the opening peak arrives, engineers are exhausted fixing issues, the front desk handles check-ins manually.
+
+**Prevention**: IT system selection should begin at least 6 months before opening, leaving sufficient time for testing and integration. A three-phase acceptance process is recommended.
+
+---
+
+## 4. Soft Decoration Procurement Cycles Underestimated
+
+Furniture, curtains, lighting, artwork — the procurement cycles for these soft decoration materials are often severely underestimated. Imported furniture typically takes 3 to 4 months from order to delivery.
+
+**Prevention**: In the project's master schedule, establish a separate milestone for soft decoration procurement and set the latest order date.
+
+---
+
+## 5. No Soft Opening Conducted
+
+Some investors believe "soft opening is a waste of time." The result: in the first week of opening, all hidden problems erupt simultaneously.
+
+**Prevention**: Conduct at least 2 to 4 weeks of soft opening before the official grand opening, simulating complete service processes.
+
+---
+
+## MBCT's Three Key Intervention Points
+
+### Node 1: Before Design Plan Confirmation
+
+The core task at this stage is workflow and functional zoning review. A high-quality design review can identify over 80% of operational structural flaws.
+
+### Node 2: System Selection Phase
+
+IT system selection is not merely selecting a PMS — it is establishing the foundation for the entire digital operations architecture.
+
+### Node 3: Before Soft Opening
+
+Two weeks before soft opening is the final window for SOP rehearsals and problem list clearance.
+
+---
+
+## A Good Beginning Is Half the Battle
+
+Investment during the preparation phase is the highest ROI part of the entire project. Spending 10,000 RMB to prevent a problem during the design phase is far more valuable than spending 100,000 RMB to fix the same problem during the operations phase.`,    category: 'preparation',
+    tags: ["筹备筹开", "开业准备", "风险管理"],
+    author: 'MBCT（MarvelBros C&T）',
+    date: '2026-05-26',
+    readTime: 8,
+    views: 0,
+    likes: 0,
+    comments: 0,
+  },
+  {
     id: 1,
     slug: 'hotel-investment-pitfalls-2026',
     titleZh: '2026酒店投资：为什么有的酒店只赚热闹不赚钱？',
