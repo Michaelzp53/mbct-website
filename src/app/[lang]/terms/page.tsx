@@ -122,8 +122,8 @@ export default async function TermsPage({
               </h2>
               <p>
                 {lang === 'zh'
-                  ? '如对本条款有任何疑问，请联系我们：contactme@marvelbros.com'
-                  : 'If you have any questions about these terms, please contact us: contactme@marvelbros.com'}
+                  ? '如对本条款有任何疑问，请联系我们：info@marvelbros.com'
+                  : 'If you have any questions about these terms, please contact us: info@marvelbros.com'}
               </p>
             </section>
           </div>

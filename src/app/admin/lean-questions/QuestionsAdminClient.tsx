@@ -16,6 +16,9 @@ interface Question {
   hotel_name: string | null
   created_at: string
   status: string | null
+  email_status: string | null
+  email_error: string | null
+  notification_target: string | null
 }
 
 const pillarMap: Record<string, string> = {
@@ -149,6 +152,20 @@ export default function QuestionsAdminClient({ questions: initialQuestions }: { 
                       </span>
                       {q.nickname && <span>提问者：{q.nickname}</span>}
                       {q.hotel_name && <span>酒店：{q.hotel_name}</span>}
+                      {q.notification_target && <span>通知邮箱：{q.notification_target}</span>}
+                      {q.email_status && (
+                        <span>
+                          邮件状态：
+                          {q.email_status === 'sent'
+                            ? '已发送'
+                            : q.email_status === 'failed'
+                            ? '发送失败'
+                            : q.email_status === 'skipped'
+                            ? '未发送'
+                            : '处理中'}
+                        </span>
+                      )}
+                      {q.email_error && <span className="text-red-500">失败原因：{q.email_error}</span>}
                     </div>
                   </div>
 

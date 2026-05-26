@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { CheckCircle, Loader2 } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
 import type { Dict } from '@/lib/dicts'
 
 interface ContactFormProps {
@@ -9,8 +10,12 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ dict }: ContactFormProps) {
+  const searchParams = useSearchParams()
+  const defaultService = searchParams.get('type') === 'plan'
+    ? dict.contact.services[0] || ''
+    : ''
   const [form, setForm] = useState({
-    name: '', phone: '', email: '', company: '', service: '', message: '',
+    name: '', phone: '', email: '', company: '', service: defaultService, message: '',
   })
   const [privacy, setPrivacy] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -37,9 +42,10 @@ export function ContactForm({ dict }: ContactFormProps) {
         return
       }
 
+      await res.json().catch(() => null)
       setStatus('success')
       setForm({
-        name: '', phone: '', email: '', company: '', service: '', message: '',
+        name: '', phone: '', email: '', company: '', service: defaultService, message: '',
       })
       setPrivacy(false)
     } catch {

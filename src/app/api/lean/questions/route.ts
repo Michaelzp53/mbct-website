@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { addQuestion, getQuestions } from './store';
+import { addQuestion, getQuestions, updateQuestionNotification } from './store';
 
 function getIpHash(request: Request): string {
   const ip = request.headers.get('x-forwarded-for') || 'unknown';
@@ -14,20 +14,28 @@ function getIpHash(request: Request): string {
 
 // Email notification helper - 使用 SMTP 发送
 async function sendEmailNotification(question: any) {
+  const notificationTarget = 'info@marvelbros.com';
   try {
     const smtpPassword = process.env.SMTP_PASSWORD || process.env.TENCENT_SECRET_KEY;
     const smtpUser = process.env.SMTP_USER || process.env.TENCENT_SECRET_EMAIL;
     const smtpHost = process.env.SMTP_HOST || 'smtp.exmail.qq.com';
     const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
+    const secure = smtpPort === 465;
     if (!smtpPassword || !smtpUser) {
-      console.log('[EMAIL] SMTP credentials not configured');
-      return;
+      const message = 'SMTP credentials not configured';
+      console.log('[EMAIL]', message);
+      await updateQuestionNotification(question.id, {
+        emailStatus: 'skipped',
+        emailError: message,
+        notificationTarget,
+      });
+      return { ok: false, reason: message, notificationTarget };
     }
     const nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: true,
+      secure,
       auth: {
         user: smtpUser,
         pass: smtpPassword,
@@ -37,13 +45,26 @@ async function sendEmailNotification(question: any) {
     const textBody = `管享精道收到新提问：\n\n标题：${question.title || '无标题'}\n详情：${question.detail || '无详情'}\n分类：${question.pillar || '未分类'}\n浪费类型：${Array.isArray(question.waste_types) ? question.waste_types.join(', ') : (question.waste_types || '未指定')}\n昵称：${question.nickname || '匿名'}\n酒店：${question.hotel_name || '未填写'}\n时间：${question.created_at || new Date().toISOString()}\n\n请登录后台查看完整信息并安排回复。`;
     await transporter.sendMail({
       from: smtpUser,
-      to: 'info@marvelbros.com',
+      to: notificationTarget,
       subject,
       text: textBody,
     });
     console.log('[EMAIL] Sent notification for question', question.id);
+    await updateQuestionNotification(question.id, {
+      emailStatus: 'sent',
+      emailError: null,
+      notificationTarget,
+    });
+    return { ok: true, notificationTarget };
   } catch (err) {
     console.error('Email notification failed:', err);
+    const reason = err instanceof Error ? err.message : String(err);
+    await updateQuestionNotification(question.id, {
+      emailStatus: 'failed',
+      emailError: reason,
+      notificationTarget,
+    });
+    return { ok: false, reason, notificationTarget };
   }
 }
 
@@ -69,10 +90,11 @@ export async function POST(request: Request) {
     });
 
     // Send email notification
-    await sendEmailNotification(question);
+    const notification = await sendEmailNotification(question);
 
     return NextResponse.json({
       question: question,
+      notification,
       success: true,
     });
   } catch (error) {
