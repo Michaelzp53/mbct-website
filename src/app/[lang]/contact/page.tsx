@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { Phone, Mail, MapPin, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { ContactForm } from '@/components/ContactForm'
@@ -153,7 +154,9 @@ export default async function ContactPage({
             </div>
 
             <div className="lg:sticky lg:top-24 space-y-6">
-              <ContactForm dict={dict} />
+              <Suspense fallback={<div className="h-96 animate-pulse bg-muted rounded-xl" />}>
+                <ContactForm dict={dict} />
+              </Suspense>
               <div className="rounded-3xl border border-primary/20 bg-primary/5 p-6 md:p-7">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {isZh ? '如果你已经在思考下一步，就从一次清晰的沟通开始' : 'If you are already thinking about the next move, start with one clear conversation'}
