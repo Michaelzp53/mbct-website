@@ -1241,7 +1241,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
                   </span>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-base font-bold text-foreground mb-1 group-hover:text-[#f59e0b] transition-colors">
-                      {article.title}
+                      {isZh ? article.title : ((article as {titleEn?: string}).titleEn || article.title)}
                     </h3>
                     <p className="text-sm text-muted-foreground truncate">
                       {article.firstLine}
