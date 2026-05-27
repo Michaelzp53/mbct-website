@@ -813,6 +813,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
     {
+      id: 426,
+      type: 'case',
+      title: '从亏损到盈利：一家县城单体酒店的18个月翻牌实录',
+      slug: 'county-hotel-18-month-turnaround-2026',
+      summary: '华中地区某县城商务酒店，60间客房，入住率长期低于45%。MBCT介入后，18个月实现入住率从45%到68%、RevPAR翻倍、累计回正。',
+      firstLine: '2024年初，华中地区某县城。老周在这座县城经营一家商务酒店已经五年了。60间客房，开业之初也曾热闹过一阵，可如今情况每况愈下。',
+      author: 'MBCT',
+      date: '2026-05-27',
+      readTime: '18分钟',
+      tag: '案例研究',
+      featured: true,
+    },
+    {
       id: 404,
       type: 'case',
       title: '从亏损80万到盈利120万：杭州中端酒店18个月成本重构实录',
