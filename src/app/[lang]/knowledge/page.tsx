@@ -563,7 +563,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       type: 'report',
       title: '2026年中国酒店业人力成本结构重塑：从"人房比"到"效能比"的管理转型',
       titleEn: '2026 China Hotel Industry Labor Cost Restructuring: From "Staff-to-Room Ratio" to "Efficiency Ratio"',
-      slug: '2026-hotel-labor-cost-efficiency-ratio',
+      slug: 'hotel-labor-cost-restructuring-2026',
       summary: '2026年中国酒店业正经历K型分化：高端酒店人力成本持续攀升，经济型酒店加速压缩人员配置。本文提出"效能比"概念替代传统"人房比"，从行业数据、典型案例、结构性建议三个维度，为酒店管理者和投资人提供人力成本优化的新思路。',
       summaryEn: 'China hotel industry in 2026 is experiencing K-shaped divergence: rising labor costs in luxury hotels vs. aggressive staff reduction in budget segment. This article introduces "efficiency ratio" to replace traditional "staff-to-room ratio", providing new perspectives on labor cost optimization.',
       firstLine: '2026年的中国酒店业，正站在一个关键的历史分水岭上。从供给端看，近1,873万间客房的存量规模已形成竞争红海；从需求端看，消费分级加剧，K型分化已成定局。',
