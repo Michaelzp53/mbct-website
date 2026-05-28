@@ -12687,8 +12687,10 @@ import newArticles20250523 from './articles-2026-05-23.json';
 import newArticles20250525 from './articles-2026-05-25.json';
 // @ts-ignore - JSON import
 import newArticles20250527 from './articles-2026-05-27.json';
+// @ts-ignore - JSON import
+import newArticles20250528 from './articles-2026-05-28.json';
 
-const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]), ...(newArticles20250525 as ArticleData[]), ...(newArticles20250527 as ArticleData[])];
+const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]), ...(newArticles20250525 as ArticleData[]), ...(newArticles20250527 as ArticleData[]), ...(newArticles20250528 as ArticleData[])];
 export const allArticlesData = allArticles;
 
 export function getArticleBySlug(slug: string) {
