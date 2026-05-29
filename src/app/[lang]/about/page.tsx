@@ -135,7 +135,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               {isZh ? '品牌立场' : 'Brand position'}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {isZh ? 'MBCT 更像什么，不像什么' : 'What MBCT is closer to — and what it is not'}
+              {isZh ? 'MBCT 更像什么，不像什么？' : 'What MBCT is closer to — and what it is not'}
             </h2>
           </div>
 

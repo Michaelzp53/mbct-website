@@ -117,7 +117,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </h2>
               <p className="text-slate-600 text-base md:text-lg leading-relaxed">
                 {isZh
-                  ? '我们先判断项目所处阶段、真正卡住的问题和更适合的推进路径，再决定是做诊断、做方案，还是进入完整合作。'
+                  ? <>我们先判断项目所处阶段、真正卡住的问题和更适合的推进路径，<br />再决定是做诊断、做方案，还是进入完整合作。</>
+
                   : 'We first identify the project stage, the real constraint, and the right way forward, then decide whether diagnosis, solution design, or a full engagement is the right next step.'}
               </p>
             </div>

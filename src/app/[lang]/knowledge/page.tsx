@@ -1345,7 +1345,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
           <div className="space-y-3">
             {articles.map((article) => (
               <Link
-                key={article.id}
+                key={`${article.slug}-${article.id}`}
                 href={`/${lang}/knowledge/${encodeURIComponent(article.slug)}`}
                 className="block p-5 rounded-xl bg-card border border-border hover:border-[#f59e0b]/50 transition-all group"
               >
@@ -1380,7 +1380,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
           <div className="space-y-3">
             {reports.map((report) => (
               <Link
-                key={report.id}
+                key={`${report.slug}-${report.id}`}
                 href={`/${lang}/knowledge/${encodeURIComponent(report.slug)}`}
                 className="block p-5 rounded-xl bg-card border border-border hover:border-[#3b82f6]/50 transition-all group"
               >
@@ -1417,7 +1417,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
           <div className="space-y-3">
             {cases.map((c) => (
               <Link
-                key={c.id}
+                key={`${c.slug}-${c.id}`}
                 href={`/${lang}/knowledge/${encodeURIComponent(c.slug)}`}
                 className="block p-5 rounded-xl bg-card border border-border hover:border-[#22c55e]/50 transition-all group"
               >
