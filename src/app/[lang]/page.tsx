@@ -102,20 +102,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <div className="min-h-screen bg-background">
       <HeroWithStats lang={lang} />
 
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollFade>
             <div className="max-w-3xl mx-auto text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 dark:border-primary/30 mb-6">
                 <Target className="w-4 h-4 text-primary" />
                 <span className="text-primary text-sm font-medium">
                   {isZh ? '先判断你属于哪一种项目场景' : 'Start with the project situation you are in'}
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
                 {isZh ? 'MBCT 不是给所有人一套标准答案' : 'MBCT does not force one standard answer on every client'}
               </h2>
-              <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">
                 {isZh
                   ? <>我们先判断项目所处阶段、真正卡住的问题和更适合的推进路径，<br />再决定是做诊断、做方案，还是进入完整合作。</>
 
@@ -129,12 +129,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               const Icon = item.icon
               return (
                 <ScrollFade key={item.title} delay={index * 100}>
-                  <div className="h-full rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center mb-5">
+                  <div className="h-full rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 shadow-sm">
+                    <div className="w-12 h-12 rounded-2xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 flex items-center justify-center mb-5">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm md:text-base">{item.desc}</p>
+                    <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">{item.title}</h3>
+                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">{item.desc}</p>
                   </div>
                 </ScrollFade>
               )
