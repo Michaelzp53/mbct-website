@@ -48,7 +48,8 @@ export default async function ServicesPage({
   const { lang } = await params
   const dict = getDict(lang)
   const isZh = lang === 'zh'
-  const icons = ['Building2', 'Sparkles', 'TrendingUp', 'BarChart3', 'Users', 'Shield', 'Megaphone', 'Landmark', 'BookOpen']
+  // icons reordered to match new 3-group service layout: 投前决策 → 经营增长 → AI落地
+  const icons = ['Building2', 'Sparkles', 'Landmark', 'TrendingUp', 'Users', 'Megaphone', 'BookOpen', 'BarChart3', 'Shield']
 
   const iconGradients = [
     'linear-gradient(135deg, #4285f4, #34a853)',
@@ -65,89 +66,146 @@ export default async function ServicesPage({
   const processSteps = [
     {
       step: '01',
-      title: isZh ? '先看清问题' : 'Diagnose First',
+      title: isZh ? '诊断现状，锁定真问题' : 'Diagnose & Pinpoint',
       description: isZh
-        ? '先把投资、运营、流量、组织的真实问题拆开，不急着给标准答案。'
-        : 'We separate investment, operations, traffic, and team issues before prescribing solutions.',
+        ? '不急着给方案。先围绕投前决策、经营增长或AI落地场景，数据化地拆清项目当前的真实卡点和机会所在。'
+        : 'No rush to solutions. We first use data to break down the real bottlenecks and opportunities—whether in pre-investment, operations, or AI implementation.',
     },
     {
       step: '02',
-      title: isZh ? '再设计路径' : 'Design the Path',
+      title: isZh ? '设计路径，匹配能力链' : 'Design & Align',
       description: isZh
-        ? '把顾问建议、数字工具与执行节奏拼成一张能落地的增长路线图。'
-        : 'We turn strategy, digital systems, and execution rhythm into an actionable growth roadmap.',
+        ? '根据诊断结论，从三大能力群组中组合最适配的服务模块，生成一条从策略到执行的可交付路线图。'
+        : 'Based on findings, we assemble the right modules from three capability clusters into a delivery roadmap from strategy to execution.',
     },
     {
       step: '03',
-      title: isZh ? '最后盯住结果' : 'Track Outcomes',
+      title: isZh ? '落地执行，守住结果' : 'Execute & Deliver',
       description: isZh
-        ? '上线不是结束。我们持续跟踪关键指标，把方案变成结果。'
-        : 'Launch is not the finish line. We keep tracking the metrics that turn plans into results.',
+        ? '每项建议都有明确的执行路径、责任节点与可验证的成果标准。我们陪跑到结果闭环，而非交付报告就结束。'
+        : 'Every recommendation has a clear execution path, milestones, and verifiable success criteria. We partner through to results closure, not just report delivery.',
     },
   ]
 
   const serviceMeta = [
+    // ===== Group 1: 投前决策 =====
     {
       audience: isZh ? '投资人 / 业主 / 筹备中的项目方' : 'Investors / owners / projects in preparation',
-      forWho: isZh ? '正在评估项目是否值得投资的决策方。' : 'Decision-makers evaluating whether a hotel project is worth pursuing.',
-      problem: isZh ? '看清市场空间、回报逻辑、风险边界和投入产出关系。' : 'Clarify market room, return logic, risk boundaries, and capital efficiency.',
-      deliverable: isZh ? '可行性判断、财务测算、风险分析与方向建议。' : 'Feasibility judgment, financial modeling, risk analysis, and directional advice.',
+      forWho: isZh
+        ? '正在评估一个酒店项目是否值得投入、以及以什么条件投入的决策方。'
+        : 'Decision-makers evaluating whether and on what terms a hotel project is worth pursuing.',
+      problem: isZh
+        ? '帮你看清市场空间到底有多大、什么回报水平算合理、风险边界在哪里、资本效率是否达标。'
+        : 'Clarify market room, reasonable return benchmarks, risk boundaries, and capital efficiency thresholds.',
+      deliverable: isZh
+        ? '基于数据的可投性判断、多情景财务测算、风险量化分析与落地方向建议。'
+        : 'Data-driven go/no-go judgment, multi-scenario financial modeling, quantified risk analysis, and directional recommendations.',
     },
     {
       audience: isZh ? '投资人 / 业主 / 筹开项目负责人' : 'Owners / investors / pre-opening leaders',
-      forWho: isZh ? '筹开项目、老项目重塑、定位模糊的酒店项目。' : 'Pre-opening projects, repositioning efforts, or hotels with unclear identity.',
-      problem: isZh ? '明确项目该服务谁、该卖给谁，以及该形成什么样的品牌认知。' : 'Define who the project serves, who it sells to, and what brand perception it should create.',
-      deliverable: isZh ? '品牌方向、定位策略、叙事结构与执行框架。' : 'Brand direction, positioning strategy, narrative structure, and execution framework.',
-    },
-    {
-      audience: isZh ? '总经理 / 经营团队 / 存量项目负责人' : 'General managers / operating teams / existing asset leaders',
-      forWho: isZh ? '经营动作很多，但结果始终不够理想的项目。' : 'Projects where activity is high but business improvement remains weak.',
-      problem: isZh ? '找出真正拖住经营改善的关键环节。' : 'Identify the bottleneck that is actually holding back operating improvement.',
-      deliverable: isZh ? '诊断结论、优先级建议、增长动作清单与推进建议。' : 'Diagnostic findings, priority guidance, growth actions, and an execution path.',
-    },
-    {
-      audience: isZh ? '收益负责人 / 业主 / 运营管理层' : 'Revenue leaders / owners / operations management',
-      forWho: isZh ? '房价策略、渠道结构、库存效率需要优化的项目。' : 'Hotels that need better pricing, channel mix, or inventory efficiency.',
-      problem: isZh ? '提升收益质量，而不是单纯压价冲量。' : 'Improve revenue quality instead of relying on blunt discounting.',
-      deliverable: isZh ? '价格策略建议、渠道优化建议与收益管理机制。' : 'Pricing recommendations, channel optimization, and revenue-management routines.',
-    },
-    {
-      audience: isZh ? '品牌方 / 经营团队 / 会员增长负责人' : 'Brand teams / operating teams / retention leaders',
-      forWho: isZh ? '希望降低 OTA 依赖、提升会员与复购的项目。' : 'Projects that want less OTA dependency and stronger repeat business.',
-      problem: isZh ? '把用户留存和复购从概念变成机制。' : 'Turn retention and repeat purchase from an idea into an operating mechanism.',
-      deliverable: isZh ? '私域结构方案、会员路径、内容触点与运营建议。' : 'Private-domain structure, membership paths, content touchpoints, and operating guidance.',
-    },
-    {
-      audience: isZh ? '管理团队 / 需要提效的项目方' : 'Management teams / projects seeking efficiency gains',
-      forWho: isZh ? '希望让团队从重复性工作中解放出来的项目。' : 'Projects that want teams spending less time on repetitive work.',
-      problem: isZh ? '提升效率、减少低价值重复工作、优化日常经营反馈。' : 'Raise efficiency, reduce low-value repetition, and improve operating feedback loops.',
-      deliverable: isZh ? '系统配置、流程支持、应用场景设计与使用建议。' : 'System setup, workflow support, use-case design, and operating guidance.',
-    },
-    {
-      audience: isZh ? '经营管理者 / 需要持续判断支持的团队' : 'Operators / teams that need ongoing judgment support',
-      forWho: isZh ? '需要长期判断支持，但未必适合重型顾问项目的团队。' : 'Teams that need continuing decision support without a heavyweight engagement.',
-      problem: isZh ? '为经营过程中的关键决策提供持续支持。' : 'Support critical operating decisions as they arise.',
-      deliverable: isZh ? '月度诊断、重点问题建议与经营复盘支持。' : 'Monthly diagnosis, advice on critical issues, and review support.',
+      forWho: isZh
+        ? '筹开新项目、老项目重塑、或品牌定位模糊、在同质化竞争中缺乏差异化的项目。'
+        : 'Pre-opening projects, rebranding efforts, or hotels struggling with unclear positioning and commoditized competition.',
+      problem: isZh
+        ? '明确项目到底该服务谁、卖给谁，以及应该建立什么样的品牌认知来支撑溢价。'
+        : 'Define who the project serves, who it sells to, and what brand perception supports premium pricing.',
+      deliverable: isZh
+        ? '品牌方向与定位策略、叙事结构与VI体系、以及一份可量化的落地执行框架。'
+        : 'Brand direction, positioning strategy, narrative structure, VI system, and a quantifiable execution framework.',
     },
     {
       audience: isZh ? '项目方 / 业主 / 资本对接负责人' : 'Project sponsors / owners / capital leads',
-      forWho: isZh ? '需要资金结构设计、融资材料与对接支持的项目方。' : 'Projects that need capital structuring, financing materials, and investor coordination.',
-      problem: isZh ? '让融资动作更专业、更有章法。' : 'Make the financing process more professional and better structured.',
-      deliverable: isZh ? '财务表达、融资材料、对接建议与推进支持。' : 'Financial framing, financing materials, connection advice, and execution support.',
+      forWho: isZh
+        ? '项目方向明确、但需要设计最优资本结构、准备融资材料并推进资金到位的团队。'
+        : 'Teams with a clear project direction that need optimal capital structuring, financing materials, and investor engagement.',
+      problem: isZh
+        ? '让融资动作更专业、更有章法——不只是拿到钱，而是以合理的条件拿到对的钱。'
+        : 'Make the financing process professional and structured—not just getting funded, but getting the right capital on the right terms.',
+      deliverable: isZh
+        ? '财务表达与估值建议、投委会级融资材料、精准对接渠道与全程谈判推进支持。'
+        : 'Financial framing, investment-grade materials, targeted investor matching, and full negotiation support.',
+    },
+    // ===== Group 2: 经营增长 =====
+    {
+      audience: isZh ? '总经理 / 经营团队 / 存量项目负责人' : 'General managers / operating teams / existing asset leaders',
+      forWho: isZh
+        ? '经营动作不少但结果不够理想，需要第三方客观视角找出真正瓶颈的酒店项目。'
+        : 'Hotels where activity is high but business improvement remains weak—needing an objective third-party view to find the real bottleneck.',
+      problem: isZh
+        ? '系统化地找出那些拖住经营改善的关键环节，而不是凭经验猜测。'
+        : 'Systematically identify the specific factors holding back operating improvement—no guesswork.',
+      deliverable: isZh
+        ? '全维度诊断结论、分级改善优先级、增长动作清单与推进路线图。'
+        : 'Full-dimension diagnostic findings, prioritized remediation plan, growth action list, and execution roadmap.',
+    },
+    {
+      audience: isZh ? '品牌方 / 经营团队 / 会员增长负责人' : 'Brand teams / operating teams / retention leaders',
+      forWho: isZh
+        ? '希望真正降低对OTA的依赖、建立自有获客与复购体系的品牌或项目。'
+        : 'Brands or projects that want genuine OTA independence and a proprietary acquisition and retention system.',
+      problem: isZh
+        ? '把"做私域"这个想法落地成一个有明确动作、可追踪效果的系统性工程。'
+        : 'Turn "build private domain" from an idea into a systematic program with clear actions and measurable impact.',
+      deliverable: isZh
+        ? '私域体系结构方案、会员路径设计、内容触点矩阵与运营执行建议。'
+        : 'Private domain structure, membership path design, content touchpoint matrix, and operating playbook.',
+    },
+    {
+      audience: isZh ? '经营管理者 / 需要持续判断支持的团队' : 'Operators / teams that need ongoing judgment support',
+      forWho: isZh
+        ? '需要长期专业判断支持、但不一定适合或需要重型顾问驻场的经营团队。'
+        : 'Teams that need ongoing professional judgment support without the weight of a full-time consultancy engagement.',
+      problem: isZh
+        ? '确保关键经营决策有数据与经验支撑，而不是管理层独自判断。'
+        : 'Ensure critical operating decisions are backed by data and experience, not gut feel alone.',
+      deliverable: isZh
+        ? '月度运营诊断、关键决策分析建议与定期经营复盘报告。'
+        : 'Monthly operational diagnostics, critical decision analysis, and periodic business review reports.',
     },
     {
       audience: isZh ? '管理团队 / 投资方 / 需要持续行业判断的人' : 'Management teams / investors / leaders who need ongoing market judgment',
-      forWho: isZh ? '希望持续理解行业变化与趋势的团队。' : 'Teams that want a clearer read on industry shifts and emerging trends.',
-      problem: isZh ? '减少信息噪音，提高行业判断质量。' : 'Reduce noise and improve the quality of industry judgment.',
-      deliverable: isZh ? '研究内容、案例复盘、趋势洞察与决策参考。' : 'Research, case reviews, trend insight, and decision support.',
+      forWho: isZh
+        ? '希望持续理解行业变化趋势、减少信息噪音、提高判断准确率的行业从业者。'
+        : 'Industry professionals who want a clearer signal amid market noise and sharper strategic judgment.',
+      problem: isZh
+        ? '把散落的信息整理成有结构的判断框架，而不是堆砌报告数量。'
+        : 'Transform fragmented information into structured judgment frameworks—not more reports, better insight.',
+      deliverable: isZh
+        ? '深度行业研究报告、头部案例复盘、区域市场数据分析与决策参考。'
+        : 'In-depth industry reports, benchmark case reviews, regional market data, and strategic decision reference.',
+    },
+    // ===== Group 3: AI落地 =====
+    {
+      audience: isZh ? '收益负责人 / 业主 / 运营管理层' : 'Revenue leaders / owners / operations management',
+      forWho: isZh
+        ? '希望用AI把团队从重复性工作中解放出来、提升定价效率与经营反馈速度的管理者。'
+        : 'Leaders who want AI to free their teams from repetitive work, improve pricing efficiency, and speed up operating feedback.',
+      problem: isZh
+        ? '让日常经营决策从"凭经验感觉"升级为"看数据说话"，同时把低价值重复工作降到最低。'
+        : 'Upgrade daily decision-making from instinct to data-driven, while minimizing low-value repetitive tasks.',
+      deliverable: isZh
+        ? '系统部署与配置、流程对接方案、应用场景设计与持续使用指导。'
+        : 'System deployment and configuration, workflow integration, use-case design, and ongoing operating guidance.',
+    },
+    {
+      audience: isZh ? '管理团队 / 需要提效的项目方' : 'Management teams / projects seeking efficiency gains',
+      forWho: isZh
+        ? '方案已经确定，但需要有人系统性跟进落地执行、管理里程碑并保障效果的项目方。'
+        : 'Teams that have a plan but need systematic follow-through on execution, milestone management, and results assurance.',
+      problem: isZh
+        ? '确保方案不只是停留在纸面上——落地过程有人盯、关键节点有复盘、最终效果有验证。'
+        : 'Ensure the plan doesn\'t stay on paper-someone tracks execution, reviews milestones, and verifies outcomes.',
+      deliverable: isZh
+        ? '透明执行看板、阶段性复盘报告、效果追踪与持续优化建议。'
+        : 'Transparent execution dashboard, phase-based review reports, outcome tracking, and continuous improvement guidance.',
     },
   ]
 
   return (
     <>
       <PageHero
-        title={isZh ? '我们提供的不是零散服务，而是一条能推进结果的服务链' : 'What we provide is not a list of services, but a chain that moves results forward'}
-        subtitle={isZh ? '从投前判断，到经营增长，再到 AI 落地，MBCT 的服务是为了让关键问题看得更清楚、推进得更有效。' : 'From pre-investment judgment to operating growth and AI implementation, MBCT is built to make critical issues clearer and progress more effective.'}
+        title={isZh ? '三个能力群组，覆盖酒店增长最关键的事' : 'Three capability clusters covering what matters most for hotel growth'}
+        subtitle={isZh ? '围绕投前决策、经营增长与AI落地三大方向，MBCT把每个服务模块组织成从诊断到执行的可交付能力链——不是零散产品，而是推进结果的完整系统。' : 'Organized around pre-investment decisions, operational growth, and AI implementation—each module is a link in a deliverable chain from diagnosis to execution, not a standalone product.'}
         bgImage="/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg"
       />
 

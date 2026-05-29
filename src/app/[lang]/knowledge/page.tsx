@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BookOpen, FileText, BarChart3, Newspaper, ArrowRight, Clock, User, Calendar } from 'lucide-react'
+import { BookOpen, FileText, BarChart3, ArrowRight, Clock, User, Calendar } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 
 export default async function KnowledgePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -8,10 +8,18 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   // 页面UI翻译
   const ui = {
-    pageTitle: isZh ? '行业动态' : 'Industry Navigation',
+    pageTitle: isZh ? '行业洞察' : 'Industry Insights',
     pageSubtitle: isZh
-      ? '洞察行业趋势,分享实战经验,助力酒店数字化转型'
-      : 'Insights into industry trends, sharing practical experience, empowering hotel digital transformation',
+      ? '以数据驱动的前瞻视角，深度解析酒店行业趋势、投资逻辑与运营变革'
+      : 'Data-driven foresight — in-depth analysis of hotel industry trends, investment logic, and operational transformation',
+    heroSubtitle: isZh
+      ? 'MBCT研究院出品，以数据驱动的前瞻视角，为酒店行业提供深度洞察与实战指南'
+      : 'By MBCT Institute — data-driven strategic foresight, delivering deep insights and practical guidance for the hospitality industry',
+    leanBannerTitle: isZh ? '管享精道 · 专题栏目' : 'Lean Insights · Special Column',
+    leanBannerDesc: isZh
+      ? '专为酒店管理者打造的精益管理知识体系 —— 从投资决策到运营升级，7大模块系统赋能。独立入口，直达实战精华。'
+      : 'A Lean management knowledge system built for hotel executives — 7 modules empowering decisions from investment to operations. Independent entry to a world of practical wisdom.',
+    enterLean: isZh ? '进入管享精道' : 'Enter Lean Insights',
     academicTitle: isZh ? '行业分析' : 'Industry Analysis',
     academicDesc: isZh ? '学术研究论文,理论与实践结合' : 'Peer-reviewed research combining theory and practice',
     reportTitle: isZh ? '行业报告' : 'Industry Reports',
@@ -1180,7 +1188,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     <div className="min-h-screen bg-background">
       <PageHero
         title={ui.pageTitle}
-        subtitle={isZh ? 'MBCT研究院出品,用数据说话,为酒店行业提供前瞻洞察与实战指南' : 'From MBCT Institute - data-driven insights and practical guides for the hotel industry'}
+        subtitle={ui.heroSubtitle}
         bgImage="/hero-pexels-jimmy-liao.jpg"
       />
 
@@ -1195,7 +1203,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
             {ui.pageTitle}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {isZh ? 'MBCT研究院出品,用数据说话,为酒店行业提供前瞻洞察与实战指南' : 'From MBCT Institute - data-driven insights and practical guides for the hotel industry'}
+            {ui.heroSubtitle}
           </p>
         </div>
 
@@ -1224,6 +1232,36 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
             </svg>
           </div>
         </div>
+
+        {/* 管享精道 · 专题栏目入口 */}
+        <section className="mb-12">
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200 dark:from-amber-900/20 dark:to-yellow-900/20 dark:border-amber-500/30">
+            <div className="flex flex-col lg:flex-row items-center gap-6">
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-300 text-sm font-medium mb-3">
+                  <BookOpen className="w-4 h-4" />
+                  {isZh ? '专题栏目' : 'Special Column'}
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  {ui.leanTitle}
+                </h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {ui.leanBannerDesc}
+                </p>
+                <Link
+                  href={`/${lang}/lean`}
+                  className="inline-flex items-center px-6 py-3 bg-[#f59e0b] text-[#0f172a] font-bold rounded-xl hover:bg-[#f59e0b]/90 transition-all"
+                >
+                  {ui.enterLean}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+              <div className="hidden lg:flex items-center justify-center w-48 h-48 rounded-2xl bg-amber-100/50 dark:bg-amber-900/20 border border-amber-200/30 dark:border-amber-500/20">
+                <BookOpen className="w-24 h-24 text-amber-500/40" />
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Categories */}
         <section id="categories" className="mb-16">

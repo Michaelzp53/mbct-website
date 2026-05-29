@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Menu, X, Globe, User } from 'lucide-react'
+import { Menu, X, Globe, User, ArrowRight } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -18,55 +18,58 @@ interface NavbarProps {
 export function Navbar({ lang, dict }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const { nav } = dict
+  const isZh = lang === 'zh'
 
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
-    { href: `/${lang}/about`, label: lang === 'zh' ? '关于我们' : 'About' },
-    { href: `/${lang}/services`, label: lang === 'zh' ? '核心业务' : 'Services' },
-    { href: `/${lang}/knowledge`, label: lang === 'zh' ? '行业资讯' : 'Industry Insights' },
-    { href: `/${lang}/cases`, label: lang === 'zh' ? '案例展示' : 'Cases' },
-    { href: `/${lang}/lean`, label: lang === 'zh' ? '管享精道' : 'Lean Insights' },
-    { href: `/${lang}/contact?type=plan`, label: lang === 'zh' ? '获取方案' : 'Get Plan' },
-    { href: `/${lang}/contact`, label: lang === 'zh' ? '联系我们' : 'Contact' },
+    { href: `/${lang}/about`, label: isZh ? '关于我们' : 'About Us' },
+    { href: `/${lang}/services`, label: isZh ? '解决方案' : 'Solutions' },
+    { href: `/${lang}/knowledge`, label: isZh ? '行业洞察' : 'Industry Insights' },
+    { href: `/${lang}/cases`, label: isZh ? '案例成果' : 'Case Results' },
+    { href: `/${lang}/contact`, label: isZh ? '联系我们' : 'Contact' },
   ]
-  // Navigation order: 首页-关于我们-核心业务-行业资讯-案例展示-管享精道-获取方案-联系我们
+
+  const primaryCta = {
+    href: `/${lang}/contact?type=plan`,
+    label: isZh ? '获取方案' : 'Get a Plan',
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 dark:bg-[#1a1a2e]/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 dark:supports-[backdrop-filter]:bg-[#1a1a2e]/90">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
           <Link href={`/${lang}/`} className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
             <Image src="/logo-new.png" alt="MBCT Logo" width={48} height={48} className="object-contain flex-shrink-0" />
             <div className="flex flex-col min-w-0">
               <span className="font-bold text-foreground text-base lg:text-lg leading-none dark:text-white">MBCT</span>
               <span className="text-[10px] sm:text-xs text-gradient-rainbow font-medium truncate max-w-[120px] sm:max-w-[160px] lg:max-w-none">
-                {lang === 'zh' ? '迈创兄弟商业科技' : 'MarvelBros C&T'}
+                {isZh ? '迈创兄弟商业科技' : 'MarvelBros C&T'}
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-3 xl:gap-4 2xl:gap-6 flex-shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={cn(
-                  'px-3 py-2 text-sm font-bold text-muted-foreground rounded-lg hover:bg-primary/10 hover:text-primary transition-colors whitespace-nowrap flex-shrink-0'
-                )}
+                className={cn('px-3 py-2 text-sm font-bold text-muted-foreground rounded-lg hover:bg-primary/10 hover:text-primary transition-colors whitespace-nowrap flex-shrink-0')}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Right Side: Theme Toggle + Lang + Login */}
           <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
-            {/* Theme Toggle */}
+            <Link href={primaryCta.href}>
+              <Button className="bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600 font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5">
+                <span>{primaryCta.label}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+
             <ThemeToggle lang={lang} />
 
-            {/* Language Switch */}
             <Link
               href={`/${lang === 'zh' ? 'en' : 'zh'}/`}
               className="flex items-center gap-1.5 px-2 py-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-primary/10 flex-shrink-0"
@@ -75,7 +78,6 @@ export function Navbar({ lang, dict }: NavbarProps) {
               <span>{lang === 'zh' ? 'EN' : '中文'}</span>
             </Link>
 
-            {/* Login/Register */}
             <Link href={`/${lang}/login`}>
               <Button
                 variant="outline"
@@ -87,7 +89,6 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </Link>
           </div>
 
-          {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger className="md:hidden" render={<Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground"><Menu className="h-5 w-5" /></Button>} />
             <SheetContent side="right" className="w-[300px] p-0 bg-background border-l border-border">
@@ -114,7 +115,13 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 ))}
 
                 <div className="mt-6 pt-6 border-t border-border space-y-3">
-                  {/* Theme Toggle - Mobile */}
+                  <Link href={primaryCta.href} onClick={() => setIsOpen(false)}>
+                    <Button className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600">
+                      {primaryCta.label}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+
                   <div className="flex justify-center mb-2">
                     <ThemeToggle lang={lang} />
                   </div>

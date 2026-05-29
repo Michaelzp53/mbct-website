@@ -8,42 +8,34 @@ interface FooterProps {
 }
 
 export function Footer({ lang, dict }: FooterProps) {
-  const { footer: f, services: s } = dict
+  const { footer: f } = dict
+  const isZh = lang === 'zh'
 
-  const serviceLinks = s.items.slice(0, 4).map((item) => ({
-    label: item.title,
-    href: `/${lang}/services`,
-  }))
-
-  const companyLinks = [
-    { label: lang === 'zh' ? '关于我们' : 'About Us', href: `/${lang}/about` },
-    { label: lang === 'zh' ? '团队' : 'Team', href: `/${lang}/about` },
-    { label: lang === 'zh' ? '合作伙伴' : 'Partners', href: `/${lang}/cases` },
-    { label: lang === 'zh' ? '联系我们' : 'Contact Us', href: `/${lang}/contact` },
-  ]
-
-  const resourceLinks = [
-    { label: 'Case Studies', href: `/${lang}/cases` },
-    { label: 'Industry Reports', href: `/${lang}/cases` },
-    { label: 'Industry Navigation', href: `/${lang}/knowledge` },
-    { label: 'Blog', href: `/${lang}/knowledge` },
+  const primaryLinks = [
+    { label: isZh ? '关于我们' : 'About Us', href: `/${lang}/about` },
+    { label: isZh ? '解决方案' : 'Solutions', href: `/${lang}/services` },
+    { label: isZh ? '行业洞察' : 'Industry Insights', href: `/${lang}/knowledge` },
+    { label: isZh ? '案例成果' : 'Case Results', href: `/${lang}/cases` },
+    { label: isZh ? '管享精道' : 'Lean Insights', href: `/${lang}/lean` },
+    { label: isZh ? '联系我们' : 'Contact', href: `/${lang}/contact` },
   ]
 
   return (
     <footer className="bg-slate-100 dark:bg-[#1a1a2e] text-foreground">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.9fr_0.95fr]">
+          <div>
             <div className="flex items-center gap-3 mb-6">
               <Image src="/logo-new.png" alt="MBCT Logo" width={52} height={52} className="object-contain" />
               <div>
                 <span className="font-bold text-lg text-foreground">MBCT</span>
-                <p className="text-[10px] sm:text-xs text-gradient-rainbow font-medium">{lang === 'zh' ? '迈创兄弟商业科技' : 'MarvelBros C&T'}</p>
+                <p className="text-[10px] sm:text-xs text-gradient-rainbow font-medium">{isZh ? '迈创兄弟商业科技' : 'MarvelBros C&T'}</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              {f.description}
+              {isZh
+                ? '帮助酒店投资人和经营团队，把项目判断、经营增长和 AI 落地做成可执行结果。'
+                : 'Helping hotel investors and operators turn project judgment, operating growth, and AI implementation into measurable results.'}
             </p>
             <div className="flex flex-col gap-2 mt-6">
               <a href="mailto:info@marvelbros.com" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
@@ -61,11 +53,10 @@ export function Footer({ lang, dict }: FooterProps) {
             </div>
           </div>
 
-          {/* Services */}
           <div>
-            <h3 className="font-semibold text-sm text-foreground mb-4">{s.title}</h3>
+            <h3 className="font-semibold text-sm text-foreground mb-4">{isZh ? '网站导航' : 'Navigation'}</h3>
             <ul className="space-y-3">
-              {serviceLinks.map((link) => (
+              {primaryLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                     {link.label}
@@ -75,39 +66,14 @@ export function Footer({ lang, dict }: FooterProps) {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
-            <h3 className="font-semibold text-sm text-foreground mb-4">{lang === 'zh' ? '关于我们' : 'Company'}</h3>
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-semibold text-sm text-foreground mb-4">{lang === 'zh' ? '资源' : 'Resources'}</h3>
-            <ul className="space-y-3">
-              {resourceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">{f.copyright}</p>
-            <div className="flex gap-6 text-sm">
+            <h3 className="font-semibold text-sm text-foreground mb-4">{isZh ? '联系与说明' : 'Contact & Legal'}</h3>
+            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+              <p>{isZh ? '聚焦酒店投资判断、经营增长与 AI 落地。' : 'Focused on hotel investment judgment, operating growth, and AI implementation.'}</p>
+              <p>{isZh ? '主转化入口：获取方案' : 'Primary conversion path: Get a Plan'}</p>
+              <p>{isZh ? '支持项目沟通、经营诊断与数字化落地咨询。' : 'Supporting project conversations, diagnostics, and digital execution.'}</p>
+            </div>
+            <div className="flex gap-6 text-sm mt-6">
               <Link href={`/${lang}/privacy`} className="text-muted-foreground hover:text-primary transition-colors">
                 {f.privacy}
               </Link>
@@ -117,6 +83,17 @@ export function Footer({ lang, dict }: FooterProps) {
               <Link href="/sitemap.xml" className="text-muted-foreground hover:text-primary transition-colors">
                 {f.sitemap}
               </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-border">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-muted-foreground text-sm">{f.copyright}</p>
+            <div className="flex gap-6 text-sm text-muted-foreground">
+              <span>{isZh ? '酒店投资判断' : 'Investment Judgment'}</span>
+              <span>{isZh ? '经营增长' : 'Operating Growth'}</span>
+              <span>{isZh ? 'AI 落地' : 'AI Implementation'}</span>
             </div>
           </div>
         </div>

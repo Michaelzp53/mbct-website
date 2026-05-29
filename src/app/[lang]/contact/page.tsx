@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
-import { Phone, Mail, MapPin, CheckCircle, ArrowRight } from 'lucide-react'
+import { Phone, Mail, MapPin, CheckCircle, ArrowRight, FileText, LineChart, Cpu } from 'lucide-react'
 import Link from 'next/link'
 import { ContactForm } from '@/components/ContactForm'
 import { getDict } from '@/lib/dicts'
@@ -8,22 +8,30 @@ import PageHero from '@/components/PageHero'
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ lang: string }>
+  searchParams: Promise<{ type?: string }>
 }): Promise<Metadata> {
   const { lang } = await params
+  const { type } = await searchParams
   const dict = getDict(lang)
-  return { title: dict.nav.contact }
+  const isPlan = type === 'plan'
+  return { title: isPlan ? dict.nav.getPlan : dict.nav.contact }
 }
 
 export default async function ContactPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ lang: string }>
+  searchParams: Promise<{ type?: string }>
 }) {
   const { lang } = await params
+  const { type } = await searchParams
   const dict = getDict(lang)
   const isZh = lang === 'zh'
+  const isPlan = type === 'plan'
 
   const scenarios = [
     isZh ? '正在判断一个酒店项目该不该投。' : 'You are deciding whether a hotel project is worth investing in.',
@@ -48,6 +56,24 @@ export default async function ContactPage({
     isZh ? '建议参与人：投资方、业主方、项目负责人或经营管理者。' : 'Recommended participants: investors, owners, project leads, or operating managers.',
   ]
 
+  const planHighlights = [
+    {
+      icon: FileText,
+      title: isZh ? '先判断项目值不值得推进' : 'Clarify whether the project should move forward',
+      desc: isZh ? '不是先给结论，而是先帮助你把项目阶段、目标和风险边界讲清楚。' : 'Before prescribing solutions, we clarify the project stage, target outcomes, and risk boundaries.',
+    },
+    {
+      icon: LineChart,
+      title: isZh ? '再确定更适合的增长路径' : 'Identify the right growth path',
+      desc: isZh ? '根据经营问题、客群结构和增长目标，决定是做诊断、做方案还是进入专项支持。' : 'Based on business issues, guest structure, and growth goals, we decide whether diagnosis, planning, or targeted support is the right next step.',
+    },
+    {
+      icon: Cpu,
+      title: isZh ? '最后匹配 AI 与执行节奏' : 'Match AI implementation to execution rhythm',
+      desc: isZh ? '确保数字化不是概念展示，而是可以真正进入项目推进节奏的经营动作。' : 'Ensure digital execution becomes an operating routine rather than a conceptual showcase.',
+    },
+  ]
+
   const contactPoints = [
     {
       label: dict.contact.form.phone,
@@ -69,13 +95,47 @@ export default async function ContactPage({
   return (
     <>
       <PageHero
-        title={isZh ? '先把项目现状讲清楚，再决定下一步怎么做' : 'Clarify the current project situation first, then decide what should happen next'}
-        subtitle={isZh ? '你不需要一开始就准备得非常完整。只要把项目阶段、核心目标和目前最难推进的问题告诉我们，我们会先帮你判断，从哪里切入更合适。' : 'You do not need a perfect brief to start. Share the project stage, your main objective, and the hardest issue to move forward, and we will help you decide the most suitable point of entry.'}
+        title={isPlan
+          ? (isZh ? '先获取项目判断路径，再决定下一步怎么推进' : 'Get a clear project path before deciding the next move')
+          : (isZh ? '先把项目现状讲清楚，再决定下一步怎么做' : 'Clarify the current project situation first, then decide what should happen next')}
+        subtitle={isPlan
+          ? (isZh ? '“获取方案”不是立即拿一份通用答案，而是先让 MBCT 帮你判断：这个项目该怎么切入、该先解决什么、以及更适合的推进路径是什么。' : 'Getting a plan does not mean receiving a generic answer. It means letting MBCT first determine where the project should start, what should be solved first, and what path forward makes the most sense.')
+          : (isZh ? '你不需要一开始就准备得非常完整。只要把项目阶段、核心目标和目前最难推进的问题告诉我们，我们会先帮你判断，从哪里切入更合适。' : 'You do not need a perfect brief to start. Share the project stage, your main objective, and the hardest issue to move forward, and we will help you decide the most suitable point of entry.')}
         bgImage="/hero-rod-long-2P_ifaetDm0-unsplash.jpg"
       />
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {isPlan && (
+            <div className="mb-10 rounded-3xl border border-primary/20 bg-primary/5 p-8 md:p-10">
+              <div className="max-w-3xl mb-8">
+                <p className="text-sm font-medium text-primary mb-4">
+                  {isZh ? '获取方案之前，先明确这三件事' : 'Before a plan, clarify these three things'}
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  {isZh ? 'MBCT 先帮你判断，再决定更适合的合作方式' : 'MBCT helps you judge first, then choose the right engagement path'}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {isZh ? '这一步的重点不是立刻给出一份通用方案，而是先看清项目属于什么场景、问题出在什么地方、以及更适合进入哪一种支持方式。' : 'The goal is not to hand over a generic solution immediately. It is to identify the project situation, locate the real problem, and determine the right form of support.'}
+                </p>
+              </div>
+              <div className="grid gap-6 md:grid-cols-3">
+                {planHighlights.map((item) => {
+                  const Icon = item.icon
+                  return (
+                    <div key={item.title} className="rounded-2xl border border-border bg-card p-6">
+                      <div className="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-4">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )}
+
           <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 xl:gap-14 items-start">
             <div className="space-y-6">
               <div className="rounded-3xl border border-border bg-card p-8 md:p-10 shadow-sm">
@@ -159,10 +219,14 @@ export default async function ContactPage({
               </Suspense>
               <div className="rounded-3xl border border-primary/20 bg-primary/5 p-6 md:p-7">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {isZh ? '如果你已经在思考下一步，就从一次清晰的沟通开始' : 'If you are already thinking about the next move, start with one clear conversation'}
+                  {isPlan
+                    ? (isZh ? '这一步不是立刻成交，而是先把判断做对' : 'This stage is about getting the judgment right before moving forward')
+                    : (isZh ? '如果你已经在思考下一步，就从一次清晰的沟通开始' : 'If you are already thinking about the next move, start with one clear conversation')}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  {isZh ? '比起先讨论很多方案，更重要的是先把项目真正的问题说清楚。MBCT 会先帮你判断问题本质，再决定更合适的推进方式。' : 'Before discussing many solutions, it is more important to clarify the real issue in the project. MBCT will first help identify the problem clearly, then choose the most suitable path forward.'}
+                  {isPlan
+                    ? (isZh ? '提交项目情况后，MBCT 会先帮助你判断：更适合做项目判断、经营诊断，还是进入完整合作。' : 'After you submit the project situation, MBCT will first determine whether the right next step is project assessment, operational diagnosis, or a fuller engagement.')
+                    : (isZh ? '比起先讨论很多方案，更重要的是先把项目真正的问题说清楚。MBCT 会先帮你判断问题本质，再决定更合适的推进方式。' : 'Before discussing many solutions, it is more important to clarify the real issue in the project. MBCT will first help identify the problem clearly, then choose the most suitable path forward.')}
                 </p>
               </div>
             </div>

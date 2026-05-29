@@ -121,7 +121,7 @@ This is the starting point of MBCT's methodology—and the first action taken on
 
 Specialized in digital empowerment — full-process solutions and consulting services for the hotel industry, committed to driving revenue growth through the dual-track improvement of efficiency and guest experience.
 
-Website: www.marvelbros.com | Email: contactme@marvelbros.com / info@marvelbros.com
+Website: www.marvelbros.com | Email: info@marvelbros.com
 `,
   }
 

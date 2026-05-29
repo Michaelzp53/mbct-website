@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { CTASection } from '@/components/CTASection'
 import { getDict } from '@/lib/dicts'
 import PageHero from '@/components/PageHero'
-import { CheckCircle, ArrowRight, Quote } from 'lucide-react'
+import { CheckCircle, ArrowRight, Quote, Target, AlertTriangle, ListChecks, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 
 export async function generateMetadata({
@@ -54,15 +54,15 @@ export default async function CasesPage({
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-stretch">
             <div className="rounded-3xl border border-border bg-card p-8 md:p-10 shadow-sm">
               <p className="text-sm font-medium text-primary mb-4">
-                {isZh ? '不是展示漂亮案例，而是展示可复制的方法' : 'Not polished stories — repeatable operating methods'}
+                {isZh ? '不只是故事，是可重复的方法' : 'Not polished stories — repeatable operating methods'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
-                {isZh ? '每一个案例，都对应一家酒店在现实里遇到过的问题' : 'Every case starts with a real hotel problem that had to be solved'}
+                {isZh ? '每一个案例，都对应一类酒店的经营卡点' : 'Every case addresses a real hotel business bottleneck'}
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl">
                 {isZh
-                  ? '有的酒店困在渠道结构里，有的项目卡在筹开节奏里，也有团队明明很忙，却始终看不到利润改善。我们做案例，不是为了讲得热闹，而是为了让后来者知道：什么问题，应该用什么打法。'
-                  : 'Some hotels were trapped by OTA dependence. Some projects were stuck before opening. Some teams were busy every day yet saw no profit improvement. We build case studies to show which playbook solves which problem.'}
+                  ? '我们不再用"漂亮故事"来展示案例。取而代之的，是一套结构化的四要素框架——是什么项目、面对什么难题、做了什么动作、拿到了什么结果。每一个动作都可追溯，每一个数据都可验证。'
+                  : 'We no longer tell "pretty stories." Instead, every case follows a structured four-element framework — project type, core problem, actions taken, and quantified outcome. Every move is traceable. Every number is verifiable.'}
               </p>
             </div>
 
@@ -96,8 +96,8 @@ export default async function CasesPage({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {dict.cases.items.map((c, i) => (
-              <Card key={c.client} className="border border-border bg-card rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 card-themed h-full">
-                <div className="h-44 relative overflow-hidden">
+              <Card key={c.client} className="border border-border bg-card rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 card-themed h-full flex flex-col">
+                <div className="h-44 relative overflow-hidden flex-shrink-0">
                   <img src={c.image} alt={c.client} className="w-full h-full object-cover" />
                   <Badge className="absolute top-4 left-4 text-white text-xs font-bold border-0" style={{ background: badgeGradients[i % badgeGradients.length] }}>
                     {c.category}
@@ -106,12 +106,60 @@ export default async function CasesPage({
                 <CardHeader className="pb-3">
                   <CardTitle className="text-xl font-semibold text-card-foreground leading-snug">{c.client}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex flex-col gap-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed">{c.description}</p>
-                  <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
-                    <p className="text-green-700 dark:text-green-300 font-medium text-sm">{isZh ? '结果：' : 'Outcome: '} {c.result}</p>
+                <CardContent className="flex flex-col gap-5 flex-1">
+                  {/* 四要素：项目类型 */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <Target className="w-4 h-4 text-primary" />
+                      <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                        {isZh ? '项目类型' : 'PROJECT TYPE'}
+                      </span>
+                    </div>
+                    <p className="text-sm font-medium text-card-foreground leading-snug">{c.projectType}</p>
                   </div>
-                  <p className="text-primary font-bold text-lg">{c.metric}</p>
+
+                  {/* 四要素：核心问题 */}
+                  <div>
+                    <div className="flex items-start gap-2 mb-1.5">
+                      <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
+                        {isZh ? '核心问题' : 'CORE PROBLEM'}
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{c.coreProblem}</p>
+                  </div>
+
+                  {/* 四要素：执行动作 */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <ListChecks className="w-4 h-4 text-blue-500" />
+                      <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                        {isZh ? '执行动作' : 'ACTIONS'}
+                      </span>
+                    </div>
+                    <ul className="space-y-1">
+                      {c.actions.map((action, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
+                          <span className="text-sm text-muted-foreground leading-relaxed">{action}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* 四要素：量化结果 */}
+                  <div className="mt-auto">
+                    <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <TrendingUp className="w-4 h-4 text-green-600 dark:text-green-400" />
+                        <span className="text-xs font-semibold text-green-700 dark:text-green-300 uppercase tracking-wider">
+                          {isZh ? '量化结果' : 'QUANTIFIED RESULT'}
+                        </span>
+                      </div>
+                      <p className="text-green-700 dark:text-green-300 font-semibold text-sm leading-relaxed">{c.result}</p>
+                    </div>
+                    <p className="text-primary font-bold text-lg mt-3">{c.metric}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}

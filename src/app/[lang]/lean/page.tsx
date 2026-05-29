@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, ChevronRight, Search, Clock, Eye, ThumbsUp, BookOpen, MessageSquare } from 'lucide-react'
+import { ArrowRight, ChevronRight, Clock, Eye, ThumbsUp, BookOpen, MessageSquare } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import SearchBox from './SearchBox'
@@ -93,14 +93,14 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
   const ui = {
     pageTitle: isZh ? '管享精道' : 'Lean Insights',
     pageSubtitle: isZh
-      ? '酒店管理者精益问答——听迈创兄弟娓娓道来'
-      : 'Lean management Q&A for hotel leaders — MarvelBros shares insights',
+      ? '专为酒店管理者打造的精益管理知识体系 —— 7大模块系统赋能，从投资决策到运营升级'
+      : 'A Lean management knowledge system purpose-built for hotel executives — 7 modules spanning investment decisions to operational excellence',
     allArticles: isZh ? '全部文章' : 'All Articles',
     articleCount: isZh ? '篇' : ' articles',
     views: isZh ? '阅读' : 'Views',
     likes: isZh ? '点赞' : 'Likes',
     askButton: isZh ? '向迈创兄弟提问' : 'Ask MarvelBros',
-    askDesc: isZh ? '遇到管理难题？迈创兄弟48小时内回复' : 'Management challenge? MarvelBros replies within 48 hours',
+    askDesc: isZh ? '遇到管理难题？向迈创兄弟提问，48小时内专业回复' : 'Facing a management challenge? Ask MarvelBros — professional response within 48 hours',
     minRead: isZh ? '分钟' : 'min',
   }
 

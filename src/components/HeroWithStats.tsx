@@ -66,13 +66,10 @@ function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberP
 export default function HeroWithStats({ lang }: HeroWithStatsProps) {
   const isZh = lang === 'zh'
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const nextImage = useCallback(() => {
-    setIsTransitioning(true)
     setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % heroImages.length)
-      setIsTransitioning(false)
     }, 800)
   }, [])
 
@@ -112,10 +109,8 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             key={index}
             onClick={() => {
               if (index !== currentIndex) {
-                setIsTransitioning(true)
                 setTimeout(() => {
                   setCurrentIndex(index)
-                  setIsTransitioning(false)
                 }, 800)
               }
             }}
@@ -143,18 +138,18 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              {isZh ? '帮助酒店把关键问题' : 'Helping hotels make'}
+              {isZh ? '帮助酒店投资人与经营团队' : 'Helping hotel investors and operators'}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">
-                {isZh ? '看清、定准、推进' : 'critical decisions clearer'}
+                {isZh ? '把判断、增长与 AI 落地做成结果' : 'turn judgment, growth, and AI into measurable results'}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-xl mx-auto lg:mx-0 drop-shadow">
               {isZh
-                ? '从投前判断，到经营增长，再到 AI 落地，MBCT 不是为了把事情做得更复杂，而是为了让关键问题看得更清楚、推进得更有效。'
-                : 'From pre-investment judgment to operating growth and AI implementation, MBCT exists to make critical issues clearer and progress more effective.'}
+                ? '从投前判断，到经营增长，再到 AI 落地，MBCT 聚焦的是客户最关心的三件事：项目值不值得做，增长该怎么推进，数字化如何真正落地。'
+                : 'From pre-investment judgment to operating growth and AI implementation, MBCT focuses on three practical questions: whether the project is worth doing, how growth should be pushed forward, and how digital execution can truly land.'}
             </p>
 
             {/* CTA Buttons */}
@@ -163,7 +158,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
                 href={`/${lang}/contact?type=plan`}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-amber-500/25 transition-all"
               >
-                {isZh ? '预约项目沟通' : 'Book an Initial Project Conversation'}
+                {isZh ? '获取方案' : 'Get a Plan'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link

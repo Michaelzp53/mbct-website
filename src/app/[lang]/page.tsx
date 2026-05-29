@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2, Compass, Target, TrendingUp, Shield, Users, Briefcase, Building2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Compass, Target, TrendingUp, Shield, Users, Briefcase, Building2, LineChart, Cpu, FolderKanban } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
 import ScrollFade from '@/components/scroll-fade'
 import SectionWithBg from '@/components/SectionWithBg'
@@ -50,6 +50,30 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     isZh ? '团队执行很忙，但数据、节奏与结果没有形成闭环。' : 'The team is active, but data, operating rhythm, and results are not yet connected.',
   ]
 
+  const decisionPaths = [
+    {
+      icon: FolderKanban,
+      title: isZh ? '新项目判断' : 'Project Assessment',
+      desc: isZh
+        ? '适合正在做投资判断、筹开规划或重新定位的项目。'
+        : 'For projects evaluating investment, pre-opening structure, or repositioning.',
+    },
+    {
+      icon: LineChart,
+      title: isZh ? '经营增长' : 'Growth Execution',
+      desc: isZh
+        ? '适合增长卡住、RevPAR承压、直销和复购偏弱的酒店。'
+        : 'For hotels under RevPAR pressure, weak direct sales, or stalled repeat business.',
+    },
+    {
+      icon: Cpu,
+      title: isZh ? 'AI落地' : 'AI Execution',
+      desc: isZh
+        ? '适合希望推进数字化，但不想停留在概念层面的团队。'
+        : 'For teams that want digital execution without stopping at surface-level concepts.',
+    },
+  ]
+
   const whyMbct = [
     {
       icon: Briefcase,
@@ -77,6 +101,46 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   return (
     <div className="min-h-screen bg-background">
       <HeroWithStats lang={lang} />
+
+      <section className="py-16 md:py-20 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollFade>
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <Target className="w-4 h-4 text-primary" />
+                <span className="text-primary text-sm font-medium">
+                  {isZh ? '先判断你属于哪一种项目场景' : 'Start with the project situation you are in'}
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                {isZh ? 'MBCT 不是给所有人一套标准答案' : 'MBCT does not force one standard answer on every client'}
+              </h2>
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+                {isZh
+                  ? '我们先判断项目所处阶段、真正卡住的问题和更适合的推进路径，再决定是做诊断、做方案，还是进入完整合作。'
+                  : 'We first identify the project stage, the real constraint, and the right way forward, then decide whether diagnosis, solution design, or a full engagement is the right next step.'}
+              </p>
+            </div>
+          </ScrollFade>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {decisionPaths.map((item, index) => {
+              const Icon = item.icon
+              return (
+                <ScrollFade key={item.title} delay={index * 100}>
+                  <div className="h-full rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+                    <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center mb-5">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-sm md:text-base">{item.desc}</p>
+                  </div>
+                </ScrollFade>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
       <SectionWithBg bgImage="/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg" overlayOpacity={0.88}>
         <ScrollFade>
@@ -206,7 +270,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 href={`/${lang}/contact?type=plan`}
                 className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all"
               >
-                {isZh ? '预约项目沟通' : 'Book an Initial Project Conversation'}
+                {isZh ? '获取方案' : 'Get a Plan'}
               </Link>
               <Link
                 href={`/${lang}/services`}
