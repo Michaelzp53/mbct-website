@@ -235,7 +235,7 @@ const articlesData: Record<string, {
       '专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。',
       '',
       '网址：www.marvelbros.com',
-      '邮箱：contactme@marvelbros.com / info@marvelbros.com',
+      '邮箱：info@marvelbros.com',
       '请浏览获取更多资讯、免费线上咨询、免费诊断报告',
     ],
     contentEn: [
@@ -447,7 +447,7 @@ const articlesData: Record<string, {
       'Dedicated to digital empowerment — an end-to-end solutions and consulting service provider for the hotel industry, committed to the dual-track enhancement of "efficiency + experience" to drive hotel revenue growth.',
       '',
       'Website: www.marvelbros.com',
-      'Email: contactme@marvelbros.com / info@marvelbros.com',
+      'Email: info@marvelbros.com',
       'Visit for more insights, free online consultations, and complimentary diagnostic reports.',
     ],
   },
@@ -6012,6 +6012,21 @@ const articlesData: Record<string, {
       '*九大业务支撑：专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。*',
       '*官网：www.marvelbros.com | 邮箱：info@marvelbros.com*',
       '*联系我们提供免费线上咨询，免费诊断报告！*',
+    ],
+  },
+  '2026-china-hotel-ma-wave': {
+    id: 425,
+    title: '2026年中国酒店业并购潮：谁在买，谁在卖，中小业主该怎么看？',
+    titleEn: '2026 China Hotel M&A Wave: Who\'s Buying, Who\'s Selling, and What Should Small Hotel Owners Do?',
+    author: 'MBCT（MarvelBros C&T）',
+    date: '2026-05-29',
+    readTime: '12分钟',
+    tag: '行业报告',
+    content: [
+      '本文内容较丰富，敬请查看完整文章。',
+    ],
+    contentEn: [
+      'Full article content available.',
     ],
   },
   }

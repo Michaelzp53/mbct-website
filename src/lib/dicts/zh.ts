@@ -3,7 +3,7 @@ export const zh = {
     home: '首页',
     about: '关于我们',
     services: '解决方案',
-    cases: '案例展示',
+    cases: '案例成果',
     contact: '联系我们',
     getPlan: '获取方案',
     login: '登录 / 注册',

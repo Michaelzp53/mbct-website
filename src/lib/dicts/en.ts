@@ -3,7 +3,7 @@ export const en = {
     home: 'Home',
     about: 'About Us',
     services: 'Solutions',
-    cases: 'Case Studies',
+    cases: 'Case Results',
     contact: 'Contact Us',
     getPlan: 'Get a Plan',
     login: 'Log In / Register',
@@ -351,7 +351,7 @@ export const en = {
     sections: {
       academic: 'Academic Research',
       'industry-reports': 'Industry Reports',
-      cases: 'Case Studies',
+      cases: 'Case Results',
       blogs: 'Industry Perspectives',
     },
     featured: 'Featured Report',

@@ -1,5 +1,17 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 import { addQuestion, getQuestions, updateQuestionNotification } from './store';
+
+type LeanQuestion = {
+  id: number;
+  title: string;
+  detail: string;
+  pillar: string;
+  waste_types: string[] | string | null;
+  nickname: string | null;
+  hotel_name: string | null;
+  created_at?: string;
+};
 
 function getIpHash(request: Request): string {
   const ip = request.headers.get('x-forwarded-for') || 'unknown';
@@ -12,8 +24,7 @@ function getIpHash(request: Request): string {
   return Math.abs(hash).toString(16).padStart(16, '0');
 }
 
-// Email notification helper - 使用 SMTP 发送
-async function sendEmailNotification(question: any) {
+async function sendEmailNotification(question: LeanQuestion) {
   const notificationTarget = 'info@marvelbros.com';
   try {
     const smtpPassword = process.env.SMTP_PASSWORD || process.env.TENCENT_SECRET_KEY;
@@ -21,9 +32,9 @@ async function sendEmailNotification(question: any) {
     const smtpHost = process.env.SMTP_HOST || 'smtp.exmail.qq.com';
     const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
     const secure = smtpPort === 465;
+
     if (!smtpPassword || !smtpUser) {
       const message = 'SMTP credentials not configured';
-      console.log('[EMAIL]', message);
       await updateQuestionNotification(question.id, {
         emailStatus: 'skipped',
         emailError: message,
@@ -31,7 +42,7 @@ async function sendEmailNotification(question: any) {
       });
       return { ok: false, reason: message, notificationTarget };
     }
-    const nodemailer = require('nodemailer');
+
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
@@ -41,15 +52,31 @@ async function sendEmailNotification(question: any) {
         pass: smtpPassword,
       },
     });
+
+    const wasteText = Array.isArray(question.waste_types)
+      ? question.waste_types.join(', ')
+      : (question.waste_types || '未指定');
+
     const subject = `【管享精道新提问】${question.title || '新提问'}`;
-    const textBody = `管享精道收到新提问：\n\n标题：${question.title || '无标题'}\n详情：${question.detail || '无详情'}\n分类：${question.pillar || '未分类'}\n浪费类型：${Array.isArray(question.waste_types) ? question.waste_types.join(', ') : (question.waste_types || '未指定')}\n昵称：${question.nickname || '匿名'}\n酒店：${question.hotel_name || '未填写'}\n时间：${question.created_at || new Date().toISOString()}\n\n请登录后台查看完整信息并安排回复。`;
+    const textBody = `管享精道收到新提问：
+
+标题：${question.title || '无标题'}
+详情：${question.detail || '无详情'}
+分类：${question.pillar || '未分类'}
+浪费类型：${wasteText}
+昵称：${question.nickname || '匿名'}
+酒店：${question.hotel_name || '未填写'}
+时间：${question.created_at || new Date().toISOString()}
+
+请登录后台查看完整信息并安排回复。`;
+
     await transporter.sendMail({
       from: smtpUser,
       to: notificationTarget,
       subject,
       text: textBody,
     });
-    console.log('[EMAIL] Sent notification for question', question.id);
+
     await updateQuestionNotification(question.id, {
       emailStatus: 'sent',
       emailError: null,
@@ -57,7 +84,6 @@ async function sendEmailNotification(question: any) {
     });
     return { ok: true, notificationTarget };
   } catch (err) {
-    console.error('Email notification failed:', err);
     const reason = err instanceof Error ? err.message : String(err);
     await updateQuestionNotification(question.id, {
       emailStatus: 'failed',
@@ -68,17 +94,15 @@ async function sendEmailNotification(question: any) {
   }
 }
 
-// POST: 提交提问
 export async function POST(request: Request) {
   try {
     const { title, detail, pillar, wasteTypes, nickname, hotelName } = await request.json();
-    
+
     if (!title || !title.trim() || !detail || !detail.trim()) {
       return NextResponse.json({ error: 'Title and detail are required' }, { status: 400 });
     }
 
     const ipHash = getIpHash(request);
-
     const question = await addQuestion({
       title: title.trim(),
       detail: detail.trim(),
@@ -89,11 +113,10 @@ export async function POST(request: Request) {
       ip_hash: ipHash,
     });
 
-    // Send email notification
     const notification = await sendEmailNotification(question);
 
     return NextResponse.json({
-      question: question,
+      question,
       notification,
       success: true,
     });
@@ -103,7 +126,6 @@ export async function POST(request: Request) {
   }
 }
 
-// GET: 获取问题列表
 export async function GET() {
   try {
     const questions = await getQuestions();

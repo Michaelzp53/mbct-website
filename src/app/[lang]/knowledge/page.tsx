@@ -878,6 +878,19 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       readTime: '5分钟',
       tag: '行业报告',
     },
+    {
+      id: 425,
+      type: 'report',
+      title: '2026年中国酒店业并购潮：谁在买，谁在卖，中小业主该怎么看？',
+      titleEn: '2026 China Hotel M&A Wave: Who\'s Buying, Who\'s Selling, and What Should Small Hotel Owners Do?',
+      slug: '2026-china-hotel-ma-wave',
+      summary: '2026年中国酒店业正在经历一场前所未有的并购潮：国际巨头剥离非核心资产、国资平台整合地方酒店、连锁品牌并购中小单体。本文分析趋势背后的逻辑与中小业主的应对策略。',
+      firstLine: '2026年上半年，中国酒店业并购交易额已突破500亿元，超过2024年全年总和。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-29',
+      readTime: '12分钟',
+      tag: '行业报告',
+    },
   ]
 
   // 案例研究 - 2026-04-22新增1篇

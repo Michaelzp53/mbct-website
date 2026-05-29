@@ -3,9 +3,10 @@ interface PageHeroProps {
   subtitle?: string
   bgImage: string
   lang?: string
+  titleSize?: string
 }
 
-export default function PageHero({ title, subtitle, bgImage }: PageHeroProps) {
+export default function PageHero({ title, subtitle, bgImage, titleSize }: PageHeroProps) {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Background Image */}
@@ -19,7 +20,7 @@ export default function PageHero({ title, subtitle, bgImage }: PageHeroProps) {
       <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-transparent to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+        <h1 className={`${titleSize ?? 'text-4xl md:text-5xl'} font-bold text-white mb-4 drop-shadow-lg`}>
           {title}
         </h1>
         {subtitle && (

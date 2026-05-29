@@ -121,7 +121,7 @@ export default function BentoServices({ lang }: BentoServicesProps) {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-medium">{isZh ? 'MBCT 核心业务' : 'Core Services'}</span>
+            <span className="text-primary text-sm font-medium">{isZh ? 'MBCT 解决方案' : 'MBCT Solutions'}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {isZh ? '全方位酒店数字化解决方案' : 'Comprehensive Hotel Digital Solutions'}
