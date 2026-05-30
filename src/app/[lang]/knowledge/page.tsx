@@ -567,6 +567,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-05-26新增1篇
   const reports = [
     {
+      id: 426,
+      type: 'report',
+      title: '当AI开始"读懂"住客：2026年酒店个性化服务的技术边界与人文底线',
+      titleEn: 'When AI Begins to "Understand" Guests: The Technological Frontier and Humanistic Boundary of Hotel Personalization in 2026',
+      slug: 'ai-understands-guests-2026',
+      summary: '2026年，一组数据正在重塑酒店行业的认知地图：98%的酒店业主已将AI融入业务运营，但仅有32%的业主将AI部署到了大多数业务环节；74%的旅行者渴望个性化服务体验，但46%的酒店决策者将数据隐私与安全列为AI部署的首要障碍（Wyndham Hotels & Resorts 2026 酒店业主趋势报告；Amadeus Travel Dreams 2026报告）。',
+      summaryEn: 'In 2026, a set of data points is reshaping the cognitive map of the hotel industry: 98% of hotel owners have incorporated AI into their business operations, yet only 32% have deployed it across most operational areas.',
+      firstLine: '2026年，一组数据正在重塑酒店行业的认知地图：98%的酒店业主已将AI融入业务运营，但仅有32%的业主将AI部署到了大多数业务环节；74%的旅行者渴望个性化服务体验，但46%的酒店决策者将数据隐私与安全列为AI部署的首要障碍（Wyndham Hotels & Resorts 2026 酒店业主趋势报告；Amadeus Travel Dreams 2026报告）。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-30',
+      readTime: '15分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+    {
       id: 424,
       type: 'report',
       title: '2026年中国酒店业人力成本结构重塑：从"人房比"到"效能比"的管理转型',
