@@ -567,6 +567,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-05-26新增1篇
   const reports = [
     {
+      id: 427,
+      type: 'report',
+      title: '2026年中国酒店业绿色转型：ESG不是口号，是下一个竞争壁垒',
+      titleEn: 'China Hotel Green Transformation 2026: ESG Is Not a Slogan—It\'s the Next Competitive Moat',
+      slug: 'china-hotel-esg-green-transformation-2026',
+      summary: '2026年，ESG正以肉眼可见的速度变成中国酒店业的准入门槛。万豪、洲际、希尔顿等国际品牌已通过特许经营合同和采购协议将ESG标准向中国市场传导；携程、美团等OTA平台用搜索算法奖励绿色认证。本文基于中国饭店协会370家酒店调研数据、OtelCiro全球报告等多方来源，揭示绿色认证对RevPAR（溢价8-12%）和OTA排名（流量提升15%）的实际影响，并为中小酒店提供MBCT三步行动框架：能源审计、可视化绿色指标、供应链绿色认证。',
+      summaryEn: 'In 2026, ESG is rapidly becoming an entry barrier for China hotel industry. Marriott, IHG, Hilton are transmitting ESG standards through franchise contracts. OTA platforms reward green certification with search algorithms. This article, based on 370-hotel survey data and multiple authoritative sources, reveals green certification impact on RevPAR (8-12% premium) and OTA ranking (15% traffic boost), with MBCT three-step framework: energy audit, visible green metrics, supply chain green certification.',
+      firstLine: '如果你最近和酒店圈的同行聊过天，大概率会听到一个关键词反复出现——ESG。三年前，这还是少数国际品牌公关稿里的概念词；今天，它正以肉眼可见的速度变成中国酒店业的准入门槛。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-05-31',
+      readTime: '15分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+    {
       id: 426,
       type: 'report',
       title: '当AI开始"读懂"住客：2026年酒店个性化服务的技术边界与人文底线',
@@ -579,7 +594,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-30',
       readTime: '15分钟',
       tag: '行业报告',
-      featured: true,
+      featured: false,
     },
     {
       id: 424,
@@ -594,7 +609,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-28',
       readTime: '15分钟',
       tag: '行业报告',
-      featured: true,
+      featured: false,
     },
     {
       id: 423,
@@ -609,7 +624,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-26',
       readTime: '16分钟',
       tag: '行业报告',
-      featured: true,
+      featured: false,
     },
     {
       id: 422,
@@ -637,7 +652,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-24',
       readTime: '25分钟',
       tag: '行业分析',
-      featured: true,
+      featured: false,
     },
     {
       id: 420,
@@ -651,7 +666,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-23',
       readTime: '20分钟',
       tag: '行业报告',
-      featured: true,
+      featured: false,
     },
     {
       id: 414,
@@ -665,7 +680,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-21',
       readTime: '15分钟',
       tag: '趋势分析',
-      featured: true,
+      featured: false,
     },
     {
       id: 409,
@@ -679,7 +694,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-14',
       readTime: '15分钟',
       tag: '行业报告',
-      featured: true,
+      featured: false,
     },
     {
       id: 319,
@@ -693,7 +708,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-05',
       readTime: '18分钟',
       tag: '行业报告',
-      featured: true,
+      featured: false,
     },
     {
       id: 318,
@@ -721,7 +736,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-04-28',
       readTime: '18分钟',
       tag: '行业报告',
-      featured: true,
+      featured: false,
     },
     {
       id: 101,
@@ -735,7 +750,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-04-16',
       readTime: '22分钟',
       tag: '行业报告',
-      featured: true,
+      featured: false,
     },
     {
       id: 102,
