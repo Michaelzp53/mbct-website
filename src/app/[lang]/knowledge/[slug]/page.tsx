@@ -6624,12 +6624,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <article className="bg-card rounded-2xl border border-border p-8 md:p-12">
           <div className="mb-6">
             <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium">
-              {article.tag}
+              {lang === 'en' ? article.tag.replace('行业报告', 'Industry Report').replace('行业分析', 'Industry Analysis').replace('案例研究', 'Case Study').replace('博客文章', 'Blog Post') : article.tag}
             </span>
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold text-card-foreground mb-6">
-            {article.title}
+            {lang === 'en' && article.titleEn ? article.titleEn : article.title}
           </h1>
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
@@ -6643,7 +6643,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </span>
             <span className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              {article.readTime}
+              {lang === 'en' ? article.readTime.replace('分钟', ' min read') : article.readTime}
             </span>
           </div>
 
@@ -6652,7 +6652,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             articleTitle={article.title}
             articleUrl={`https://marvelbros.com/zh/knowledge/${slug}`}
           />
-          <ArticleContent content={article.content} articleTitle={article.title} />
+          <ArticleContent content={lang === 'en' && article.contentEn ? article.contentEn : article.content} articleTitle={lang === 'en' && article.titleEn ? article.titleEn : article.title} />
 
           {/* Newsletter 订阅 */}
           <NewsletterSubscribe lang={lang} />
