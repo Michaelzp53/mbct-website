@@ -35,6 +35,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 414,
+      type: 'article',
+      title: '酒店竞争正在从"拼硬件"转向"拼组织"：为什么同样的房间数，结果却完全不同',
+      titleEn: 'Hotel Competition Is Shifting from "Hardware" to "Organizational Capability": Why the Same Room Count Produces Radically Different Outcomes',
+      slug: 'hotel-competition-shifts-from-hardware-to-organization-2026-06-01',
+      summary: '当硬件差距被抹平之后，真正拉开酒店经营差距的不是"房间长什么样"，而是"这家酒店内部怎么运转"。本文从响应速度、交付标准稳定性、管理颗粒度与利润质量三个维度，系统分析酒店行业从"拼硬件"到"拼组织"的竞争范式转移。',
+      summaryEn: 'When hardware gaps have been leveled, what truly separates a hotel\'s operating performance is not "what the rooms look like," but "how the hotel runs internally." This article systematically analyzes the shift from hardware-based to organization-based competition across three dimensions: response speed, delivery standard stability, and management granularity.',
+      firstLine: '如果你在过去两年里走进过任何一家新开的中高端酒店，你会发现一个有趣的现象：大堂的设计语言越来越趋同，客房的配置清单越来越相似。',
+      author: 'MBCT(MarvelBros C&T)',
+      date: '2026-06-01',
+      readTime: 16,
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
+    {
       id: 413,
       type: 'article',
       title: '2026年酒店投资回报正在回归理性:RevPAR修复的三条主线',
