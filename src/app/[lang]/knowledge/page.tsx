@@ -584,6 +584,21 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-05-26新增1篇
   const reports = [
     {
+      id: 430,
+      type: 'report',
+      title: '存量翻牌潮下，酒店改造为什么越来越像一场经营体检',
+      titleEn: 'Why Hotel Rebranding in 2026 Is Really an Operating Diagnostic Exercise',
+      slug: 'hotel-rebranding-operating-diagnostic-2026-06-02',
+      summary: '近2000家酒店在一年内完成品牌变更，但翻牌结果冰火两重天：部分酒店RevPAR立竿见影，部分投入大量装修资金后收入曲线几无变化。本文提出：存量翻牌的本质不是换招牌或翻新装修，而是对客群结构、产品定位、组织能力、渠道组合和回本模型的系统性复盘与重新计算——翻牌应该是一次建立在诊断数据之上的经营体检。',
+      summaryEn: 'In 2025-2026, nearly 2,000 midscale+ hotels in China underwent brand changes, yet outcomes vary drastically. Some saw immediate RevPAR gains, while others invested heavily only to find revenue unchanged or below pre-renovation levels. The essence of rebannering is not swapping signs or redecorating, but a systematic recalibration of guest mix, product positioning, organizational capability, channel mix, and ROI model. Treat rebannering as a comprehensive operational health check.',
+      firstLine: '根据公开行业研究资料，近年中国中档及以上酒店中，有接近两千家发生了品牌变更，涉及客房近二十万间，同比实现双位数增长。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-02',
+      readTime: '15分钟',
+      tag: '行业报告',
+      featured: true,
+    },
+    {
       id: 427,
       type: 'report',
       title: '2026年中国酒店业绿色转型：ESG不是口号，是下一个竞争壁垒',
