@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { BookOpen, FileText, BarChart3, ArrowRight, Clock, User, Calendar } from 'lucide-react'
 import PageHero from '@/components/PageHero'
+import KnowledgeSearchBox from './KnowledgeSearchBox'
 
 export default async function KnowledgePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -1299,31 +1300,12 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
           </p>
         </div>
 
-        {/* Search Box */}
-        <div className="max-w-2xl mx-auto mb-12">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder={ui.searchPlaceholder}
-              className="w-full px-6 py-4 bg-card border border-border rounded-2xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b] transition-colors pl-14"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" />
-            </svg>
-          </div>
-        </div>
+        <KnowledgeSearchBox
+          lang={lang}
+          isZh={isZh}
+          articles={allArticles}
+          placeholder={ui.searchPlaceholder}
+        />
 
         {/* 管享精道 · 专题栏目入口 */}
         <section className="mb-12">

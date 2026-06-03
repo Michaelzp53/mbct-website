@@ -47,7 +47,7 @@ export async function generateStaticParams() {
   ])
 }
 
-export default async function CategoryPage({ params, searchParams }: { params: Promise<{ lang: string; category: string }>; searchParams?: Promise<{ sort?: string }> }) {
+export default async function CategoryPage({ params, searchParams }: { params: Promise<{ lang: string; category: string }>; searchParams?: Promise<{ sort?: string; q?: string }> }) {
   const { lang, category } = await params
   const resolvedSearchParams = searchParams ? await searchParams : undefined
   const isZh = lang === 'zh'
@@ -58,7 +58,26 @@ export default async function CategoryPage({ params, searchParams }: { params: P
   const mostCommentedArticles = sortArticles('mostComments').filter(a => a.category === category)
   const requestedSort = resolvedSearchParams?.sort
   const activeSort: SortMode = requestedSort === 'hottest' || requestedSort === 'mostComments' ? requestedSort : 'latest'
-  const categoryArticles = activeSort === 'hottest' ? hottestArticles : activeSort === 'mostComments' ? mostCommentedArticles : latestArticles
+  const searchQuery = (resolvedSearchParams?.q || '').trim()
+  const normalizedSearchQuery = searchQuery.toLowerCase()
+  const sortedCategoryArticles = activeSort === 'hottest' ? hottestArticles : activeSort === 'mostComments' ? mostCommentedArticles : latestArticles
+  const categoryArticles = normalizedSearchQuery
+    ? sortedCategoryArticles.filter((article) =>
+        [
+          article.titleZh,
+          article.titleEn,
+          article.summaryZh,
+          article.summaryEn,
+          article.author,
+          article.category,
+          article.date,
+          ...(article.tags || []),
+        ]
+          .join(' ')
+          .toLowerCase()
+          .includes(normalizedSearchQuery)
+      )
+    : sortedCategoryArticles
 
   const ui = {
     backToHome: isZh ? '返回管享精道首页' : 'Back to Lean Insights',
@@ -149,30 +168,34 @@ export default async function CategoryPage({ params, searchParams }: { params: P
           <main className="flex-1">
             {/* Search & Sort */}
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <div className="relative flex-1">
+              <form action={`/${lang}/lean/category/${category}`} className="relative flex-1">
+                {activeSort !== 'latest' && <input type="hidden" name="sort" value={activeSort} />}
                 <input
-                  type="text"
+                  type="search"
+                  name="q"
                   placeholder={ui.searchPlaceholder}
+                  defaultValue={searchQuery}
                   className="w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b] transition-colors pl-11"
+                  aria-label={ui.searchPlaceholder}
                 />
                 <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              </div>
+              </form>
               <div className="flex gap-2">
                 <Link
-                  href={`/${lang}/lean/category/${category}`}
+                  href={`/${lang}/lean/category/${category}${searchQuery ? `?q=${encodeURIComponent(searchQuery)}` : ''}`}
                   className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${activeSort === 'latest' ? 'bg-[#f59e0b]/10 text-[#f59e0b]' : 'hover:bg-muted text-muted-foreground'}`}
                 >
                   {ui.latest}
                 </Link>
                 <Link
-                  href={`/${lang}/lean/category/${category}?sort=hottest`}
+                  href={`/${lang}/lean/category/${category}?sort=hottest${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}`}
                   className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${activeSort === 'hottest' ? 'bg-[#f59e0b]/10 text-[#f59e0b]' : 'hover:bg-muted text-muted-foreground'}`}
                   title={isZh ? '按阅读、点赞、评论综合排序' : 'Ranked by views, likes, and comments'}
                 >
                   {ui.hottest}
                 </Link>
                 <Link
-                  href={`/${lang}/lean/category/${category}?sort=mostComments`}
+                  href={`/${lang}/lean/category/${category}?sort=mostComments${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}`}
                   className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${activeSort === 'mostComments' ? 'bg-[#f59e0b]/10 text-[#f59e0b]' : 'hover:bg-muted text-muted-foreground'}`}
                   title={isZh ? '按评论、点赞、阅读排序' : 'Ranked by comments, likes, and views'}
                 >
