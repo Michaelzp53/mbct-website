@@ -584,6 +584,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-05-26新增1篇
   const reports = [
     {
+      id: 431,
+      type: 'report',
+      title: "一家存量酒店为什么不能先急着装修",
+      titleEn: "Why a Legacy Hotel Should Not Rush Into Renovation",
+      slug: "legacy-hotel-renovation-diagnosis-2026-06-03",
+      summary: "一家存量酒店OTA评分下滑，业主准备先投800万装修。MBCT诊断发现真正问题并不在墙纸和硬件，而在客群变化、前台识别、服务动线、早餐节奏与销售口径错位。本文用入住第一分钟拆解经营诊断如何避免装修误判，并提供六组发布前复盘指标。",
+      summaryEn: "A legacy hotel saw OTA ratings decline and the owner planned to invest RMB 8 million in renovation first. MBCT found the real issue was not wallpaper or hardware, but misalignment across guest segments, front-desk recognition, service flow, breakfast rhythm, and sales messaging. This case study shows why operating diagnosis must come before renovation.",
+      firstLine: "很多存量酒店经营下滑时，第一反应都是装修。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-06-03",
+      readTime: 12,
+      tag: isZh ? "案例研究" : "Case Study",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: 'text-white',
+      featured: true,
+    },
+    {
       id: 430,
       type: 'report',
       title: '存量翻牌潮下，酒店改造为什么越来越像一场经营体检',
