@@ -585,6 +585,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-05-26新增1篇
   const reports = [
     {
+      id: 432,
+      type: 'report',
+      title: "2026年酒店价值感消费报告：客人不是不花钱，而是不再为无感体验买单",
+      titleEn: "2026 Hotel Value-Driven Consumption Report: Guests Are Not Spending Less, They Are Rejecting Experiences That Offer No Value",
+      slug: "hotel-value-driven-consumption-report-2026-06-04",
+      summary: "2026年酒店客人的消费逻辑正在变化：他们不是不花钱，而是不再为没有感受、没有记忆点、没有兑现承诺的体验买单。本文从价值感消费、价格失灵、体验溢价与经营动作重构四个角度，分析酒店如何从“降价换入住率”转向“用可感知价值换复购和溢价”。",
+      summaryEn: "Hotel guests in 2026 are not simply spending less. They are rejecting experiences that fail to feel valuable, memorable, or consistent with the promise. This report analyzes value-driven consumption, price discount fatigue, experience premiums, and the operating shifts hotels need to rebuild perceived value.",
+      firstLine: "2026年已经过半，酒店行业正在经历一场静默的价值重构。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-06-04",
+      readTime: 17,
+      tag: isZh ? "行业报告" : "Industry Report",
+      tagColor: 'bg-[#3b82f6]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
+    {
       id: 431,
       type: 'report',
       title: "一家存量酒店为什么不能先急着装修",
