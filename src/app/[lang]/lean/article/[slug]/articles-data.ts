@@ -12683,6 +12683,8 @@ MBCT视角：节能改造的本质是"重新管理"
 
 // @ts-ignore - JSON import
 import newArticles20250523 from './articles-2026-05-23.json';
+
+// @ts-ignore - JSON import
 // @ts-ignore - JSON import
 import newArticles20250525 from './articles-2026-05-25.json';
 // @ts-ignore - JSON import
@@ -12702,7 +12704,9 @@ import newArticles20260603 from './articles-2026-06-03.json';
 // @ts-ignore - JSON import
 import newArticles20260604 from './articles-2026-06-04.json';
 
-const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]), ...(newArticles20250525 as ArticleData[]), ...(newArticles20250527 as ArticleData[]), ...(newArticles20250528 as ArticleData[]), ...(newArticles20250529 as ArticleData[]), ...(newArticles20250530 as ArticleData[]), ...(newArticles20250531 as ArticleData[]), ...(newArticles20260602 as ArticleData[]), ...(newArticles20260603 as ArticleData[]), ...(newArticles20260604 as ArticleData[])];
+// @ts-ignore - JSON import
+import newArticles20260605 from './articles-2026-06-05.json';
+const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]), ...(newArticles20250525 as ArticleData[]), ...(newArticles20250527 as ArticleData[]), ...(newArticles20250528 as ArticleData[]), ...(newArticles20250529 as ArticleData[]), ...(newArticles20250530 as ArticleData[]), ...(newArticles20250531 as ArticleData[]), ...(newArticles20260602 as ArticleData[]), ...(newArticles20260603 as ArticleData[]), ...(newArticles20260604 as ArticleData[]), ...(newArticles20260605 as ArticleData[])];
 export const allArticlesData = allArticles;
 
 export function getArticleBySlug(slug: string) {

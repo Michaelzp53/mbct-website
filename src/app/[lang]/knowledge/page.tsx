@@ -580,6 +580,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       readTime: '13分钟',
       tag: '行业分析',
     },
+    {
+        "id": 426,
+        "type": "article",
+        "title": "存量酒店改造前，为什么必须先做经营诊断？",
+        "titleEn": "Why Operational Diagnostics Must Precede Renovation of Existing Hotels",
+        "slug": "renovation-operating-diagnosis-2026-06-05",
+        "summary": "在中国的酒店行业里，有一种很常见的信心：只要把酒店重新装修一遍，生意自然就会好起来。",
+        "summaryEn": "There is a widely held assumption in China's hotel sector: renovate the property, and business will automatically improve.",
+        "firstLine": "1",
+        "author": "MBCT（MarvelBros C&T）",
+        "date": "2026-06-05",
+        "readTime": 16,
+        "tag": "行业报告",
+        "tagColor": "bg-[#f97316]",
+        "tagTextColor": "text-white",
+        "featured": true
+    },
   ]
 
   // 行业报告 - 2026-05-26新增1篇
