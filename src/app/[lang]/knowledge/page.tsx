@@ -599,8 +599,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-  // 行业报告 - 2026-05-26新增1篇
+  // 行业报告 - 2026-06-06新增1篇
   const reports = [
+    {
+      id: 433,
+      type: 'report',
+      title: '2026酒店AI搜索可见度报告：未来客人先问AI，再决定住哪家酒店',
+      titleEn: '2026 Hotel AI Search Visibility Report: Guests Will Ask AI Before Choosing Where to Stay',
+      slug: '2026-hotel-ai-search-visibility-report-2026-06-06',
+      summary: '本报告系统分析AI搜索对酒店获客的颠覆性影响：当客人开始用AI询问"周末去杭州住哪里更适合亲子/商务/轻度假"，酒店官网、OTA、地图、点评与社交内容已成为AI判断"是否值得推荐"的信息源。报告拆解AI可见度建设的五类内容、信息完整度/场景匹配度/结构化清晰度/评价一致性/直接预订承接力五大诊断维度，以及单体酒店在AI答案中获取高可见度的实操路径。',
+      summaryEn: 'This report systematically analyzes how AI search is reshaping hotel customer acquisition. When guests begin asking AI tools questions like "which Hangzhou hotel is better for a family-friendly weekend," hotel websites, OTA pages, maps, reviews, and social content have become the information sources AI uses to decide whether a hotel deserves recommendation. The report breaks down the five content types needed for AI visibility, five diagnostic dimensions (information completeness, scenario matching, structural clarity, review consistency, direct booking conversion), and practical paths for independent hotels to gain high visibility in AI answers.',
+      firstLine: '周五晚上，一个在上海工作的年轻父亲拿起手机，对着他的AI助手说：带孩子去杭州过周末，两晚，不要太贵，最好靠近西湖，要亲子设施友好，帮我找三家酒店。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-06',
+      readTime: 18,
+      tag: isZh ? '行业报告' : 'Industry Report',
+      tagColor: 'bg-[#3b82f6]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
     {
       id: 432,
       type: 'report',
