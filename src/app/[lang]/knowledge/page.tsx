@@ -602,6 +602,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-06新增1篇
   const reports = [
     {
+      id: 434,
+      type: 'report',
+      title: '酒店正在进入AI搜索时代：未来客人如何先问AI，再选择住哪家酒店',
+      titleEn: 'Hotels Are Entering the AI Search Era: How Guests Will Ask AI Before Choosing Where to Stay',
+      slug: 'hotels-are-entering-ai-search-era-2026-06-07',
+      summary: '过去十年，酒店行业一直被一种逻辑主导：客人找酒店，先在OTA或搜索引擎里输入一个宽泛的关键词，比如“杭州酒店”“成都五星酒店”“适合亲子出三亚酒店”，然后在搜索结果里逐家点开看价格、看图、看评论、对比位置，再决定住哪家。这条决策路径的起点是“关键词”，中间是“对比”，终点是“下单”。但最近两年，客人的搜索行为正在悄悄发生一次底层重构——从关键词搜索变成答案搜索。',
+      summaryEn: 'For the past decade, the hotel industry has been dominated by one logic. Guests would search for hotels by typing broad keywords like “Hangzhou hotel,” “Chengdu five-star hotel,” or “family-friendly Sanya hotel” into OTAs or search engines. But over the past two years, guest search behavior has been quietly undergoing a fundamental restructuring—from keyword search to answer search.',
+      firstLine: '但最近两年，客人的搜索行为正在悄悄发生一次底层重构。越来越多的客人不再输入关键词，而是直接问出一个完整的、自然语言的问题。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-07',
+      readTime: 18,
+      tag: isZh ? '行业报告' : 'Industry Report',
+      tagColor: 'bg-[#3b82f6]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
+    {
       id: 433,
       type: 'report',
       title: '2026酒店AI搜索可见度报告：未来客人先问AI，再决定住哪家酒店',
