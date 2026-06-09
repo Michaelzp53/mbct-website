@@ -149,6 +149,23 @@ const articlesData: Record<string, {
           "Learn more: www.marvelbros.com | Industry Insights: https://www.marvelbros.com/hangye | Lean: https://www.marvelbros.com/lean | Email: contactme@marvelbros.com"
 ]
   },
+
+  // 2026-06-09 行业报告：2026酒店获客成本报告
+  "2026-hotel-acquisition-cost-report-2026-06-09": {
+    id: 436,
+    title: "2026酒店获客成本报告：为什么不能只看入住率，还要看订单从哪里来",
+    titleEn: "2026 Hotel Acquisition Cost Report: Why Occupancy Is Not Enough Without Knowing Where Bookings Come From",
+    author: "MBCT（MarvelBros C&T）",
+    date: "2026-06-09",
+    readTime: "16分钟",
+    tag: "行业报告",
+    content: [
+      "PLACEHOLDER_CN"
+    ],
+    contentEn: [
+      "PLACEHOLDER_EN"
+    ]
+  },
   // 2026-06-07 行业报告：酒店正在进入AI搜索时代
   "hotels-are-entering-ai-search-era-2026-06-07": {
     id: 434,
