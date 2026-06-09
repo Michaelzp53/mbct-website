@@ -35,6 +35,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   }
 
   const articles = [
+    
+
+    {
+      id: 436,
+      type: 'article',
+      title: '2026酒店获客成本报告：为什么不能只看入住率，还要看订单从哪里来',
+      titleEn: '2026 Hotel Acquisition Cost Report: Why Occupancy Is Not Enough Without Knowing Where Bookings Come From',
+      slug: '2026-hotel-acquisition-cost-report-2026-06-09',
+      summary: "2026酒店获客成本报告：为什么不能只看入住率，还要看订单从哪里来  1. 入住率回来了，老板的账本为什么没有轻松  2026年上半年，中国酒店行业的整体入住率数字看起来并不差。根据STR（现为CoStar Group旗下）发布的行业基准数据，多数主要城市的酒店入住率在2025年已经恢复到接近或者超过2019年同期水平，部分热门商旅和休闲目的地在周末和节假日甚至出现了临时满房。中国旅游研究院（文化和旅游部数据中心）持续发布的季度报告也显示，国内旅游人次和旅游收入保持增长，酒店住宿需求总量在扩大。  这些宏观数据放在一起，很容易得出一个判断：酒店生意在变好。但走进酒店总经理的办公室，听到的却是另一番话。不少经营者反映，2026年每月的固定成本——人工、布草洗涤、能耗、日常维保——比三年前高出15%到25%，可日均房价（ADR）并没有同比例上涨。更关键的是，每一间卖出去的客房，到手的净收入并没有随着入住率一起上升。  原因是多方面的，但其中一个被长期忽视的变量就是获客成本。当酒店对平台的依赖",
+      summaryEn: "2026 Hotel Acquisition Cost Report: Why Occupancy Is Not Enough Without Knowing Where Bookings Come From  1. Occupancy has recovered, but why haven't the owners' books gotten any lighter  In the first half of 2026, overall occupancy figures across China's hotel industry do not look bad on the surface. According to industry benchmark data released by STR (now",
+      firstLine: "2026酒店获客成本报告：为什么不能只看入住率，还要看订单从哪里来",
+      author: 'MBCT(MarvelBros C&T)',
+      date: '2026-06-09',
+      readTime: 16,
+      tag: isZh ? '行业报告' : 'Industry Report',
+      featured: true,
+    },
     {
       id: 414,
       type: 'article',
@@ -43,7 +60,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       slug: 'hotel-competition-shifts-from-hardware-to-organization-2026-06-01',
       summary: '当硬件差距被抹平之后，真正拉开酒店经营差距的不是"房间长什么样"，而是"这家酒店内部怎么运转"。本文从响应速度、交付标准稳定性、管理颗粒度与利润质量三个维度，系统分析酒店行业从"拼硬件"到"拼组织"的竞争范式转移。',
       summaryEn: 'When hardware gaps have been leveled, what truly separates a hotel\'s operating performance is not "what the rooms look like," but "how the hotel runs internally." This article systematically analyzes the shift from hardware-based to organization-based competition across three dimensions: response speed, delivery standard stability, and management granularity.',
-      firstLine: '如果你在过去两年里走进过任何一家新开的中高端酒店，你会发现一个有趣的现象：大堂的设计语言越来越趋同，客房的配置清单越来越相似。',
+      firstLine: "如果你在过去两年里走进过任何一家新开的中高端酒店，你会发现一个有趣的现象：大堂的设计语言越来越趋同，客房的配置清单越来越相似。",
       author: 'MBCT(MarvelBros C&T)',
       date: '2026-06-01',
       readTime: 16,
