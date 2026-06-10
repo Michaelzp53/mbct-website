@@ -37,22 +37,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   const articles = [
     
 
-    {
-      id: 436,
-      type: 'article',
-      title: '2026酒店获客成本报告：为什么不能只看入住率，还要看订单从哪里来',
-      titleEn: '2026 Hotel Acquisition Cost Report: Why Occupancy Is Not Enough Without Knowing Where Bookings Come From',
-      slug: '2026-hotel-acquisition-cost-report-2026-06-09',
-      summary: "2026酒店获客成本报告：为什么不能只看入住率，还要看订单从哪里来  1. 入住率回来了，老板的账本为什么没有轻松  2026年上半年，中国酒店行业的整体入住率数字看起来并不差。根据STR（现为CoStar Group旗下）发布的行业基准数据，多数主要城市的酒店入住率在2025年已经恢复到接近或者超过2019年同期水平，部分热门商旅和休闲目的地在周末和节假日甚至出现了临时满房。中国旅游研究院（文化和旅游部数据中心）持续发布的季度报告也显示，国内旅游人次和旅游收入保持增长，酒店住宿需求总量在扩大。  这些宏观数据放在一起，很容易得出一个判断：酒店生意在变好。但走进酒店总经理的办公室，听到的却是另一番话。不少经营者反映，2026年每月的固定成本——人工、布草洗涤、能耗、日常维保——比三年前高出15%到25%，可日均房价（ADR）并没有同比例上涨。更关键的是，每一间卖出去的客房，到手的净收入并没有随着入住率一起上升。  原因是多方面的，但其中一个被长期忽视的变量就是获客成本。当酒店对平台的依赖",
-      summaryEn: "2026 Hotel Acquisition Cost Report: Why Occupancy Is Not Enough Without Knowing Where Bookings Come From  1. Occupancy has recovered, but why haven't the owners' books gotten any lighter  In the first half of 2026, overall occupancy figures across China's hotel industry do not look bad on the surface. According to industry benchmark data released by STR (now",
-      firstLine: "2026酒店获客成本报告：为什么不能只看入住率，还要看订单从哪里来",
-      author: 'MBCT(MarvelBros C&T)',
-      date: '2026-06-09',
-      readTime: 16,
-      tag: isZh ? '行业报告' : 'Industry Report',
-      featured: true,
-    },
-    {
+        {
       id: 414,
       type: 'article',
       title: '酒店竞争正在从"拼硬件"转向"拼组织"：为什么同样的房间数，结果却完全不同',
@@ -616,8 +601,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     },
   ]
 
-  // 行业报告 - 2026-06-06新增1篇
+  // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
+    {
+      id: 437,
+      type: 'report',
+      title: '一家酒店没有明显差评，为什么客人还是安静离开？',
+      titleEn: 'Why Guests Quietly Leave a Hotel Even When There Are Few Bad Reviews',
+      slug: 'hotel-quiet-departure-case-study-2026-06-10',
+      summary: "一家酒店没有明显差评，为什么客人还是安静离开？  某省会城市火车站商圈，一家开业五年的中端商务酒店，160间客房，OTA平台上综合评分稳定在4.5分左右。然而这家酒店的客源结构里有一个安静但致命的数据：商务客人的首次入住后三个月内复购率不足8%。同一商圈内，定位相似的一家竞品酒店，这个数字是15%以上。  流失的客人并没有给出差评。他们只是在下一次订房时，打开App，滑过了这一家。这不是极端案例。MBCT项目团队在过去三年接触的四十余家单体酒店中，类似的情况出现在超过一半的酒店身上——评分不差，差评不多，但客人就是不再回来。  本文系统拆解这一行业普遍忽视的隐性危机：酒店不差，但也没有被记住的理由。",
+      summaryEn: "Why Guests Quietly Leave a Hotel Even When There Are Few Bad Reviews  In a provincial capital's train station commercial district, a five-year-old midscale business hotel with 160 rooms maintains a steady aggregate rating of around 4.5 on OTA platforms. Yet buried in this hotel's guest-source structure is a quiet but devastating number: the three-month repeat-booking rate for business travelers after their first stay is below 8%. In the same commercial district, a comparable hotel with a similar positioning and even lower brand recognition posts a figure above 15%.  What is more telling is that the guests who leave do not leave bad reviews. They simply, the next time they book a room, open the app and scroll past this one. This is not an extreme case. Among more than forty independent hotels that the MBCT project team has worked with over the past three years, a similar pattern has appeared in more than half of them — ratings that are not bad, very few negative reviews, but guests simply do not come back.",
+      firstLine: "某省会城市火车站商圈，一家开业五年的中端商务酒店，160间客房，OTA平台上综合评分稳定在4.5分左右。",
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-10',
+      readTime: 24,
+      tag: isZh ? '案例研究' : 'Case Study',
+      tagColor: 'bg-[#3b82f6]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
     {
       id: 435,
       type: 'report',
