@@ -604,6 +604,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 438,
+      type: 'report',
+      title: '酒店AI不是噱头：2026年经营看板如何重构服务、收益与复购',
+      titleEn: 'Hotel AI Is Not a Gimmick: How Operating Dashboards Reshape Service, Revenue and Repeat Business in 2026',
+      slug: 'hotel-ai-dashboard-2026-06-11',
+      summary: '2025年是中国酒店业"AI元年"的说法甚嚣尘上。从连锁集团到单体酒店，从前台自助入住到客房语音管家，从智能定价到机器人送物，各类AI应用场景的宣传铺天盖地。但一个尴尬的现实是：行业平均出租率和RevPAR并没有因为"AI化"而出现显著改善。',
+      summaryEn: 'For the past two years, "AI" has been the most overused word in the Chinese hotel industry. From chain groups to independent properties, from front-desk self-check-in to in-room voice assistants, from smart pricing to robot deliveries, every kind of AI use case has been promoted at full volume. Yet one uncomfortable reality stands: industry-wide average occupancy and RevPAR have not seen meaningful improvement because of "AI-fication."',
+      firstLine: "一、为什么酒店谈AI很热闹，但经营结果没有变化",
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-11',
+      readTime: 22,
+      tag: isZh ? '行业报告' : 'Industry Report',
+      tagColor: 'bg-[#3b82f6]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
+    {
       id: 437,
       type: 'report',
       title: '一家酒店没有明显差评，为什么客人还是安静离开？',
