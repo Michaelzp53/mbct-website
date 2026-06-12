@@ -599,6 +599,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
         "tagTextColor": "text-white",
         "featured": true
     },
+      {
+      id: 415,
+      type: 'article',
+      title: 'AI搜索正在改写酒店获客入口:官网、内容和OTA的关系要重排',
+      titleEn: 'AI Search Is Rewriting Hotel Demand Capture: Why Websites, Content and OTAs Need a New Relationship',
+      slug: 'hotel-ai-search-demand-capture-2026-06-12',
+      summary: 'AI搜索不会简单替代OTA或官网,但会改变客人"发现酒店、比较酒店、信任酒店"的路径;酒店需要从"买流量"转向"让内容被AI和人同时理解"。',
+      summaryEn: 'AI search will not simply replace OTAs or hotel websites, but it will change how guests discover, compare, and trust hotels. Hotels need to shift from "buying traffic" to "making content understood by both AI and humans."',
+      firstLine: "2026年的春天,一个在深圳做金融的年轻人计划带父母去杭州旅行。他没有打开携程,也没有在搜索框输入'杭州酒店推荐'。他打开了自己常用的AI助手。",
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-12',
+      category: 'industry-analysis',
+      tag: '行业分析',
+      readTime: 28,
+      featured: false,
+      image: '',
+    }
   ]
 
   // 行业报告 - 2026-06-10新增1篇（案例研究）
@@ -1362,6 +1379,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
         author: 'MBCT(MarvelBros C&T)',
         featured: false,
       },
+      {
+      id: 416,
+      type: 'case',
+      title: '一家老酒店想翻牌,真正该先改的不是门头',
+      titleEn: 'Before Rebranding an Older Hotel, the First Thing to Fix Is Not the Signboard',
+      slug: 'hotel-rebranding-diagnostic-case-2026-06-12',
+      summary: '本文以悦途酒店脱敏虚拟案例为基础,系统分析老酒店翻牌前必须完成的四项诊断:资产、客群、渠道、现金流,并对比三种翻牌路径的投资回收。',
+      summaryEn: 'Based on an anonymized fictional case study, this article systematically analyzes the four diagnostics—asset, guest profile, channel, and cash flow—that every older hotel must complete before rebranding, and compares the payback of three rebranding paths.',
+      firstLine: "过去两年,中国酒店行业的翻牌潮一直在加速。",
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-12',
+      category: 'case-study',
+      tag: '案例研究',
+      readTime: 18,
+      featured: false,
+      image: '',
+    },
 
   ]
 
