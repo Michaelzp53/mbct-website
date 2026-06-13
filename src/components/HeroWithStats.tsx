@@ -15,12 +15,12 @@ interface AnimatedNumberProps {
 }
 
 const heroImages = [
-  '/hero-crew-szCvt1gP2d4-unsplash.jpg',
-  '/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg',
-  '/hero-hung-li-1HbWj9BDbjE-unsplash.jpg',
-  '/hero-pexels-jimmy-liao.jpg',
-  '/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg',
-  '/hero-rod-long-2P_ifaetDm0-unsplash.jpg',
+  '/images/home-carousel/about-us-bg.png',
+  '/images/home-carousel/home-carousel-01.jpg',
+  '/images/home-carousel/home-carousel-02.jpg',
+  '/images/home-carousel/home-carousel-03.jpg',
+  '/images/home-carousel/home-carousel-04.jpg',
+  '/images/home-carousel/home-carousel-05.jpg',
 ]
 
 function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberProps) {
@@ -87,7 +87,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Images - 6张轮换 */}
+      {/* Background Images - desktop carousel */}
       {heroImages.map((img, index) => (
         <div
           key={img}
