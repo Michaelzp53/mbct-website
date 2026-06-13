@@ -15,12 +15,15 @@ interface AnimatedNumberProps {
 }
 
 const heroImages = [
+  '/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg',
+  '/hero-hung-li-1HbWj9BDbjE-unsplash.jpg',
+  '/hero-pexels-jimmy-liao.jpg',
+  '/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg',
+  '/hero-rod-long-2P_ifaetDm0-unsplash.jpg',
   '/images/home-carousel/about-us-bg.png',
-  '/images/home-carousel/home-carousel-01.jpg',
-  '/images/home-carousel/home-carousel-02.jpg',
-  '/images/home-carousel/home-carousel-03.jpg',
-  '/images/home-carousel/home-carousel-04.jpg',
-  '/images/home-carousel/home-carousel-05.jpg',
+  '/images/home-carousel/desktop-01.jpg',
+  '/images/home-carousel/desktop-02.jpg',
+  '/images/home-carousel/desktop-03.jpg',
 ]
 
 function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberProps) {
