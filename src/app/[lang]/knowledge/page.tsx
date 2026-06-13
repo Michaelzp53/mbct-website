@@ -621,6 +621,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+        id: 439,
+        type: 'report',
+        title: "周末体验经济正在重写酒店服务：从客房出租到城市停留时间运营",
+        titleEn: "Weekend Experience Economy Is Rewriting Hotel Service: From Selling Rooms to Managing Urban Stay Time",
+        slug: "weekend-experience-economy-2026-06-13",
+        summary: "MBCT 从城市酒店与度假酒店的项目诊断中观察到，周末客人正在从“住一晚”转向“度一个完整周末”。酒店竞争力不再只是客房出租，而是能否设计到店前、入住中、离店后的连续体验链，并把客人的停留时间转化为非房收入、复购线索和口碑传播。",
+        summaryEn: "From diagnostics across urban and resort hotels, MBCT has observed a structural shift: weekend guests are no longer simply booking a room for one night; they are buying a fuller weekend experience. Hotel competitiveness is moving from selling rooms to designing an experience chain before arrival, during the stay, and after departure, turning guest stay time into non-room revenue, repeat leads, and word-of-mouth.",
+        firstLine: "一个深圳的年轻妈妈周五晚上带着6岁的女儿坐高铁去长沙，原本只想住一晚、逛一下岳麓书院，周日上午就回。但她在小红书上刷到一家开在湘江边的老酒店，正好有\"周六早茶+非遗手作+湘江夜游\"组合套餐。她改了行程，在那家酒店住了两晚，带女儿做了扎染、听了花鼓戏、坐了夜游船。周一回到深圳，她在大众点评写了一条详细的评价，配了几张照片，最后一句是\"这趟周末，比我想象中多了一倍。\"",
+        author: 'MBCT（MarvelBros C&T）',
+        date: '2026-06-13',
+        readTime: 22,
+        tag: isZh ? '行业报告' : 'Industry Report',
+        tagColor: 'bg-[#3b82f6]',
+        tagTextColor: 'text-white',
+        featured: true,
+    },
+    {
       id: 438,
       type: 'report',
       title: '酒店AI不是噱头：2026年经营看板如何重构服务、收益与复购',
