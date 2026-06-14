@@ -621,6 +621,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 440,
+      type: 'report',
+      title: "量增价减时代，酒店真正缺的不是客流，而是价值感定价能力",
+      titleEn: "In a High-Volume, Low-Price Market, Hotels Lack Not Demand but Value-Based Pricing Capability",
+      slug: "hotel-value-pricing-era-2026-06-14",
+      summary: "量增价减时代，酒店真正缺的不是客流，而是价值感定价能力\n\n一家城市商务酒店的老板，最近打开系统看到周末连续三晚满房，他应该高兴。但他打开账本，笑不出来。满房背后，房价跌到了三年前的七成；餐饮上座率被外卖和便利店不断抽走；会议室一周只订出去两次；前台告诉他的\"回头客\"，其实只来过一次，还是因为 OTA 送了一张升房券。他越看越觉得哪里不对——客人明明越来越多，账上的钱却越来越少。",
+      summaryEn: "In a High-Volume, Low-Price Market, Hotels Lack Not Demand but Value-Based Pricing Capability",
+      firstLine: "量增价减时代，酒店真正缺的不是客流，而是价值感定价能力\n\n一家城市商务酒店的老板，最近打开系统看到周末连续三晚满房，他应该高兴。但他打开账本，笑不出来。满房背后，房价跌到了三年前的七成；餐饮上座率被外卖和便利店不断抽走；会议室一周只订出去两次；前台告诉他的\"回头客\"，其实只来过一次，还是因为 OTA 送了一张升房券。他越看越觉得哪里不对——客人明明越来越多，账上的钱却越来越少。",
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-14',
+      readTime: 15,
+      tag: isZh ? '行业报告' : 'Industry Report',
+      tagColor: 'bg-[#3b82f6]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
+    {
         id: 439,
         type: 'report',
         title: "周末体验经济正在重写酒店服务：从客房出租到城市停留时间运营",

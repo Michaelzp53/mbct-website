@@ -12718,8 +12718,9 @@ import newArticles20260610 from './articles-2026-06-10.json';
 import newArticles20260611 from './articles-2026-06-11.json';
 // @ts-ignore - JSON import
 import newArticles20260613 from './articles-2026-06-13.json';
+import newArticles20260614 from './articles-2026-06-14.json';
 const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]), ...(newArticles20250525 as ArticleData[]), ...(newArticles20250527 as ArticleData[]), ...(newArticles20250528 as ArticleData[]), ...(newArticles20250529 as ArticleData[]), ...(newArticles20250530 as ArticleData[]), ...(newArticles20250531 as ArticleData[]), ...(newArticles20260602 as ArticleData[]), ...(newArticles20260603 as ArticleData[]), ...(newArticles20260604 as ArticleData[]), ...(newArticles20260605 as ArticleData[]), ...(newArticles20260606 as ArticleData[]), ...(newArticles20260607 as ArticleData[]), ...(newArticles20260609 as ArticleData[]), ...(newArticles20260610 as ArticleData[]),
-...(newArticles20260611 as ArticleData[]), ...(newArticles20260613 as ArticleData[])];
+...(newArticles20260611 as ArticleData[]), ...(newArticles20260613 as ArticleData[]), ...(newArticles20260614 as ArticleData[])];
 export const allArticlesData = allArticles;
 
 export function getArticleBySlug(slug: string) {
