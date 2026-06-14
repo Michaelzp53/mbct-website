@@ -28,7 +28,7 @@ export function Footer({ lang, dict }: FooterProps) {
             <div className="flex items-center gap-3 mb-6">
               <Image src="/logo-new.png" alt="MBCT Logo" width={52} height={52} className="object-contain" />
               <div>
-                <span className="font-bold text-lg text-foreground">MarvelBros C&amp;T</span>
+                <span className="font-bold text-[14px] text-foreground">MarvelBros C&amp;T</span>
                 <p className="text-[10px] sm:text-xs text-gradient-rainbow font-medium">{isZh ? '迈创兄弟商业科技' : 'Hotel Operations Advisory'}</p>
               </div>
             </div>
