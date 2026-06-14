@@ -41,9 +41,9 @@ export function Navbar({ lang, dict }: NavbarProps) {
           <Link href={`/${lang}/`} className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
             <Image src="/logo-new.png" alt="MBCT Logo" width={48} height={48} className="object-contain flex-shrink-0" />
             <div className="flex flex-col min-w-0">
-              <span className="font-bold text-foreground text-base lg:text-lg leading-none dark:text-white">MBCT</span>
+              <span className="font-bold text-foreground text-base lg:text-lg leading-none dark:text-white">MarvelBros C&amp;T</span>
               <span className="text-[10px] sm:text-xs text-gradient-rainbow font-medium truncate max-w-[120px] sm:max-w-[160px] lg:max-w-none">
-                {isZh ? '迈创兄弟商业科技' : 'MarvelBros C&T'}
+                {isZh ? '迈创兄弟商业科技' : 'Hotel Operations Advisory'}
               </span>
             </div>
           </Link>
@@ -96,7 +96,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
                     <Image src="/logo-new.png" alt="MBCT Logo" width={44} height={44} className="object-contain" />
-                    <span className="font-bold text-foreground dark:text-white">MBCT</span>
+                    <span className="font-bold text-foreground dark:text-white">MarvelBros C&amp;T</span>
                   </div>
                   <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-muted-foreground">
                     <X className="h-5 w-5" />

@@ -28,8 +28,8 @@ export function Footer({ lang, dict }: FooterProps) {
             <div className="flex items-center gap-3 mb-6">
               <Image src="/logo-new.png" alt="MBCT Logo" width={52} height={52} className="object-contain" />
               <div>
-                <span className="font-bold text-lg text-foreground">MBCT</span>
-                <p className="text-[10px] sm:text-xs text-gradient-rainbow font-medium">{isZh ? '迈创兄弟商业科技' : 'MarvelBros C&T'}</p>
+                <span className="font-bold text-lg text-foreground">MarvelBros C&amp;T</span>
+                <p className="text-[10px] sm:text-xs text-gradient-rainbow font-medium">{isZh ? '迈创兄弟商业科技' : 'Hotel Operations Advisory'}</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">

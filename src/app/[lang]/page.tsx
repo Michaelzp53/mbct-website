@@ -57,6 +57,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       desc: isZh
         ? '适合正在做投资判断、筹开规划或重新定位的项目。'
         : 'For projects evaluating investment, pre-opening structure, or repositioning.',
+      iconBg: 'bg-amber-100 dark:bg-amber-400/15',
+      iconColor: 'text-amber-700 dark:text-amber-300',
+      iconRing: 'ring-amber-200/80 dark:ring-amber-400/20',
     },
     {
       icon: LineChart,
@@ -64,6 +67,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       desc: isZh
         ? '适合增长卡住、RevPAR承压、直销和复购偏弱的酒店。'
         : 'For hotels under RevPAR pressure, weak direct sales, or stalled repeat business.',
+      iconBg: 'bg-emerald-100 dark:bg-emerald-400/15',
+      iconColor: 'text-emerald-700 dark:text-emerald-300',
+      iconRing: 'ring-emerald-200/80 dark:ring-emerald-400/20',
     },
     {
       icon: Cpu,
@@ -71,6 +77,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       desc: isZh
         ? '适合希望推进数字化，但不想停留在概念层面的团队。'
         : 'For teams that want digital execution without stopping at surface-level concepts.',
+      iconBg: 'bg-orange-100 dark:bg-orange-400/15',
+      iconColor: 'text-orange-700 dark:text-orange-300',
+      iconRing: 'ring-orange-200/80 dark:ring-orange-400/20',
     },
   ]
 
@@ -130,7 +139,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               return (
                 <ScrollFade key={item.title} delay={index * 100}>
                   <div className="h-full rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 shadow-sm">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 flex items-center justify-center mb-5">
+                    <div className={`w-12 h-12 rounded-2xl ${item.iconBg} ${item.iconColor} ring-1 ${item.iconRing} flex items-center justify-center mb-5`}>
                       <Icon className="w-5 h-5" />
                     </div>
                     <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">{item.title}</h3>
