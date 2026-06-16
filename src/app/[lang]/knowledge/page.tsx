@@ -621,6 +621,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 443,
+      type: 'report',
+      title: "有限服务酒店为什么重新成为 2026 投资人首选：当资本开始为“现金流确定性”付费",
+      titleEn: "Why Select-Service Hotels Became Investors' First Choice in 2026: When Capital Starts Paying for Cash-Flow Certainty",
+      slug: "select-service-hotels-cash-flow-certainty-2026-06-16",
+      summary: "2026 年酒店投资正在从规模叙事转向经营清晰度。本文以 Colliers、JLL、Choice Hotels 与中国酒店连锁化数据为基础，分析有限服务酒店为何重新获得资本关注。",
+      summaryEn: "Hotel investment in 2026 is shifting from scale narratives to operating clarity. This report explains why select-service hotels are regaining investor attention with data from Colliers, JLL, Choice Hotels, and China's chain-penetration context.",
+      firstLine: "一位酒店投资人面前放着两份商业计划书。第一份写满全业态，第二份只有 120 间客房、早餐、洗衣、简餐和小型会客区。",
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-16',
+      readTime: 18,
+      tag: isZh ? '行业报告' : 'Industry Report',
+      tagColor: 'bg-[#3b82f6]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
+    {
       id: 441,
       type: 'article',
       title: "酒店经营诊断的5个盲区:不是看不见数据,而是看不见人",
