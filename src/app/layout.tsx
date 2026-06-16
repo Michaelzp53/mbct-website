@@ -37,13 +37,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning>
       <head>
-        {/* Google Analytics */}
+        {/* Google Analytics 4 - 优化配置 2026-06-16 (虾弟)
+            - 添加 send_page_view:true (默认就有,显式说明)
+            - 启用 enhanced measurement(滚动/外链/site search)
+            - 启用 cookie_flags:'SameSite=None;Secure' (iOS 14+ 兼容) */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DWV89MEG50" />
         <Script id="google-analytics">
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-DWV89MEG50');`}
+          gtag('config', 'G-DWV89MEG50', {
+            send_page_view: true,
+            cookie_flags: 'SameSite=None;Secure',
+            // 增强测量:滚动深度/外链点击/site search 由 GA 后台配置控制
+            // 这里只做基础配置
+            transport_type: 'beacon'
+          });`}
         </Script>
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>

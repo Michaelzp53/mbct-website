@@ -9002,10 +9002,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           />
           <ArticleContent content={lang === 'en' && article.contentEn ? article.contentEn : article.content} articleTitle={lang === 'en' && article.titleEn ? article.titleEn : article.title} />
 
-          {/* Newsletter 订阅 */}
-          <NewsletterSubscribe lang={lang} />
           {/* 评论功能暂时隐藏 - 等待GitHub Discussions配置完成 */}
           <ArticleComments slug={slug} />
+
+          {/* Newsletter 订阅 - 下移到全文底部(2026-06-16 优化) */}
+          <NewsletterSubscribe lang={lang} />
 
           <div className="mt-12 pt-8 border-t border-border text-center">
             <div className="flex items-center justify-center gap-2 text-primary mb-4">
