@@ -27,36 +27,35 @@ const heroImages = [
 ]
 
 function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberProps) {
-  const [displayValue, setDisplayValue] = useState(0)
+  // 关键修复：初始值改为 value 而非 0
+  // 原 bug: useState(0) + IntersectionObserver 依赖可见性,SEO/SSR/无头浏览器/Vercel 分析
+  // 抓取时 observer 不触发,导致所有统计数字显示 0("0+酒店"劝退所有访客)
+  // 现在默认显示 value,SEO/SSR/无障碍/抓取工具立即看到正确数字
+  // 真人用户进入视口时执行从 0 到 value 的视觉动画(体验更好)
+  const [displayValue, setDisplayValue] = useState(value)
   const [hasAnimated, setHasAnimated] = useState(false)
   const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true)
-          const startTime = Date.now()
-          const animate = () => {
-            const elapsed = Date.now() - startTime
-            const progress = Math.min(elapsed / duration, 1)
-            const eased = 1 - Math.pow(1 - progress, 4)
-            setDisplayValue(Math.floor(eased * value))
-            if (progress < 1) {
-              requestAnimationFrame(animate)
-            }
-          }
-          requestAnimationFrame(animate)
-        }
-      },
-      { threshold: 0.5 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
+    // 只在客户端 mount 后执行,不依赖 IntersectionObserver
+    // 1. 先把值临时设为 0(动画起点)
+    // 2. 立即启动 0 → value 的动画
+    // 用户看到: 数字从 0 涨到 value(2秒动画)
+    // SEO/SSR 看到: 始终是 value(默认 useState)
+    if (hasAnimated) return
+    setHasAnimated(true)
+    setDisplayValue(0)
+    const startTime = Date.now()
+    const animate = () => {
+      const elapsed = Date.now() - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 4)
+      setDisplayValue(Math.floor(eased * value))
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
     }
-
-    return () => observer.disconnect()
+    requestAnimationFrame(animate)
   }, [value, duration, hasAnimated])
 
   return (
