@@ -621,6 +621,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 444,
+      type: "report",
+      title: "2026 Q1 财报看酒店业洗牌:4 家头部 4 条路径 + 1 个罕见下滑样本",
+      titleEn: "China Hotel Q1 2026 Financials: 4 Industry Leaders, 4 Models, 1 Warning",
+      slug: "china-hotel-q1-2026-financials-leader-divergence-2026-06-17",
+      summary: "2026 Q1 中国酒店业财报出齐。表面看是普涨——华住 59.96 亿、亚朵 28.11 亿、锦江 31.21 亿、首旅 17.77 亿,4 家头部都报正增长。但拆开看数据,5 家里只有 4 家真正\"涨得明白\"。金陵饭店 2026 Q1 营收同比 -7.6%,是 5 家里罕见下滑的样本(数据来源:迈点研究院《2026 一季度酒店集团财务分析报告》)。",
+      summaryEn: "China's hotel industry Q1 2026 earnings reports are out. On the surface, the picture looks like universal growth — Huazhu at 5.996 billion RMB, Atour at 2.811 billion, Jinjiang at 3.121 billion, and BTG Homeinns at 1.777 billion, all four l",
+      firstLine: "2026 Q1 中国酒店业财报出齐。表面看是普涨——华住 59.96 亿、亚朵 28.11 亿、锦江 31.21 亿、首旅 17.77 亿,4 家头部都报正增长。但拆开看数据,5 家里只有 4 家真正\"涨得明白\"。金陵饭店 2026 Q1 营收同比 -7.6%,是 5 家里罕见下滑的样本(数据来源:迈点研究院《2026 一季度酒店集团财务分析报告》)。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-06-17",
+      readTime: 18,
+      tag: "行业分析",
+      tagColor: "bg-[#10b981]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
+    {
       id: 443,
       type: 'report',
       title: "有限服务酒店为什么重新成为 2026 投资人首选：当资本开始为“现金流确定性”付费",
@@ -1198,6 +1215,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
+    {
+      id: 445,
+      type: "case",
+      title: "金陵饭店:Q1 罕见下滑样本,一家\"单旗舰+国资+高星\"老牌的结构性死局",
+      titleEn: "Jinling Hotel: A Rare Q1 Decline Case and the Structural Deadlock of an Old High-Star Flagship",
+      slug: "jinling-hotel-q1-2026-decline-structural-case-2026-06-17",
+      summary: "2026 Q1 中国酒店业财报出齐,5 家头部 4 家普涨、1 家罕见下滑——金陵饭店 Q1 营收同比 -7.6%(数据来源:迈点研究院《2026 一季度酒店集团财务分析报告》)。这家 A 股上市国资控股高星老牌、总部位于南京、单旗舰 + 少量副牌模式,是 5 家里罕见下滑的样本。",
+      summaryEn: "In China's Q1 2026 hotel financials, four of the five sampled leading companies recorded growth, while one showed a rare decline: Jinling Hotel's Q1 revenue fell 7.6% year on year (Source: Meadin Research Institute, *Q1 2026 Hotel Group Fin",
+      firstLine: "2026 Q1 中国酒店业财报出齐,5 家头部 4 家普涨、1 家罕见下滑——金陵饭店 Q1 营收同比 -7.6%(数据来源:迈点研究院《2026 一季度酒店集团财务分析报告》)。这家 A 股上市国资控股高星老牌、总部位于南京、单旗舰 + 少量副牌模式,是 5 家里罕见下滑的样本。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-06-17",
+      readTime: 18,
+      tag: "案例研究",
+      tagColor: "bg-[#dc2626]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
     {
       id: 426,
       type: 'case',
