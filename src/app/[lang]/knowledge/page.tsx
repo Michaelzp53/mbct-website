@@ -621,6 +621,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 446,
+      type: "report",
+      title: "酒店资产退出窗口期：2026-2028 老牌高星单店的 3 条路与 1 个决策框架",
+      titleEn: "Hotel Asset Exit Window 2026-2028: Three Paths for Legacy High-Star Hotels and a Decision Framework",
+      slug: "china-hotel-asset-exit-window-2026-2028-legacy-high-star-2026-06-18",
+      summary: "2026 年一季度的酒店财务数据里，最值得警惕的不是谁涨得最快，而是谁在一个整体修复的周期里仍然下滑。金陵饭店一季度营收同比下滑 7.6%，放在头部酒店集团普遍修复的背景下，不只是单家企业经营波动，更像一个行业信号：一批老牌高星单店正在走到资产命运的分岔口。",
+      summaryEn: "In the first-quarter hotel financial data of 2026, the most important signal is not simply which companies grew fastest. The more important question is which assets still declined ",
+      firstLine: "2026 年一季度的酒店财务数据里，最值得警惕的不是谁涨得最快，而是谁在一个整体修复的周期里仍然下滑。金陵饭店一季度营收同比下滑 7.6%，放在头部酒店集团普遍修复的背景下，不只是单家企业经营波动，更像一个行业信号：一批老牌高星单店正在走到资产命运的分岔口。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-06-18",
+      readTime: 16,
+      tag: "行业报告",
+      tagColor: "bg-[#3b82f6]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
+    {
       id: 444,
       type: "report",
       title: "2026 Q1 财报看酒店业洗牌:4 家头部 4 条路径 + 1 个罕见下滑样本",
