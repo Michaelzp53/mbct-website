@@ -1250,6 +1250,24 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
     {
+      id: 449,
+      type: "case",
+      title: "一家度假酒店为什么好评不少,却没有被系统推荐给真正合适的客人",
+      titleEn: "Why a Resort with Good Reviews Still Fails to Be Recommended to the Right Guests",
+      slug: "hotel-good-reviews-not-recommended-2026-06-20",
+      summary: "有一家度假酒店，OTA 评分 4.6，点评数量过千，差评比同行少六成。老板觉得数据还不错。直到有一天做诊断，把过去六个月的经营数据摊开：淡季出租率只有四成出头，高价值客群占比不足两成，复购率低于百分之十五，官方私域流量几乎没有起色。",
+      summaryEn: "A resort hotel scores 4.6 on OTA platforms, with over a thousand reviews and sixty percent fewer negative comments than peers. The owner considers the data healthy. Until a diagnostic review lays out ",
+      firstLine: "有一家度假酒店，OTA 评分 4.6，点评数量过千，差评比同行少六成。老板觉得数据还不错。直到有一天做诊断，把过去六个月的经营数据摊开：淡季出租率只有四成出头，高价值客群占比不足两成，复购率低于百分之十五，官方私域流量几乎没有起色。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-06-20",
+      readTime: 14,
+      tag: "案例研究",
+      tagColor: "bg-[#dc2626]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
+
+    {
       id: 445,
       type: "case",
       title: "金陵饭店:Q1 罕见下滑样本,一家\"单旗舰+国资+高星\"老牌的结构性死局",
