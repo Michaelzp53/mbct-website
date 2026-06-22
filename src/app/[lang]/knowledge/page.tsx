@@ -1567,6 +1567,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       featured: false,
       image: '',
     },
+    {
+      id: 450,
+      type: 'article',
+      title: '酒店进入AI智能体协同时代',
+      titleEn: 'Hotels Enter the AI Agent Collaboration Era',
+      slug: 'hotel-ai-agent-collaboration-2026-06-22',
+      summary: '未来一次企业员工出差,不再先打开OTA,而是让企业AI助手在预算、位置、发票、协议价、取消政策和企业偏好之间自动推荐酒店。本文从入口、竞争内核、链条重组三个层面分析,给出酒店失去触发率的5个断点和6个准备动作。',
+      summaryEn: 'A future corporate trip will no longer start with an OTA. An enterprise AI assistant will filter hotels automatically across budget, location, invoicing, corporate rates, cancellation policy, and company preferences. This article analyzes the gateway shift, competition core, and chain reassembly, then delivers five trigger-loss break points and six preparation moves.',
+      firstLine: '设想一次再普通不过的企业出差。员工不再打开任何一家OTA,不再在十几个房型之间反复比价,只对企业AI助手说一句:下周三去上海,预算800以内,靠近陆家嘴,要能开专票。',
+      author: 'MBCT（MarvelBros C&T）',
+      date: '2026-06-22',
+      readTime: 18,
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
 
   ]
 
