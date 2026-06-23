@@ -621,6 +621,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 451,
+      type: "report",
+      title: "2026存量酒店二次筹开报告：业主该先重排产品，还是先重装空间？",
+      titleEn: "2026 Existing-Hotel Relaunch Report: Should Owners Redesign the Product Before Renovating the Space?",
+      slug: "hotel-relaunch-existing-2026-06-23",
+      summary: "很多老酒店准备重新开业时，会议桌上最先出现的是效果图、施工表、软装清单和品牌方案。它们都重要，但它们解决的只是“酒店能不能变新”。真正决定开业后生意质量的，是另一件事：今天的客人为什么还会选择这家酒店？",
+      summaryEn: "When an older hotel prepares to reopen, the first items placed on the meeting table are usually design renderings, construction schedules, soft-goods lists, and brand options. They are all important, but they mainly answer one question: can the hotel",
+      firstLine: "很多老酒店准备重新开业时，会议桌上最先出现的是效果图、施工表、软装清单和品牌方案。它们都重要，但它们解决的只是“酒店能不能变新”。真正决定开业后生意质量的，是另一件事：今天的客人为什么还会选择这家酒店？",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-06-23",
+      readTime: 14,
+      tag: "行业报告",
+      tagColor: "bg-[#3b82f6]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
+        {
       id: 447,
       type: "report",
       title: "商旅 AI 正在跨过 2 个门槛：从\u201c单点助手\u201d到\u201c协同 Agent\u201d，酒店必须做对这 3 件事",
