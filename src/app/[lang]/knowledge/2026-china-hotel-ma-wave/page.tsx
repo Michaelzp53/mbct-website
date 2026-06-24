@@ -9,7 +9,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: isZh ? '2026年中国酒店业并购潮：谁在买，谁在卖，中小业主该怎么看？' : '2026 China Hotel M&A Wave: Who\'s Buying, Who\'s Selling, and What Should Small Hotel Owners Do?',
     summary: isZh ? '2026年中国酒店业正在经历一场前所未有的并购潮：国际巨头剥离非核心资产、国资平台整合地方酒店、连锁品牌并购中小单体。本文分析趋势背后的逻辑与中小业主的应对策略。' : '2026 China hotel industry is undergoing an unprecedented M&A wave: global giants divesting non-core assets, state-owned platforms consolidating local hotels, chain brands acquiring small independents. This article analyzes the logic behind the trend and response strategies for small owners.',
-    author: isZh ? 'MBCT（MarvelBros C&T）' : 'MBCT (MarvelBros C&T)',
+    author: isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MarvelBros C&T',
     date: '2026-05-29',
     readTime: isZh ? '12分钟' : '12 min',
     tag: isZh ? '行业报告' : 'Industry Report',
@@ -170,7 +170,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 没有绝对正确的答案，只有最适合你现状的路径。盲目坚持可能让多年的积累打水漂，草率出手也可能错失未来价值。我们写这篇文章的目的，不是替你决策，而是希望为你提供一套结构化的思考工具，让你在会议室里面对自己的数字时，心中更有数。
 
-**MBCT（MarvelBros C&T）——专注酒店行业咨询与改造。** 如果您正在评估自己的酒店是否有并购、加盟或精品化改造的价值，欢迎访问我们的官网获取更多行业洞察和专业服务。
+**迈创兄弟C&T（MarvelBros C&T）——专注酒店行业咨询与改造。** 如果您正在评估自己的酒店是否有并购、加盟或精品化改造的价值，欢迎访问我们的官网获取更多行业洞察和专业服务。
 
 **🔗 www.marvelbros.com**
 
@@ -333,7 +333,7 @@ The M&A wave won't stop on its own. 2026 is shaping up as a "once-in-a-decade" w
 
 There is no absolutely right answer — only the path best suited to your current situation. Blind persistence could waste years of hard work, while hasty exit could miss future value. Our purpose in writing this article is not to decide for you, but to provide a structured thinking tool — so that when you sit in the meeting room looking at your numbers, you'll have greater clarity.
 
-**MBCT (MarvelBros C&T) — Focused on Hospitality Consulting and Renovation.** If you're evaluating whether your hotel has M&A, franchise, or boutique renovation value, visit our website for more industry insights and professional services.
+**MarvelBros C&T — Focused on Hospitality Consulting and Renovation.** If you're evaluating whether your hotel has M&A, franchise, or boutique renovation value, visit our website for more industry insights and professional services.
 
 **🔗 www.marvelbros.com**
 

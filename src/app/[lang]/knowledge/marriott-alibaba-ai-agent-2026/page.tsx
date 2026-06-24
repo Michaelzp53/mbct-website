@@ -8,7 +8,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: '万豪与阿里巴巴AI战略合作升级：酒店业AI应用进入"智能体"时代',
     summary: '万豪国际与阿里巴巴宣布AI战略合作升级，飞猪旗舰店启用AI智能体为客人规划个性化行程，万丽酒店AI礼宾服务RENAI正式上线。这意味着酒店业AI应用正从"聊天工具"升级为"运营基础设施"。',
-    author: 'MBCT观察者',
+    author: '迈创兄弟C&T（MarvelBros C&T）',
     date: '2026-05-08',
     readTime: '8分钟',
     tag: '行业分析',
@@ -155,7 +155,7 @@ AI在酒店运营的深度应用，依赖三大数据基础：
 4. 新浪财经, "德胧集团神灯系统：AI淘汰前台计划", 2026-04-20
 5. IHG Annual Report 2026, "Digital Transformation and AI Strategy"
 
-**MBCT观察者**
+**迈创兄弟C&T（MarvelBros C&T）**
 *声明：本文为MBCT原创分析，不代表任一酒店集团立场。数据来源均为公开信息，引用已标注出处。*
     `,
   }

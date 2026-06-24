@@ -8,17 +8,17 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://marvelbros.com'),
+  metadataBase: new URL('https://www.marvelbros.com'),
   title: {
-    template: '%s | MBCT',
-    default: '迈创兄弟 - AI赋能酒店数字化转型',
+    template: '%s | 迈创兄弟C&T',
+    default: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
   },
-  description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
-  keywords: '酒店管理, SaaS系统, AI数字化, 酒店咨询, 可行性分析, 运营诊断',
-  authors: [{ name: 'MBCT' }],
+  description: '迈创兄弟C&T（MarvelBros C&T）专注酒店投前决策、经营增长、数字化洞察与AI精益管理落地，帮助酒店投资人与经营团队形成可执行、可衡量的增长成果。',
+  keywords: '酒店管理, 酒店投资, AI精益管理, 酒店咨询, 可行性分析, 运营诊断, 生成式AI搜索',
+  authors: [{ name: '迈创兄弟C&T（MarvelBros C&T）' }],
   openGraph: {
     type: 'website',
-    siteName: 'MBCT',
+    siteName: '迈创兄弟C&T（MarvelBros C&T）',
     locale: 'zh_CN',
   },
   twitter: {
@@ -34,9 +34,49 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://www.marvelbros.com/#organization',
+    name: 'MarvelBros C&T',
+    alternateName: ['迈创兄弟C&T', 'MBCT', 'MarvelBros Commercial Technology', '迈创兄弟商业科技'],
+    url: 'https://www.marvelbros.com',
+    logo: 'https://www.marvelbros.com/logo-new.png',
+    foundingDate: '2018-08-14',
+    email: 'contactme@marvelbros.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'HK',
+    },
+    sameAs: ['https://www.marvelbros.com'],
+  }
+
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://www.marvelbros.com/#website',
+    url: 'https://www.marvelbros.com',
+    name: 'MarvelBros C&T',
+    alternateName: '迈创兄弟C&T',
+    publisher: {
+      '@id': 'https://www.marvelbros.com/#organization',
+    },
+    inLanguage: ['zh-CN', 'en-US'],
+  }
+
   return (
     <html suppressHydrationWarning>
       <head>
+        <Script
+          id="organization-json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <Script
+          id="website-json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         {/* Google Analytics 4 - 优化配置 2026-06-16 (虾弟)
             - 添加 send_page_view:true (默认就有,显式说明)
             - 启用 enhanced measurement(滚动/外链/site search)

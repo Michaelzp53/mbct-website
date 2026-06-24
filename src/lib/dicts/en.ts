@@ -12,7 +12,7 @@ export const en = {
     badge: '🏨 Hotel Industry Digital Transformation Expert',
     title1: 'AI-Powered Hotel Management',
     title2: 'Cost Reduction & Efficiency Solutions',
-    subtitle: 'MBCT Marvelbros Commercial Technology—AI-powered full-lifecycle hospitality advisory. From pre-investment judgment to operational growth and AI implementation, we help hotel teams turn strategy into measurable execution.',
+    subtitle: 'MarvelBros C&T—AI-powered full-lifecycle hospitality advisory. From pre-investment judgment to operational growth and AI implementation, we help hotel teams turn strategy into measurable execution.',
     cta1: 'Get a Plan Now',
     cta2: 'Explore Our Services',
     stats: [
@@ -312,7 +312,7 @@ export const en = {
     loading: 'Loading...',
   },
   footer: {
-    description: 'MBCT Marvelbros Commercial Technology—AI-powered full-lifecycle hospitality advisory covering pre-investment judgment, operational growth, and AI implementation.',
+    description: 'MarvelBros C&T—AI-powered full-lifecycle hospitality advisory covering pre-investment judgment, operational growth, and AI implementation.',
     copyright: '© 2026 Marvelbros Commercial Technology (MBCT). All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',

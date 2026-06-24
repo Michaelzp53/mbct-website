@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { getArticleBySlug, getAllSlugs } from './articles-data'
 import ArticleInteractions from './ArticleInteractions'
 import { ArticleMarkdown } from '@/components/article-markdown'
+import Script from 'next/script'
 
 // 7大分类
 const categories = [
@@ -64,9 +65,44 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   }
 
   const category = categories.find(c => c.id === articleData.category)
+  const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
+  const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
+  const articleUrl = `https://www.marvelbros.com/${lang}/lean/article/${slug}`
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: articleTitle,
+    description: isZh ? articleData.summaryZh : articleData.summaryEn,
+    datePublished: articleData.date,
+    dateModified: articleData.date,
+    author: {
+      '@type': 'Organization',
+      '@id': 'https://www.marvelbros.com/#organization',
+      name: isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MarvelBros C&T',
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': 'https://www.marvelbros.com/#organization',
+      name: 'MarvelBros C&T',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.marvelbros.com/logo-new.png',
+      },
+    },
+    mainEntityOfPage: articleUrl,
+    url: articleUrl,
+    inLanguage: isZh ? 'zh-CN' : 'en-US',
+    articleSection: category ? (isZh ? category.labelZh : category.labelEn) : articleData.category,
+    keywords: articleData.tags,
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      <Script
+        id={`lean-article-json-ld-${slug}-${lang}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* Header */}
       <div className="bg-gradient-to-br from-[#f59e0b]/10 via-background to-background border-b border-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -101,7 +137,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
           {/* Title */}
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {isZh ? articleData.titleZh : articleData.titleEn}
+            {articleTitle}
           </h1>
 
           {/* Meta */}
@@ -136,7 +172,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <ArticleMarkdown
-          content={isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)}
+          content={articleContent}
         />
 
         {/* Interactive: Like & Comment (Client Component) */}

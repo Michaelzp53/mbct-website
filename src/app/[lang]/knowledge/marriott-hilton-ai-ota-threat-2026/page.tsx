@@ -10,7 +10,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
  summary: isZh 
  ? '万豪和希尔顿在SEC文件中首次将AI平台列为风险因素。AI可能将客户导向OTA，佣金率15-25%。MBCT分析两种结局：酒店沦为内容供应商，或AI成为直订利器。'
  : 'Marriott and Hilton first list AI platforms as risk factors in SEC filings. AI may redirect customers to OTAs with 15-25% commission rates. MBCT analyzes two outcomes.',
- author: 'MBCT观察者',
+ author: '迈创兄弟C&T（MarvelBros C&T）',
  date: '2026-05-09',
  readTime: isZh ? '6分钟' : '6 min',
  tag: isZh ? '行业分析' : 'Industry Analysis',

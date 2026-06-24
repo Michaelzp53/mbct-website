@@ -10,7 +10,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
     summary: isZh 
       ? '2026年中国酒店业正经历前所未有的深度调整期。全国住宿设施总量已突破40万家，供需失衡已成行业新常态。本文深度解读《2026年中国酒店投资白皮书》核心洞察，为投资人和运营管理者提供三条突围路径。'
       : 'China hotel industry is experiencing unprecedented adjustment. With 400,000+ properties nationwide, supply-demand imbalance is the new normal. This article provides three breakthrough paths for investors and operators.',
-    author: 'MBCT（MarvelBros C&T）',
+    author: '迈创兄弟C&T（MarvelBros C&T）',
     date: '2026-05-26',
     readTime: isZh ? '16分钟' : '16 min',
     tag: isZh ? '行业报告' : 'Industry Report',

@@ -117,7 +117,7 @@ This is the starting point of MBCT's methodology—and the first action taken on
 
 ---
 
-**Author: MBCT (MarvelBros C&T)**
+**Author: MarvelBros C&T**
 
 Specialized in digital empowerment — full-process solutions and consulting services for the hotel industry, committed to driving revenue growth through the dual-track improvement of efficiency and guest experience.
 

@@ -9,7 +9,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: isZh ? 'AI赋能酒旅业：从"活人感"到"情绪价值"的创新路径' : 'AI Empowers Hospitality: From "Human Feel" to "Emotional Value" Innovation Path',
     summary: isZh ? '探索AI在酒旅业中的应用，包括智能客服、AI预订推荐、客房环境感知等场景，以及情绪价值驱动的创新路径。' : 'Explore AI applications in hospitality, including smart customer service, AI booking recommendations, room environment sensing, and emotional value-driven innovation.',
-    author: 'MBCT内容团队',
+    author: '迈创兄弟C&T（MarvelBros C&T）',
     date: '2026-05-15',
     readTime: isZh ? '12分钟' : '12 min',
     tag: isZh ? '行业分析' : 'Industry Analysis',

@@ -10,7 +10,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
  summary: isZh 
  ? '2025年的酒店业，正在经历一场由技术驱动的深刻变革。非接触式技术、个性化服务、可持续发展、健康安全、本地化体验、灵活空间六大趋势正在重塑行业。'
  : 'In 2025, the hotel industry is undergoing a profound technology-driven transformation. Six major trends are reshaping the industry.',
- author: 'MBCT内容团队',
+ author: '迈创兄弟C&T（MarvelBros C&T）',
  date: '2026-05-11',
  readTime: isZh ? '15分钟' : '15 min',
  tag: isZh ? '行业分析' : 'Industry Analysis',
@@ -217,7 +217,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 ---
 
-*文章来源：管享精道 | MBCT迈创兄弟商业科技*
+*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*
  ` : `
 ## Introduction
 
@@ -297,7 +297,7 @@ Remote and hybrid work create demand for:
 
 ---
 
-*Source: Lean Insights | MBCT Marvel Bros Commercial Technology*
+*Source: Lean Insights | MarvelBros C&T*
  `,
  }
 
@@ -459,7 +459,7 @@ Remote and hybrid work create demand for:
  </div>
  <div>
  <p className="font-semibold text-brand-navy">{article.author}</p>
- <p className="text-sm text-muted-foreground">{isZh ? 'MBCT内容团队' : 'MBCT Content Team'}</p>
+ <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MBCT Content Team'}</p>
  </div>
  </div>
  </div>

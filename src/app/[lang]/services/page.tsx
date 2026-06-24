@@ -17,6 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CTASection } from '@/components/CTASection'
 import { getDict } from '@/lib/dicts'
 import PageHero from '@/components/PageHero'
+import Script from 'next/script'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Building2,
@@ -201,8 +202,74 @@ export default async function ServicesPage({
     },
   ]
 
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `https://www.marvelbros.com/${lang}/services#service`,
+    name: isZh ? '迈创兄弟C&T酒店咨询与AI精益管理服务' : 'MarvelBros C&T Hotel Advisory and AI Lean Management Services',
+    provider: {
+      '@type': 'Organization',
+      '@id': 'https://www.marvelbros.com/#organization',
+      name: 'MarvelBros C&T',
+    },
+    areaServed: ['Hong Kong', 'Mainland China', 'Southeast Asia'],
+    serviceType: isZh
+      ? ['酒店投前决策', '酒店经营增长', '酒店数字化与AI精益管理']
+      : ['Hotel investment decision support', 'Hotel operating growth', 'Hotel digitalization and AI lean management'],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: isZh ? '迈创兄弟C&T核心服务模块' : 'MarvelBros C&T Core Service Modules',
+      itemListElement: dict.services.items.map((service, index) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: service.title,
+          description: service.description,
+          audience: serviceMeta[index]?.audience,
+        },
+      })),
+    },
+  }
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: isZh ? '迈创兄弟C&T适合哪些酒店项目？' : 'What hotel projects are suitable for MarvelBros C&T?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isZh
+            ? '适合酒店投资人、业主、筹开项目负责人、存量酒店经营团队，以及希望通过数字化和AI精益管理提升经营结果的团队。'
+            : 'We work with hotel investors, owners, pre-opening teams, existing hotel operators, and teams seeking measurable improvement through digital intelligence and AI lean management.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: isZh ? '服务重点是报告还是落地执行？' : 'Is the focus reports or execution?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isZh
+            ? '迈创兄弟C&T强调从诊断、路径设计到执行闭环，每项建议都对应明确动作、责任节点和可验证成果。'
+            : 'MarvelBros C&T emphasizes diagnosis, roadmap design, and execution closure. Each recommendation is tied to clear actions, milestones, and verifiable outcomes.',
+        },
+      },
+    ],
+  }
+
   return (
     <>
+      <Script
+        id={`services-json-ld-${lang}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <Script
+        id={`services-faq-json-ld-${lang}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHero
         title={isZh ? '三个能力群组，覆盖酒店增长最关键的事' : 'Three capability clusters covering what matters most for hotel growth'}
         subtitle={isZh ? '围绕投前决策、经营增长与AI落地三大方向，MBCT把每个服务模块组织成从诊断到执行的可交付能力链——不是零散产品，而是推进结果的完整系统。' : 'Organized around pre-investment decisions, operational growth, and AI implementation—each module is a link in a deliverable chain from diagnosis to execution, not a standalone product.'}

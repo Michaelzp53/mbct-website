@@ -10,7 +10,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
  summary: isZh 
  ? '2026年4月，北京正式出台酒店业"限星令"——停止批准新建三星级及以下酒店。这项政策指向2030年目标：10个高端酒店集群、600家高品质酒店、连锁化率60%。'
  : 'In April 2026, Beijing officially banned new 3-star-and-below hotels. The policy targets 10 premium clusters, 600 high-quality hotels, and 60% chain rate by 2030.',
- author: 'MBCT内容团队',
+ author: '迈创兄弟C&T（MarvelBros C&T）',
  date: '2026-05-10',
  readTime: isZh ? '8分钟' : '8 min',
  tag: isZh ? '行业分析' : 'Industry Analysis',
@@ -441,7 +441,7 @@ The answer isn't in the policy. It's in your choices.
  </div>
  <div>
  <p className="font-semibold text-brand-navy">{article.author}</p>
- <p className="text-sm text-muted-foreground">{isZh ? 'MBCT内容团队' : 'MBCT Content Team'}</p>
+ <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MBCT Content Team'}</p>
  </div>
  </div>
  </div>

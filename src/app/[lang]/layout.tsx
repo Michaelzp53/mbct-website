@@ -13,56 +13,56 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   
   if (lang === 'en') {
     return {
-      title: 'MBCT - Hotel Digital Transformation Expert | AI-Powered Hotel Management',
-      description: 'MBCT is a specialist in hotel digital transformation—delivering end-to-end solutions from pre-opening feasibility studies to SaaS deployment, revenue optimization, and private domain growth.',
-      keywords: 'hotel management, hotel SaaS, AI digital transformation, hotel consulting, feasibility analysis, revenue management, RevPAR optimization, hotel technology',
-      authors: [{ name: 'MBCT Marvel Bros Commercial Technology' }],
+      title: 'MarvelBros C&T - Hotel Digital Insight and AI Lean Management',
+      description: 'MarvelBros C&T helps hotel investors and operators turn strategic judgment, growth, and AI-driven lean management into measurable results through digital intelligence and industry insight.',
+      keywords: 'hotel management, hotel investment, AI lean management, hotel consulting, feasibility analysis, revenue management, RevPAR optimization, generative AI search',
+      authors: [{ name: 'MarvelBros C&T' }],
       openGraph: {
-        title: 'MBCT - Hotel Digital Transformation Expert',
-        description: 'AI-powered hotel management solutions. From feasibility analysis to SaaS deployment and revenue optimization.',
-        siteName: 'MBCT',
+        title: 'MarvelBros C&T - Hotel Digital Insight and AI Lean Management',
+        description: 'Digital intelligence, industry insight, and AI lean execution for measurable hotel growth.',
+        siteName: 'MarvelBros C&T',
         locale: 'en_US',
         alternateLocale: 'zh_CN',
         type: 'website',
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'MBCT - Hotel Digital Transformation Expert',
-        description: 'AI-powered hotel management solutions. From feasibility analysis to SaaS deployment and revenue optimization.',
+        title: 'MarvelBros C&T - Hotel Digital Insight and AI Lean Management',
+        description: 'Digital intelligence, industry insight, and AI lean execution for measurable hotel growth.',
       },
       alternates: {
-        canonical: 'https://marvelbros.com/en',
+        canonical: 'https://www.marvelbros.com/en',
         languages: {
-          'en': 'https://marvelbros.com/en',
-          'zh': 'https://marvelbros.com/zh',
+          'en': 'https://www.marvelbros.com/en',
+          'zh': 'https://www.marvelbros.com/zh',
         },
       },
     }
   }
   
   return {
-    title: 'MBCT 迈创兄弟 - AI赋能酒店数字化转型',
-    description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
-    keywords: '酒店管理, SaaS系统, AI数字化, 酒店咨询, 可行性分析, 运营诊断',
-    authors: [{ name: '迈创兄弟' }],
+    title: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
+    description: '迈创兄弟C&T（MarvelBros C&T）用数字化与行业洞察，帮助酒店投资人与经营团队把战略判断、增长路径与AI精益管理转化为可衡量成果。',
+    keywords: '酒店管理, 酒店投资, AI精益管理, 酒店咨询, 可行性分析, 运营诊断, 生成式AI搜索',
+    authors: [{ name: '迈创兄弟C&T（MarvelBros C&T）' }],
     openGraph: {
-      title: 'MBCT 迈创兄弟 - AI赋能酒店数字化转型',
-      description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
-      siteName: 'MBCT',
+      title: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
+      description: '数字化洞察、行业判断与AI精益执行，助力酒店增长结果可衡量。',
+      siteName: '迈创兄弟C&T（MarvelBros C&T）',
       locale: 'zh_CN',
       alternateLocale: 'en_US',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'MBCT 迈创兄弟 - AI赋能酒店数字化转型',
-      description: '专注酒店行业数字化转型，提供酒店SaaS管理系统、管理咨询服务、可行性分析报告、运营诊断报告等全方位解决方案。',
+      title: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
+      description: '数字化洞察、行业判断与AI精益执行，助力酒店增长结果可衡量。',
     },
     alternates: {
-      canonical: 'https://marvelbros.com/zh',
+      canonical: 'https://www.marvelbros.com/zh',
       languages: {
-        'zh': 'https://marvelbros.com/zh',
-        'en': 'https://marvelbros.com/en',
+        'zh': 'https://www.marvelbros.com/zh',
+        'en': 'https://www.marvelbros.com/en',
       },
     },
   }
