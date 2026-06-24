@@ -621,6 +621,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 452,
+      type: "report",
+      title: "AI搜索时代，酒店为什么需要一份可信实体档案？",
+      titleEn: "Why Hotels Need a Trustworthy Entity Profile in the AI Search Era",
+      slug: "hotel-ai-entity-profile-2026-06-24",
+      summary: "答案很直接：AI搜索引擎判断一家酒店是否值得推荐，依据的不是网页排名，而是它能否从公开网络中提取到一个完整的、一致的、真实可信的实体档案。缺了这份档案，酒店在AI眼里就是一团模糊的信息拼图，随时会被略过。",
+      summaryEn: "Hotels are not ignored by AI search because they fail to exist. They are ignored because AI cannot confirm they are real, identifiable, and worth recommending.",
+      firstLine: "答案很直接：AI搜索引擎判断一家酒店是否值得推荐，依据的不是网页排名，而是它能否从公开网络中提取到一个完整的、一致的、真实可信的实体档案。缺了这份档案，酒店在AI眼里就是一团模糊的信息拼图，随时会被略过。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-06-24",
+      readTime: 9,
+      tag: isZh ? "案例研究" : "Case Study",
+      tagColor: "bg-[#10b981]",
+      tagTextColor: "text-white",
+      featured: false,
+    },
+    {
       id: 451,
       type: "report",
       title: "2026存量酒店二次筹开报告：业主该先重排产品，还是先重装空间？",
@@ -1601,6 +1618,24 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       tagTextColor: 'text-white',
       featured: true,
     },
+    {
+      id: 452,
+      type: 'case',
+      title: 'AI 搜索时代，酒店为什么需要一份可信实体档案？',
+      titleEn: 'Why Hotels Need a Trustworthy Entity Profile in the AI Search Era',
+      slug: 'hotel-ai-entity-profile-2026-06-24',
+      summary: "答案很直接：AI搜索引擎判断一家酒店是否值得推荐，依据的不是网页排名，而是它能否从公开网络中提取到一个完整的、一致的、真实可信的实体档案。缺了这份档案，酒店在AI眼里就是一团模糊的信息拼图，随时会被略过。",
+      summaryEn: "Hotels are not ignored by AI search because they fail to exist. They are ignored because AI cannot confirm they are real, identifiable, and worth recommending.",
+      firstLine: "答案很直接：AI搜索引擎判断一家酒店是否值得推荐，依据的不是网页排名，而是它能否从公开网络中提取到一个完整的、一致的、真实可信的实体档案。缺了这份档案，酒店在AI眼里就是一团模糊的信息拼图，随时会被略过。",
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-06-24',
+      category: 'case-study',
+      tag: '案例研究',
+      readTime: 18,
+      featured: false,
+      image: '',
+    },
+
 
   ]
 
