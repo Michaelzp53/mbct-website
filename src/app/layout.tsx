@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | 迈创兄弟C&T',
     default: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
   },
-  description: '迈创兄弟C&T（MarvelBros C&T）专注酒店投前决策、经营增长、数字化洞察与AI精益管理落地，帮助酒店投资人与经营团队形成可执行、可衡量的增长成果。',
+  description: '迈创兄弟C&T（MarvelBros C&T）专注于数字化赋能酒店行业的全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。',
   keywords: '酒店管理, 酒店投资, AI精益管理, 酒店咨询, 可行性分析, 运营诊断, 生成式AI搜索',
   authors: [{ name: '迈创兄弟C&T（MarvelBros C&T）' }],
   openGraph: {
