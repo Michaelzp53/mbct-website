@@ -39,7 +39,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href={`/${lang}/`} className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
-            <Image src="/logo-new.png" alt="MBCT Logo" width={48} height={48} className="object-contain flex-shrink-0" />
+            <Image src="/logo-new.png" alt={isZh ? '迈创兄弟C&T 标志' : 'MarvelBros C&T Logo'} width={48} height={48} className="object-contain flex-shrink-0" />
             <div className="flex flex-col min-w-0">
               <span className="font-bold text-foreground text-[13px] lg:text-[14px] leading-none dark:text-white">MarvelBros C&amp;T</span>
               <span className="text-[10px] sm:text-xs text-gradient-rainbow font-medium truncate max-w-[120px] sm:max-w-[160px] lg:max-w-none">
@@ -95,7 +95,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               <div className="flex flex-col gap-1 p-6">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
-                    <Image src="/logo-new.png" alt="MBCT Logo" width={44} height={44} className="object-contain" />
+                    <Image src="/logo-new.png" alt={isZh ? '迈创兄弟C&T 标志' : 'MarvelBros C&T Logo'} width={44} height={44} className="object-contain" />
                     <span className="font-bold text-[13px] text-foreground dark:text-white">MarvelBros C&amp;T</span>
                   </div>
                   <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-muted-foreground">

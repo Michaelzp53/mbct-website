@@ -134,24 +134,24 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-primary text-sm font-medium">
-                {isZh ? '酒店项目判断 · 经营增长 · AI 落地' : 'Hotel judgment · Operating growth · AI implementation'}
+                {isZh ? '迈创兄弟C&T · 效率 + 体验双轨增长' : 'MarvelBros C&T · Efficiency + Experience Growth'}
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              {isZh ? '帮助酒店投资人与经营团队' : 'Helping hotel investors and operators'}
+              {isZh ? '专注数字化赋能酒店行业' : 'Digital Enablement for Hospitality'}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">
-                {isZh ? '把判断、增长与 AI 落地做成结果' : 'turn judgment, growth, and AI into measurable results'}
+                {isZh ? '以效率 + 体验双轨驱动业绩增长' : 'Driving Growth Through Efficiency + Experience'}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-xl mx-auto lg:mx-0 drop-shadow">
               {isZh
-                ? '从投前判断，到经营增长，再到 AI 落地，MBCT 聚焦的是客户最关心的三件事：项目值不值得做，增长该怎么推进，数字化如何真正落地。'
-                : 'From pre-investment judgment to operating growth and AI implementation, MBCT focuses on three practical questions: whether the project is worth doing, how growth should be pushed forward, and how digital execution can truly land.'}
+                ? '迈创兄弟C&T 是面向酒店投资人与经营团队的全流程解决方案与咨询服务机构，围绕投前判断、经营增长与 AI 落地，帮助酒店把效率提升、体验优化和业绩增长做成可验证结果。'
+                : 'MarvelBros C&T is a full-lifecycle hospitality advisory and solution partner for hotel investors and operating teams, turning investment judgment, operating growth, and AI implementation into measurable results.'}
             </p>
 
             {/* CTA Buttons */}

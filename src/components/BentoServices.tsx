@@ -104,7 +104,7 @@ export default function BentoServices({ lang }: BentoServicesProps) {
     {
       id: 'research',
       title: isZh ? '⑨ 行业研究内容' : '⑨ Industry Research & Content',
-      desc: isZh ? 'MBCT是酒店行业的知识伙伴，季度报告+案例研究+免费内容生态' : 'MBCT is your hospitality knowledge partner. Quarterly reports + case studies + free content ecosystem',
+      desc: isZh ? '迈创兄弟C&T是酒店行业的知识伙伴，季度报告+案例研究+免费内容生态' : 'MarvelBros C&T is your hospitality knowledge partner. Quarterly reports + case studies + free content ecosystem',
       icon: Sparkles,
       color: '#ec4899',
       gradient: 'linear-gradient(135deg, #ec4899, #764ba2)',
@@ -121,15 +121,15 @@ export default function BentoServices({ lang }: BentoServicesProps) {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-medium">{isZh ? 'MBCT 解决方案' : 'MBCT Solutions'}</span>
+            <span className="text-primary text-sm font-medium">{isZh ? '迈创兄弟C&T 解决方案' : 'MarvelBros C&T Solutions'}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {isZh ? '全方位酒店数字化解决方案' : 'Comprehensive Hotel Digital Solutions'}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             {isZh 
-              ? '从战略咨询到技术落地，从会员运营到收益优化，迈创兄弟陪跑式服务助力酒店业绩增长'
-              : 'From strategy consulting to tech implementation, from membership to revenue optimization—MBCT partnership services drive hotel growth'}
+              ? '从战略咨询到技术落地，从会员运营到收益优化，迈创兄弟C&T陪跑式服务助力酒店业绩增长'
+              : 'From strategy consulting to tech implementation, from membership to revenue optimization—MarvelBros C&T partnership services drive hotel growth'}
           </p>
         </div>
 

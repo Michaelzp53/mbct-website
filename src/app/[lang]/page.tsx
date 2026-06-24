@@ -122,7 +122,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
-                {isZh ? 'MBCT 不是给所有人一套标准答案' : 'MBCT does not force one standard answer on every client'}
+                {isZh ? '迈创兄弟C&T 不是给所有人一套标准答案' : 'MarvelBros C&T does not force one standard answer on every client'}
               </h2>
               <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">
                 {isZh
@@ -162,7 +162,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {isZh ? 'MBCT 的核心能力，不止是做很多事' : 'MBCT is not defined by doing many things'}
+              {isZh ? '迈创兄弟C&T 的核心能力，不止是做很多事' : 'MarvelBros C&T is not defined by doing many things'}
             </h2>
             <p className="text-slate-300 text-sm md:text-base leading-relaxed">
               {isZh
@@ -206,12 +206,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <ScrollFade>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                {isZh ? '为什么是 MBCT？' : 'Why MBCT?'}
+                {isZh ? '为什么是迈创兄弟C&T？' : 'Why MarvelBros C&T?'}
               </h2>
               <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mb-8">
                 {isZh
-                  ? '传统顾问常停在建议，纯技术公司常停在工具。MBCT 更适合需要判断、执行与复盘同时在线的酒店项目。'
-                  : 'Traditional advisors often stop at recommendations. Pure technology vendors often stop at tools. MBCT is built for hotel projects that need judgment, execution, and review working together.'}
+                  ? '传统顾问常停在建议，纯技术公司常停在工具。迈创兄弟C&T 更适合需要判断、执行与复盘同时在线的酒店项目。'
+                  : 'Traditional advisors often stop at recommendations. Pure technology vendors often stop at tools. MarvelBros C&T is built for hotel projects that need judgment, execution, and review working together.'}
               </p>
               <div className="space-y-4">
                 {whyMbct.map((item) => {

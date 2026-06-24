@@ -34,8 +34,8 @@ export function Header() {
               <span className="text-white font-bold text-lg">M</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-brand-navy text-lg leading-none">MBCT</span>
-              <span className="text-xs text-brand-muted">MBCT</span>
+              <span className="font-bold text-brand-navy text-lg leading-none">迈创兄弟C&amp;T</span>
+              <span className="text-xs text-brand-muted">MarvelBros C&amp;T</span>
             </div>
           </Link>
           

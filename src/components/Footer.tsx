@@ -26,16 +26,16 @@ export function Footer({ lang, dict }: FooterProps) {
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.9fr_0.95fr]">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Image src="/logo-new.png" alt="MBCT Logo" width={52} height={52} className="object-contain" />
+              <Image src="/logo-new.png" alt={isZh ? '迈创兄弟C&T 标志' : 'MarvelBros C&T Logo'} width={52} height={52} className="object-contain" />
               <div>
                 <span className="font-bold text-[14px] text-foreground">MarvelBros C&amp;T</span>
-                <p className="text-[10px] sm:text-xs text-gradient-rainbow font-medium">{isZh ? '迈创兄弟商业科技' : 'Hotel Operations Advisory'}</p>
+                <p className="text-[10px] sm:text-xs text-gradient-rainbow font-medium">{isZh ? '迈创兄弟C&T' : 'Hotel Operations Advisory'}</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               {isZh
-                ? '帮助酒店投资人和经营团队，把项目判断、经营增长和 AI 落地做成可执行结果。'
-                : 'Helping hotel investors and operators turn project judgment, operating growth, and AI implementation into measurable results.'}
+                ? '专注于数字化赋能酒店行业的全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。'
+                : 'A full-lifecycle hospitality advisory and solution partner driving hotel growth through efficiency and experience.'}
             </p>
             <div className="flex flex-col gap-2 mt-6">
               <a href="mailto:info@marvelbros.com" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
