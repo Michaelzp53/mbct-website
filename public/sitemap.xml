@@ -2334,4 +2334,28 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://www.marvelbros.com/zh/lean/article/hotel-operational-diagnosis-five-dimensions-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.marvelbros.com/en/lean/article/hotel-operational-diagnosis-five-dimensions-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.marvelbros.com/zh/knowledge/hotel-east-china-midscale-ota-breakthrough-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.marvelbros.com/en/knowledge/hotel-east-china-midscale-ota-breakthrough-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>
