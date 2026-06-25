@@ -1636,6 +1636,24 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       image: '',
     },
 
+    {
+      id: 460,
+      type: 'case',
+      title: '华东某中端酒店 OTA 依赖突破复盘：12 个月把客源主动权重新拿回来',
+      titleEn: 'Breaking Free from OTA Dependency: How a Mid-Range Hotel in Eastern China Reclaimed Guest Ownership Over 12 Months',
+      slug: 'hotel-east-china-midscale-ota-breakthrough-2026',
+      summary: "# 华东某中端酒店 OTA 依赖突破复盘：12 个月把客源主动权重新拿回来",
+      summaryEn: "When more than half of a hotel's orders consistently come from online travel agencies over an extended period, the problem is rarely confined to commission costs alone. What is really at stake is some",
+      firstLine: "# 华东某中端酒店 OTA 依赖突破复盘：12 个月把客源主动权重新拿回来",
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-06-25',
+      category: 'case-study',
+      tag: '案例研究',
+      readTime: 14,
+      featured: false,
+      image: '',
+    },
+
 
   ]
 
