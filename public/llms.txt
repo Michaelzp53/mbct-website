@@ -51,3 +51,11 @@ Email: contactme@marvelbros.com
 - English versions use the same slugs under https://www.marvelbros.com/en/lean/article/.
 - Social profile sameAs fields are intentionally omitted until verified public URLs are available.
 
+## GEO Second and Third Batch Entrances (2026-06-25)
+
+- OTA Dependency / Direct Booking: https://www.marvelbros.com/zh/lean/article/hotel-ota-commission-direct-booking-2026
+- Corporate Travel / B2B Development: https://www.marvelbros.com/zh/lean/article/hotel-corporate-travel-b2b-development-2026
+- Pre-opening Checklist: https://www.marvelbros.com/zh/lean/article/hotel-pre-opening-five-things-overlooked
+- High-end and Luxury Positioning: https://www.marvelbros.com/zh/lean/article/luxury-hotel-positioning-revenue-structure-2026
+- English versions use the same slugs under https://www.marvelbros.com/en/lean/article/.
+
