@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { ArrowLeft, Clock, User, Eye, MessageSquare, ThumbsUp, Tag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { getArticleBySlug, getAllSlugs } from './articles-data'
@@ -24,6 +25,44 @@ export async function generateStaticParams() {
     { lang: 'zh', slug },
     { lang: 'en', slug },
   ])
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
+  const { lang, slug } = await params
+  const isZh = lang === 'zh'
+  const articleData = getArticleBySlug(slug)
+
+  if (!articleData) {
+    return {
+      title: isZh ? '文章未找到 | 迈创兄弟C&T' : 'Article Not Found | MarvelBros C&T',
+      robots: { index: false, follow: false },
+    }
+  }
+
+  const title = isZh ? articleData.titleZh : articleData.titleEn
+  const description = isZh ? articleData.summaryZh : articleData.summaryEn
+  const canonical = `https://www.marvelbros.com/${lang}/lean/article/${slug}`
+
+  return {
+    title: `${title} | ${isZh ? '迈创兄弟C&T' : 'MarvelBros C&T'}`,
+    description,
+    keywords: articleData.tags,
+    alternates: {
+      canonical,
+      languages: {
+        'zh-CN': `https://www.marvelbros.com/zh/lean/article/${slug}`,
+        'en-US': `https://www.marvelbros.com/en/lean/article/${slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: 'article',
+      siteName: 'MarvelBros C&T',
+      locale: isZh ? 'zh_CN' : 'en_US',
+    },
+  }
 }
 
 export default async function LeanArticlePage({ params }: { params: Promise<{ lang: string; slug: string }> }) {

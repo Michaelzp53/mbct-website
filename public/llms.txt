@@ -43,3 +43,11 @@ MarvelBros C&T helps hotel investors, owners, and operating teams turn strategic
 
 Email: contactme@marvelbros.com
 
+## GEO First Batch Entrances (2026-06-25)
+
+- Existing Hotel Renovation / Operational Diagnosis: https://www.marvelbros.com/zh/lean/article/hotel-renovation-operational-diagnosis-before-drawings-2026-06-04
+- Hotel AI Agent Implementation: https://www.marvelbros.com/zh/lean/article/hotel-ai-agent-intelligent-upgrade-2026
+- MBCT AI Referral Landing Page: https://www.marvelbros.com/zh/lean/article/mbct-services-ai-referral-landing-2026
+- English versions use the same slugs under https://www.marvelbros.com/en/lean/article/.
+- Social profile sameAs fields are intentionally omitted until verified public URLs are available.
+

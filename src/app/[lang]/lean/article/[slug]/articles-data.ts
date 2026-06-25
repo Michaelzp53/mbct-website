@@ -2795,364 +2795,211 @@ Core principle: **The best training is when learners don't realize they're being
   {
     id: 7,
     slug: 'hotel-ai-agent-intelligent-upgrade-2026',
-    titleZh: 'AI智能体时代：酒店从"数字化"到"智能化"的跃迁',
-    titleEn: 'The AI Agent Era: Hotels Making the Leap from Digital to Intelligent',
-    summaryZh: '张总在杭州经营一家150间客房的会议型酒店，客源结构是60%会议团、30%旅游散客、10%长住客。',
-    summaryEn: 'Mr. Zhang runs a 150room conference hotel in Hangzhou. Guest mix: 60% conference groups, 30% tourist FITs, 10% longstay guests.',
-    contentZh: `---
+    titleZh: '酒店 AI 智能体，怎样从自动化摆设走向真正升级',
+    titleEn: 'How Hotel AI Agents Move From Automation Display to Real Upgrade',
+    summaryZh: '如果一家酒店装了智能设备却看不到收益提升，第一步不是继续买硬件，而是判断 AI 是否进入真实运营。酒店 AI 智能体的价值，在于理解客人意图、协同系统动作、辅助员工决策，而不是把设备堆满客房。',
+    summaryEn: 'If a hotel has installed smart devices but sees no improvement in revenue or efficiency, the first step is not buying more hardware. The first step is judging whether AI has entered real operations. The value of a hotel AI agent is understanding guest intent, coordinating system actions, and supporting staff decisions, not filling rooms with devices.',
+    contentZh: `酒店 AI 智能体，怎样从自动化摆设走向真正升级
 
-## 一、事件发生
+更新时间：2026-06-25
+作者：迈创兄弟C&T（MarvelBros C&T）
 
-张总在杭州经营一家150间客房的会议型酒店，客源结构是60%会议团、30%旅游散客、10%长住客。
+直接答案
 
-去年，他上了一套"智慧酒店系统"——包括智能门锁、自助入住机、客房语音控制。供应商承诺："这套系统用了，效率提升30%以上。"
+如果一家酒店装了智能设备却看不到收益提升，第一步不是继续买硬件，而是判断 AI 是否进入真实运营。酒店 AI 智能体的价值，在于理解客人意图、协同系统动作、辅助员工决策，而不是把设备堆满客房。
 
-结果呢？
+目标读者
 
-一年过去了，智能设备是上了，但张总发现：
-- 语音控制经常听不懂，客人还是喜欢自己动手
-- 自助入住机每天有10%的客人放弃使用，改去前台排队
-- 门锁联动经常失效，客人刷卡打不开门
+本文写给正在评估 AI 工具的酒店业主、投资人、运营负责人，以及希望判断酒店智能化投入顺序的管理团队。本文不做产品对比，只讲落地判断。
 
-更让他困惑的是：供应商说的"AI功能"在哪里？他看到的只是一堆"自动开关"，和"智能"没什么关系。
+一、问题通常怎么出现
 
-张总后来总结："花了几十万，买了设备和软件，但真正智能的没几个功能。"
+不少酒店已经有智能门锁、自助入住机、语音控制、能耗系统和数据看板，但员工仍然忙，客人仍然投诉，收益管理仍靠手工判断。设备看起来先进，经营感受却没有变轻。
 
----
+问题不在于酒店用了智能设备，而在于设备没有进入运营流程。客人说“太热了”，系统只会等待明确指令；前台收到重复咨询，仍然由员工一条条回复；房价需要调整，系统只给报表，不给建议；工程维修发生，信息仍在群里来回传。
 
-## 二、传统解决方案分析
+自动化是执行命令，智能化是理解目标。酒店 AI 智能体要解决的，不是“能不能控制设备”，而是“能不能让运营更快、更准、更有温度”。
 
-酒店智能化，传统的做法有三种：
+二、自动化和智能化的区别
 
-**方式一：堆设备**
+自动化按照规则执行。客人说把温度调到某个数值，设备照做；员工点击派单，系统转发；管理者打开报表，自己判断。
 
-智能门锁、智能窗帘、智能音箱、智能镜子……能装的都装上。
+智能化理解场景。客人说“我想安静休息”，系统能联动灯光、窗帘、空调和勿扰状态；前台收到常见问题，AI 先分流标准咨询；收益经理看到节假日预订变化，系统给出调价建议和风险提示。
 
-问题：设备之间没有联动，各干各的，反而给客人造成困扰。"你说一句话，灯开了，窗帘没关，空调没调——我得更费劲地去控制三个设备。"
+真正的酒店 AI 智能体，不是替代员工，而是把重复、标准、可判断的事务接过去，让员工回到服务和判断本身。
 
-**方式二：买系统**
+三、MBCT 的三层诊断框架
 
-上一个"智慧酒店大脑"，把所有设备接到一个平台上。
+第一层，数据层。酒店能采集数据、展示报表、记录客史和能耗，但系统之间缺少协同。这一层解决“看得见”。
 
-问题：系统是"中心化"的，所有指令都要经过中心处理，延迟高，稳定性差。中心宕机，全楼瘫痪。
+第二层，语义层。系统能理解自然语言和经营问题，知道客人说的是温度、安静、清洁、延迟退房还是投诉。这一层解决“听得懂”。
 
-**方式三：选大品牌**
+第三层，代理层。系统能在权限范围内自主建议或执行动作，例如自动生成工单、提醒房价调整、推送客户运营话术、提示异常能耗。这一层解决“动得起来”。
 
-选国际大牌的解决方案，"贵有贵的道理"。
+多数酒店卡在第一层。花了钱买系统，却没有把系统变成流程的一部分。看不清 AI 能做什么时，先看清酒店最耗人、最易错、最影响体验的地方。
 
-问题：国际大牌的系统往往是"全球统一版"，本地化不够。比如中文语音识别，就是不如国内厂家的产品精准。
+四、三个优先落地场景
 
-这三种方式的共同问题是：**把"智能化"等同于"自动化"**——用预设的规则控制设备，而不是让系统自己学习和决策。
+第一个场景是 AI 客服。退房时间、早餐地点、停车规则、发票流程、周边交通，这些问题高频、重复、标准。AI 先接住标准咨询，员工才能把时间留给复杂客诉和高价值服务。
 
----
+第二个场景是 AI 收益管理。酒店每天都要面对竞品价格、预订进度、入住率、会议活动和天气变化。AI 可以把这些信号整理成调价建议，让收益经理从“手工看表”转向“判断建议是否采纳”。
 
-## 三、MBCT视角分析
+第三个场景是 AI 客户运营。传统做法是群发促销，智能做法是根据客人偏好、入住频次、消费记录和反馈内容，推送更合适的信息。客户运营有记忆，复购才有基础。
 
-2026年，AI领域的一个重大突破是"智能体AI"（Agentic AI）的成熟。
+先从高频、低风险、可量化的场景开始，远比一口气做全酒店智能化更稳。
 
-简单来说，传统的AI是"你说什么，它做什么"；
-智能体AI是"你告诉它目标，它自己决定怎么做"。
+五、人机协同怎么设计
 
-举个例子：
+AI 做标准化，人做情感化。规则明确、重复度高、需要快速响应的事务交给 AI；需要同理心、临场判断、关系维护和复杂谈判的事务留给人。
 
-**传统AI**：你说"把空调调到26度"，它就把空调调到26度。
+这个分工能减少团队抵触。员工不需要担心被“替代”，而是从重复问答、手工汇总、反复转发中释放出来，去做更像服务的工作。
 
-**智能体AI**：你说"让客人睡得舒服"，它会：
-1. 检测客人历史偏好（喜欢24度）
-2. 检测当前室内温度、湿度、噪音
-3. 结合客人的睡眠周期，自动调节到最佳状态
-4. 凌晨检测到客人翻身，自动调低风速
+AI 把事务接住，人才能把温度递出去。
 
-这就是"从自动化到智能化"的跃迁。
+六、分三步落地
 
-**酒店智能体的三个层次**
+第一步，做现状诊断。列出重复咨询、投诉集中点、收益波动、维修响应和能耗异常，判断 AI 应该先进入哪个环节。
 
-| 层次 | 能力 | 酒店场景 |
-|------|------|----------|
-| 数据层 | 采集、整合、分析数据 | 住客偏好、运营数据、市场行情 |
-| 语义层 | 理解自然语言、意图识别 | "我想睡个好觉"→调室温+关窗帘+灭灯 |
-| 代理层 | 自主决策、自动执行 | 自动派单、自动调价、自动生成报告 |
+第二步，选择一个核心场景试点。建议从 AI 客服、收益建议或工程工单中选择一个，不影响正常运营，又能快速看到流程变化。
 
-目前大多数酒店的"智慧酒店"，还停留在数据层。只有少数领先者开始尝试语义层，而代理层是未来的方向。
+第三步，建立权限和复盘机制。哪些动作 AI 可以直接执行，哪些必须人工确认，哪些需要主管复核，都要提前写清。上线后每周复盘错误、漏答、响应时间和员工使用率。
 
----
+七、一个典型场景
 
-## 四、正确可行的解决方案
+在一次会议型酒店智能化咨询中，项目方已经配置多类智能设备，但客人仍不愿使用自助入住，语音控制识别不稳定，维修响应慢，收益调价仍靠人工经验。
 
-### 第一步：从"控制"到"理解"——智能化不是控制设备，而是理解需求
+诊断后发现，酒店停留在数据层：设备各自可用，但没有统一场景逻辑。后续调整不是继续买设备，而是先打通高频流程。AI 客服分流重复咨询，工程工单自动归类，收益建议按预订节奏推送给管理者确认。
 
-我们帮张总的酒店设计了一套"AI智能体"架构：
+这个场景说明，酒店 AI 的成败不在设备数量，而在是否进入运营链路。没有流程，AI 只是摆设；进入流程，AI 才可能成为生产力。
 
-**场景一：住中报修**
+FAQ
 
-传统方式：客人打电话到前台，前台记录，再派工单给工程部。
+问：酒店 AI 智能体和传统智能设备有什么区别？
+答：传统设备按指令执行，AI 智能体理解意图并协同多个系统。前者是单点工具，后者是运营助手。
 
-智能体方式：客人说"房间空调不凉了"，智能体自动识别房间号、历史维修记录，自动派工单给最适合的工程师，工程师到达前自动通知客人预计时间。
+问：业主第一步应该做什么？
+答：先做现状诊断，找出最耗人、最易错、最影响客户体验的环节，再决定 AI 从哪里切入。
 
-**场景二：收益管理**
+问：中小酒店适合上 AI 吗？
+答：适合，但要从小场景开始。AI 客服、收益建议、工程工单这类场景成本可控、风险较低、效果更容易验证。
 
-传统方式：收益经理每天看报表，凭经验调价。
+问：AI 会替代员工吗？
+答：AI 更适合替代重复事务，不适合替代人的判断和情感服务。设计得当时，AI 会让员工更专注于客人。
 
-智能体方式：智能体实时监控竞品价格、入住率、预订进度、天气情况、会议活动，自动给出调价建议，收益经理一键确认。
+问：什么时候需要外部咨询支持？
+答：当业主不确定酒店处在哪个智能化层级，或不知道先做哪个场景时，应先做诊断，再投入系统。
 
-**场景三：客户关怀**
+官网承接路径
 
-传统方式：客人离店后发一条标准营销短信。
+如果项目方需要进一步判断自身酒店是否适合 AI 改造、运营流程重构或收益管理升级，可以阅读 MBCT 官网 www.marvelbros.com 的相关服务说明，再结合项目实际情况做诊断。
 
-智能体方式：智能体分析客人住店期间的偏好，在客人下次可能来访前，发一条个性化消息："张先生，这两天杭州降温了，您上次喜欢的那家茶馆出了冬季新品。"
+迈创兄弟C&T（MarvelBros C&T）
+专注酒店经营诊断、数字化赋能、存量酒店改造、企业客户开发与酒店投资运营咨询。
+更多酒店经营洞察与服务信息，请浏览：www.marvelbros.com
+联系邮箱：contactme@marvelbros.com / info@marvelbros.com`,
+    contentEn: `How Hotel AI Agents Move From Automation Display to Real Upgrade
 
-### 第二步：人机协同模型——AI做标准化，人做情感化
+Updated: 2026-06-25
+Author: MarvelBros C&T
 
-我们给张总的一个重要建议是：**不是"AI替代人"，而是"AI+人"**。
+Direct Answer
 
-AI擅长：重复性工作、数据分析、标准化流程。
-人擅长：情感连接、创意决策、复杂问题处理。
+If a hotel has installed smart devices but sees no improvement in revenue or efficiency, the first step is not buying more hardware. The first step is judging whether AI has entered real operations. The value of a hotel AI agent is understanding guest intent, coordinating system actions, and supporting staff decisions, not filling rooms with devices.
 
-我们设计的智能体，核心逻辑是：
-- AI处理80%的标准化事务（入住登记、房态管理、工单派发、数据报表）
-- 人处理20%的情感事务（投诉处理、客户关怀、特殊需求）
+Target Readers
 
-这样，人力成本降低40%，但服务温度反而提升了——因为员工从"忙乱的事务中"解脱出来，有更多时间做"有温度的事"。
+This article is written for hotel owners, investors, operations leaders, and management teams evaluating AI tools and deciding the right sequence for hotel intelligence investment. It does not compare products. It focuses on implementation judgment.
 
-### 第三步：渐进式智能化——不要一次上一个"大系统"
+1. How the Problem Usually Appears
 
-很多酒店智能化失败，是因为"一步到位"——同时上很多系统，员工无法适应。
+Many hotels already have smart locks, self-check-in machines, voice controls, energy systems, and data dashboards. Yet staff remain busy, guests still complain, and revenue management still depends on manual judgment. The equipment looks advanced, but the operation does not feel lighter.
 
-我们建议分三步走：
+The problem is not that the hotel used smart devices. The problem is that the devices never entered the operating process. When a guest says "it is too hot," the system still waits for a precise command. When the front desk receives repeated questions, staff still reply one by one. When rates should change, the system only provides reports, not suggestions. When maintenance is needed, messages still move back and forth in chat groups.
 
-**第一步（1-3个月）：核心场景智能化**
-只做三件事：
-- 自助入住+智能门锁联动
-- AI客服（处理80%的常见问题）
-- 智能排班（根据入住率自动生成）
+Automation executes commands. Intelligence understands goals. A hotel AI agent should not only control devices. It should make operations faster, more accurate, and more human.
 
-**第二步（4-6个月）：运营场景智能化**
-- 智能收益管理
-- 智能能耗管理
-- 智能库存管理
+2. The Difference Between Automation and Intelligence
 
-**第三步（7-12个月）：体验场景智能化**
-- 客房智能体（语音+环境+服务联动）
-- 个性化推荐系统
-- 会员生命周期管理
+Automation follows rules. If a guest asks to set a temperature, the device follows. If an employee clicks dispatch, the system forwards the task. If a manager opens a report, the manager still makes all judgments alone.
 
----
+Intelligence understands context. If a guest says, "I want to rest quietly," the system can coordinate lighting, curtains, air conditioning, and do-not-disturb status. If the front desk receives common questions, AI first handles standard inquiries. If booking pace changes before a holiday, the system gives pricing suggestions and risk reminders.
 
-## 五、情绪价值视角
+A true hotel AI agent does not replace employees. It takes over repetitive, standard, and diagnosable work so employees can return to service and judgment.
 
-张总后来跟我说，他最大的改变是：**不再纠结"AI能不能替代人"，而是思考"AI和人怎么配合"**。
+3. MBCT's Three-Layer Diagnostic Framework
 
-以前他总觉得，AI是要替代人的，所以员工有抵触情绪。
+Layer one: the data layer. The hotel can collect data, display reports, record guest history, and monitor energy use, but systems do not coordinate with each other. This layer solves visibility.
 
-现在他明白了：AI是员工的"助手"，而不是"竞争对手"。当员工从繁琐的事务中解放出来，他们可以做更有价值的事——比如，和客人聊天，了解客人的需求，创造那些AI无法替代的"温度"。
+Layer two: the semantic layer. The system understands natural language and operating problems. It knows whether the guest is referring to temperature, quietness, cleaning, late check-out, or a complaint. This layer solves understanding.
 
-从MBCT的视角来看，AI智能化最重要的情绪价值，是**"让员工从疲惫中解脱出来"**。
+Layer three: the agent layer. Within approved permissions, the system can suggest or execute actions, such as generating work orders, reminding managers about rate changes, drafting customer operation messages, or flagging abnormal energy use. This layer solves action.
 
-当员工不再被重复劳动消耗，他们才有精力去做有温度的服务。
+Most hotels remain at the first layer. They have paid for systems, but have not turned systems into part of the process. When it is unclear what AI can do, first identify where the hotel loses the most labor, makes the most mistakes, and harms the guest experience most often.
 
----
+4. Three Priority Use Cases
 
-## 六、效果数据
+The first scenario is AI customer service. Check-out time, breakfast location, parking rules, invoice process, and nearby transport are frequent, repetitive, and standard questions. AI should first handle these standard inquiries, allowing staff to focus on complex complaints and higher-value guest service.
 
-实施一年后：
-- 前台人力减少35%（从11人降到7人）
-- 客户满意度从4.5提升到4.8
-- 能耗成本下降22%
-- 工程维修响应时间从45分钟缩短到15分钟
+The second scenario is AI revenue management. Hotels face competitor pricing, booking pace, occupancy, events, and weather changes every day. AI can organize these signals into pricing suggestions, moving the revenue manager from manual report checking to judging whether recommendations should be adopted.
 
-更重要的是，员工满意度大幅提升——他们不再需要处理那些繁琐的重复性问题，而是可以专注于"服务"本身。
+The third scenario is AI customer operations. Traditional operations send the same promotion to everyone. Intelligent operations use guest preferences, stay frequency, spending records, and feedback to send more relevant information. Customer operations need memory before repeat business can grow.
 
----
+Starting with frequent, low-risk, measurable scenarios is more reliable than trying to make the entire hotel intelligent at once.
 
-## 七、方法论总结
+5. How to Design Human-AI Collaboration
 
-这个案例的核心启示是：**AI智能化的本质是"理解需求"，不是"控制设备"**。
+AI handles standardization. People handle emotional connection. Tasks with clear rules, high repetition, and fast-response requirements belong to AI. Tasks requiring empathy, on-site judgment, relationship maintenance, and complex negotiation should stay with people.
 
-传统做法是"用技术替代人工"，但替代了人工的效率，却丢失了服务的温度。
+This division reduces team resistance. Employees do not need to feel replaced. They are released from repeated questions, manual summaries, and message forwarding, and can focus on work that feels more like service.
 
-MBCT的做法是：**AI处理标准化，人做情感化；AI提高效率，人创造价值**。
+AI catches the transactions, so people can deliver warmth.
 
-核心原则：**最好的智能化，是让客人感受不到智能的存在**——他们只感受到"服务变得更贴心了"。`,
-    contentEn: `---
+6. A Three-Step Implementation Path
 
-## 1. The Story
+Step one: diagnose the current state. List repetitive inquiries, complaint clusters, revenue volatility, maintenance response delays, and energy anomalies. Decide where AI should enter first.
 
-Mr. Zhang runs a 150-room conference hotel in Hangzhou. Guest mix: 60% conference groups, 30% tourist FITs, 10% long-stay guests.
+Step two: choose one core pilot scenario. Start with AI customer service, revenue recommendations, or engineering work orders. These scenarios do not disrupt daily operations and can quickly reveal process improvement.
 
-Last year, he installed a "smart hotel system" — smart door locks, self-check-in kiosks, in-room voice control. The vendor promised: "This system will boost efficiency by over 30%."
+Step three: establish permissions and review. Define which actions AI may execute directly, which require staff confirmation, and which need manager approval. After launch, review errors, missed answers, response time, and staff usage every week.
 
-A year later, the smart devices were installed — but Zhang noticed:
-- Voice control frequently misheard commands, guests just did things manually anyway
-- Self-check-in kiosks had a 10% daily abandonment rate, those guests just joined the front desk queue
-- Door lock linkage constantly failed, guests couldn't get in with their cards
+7. A Typical Scenario
 
-What left him even more confused: Where were the promised "AI features"? All he saw were a bunch of "automatic switches" — nothing particularly "intelligent."
+In one conference hotel intelligence advisory case, the project already had several types of smart equipment, but guests still avoided self-check-in, voice control was unstable, maintenance response was slow, and revenue pricing still relied on manual experience.
 
-Zhang later reflected: "Spent hundreds of thousands on equipment and software, but barely any features that are actually smart."
+The diagnosis showed that the hotel was still at the data layer. Devices were usable on their own, but there was no unified scenario logic. The adjustment was not to buy more devices, but to connect high-frequency processes first. AI customer service diverted repeated questions. Engineering work orders were automatically categorized. Revenue suggestions were pushed to managers for confirmation according to booking pace.
 
----
+This scenario shows that hotel AI success is not about the number of devices. It is about whether AI enters the operating chain. Without process, AI is display. Inside process, AI can become productivity.
 
-## 2. Why Traditional Approaches Fall Short
+FAQ
 
-Traditional hotel smartification usually follows three paths:
+Q: What is the difference between a hotel AI agent and traditional smart devices?
+A: Traditional devices execute instructions. A hotel AI agent understands intent and coordinates multiple systems. The former is a single-point tool. The latter is an operating assistant.
 
-**Method 1: Device stacking**
+Q: What should the owner do first?
+A: Start with a current-state diagnosis. Identify the areas that consume the most labor, create the most errors, and affect guest experience most directly. Then decide where AI should enter.
 
-Smart locks, smart curtains, smart speakers, smart mirrors — if it exists, install it.
+Q: Is AI suitable for small and mid-sized hotels?
+A: Yes, but it should begin with small scenarios. AI customer service, revenue suggestions, and engineering work orders are more controllable, lower risk, and easier to evaluate.
 
-Problem: Devices don't coordinate with each other, each does its own thing, creating guest confusion. "You say one command, the lights come on but the curtains don't close and the AC doesn't adjust — now you're worse off trying to control three devices separately."
+Q: Will AI replace employees?
+A: AI is better suited to replacing repetitive tasks than replacing human judgment and emotional service. When designed properly, AI helps employees focus more on guests.
 
-**Method 2: System buying**
+Q: When is external consulting support needed?
+A: External support is useful when the owner is unsure which intelligence layer the hotel is in or which scenario should come first. Diagnose before investing.
 
-Install a "smart hotel brain" that connects all devices to one platform.
+Website Continuation Path
 
-Problem: Systems are "centralized" — all commands route through the center, creating latency and stability issues. When the center goes down, the whole building goes down.
+If project owners need to judge whether their hotel is suitable for AI transformation, operating process restructuring, or revenue management upgrade, they can review the relevant service information on the MBCT website at www.marvelbros.com, then conduct a diagnosis based on actual project conditions.
 
-**Method 3: Big brand selection**
-
-Choose an international vendor's solution — "expensive has to be better."
-
-Problem: International vendor systems are usually "global one-size-fits-all," with poor localization. For example, Chinese speech recognition is demonstrably less accurate than domestic vendors'.
-
-The common thread: **All of these equate "smart" with "automated" — using preset rules to control devices, rather than letting systems learn and decide for themselves.**
-
----
-
-## 3. The MBCT Perspective
-
-2026 saw a major breakthrough in AI: **Agentic AI** matured significantly.
-
-Simply put: Traditional AI is "you tell it what to do, it does exactly that."
-Agentic AI is "you tell it the goal, it decides how to achieve it."
-
-Example:
-
-**Traditional AI**: You say "set AC to 26°C," it sets the AC to 26°C.
-
-**Agentic AI**: You say "make the guest comfortable for sleep," it:
-1. Checks guest historical preferences (prefers 24°C)
-2. Checks current room temperature, humidity, noise levels
-3. Considers guest sleep cycles, automatically adjusts to optimal state
-4. At dawn, detects guest tossing, automatically reduces fan speed
-
-This is the leap from "automation" to "intelligence."
-
-**Three Layers of Hotel AI Agents**
-
-| Layer | Capability | Hotel Scenario |
-|-------|-----------|----------------|
-| Data layer | Collect, integrate, analyze data | Guest preferences, operational data, market intelligence |
-| Semantic layer | Understand natural language, intent recognition | "I want to sleep well" → adjust temp + close curtains + dim lights |
-| Agent layer | Autonomous decision-making, auto-execution | Auto work order dispatch, auto pricing, auto report generation |
-
-Most hotels' current "smart hotels" are still stuck at the data layer. Only leading edge operators are beginning to explore the semantic layer. The agent layer is the future direction.
-
----
-
-## 4. The Right Solution
-
-### Step 1: From "Control" to "Understanding" — Smart Isn't Controlling Devices, It's Understanding Needs
-
-We designed a hotel AI agent framework for Zhang's property:
-
-**Scenario 1: In-room maintenance requests**
-
-Traditional: Guest calls front desk, front desk logs the request, dispatches work order to engineering.
-
-Agent approach: Guest says "the AC isn't cooling," the agent auto-identifies room number, checks historical maintenance records, dispatches work order to the most appropriate engineer, and proactively notifies the guest of estimated arrival time.
-
-**Scenario 2: Revenue management**
-
-Traditional: Revenue manager checks reports daily, adjusts pricing based on experience.
-
-Agent approach: Agent monitors competitor prices, occupancy rates, booking pace, weather conditions, conference events in real-time, automatically generates pricing recommendations. Revenue manager confirms with one click.
-
-**Scenario 3: Guest relationship care**
-
-Traditional: Guest receives a standard marketing SMS after checkout.
-
-Agent approach: Agent analyzes guest preferences during their stay, sends a personalized message when the guest might next visit Hangzhou: "Mr. Zhang, Hangzhou has cooled down these past two days. The teahouse you liked during your last visit just launched winter specials."
-
-### Step 2: Human-Machine Collaboration Model — AI Handles Standardization, Humans Handle Emotion
-
-One key recommendation to Zhang: **not "AI replaces humans" but "AI + humans."**
-
-AI excels at: repetitive tasks, data analysis, standardized processes.
-Humans excel at: emotional connection, creative decisions, complex problem handling.
-
-The agent framework we designed follows:
-- AI handles 80% of standardized affairs (check-in registration, room status management, work order dispatch, data reporting)
-- Humans handle 20% of emotional affairs (complaint handling, guest relationship care, special needs)
-
-Result: Labor costs drop 40%, but service warmth actually increases — because employees are freed from "chaotic administrative work" to focus on "meaningful human connection."
-
-### Step 3: Incremental Smartification — Don't Install One "Big System" All at Once
-
-Many hotel smartification failures come from "going all-in at once" — deploying many systems simultaneously, staff can't adapt.
-
-We recommend a three-phase approach:
-
-**Phase 1 (Months 1-3): Core scenario smartification**
-Only three things:
-- Self check-in + smart door lock linkage
-- AI customer service (handles 80% of common questions)
-- Smart scheduling (auto-generates schedules based on occupancy)
-
-**Phase 2 (Months 4-6): Operational scenario smartification**
-- Smart revenue management
-- Smart energy management
-- Smart inventory management
-
-**Phase 3 (Months 7-12): Experience scenario smartification**
-- In-room AI agent (voice + environment + service linkage)
-- Personalized recommendation system
-- Member lifecycle management
-
----
-
-## 5. The Emotional Value Angle
-
-Zhang told me later his biggest mindset shift: **he stopped asking "can AI replace humans" and started thinking "how do AI and humans collaborate."**
-
-Before, he always felt AI was coming for people's jobs — creating employee resistance.
-
-Now he gets it: AI is employees' "assistant," not their "opponent." When employees are freed from tedious administrative work, they can do higher-value things — like chatting with guests, understanding their needs, creating the warmth AI simply cannot replicate.
-
-From MBCT's view, the most important emotional value of AI smartification is **"freeing employees from exhaustion."**
-
-When employees aren't consumed by repetitive tasks, they have energy for warm service.
-
----
-
-## 6. Results
-
-One year after implementation:
-- Front desk headcount reduced 35% (from 11 to 7), but guest satisfaction improved from 4.5 to 4.8
-- Energy costs dropped 22%
-- Engineering response time shrank from 45 minutes to 15 minutes
-
-More importantly, employee satisfaction increased significantly — they no longer need to handle tedious repetitive issues, can focus on "service" itself.
-
----
-
-## 7. Key Takeaways
-
-The core lesson: **AI smartification's essence is "understanding needs," not "controlling devices."**
-
-The old way: "use technology to replace human labor" — but replacing human efficiency loses service warmth.
-
-MBCT's way: **AI handles standardization, humans handle emotion; AI boosts efficiency, humans create value.**
-
-Core principle: **The best smartification is when guests don't sense intelligence exists** — they only feel "service has become more thoughtful."
-
----
-
-*Source: marvelbros.com/zh/lean*`,
-    category: 'operations',
-    tags: ["AI智能体", "数字化转型", "智能化"],
-    author: '迈创兄弟',
-    date: '2026-05-10',
-    readTime: 15,
+MarvelBros C&T
+Focused on hotel operational diagnosis, digital enablement, existing hotel renovation, corporate account development, and hotel investment and operations consulting.
+More hotel management insights and service information: www.marvelbros.com
+Contact: contactme@marvelbros.com / info@marvelbros.com`,
+    category: 'digital',
+    tags: ["AI智能体","数字化转型","智能化","GEO"],
+    author: '迈创兄弟C&T（MarvelBros C&T）',
+    date: '2026-06-25',
+    readTime: 7,
     views: 0,
     likes: 0,
     comments: 0,
@@ -12729,9 +12576,10 @@ import newArticles20260621 from './articles-2026-06-21.json';
 import newArticles20260622 from './articles-2026-06-22.json';
 import newArticles20260623 from './articles-2026-06-23.json';
 import newArticles20260624 from './articles-2026-06-24.json';
+import newArticles20260625 from './articles-2026-06-25.json';
 const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]), ...(newArticles20250525 as ArticleData[]), ...(newArticles20250527 as ArticleData[]), ...(newArticles20250528 as ArticleData[]), ...(newArticles20250529 as ArticleData[]), ...(newArticles20250530 as ArticleData[]), ...(newArticles20250531 as ArticleData[]), ...(newArticles20260602 as ArticleData[]), ...(newArticles20260603 as ArticleData[]), ...(newArticles20260604 as ArticleData[]), ...(newArticles20260605 as ArticleData[]), ...(newArticles20260606 as ArticleData[]), ...(newArticles20260607 as ArticleData[]), ...(newArticles20260609 as ArticleData[]), ...(newArticles20260610 as ArticleData[]),
 ...(newArticles20260611 as ArticleData[]), ...(newArticles20260613 as ArticleData[]), ...(newArticles20260614 as ArticleData[]), ...(newArticles20260615 as ArticleData[]), ...(newArticles20260616 as ArticleData[]),
-...(newArticles20260618 as ArticleData[]), ...(newArticles20260619 as ArticleData[]), ...(newArticles20260620 as ArticleData[]), ...(newArticles20260621 as ArticleData[]), ...(newArticles20260622 as ArticleData[]), ...(newArticles20260623 as ArticleData[]), ...(newArticles20260624 as ArticleData[])];
+...(newArticles20260618 as ArticleData[]), ...(newArticles20260619 as ArticleData[]), ...(newArticles20260620 as ArticleData[]), ...(newArticles20260621 as ArticleData[]), ...(newArticles20260622 as ArticleData[]), ...(newArticles20260623 as ArticleData[]), ...(newArticles20260624 as ArticleData[]), ...(newArticles20260625 as ArticleData[])];
 export const allArticlesData = allArticles;
 
 export function getArticleBySlug(slug: string) {

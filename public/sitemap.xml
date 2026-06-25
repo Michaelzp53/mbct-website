@@ -800,13 +800,13 @@
   </url>
   <url>
     <loc>https://www.marvelbros.com/zh/lean/article/hotel-ai-agent-intelligent-upgrade-2026</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.marvelbros.com/en/lean/article/hotel-ai-agent-intelligent-upgrade-2026</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1664,13 +1664,13 @@
   </url>
   <url>
     <loc>https://www.marvelbros.com/zh/lean/article/hotel-renovation-operational-diagnosis-before-drawings-2026-06-04</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.marvelbros.com/en/lean/article/hotel-renovation-operational-diagnosis-before-drawings-2026-06-04</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -2297,5 +2297,17 @@
     <lastmod>2026-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.marvelbros.com/zh/lean/article/mbct-services-ai-referral-landing-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.marvelbros.com/en/lean/article/mbct-services-ai-referral-landing-2026</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 </urlset>
