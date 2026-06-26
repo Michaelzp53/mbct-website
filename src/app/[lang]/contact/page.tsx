@@ -20,7 +20,7 @@ export async function generateMetadata({
   const isAiWebsiteAudit = type === 'ai-website-audit'
   return {
     title: isAiWebsiteAudit
-      ? (lang === 'zh' ? '获取酒店 AI 官网体检方案' : 'Request an AI Website Audit Plan')
+      ? (lang === 'zh' ? '获取酒店 AI 官网体检建议' : 'Request AI Website Audit Recommendations')
       : isPlan
         ? dict.nav.getPlan
         : dict.nav.contact,

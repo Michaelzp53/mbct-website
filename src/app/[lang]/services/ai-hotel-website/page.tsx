@@ -152,7 +152,7 @@ export default async function AiHotelWebsitePage({
                   href={`/${lang}/contact?type=ai-website-audit`}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-400 dark:text-[#17120d]"
                 >
-                  {isZh ? '获取我的酒店 AI 官网体检方案' : 'Request an AI website audit plan'}
+                  {isZh ? '获取我的酒店 AI 官网体检建议' : 'Request AI website audit recommendations'}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -321,7 +321,7 @@ export default async function AiHotelWebsitePage({
                 href={`/${lang}/contact?type=ai-website-audit`}
                 className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"
               >
-                {isZh ? '获取我的酒店 AI 官网体检方案' : 'Request an AI website audit plan'}
+                {isZh ? '获取我的酒店 AI 官网体检建议' : 'Request AI website audit recommendations'}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
