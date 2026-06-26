@@ -21,10 +21,10 @@ export async function generateMetadata({
   const isZh = lang === 'zh'
 
   return {
-    title: isZh ? '酒店 AI 信息平台体检与建设' : 'AI-Ready Hotel Information Platform Audit',
+    title: isZh ? '酒店 AI 信息平台建设与内容托管' : 'AI-Ready Hotel Information Platform & Content Operations',
     description: isZh
-      ? '迈创兄弟C&T帮助酒店检查线上信息是否被 AI 正确理解，并把酒店价值整理成 AI 更容易抓取、客人更容易看懂和询价的信息承接平台。'
-      : 'MarvelBros C&T helps hotels assess whether their online information can be understood by AI systems, then organize it into an AI-readable platform guests can understand and act on.',
+      ? '迈创兄弟C&T帮助酒店建设 AI 更容易抓取的信息平台，并持续代写、上传和维护酒店内容，让酒店价值更容易被搜索、理解、引用和询价。'
+      : 'MarvelBros C&T helps hotels build AI-readable information platforms, then continuously write, upload, and maintain hotel content so the hotel value is easier to search, understand, reference, and inquire about.',
   }
 }
 
@@ -39,13 +39,13 @@ export default async function AiHotelWebsitePage({
   const painPoints = isZh
     ? [
         '客人搜索酒店时，AI 可能只看到名称、地址和几张图片。',
-        '商务出差、会议接待、长住服务、亲子度假、本地体验等优势，常常没有被清楚表达。',
+        '很多酒店没有 IT、没有内容团队，也没有人长期维护关键词、页面和推文。',
         '如果酒店没有自己的信息承接平台，或者只有零散 OTA 页面和图片介绍，AI 很难判断该推荐给谁。',
         '问题不一定是酒店没有价值，而是价值没有变成可搜索、可理解、可询价的信息。',
       ]
     : [
         'When guests search for hotels, AI may only see a name, address, and a few images.',
-        'Business travel, meetings, long stays, family travel, local experiences, and service strengths are often not expressed clearly enough.',
+        'Many hotels have no IT team, no content team, and no one continuously maintaining keywords, pages, and posts.',
         'If the hotel has no owned information platform, or only fragmented OTA pages and image-based descriptions, AI cannot easily decide who the hotel is best for.',
         'The issue is not that the hotel lacks value. The value has not been turned into searchable, understandable, and inquiry-ready information.',
       ]
@@ -55,55 +55,55 @@ export default async function AiHotelWebsitePage({
       icon: SearchCheck,
       title: isZh ? '信息体检' : 'Information Audit',
       desc: isZh
-        ? '检查酒店在 AI 搜索、地图搜索、OTA 页面、社交内容和已有官网中的呈现方式，判断 AI 和客人能否准确理解酒店适合谁、优势是什么。'
-        : 'Review how the hotel appears across AI search, map search, OTA pages, social content, and any existing website to determine whether AI and guests can understand who it is for.',
+        ? '检查酒店在 AI 搜索、地图搜索、OTA 页面、社交内容和已有官网中的呈现方式，判断酒店信息是否完整、准确、可抓取。'
+        : 'Review how the hotel appears across AI search, map search, OTA pages, social content, and any existing website to determine whether the information is complete, accurate, and readable.',
     },
     {
       icon: ClipboardCheck,
-      title: isZh ? '方案沟通' : 'Plan Discussion',
+      title: isZh ? '平台规划' : 'Platform Planning',
       desc: isZh
-        ? '与酒店管理者一起看体检结果，区分必须先改、可以后改和暂时不必改的内容，避免为改造而改造。'
-        : 'Review the audit with the hotel team, separate urgent changes from later improvements, and avoid upgrading for the sake of upgrading.',
+        ? '根据酒店是否已有官网、是否依赖 OTA、是否需要企业询价，决定新建轻量信息平台、优化现有入口，还是补齐结构化内容。'
+        : 'Based on whether the hotel has a website, depends heavily on OTAs, or needs corporate inquiries, decide whether to build a lightweight platform, optimize existing entry points, or fill structured content gaps.',
     },
     {
       icon: Hotel,
       title: isZh ? '平台建设' : 'Platform Build',
       desc: isZh
-        ? '根据酒店真实业务，建立 AI 可抓取的信息平台：房型、位置交通、会议长住、企业客户、本地体验、FAQ 和联系入口。已有官网可改造，没有官网可新建轻量入口。'
-        : 'Build an AI-readable information platform around the hotel’s real business: rooms, location, meetings, long stays, corporate clients, local experience, FAQs, and contact paths. Existing websites can be upgraded; hotels without one can start with a lightweight owned entry point.',
+        ? '搭建 AI 可抓取的信息平台：房型、位置交通、会议长住、企业客户、本地体验、FAQ、联系方式和询价入口。没有官网的酒店，也可以从这里开始。'
+        : 'Build an AI-readable platform with rooms, location, meetings, long stays, corporate clients, local experience, FAQs, contact information, and inquiry paths. Hotels without a website can start here.',
     },
     {
       icon: MessageSquareText,
-      title: isZh ? '效果跟踪' : 'Effect Tracking',
+      title: isZh ? '内容托管' : 'Content Operations',
       desc: isZh
-        ? '上线后持续观察 AI 搜索呈现、平台访问、询价入口和客户反馈，逐步优化内容和承接路径。'
-        : 'After launch, monitor AI search appearance, platform visits, inquiry paths, and client feedback, then refine the content and conversion flow over time.',
+        ? '持续代写、上传和维护酒店推文、页面内容、FAQ 和关键词表达，让 AI 有新的、准确的内容可以抓取和引用。'
+        : 'Continuously write, upload, and maintain hotel posts, page content, FAQs, and keyword language so AI systems have fresh and accurate content to crawl and reference.',
     },
   ]
 
   const outcomes = isZh
     ? [
-        '一份酒店 AI 信息平台体检与建设建议。',
+        '一份酒店 AI 信息体检与平台建设建议。',
         '一个能讲清酒店价值的自有信息承接平台。',
-        '一套让 AI 和搜索更容易理解酒店的信息呈现方式。',
+        '一套让 AI 和搜索更容易抓取、理解和引用酒店的信息结构。',
         '房型、会议、长住、企业客户和本地体验等重点页面。',
-        '更清晰的咨询、询价和联系入口。',
-        '后续内容优化和效果观察建议。',
+        '更清晰的咨询、询价、微信或电话联系入口。',
+        '后续推文代写、页面更新、关键词维护和效果观察建议。',
       ]
     : [
-        'An AI-ready hotel information platform audit and build recommendation.',
+        'An AI information audit and platform build recommendation.',
         'An owned information platform that explains the hotel’s value clearly.',
-        'An information architecture that helps AI and search systems understand the hotel more easily.',
+        'An information structure that helps AI and search systems crawl, understand, and reference the hotel more easily.',
         'Focused pages for rooms, meetings, long stays, corporate clients, and local experience.',
-        'Clearer inquiry, consultation, and contact paths.',
-        'Ongoing content optimization and performance observation recommendations.',
+        'Clearer inquiry, consultation, WeChat, or phone contact paths.',
+        'Recommendations for ongoing post writing, page updates, keyword maintenance, and performance observation.',
       ]
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `https://www.marvelbros.com/${lang}/services/ai-hotel-website#service`,
-    name: isZh ? '酒店 AI 信息平台体检与建设' : 'AI-Ready Hotel Information Platform Audit',
+    name: isZh ? '酒店 AI 信息平台建设与内容托管' : 'AI-Ready Hotel Information Platform & Content Operations',
     provider: {
       '@type': 'Organization',
       '@id': 'https://www.marvelbros.com/#organization',
@@ -112,11 +112,11 @@ export default async function AiHotelWebsitePage({
     },
     areaServed: ['Mainland China', 'Hong Kong', 'Southeast Asia'],
     serviceType: isZh
-      ? ['酒店 AI 信息体检', 'AI 搜索可见度', '酒店信息平台建设', '酒店数字化增长']
-      : ['Hotel AI information audit', 'AI search visibility', 'Hotel information platform build', 'Hotel digital growth'],
+      ? ['酒店 AI 信息体检', 'AI 搜索可见度', '酒店信息平台建设', '酒店内容托管运营']
+      : ['Hotel AI information audit', 'AI search visibility', 'Hotel information platform build', 'Hotel content operations'],
     description: isZh
-      ? '帮助酒店检查线上信息是否被 AI 正确理解，并把酒店价值整理成 AI 更容易抓取、客人更容易看懂和询价的信息承接平台。'
-      : 'A service that helps hotels assess whether their online information can be understood by AI systems, then organize structure, content, and inquiry paths into a clearer owned platform.',
+      ? '帮助酒店建设 AI 更容易抓取的信息平台，并持续代写、上传和维护酒店内容，让酒店价值更容易被搜索、理解、引用和询价。'
+      : 'A service that helps hotels build AI-readable information platforms and continuously write, upload, and maintain content so hotel value is easier to search, understand, reference, and inquire about.',
   }
 
   return (
@@ -137,22 +137,22 @@ export default async function AiHotelWebsitePage({
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/70 bg-white/70 px-4 py-2 text-sm font-medium text-amber-800 shadow-sm dark:border-amber-400/20 dark:bg-white/5 dark:text-amber-300">
                 <Sparkles className="h-4 w-4" />
-                {isZh ? '酒店 AI 信息平台体检与建设' : 'AI-ready hotel information platform audit'}
+                {isZh ? '酒店 AI 信息平台建设与内容托管' : 'AI-ready hotel information platform and content operations'}
               </div>
               <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
                 {isZh ? '您的酒店值得被 AI 推荐，也值得被客人选择' : 'Your hotel deserves to be understood by AI and chosen by the right guests'}
               </h1>
               <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#5b4631] md:text-xl dark:text-slate-300">
                 {isZh
-                  ? '我们帮助酒店检查线上信息是否被 AI 正确理解，并把酒店价值整理成 AI 更容易抓取、客人更容易看懂和询价的信息承接平台。已有官网可以改造，没有官网也可以从轻量平台开始。'
-                  : 'We help hotels assess whether their online information is understood correctly by AI systems, then turn hotel value into an AI-readable owned platform guests can read, trust, and act on. Existing websites can be upgraded; hotels without one can start with a lightweight platform.'}
+                  ? '很多酒店没有 IT 团队，也没有人持续维护网站、页面、推文和 AI 关键词。我们帮助酒店搭建 AI 更容易抓取的信息平台，并长期代写、上传和维护内容。已有官网可以优化，没有官网也可以从轻量平台开始。'
+                  : 'Many hotels have no IT team and no one continuously maintaining websites, pages, posts, and AI keywords. We help hotels build an AI-readable information platform and provide ongoing content writing, uploading, and maintenance. Existing websites can be optimized; hotels without one can start with a lightweight platform.'}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href={`/${lang}/contact?type=ai-website-audit`}
+                  href={`/${lang}/contact?type=ai-info-platform`}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-400 dark:text-[#17120d]"
                 >
-                  {isZh ? '获取我的酒店 AI 信息体检建议' : 'Request AI information platform audit recommendations'}
+                  {isZh ? '获取我的酒店 AI 信息平台建议' : 'Request AI information platform recommendations'}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -175,8 +175,8 @@ export default async function AiHotelWebsitePage({
               </blockquote>
               <div className="mt-8 grid gap-3">
                 {(isZh
-                  ? ['不制造渠道对立', '不夸大算法承诺', '先体检，再判断是否改造']
-                  : ['No channel confrontation', 'No exaggerated algorithm promises', 'Audit first, then decide whether to upgrade']).map((item) => (
+                  ? ['不制造渠道对立', '不夸大算法承诺', '平台建设与内容托管一起做']
+                  : ['No channel confrontation', 'No exaggerated algorithm promises', 'Platform build and content operations together']).map((item) => (
                   <div key={item} className="flex items-center gap-3 rounded-2xl bg-[#f7f1e6] px-4 py-3 text-sm text-[#5b4631] dark:bg-white/5 dark:text-slate-300">
                     <CheckCircle2 className="h-4 w-4 text-amber-700 dark:text-amber-300" />
                     <span>{item}</span>
@@ -219,13 +219,13 @@ export default async function AiHotelWebsitePage({
               <div className="space-y-5 text-lg leading-relaxed text-[#5b4631] dark:text-slate-300">
                 <p>
                   {isZh
-                    ? '我们见过太多这样的酒店：位置好、服务好、客户口碑好，但官网仍像五年前的展示页。'
-                    : 'We have seen many hotels like this: good location, solid service, strong guest reputation, but a website that still feels like a brochure from five years ago.'}
+                    ? '我们见过太多这样的酒店：位置好、服务好、客户口碑好，但没有官网，或者只有几年没人维护的页面。'
+                    : 'We have seen many hotels like this: good location, solid service, strong guest reputation, but no website, or only pages that have not been maintained for years.'}
                 </p>
                 <p>
                   {isZh
-                    ? '这不是酒店老板的错，是客人找酒店的方式变了。AI 搜索、地图搜索和移动端浏览正在成为新的入口，而很多酒店还没有专业团队帮他们把零散信息整理成 AI 和客人都看得懂的方式。'
-                    : 'This is not the owner’s fault. The way guests find hotels has changed. AI search, map search, and mobile browsing are becoming new entry points, while many hotels have not had a professional team organize their information for this environment.'}
+                    ? '这不是酒店老板的错，是客人找酒店的方式变了。AI 搜索、地图搜索和移动端浏览正在成为新的入口，而很多酒店没有人帮他们写内容、上内容、改关键词、维护页面。'
+                    : 'This is not the owner’s fault. The way guests find hotels has changed. AI search, map search, and mobile browsing are becoming new entry points, while many hotels have no one to write content, upload content, refine keywords, or maintain pages.'}
                 </p>
                 <p className="font-semibold text-[#17120d] dark:text-white">
                   {isZh
@@ -244,7 +244,7 @@ export default async function AiHotelWebsitePage({
                 {isZh ? '我们怎么做' : 'How we work'}
               </p>
               <h2 className="text-3xl font-bold leading-tight md:text-4xl">
-                {isZh ? '先体检信息，再建设平台，最后持续优化 AI 可理解度' : 'Audit the information first, build the platform, then keep improving AI readability'}
+                {isZh ? '先体检信息，再建设平台，然后持续代运营内容' : 'Audit the information, build the platform, then operate the content continuously'}
               </h2>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -276,7 +276,7 @@ export default async function AiHotelWebsitePage({
                 {isZh ? '您将得到' : 'What you receive'}
               </p>
               <h2 className="text-3xl font-bold leading-tight md:text-4xl">
-                {isZh ? '不是只做一个官网，而是搭建一套 AI 更容易抓取的信息平台' : 'Not just a website, but an AI-readable information platform'}
+                {isZh ? '不是只做一个页面，而是替酒店长期经营可被 AI 抓取的信息资产' : 'Not just a page, but long-term AI-readable information assets for the hotel'}
               </h2>
             </div>
             <div className="grid gap-3">
@@ -301,8 +301,8 @@ export default async function AiHotelWebsitePage({
               </h2>
               <p className="mt-5 leading-relaxed text-slate-300">
                 {isZh
-                  ? '我们能帮助酒店把自身价值整理成 AI 和客人更容易理解的信息结构，并搭建可被搜索、可被引用、可被询价的自有信息承接平台。AI 是否推荐、推荐给谁、何时推荐，仍由搜索平台和 AI 系统自身规则决定。我们不承诺控制算法，但会帮助酒店把“更容易被理解、也更值得被推荐”的基础做好。'
-                  : 'We help hotels turn their value into an information structure that AI systems and guests can understand more easily, and build an owned platform that can be searched, referenced, and used for inquiries. Whether, when, and to whom AI recommends a hotel is still determined by search platforms and AI systems. We do not claim to control algorithms. We help hotels build the foundation that makes them easier to understand and more worthy of recommendation.'}
+                  ? '我们能帮助酒店把自身价值整理成 AI 和客人更容易理解的信息结构，并持续维护可被搜索、可被引用、可被询价的内容资产。AI 是否推荐、推荐给谁、何时推荐，仍由搜索平台和 AI 系统自身规则决定。我们不承诺控制算法，但会帮助酒店把“更容易被理解、也更值得被推荐”的基础做好。'
+                  : 'We help hotels turn their value into an information structure that AI systems and guests can understand more easily, and continuously maintain content assets that can be searched, referenced, and used for inquiries. Whether, when, and to whom AI recommends a hotel is still determined by search platforms and AI systems. We do not claim to control algorithms. We help hotels build the foundation that makes them easier to understand and more worthy of recommendation.'}
               </p>
             </div>
             <div className="rounded-[2rem] border border-amber-200/70 bg-[#fff8ec] p-8 text-[#17120d] shadow-xl shadow-black/10 dark:border-amber-200/70 dark:bg-[#fff8ec] dark:text-[#17120d]">
@@ -314,14 +314,14 @@ export default async function AiHotelWebsitePage({
               </h2>
               <p className="mt-5 leading-relaxed text-[#5b4631] dark:text-[#5b4631]">
                 {isZh
-                  ? '可以先从一次 AI 信息体检开始。告诉我们酒店名称、所在城市、是否已有官网或主要依赖哪些平台，我们会判断它是否具备 AI 搜索时代的基本信息承接能力。'
-                  : 'Start with an AI information audit. Tell us the hotel name, city, whether it has a website, and which platforms it currently depends on. We will assess whether it has the basic information readiness needed in the age of AI search.'}
+                  ? '可以先从一次 AI 信息体检开始。告诉我们酒店名称、所在城市、是否已有官网、主要依赖哪些平台，以及是否需要我们代写和维护内容，我们会判断它是否具备 AI 搜索时代的信息承接能力。'
+                  : 'Start with an AI information audit. Tell us the hotel name, city, whether it has a website, which platforms it depends on, and whether you need us to write and maintain content. We will assess whether it has the information readiness needed in the age of AI search.'}
               </p>
               <Link
-                href={`/${lang}/contact?type=ai-website-audit`}
+                href={`/${lang}/contact?type=ai-info-platform`}
                 className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"
               >
-                {isZh ? '获取我的酒店 AI 信息体检建议' : 'Request AI information audit recommendations'}
+                {isZh ? '获取我的酒店 AI 信息平台建议' : 'Request AI information platform recommendations'}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

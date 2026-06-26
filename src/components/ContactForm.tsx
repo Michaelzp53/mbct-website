@@ -12,13 +12,14 @@ interface ContactFormProps {
 export function ContactForm({ dict }: ContactFormProps) {
   const searchParams = useSearchParams()
   const type = searchParams.get('type')
-  const defaultService = type === 'ai-website-audit'
+  const isAiInfoPlatform = type === 'ai-website-audit' || type === 'ai-info-platform'
+  const defaultService = isAiInfoPlatform
     ? (dict.contact.services.find((service) => service.includes('AI') && (service.includes('信息') || service.includes('Information') || service.includes('官网') || service.includes('Website'))) || dict.contact.services[0] || '')
     : type === 'plan'
       ? dict.contact.services[0] || ''
       : ''
   const [form, setForm] = useState({
-    name: '', phone: '', email: '', company: '', service: defaultService, message: '',
+    name: '', phone: '', email: '', company: '', onlineStatus: '', service: defaultService, message: '',
   })
   const [privacy, setPrivacy] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -35,7 +36,12 @@ export function ContactForm({ dict }: ContactFormProps) {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          message: form.onlineStatus
+            ? `${dict.contact.form.onlineStatus}: ${form.onlineStatus}\n\n${form.message}`
+            : form.message,
+        }),
       })
 
       if (!res.ok) {
@@ -48,7 +54,7 @@ export function ContactForm({ dict }: ContactFormProps) {
       await res.json().catch(() => null)
       setStatus('success')
       setForm({
-        name: '', phone: '', email: '', company: '', service: defaultService, message: '',
+        name: '', phone: '', email: '', company: '', onlineStatus: '', service: defaultService, message: '',
       })
       setPrivacy(false)
     } catch {
@@ -118,6 +124,19 @@ export function ContactForm({ dict }: ContactFormProps) {
               />
             </div>
           </div>
+
+          {isAiInfoPlatform && (
+            <div>
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.onlineStatus}</label>
+              <input
+                type="text"
+                value={form.onlineStatus}
+                onChange={(e) => setForm({ ...form, onlineStatus: e.target.value })}
+                placeholder={dict.contact.form.onlineStatusPlaceholder}
+                className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+              />
+            </div>
+          )}
 
           {/* Service dropdown */}
           <div>
