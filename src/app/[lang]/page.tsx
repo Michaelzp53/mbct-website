@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2, Compass, Target, TrendingUp, Shield, Users, Briefcase, Building2, LineChart, Cpu, FolderKanban } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Compass, Target, TrendingUp, Shield, Users, Briefcase, Building2, LineChart, Cpu, FolderKanban, SearchCheck, Hotel, MessagesSquare } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
 import ScrollFade from '@/components/scroll-fade'
 import SectionWithBg from '@/components/SectionWithBg'
@@ -83,6 +83,30 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     },
   ]
 
+  const aiWebsiteCards = [
+    {
+      icon: SearchCheck,
+      title: isZh ? 'AI 可见度体检' : 'AI Visibility Audit',
+      desc: isZh
+        ? '检查酒店在 AI 搜索、地图搜索和官网中的呈现，判断 AI 和客人能否准确理解酒店适合谁。'
+        : 'Review how the hotel appears in AI search, map search, and its own website, then identify whether AI and guests can understand who the hotel is for.',
+    },
+    {
+      icon: Hotel,
+      title: isZh ? '官网结构化改造' : 'Structured Website Upgrade',
+      desc: isZh
+        ? '把房型、位置交通、会议长住、企业客户和本地体验整理成 AI 与客人都看得懂的页面。'
+        : 'Turn rooms, location, meetings, long stays, corporate clients, and local experience into pages that AI systems and guests can understand.',
+    },
+    {
+      icon: MessagesSquare,
+      title: isZh ? '询价与联系承接' : 'Inquiry Path Design',
+      desc: isZh
+        ? '补齐企业询价、会议需求、长住咨询和官网联系入口，让访问更容易转化为线索。'
+        : 'Connect corporate inquiries, meeting needs, long-stay requests, and contact entry points so visits can turn into qualified leads.',
+    },
+  ]
+
   const whyMbct = [
     {
       icon: Briefcase,
@@ -110,6 +134,90 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   return (
     <div className="min-h-screen bg-background">
       <HeroWithStats lang={lang} />
+
+      <section className="relative overflow-hidden bg-[#fff8ec] py-16 md:py-20 dark:bg-[#17120d]">
+        <div className="absolute inset-0 opacity-60">
+          <div className="absolute left-[-8rem] top-[-8rem] h-80 w-80 rounded-full bg-amber-200/45 blur-3xl dark:bg-amber-500/10" />
+          <div className="absolute right-[-6rem] bottom-[-10rem] h-96 w-96 rounded-full bg-emerald-100/70 blur-3xl dark:bg-emerald-500/10" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <ScrollFade>
+              <div>
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/70 bg-white/70 px-4 py-2 text-sm font-medium text-amber-800 shadow-sm dark:border-amber-400/20 dark:bg-white/5 dark:text-amber-300">
+                  <SearchCheck className="h-4 w-4" />
+                  {isZh ? '新服务：酒店 AI 官网体检与改造' : 'New service: AI-ready hotel website audit'}
+                </div>
+                <h2 className="max-w-3xl text-3xl font-bold leading-tight text-[#17120d] md:text-5xl dark:text-white">
+                  {isZh ? '你的酒店被 AI 推荐了吗？客人搜到了吗？' : 'Is your hotel being recommended by AI, and can guests find it?'}
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#5b4631] md:text-lg dark:text-slate-300">
+                  {isZh
+                    ? 'AI 搜索正在改变客人发现酒店的方式。迈创兄弟C&T 先帮酒店做一次官网体检，再判断是否需要改造。'
+                    : 'AI search is changing how guests discover hotels. MarvelBros C&T starts with a website audit, then determines whether an upgrade is truly needed.'}
+                </p>
+                <div className="mt-7 space-y-3 text-sm leading-relaxed text-[#5b4631] dark:text-slate-300">
+                  {(isZh
+                    ? [
+                        '酒店不是没有价值，而是线上信息可能没有被 AI 正确理解。',
+                        '房型、位置、会议、长住、企业客户等优势，如果只藏在图片和介绍里，AI 很难推荐给真正需要的人。',
+                        '我们不做渠道对立，只帮酒店多一条属于自己的官网承接入口。',
+                      ]
+                    : [
+                        'Many hotels do have value, but their online information may not be understood correctly by AI systems.',
+                        'If rooms, location, meetings, long stays, and corporate-client strengths are hidden inside images or generic descriptions, AI has little to recommend.',
+                        'We do not position this against any channel. We help hotels build one more owned entry point that can be understood and acted on.',
+                      ]).map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-700 dark:text-amber-300" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <Link
+                    href={`/${lang}/services/ai-hotel-website`}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-400 dark:text-[#17120d]"
+                  >
+                    {isZh ? '获取我的酒店 AI 官网体检方案' : 'Get an AI website audit plan'}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href={`/${lang}/services/ai-hotel-website#process`}
+                    className="inline-flex items-center justify-center rounded-xl border border-amber-700/30 bg-white/60 px-6 py-3 text-sm font-semibold text-[#5b4631] transition-colors hover:border-amber-700 hover:text-[#17120d] dark:border-amber-400/25 dark:bg-white/5 dark:text-amber-200 dark:hover:text-white"
+                  >
+                    {isZh ? '查看详情' : 'See how it works'}
+                  </Link>
+                </div>
+              </div>
+            </ScrollFade>
+
+            <ScrollFade delay={120}>
+              <div className="grid gap-4">
+                {aiWebsiteCards.map((item, index) => {
+                  const Icon = item.icon
+                  return (
+                    <div key={item.title} className="rounded-3xl border border-amber-200/70 bg-white/75 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
+                      <div className="flex gap-4">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-800 ring-1 ring-amber-200 dark:bg-amber-400/10 dark:text-amber-300 dark:ring-amber-400/20">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700/80 dark:text-amber-300/80">
+                            {String(index + 1).padStart(2, '0')}
+                          </p>
+                          <h3 className="text-lg font-semibold text-[#17120d] dark:text-white">{item.title}</h3>
+                          <p className="mt-2 text-sm leading-relaxed text-[#6f5a42] dark:text-slate-300">{item.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </ScrollFade>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

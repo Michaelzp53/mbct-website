@@ -257,6 +257,7 @@ export const en = {
       error: 'Submission failed. Please try again later.',
     },
     services: [
+      'AI-Ready Hotel Website Audit & Upgrade',
       '① Investment Feasibility Study',
       '② Brand Creation & Positioning',
       '③ Operations Diagnosis & Growth',

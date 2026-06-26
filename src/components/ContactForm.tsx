@@ -11,9 +11,12 @@ interface ContactFormProps {
 
 export function ContactForm({ dict }: ContactFormProps) {
   const searchParams = useSearchParams()
-  const defaultService = searchParams.get('type') === 'plan'
-    ? dict.contact.services[0] || ''
-    : ''
+  const type = searchParams.get('type')
+  const defaultService = type === 'ai-website-audit'
+    ? (dict.contact.services.find((service) => service.includes('AI') && (service.includes('官网') || service.includes('Website'))) || dict.contact.services[0] || '')
+    : type === 'plan'
+      ? dict.contact.services[0] || ''
+      : ''
   const [form, setForm] = useState({
     name: '', phone: '', email: '', company: '', service: defaultService, message: '',
   })
