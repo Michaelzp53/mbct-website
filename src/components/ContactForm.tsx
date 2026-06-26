@@ -13,7 +13,7 @@ export function ContactForm({ dict }: ContactFormProps) {
   const searchParams = useSearchParams()
   const type = searchParams.get('type')
   const defaultService = type === 'ai-website-audit'
-    ? (dict.contact.services.find((service) => service.includes('AI') && (service.includes('官网') || service.includes('Website'))) || dict.contact.services[0] || '')
+    ? (dict.contact.services.find((service) => service.includes('AI') && (service.includes('信息') || service.includes('Information') || service.includes('官网') || service.includes('Website'))) || dict.contact.services[0] || '')
     : type === 'plan'
       ? dict.contact.services[0] || ''
       : ''

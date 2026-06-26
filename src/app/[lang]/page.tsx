@@ -86,24 +86,24 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const aiWebsiteCards = [
     {
       icon: SearchCheck,
-      title: isZh ? 'AI 可见度体检' : 'AI Visibility Audit',
+      title: isZh ? 'AI 信息体检' : 'AI Information Audit',
       desc: isZh
-        ? '检查酒店在 AI 搜索、地图搜索和官网中的呈现，判断 AI 和客人能否准确理解酒店适合谁。'
-        : 'Review how the hotel appears in AI search, map search, and its own website, then identify whether AI and guests can understand who the hotel is for.',
+        ? '检查酒店在 AI 搜索、地图搜索、OTA 页面、社交内容和已有官网中的呈现，判断 AI 和客人能否准确理解酒店适合谁。'
+        : 'Review how the hotel appears across AI search, map search, OTA pages, social content, and any existing website, then identify whether AI and guests can understand who the hotel is for.',
     },
     {
       icon: Hotel,
-      title: isZh ? '官网结构化改造' : 'Structured Website Upgrade',
+      title: isZh ? '信息平台建设' : 'Information Platform Build',
       desc: isZh
-        ? '把房型、位置交通、会议长住、企业客户和本地体验整理成 AI 与客人都看得懂的页面。'
-        : 'Turn rooms, location, meetings, long stays, corporate clients, and local experience into pages that AI systems and guests can understand.',
+        ? '把房型、位置交通、会议长住、企业客户和本地体验整理成 AI 与客人都看得懂、能抓取、可询价的信息平台。'
+        : 'Turn rooms, location, meetings, long stays, corporate clients, and local experience into an AI-readable information platform guests can understand and act on.',
     },
     {
       icon: MessagesSquare,
       title: isZh ? '询价与联系承接' : 'Inquiry Path Design',
       desc: isZh
-        ? '补齐企业询价、会议需求、长住咨询和官网联系入口，让访问更容易转化为线索。'
-        : 'Connect corporate inquiries, meeting needs, long-stay requests, and contact entry points so visits can turn into qualified leads.',
+        ? '补齐企业询价、会议需求、长住咨询和联系入口，让 AI 带来的访问更容易转化为线索。'
+        : 'Connect corporate inquiries, meeting needs, long-stay requests, and contact entry points so AI-driven visits can turn into qualified leads.',
     },
   ]
 
@@ -146,27 +146,27 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div>
                 <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/70 bg-white/70 px-4 py-2 text-sm font-medium text-amber-800 shadow-sm dark:border-amber-400/20 dark:bg-white/5 dark:text-amber-300">
                   <SearchCheck className="h-4 w-4" />
-                  {isZh ? '新服务：酒店 AI 官网体检与改造' : 'New service: AI-ready hotel website audit'}
+                  {isZh ? '新服务：酒店 AI 信息平台体检与建设' : 'New service: AI-ready hotel information platform audit'}
                 </div>
                 <h2 className="max-w-3xl text-3xl font-bold leading-tight text-[#17120d] md:text-5xl dark:text-white">
                   {isZh ? '你的酒店被 AI 推荐了吗？客人搜到了吗？' : 'Is your hotel being recommended by AI, and can guests find it?'}
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#5b4631] md:text-lg dark:text-slate-300">
                   {isZh
-                    ? 'AI 搜索正在改变客人发现酒店的方式。迈创兄弟C&T 先帮酒店做一次官网体检，再判断是否需要改造。'
-                    : 'AI search is changing how guests discover hotels. MarvelBros C&T starts with a website audit, then determines whether an upgrade is truly needed.'}
+                    ? 'AI 搜索正在改变客人发现酒店的方式。迈创兄弟C&T 先帮酒店做一次 AI 信息体检，再判断应建设轻量平台、优化已有入口，还是补齐搜索可抓取内容。'
+                    : 'AI search is changing how guests discover hotels. MarvelBros C&T starts with an AI information audit, then determines whether the hotel needs a lightweight platform, website upgrade, or stronger AI-readable content.'}
                 </p>
                 <div className="mt-7 space-y-3 text-sm leading-relaxed text-[#5b4631] dark:text-slate-300">
                   {(isZh
                     ? [
                         '酒店不是没有价值，而是线上信息可能没有被 AI 正确理解。',
-                        '房型、位置、会议、长住、企业客户等优势，如果只藏在图片和介绍里，AI 很难推荐给真正需要的人。',
-                        '我们不做渠道对立，只帮酒店多一条属于自己的官网承接入口。',
+                        '房型、位置、会议、长住、企业客户等优势，如果只散落在图片、OTA 页面和简短介绍里，AI 很难推荐给真正需要的人。',
+                        '我们不做渠道对立，只帮酒店搭建一套更容易被 AI 抓取、被客人理解、能承接询价的自有信息平台。',
                       ]
                     : [
                         'Many hotels do have value, but their online information may not be understood correctly by AI systems.',
-                        'If rooms, location, meetings, long stays, and corporate-client strengths are hidden inside images or generic descriptions, AI has little to recommend.',
-                        'We do not position this against any channel. We help hotels build one more owned entry point that can be understood and acted on.',
+                        'If rooms, location, meetings, long stays, and corporate-client strengths are scattered across images, OTA pages, or generic descriptions, AI has little to recommend.',
+                        'We do not position this against any channel. We help hotels build an owned information platform that AI can read, guests can understand, and inquiries can flow through.',
                       ]).map((item) => (
                     <div key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-700 dark:text-amber-300" />
@@ -179,7 +179,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     href={`/${lang}/services/ai-hotel-website`}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-400 dark:text-[#17120d]"
                   >
-                    {isZh ? '获取我的酒店 AI 官网体检建议' : 'Get AI website audit recommendations'}
+                    {isZh ? '获取我的酒店 AI 信息体检建议' : 'Get AI information audit recommendations'}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
