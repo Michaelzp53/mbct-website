@@ -1739,9 +1739,9 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
             <BookOpen className="w-4 h-4 text-[#f59e0b]" />
             <span className="text-[#f59e0b] text-sm font-medium">{isZh ? '思想领导力' : 'Thought Leadership'}</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             {ui.pageTitle}
-          </h1>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {ui.heroSubtitle}
           </p>

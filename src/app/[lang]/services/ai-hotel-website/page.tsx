@@ -53,31 +53,31 @@ export default async function AiHotelWebsitePage({
   const process = [
     {
       icon: SearchCheck,
-      title: isZh ? '信息体检' : 'Information Audit',
+      title: isZh ? 'AI 现状体检' : 'AI Search Diagnostic',
       desc: isZh
-        ? '检查酒店在 AI 搜索、地图搜索、OTA 页面、社交内容和已有官网中的呈现方式，判断酒店信息是否完整、准确、可抓取。'
-        : 'Review how the hotel appears across AI search, map search, OTA pages, social content, and any existing website to determine whether the information is complete, accurate, and readable.',
+        ? '检查 AI、地图、OTA、社交内容和已有官网里的酒店信息，形成一份“AI 是否能找到并读懂您”的诊断结论。'
+        : 'Check how AI, maps, OTAs, social content, and any existing website present the hotel, then form a diagnostic view of whether AI can find and understand it.',
     },
     {
       icon: ClipboardCheck,
-      title: isZh ? '平台规划' : 'Platform Planning',
+      title: isZh ? '信息架构' : 'Information Architecture',
       desc: isZh
-        ? '根据酒店是否已有官网、是否依赖 OTA、是否需要企业询价，决定新建轻量信息平台、优化现有入口，还是补齐结构化内容。'
-        : 'Based on whether the hotel has a website, depends heavily on OTAs, or needs corporate inquiries, decide whether to build a lightweight platform, optimize existing entry points, or fill structured content gaps.',
+        ? '把房型、位置、会议、长住、企业客户、交通和 FAQ 重排成 AI 能抓取、客人能看懂的页面结构。'
+        : 'Reorganize rooms, location, meetings, long stays, corporate clients, transport, and FAQs into a page structure AI can crawl and guests can understand.',
     },
     {
       icon: Hotel,
-      title: isZh ? '平台建设' : 'Platform Build',
+      title: isZh ? '平台上线' : 'Platform Launch',
       desc: isZh
-        ? '搭建 AI 可抓取的信息平台：房型、位置交通、会议长住、企业客户、本地体验、FAQ、联系方式和询价入口。没有官网的酒店，也可以从这里开始。'
-        : 'Build an AI-readable platform with rooms, location, meetings, long stays, corporate clients, local experience, FAQs, contact information, and inquiry paths. Hotels without a website can start here.',
+        ? '搭建轻量信息平台或优化已有入口，补齐联系方式、询价表单、Schema 标记和可被引用的文字内容。'
+        : 'Launch a lightweight information platform or optimize existing entry points with contact paths, inquiry forms, Schema markup, and referenceable text content.',
     },
     {
       icon: MessageSquareText,
-      title: isZh ? '内容托管' : 'Content Operations',
+      title: isZh ? '持续优化' : 'Ongoing Optimization',
       desc: isZh
-        ? '持续代写、上传和维护酒店推文、页面内容、FAQ 和关键词表达，让 AI 有新的、准确的内容可以抓取和引用。'
-        : 'Continuously write, upload, and maintain hotel posts, page content, FAQs, and keyword language so AI systems have fresh and accurate content to crawl and reference.',
+        ? '持续代写、上传和维护酒店推文、页面内容、FAQ 和关键词表达，并观察 AI 搜索呈现和询价反馈。'
+        : 'Continuously write, upload, and maintain posts, page content, FAQs, and keyword language while observing AI search appearance and inquiry feedback.',
     },
   ]
 
@@ -97,6 +97,18 @@ export default async function AiHotelWebsitePage({
         'Focused pages for rooms, meetings, long stays, corporate clients, and local experience.',
         'Clearer inquiry, consultation, WeChat, or phone contact paths.',
         'Recommendations for ongoing post writing, page updates, keyword maintenance, and performance observation.',
+      ]
+
+  const proofItems = isZh
+    ? [
+        '体检报告会列出：AI 能否找到酒店、找到的是哪些信息、哪些信息缺失或互相冲突。',
+        '平台上线后会保留：页面结构、关键词、Schema 标记、FAQ 和询价入口，方便后续复查。',
+        '内容托管会记录：更新了哪些页面、发布了哪些推文、围绕哪些关键词持续补充内容。',
+      ]
+    : [
+        'The diagnostic report identifies whether AI can find the hotel, what information it sees, and what is missing or conflicting.',
+        'After launch, we retain the page structure, keywords, Schema markup, FAQs, and inquiry paths for later review.',
+        'Content operations track which pages were updated, which posts were published, and which keywords were continuously reinforced.',
       ]
 
   const jsonLd = {
@@ -270,13 +282,34 @@ export default async function AiHotelWebsitePage({
         </section>
 
         <section className="py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-[2rem] border border-amber-200/70 bg-white/75 p-8 shadow-sm md:p-10 dark:border-white/10 dark:bg-white/[0.05]">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+                {isZh ? '交付证据' : 'Evidence of work'}
+              </p>
+              <h2 className="text-3xl font-bold leading-tight md:text-4xl">
+                {isZh ? '我们不编造 AI 推荐结果，只留下可复查的体检和维护记录' : 'We do not invent AI recommendation results. We leave auditable diagnostics and maintenance records.'}
+              </h2>
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                {proofItems.map((item) => (
+                  <div key={item} className="rounded-2xl border border-[#eadbc4] bg-[#fff8ec] p-5 dark:border-white/10 dark:bg-white/[0.04]">
+                    <CheckCircle2 className="mb-4 h-5 w-5 text-amber-700 dark:text-amber-300" />
+                    <p className="text-sm leading-relaxed text-[#5b4631] dark:text-slate-300">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
                 {isZh ? '您将得到' : 'What you receive'}
               </p>
               <h2 className="text-3xl font-bold leading-tight md:text-4xl">
-                {isZh ? '不是只做一个页面，而是替酒店长期经营可被 AI 抓取的信息资产' : 'Not just a page, but long-term AI-readable information assets for the hotel'}
+                {isZh ? '不只做一个页面。长期维护酒店在 AI 世界里的信息资产。' : 'Not just a page. Long-term maintenance of the hotel’s information assets in the AI world.'}
               </h2>
             </div>
             <div className="grid gap-3">

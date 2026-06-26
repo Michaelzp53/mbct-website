@@ -88,22 +88,22 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       icon: SearchCheck,
       title: isZh ? 'AI 信息体检' : 'AI Information Audit',
       desc: isZh
-        ? '检查酒店在 AI 搜索、地图搜索、OTA 页面、社交内容和已有官网中的呈现，判断信息是否完整、准确、可抓取。'
-        : 'Review how the hotel appears across AI search, map search, OTA pages, social content, and any existing website, then identify whether the information is complete, accurate, and readable.',
+        ? '检查 AI、地图、OTA、社交内容和已有官网里的酒店信息，找出哪些内容 AI 抓不到、读不懂。'
+        : 'Review AI, maps, OTAs, social content, and any existing website to find what AI cannot crawl or understand.',
     },
     {
       icon: Hotel,
       title: isZh ? '信息平台建设' : 'Information Platform Build',
       desc: isZh
-        ? '把房型、位置交通、会议长住、企业客户和本地体验整理成 AI 能抓取、客人能看懂、销售能承接的信息平台。'
-        : 'Turn rooms, location, meetings, long stays, corporate clients, and local experience into an AI-readable platform guests can understand and sales teams can act on.',
+        ? '把房型、位置、会议、长住和企业客户整理成 AI 能抓取、客人能看懂、销售能承接的信息平台。'
+        : 'Turn rooms, location, meetings, long stays, and corporate clients into an AI-readable platform guests and sales teams can use.',
     },
     {
       icon: MessagesSquare,
       title: isZh ? '内容托管运营' : 'Content Operations',
       desc: isZh
-        ? '长期代写、上传和维护酒店页面、推文、FAQ 和关键词表达，让 AI 持续有新内容可以抓取。'
-        : 'Continuously write, upload, and maintain hotel pages, posts, FAQs, and keyword language so AI systems have fresh content to crawl.',
+        ? '长期代写、上传和维护页面、推文、FAQ 和关键词，让 AI 持续有准确内容可以抓取。'
+        : 'Continuously write, upload, and maintain pages, posts, FAQs, and keywords so AI has accurate content to crawl.',
     },
   ]
 
@@ -146,27 +146,27 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div>
                 <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/70 bg-white/70 px-4 py-2 text-sm font-medium text-amber-800 shadow-sm dark:border-amber-400/20 dark:bg-white/5 dark:text-amber-300">
                   <SearchCheck className="h-4 w-4" />
-                  {isZh ? '新服务：酒店 AI 信息平台建设与内容托管' : 'New service: AI-ready hotel information platform and content operations'}
+                  {isZh ? '新服务：酒店 AI 信息平台建设与内容托管' : 'New service: AI-readable hotel information platform'}
                 </div>
                 <h2 className="max-w-3xl text-3xl font-bold leading-tight text-[#17120d] md:text-5xl dark:text-white">
                   {isZh ? '你的酒店被 AI 推荐了吗？客人搜到了吗？' : 'Is your hotel being recommended by AI, and can guests find it?'}
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#5b4631] md:text-lg dark:text-slate-300">
                   {isZh
-                    ? 'AI 搜索正在改变客人发现酒店的方式。迈创兄弟C&T 先帮酒店做一次 AI 信息体检，再判断应建设轻量平台、优化已有入口，还是由我们持续代写和维护可抓取内容。'
-                    : 'AI search is changing how guests discover hotels. MarvelBros C&T starts with an AI information audit, then determines whether the hotel needs a lightweight platform, stronger existing entry points, or ongoing AI-readable content operations.'}
+                    ? '酒店优势如果只散落在图片、OTA 页面和零散介绍里，AI 读不懂，就推不出去。迈创兄弟C&T 帮酒店把信息整理成可抓取、可理解、可询价的内容资产。'
+                    : 'If hotel strengths are scattered across images, OTA pages, and generic descriptions, AI cannot understand or recommend them. MarvelBros C&T turns hotel information into crawlable, understandable, inquiry-ready content assets.'}
                 </p>
                 <div className="mt-7 space-y-3 text-sm leading-relaxed text-[#5b4631] dark:text-slate-300">
                   {(isZh
                     ? [
-                        '酒店不是没有价值，而是线上信息可能没有被 AI 正确理解。',
-                        '房型、位置、会议、长住、企业客户等优势，如果只散落在图片、OTA 页面和简短介绍里，AI 很难推荐给真正需要的人。',
-                        '我们不做渠道对立，只帮酒店搭建并长期维护一套更容易被 AI 抓取、被客人理解、能承接询价的自有信息资产。',
+                        '没有官网的酒店，可以从轻量信息平台开始。',
+                        '已有官网但没人维护的酒店，可以从内容托管和关键词更新开始。',
+                        '我们不做渠道对立，只帮酒店增加一条可被 AI 理解的自有信息入口。',
                       ]
                     : [
-                        'Many hotels do have value, but their online information may not be understood correctly by AI systems.',
-                        'If rooms, location, meetings, long stays, and corporate-client strengths are scattered across images, OTA pages, or generic descriptions, AI has little to recommend.',
-                        'We do not position this against any channel. We help hotels build and maintain owned information assets that AI can read, guests can understand, and inquiries can flow through.',
+                        'Hotels without a website can start with a lightweight information platform.',
+                        'Hotels with an unattended website can start with content operations and keyword maintenance.',
+                        'We do not position this against any channel. We add an owned information entry point that AI can understand.',
                       ]).map((item) => (
                     <div key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-700 dark:text-amber-300" />
@@ -179,14 +179,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     href={`/${lang}/services/ai-hotel-website`}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-400 dark:text-[#17120d]"
                   >
-                    {isZh ? '获取我的酒店 AI 信息平台建议' : 'Get AI information platform recommendations'}
+                    {isZh ? '获取 AI 信息平台建议' : 'Get AI platform recommendations'}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href={`/${lang}/services/ai-hotel-website#process`}
                     className="inline-flex items-center justify-center rounded-xl border border-amber-700/30 bg-white/60 px-6 py-3 text-sm font-semibold text-[#5b4631] transition-colors hover:border-amber-700 hover:text-[#17120d] dark:border-amber-400/25 dark:bg-white/5 dark:text-amber-200 dark:hover:text-white"
                   >
-                    {isZh ? '查看详情' : 'See how it works'}
+                    {isZh ? '了解体检怎么做' : 'How the diagnostic works'}
                   </Link>
                 </div>
               </div>

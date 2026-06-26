@@ -19,7 +19,15 @@ export function ContactForm({ dict }: ContactFormProps) {
       ? dict.contact.services[0] || ''
       : ''
   const [form, setForm] = useState({
-    name: '', phone: '', email: '', company: '', onlineStatus: '', service: defaultService, message: '',
+    name: '',
+    phone: '',
+    email: '',
+    company: '',
+    websiteStatus: '',
+    priorityIssue: '',
+    otaShare: '',
+    service: defaultService,
+    message: '',
   })
   const [privacy, setPrivacy] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -38,9 +46,12 @@ export function ContactForm({ dict }: ContactFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
-          message: form.onlineStatus
-            ? `${dict.contact.form.onlineStatus}: ${form.onlineStatus}\n\n${form.message}`
-            : form.message,
+          message: [
+            isAiInfoPlatform && form.websiteStatus ? `${dict.contact.form.websiteStatus}: ${form.websiteStatus}` : '',
+            isAiInfoPlatform && form.priorityIssue ? `${dict.contact.form.priorityIssue}: ${form.priorityIssue}` : '',
+            isAiInfoPlatform && form.otaShare ? `${dict.contact.form.otaShare}: ${form.otaShare}` : '',
+            form.message,
+          ].filter(Boolean).join('\n'),
         }),
       })
 
@@ -54,7 +65,15 @@ export function ContactForm({ dict }: ContactFormProps) {
       await res.json().catch(() => null)
       setStatus('success')
       setForm({
-        name: '', phone: '', email: '', company: '', onlineStatus: '', service: defaultService, message: '',
+        name: '',
+        phone: '',
+        email: '',
+        company: '',
+        websiteStatus: '',
+        priorityIssue: '',
+        otaShare: '',
+        service: defaultService,
+        message: '',
       })
       setPrivacy(false)
     } catch {
@@ -126,15 +145,46 @@ export function ContactForm({ dict }: ContactFormProps) {
           </div>
 
           {isAiInfoPlatform && (
-            <div>
-              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.onlineStatus}</label>
-              <input
-                type="text"
-                value={form.onlineStatus}
-                onChange={(e) => setForm({ ...form, onlineStatus: e.target.value })}
-                placeholder={dict.contact.form.onlineStatusPlaceholder}
-                className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.websiteStatus}</label>
+                <select
+                  value={form.websiteStatus}
+                  onChange={(e) => setForm({ ...form, websiteStatus: e.target.value })}
+                  className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors cursor-pointer"
+                >
+                  <option value="">{dict.contact.form.websiteStatusPlaceholder}</option>
+                  {dict.contact.form.websiteStatusOptions.map((option) => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.priorityIssue}</label>
+                <select
+                  value={form.priorityIssue}
+                  onChange={(e) => setForm({ ...form, priorityIssue: e.target.value })}
+                  className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors cursor-pointer"
+                >
+                  <option value="">{dict.contact.form.priorityIssuePlaceholder}</option>
+                  {dict.contact.form.priorityIssueOptions.map((option) => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.otaShare}</label>
+                <select
+                  value={form.otaShare}
+                  onChange={(e) => setForm({ ...form, otaShare: e.target.value })}
+                  className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors cursor-pointer"
+                >
+                  <option value="">{dict.contact.form.otaSharePlaceholder}</option>
+                  {dict.contact.form.otaShareOptions.map((option) => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
+                </select>
+              </div>
             </div>
           )}
 

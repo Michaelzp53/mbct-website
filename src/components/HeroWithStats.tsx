@@ -140,18 +140,18 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              {isZh ? '专注数字化赋能酒店行业' : 'Digital Enablement for Hospitality'}
+              {isZh ? '你的酒店，AI 看得懂吗？客人搜得到吗？' : 'Can AI understand your hotel, and can guests find it?'}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">
-                {isZh ? '以效率 + 体验双轨驱动业绩增长' : 'Driving Growth Through Efficiency + Experience'}
+                {isZh ? '把酒店信息资产变成可被发现的增长入口' : 'Turn hotel information assets into discoverable growth entry points'}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-xl mx-auto lg:mx-0 drop-shadow">
               {isZh
-                ? '迈创兄弟C&T 是面向酒店投资人与经营团队的全流程解决方案与咨询服务机构，围绕投前判断、经营增长与 AI 落地，帮助酒店把效率提升、体验优化和业绩增长做成可验证结果。'
-                : 'MarvelBros C&T is a full-lifecycle hospitality advisory and solution partner for hotel investors and operating teams, turning investment judgment, operating growth, and AI implementation into measurable results.'}
+                ? '迈创兄弟C&T 面向酒店投资人与经营团队，提供经营诊断、AI 信息平台建设、内容托管和增长咨询，帮助酒店把效率提升、体验优化和业绩增长做成可验证结果。'
+                : 'MarvelBros C&T helps hotel investors and operating teams with operational diagnosis, AI-readable information platforms, content operations, and growth advisory, turning efficiency, experience, and performance into measurable outcomes.'}
             </p>
 
             {/* CTA Buttons */}
