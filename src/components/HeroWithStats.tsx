@@ -33,7 +33,7 @@ function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberP
   // 现在默认显示 value,SEO/SSR/无障碍/抓取工具立即看到正确数字
   // 真人用户进入视口时执行从 0 到 value 的视觉动画(体验更好)
   const [displayValue, setDisplayValue] = useState(value)
-  const [hasAnimated, setHasAnimated] = useState(false)
+  const hasAnimated = useRef(false)
   const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
@@ -42,21 +42,26 @@ function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberP
     // 2. 立即启动 0 → value 的动画
     // 用户看到: 数字从 0 涨到 value(2秒动画)
     // SEO/SSR 看到: 始终是 value(默认 useState)
-    if (hasAnimated) return
-    setHasAnimated(true)
-    setDisplayValue(0)
-    const startTime = Date.now()
+    if (hasAnimated.current) return
+    hasAnimated.current = true
+    let frameId = 0
     const animate = () => {
       const elapsed = Date.now() - startTime
       const progress = Math.min(elapsed / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 4)
       setDisplayValue(Math.floor(eased * value))
       if (progress < 1) {
-        requestAnimationFrame(animate)
+        frameId = requestAnimationFrame(animate)
       }
     }
-    requestAnimationFrame(animate)
-  }, [value, duration, hasAnimated])
+    let startTime = 0
+    frameId = requestAnimationFrame(() => {
+      setDisplayValue(0)
+      startTime = Date.now()
+      frameId = requestAnimationFrame(animate)
+    })
+    return () => cancelAnimationFrame(frameId)
+  }, [value, duration])
 
   return (
     <span ref={ref}>
@@ -134,40 +139,45 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-primary text-sm font-medium">
-                {isZh ? '迈创兄弟C&T · 效率 + 体验双轨增长' : 'MarvelBros C&T · Efficiency + Experience Growth'}
+                {isZh ? '迈创兄弟C&T · 酒店增长与数字化赋能伙伴' : 'MarvelBros C&T · Hospitality Growth & Digital Enablement Partner'}
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              {isZh ? '你的酒店，AI 看得懂吗？客人搜得到吗？' : 'Can AI understand your hotel, and can guests find it?'}
+              {isZh ? '让酒店资产' : 'Turn hotel assets'}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">
-                {isZh ? '把酒店信息资产变成可被发现的增长入口' : 'Turn hotel information assets into discoverable growth entry points'}
+                {isZh ? '变成可见、可理解、可转化的增长路径' : 'into visible, understandable, convertible growth paths'}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-xl mx-auto lg:mx-0 drop-shadow">
               {isZh
-                ? '迈创兄弟C&T 面向酒店投资人与经营团队，提供经营诊断、AI 信息平台建设、内容托管和增长咨询，帮助酒店把效率提升、体验优化和业绩增长做成可验证结果。'
-                : 'MarvelBros C&T helps hotel investors and operating teams with operational diagnosis, AI-readable information platforms, content operations, and growth advisory, turning efficiency, experience, and performance into measurable outcomes.'}
+                ? '迈创兄弟C&T 面向酒店投资人与经营团队，围绕投前判断、经营诊断、数字化赋能和 AI 信息平台建设，帮助酒店把产品、服务、数据、内容和品牌重新组织成可执行的增长系统。'
+                : 'MarvelBros C&T works with hotel investors and operating teams across investment judgment, operational diagnosis, digital enablement, and AI information platform development, helping hotels reorganize products, service, data, content, and brand expression into an executable growth system.'}
+              <span className="mt-3 block">
+                {isZh
+                  ? '我们不做只写报告的咨询。我们和酒店一起把看得见和看不见的问题诊断清楚，把原本流失的客人沉淀为可持续经营的客户资产，把用不起来的数据盘活，让每一步改进都对应可追踪的经营指标。'
+                  : 'We do not stop at advisory reports. We work with hotels to diagnose visible and hidden problems, turn lost demand into durable customer assets, activate unused data, and connect each improvement to a trackable operating indicator.'}
+              </span>
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
-                href={`/${lang}/contact?type=plan`}
+                href={`/${lang}/services`}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-amber-500/25 transition-all"
               >
-                {isZh ? '获取方案' : 'Get a Plan'}
+                {isZh ? '我们能解决什么？' : 'What Can We Solve?'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href={`/${lang}/services`}
+                href={`/${lang}/services/ai-hotel-website`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-medium rounded-xl hover:border-amber-400 hover:text-amber-400 transition-all"
               >
-                {isZh ? '查看解决方案' : 'View Solutions'}
+                {isZh ? '了解 AI 信息平台建设方案' : 'Explore the AI Information Platform'}
               </Link>
             </div>
           </div>
