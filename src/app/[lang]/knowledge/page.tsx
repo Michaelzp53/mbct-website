@@ -1284,6 +1284,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
     {
+      id: 470,
+      type: "case",
+      title: "没有 IT 团队的酒店,为什么更需要一套 AI 可读的信息运营机制?",
+      titleEn: "Why Hotels Without IT Teams Need an AI-Readable Information Operations System",
+      slug: "hotel-without-it-team-needs-ai-readable-information-operations-2026-06-27",
+      summary: '2026 年 3 月,华东某中端商务酒店总经理在季度复盘会上翻到一组数据:过去六个月,携程、美团带来的订单占比稳定在 62%,但直接通过搜索引擎进入酒店官网(一个三年前搭建的单页)并完成预订的订单,从月均 11 单降到了 2 单。',
+      summaryEn: 'October 2025. A mid-scale business hotel in East China — 178 rooms, two meeting rooms, three blocks from the convention center — watched weekday occupancy slide to 47%, an 11-point drop year-over-year',
+      firstLine: '2026 年 3 月,华东某中端商务酒店总经理在季度复盘会上翻到一组数据:过去六个月,携程、美团带来的订单占比稳定在 62%,但直接通过搜索引擎进入酒店官网(一个三年前搭建的单页)并完成预订的订单,从月均 11 单降到了 2 单。',
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-06-27",
+      readTime: 14,
+      tag: "案例研究",
+      tagColor: "bg-[#dc2626]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
+
+
+    {
       id: 449,
       type: "case",
       title: "一家度假酒店为什么好评不少,却没有被系统推荐给真正合适的客人",
