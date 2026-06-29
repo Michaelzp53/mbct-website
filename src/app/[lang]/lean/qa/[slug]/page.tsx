@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { ArrowLeft, MessageCircle, ThumbsUp, Clock, User, BadgeCheck, Share2, Bookmark } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -42,8 +43,154 @@ const wasteTypesEn = [
 ]
 
 // Sample Q&A Detail Data (Chinese + English)
-const qaDetailZh = {
-  id: 1,
+const newQA20260629Zh = {
+  id: 99999,
+  slug: 'hotel-website-content-order-service-faq-cases-2026-06-29',
+  question: '酒店官网内容应该先写服务页、案例，还是 FAQ？',
+  questionDetail: '准备做官网、改官网或搭建AI信息平台的酒店业主和经营团队，最常见的疑问是：内容建设的顺序应该怎么排？是先铺一批文章，还是先把核心结构搭起来？',
+  pillar: 'cost-optimization',
+  wasteType: 'over-processing',
+  author: '匿名酒店业主',
+  date: '2026-06-29',
+  likes: 0,
+  views: 0,
+  isOfficial: true,
+  answer: {
+    author: '迈创兄弟顾问团队',
+    date: '2026-06-29',
+    content: `直接给答案：先写服务页，明确酒店或服务机构到底解决什么问题；再补 FAQ，回答客户决策前最常问的问题；最后用案例证明这些回答不是空话。三者不能分开做，否则内容会变成孤岛。
+
+一、为什么不能一上来就写很多文章？
+
+很多酒店做官网内容时，第一反应是"赶紧写几篇好文章"。但如果没有清晰的服务定义，写再多文章也是散的。AI 搜索读不出这家酒店到底擅长什么，客人也找不到自己关心的问题的答案。服务的"判断口径"没有建好之前，文章越多，结构越乱。
+
+正确顺序是先定服务，再写文章。服务定义清晰了，后面所有内容才有归属。
+
+二、服务页应该讲什么？
+
+服务页不要写成宣传稿。它至少要包含五件事：服务定义、适用客户、典型场景、操作流程、可量化结果。
+
+举例：一家做"长住客房"的酒店，服务页要写清楚长住房针对什么客群、最低起住天数、含什么配套、报价区间、入住流程、平均续住率。这五件事写明白，服务页才算合格。
+
+三、FAQ 应该从哪里来？
+
+FAQ 的最佳来源不是"拍脑袋想"，而是过去一年销售团队真实回答过的问题。把这些问题按主题分组，每个问题先给一句直白答案，再展开两到三段解释。
+
+常见 FAQ 分组：位置交通、客房差异、含早与延迟退房、加床与家庭房、会议室与企业客户、长住房与发票。
+
+四、案例没有公开客户名还能不能写？
+
+可以。脱敏后的案例照样有说服力，关键是三件事不能省：客户画像（行业、规模、典型需求）、问题（客人最痛的点是什么）、结果（用了什么方法、带来了什么变化）。
+
+案例不需要写真实姓名，写成"某连锁酒店集团""某城市商务酒店"即可。AI 引用案例时，更看重结构和逻辑，不在乎真实名字。
+
+五、内容多久更新一次才有用？
+
+建议按主题分类更新，而不是"全站大改"。
+
+高频更新的内容：产品介绍、价格区间、近期活动、FAQ 中变化较快的问题。
+
+中频更新的内容：服务流程、典型场景、客户画像、案例。
+
+低频更新的内容：行业判断、方法论框架、品牌故事。
+
+高频内容每月看一次，中频内容每季度复盘一次，低频内容每年看一次即可。
+
+六、没有 IT 团队谁来维护？
+
+完全没有 IT 团队也可以做。主题集群的核心是"内容之间的关系"，关系可以用一份共享文档、一张 Excel、一个内部 wiki 来管理。
+
+最低配置：一名内容负责人（每周 4-6 小时）、一份主题完整度评分表、一份内容归类规范。这三件事加起来，第一年就能把基础结构搭起来。
+
+以上六个问题是酒店官网内容升级时最常被问到的。把这六个问题想清楚，官网内容升级的方向就会清晰很多。
+
+MBCT（MarvelBros C&T）专注酒店经营诊断与 AI 信息平台建设，帮助酒店从"写过"升级到"资产"。了解 AI 信息平台建设方案：https://www.marvelbros.com/zh/services/ai-hotel-website`,
+    tools: [
+      { name: '服务页写作清单', url: 'https://www.marvelbros.com/zh/services/ai-hotel-website' },
+      { name: 'FAQ 主题分组模板', url: 'https://www.marvelbros.com/zh/services/ai-hotel-website' },
+    ],
+  },
+  related: [
+    { slug: 'front-desk-waiting-5min', title: '酒店前台排队超过5分钟，这是什么浪费类型？' },
+    { slug: 'housekeeping-defect-rate', title: '客房清洁返工率高，如何用精益方法解决？' },
+  ],
+};
+
+const newQA20260629En = {
+  id: 99999,
+  slug: 'hotel-website-content-order-service-faq-cases-2026-06-29',
+  question: 'Should You Write Service Pages, Cases, or FAQs First for a Hotel Website?',
+  questionDetail: 'Hotel owners and operating teams preparing to build or rebuild their website or AI information platform often ask: what should come first? Should we publish a batch of articles quickly, or build the core structural framework first?',
+  pillar: 'cost-optimization',
+  wasteType: 'over-processing',
+  author: 'Anonymous hotel owner',
+  date: '2026-06-29',
+  likes: 0,
+  views: 0,
+  isOfficial: true,
+  answer: {
+    author: 'MarvelBros Advisory Team',
+    date: '2026-06-29',
+    content: `Direct answer: write the service pages first to clarify exactly what problems the hotel or service organization solves. Then fill in FAQs to answer the questions customers most often ask before deciding. Finally use cases to prove those answers are not empty talk. The three cannot be done separately, otherwise content becomes islands.
+
+1. Why can you not just write many articles from the start?
+
+When hotels begin website content work, the first reaction is "write a few good articles quickly." But without a clear service definition, more articles only add to the noise. AI search cannot figure out what the hotel actually excels at, and guests cannot find answers to the questions they care about. Before the service judgment framework is built, more articles mean more structural chaos.
+
+The correct sequence is to define the service first, then write articles. Once the service definition is clear, all subsequent content has a home.
+
+2. What should service pages cover?
+
+Service pages should not read as promotional copy. They should include at least five elements: service definition, target customers, typical scenarios, operational process, measurable outcomes.
+
+For example, a hotel offering "long-stay rooms" should state on the service page who the long-stay guests are, the minimum stay length, what is included, the price range, the check-in process, and the average renewal rate. Once these five items are written, the service page is qualified.
+
+3. Where should FAQ content come from?
+
+The best source of FAQs is not "brainstorming." It is the questions the sales team has actually answered over the past year. Group these questions by topic, give each one a direct one-sentence answer first, then expand in two or three short paragraphs.
+
+Common FAQ groupings: location and transport, room differences, breakfast and late checkout, extra bed and family rooms, meeting rooms and corporate clients, long stay and invoicing.
+
+4. Can cases be written without revealing real customer names?
+
+Yes. Anonymized cases remain persuasive, as long as three elements are not omitted: customer profile (industry, scale, typical need), problem (the guest's most painful point), result (what method was used and what changed).
+
+Cases do not need real names. Phrases like "a chain hotel group" or "a city business hotel" work. When AI cites cases, it values structure and logic more than real names.
+
+5. How often should content be updated to be useful?
+
+Update by topic category rather than "full-site overhaul."
+
+High-frequency updates: product introductions, price ranges, recent events, fast-changing FAQ entries.
+
+Mid-frequency updates: service flow, typical scenarios, customer profiles, cases.
+
+Low-frequency updates: industry judgments, methodology frameworks, brand stories.
+
+High-frequency content is reviewed monthly, mid-frequency content quarterly, low-frequency content annually.
+
+6. Who maintains content if there is no IT team?
+
+It is entirely feasible without an IT team. The core of a topic cluster is "the relationships between content pieces," and those relationships can be managed through a shared document, an Excel sheet, or an internal wiki.
+
+Minimum configuration: one content lead (4-6 hours per week), one topic completeness scoring table, one content classification standard. These three things together can build the basic structure in year one.
+
+The six questions above are the most frequently asked when upgrading a hotel website. Once they are thought through, the upgrade direction becomes much clearer.
+
+MBCT (MarvelBros C&T) focuses on hotel operations diagnostics and AI information platform construction, helping hotels move from "written" to "asset." Learn about AI information platform construction: https://www.marvelbros.com/en/services/ai-hotel-website`,
+    tools: [
+      { name: 'Service Page Writing Checklist', url: 'https://www.marvelbros.com/en/services/ai-hotel-website' },
+      { name: 'FAQ Topic Grouping Template', url: 'https://www.marvelbros.com/en/services/ai-hotel-website' },
+    ],
+  },
+  related: [
+    { slug: 'front-desk-waiting-5min', title: 'Front desk queue exceeds 5 minutes — what waste type is this?' },
+    { slug: 'housekeeping-defect-rate', title: 'High housekeeping rework rate — how to solve with Lean?' },
+  ],
+};
+
+const qaDetailZhMap: Record<string, any> = {
+  'front-desk-waiting-5min': {
   slug: 'front-desk-waiting-5min',
   question: '酒店前台排队经常超过5分钟，客人投诉很多。这是什么浪费类型？如何改善？',
   questionDetail: `我们是一家120间客房的商务酒店，前台只有2名员工。高峰入住时段（下午2-4点）客人经常要等5分钟以上，产生很多投诉。我们试过增加1名临时工，但效果不大，因为培训成本高且临时工效率低。这是精益管理中的什么浪费？有没有系统性的改善方法？`,
@@ -105,10 +252,26 @@ const qaDetailZh = {
     { slug: 'ota-commission-optimization', title: 'OTA佣金不断上涨，有什么精益收益管理策略？' },
     { slug: 'staff-turnover-lean', title: '95后员工流失率太高，培训投入感觉白费，怎么办？' },
   ],
-}
+  },
+  [newQA20260629Zh.slug]: {
+    id: newQA20260629Zh.id,
+    slug: newQA20260629Zh.slug,
+    question: newQA20260629Zh.question,
+    questionDetail: newQA20260629Zh.questionDetail,
+    pillar: newQA20260629Zh.pillar,
+    wasteType: newQA20260629Zh.wasteType,
+    author: newQA20260629Zh.author,
+    date: newQA20260629Zh.date,
+    likes: newQA20260629Zh.likes,
+    views: newQA20260629Zh.views,
+    isOfficial: newQA20260629Zh.isOfficial,
+    answer: newQA20260629Zh.answer,
+    related: newQA20260629Zh.related,
+  },
+};
 
-const qaDetailEn = {
-  id: 1,
+const qaDetailEnMap: Record<string, any> = {
+  'front-desk-waiting-5min': {
   slug: 'front-desk-waiting-5min',
   question: 'My hotel front desk queue often exceeds 5 minutes. Guests complain a lot. What type of waste is this and how can I improve?',
   questionDetail: `We are a 120-room business hotel with only 2 front desk staff. During peak check-in hours (2-4 PM), guests often wait over 5 minutes, generating many complaints. We tried adding 1 temporary worker, but the effect was minimal because training costs are high and temporary staff efficiency is low. What type of lean waste is this? Are there systematic improvement methods?`,
@@ -170,12 +333,32 @@ For a more detailed "Front Desk Lean Improvement Toolkit," leave your email in t
     { slug: 'ota-commission-optimization', title: 'OTA commissions keep rising. Any lean revenue management strategies?' },
     { slug: 'staff-turnover-lean', title: 'Gen-Z staff turnover is too high. Training investment feels wasted. What to do?' },
   ],
-}
+  },
+  [newQA20260629En.slug]: {
+    id: newQA20260629En.id,
+    slug: newQA20260629En.slug,
+    question: newQA20260629En.question,
+    questionDetail: newQA20260629En.questionDetail,
+    pillar: newQA20260629En.pillar,
+    wasteType: newQA20260629En.wasteType,
+    author: newQA20260629En.author,
+    date: newQA20260629En.date,
+    likes: newQA20260629En.likes,
+    views: newQA20260629En.views,
+    isOfficial: newQA20260629En.isOfficial,
+    answer: newQA20260629En.answer,
+    related: newQA20260629En.related,
+  },
+};
 
 export default async function QADetailPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params
   const isZh = lang === 'zh'
-  const qa = isZh ? qaDetailZh : qaDetailEn
+  const qa = (isZh ? qaDetailZhMap : qaDetailEnMap)[slug]
+
+  if (!qa) {
+    notFound()
+  }
   const pillars = isZh ? pillarsZh : pillarsEn
   const wasteTypes = isZh ? wasteTypesZh : wasteTypesEn
 
@@ -296,7 +479,7 @@ export default async function QADetailPage({ params }: { params: Promise<{ lang:
                   {ui.tools}
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {qa.answer.tools.map((tool, idx) => (
+                  {qa.answer.tools.map((tool: any, idx: number) => (
                     <Button
                       key={idx}
                       variant="outline"
@@ -319,7 +502,7 @@ export default async function QADetailPage({ params }: { params: Promise<{ lang:
             {ui.related}
           </h3>
           <div className="space-y-3">
-            {qa.related.map((item, idx) => (
+            {qa.related.map((item: any, idx: number) => (
               <Link
                 key={idx}
                 href={`/${lang}/lean/qa/${item.slug}`}
@@ -360,13 +543,7 @@ export function generateStaticParams() {
   return [
     { lang: 'zh', slug: 'front-desk-waiting-5min' },
     { lang: 'en', slug: 'front-desk-waiting-5min' },
-    { lang: 'zh', slug: 'housekeeping-defect-rate' },
-    { lang: 'en', slug: 'housekeeping-defect-rate' },
-    { lang: 'zh', slug: 'staff-turnover-lean' },
-    { lang: 'en', slug: 'staff-turnover-lean' },
-    { lang: 'zh', slug: 'ota-commission-optimization' },
-    { lang: 'en', slug: 'ota-commission-optimization' },
-    { lang: 'zh', slug: 'emotional-service-design' },
-    { lang: 'en', slug: 'emotional-service-design' },
+    { lang: 'zh', slug: 'hotel-website-content-order-service-faq-cases-2026-06-29' },
+    { lang: 'en', slug: 'hotel-website-content-order-service-faq-cases-2026-06-29' },
   ]
 }

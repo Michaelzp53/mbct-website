@@ -657,6 +657,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 500,
+      type: "report",
+      title: "酒店网站不能只靠多写文章：AI 搜索时代真正重要的是主题集群和内容资产结构",
+      titleEn: "Hotels Don't Need More Articles. They Need Topic Clusters and Structured Content Assets.",
+      slug: "hotel-content-topic-clusters-2026-06-29",
+      summary: "不少酒店和咨询机构都问过我们一个问题：网站文章已经写了几十篇甚至上百篇，为什么搜索引擎和 AI 还是读不懂我们到底在做什么？直订、咨询线索、品牌认知都没有明显起色，问题到底出在哪？",
+      summaryEn: "Many hotels and consultancies ask us the same question: we have published dozens, sometimes hundreds, of articles on our website, so why do search engines and AI assistants still s...",
+      firstLine: "不少酒店和咨询机构都问过我们一个问题：网站文章已经写了几十篇甚至上百篇，为什么搜索引擎和 AI 还是读不懂我们到底在做什么？直订、咨询线索、品牌认知都没有明显起色，问题到底出在哪？",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-06-29",
+      readTime: 12,
+      tag: "行业报告",
+      tagColor: "bg-[#3b82f6]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
+    {
       id: 452,
       type: "report",
       title: "AI搜索时代，酒店为什么需要一份可信实体档案？",

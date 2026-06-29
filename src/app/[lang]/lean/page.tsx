@@ -319,6 +319,26 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                 <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
               </div>
             </a>
+            <a
+              href={`/${lang}/lean/qa/hotel-website-content-order-service-faq-cases-2026-06-29`}
+              className="block p-6 hover:bg-muted/30 transition-colors"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
+                  <MessageSquare className="w-5 h-5 text-[#f59e0b]" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-foreground mb-1">
+                    {isZh ? '酒店官网内容应该先写服务页、案例，还是 FAQ？' : 'Should You Write Service Pages, Cases, or FAQs First for a Hotel Website?'}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {isZh ? '迈创兄弟解答：先写服务页明确业务定位，再补 FAQ 解决客户犹豫，最后用案例证明。' : 'MarvelBros: Service pages first, then FAQs, then cases to prove the answers.'}
+                  </p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+              </div>
+            </a>
+
           </div>
           <div className="mt-4 text-center">
             <a
