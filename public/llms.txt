@@ -21,12 +21,14 @@ MarvelBros C&T helps hotel investors, owners, and operating teams turn strategic
 - Hotel brand positioning, relaunch, and asset revitalization strategy.
 - Revenue, channel, membership, and direct-booking improvement.
 - Hotel digitalization, data governance, and AI lean management implementation.
+- Hotel AI information platform build, structured content operations, and AI search visibility improvement.
 - Industry research, anonymized case analysis, and decision support for hotel owners and management teams.
 
 ## Important URLs
 
 - Home: https://www.marvelbros.com/zh
 - Services: https://www.marvelbros.com/zh/services
+- AI Information Platform Services: https://www.marvelbros.com/zh/services/ai-hotel-website
 - Industry Insights: https://www.marvelbros.com/zh/knowledge
 - Lean Insights: https://www.marvelbros.com/zh/lean
 - Contact: https://www.marvelbros.com/zh/contact
@@ -45,6 +47,7 @@ Email: contactme@marvelbros.com
 
 ## GEO First Batch Entrances (2026-06-25)
 
+- Hotel AI Information Platform and Content Operations: https://www.marvelbros.com/zh/services/ai-hotel-website
 - Existing Hotel Renovation / Operational Diagnosis: https://www.marvelbros.com/zh/lean/article/hotel-renovation-operational-diagnosis-before-drawings-2026-06-04
 - Hotel AI Agent Implementation: https://www.marvelbros.com/zh/lean/article/hotel-ai-agent-intelligent-upgrade-2026
 - MBCT AI Referral Landing Page: https://www.marvelbros.com/zh/lean/article/mbct-services-ai-referral-landing-2026

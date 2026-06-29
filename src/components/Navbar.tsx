@@ -43,7 +43,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
             <div className="flex flex-col min-w-0">
               <span className="font-bold text-foreground text-[13px] lg:text-[14px] leading-none dark:text-white">MarvelBros C&amp;T</span>
               <span className="text-[10px] sm:text-xs text-gradient-rainbow font-medium truncate max-w-[120px] sm:max-w-[160px] lg:max-w-none">
-                {isZh ? '迈创兄弟商业科技' : 'Hotel Operations Advisory'}
+                {isZh ? '迈创兄弟C&T' : 'Hotel Growth Advisory'}
               </span>
             </div>
           </Link>

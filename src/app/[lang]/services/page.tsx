@@ -37,8 +37,37 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>
 }): Promise<Metadata> {
   const { lang } = await params
-  const dict = getDict(lang)
-  return { title: dict.nav.services }
+  const isZh = lang === 'zh'
+  const title = isZh ? '酒店增长解决方案｜投前判断、经营诊断与AI信息平台' : 'Hotel Growth Solutions | Investment Judgment, Operations Diagnosis and AI Information Platform'
+  const description = isZh
+    ? '迈创兄弟C&T围绕酒店投前决策、经营增长、数字化赋能与AI信息平台建设，帮助投资人与经营团队把判断、动作和结果连成可执行路径。'
+    : 'MarvelBros C&T connects hotel investment judgment, operating growth, digital enablement, and AI-ready information platforms into executable paths for investors and operators.'
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.marvelbros.com/${lang}/services`,
+      languages: {
+        zh: 'https://www.marvelbros.com/zh/services',
+        en: 'https://www.marvelbros.com/en/services',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: isZh ? 'zh_CN' : 'en_US',
+      alternateLocale: isZh ? 'en_US' : 'zh_CN',
+      url: `https://www.marvelbros.com/${lang}/services`,
+      siteName: isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MarvelBros C&T',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  }
 }
 
 export default async function ServicesPage({

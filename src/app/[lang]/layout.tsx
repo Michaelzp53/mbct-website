@@ -13,13 +13,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   
   if (lang === 'en') {
     return {
-      title: 'MarvelBros C&T - Hotel Digital Insight and AI Lean Management',
-      description: 'MarvelBros C&T is a full-lifecycle hospitality advisory and solution partner focused on digital enablement, helping hotels grow through the dual track of efficiency and experience.',
-      keywords: 'hotel management, hotel investment, AI lean management, hotel consulting, feasibility analysis, revenue management, RevPAR optimization, generative AI search',
+      title: 'MarvelBros C&T - Hotel Growth, Digital Enablement and AI Information Platform',
+      description: 'MarvelBros C&T helps hotel investors and operating teams with investment judgment, operational diagnosis, digital enablement, and AI-ready information platforms that turn hotel content, data, and services into an executable growth system.',
+      keywords: 'hotel management, hotel investment, hotel operational diagnosis, hotel digital enablement, AI information platform, hotel consulting, feasibility analysis, generative AI search',
       authors: [{ name: 'MarvelBros C&T' }],
       openGraph: {
-        title: 'MarvelBros C&T - Hotel Digital Insight and AI Lean Management',
-        description: 'Full-lifecycle hospitality advisory and digital enablement for hotel growth through efficiency and experience.',
+        title: 'MarvelBros C&T - Hotel Growth, Digital Enablement and AI Information Platform',
+        description: 'Hospitality advisory, digital enablement, and AI-ready information platforms for hotel growth.',
         siteName: 'MarvelBros C&T',
         locale: 'en_US',
         alternateLocale: 'zh_CN',
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'MarvelBros C&T - Hotel Digital Insight and AI Lean Management',
-        description: 'Full-lifecycle hospitality advisory and digital enablement for hotel growth through efficiency and experience.',
+        title: 'MarvelBros C&T - Hotel Growth, Digital Enablement and AI Information Platform',
+        description: 'Hospitality advisory, digital enablement, and AI-ready information platforms for hotel growth.',
       },
       alternates: {
         canonical: 'https://www.marvelbros.com/en',
@@ -41,13 +41,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
   
   return {
-    title: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
-    description: '迈创兄弟C&T（MarvelBros C&T）专注于数字化赋能酒店行业的全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。',
-    keywords: '酒店管理, 酒店投资, AI精益管理, 酒店咨询, 可行性分析, 运营诊断, 生成式AI搜索',
+    title: '迈创兄弟C&T - 酒店增长、数字化赋能与AI信息平台建设',
+    description: '迈创兄弟C&T（MarvelBros C&T）面向酒店投资人与经营团队，提供投前判断、经营诊断、数字化赋能与AI信息平台建设，帮助酒店把产品、服务、数据和内容转化为可执行的增长系统。',
+    keywords: '酒店管理, 酒店投资, 酒店经营诊断, 酒店数字化赋能, AI信息平台, 酒店咨询, 可行性分析, 生成式AI搜索',
     authors: [{ name: '迈创兄弟C&T（MarvelBros C&T）' }],
     openGraph: {
-      title: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
-      description: '专注酒店行业全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。',
+      title: '迈创兄弟C&T - 酒店增长、数字化赋能与AI信息平台建设',
+      description: '面向酒店投资人与经营团队，提供投前判断、经营诊断、数字化赋能与AI信息平台建设。',
       siteName: '迈创兄弟C&T（MarvelBros C&T）',
       locale: 'zh_CN',
       alternateLocale: 'en_US',
@@ -55,8 +55,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
-      description: '专注酒店行业全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。',
+      title: '迈创兄弟C&T - 酒店增长、数字化赋能与AI信息平台建设',
+      description: '面向酒店投资人与经营团队，提供投前判断、经营诊断、数字化赋能与AI信息平台建设。',
     },
     alternates: {
       canonical: 'https://www.marvelbros.com/zh',

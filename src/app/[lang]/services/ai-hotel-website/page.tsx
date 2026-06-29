@@ -20,11 +20,35 @@ export async function generateMetadata({
   const { lang } = await params
   const isZh = lang === 'zh'
 
-  return {
-    title: isZh ? '酒店 AI 信息平台建设与内容托管' : 'AI-Ready Hotel Information Platform & Content Operations',
-    description: isZh
+  const title = isZh ? '酒店 AI 信息平台建设与内容托管' : 'AI-Ready Hotel Information Platform & Content Operations'
+  const description = isZh
       ? '迈创兄弟C&T帮助酒店建设 AI 更容易抓取的信息平台，并持续代写、上传和维护酒店内容，让酒店价值更容易被搜索、理解、引用和询价。'
-      : 'MarvelBros C&T helps hotels build AI-readable information platforms, then continuously write, upload, and maintain hotel content so the hotel value is easier to search, understand, reference, and inquire about.',
+      : 'MarvelBros C&T helps hotels build AI-readable information platforms, then continuously write, upload, and maintain hotel content so the hotel value is easier to search, understand, reference, and inquire about.'
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.marvelbros.com/${lang}/services/ai-hotel-website`,
+      languages: {
+        zh: 'https://www.marvelbros.com/zh/services/ai-hotel-website',
+        en: 'https://www.marvelbros.com/en/services/ai-hotel-website',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: isZh ? 'zh_CN' : 'en_US',
+      alternateLocale: isZh ? 'en_US' : 'zh_CN',
+      url: `https://www.marvelbros.com/${lang}/services/ai-hotel-website`,
+      siteName: isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MarvelBros C&T',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   }
 }
 

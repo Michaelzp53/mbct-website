@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.marvelbros.com'),
   title: {
     template: '%s | 迈创兄弟C&T',
-    default: '迈创兄弟C&T - 酒店数字化洞察与AI精益管理',
+    default: '迈创兄弟C&T｜酒店增长、数字化赋能与AI信息平台建设',
   },
-  description: '迈创兄弟C&T（MarvelBros C&T）专注于数字化赋能酒店行业的全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。',
-  keywords: '酒店管理, 酒店投资, AI精益管理, 酒店咨询, 可行性分析, 运营诊断, 生成式AI搜索',
+  description: '迈创兄弟C&T（MarvelBros C&T）面向酒店投资人与经营团队，提供投前判断、经营诊断、数字化赋能与AI信息平台建设，帮助酒店把产品、服务、数据和内容转化为可执行的增长系统。',
+  keywords: '酒店管理, 酒店投资, 酒店经营诊断, 酒店数字化赋能, AI信息平台, 酒店咨询, 可行性分析, 生成式AI搜索',
   authors: [{ name: '迈创兄弟C&T（MarvelBros C&T）' }],
   openGraph: {
     type: 'website',
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     '@type': 'Organization',
     '@id': 'https://www.marvelbros.com/#organization',
     name: 'MarvelBros C&T',
-    alternateName: ['迈创兄弟C&T', 'MBCT', 'MarvelBros Commercial Technology', '迈创兄弟商业科技'],
+    alternateName: ['迈创兄弟C&T', 'MBCT'],
     url: 'https://www.marvelbros.com',
     logo: 'https://www.marvelbros.com/logo-new.png',
     foundingDate: '2018-08-14',
@@ -62,6 +62,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       '@id': 'https://www.marvelbros.com/#organization',
     },
     inLanguage: ['zh-CN', 'en-US'],
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://www.marvelbros.com/zh/knowledge?query={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
   }
 
   return (

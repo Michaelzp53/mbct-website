@@ -1,10 +1,46 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { ArrowRight, ChevronRight, Clock, Eye, ThumbsUp, BookOpen, MessageSquare } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import SearchBox from './SearchBox'
 import PageHero from '@/components/PageHero'
 import { allArticlesData } from './article/[slug]/articles-data'
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params
+  const isZh = lang === 'zh'
+  const title = isZh ? '管享精道｜酒店管理者的精益经营知识库' : 'Lean Insights | A Practical Hotel Management Knowledge Base'
+  const description = isZh
+    ? '管享精道是迈创兄弟C&T面向酒店管理者的精益经营知识库，覆盖投资决策、筹备筹开、团队建设、运营升级、营销策略、数字平台和成本优化。'
+    : 'Lean Insights is MarvelBros C&T’s practical hotel management knowledge base, covering investment, pre-opening, team building, operations, marketing, digital platforms, and cost optimization.'
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.marvelbros.com/${lang}/lean`,
+      languages: {
+        zh: 'https://www.marvelbros.com/zh/lean',
+        en: 'https://www.marvelbros.com/en/lean',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: isZh ? 'zh_CN' : 'en_US',
+      alternateLocale: isZh ? 'en_US' : 'zh_CN',
+      url: `https://www.marvelbros.com/${lang}/lean`,
+      siteName: isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MarvelBros C&T',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  }
+}
 
 // 7大分类（老马叔叔确认顺序）
 const categories = [
