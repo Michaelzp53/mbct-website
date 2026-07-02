@@ -302,7 +302,7 @@ export default async function ServicesPage({
       <PageHero
         title={isZh ? '三个能力群组，覆盖酒店增长最关键的事' : 'Three capability clusters covering what matters most for hotel growth'}
         subtitle={isZh ? '围绕投前决策、经营增长与AI落地三大方向，MBCT把每个服务模块组织成从诊断到执行的可交付能力链——不是零散产品，而是推进结果的完整系统。' : 'Organized around pre-investment decisions, operational growth, and AI implementation—each module is a link in a deliverable chain from diagnosis to execution, not a standalone product.'}
-        bgImage="/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg"
+        bgImage="/images/home-named/solutions-lounge.jpeg"
       />
 
       <section className="py-16 bg-background">

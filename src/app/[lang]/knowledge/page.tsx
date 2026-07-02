@@ -1904,7 +1904,7 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       <PageHero
         title={ui.pageTitle}
         subtitle={ui.heroSubtitle}
-        bgImage="/hero-pexels-jimmy-liao.jpg"
+        bgImage="/images/home-named/industry-insights.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

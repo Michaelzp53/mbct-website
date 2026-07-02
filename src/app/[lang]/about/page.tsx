@@ -83,7 +83,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         title={isZh ? 'MBCT 不是为了把酒店讲得更好听，而是为了把项目做得更明白' : 'MBCT exists to make hotel projects clearer, not just better presented'}
         titleSize="text-3xl md:text-4xl"
         subtitle={isZh ? '我们专注酒店行业，因为这个行业同时需要商业判断、经营理解与落地执行，而这三件事往往很少被真正放到一起解决。' : 'We focus on hospitality because this industry demands business judgment, operating understanding, and real execution at the same time — and those three things are rarely solved together.'}
-        bgImage="/images/home-carousel/about-us-bg.png"
+        bgImage="/images/home-named/about-us.png"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">

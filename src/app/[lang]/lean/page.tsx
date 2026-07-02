@@ -145,7 +145,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
       <PageHero
         title={ui.pageTitle}
         subtitle={ui.pageSubtitle}
-        bgImage="/hero-hung-li-1HbWj9BDbjE-unsplash.jpg"
+        bgImage="/images/home-named/industry-insights.jpg"
       />
 
       {/* Header */}

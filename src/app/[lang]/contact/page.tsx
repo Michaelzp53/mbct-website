@@ -131,7 +131,7 @@ export default async function ContactPage({
           : isPlan
             ? (isZh ? '“获取方案”不是立即拿一份通用答案，而是先让 MBCT 帮你判断：这个项目该怎么切入、该先解决什么、以及更适合的推进路径是什么。' : 'Getting a plan does not mean receiving a generic answer. It means letting MBCT first determine where the project should start, what should be solved first, and what path forward makes the most sense.')
             : (isZh ? '你不需要一开始就准备得非常完整。只要把项目阶段、核心目标和目前最难推进的问题告诉我们，我们会先帮你判断，从哪里切入更合适。' : 'You do not need a perfect brief to start. Share the project stage, your main objective, and the hardest issue to move forward, and we will help you decide the most suitable point of entry.')}
-        bgImage="/hero-rod-long-2P_ifaetDm0-unsplash.jpg"
+        bgImage="/images/home-named/contact-us.jpg"
       />
 
       <section className="py-16 bg-background">

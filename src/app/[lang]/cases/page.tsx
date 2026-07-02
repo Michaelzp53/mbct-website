@@ -46,7 +46,7 @@ export default async function CasesPage({
       <PageHero
         title={dict.nav.cases}
         subtitle={dict.cases.subtitle}
-        bgImage="/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg"
+        bgImage="/images/home-named/solutions-dining.jpg"
       />
 
       <section className="py-16 bg-background">
