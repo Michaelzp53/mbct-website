@@ -15,12 +15,15 @@ interface AnimatedNumberProps {
 }
 
 const heroImages = [
-  '/images/home-modern/resort-pool.jpeg',
-  '/images/home-modern/urban-waterfront.jpeg',
-  '/images/home-modern/advisory-conversation.png',
-  '/images/home-modern/modern-service.jpg',
-  '/images/home-modern/sky-restaurant.jpeg',
-  '/images/home-modern/signature-lounge.jpeg',
+  '/images/home-named/home-1.jpeg',
+  '/images/home-named/home-2.jpeg',
+  '/images/home-named/home-3.jpeg',
+  '/images/home-named/home-4.jpeg',
+  '/images/home-named/about-us.png',
+  '/images/home-named/industry-insights.jpg',
+  '/images/home-named/solutions-lounge.jpeg',
+  '/images/home-named/solutions-dining.jpg',
+  '/images/home-named/contact-us.jpg',
 ]
 
 function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberProps) {
@@ -103,8 +106,8 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
         />
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#07111f]/65 via-[#003b71]/30 to-white/0 dark:from-[#050816]/86 dark:via-[#0b1020]/62 dark:to-[#111827]/26" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#07111f]/28 dark:to-[#050816]/68" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#050816]/72 via-[#002f5f]/38 to-[#050816]/8 dark:from-[#050816]/86 dark:via-[#0b1020]/62 dark:to-[#111827]/26" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#07111f]/36 dark:to-[#050816]/68" />
 
       {/* Image indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -133,7 +136,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-sky-300/30 mb-8 animate-fade-in backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-sky-300/30 mb-16 animate-fade-in backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-sky-300 animate-pulse" />
               <span className="text-sky-100 text-sm font-medium">
                 {isZh ? '迈创兄弟C&T · 酒店增长与数字化赋能伙伴' : 'MarvelBros C&T · Hospitality Growth & Digital Enablement Partner'}

@@ -109,7 +109,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const hospitalityScenes = [
     {
-      image: '/images/home-modern/modern-service.jpg',
+      image: '/images/home-named/about-us.png',
       eyebrow: isZh ? '服务触点' : 'Service Touchpoint',
       title: isZh ? '把前台服务变成可复盘的经营线索' : 'Turn front-desk service into reviewable operating signals',
       desc: isZh
@@ -117,7 +117,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         : 'Read the real state of team execution and product expression through inquiries, arrivals, complaints, and repeat intent.',
     },
     {
-      image: '/images/home-modern/advisory-conversation.png',
+      image: '/images/home-named/solutions-lounge.jpeg',
       eyebrow: isZh ? '体验细节' : 'Experience Detail',
       title: isZh ? '把空间美感转化为可定价的体验价值' : 'Translate space quality into priceable experience value',
       desc: isZh
@@ -125,7 +125,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         : 'Beyond looking beautiful, the experience must support rate, packages, dwell time, and reasons to return.',
     },
     {
-      image: '/images/home-modern/sky-restaurant.jpeg',
+      image: '/images/home-named/solutions-dining.jpg',
       eyebrow: isZh ? '收益场景' : 'Revenue Scene',
       title: isZh ? '让餐饮、会议和目的地内容共同带动收益' : 'Connect dining, events, and destination content to revenue',
       desc: isZh
@@ -337,7 +337,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <SectionWithBg bgImage="/images/home-modern/urban-waterfront.jpeg" overlayOpacity={0.82}>
+      <SectionWithBg bgImage="/images/home-named/industry-insights.jpg" overlayOpacity={0.82}>
         <ScrollFade>
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
@@ -386,7 +386,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </SectionWithBg>
 
-      <SectionWithBg bgImage="/images/home-modern/modern-service.jpg" overlayOpacity={0.84}>
+      <SectionWithBg bgImage="/images/home-named/about-us.png" overlayOpacity={0.84}>
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
           <ScrollFade>
             <div>
@@ -449,7 +449,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </SectionWithBg>
 
-      <SectionWithBg bgImage="/images/home-modern/resort-pool.jpeg" overlayOpacity={0.82}>
+      <SectionWithBg bgImage="/images/home-named/contact-us.jpg" overlayOpacity={0.82}>
         <ScrollFade>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
