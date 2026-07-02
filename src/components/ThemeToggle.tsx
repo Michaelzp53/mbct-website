@@ -19,7 +19,7 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
         className={`
           flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-200 cursor-pointer
           ${theme === 'light'
-            ? 'bg-amber-50 border border-amber-200 text-amber-700 shadow-sm'
+            ? 'bg-white border border-sky-200 text-[#003b71] shadow-sm'
             : 'text-muted-foreground hover:text-foreground hover:bg-muted/80'}
         `}
         title={isZh ? '白天模式' : 'Light mode'}
@@ -33,7 +33,7 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
         className={`
           flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-200 cursor-pointer
           ${theme === 'dark'
-            ? 'bg-slate-700 border border-slate-600 text-slate-100 shadow-sm'
+            ? 'bg-[#172033] border border-sky-300/30 text-sky-100 shadow-sm'
             : 'text-muted-foreground hover:text-foreground hover:bg-muted/80'}
         `}
         title={isZh ? '夜间模式' : 'Dark mode'}

@@ -35,7 +35,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 dark:bg-[#17120d]/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 dark:supports-[backdrop-filter]:bg-[#17120d]/90">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 dark:bg-[#0b1020]/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 dark:supports-[backdrop-filter]:bg-[#0b1020]/90">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href={`/${lang}/`} className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
@@ -62,7 +62,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
           <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
             <Link href={primaryCta.href}>
-              <Button className="bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600 font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5">
+              <Button className="bg-gradient-to-r from-[#003b71] to-[#0072ce] text-white hover:from-[#002f5f] hover:to-[#005fa8] font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg flex items-center gap-1.5 shadow-sm shadow-blue-900/10">
                 <span>{primaryCta.label}</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
@@ -116,7 +116,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
                 <div className="mt-6 pt-6 border-t border-border space-y-3">
                   <Link href={primaryCta.href} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600">
+                    <Button className="w-full bg-gradient-to-r from-[#003b71] to-[#0072ce] text-white hover:from-[#002f5f] hover:to-[#005fa8]">
                       {primaryCta.label}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>

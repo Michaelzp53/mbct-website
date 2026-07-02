@@ -18,7 +18,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       items: isZh
         ? ['可行性研究', '市场与竞争判断', '投资测算与回报模型']
         : ['Feasibility studies', 'Market and competitive assessment', 'Return modeling and investment scenarios'],
-      color: '#C79A3B',
+      color: '#0072ce',
     },
     {
       icon: TrendingUp,
@@ -29,7 +29,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       items: isZh
         ? ['运营诊断与增长', '私域与会员增长', '品牌定位与升级']
         : ['Operations diagnosis and growth', 'Private-domain and membership growth', 'Brand positioning and upgrades'],
-      color: '#8FAF9A',
+      color: '#16a34a',
     },
     {
       icon: Shield,
@@ -40,7 +40,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       items: isZh
         ? ['AI 管理系统', '数据看板与流程机制', '陪跑式顾问支持']
         : ['AI management systems', 'Dashboards and operating mechanisms', 'Execution partnership and advisory support'],
-      color: '#D8B98A',
+      color: '#8ab4f8',
     },
   ]
 
@@ -57,9 +57,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       desc: isZh
         ? '适合正在做投资判断、筹开规划或重新定位的项目。'
         : 'For projects evaluating investment, pre-opening structure, or repositioning.',
-      iconBg: 'bg-amber-100 dark:bg-amber-400/15',
-      iconColor: 'text-amber-700 dark:text-amber-300',
-      iconRing: 'ring-amber-200/80 dark:ring-amber-400/20',
+      iconBg: 'bg-sky-100 dark:bg-[#8ab4f8]/15',
+      iconColor: 'text-[#006bb6] dark:text-[#8ab4f8]',
+      iconRing: 'ring-sky-200/80 dark:ring-sky-300/20',
     },
     {
       icon: LineChart,
@@ -77,9 +77,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       desc: isZh
         ? '适合希望推进数字化，但不想停留在概念层面的团队。'
         : 'For teams that want digital execution without stopping at surface-level concepts.',
-      iconBg: 'bg-orange-100 dark:bg-orange-400/15',
-      iconColor: 'text-orange-700 dark:text-orange-300',
-      iconRing: 'ring-orange-200/80 dark:ring-orange-400/20',
+      iconBg: 'bg-violet-100 dark:bg-violet-400/15',
+      iconColor: 'text-violet-700 dark:text-violet-300',
+      iconRing: 'ring-violet-200/80 dark:ring-violet-400/20',
     },
   ]
 
@@ -109,7 +109,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const hospitalityScenes = [
     {
-      image: '/images/home-refresh/front-desk-service.jpg',
+      image: '/images/home-modern/modern-service.jpg',
       eyebrow: isZh ? '服务触点' : 'Service Touchpoint',
       title: isZh ? '把前台服务变成可复盘的经营线索' : 'Turn front-desk service into reviewable operating signals',
       desc: isZh
@@ -117,7 +117,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         : 'Read the real state of team execution and product expression through inquiries, arrivals, complaints, and repeat intent.',
     },
     {
-      image: '/images/home-refresh/spa-suite.jpeg',
+      image: '/images/home-modern/advisory-conversation.png',
       eyebrow: isZh ? '体验细节' : 'Experience Detail',
       title: isZh ? '把空间美感转化为可定价的体验价值' : 'Translate space quality into priceable experience value',
       desc: isZh
@@ -125,7 +125,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         : 'Beyond looking beautiful, the experience must support rate, packages, dwell time, and reasons to return.',
     },
     {
-      image: '/images/home-refresh/sky-restaurant.jpeg',
+      image: '/images/home-modern/sky-restaurant.jpeg',
       eyebrow: isZh ? '收益场景' : 'Revenue Scene',
       title: isZh ? '让餐饮、会议和目的地内容共同带动收益' : 'Connect dining, events, and destination content to revenue',
       desc: isZh
@@ -162,28 +162,28 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <div className="min-h-screen bg-background">
       <HeroWithStats lang={lang} />
 
-      <section className="relative overflow-hidden bg-[#fff8ec] py-16 md:py-20 dark:bg-[#17120d]">
+      <section className="relative overflow-hidden bg-white py-16 md:py-20 dark:bg-[#0b1020]">
         <div className="absolute inset-0 opacity-60">
-          <div className="absolute left-[-8rem] top-[-8rem] h-80 w-80 rounded-full bg-amber-200/45 blur-3xl dark:bg-amber-500/10" />
-          <div className="absolute right-[-6rem] bottom-[-10rem] h-96 w-96 rounded-full bg-emerald-100/70 blur-3xl dark:bg-emerald-500/10" />
+          <div className="absolute left-[-8rem] top-[-8rem] h-80 w-80 rounded-full bg-sky-100/80 blur-3xl dark:bg-sky-500/10" />
+          <div className="absolute right-[-6rem] bottom-[-10rem] h-96 w-96 rounded-full bg-blue-100/70 blur-3xl dark:bg-emerald-500/10" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <ScrollFade>
               <div>
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/70 bg-white/70 px-4 py-2 text-sm font-medium text-amber-800 shadow-sm dark:border-amber-400/20 dark:bg-white/5 dark:text-amber-300">
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-4 py-2 text-sm font-medium text-[#003b71] shadow-sm dark:border-sky-300/25 dark:bg-white/5 dark:text-[#8ab4f8]">
                   <SearchCheck className="h-4 w-4" />
                   {isZh ? '新服务：酒店 AI 信息平台建设与内容托管' : 'New service: AI-readable hotel information platform'}
                 </div>
-                <h2 className="max-w-3xl text-3xl font-bold leading-tight text-[#17120d] md:text-5xl dark:text-white">
+                <h2 className="max-w-3xl text-3xl font-bold leading-tight text-[#101828] md:text-5xl dark:text-white">
                   {isZh ? '你的酒店被 AI 推荐了吗？客人搜到了吗？' : 'Is your hotel being recommended by AI, and can guests find it?'}
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#5b4631] md:text-lg dark:text-slate-300">
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#344054] md:text-lg dark:text-slate-300">
                   {isZh
                     ? '酒店优势如果只散落在图片、OTA 页面和零散介绍里，AI 读不懂，就推不出去。迈创兄弟C&T 帮酒店把信息整理成可抓取、可理解、可询价的内容资产。'
                     : 'If hotel strengths are scattered across images, OTA pages, and generic descriptions, AI cannot understand or recommend them. MarvelBros C&T turns hotel information into crawlable, understandable, inquiry-ready content assets.'}
                 </p>
-                <div className="mt-7 space-y-3 text-sm leading-relaxed text-[#5b4631] dark:text-slate-300">
+                <div className="mt-7 space-y-3 text-sm leading-relaxed text-[#344054] dark:text-slate-300">
                   {(isZh
                     ? [
                         '没有官网的酒店，可以从轻量信息平台开始。',
@@ -196,7 +196,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                         'We do not position this against any channel. We add an owned information entry point that AI can understand.',
                       ]).map((item) => (
                     <div key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-700 dark:text-amber-300" />
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#006bb6] dark:text-[#8ab4f8]" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -204,14 +204,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href={`/${lang}/services/ai-hotel-website`}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-400 dark:text-[#17120d]"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#003b71] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/10 transition-all hover:-translate-y-0.5 hover:bg-[#002f5f] hover:shadow-xl dark:bg-[#8ab4f8] dark:text-[#06101f]"
                   >
                     {isZh ? '获取 AI 信息平台建议' : 'Get AI platform recommendations'}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href={`/${lang}/services/ai-hotel-website#process`}
-                    className="inline-flex items-center justify-center rounded-xl border border-amber-700/30 bg-white/60 px-6 py-3 text-sm font-semibold text-[#5b4631] transition-colors hover:border-amber-700 hover:text-[#17120d] dark:border-amber-400/25 dark:bg-white/5 dark:text-amber-200 dark:hover:text-white"
+                    className="inline-flex items-center justify-center rounded-xl border border-sky-300 bg-white/60 px-6 py-3 text-sm font-semibold text-[#344054] transition-colors hover:border-[#003b71] hover:text-[#101828] dark:border-sky-300/25 dark:bg-white/5 dark:text-sky-100 dark:hover:text-white"
                   >
                     {isZh ? '了解体检怎么做' : 'How the diagnostic works'}
                   </Link>
@@ -224,17 +224,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 {aiWebsiteCards.map((item, index) => {
                   const Icon = item.icon
                   return (
-                    <div key={item.title} className="rounded-3xl border border-amber-200/70 bg-white/75 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
+                    <div key={item.title} className="rounded-3xl border border-slate-200 bg-white/75 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
                       <div className="flex gap-4">
-                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-amber-800 ring-1 ring-amber-200 dark:bg-amber-400/10 dark:text-amber-300 dark:ring-amber-400/20">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-sky-100 text-[#003b71] ring-1 ring-sky-200 dark:bg-[#8ab4f8]/10 dark:text-[#8ab4f8] dark:ring-sky-300/20">
                           <Icon className="h-5 w-5" />
                         </div>
                         <div>
-                          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700/80 dark:text-amber-300/80">
+                          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-[#006bb6]/80 dark:text-[#8ab4f8]/80">
                             {String(index + 1).padStart(2, '0')}
                           </p>
-                          <h3 className="text-lg font-semibold text-[#17120d] dark:text-white">{item.title}</h3>
-                          <p className="mt-2 text-sm leading-relaxed text-[#6f5a42] dark:text-slate-300">{item.desc}</p>
+                          <h3 className="text-lg font-semibold text-[#101828] dark:text-white">{item.title}</h3>
+                          <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">{item.desc}</p>
                         </div>
                       </div>
                     </div>
@@ -246,24 +246,24 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-16 md:py-20 bg-[#f7f1e6] dark:bg-[#14100c]">
+      <section className="relative overflow-hidden py-16 md:py-20 bg-[#f5f7fb] dark:bg-[#0b1020]">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-[-8rem] top-[-10rem] h-80 w-80 rounded-full bg-amber-200/45 blur-3xl dark:bg-amber-500/10" />
+          <div className="absolute right-[-8rem] top-[-10rem] h-80 w-80 rounded-full bg-sky-100/80 blur-3xl dark:bg-sky-500/10" />
           <div className="absolute left-[-10rem] bottom-[-12rem] h-96 w-96 rounded-full bg-[#8faf9a]/20 blur-3xl dark:bg-emerald-500/10" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollFade>
             <div className="max-w-3xl mx-auto text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-amber-200/80 shadow-sm dark:bg-white/5 dark:border-amber-400/20 mb-6">
-                <Target className="w-4 h-4 text-amber-700 dark:text-amber-300" />
-                <span className="text-amber-800 dark:text-amber-300 text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-slate-200 shadow-sm dark:bg-white/5 dark:border-sky-300/25 mb-6">
+                <Target className="w-4 h-4 text-[#006bb6] dark:text-[#8ab4f8]" />
+                <span className="text-[#003b71] dark:text-[#8ab4f8] text-sm font-medium">
                   {isZh ? '先判断你属于哪一种项目场景' : 'Start with the project situation you are in'}
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#17120d] dark:text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#101828] dark:text-white mb-4">
                 {isZh ? '迈创兄弟C&T 不是给所有人一套标准答案' : 'MarvelBros C&T does not force one standard answer on every client'}
               </h2>
-              <p className="text-[#5b4631] dark:text-slate-300 text-base md:text-lg leading-relaxed">
+              <p className="text-[#344054] dark:text-slate-300 text-base md:text-lg leading-relaxed">
                 {isZh
                   ? <>我们先判断项目所处阶段、真正卡住的问题和更适合的推进路径，<br />再决定是做诊断、做方案，还是进入完整合作。</>
 
@@ -277,12 +277,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               const Icon = item.icon
               return (
                 <ScrollFade key={item.title} delay={index * 100}>
-                  <div className="h-full rounded-3xl border border-white/80 dark:border-white/10 bg-white/82 dark:bg-white/[0.06] p-7 shadow-sm shadow-amber-900/5 backdrop-blur">
+                  <div className="h-full rounded-3xl border border-white/80 dark:border-white/10 bg-white/82 dark:bg-white/[0.06] p-7 shadow-sm shadow-slate-900/5 backdrop-blur">
                     <div className={`w-12 h-12 rounded-2xl ${item.iconBg} ${item.iconColor} ring-1 ${item.iconRing} flex items-center justify-center mb-5`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-xl font-semibold text-[#17120d] dark:text-white mb-3">{item.title}</h3>
-                    <p className="text-[#6f5a42] dark:text-slate-300 leading-relaxed text-sm md:text-base">{item.desc}</p>
+                    <h3 className="text-xl font-semibold text-[#101828] dark:text-white mb-3">{item.title}</h3>
+                    <p className="text-[#475467] dark:text-slate-300 leading-relaxed text-sm md:text-base">{item.desc}</p>
                   </div>
                 </ScrollFade>
               )
@@ -291,19 +291,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#fffaf1] py-16 md:py-24 dark:bg-[#17120d]">
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 to-transparent dark:from-black/20" />
+      <section className="relative overflow-hidden bg-white py-16 md:py-24 dark:bg-[#0b1020]">
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#f5f7fb] to-transparent dark:from-black/20" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollFade>
             <div className="mx-auto mb-12 max-w-3xl text-center">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d8b98a]/70 bg-white/75 px-4 py-2 text-sm font-medium text-[#8a6422] shadow-sm dark:border-amber-400/20 dark:bg-white/5 dark:text-amber-300">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-sm font-medium text-[#003b71] shadow-sm dark:border-sky-300/25 dark:bg-white/5 dark:text-[#8ab4f8]">
                 <Hotel className="h-4 w-4" />
                 {isZh ? '从漂亮页面，升级为经营可信度' : 'From attractive pages to operating credibility'}
               </div>
-              <h2 className="text-3xl font-bold leading-tight text-[#17120d] md:text-4xl dark:text-white">
+              <h2 className="text-3xl font-bold leading-tight text-[#101828] md:text-4xl dark:text-white">
                 {isZh ? '网站视觉要让读者立刻相信：我们懂酒店现场' : 'The website should show that MBCT understands real hotel operations'}
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-[#5b4631] md:text-lg dark:text-slate-300">
+              <p className="mt-4 text-base leading-relaxed text-[#344054] md:text-lg dark:text-slate-300">
                 {isZh
                   ? '这次首页不再只用抽象背景，而是用酒店入口、服务、SPA、餐饮和目的地场景，把 MBCT 的顾问判断放回真实经营环境。'
                   : 'This refresh moves away from abstract backgrounds and uses entrances, service, spa, dining, and destination scenes to place MBCT judgment back in real operating environments.'}
@@ -314,21 +314,21 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className="grid gap-6 lg:grid-cols-3">
             {hospitalityScenes.map((scene, index) => (
               <ScrollFade key={scene.title} delay={index * 120}>
-                <article className="group h-full overflow-hidden rounded-[2rem] border border-[#ead8b9] bg-white shadow-sm shadow-amber-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-900/10 dark:border-white/10 dark:bg-white/[0.06] dark:hover:shadow-black/30">
+                <article className="group h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 dark:border-white/10 dark:bg-white/[0.06] dark:hover:shadow-black/30">
                   <div className="relative h-64 overflow-hidden">
                     <img
                       src={scene.image}
                       alt={scene.title}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#17120d]/65 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#07111f]/68 via-transparent to-transparent" />
                     <div className="absolute bottom-5 left-5 rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-white backdrop-blur">
                       {scene.eyebrow}
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold leading-snug text-[#17120d] dark:text-white">{scene.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#6f5a42] dark:text-slate-300">{scene.desc}</p>
+                    <h3 className="text-xl font-semibold leading-snug text-[#101828] dark:text-white">{scene.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-[#475467] dark:text-slate-300">{scene.desc}</p>
                   </div>
                 </article>
               </ScrollFade>
@@ -337,7 +337,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <SectionWithBg bgImage="/images/home-refresh/seaside-restaurant.jpeg" overlayOpacity={0.82}>
+      <SectionWithBg bgImage="/images/home-modern/urban-waterfront.jpeg" overlayOpacity={0.82}>
         <ScrollFade>
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
@@ -374,7 +374,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   <div className="space-y-3">
                     {group.items.map((item) => (
                       <div key={item} className="flex items-start gap-3 text-sm text-slate-200">
-                        <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-sky-300 mt-0.5 flex-shrink-0" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -386,7 +386,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </SectionWithBg>
 
-      <SectionWithBg bgImage="/images/home-refresh/front-desk-service.jpg" overlayOpacity={0.84}>
+      <SectionWithBg bgImage="/images/home-modern/modern-service.jpg" overlayOpacity={0.84}>
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
           <ScrollFade>
             <div>
@@ -404,8 +404,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   return (
                     <div key={item.title} className="rounded-2xl bg-slate-900/60 border border-white/10 p-5">
                       <div className="flex items-start gap-4">
-                        <div className="w-11 h-11 rounded-xl bg-amber-400/10 flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-5 h-5 text-amber-400" />
+                        <div className="w-11 h-11 rounded-xl bg-sky-400/10 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-sky-300" />
                         </div>
                         <div>
                           <h3 className="text-white font-semibold mb-2">{item.title}</h3>
@@ -421,16 +421,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
           <ScrollFade delay={140}>
             <div className="rounded-2xl bg-slate-900/60 border border-white/10 p-6 md:p-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/20 mb-5">
-                <Users className="w-4 h-4 text-amber-400" />
-                <span className="text-amber-400 text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-400/10 border border-sky-300/25 mb-5">
+                <Users className="w-4 h-4 text-sky-300" />
+                <span className="text-sky-300 text-sm font-medium">
                   {isZh ? '适合什么项目先来聊' : 'Good fit for an initial conversation'}
                 </span>
               </div>
               <div className="space-y-4">
                 {fitCases.map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-sky-300 mt-0.5 flex-shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -438,7 +438,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div className="mt-8 pt-6 border-t border-white/10">
                 <Link
                   href={`/${lang}/services`}
-                  className="inline-flex items-center gap-2 text-amber-400 font-semibold hover:opacity-80 transition-opacity"
+                  className="inline-flex items-center gap-2 text-sky-300 font-semibold hover:opacity-80 transition-opacity"
                 >
                   {isZh ? '查看解决方案' : 'See the solution structure'}
                   <ArrowRight className="w-4 h-4" />
@@ -449,7 +449,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </SectionWithBg>
 
-      <SectionWithBg bgImage="/images/home-refresh/resort-pool.jpeg" overlayOpacity={0.82}>
+      <SectionWithBg bgImage="/images/home-modern/resort-pool.jpeg" overlayOpacity={0.82}>
         <ScrollFade>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -463,13 +463,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={`/${lang}/contact?type=plan`}
-                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#003b71] to-[#0072ce] text-white font-bold rounded-lg hover:shadow-lg hover:shadow-sky-500/25 transition-all"
               >
                 {isZh ? '获取方案' : 'Get a Plan'}
               </Link>
               <Link
                 href={`/${lang}/services`}
-                className="inline-flex items-center justify-center px-6 py-3 border border-white/25 text-white rounded-lg hover:border-amber-400 hover:text-amber-400 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 border border-white/25 text-white rounded-lg hover:border-sky-300 hover:text-sky-200 transition-colors"
               >
                 {isZh ? '查看解决方案' : 'View Solutions'}
               </Link>

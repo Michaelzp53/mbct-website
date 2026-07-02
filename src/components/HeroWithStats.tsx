@@ -15,12 +15,12 @@ interface AnimatedNumberProps {
 }
 
 const heroImages = [
-  '/images/home-refresh/hero-hotel-entrance.jpeg',
-  '/images/home-refresh/resort-pool.jpeg',
-  '/images/home-refresh/front-desk-service.jpg',
-  '/images/home-refresh/spa-suite.jpeg',
-  '/images/home-refresh/sky-restaurant.jpeg',
-  '/images/home-refresh/seaside-restaurant.jpeg',
+  '/images/home-modern/resort-pool.jpeg',
+  '/images/home-modern/urban-waterfront.jpeg',
+  '/images/home-modern/advisory-conversation.png',
+  '/images/home-modern/modern-service.jpg',
+  '/images/home-modern/sky-restaurant.jpeg',
+  '/images/home-modern/signature-lounge.jpeg',
 ]
 
 function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberProps) {
@@ -83,14 +83,14 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
   }, [nextImage])
 
   const stats = [
-    { icon: TrendingUp, value: 35, suffix: '%', label: isZh ? 'RevPAR 提升' : 'RevPAR Growth', color: '#8FAF9A' },
-    { icon: Users, value: 300, suffix: '+', label: isZh ? '服务酒店' : 'Hotels Served', color: '#C79A3B' },
-    { icon: Building2, value: 50, suffix: '+', label: isZh ? '覆盖城市' : 'Cities Covered', color: '#D8B98A' },
-    { icon: Award, value: 98, suffix: '%', label: isZh ? '客户满意度' : 'Client Satisfaction', color: '#f59e0b' },
+    { icon: TrendingUp, value: 35, suffix: '%', label: isZh ? 'RevPAR 提升' : 'RevPAR Growth', color: '#22c55e' },
+    { icon: Users, value: 300, suffix: '+', label: isZh ? '服务酒店' : 'Hotels Served', color: '#38bdf8' },
+    { icon: Building2, value: 50, suffix: '+', label: isZh ? '覆盖城市' : 'Cities Covered', color: '#8ab4f8' },
+    { icon: Award, value: 98, suffix: '%', label: isZh ? '客户满意度' : 'Client Satisfaction', color: '#a78bfa' },
   ]
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#17120d]">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#07111f]">
       {/* Background Images - desktop carousel */}
       {heroImages.map((img, index) => (
         <div
@@ -98,12 +98,13 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out"
           style={{
             opacity: index === currentIndex ? 1 : 0,
-            backgroundImage: `linear-gradient(to right, rgba(23, 18, 13, 0.78) 0%, rgba(91, 70, 49, 0.46) 48%, rgba(247, 241, 230, 0.08) 100%), url('${img}')`,
+            backgroundImage: `url('${img}')`,
           }}
         />
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-[#17120d]/20 via-transparent to-[#17120d]/55" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#07111f]/65 via-[#003b71]/30 to-white/0 dark:from-[#050816]/86 dark:via-[#0b1020]/62 dark:to-[#111827]/26" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#07111f]/28 dark:to-[#050816]/68" />
 
       {/* Image indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -119,7 +120,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             }}
             className={`h-2 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? 'w-8 bg-amber-400'
+                ? 'w-8 bg-sky-300'
                 : 'w-2 bg-white/60 hover:bg-white/80'
             }`}
             aria-label={`切换到第${index + 1}张图片`}
@@ -132,9 +133,9 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-amber-300 animate-pulse" />
-              <span className="text-amber-100 text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-sky-300/30 mb-8 animate-fade-in backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-sky-300 animate-pulse" />
+              <span className="text-sky-100 text-sm font-medium">
                 {isZh ? '迈创兄弟C&T · 酒店增长与数字化赋能伙伴' : 'MarvelBros C&T · Hospitality Growth & Digital Enablement Partner'}
               </span>
             </div>
@@ -143,7 +144,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               {isZh ? '让酒店资产' : 'Turn hotel assets'}
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-100 to-violet-200 dark:from-sky-300 dark:via-blue-200 dark:to-violet-300">
                 {isZh ? '变成可见、可理解、可转化的增长路径' : 'into visible, understandable, convertible growth paths'}
               </span>
             </h1>
@@ -164,14 +165,14 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
                 href={`/${lang}/services`}
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-amber-500/25 transition-all"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#003b71] to-[#0072ce] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-sky-500/25 transition-all"
               >
                 {isZh ? '我们能解决什么？' : 'What Can We Solve?'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href={`/${lang}/services/ai-hotel-website`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-amber-100/45 bg-white/10 text-white font-medium rounded-xl backdrop-blur-sm hover:border-amber-300 hover:text-amber-200 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-sky-100/45 bg-white/10 text-white font-medium rounded-xl backdrop-blur-sm hover:border-sky-300 hover:text-sky-100 transition-all"
               >
                 {isZh ? '了解 AI 信息平台建设方案' : 'Explore the AI Information Platform'}
               </Link>
@@ -181,8 +182,8 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           {/* Right Stats */}
           <div className="relative">
             {/* Stats Card */}
-            <div className="relative bg-[#17120d]/45 backdrop-blur-xl rounded-3xl border border-amber-100/20 p-8 shadow-2xl shadow-[#17120d]/30">
-              <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-amber-300/20 via-white/5 to-emerald-200/10 opacity-70" />
+            <div className="relative bg-[#07111f]/44 backdrop-blur-xl rounded-3xl border border-sky-100/22 p-8 shadow-2xl shadow-[#07111f]/25 dark:bg-[#07111f]/68 dark:shadow-[#050816]/40">
+              <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-sky-300/18 via-white/5 to-violet-400/16 opacity-80" />
               
               <div className="relative">
                 <h3 className="text-lg font-medium text-slate-300 mb-6">{isZh ? '项目判断与经营结果' : 'Project Judgment & Outcomes'}</h3>
@@ -191,7 +192,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
                   {stats.map((stat) => {
                     const Icon = stat.icon
                     return (
-                      <div key={stat.label} className="text-center p-4 rounded-2xl bg-[#fff8ec]/10 ring-1 ring-white/10">
+                      <div key={stat.label} className="text-center p-4 rounded-2xl bg-white/10 ring-1 ring-white/10">
                         <div 
                           className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3"
                           style={{ backgroundColor: `${stat.color}20` }}
@@ -210,7 +211,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
                 {/* Bottom Note */}
                 <div className="mt-6 pt-6 border-t border-white/10 text-center">
                   <p className="text-sm text-slate-300">
-                    {isZh ? '基于 ' : 'Based on '} <span className="text-amber-400">300+</span> {isZh ? '家酒店与项目场景的持续观察' : 'hotel and project scenarios observed over time'}
+                    {isZh ? '基于 ' : 'Based on '} <span className="text-sky-300">300+</span> {isZh ? '家酒店与项目场景的持续观察' : 'hotel and project scenarios observed over time'}
                   </p>
                 </div>
               </div>
