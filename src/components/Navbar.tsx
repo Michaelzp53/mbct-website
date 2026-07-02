@@ -35,7 +35,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 dark:bg-[#1a1a2e]/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 dark:supports-[backdrop-filter]:bg-[#1a1a2e]/90">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 dark:bg-[#17120d]/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 dark:supports-[backdrop-filter]:bg-[#17120d]/90">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href={`/${lang}/`} className="flex items-center gap-2 lg:gap-3 flex-shrink-0">

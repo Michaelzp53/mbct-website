@@ -18,7 +18,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       items: isZh
         ? ['可行性研究', '市场与竞争判断', '投资测算与回报模型']
         : ['Feasibility studies', 'Market and competitive assessment', 'Return modeling and investment scenarios'],
-      color: '#4285f4',
+      color: '#C79A3B',
     },
     {
       icon: TrendingUp,
@@ -29,7 +29,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       items: isZh
         ? ['运营诊断与增长', '私域与会员增长', '品牌定位与升级']
         : ['Operations diagnosis and growth', 'Private-domain and membership growth', 'Brand positioning and upgrades'],
-      color: '#34a853',
+      color: '#8FAF9A',
     },
     {
       icon: Shield,
@@ -40,7 +40,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       items: isZh
         ? ['AI 管理系统', '数据看板与流程机制', '陪跑式顾问支持']
         : ['AI management systems', 'Dashboards and operating mechanisms', 'Execution partnership and advisory support'],
-      color: '#f59e0b',
+      color: '#D8B98A',
     },
   ]
 
@@ -104,6 +104,33 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       desc: isZh
         ? '长期代写、上传和维护页面、推文、FAQ 和关键词，让 AI 持续有准确内容可以抓取。'
         : 'Continuously write, upload, and maintain pages, posts, FAQs, and keywords so AI has accurate content to crawl.',
+    },
+  ]
+
+  const hospitalityScenes = [
+    {
+      image: '/images/home-refresh/front-desk-service.jpg',
+      eyebrow: isZh ? '服务触点' : 'Service Touchpoint',
+      title: isZh ? '把前台服务变成可复盘的经营线索' : 'Turn front-desk service into reviewable operating signals',
+      desc: isZh
+        ? '从客人咨询、到店、投诉和复购线索里，看清团队执行和产品表达的真实状态。'
+        : 'Read the real state of team execution and product expression through inquiries, arrivals, complaints, and repeat intent.',
+    },
+    {
+      image: '/images/home-refresh/spa-suite.jpeg',
+      eyebrow: isZh ? '体验细节' : 'Experience Detail',
+      title: isZh ? '把空间美感转化为可定价的体验价值' : 'Translate space quality into priceable experience value',
+      desc: isZh
+        ? '不只看装修是否漂亮，更看它能否支撑客单价、套餐、停留时间和复购理由。'
+        : 'Beyond looking beautiful, the experience must support rate, packages, dwell time, and reasons to return.',
+    },
+    {
+      image: '/images/home-refresh/sky-restaurant.jpeg',
+      eyebrow: isZh ? '收益场景' : 'Revenue Scene',
+      title: isZh ? '让餐饮、会议和目的地内容共同带动收益' : 'Connect dining, events, and destination content to revenue',
+      desc: isZh
+        ? '把餐饮和空间优势放进经营模型里，而不是停留在宣传照片里。'
+        : 'Place dining and space advantages inside the operating model, not just inside marketing photos.',
     },
   ]
 
@@ -219,20 +246,24 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-950">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-16 md:py-20 bg-[#f7f1e6] dark:bg-[#14100c]">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute right-[-8rem] top-[-10rem] h-80 w-80 rounded-full bg-amber-200/45 blur-3xl dark:bg-amber-500/10" />
+          <div className="absolute left-[-10rem] bottom-[-12rem] h-96 w-96 rounded-full bg-[#8faf9a]/20 blur-3xl dark:bg-emerald-500/10" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollFade>
             <div className="max-w-3xl mx-auto text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 dark:border-primary/30 mb-6">
-                <Target className="w-4 h-4 text-primary" />
-                <span className="text-primary text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-amber-200/80 shadow-sm dark:bg-white/5 dark:border-amber-400/20 mb-6">
+                <Target className="w-4 h-4 text-amber-700 dark:text-amber-300" />
+                <span className="text-amber-800 dark:text-amber-300 text-sm font-medium">
                   {isZh ? '先判断你属于哪一种项目场景' : 'Start with the project situation you are in'}
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#17120d] dark:text-white mb-4">
                 {isZh ? '迈创兄弟C&T 不是给所有人一套标准答案' : 'MarvelBros C&T does not force one standard answer on every client'}
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">
+              <p className="text-[#5b4631] dark:text-slate-300 text-base md:text-lg leading-relaxed">
                 {isZh
                   ? <>我们先判断项目所处阶段、真正卡住的问题和更适合的推进路径，<br />再决定是做诊断、做方案，还是进入完整合作。</>
 
@@ -246,12 +277,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               const Icon = item.icon
               return (
                 <ScrollFade key={item.title} delay={index * 100}>
-                  <div className="h-full rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-7 shadow-sm">
+                  <div className="h-full rounded-3xl border border-white/80 dark:border-white/10 bg-white/82 dark:bg-white/[0.06] p-7 shadow-sm shadow-amber-900/5 backdrop-blur">
                     <div className={`w-12 h-12 rounded-2xl ${item.iconBg} ${item.iconColor} ring-1 ${item.iconRing} flex items-center justify-center mb-5`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">{item.title}</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">{item.desc}</p>
+                    <h3 className="text-xl font-semibold text-[#17120d] dark:text-white mb-3">{item.title}</h3>
+                    <p className="text-[#6f5a42] dark:text-slate-300 leading-relaxed text-sm md:text-base">{item.desc}</p>
                   </div>
                 </ScrollFade>
               )
@@ -260,7 +291,53 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <SectionWithBg bgImage="/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg" overlayOpacity={0.88}>
+      <section className="relative overflow-hidden bg-[#fffaf1] py-16 md:py-24 dark:bg-[#17120d]">
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 to-transparent dark:from-black/20" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollFade>
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#d8b98a]/70 bg-white/75 px-4 py-2 text-sm font-medium text-[#8a6422] shadow-sm dark:border-amber-400/20 dark:bg-white/5 dark:text-amber-300">
+                <Hotel className="h-4 w-4" />
+                {isZh ? '从漂亮页面，升级为经营可信度' : 'From attractive pages to operating credibility'}
+              </div>
+              <h2 className="text-3xl font-bold leading-tight text-[#17120d] md:text-4xl dark:text-white">
+                {isZh ? '网站视觉要让读者立刻相信：我们懂酒店现场' : 'The website should show that MBCT understands real hotel operations'}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-[#5b4631] md:text-lg dark:text-slate-300">
+                {isZh
+                  ? '这次首页不再只用抽象背景，而是用酒店入口、服务、SPA、餐饮和目的地场景，把 MBCT 的顾问判断放回真实经营环境。'
+                  : 'This refresh moves away from abstract backgrounds and uses entrances, service, spa, dining, and destination scenes to place MBCT judgment back in real operating environments.'}
+              </p>
+            </div>
+          </ScrollFade>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {hospitalityScenes.map((scene, index) => (
+              <ScrollFade key={scene.title} delay={index * 120}>
+                <article className="group h-full overflow-hidden rounded-[2rem] border border-[#ead8b9] bg-white shadow-sm shadow-amber-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-900/10 dark:border-white/10 dark:bg-white/[0.06] dark:hover:shadow-black/30">
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={scene.image}
+                      alt={scene.title}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#17120d]/65 via-transparent to-transparent" />
+                    <div className="absolute bottom-5 left-5 rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-white backdrop-blur">
+                      {scene.eyebrow}
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold leading-snug text-[#17120d] dark:text-white">{scene.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-[#6f5a42] dark:text-slate-300">{scene.desc}</p>
+                  </div>
+                </article>
+              </ScrollFade>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionWithBg bgImage="/images/home-refresh/seaside-restaurant.jpeg" overlayOpacity={0.82}>
         <ScrollFade>
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
@@ -309,7 +386,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </SectionWithBg>
 
-      <SectionWithBg bgImage="/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg" overlayOpacity={0.88}>
+      <SectionWithBg bgImage="/images/home-refresh/front-desk-service.jpg" overlayOpacity={0.84}>
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
           <ScrollFade>
             <div>
@@ -372,7 +449,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </SectionWithBg>
 
-      <SectionWithBg bgImage="/hero-rod-long-2P_ifaetDm0-unsplash.jpg" overlayOpacity={0.88}>
+      <SectionWithBg bgImage="/images/home-refresh/resort-pool.jpeg" overlayOpacity={0.82}>
         <ScrollFade>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">

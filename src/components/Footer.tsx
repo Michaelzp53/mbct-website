@@ -21,7 +21,7 @@ export function Footer({ lang, dict }: FooterProps) {
   ]
 
   return (
-    <footer className="bg-slate-100 dark:bg-[#1a1a2e] text-foreground">
+    <footer className="bg-[#f7f1e6] dark:bg-[#17120d] text-foreground">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.9fr_0.95fr]">
           <div>

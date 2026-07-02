@@ -15,15 +15,12 @@ interface AnimatedNumberProps {
 }
 
 const heroImages = [
-  '/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg',
-  '/hero-hung-li-1HbWj9BDbjE-unsplash.jpg',
-  '/hero-pexels-jimmy-liao.jpg',
-  '/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg',
-  '/hero-rod-long-2P_ifaetDm0-unsplash.jpg',
-  '/images/home-carousel/about-us-bg.png',
-  '/images/home-carousel/desktop-01.jpg',
-  '/images/home-carousel/desktop-02.jpg',
-  '/images/home-carousel/desktop-03.jpg',
+  '/images/home-refresh/hero-hotel-entrance.jpeg',
+  '/images/home-refresh/resort-pool.jpeg',
+  '/images/home-refresh/front-desk-service.jpg',
+  '/images/home-refresh/spa-suite.jpeg',
+  '/images/home-refresh/sky-restaurant.jpeg',
+  '/images/home-refresh/seaside-restaurant.jpeg',
 ]
 
 function AnimatedNumber({ value, suffix = '', duration = 2000 }: AnimatedNumberProps) {
@@ -86,14 +83,14 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
   }, [nextImage])
 
   const stats = [
-    { icon: TrendingUp, value: 35, suffix: '%', label: isZh ? 'RevPAR 提升' : 'RevPAR Growth', color: '#34a853' },
-    { icon: Users, value: 300, suffix: '+', label: isZh ? '服务酒店' : 'Hotels Served', color: '#4285f4' },
-    { icon: Building2, value: 50, suffix: '+', label: isZh ? '覆盖城市' : 'Cities Covered', color: '#f59e0b' },
-    { icon: Award, value: 98, suffix: '%', label: isZh ? '客户满意度' : 'Client Satisfaction', color: '#764ba2' },
+    { icon: TrendingUp, value: 35, suffix: '%', label: isZh ? 'RevPAR 提升' : 'RevPAR Growth', color: '#8FAF9A' },
+    { icon: Users, value: 300, suffix: '+', label: isZh ? '服务酒店' : 'Hotels Served', color: '#C79A3B' },
+    { icon: Building2, value: 50, suffix: '+', label: isZh ? '覆盖城市' : 'Cities Covered', color: '#D8B98A' },
+    { icon: Award, value: 98, suffix: '%', label: isZh ? '客户满意度' : 'Client Satisfaction', color: '#f59e0b' },
   ]
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#17120d]">
       {/* Background Images - desktop carousel */}
       {heroImages.map((img, index) => (
         <div
@@ -101,13 +98,12 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out"
           style={{
             opacity: index === currentIndex ? 1 : 0,
-            backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0.2) 100%), url('${img}')`,
+            backgroundImage: `linear-gradient(to right, rgba(23, 18, 13, 0.78) 0%, rgba(91, 70, 49, 0.46) 48%, rgba(247, 241, 230, 0.08) 100%), url('${img}')`,
           }}
         />
       ))}
 
-      {/* Subtle dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#17120d]/20 via-transparent to-[#17120d]/55" />
 
       {/* Image indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -137,8 +133,8 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           <div className="text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-primary text-sm font-medium">
+              <span className="w-2 h-2 rounded-full bg-amber-300 animate-pulse" />
+              <span className="text-amber-100 text-sm font-medium">
                 {isZh ? '迈创兄弟C&T · 酒店增长与数字化赋能伙伴' : 'MarvelBros C&T · Hospitality Growth & Digital Enablement Partner'}
               </span>
             </div>
@@ -175,7 +171,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
               </Link>
               <Link
                 href={`/${lang}/services/ai-hotel-website`}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-medium rounded-xl hover:border-amber-400 hover:text-amber-400 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-amber-100/45 bg-white/10 text-white font-medium rounded-xl backdrop-blur-sm hover:border-amber-300 hover:text-amber-200 transition-all"
               >
                 {isZh ? '了解 AI 信息平台建设方案' : 'Explore the AI Information Platform'}
               </Link>
@@ -185,8 +181,8 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           {/* Right Stats */}
           <div className="relative">
             {/* Stats Card */}
-            <div className="relative bg-slate-900/40 backdrop-blur-xl rounded-3xl border border-white/20 p-8">
-              <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-amber-400/20 via-transparent to-purple-500/20 opacity-50" />
+            <div className="relative bg-[#17120d]/45 backdrop-blur-xl rounded-3xl border border-amber-100/20 p-8 shadow-2xl shadow-[#17120d]/30">
+              <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-amber-300/20 via-white/5 to-emerald-200/10 opacity-70" />
               
               <div className="relative">
                 <h3 className="text-lg font-medium text-slate-300 mb-6">{isZh ? '项目判断与经营结果' : 'Project Judgment & Outcomes'}</h3>
@@ -195,7 +191,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
                   {stats.map((stat) => {
                     const Icon = stat.icon
                     return (
-                      <div key={stat.label} className="text-center p-4 rounded-2xl bg-slate-800/50">
+                      <div key={stat.label} className="text-center p-4 rounded-2xl bg-[#fff8ec]/10 ring-1 ring-white/10">
                         <div 
                           className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3"
                           style={{ backgroundColor: `${stat.color}20` }}
