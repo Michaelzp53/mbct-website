@@ -298,15 +298,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="mx-auto mb-12 max-w-3xl text-center">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-sm font-medium text-[#003b71] shadow-sm dark:border-sky-300/25 dark:bg-white/5 dark:text-[#8ab4f8]">
                 <Hotel className="h-4 w-4" />
-                {isZh ? '从漂亮页面，升级为经营可信度' : 'From attractive pages to operating credibility'}
+                {isZh ? '把酒店现场，转化为经营价值' : 'Turning hotel moments into operating value'}
               </div>
               <h2 className="text-3xl font-bold leading-tight text-[#101828] md:text-4xl dark:text-white">
-                {isZh ? '网站视觉要让读者立刻相信：我们懂酒店现场' : 'The website should show that MBCT understands real hotel operations'}
+                {isZh ? '真正的酒店增长，发生在每一个服务触点里' : 'Real hotel growth happens at every service touchpoint'}
               </h2>
               <p className="mt-4 text-base leading-relaxed text-[#344054] md:text-lg dark:text-slate-300">
                 {isZh
-                  ? '这次首页不再只用抽象背景，而是用酒店入口、服务、SPA、餐饮和目的地场景，把 MBCT 的顾问判断放回真实经营环境。'
-                  : 'This refresh moves away from abstract backgrounds and uses entrances, service, spa, dining, and destination scenes to place MBCT judgment back in real operating environments.'}
+                  ? '从前台接待、空间体验到餐饮收益，MBCT 关注的不只是表面呈现，而是酒店现场每一个影响转化、复购和经营效率的关键细节。'
+                  : 'From front-desk service and spatial experience to dining revenue, MBCT focuses on the operational details that shape conversion, repeat demand, and management efficiency.'}
               </p>
             </div>
           </ScrollFade>
