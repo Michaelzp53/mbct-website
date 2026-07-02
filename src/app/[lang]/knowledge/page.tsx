@@ -71,6 +71,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   }
 
   const articles = [
+    {
+      id: 605,
+      type: 'article',
+      title: "AI 搜索带来的酒店咨询线索，为什么更需要先分级再跟进？",
+      titleEn: "Why AI-Driven Hotel Inquiries Need Lead Scoring Before Follow-Up",
+      slug: "ai-search-hotel-inquiries-need-lead-scoring",
+      summary: "AI 搜索带来更多酒店咨询,但咨询增加不等于成交增加。酒店必须先做线索分级与企业客户画像,才能把高意图客户留下来。",
+      summaryEn: "AI search sends more inquiries to hotels, but more inquiries do not mean more bookings. Lead scoring and corporate client profiles are now essential.",
+      firstLine: "AI 搜索带来的酒店咨询线索，为什么更需要先分级再跟进？",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-02",
+      readTime: 12,
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+      featured: true,
+    },
     
 
         {
