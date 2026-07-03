@@ -1382,7 +1382,24 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       date: '2026-05-29',
       readTime: '12分钟',
       tag: '行业报告',
+    },    {
+      id: 606,
+      type: "report",
+      title: "2026 酒店报价纪律报告:AI 和搜索带来需求后,酒店为什么更要守住利润底线?",
+      titleEn: "2026 Hotel Pricing Discipline Report: Why Hotels Must Hold the Profit Floor When AI and Search Bring New Demand",
+      slug: "hotel-pricing-discipline-ai-search-demand-profit-floor-2026-07-03",
+      summary: "酒店在新增需求面前最容易犯的错误，不是反应慢，而是没有报价纪律。AI 搜索、官网内容、平台曝光和企业询价把高意图客户送到前台以后，真正决定利润质量的不是询盘数量，而是酒店会不会判断需求质量、核算渠道成本、设置价格底线、并在成交后认真复盘。需求增长只是开始，报价纪律才决定利润质量。",
+      summaryEn: "The most common mistake a hotel makes when new demand arrives is not being slow to react. It is having no pricing discipline at all. Once AI search, official website content, platform exposure, and co",
+      firstLine: "酒店在新增需求面前最容易犯的错误，不是反应慢，而是没有报价纪律。AI 搜索、官网内容、平台曝光和企业询价把高意图客户送到前台以后，真正决定利润质量的不是询盘数量，而是酒店会不会判断需求质量、核算渠道成本、设置价格底线、并在成交后认真复盘。需求增长只是开始，报价纪律才决定利润质量。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-03",
+      readTime: 8,
+      tag: "行业报告",
+      tagColor: "bg-[#3b82f6]",
+      tagTextColor: "text-white",
+      featured: true,
     },
+
   ]
 
   // 案例研究 - 2026-04-22新增1篇
@@ -1861,7 +1878,24 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       readTime: 14,
       featured: false,
       image: '',
+    },    {
+      id: 607,
+      type: "case",
+      title: "一家城市商务酒店咨询变多后,为什么越接单越不赚钱?",
+      titleEn: "Why a City Business Hotel Made Less Money with More Orders: A Case Study on Inquiry Growth and Profit Quality",
+      slug: "urban-business-hotel-more-orders-less-profit-2026-07-03",
+      summary: "咨询变多不等于利润变多。这家酒店把咨询量、订单量、入住率全部拉高，但 ADR 持续下滑，团队订单用低价锁走高价值房晚，早餐、会议室、延迟退房被口头赠光，企业协议客户越多越忙、净贡献却没同步增长。问题不是市场不好、销售不努力，而是酒店从来没把“接单”当成“经营”来算：没有净价表、没有客户分级、没有报价权限、没有成交后复盘。本案例为脱敏综合案例，所有名称、地区和数字均为示意，不对应任何真实酒店。",
+      summaryEn: "More inquiries do not mean more profit. This hotel pushed inquiry volume, order volume, and occupancy all up, but ADR kept slipping. Team bookings locked away high-value room nights at low prices. Bre",
+      firstLine: "咨询变多不等于利润变多。这家酒店把咨询量、订单量、入住率全部拉高，但 ADR 持续下滑，团队订单用低价锁走高价值房晚，早餐、会议室、延迟退房被口头赠光，企业协议客户越多越忙、净贡献却没同步增长。问题不是市场不好、销售不努力，而是酒店从来没把“接单”当成“经营”来算：没有净价表、没有客户分级、没有报价权限、没有成交后复盘。本案例为脱敏综合案例，所有名称、地区和数字均为示意，不对应任何真实酒店。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-03",
+      category: "case-study",
+      tag: "案例研究",
+      readTime: 7,
+      featured: false,
+      image: "",
     },
+
 
 
   ]
