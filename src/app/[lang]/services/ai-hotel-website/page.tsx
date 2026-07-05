@@ -362,21 +362,21 @@ export default async function AiHotelWebsitePage({
                   : 'We help hotels turn their value into an information structure that AI systems and guests can understand more easily, and continuously maintain content assets that can be searched, referenced, and used for inquiries. Whether, when, and to whom AI recommends a hotel is still determined by search platforms and AI systems. We do not claim to control algorithms. We help hotels build the foundation that makes them easier to understand and more worthy of recommendation.'}
               </p>
             </div>
-            <div className="rounded-[2rem] border border-amber-200/70 bg-[#fff8ec] p-8 text-[#17120d] shadow-xl shadow-black/10 dark:border-amber-200/70 dark:bg-[#fff8ec] dark:text-[#17120d]">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-700">
+            <div className="rounded-[2rem] border border-amber-200/70 bg-[#fff8ec] p-8 text-[#17120d] shadow-xl shadow-black/10 dark:border-white/10 dark:bg-white/[0.06] dark:text-white">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
                 {isZh ? '下一步' : 'Next step'}
               </p>
               <h2 className="text-3xl font-bold leading-tight">
                 {isZh ? '想知道 AI 是否能抓到并理解您的酒店信息？' : 'Want to know whether AI can find and understand your hotel information?'}
               </h2>
-              <p className="mt-5 leading-relaxed text-[#5b4631] dark:text-[#5b4631]">
+              <p className="mt-5 leading-relaxed text-[#5b4631] dark:text-slate-300">
                 {isZh
                   ? '可以先从一次 AI 信息体检开始。告诉我们酒店名称、所在城市、是否已有官网、主要依赖哪些平台，以及是否需要我们代写和维护内容，我们会判断它是否具备 AI 搜索时代的信息承接能力。'
                   : 'Start with an AI information audit. Tell us the hotel name, city, whether it has a website, which platforms it depends on, and whether you need us to write and maintain content. We will assess whether it has the information readiness needed in the age of AI search.'}
               </p>
               <Link
                 href={`/${lang}/contact?type=ai-info-platform`}
-                className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-300 dark:text-[#17120d] dark:shadow-black/20"
               >
                 {isZh ? '获取我的酒店 AI 信息平台建议' : 'Request AI information platform recommendations'}
                 <ArrowRight className="h-4 w-4" />
