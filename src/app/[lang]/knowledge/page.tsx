@@ -72,6 +72,26 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 611,
+      type: "article",
+      title: "暑期客流增长，不等于酒店经营变好：家庭与夜间消费场景下的承载力考验",
+      titleEn: "More Summer Travelers Do Not Automatically Mean Better Hotel Performance",
+      slug: "summer-family-night-economy-service-capacity-2026-07-05",
+      summary: "暑期客流增长只是入口，家庭客、亲子客和夜间文旅客真正考验酒店的房态节奏、早餐峰值、夜间服务、亲子补给和收益结构。酒店不能只涨价，更要重做场景承载力。",
+      summaryEn: "Summer traffic is only the entrance. Family, parent-child and nighttime tourism demand test room delivery, breakfast peaks, night service, parent-child supplies and revenue structure.",
+      firstLine: "暑期客流上来以后，很多酒店第一反应是提价、加房量、抢渠道、做套餐。但对业主和总经理来说，真正需要先问的问题不是能不能卖得更满，而是这家酒店有没有能力接住家庭客、亲子客、夜间消费客和高峰入住压力。客流增长不自动等于经营变好，只有当收入结构、服务交付和口碑沉淀同步变好，客流才会变成利润。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-05",
+      category: "industry-insights",
+      tag: "趋势分析",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 10,
+      featured: true,
+      image: "",
+    },
+
+    {
       id: 605,
       type: 'article',
       title: "AI 搜索带来的酒店咨询线索，为什么更需要先分级再跟进？",
@@ -1400,6 +1420,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
       featured: true,
     },
 
+    {
+      id: 609,
+      type: "report",
+      title: "酒店越来越难做，为什么投资人还在进入？",
+      titleEn: "Why Are Hotels Becoming Harder to Operate, Yet Investors Still Keep Entering the Sector?",
+      slug: "why-investors-still-enter-hotel-sector-2026-07-04",
+      summary: "酒店经营越来越难，但投资人仍在进入，背后不是简单矛盾，而是经营端利润承压与资产端重构机会并存。本文从国内经济、政策方向、旅游消费、国际形势和存量资产低效五个角度解释酒店投资正在进入专业化买手市场。",
+      summaryEn: "Hotel operations are getting harder, yet investors keep entering. The split is structural: operators face thinning margins while investors see asset restructuring opportunities. This article explains how hotel investment is moving into a professional buyer's market.",
+      firstLine: "一线酒店人说难，是真的难。投资人还在进入，也不一定是不懂风险。矛盾的根源在于，两类人看的不是同一张表：经营者看到的是利润被压薄，投资人看到的是资产重构机会；经营者面对的是每天的房价、成本、差评和团队，投资人面对的是周期、政策、现金流、物业价值和未来退出。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-04",
+      category: "industry-insights",
+      tag: "行业报告",
+      tagColor: "bg-[#3b82f6]",
+      tagTextColor: "text-white",
+      readTime: 8,
+      featured: false,
+      image: "",
+    },
   ]
 
   // 案例研究 - 2026-04-22新增1篇
@@ -1898,6 +1937,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
 
 
+    {
+      id: 608,
+      type: "case",
+      title: "一家周末满房的酒店，为什么周一差评反而变多？",
+      titleEn: "Why Does a Hotel That Sells Out on the Weekend Suddenly See More Negative Reviews on Monday?",
+      slug: "hotel-full-occupancy-monday-negative-reviews-2026-07-04",
+      summary: "满房不是胜利，是酒店服务系统的压力测试。本文用一线诊断视角拆解周一差评集中爆发的真实链路：等待、卫生、响应延迟、承诺落差，并给出五维服务承载力检查框架。",
+      summaryEn: "Full occupancy is not a victory. It is a stress test for hotel service systems. This article uses a first-line diagnosis lens to unpack the real chain behind Monday's negative reviews and offers a five-dimension service capacity checklist.",
+      firstLine: "不是客人变苛刻了，而是服务系统在高峰期被击穿。满房是销售的成功，但不一定是运营的成功。当入住率超过98%，服务系统没有任何缓冲空间，任何一个小环节的延迟都会连锁放大。前台排队超过二十分钟，客人不会觉得酒店生意好，只会觉得管理混乱。房间下午三点还没准备好，客人不会理解翻房需要时间，只会记住承诺没有兑现。早餐排长队、咖啡机空了没人补，这些在低入住率时看不出来，满",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-04",
+      category: "case-study",
+      tag: "案例研究",
+      readTime: 7,
+      featured: true,
+      image: "",
+    },
   ]
 
   // 热门话题:自动选择所有文章中日期最新的文章
