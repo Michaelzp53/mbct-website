@@ -326,9 +326,9 @@ export default async function AiHotelWebsitePage({
           </div>
         </section>
 
-        <section className="py-16">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-            <div>
+        <section className="py-12">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
                 {isZh ? '您将得到' : 'What you receive'}
               </p>
@@ -336,18 +336,18 @@ export default async function AiHotelWebsitePage({
                 {isZh ? '不只做一个页面。长期维护酒店在 AI 世界里的信息资产。' : 'Not just a page. Long-term maintenance of the hotel’s information assets in the AI world.'}
               </h2>
             </div>
-            <div className="grid gap-3">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {outcomes.map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-2xl border border-amber-200/70 bg-white/70 p-4 dark:border-white/10 dark:bg-white/[0.05]">
+                <div key={item} className="flex min-h-28 items-start gap-3 rounded-2xl border border-amber-200/70 bg-white/70 p-5 shadow-sm shadow-amber-900/5 dark:border-white/10 dark:bg-white/[0.05]">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700 dark:text-amber-300" />
-                  <span className="leading-relaxed text-[#5b4631] dark:text-slate-300">{item}</span>
+                  <span className="text-sm leading-relaxed text-[#5b4631] dark:text-slate-300 md:text-base">{item}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-[#17120d] py-16 text-white">
+        <section className="bg-[#17120d] py-14 text-white">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-8">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/10 text-amber-300">
