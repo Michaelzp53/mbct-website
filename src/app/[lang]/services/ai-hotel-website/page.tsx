@@ -163,22 +163,22 @@ export default async function AiHotelWebsitePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="min-h-screen bg-[#fff8ec] text-[#17120d] dark:bg-[#17120d] dark:text-white">
+      <main className="min-h-screen bg-[#f5f7fb] text-[#101828] dark:bg-[#0b1020] dark:text-white">
         <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
           <div className="absolute inset-0">
-            <div className="absolute left-[-12rem] top-[-10rem] h-96 w-96 rounded-full bg-amber-200/50 blur-3xl dark:bg-amber-500/10" />
-            <div className="absolute right-[-10rem] top-24 h-96 w-96 rounded-full bg-emerald-100/70 blur-3xl dark:bg-emerald-500/10" />
+            <div className="absolute left-[-12rem] top-[-10rem] h-96 w-96 rounded-full bg-sky-100/80 blur-3xl dark:bg-sky-500/10" />
+            <div className="absolute right-[-10rem] top-24 h-96 w-96 rounded-full bg-blue-100/70 blur-3xl dark:bg-emerald-500/10" />
           </div>
           <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
             <div>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-300/70 bg-white/70 px-4 py-2 text-sm font-medium text-amber-800 shadow-sm dark:border-amber-400/20 dark:bg-white/5 dark:text-amber-300">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-4 py-2 text-sm font-medium text-[#003b71] shadow-sm dark:border-sky-300/25 dark:bg-white/5 dark:text-[#8ab4f8]">
                 <Sparkles className="h-4 w-4" />
                 {isZh ? '酒店 AI 信息平台建设与内容托管' : 'AI-ready hotel information platform and content operations'}
               </div>
               <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
                 {isZh ? '您的酒店值得被 AI 推荐，也值得被客人选择' : 'Your hotel deserves to be understood by AI and chosen by the right guests'}
               </h1>
-              <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#5b4631] md:text-xl dark:text-slate-300">
+              <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#475467] md:text-xl dark:text-slate-300">
                 {isZh
                   ? '很多酒店没有 IT 团队，也没有人持续维护网站、页面、推文和 AI 关键词。我们帮助酒店搭建 AI 更容易抓取的信息平台，并长期代写、上传和维护内容。已有官网可以优化，没有官网也可以从轻量平台开始。'
                   : 'Many hotels have no IT team and no one continuously maintaining websites, pages, posts, and AI keywords. We help hotels build an AI-readable information platform and provide ongoing content writing, uploading, and maintenance. Existing websites can be optimized; hotels without one can start with a lightweight platform.'}
@@ -186,22 +186,22 @@ export default async function AiHotelWebsitePage({
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href={`/${lang}/contact?type=ai-info-platform`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-400 dark:text-[#17120d]"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#003b71] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/10 transition-all hover:-translate-y-0.5 hover:bg-[#002f5f] hover:shadow-xl dark:bg-[#8ab4f8] dark:text-[#06101f]"
                 >
                   {isZh ? '获取我的酒店 AI 信息平台建议' : 'Request AI information platform recommendations'}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="#process"
-                  className="inline-flex items-center justify-center rounded-xl border border-amber-700/30 bg-white/60 px-6 py-3 text-sm font-semibold text-[#5b4631] transition-colors hover:border-amber-700 hover:text-[#17120d] dark:border-amber-400/25 dark:bg-white/5 dark:text-amber-200 dark:hover:text-white"
+                  className="inline-flex items-center justify-center rounded-xl border border-sky-300 bg-white/60 px-6 py-3 text-sm font-semibold text-[#344054] transition-colors hover:border-[#003b71] hover:text-[#101828] dark:border-sky-300/25 dark:bg-white/5 dark:text-sky-100 dark:hover:text-white"
                 >
                   {isZh ? '了解我们怎么做' : 'See how we work'}
                 </Link>
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-amber-200/70 bg-white/75 p-6 shadow-xl shadow-amber-900/10 backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+            <div className="rounded-[2rem] border border-slate-200 bg-white/75 p-6 shadow-xl shadow-slate-900/10 backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#003b71] dark:text-[#8ab4f8]">
                 {isZh ? '核心判断' : 'Core judgment'}
               </p>
               <blockquote className="mt-4 text-2xl font-semibold leading-snug md:text-3xl">
@@ -213,8 +213,8 @@ export default async function AiHotelWebsitePage({
                 {(isZh
                   ? ['不制造渠道对立', '不夸大算法承诺', '平台建设与内容托管一起做']
                   : ['No channel confrontation', 'No exaggerated algorithm promises', 'Platform build and content operations together']).map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-2xl bg-[#f7f1e6] px-4 py-3 text-sm text-[#5b4631] dark:bg-white/5 dark:text-slate-300">
-                    <CheckCircle2 className="h-4 w-4 text-amber-700 dark:text-amber-300" />
+                  <div key={item} className="flex items-center gap-3 rounded-2xl bg-[#f5f7fb] px-4 py-3 text-sm text-[#475467] dark:bg-white/5 dark:text-slate-300">
+                    <CheckCircle2 className="h-4 w-4 text-[#003b71] dark:text-[#8ab4f8]" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -226,7 +226,7 @@ export default async function AiHotelWebsitePage({
         <section className="bg-white py-16 dark:bg-slate-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#003b71] dark:text-[#8ab4f8]">
                 {isZh ? '痛点' : 'The problem'}
               </p>
               <h2 className="text-3xl font-bold leading-tight md:text-4xl">
@@ -235,10 +235,10 @@ export default async function AiHotelWebsitePage({
             </div>
             <div className="mt-10 grid gap-4 md:grid-cols-2">
               {painPoints.map((item) => (
-                <div key={item} className="rounded-3xl border border-[#eadbc4] bg-[#fff8ec] p-6 dark:border-white/10 dark:bg-white/[0.04]">
+                <div key={item} className="rounded-3xl border border-slate-200 bg-[#f5f7fb] p-6 dark:border-white/10 dark:bg-white/[0.04]">
                   <div className="flex gap-4">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-amber-700 dark:text-amber-300" />
-                    <p className="leading-relaxed text-[#5b4631] dark:text-slate-300">{item}</p>
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-[#003b71] dark:text-[#8ab4f8]" />
+                    <p className="leading-relaxed text-[#475467] dark:text-slate-300">{item}</p>
                   </div>
                 </div>
               ))}
@@ -248,11 +248,11 @@ export default async function AiHotelWebsitePage({
 
         <section className="py-16">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-[2rem] border border-amber-200/70 bg-white/75 p-8 shadow-sm md:p-10 dark:border-white/10 dark:bg-white/[0.05]">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+            <div className="rounded-[2rem] border border-slate-200 bg-white/75 p-8 shadow-sm md:p-10 dark:border-white/10 dark:bg-white/[0.05]">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#003b71] dark:text-[#8ab4f8]">
                 {isZh ? '共情' : 'Why this matters'}
               </p>
-              <div className="space-y-5 text-lg leading-relaxed text-[#5b4631] dark:text-slate-300">
+              <div className="space-y-5 text-lg leading-relaxed text-[#475467] dark:text-slate-300">
                 <p>
                   {isZh
                     ? '我们见过太多这样的酒店：位置好、服务好、客户口碑好，但没有官网，或者只有几年没人维护的页面。'
@@ -263,7 +263,7 @@ export default async function AiHotelWebsitePage({
                     ? '这不是酒店老板的错，是客人找酒店的方式变了。AI 搜索、地图搜索和移动端浏览正在成为新的入口，而很多酒店没有人帮他们写内容、上内容、改关键词、维护页面。'
                     : 'This is not the owner’s fault. The way guests find hotels has changed. AI search, map search, and mobile browsing are becoming new entry points, while many hotels have no one to write content, upload content, refine keywords, or maintain pages.'}
                 </p>
-                <p className="font-semibold text-[#17120d] dark:text-white">
+                <p className="font-semibold text-[#101828] dark:text-white">
                   {isZh
                     ? '迈创兄弟C&T 做的，就是帮这些好酒店重新被看见、被理解、被选择。'
                     : 'MarvelBros C&T helps good hotels become visible, understandable, and easier to choose.'}
@@ -276,7 +276,7 @@ export default async function AiHotelWebsitePage({
         <section id="process" className="bg-white py-16 dark:bg-slate-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#003b71] dark:text-[#8ab4f8]">
                 {isZh ? '我们怎么做' : 'How we work'}
               </p>
               <h2 className="text-3xl font-bold leading-tight md:text-4xl">
@@ -287,17 +287,17 @@ export default async function AiHotelWebsitePage({
               {process.map((item, index) => {
                 const Icon = item.icon
                 return (
-                  <div key={item.title} className="rounded-3xl border border-[#eadbc4] bg-[#fff8ec] p-6 dark:border-white/10 dark:bg-white/[0.04]">
+                  <div key={item.title} className="rounded-3xl border border-slate-200 bg-[#f5f7fb] p-6 dark:border-white/10 dark:bg-white/[0.04]">
                     <div className="mb-5 flex items-center justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-800 ring-1 ring-amber-200 dark:bg-amber-400/10 dark:text-amber-300 dark:ring-amber-400/20">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-[#003b71] ring-1 ring-sky-200 dark:bg-[#8ab4f8]/10 dark:text-[#8ab4f8] dark:ring-sky-300/20">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <span className="text-sm font-bold text-amber-700/70 dark:text-amber-300/70">
+                      <span className="text-sm font-bold text-[#003b71]/70 dark:text-[#8ab4f8]/70">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
                     <h3 className="text-xl font-semibold">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#6f5a42] dark:text-slate-300">{item.desc}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-[#475467] dark:text-slate-300">{item.desc}</p>
                   </div>
                 )
               })}
@@ -307,8 +307,8 @@ export default async function AiHotelWebsitePage({
 
         <section className="py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-[2rem] border border-amber-200/70 bg-white/75 p-8 shadow-sm md:p-10 dark:border-white/10 dark:bg-white/[0.05]">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+            <div className="rounded-[2rem] border border-slate-200 bg-white/75 p-8 shadow-sm md:p-10 dark:border-white/10 dark:bg-white/[0.05]">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#003b71] dark:text-[#8ab4f8]">
                 {isZh ? '交付证据' : 'Evidence of work'}
               </p>
               <h2 className="text-3xl font-bold leading-tight md:text-4xl">
@@ -316,9 +316,9 @@ export default async function AiHotelWebsitePage({
               </h2>
               <div className="mt-8 grid gap-4 md:grid-cols-3">
                 {proofItems.map((item) => (
-                  <div key={item} className="rounded-2xl border border-[#eadbc4] bg-[#fff8ec] p-5 dark:border-white/10 dark:bg-white/[0.04]">
-                    <CheckCircle2 className="mb-4 h-5 w-5 text-amber-700 dark:text-amber-300" />
-                    <p className="text-sm leading-relaxed text-[#5b4631] dark:text-slate-300">{item}</p>
+                  <div key={item} className="rounded-2xl border border-slate-200 bg-[#f5f7fb] p-5 dark:border-white/10 dark:bg-white/[0.04]">
+                    <CheckCircle2 className="mb-4 h-5 w-5 text-[#003b71] dark:text-[#8ab4f8]" />
+                    <p className="text-sm leading-relaxed text-[#475467] dark:text-slate-300">{item}</p>
                   </div>
                 ))}
               </div>
@@ -329,7 +329,7 @@ export default async function AiHotelWebsitePage({
         <section className="py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#003b71] dark:text-[#8ab4f8]">
                 {isZh ? '您将得到' : 'What you receive'}
               </p>
               <h2 className="text-3xl font-bold leading-tight md:text-4xl">
@@ -338,45 +338,45 @@ export default async function AiHotelWebsitePage({
             </div>
             <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {outcomes.map((item) => (
-                <div key={item} className="flex min-h-28 items-start gap-3 rounded-2xl border border-amber-200/70 bg-white/70 p-5 shadow-sm shadow-amber-900/5 dark:border-white/10 dark:bg-white/[0.05]">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700 dark:text-amber-300" />
-                  <span className="text-sm leading-relaxed text-[#5b4631] dark:text-slate-300 md:text-base">{item}</span>
+                <div key={item} className="flex min-h-28 items-start gap-3 rounded-2xl border border-slate-200 bg-white/70 p-5 shadow-sm shadow-slate-900/5 dark:border-white/10 dark:bg-white/[0.05]">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#003b71] dark:text-[#8ab4f8]" />
+                  <span className="text-sm leading-relaxed text-[#475467] dark:text-slate-300 md:text-base">{item}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-[#17120d] py-14 text-white">
+        <section className="bg-white py-14 text-[#101828] dark:bg-[#0b1020] dark:text-white">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-8">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/10 text-amber-300">
+            <div className="rounded-[2rem] border border-slate-200 bg-[#f5f7fb] p-8 shadow-sm shadow-slate-900/5 dark:border-white/10 dark:bg-white/[0.06]">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-[#003b71] dark:bg-[#8ab4f8]/10 dark:text-[#8ab4f8]">
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <h2 className="text-3xl font-bold leading-tight">
                 {isZh ? '我们承诺把酒店信息整理得更清楚，但不夸大 AI 推荐结果' : 'We make the hotel clearer to understand, without exaggerating algorithm outcomes'}
               </h2>
-              <p className="mt-5 leading-relaxed text-slate-300">
+              <p className="mt-5 leading-relaxed text-[#475467] dark:text-slate-300">
                 {isZh
                   ? '我们能帮助酒店把自身价值整理成 AI 和客人更容易理解的信息结构，并持续维护可被搜索、可被引用、可被询价的内容资产。AI 是否推荐、推荐给谁、何时推荐，仍由搜索平台和 AI 系统自身规则决定。我们不承诺控制算法，但会帮助酒店把“更容易被理解、也更值得被推荐”的基础做好。'
                   : 'We help hotels turn their value into an information structure that AI systems and guests can understand more easily, and continuously maintain content assets that can be searched, referenced, and used for inquiries. Whether, when, and to whom AI recommends a hotel is still determined by search platforms and AI systems. We do not claim to control algorithms. We help hotels build the foundation that makes them easier to understand and more worthy of recommendation.'}
               </p>
             </div>
-            <div className="rounded-[2rem] border border-amber-200/70 bg-[#fff8ec] p-8 text-[#17120d] shadow-xl shadow-black/10 dark:border-white/10 dark:bg-white/[0.06] dark:text-white">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-8 text-[#101828] shadow-xl shadow-slate-900/10 dark:border-white/10 dark:bg-white/[0.06] dark:text-white">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#003b71] dark:text-[#8ab4f8]">
                 {isZh ? '下一步' : 'Next step'}
               </p>
               <h2 className="text-3xl font-bold leading-tight">
                 {isZh ? '想知道 AI 是否能抓到并理解您的酒店信息？' : 'Want to know whether AI can find and understand your hotel information?'}
               </h2>
-              <p className="mt-5 leading-relaxed text-[#5b4631] dark:text-slate-300">
+              <p className="mt-5 leading-relaxed text-[#475467] dark:text-slate-300">
                 {isZh
                   ? '可以先从一次 AI 信息体检开始。告诉我们酒店名称、所在城市、是否已有官网、主要依赖哪些平台，以及是否需要我们代写和维护内容，我们会判断它是否具备 AI 搜索时代的信息承接能力。'
                   : 'Start with an AI information audit. Tell us the hotel name, city, whether it has a website, which platforms it depends on, and whether you need us to write and maintain content. We will assess whether it has the information readiness needed in the age of AI search.'}
               </p>
               <Link
                 href={`/${lang}/contact?type=ai-info-platform`}
-                className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#17120d] px-6 py-3 text-sm font-semibold text-[#fff8ec] shadow-lg shadow-amber-900/10 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-amber-300 dark:text-[#17120d] dark:shadow-black/20"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#003b71] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/10 transition-all hover:-translate-y-0.5 hover:bg-[#002f5f] hover:shadow-xl dark:bg-[#8ab4f8] dark:text-[#06101f] dark:shadow-black/20"
               >
                 {isZh ? '获取我的酒店 AI 信息平台建议' : 'Request AI information platform recommendations'}
                 <ArrowRight className="h-4 w-4" />
