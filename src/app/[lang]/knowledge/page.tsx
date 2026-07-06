@@ -72,6 +72,26 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 612,
+      type: "article",
+      title: "客人在 AI 搜索里问“附近高品质酒店”，为什么你的酒店没有被推荐？",
+      titleEn: "When Guests Ask AI for \"Nearby Quality Hotels,\" Why Isn't Your Hotel Recommended?",
+      slug: "why-ai-search-does-not-recommend-your-hotel-2026-07-06",
+      summary: "客人开始先问 AI 再去 OTA 比价。酒店如果信息分散、场景不清、官网和平台不一致，就可能在第一轮候选名单里被跳过。",
+      summaryEn: "Guests are asking AI before comparing hotels on OTAs. If hotel information is fragmented, vague, or inconsistent, the hotel may be skipped before guests ever compare prices.",
+      firstLine: "这不是一个小问题。因为客人还没打开 OTA、还没比较价格、还没看官网之前，第一轮候选名单可能已经在 AI 的回答里形成。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-06",
+      category: "industry-insights",
+      tag: "趋势分析",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 8,
+      featured: true,
+      image: "",
+    },
+
+    {
       id: 611,
       type: "article",
       title: "为什么游客更多了，酒店老板反而更累？暑期经营先看服务承载力",
