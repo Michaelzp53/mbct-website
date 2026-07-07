@@ -216,6 +216,24 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     {isZh ? '了解体检怎么做' : 'How the diagnostic works'}
                   </Link>
                 </div>
+                <Link
+                  href={`/${lang}/lean/article/hotel-website-direct-booking-ota-trust-2026-07-07`}
+                  className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
+                >
+                  <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
+                    {isZh ? '今日热门话题' : 'Today\'s Hot Topic'}
+                  </div>
+                  <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
+                    {isZh
+                      ? '酒店官网有了，为什么客人看完还是回到携程、美团下单？'
+                      : 'Why do hotel guests still go back to OTAs after visiting the website?'}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
+                    {isZh
+                      ? '不是官网没用，而是官网还没有回答客人下单前最关心的问题。看看酒店如何把 AI 流量接到自己的直订和私域入口。'
+                      : 'The issue is not that hotel websites are useless. They often fail to answer the questions guests need before booking directly.'}
+                  </p>
+                </Link>
               </div>
             </ScrollFade>
 
