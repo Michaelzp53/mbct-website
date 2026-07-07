@@ -76,4 +76,10 @@ Email: contactme@marvelbros.com
 - Hotel Website Traffic but Few Direct Bookings: https://www.marvelbros.com/zh/knowledge/hotel-website-traffic-but-few-direct-bookings-2026-07-07
 - Hotels Need Topic Clusters and Structured Content Assets: https://www.marvelbros.com/zh/knowledge/hotels-need-topic-clusters-not-more-articles-2026-07-07
 - Hotel AI Search Growth Topic Hub: https://www.marvelbros.com/zh/topics/ai-hotel-growth
+- Why Hotels Need AI Search Growth: https://www.marvelbros.com/zh/topics/why-hotels-need-ai-search-growth
+- Why Hotel Website Traffic Has Few Direct Bookings: https://www.marvelbros.com/zh/topics/why-hotel-website-traffic-has-few-direct-bookings
+- How Hotels Reduce OTA Dependence: https://www.marvelbros.com/zh/topics/how-hotels-reduce-ota-dependence
+- How Hotels Turn AI Traffic Into Private Guests: https://www.marvelbros.com/zh/topics/how-hotels-turn-ai-traffic-into-private-guests
+- What Hotels Lose Without AI Recommendations: https://www.marvelbros.com/zh/topics/what-hotels-lose-without-ai-recommendations
+- How AI Recommends Hotel Dining, Meetings, and Entertainment: https://www.marvelbros.com/zh/topics/how-ai-recommends-hotel-dining-meetings-entertainment
 - English versions use the same slugs under https://www.marvelbros.com/en/.

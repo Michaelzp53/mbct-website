@@ -10015,6 +10015,28 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           />
           <ArticleContent content={articleContent} articleTitle={articleTitle} />
 
+          <div className="mt-10 rounded-2xl border border-primary/20 bg-primary/5 p-6">
+            <h2 className="text-xl font-bold text-card-foreground">
+              {isEnglish ? 'Want to make your hotel easier for AI and guests to understand?' : '想让 AI 和客人更容易读懂你的酒店？'}
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              {isEnglish
+                ? 'MarvelBros C&T helps hotels structure official websites, topic pages, FAQs, and direct-booking paths so search engines, AI assistants, and guests can understand the hotel more clearly.'
+                : '迈创兄弟C&T可以帮助酒店梳理官网、专题页、FAQ、案例和直订承接路径，让搜索引擎、AI 助手和真实客人更容易理解酒店价值。'}
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href={`/${lang}/topics/ai-hotel-growth`} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">
+                {isEnglish ? 'AI Search Growth Hub' : '酒店 AI 搜索获客专题'}
+              </Link>
+              <Link href={`/${lang}/services/ai-hotel-website`} className="rounded-full border border-primary/30 px-4 py-2 text-sm font-semibold text-primary">
+                {isEnglish ? 'View Service' : '查看服务'}
+              </Link>
+              <Link href={`/${lang}/contact`} className="rounded-full border border-primary/30 px-4 py-2 text-sm font-semibold text-primary">
+                {isEnglish ? 'Contact MBCT' : '联系 MBCT'}
+              </Link>
+            </div>
+          </div>
+
           {/* 评论功能暂时隐藏 - 等待GitHub Discussions配置完成 */}
           <ArticleComments slug={slug} />
 

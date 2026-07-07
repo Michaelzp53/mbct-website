@@ -4,6 +4,14 @@ import { allArticlesData as leanArticlesData } from './[lang]/lean/article/[slug
 
 const siteUrl = 'https://www.marvelbros.com'
 const languages = ['zh', 'en'] as const
+const aiGrowthTopicSlugs = [
+  'why-hotels-need-ai-search-growth',
+  'why-hotel-website-traffic-has-few-direct-bookings',
+  'how-hotels-reduce-ota-dependence',
+  'how-hotels-turn-ai-traffic-into-private-guests',
+  'what-hotels-lose-without-ai-recommendations',
+  'how-ai-recommends-hotel-dining-meetings-entertainment',
+]
 
 function toDate(value?: string) {
   const date = value ? new Date(value) : new Date()
@@ -39,8 +47,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const leanArticles = leanArticlesData.flatMap((article) =>
     localized(`/lean/article/${article.slug}`, 0.8, 'weekly', toDate(article.date))
   )
+  const topicPages = aiGrowthTopicSlugs.flatMap((slug) => localized(`/topics/${slug}`, 0.9, 'weekly'))
 
-  const urls = [...staticPages, ...knowledgeArticles, ...leanArticles]
+  const urls = [...staticPages, ...topicPages, ...knowledgeArticles, ...leanArticles]
   const deduped = new Map(urls.map((entry) => [entry.url, entry]))
 
   return Array.from(deduped.values()).sort((a, b) => a.url.localeCompare(b.url))

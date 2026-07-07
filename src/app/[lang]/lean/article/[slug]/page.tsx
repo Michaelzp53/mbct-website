@@ -272,6 +272,28 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
           content={articleContent}
         />
 
+        <div className="mt-10 rounded-2xl border border-[#f59e0b]/20 bg-[#f59e0b]/5 p-6">
+          <h2 className="text-xl font-bold text-foreground">
+            {isZh ? '想让酒店官网、内容和 AI 搜索形成获客闭环？' : 'Want your website, content, and AI search to work as a growth loop?'}
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            {isZh
+              ? '迈创兄弟C&T可以帮助酒店把内容资产、官网直订入口、AI 可读信息和私域承接路径连接起来，让更多客人从问题搜索走向咨询和预订。'
+              : 'MarvelBros C&T helps hotels connect content assets, direct-booking paths, AI-readable information, and private traffic conversion so more guests move from search questions to inquiries and bookings.'}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link href={`/${lang}/topics/ai-hotel-growth`} className="rounded-full bg-[#f59e0b] px-4 py-2 text-sm font-semibold text-white">
+              {isZh ? '酒店 AI 搜索获客专题' : 'AI Search Growth Hub'}
+            </Link>
+            <Link href={`/${lang}/services/ai-hotel-website`} className="rounded-full border border-[#f59e0b]/40 px-4 py-2 text-sm font-semibold text-[#b45309]">
+              {isZh ? '查看服务' : 'View Service'}
+            </Link>
+            <Link href={`/${lang}/contact`} className="rounded-full border border-[#f59e0b]/40 px-4 py-2 text-sm font-semibold text-[#b45309]">
+              {isZh ? '联系 MBCT' : 'Contact MBCT'}
+            </Link>
+          </div>
+        </div>
+
         {/* Interactive: Like & Comment (Client Component) */}
         <ArticleInteractions
           slug={slug}
