@@ -21,8 +21,8 @@ export const articlesData: Record<string, {
 }> = {
   "hotel-website-traffic-but-few-direct-bookings-2026-07-07": {
     id: 613,
-    title: "酒店官网访问量不低，直订却很少：AI 搜索时代官网到底缺什么？",
-    titleEn: "Hotel Websites Get Traffic but Few Direct Bookings: What's Missing in the AI Search Era?",
+    title: "酒店官网有访问量，为什么客人还是不直接预订？",
+    titleEn: "Why Does a Hotel Website Get Traffic but Still Fail to Win Direct Bookings?",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-07",
     readTime: "7分钟",
@@ -33,8 +33,8 @@ export const articlesData: Record<string, {
 
   "why-ai-search-does-not-recommend-your-hotel-2026-07-06": {
     id: 612,
-    title: "客人在 AI 搜索里问“附近高品质酒店”，为什么你的酒店没有被推荐？",
-    titleEn: "When Guests Ask AI for \"Nearby Quality Hotels,\" Why Isn't Your Hotel Recommended?",
+    title: "AI 搜索没有推荐你的酒店，是酒店不好，还是信息没被读懂？",
+    titleEn: "If AI Search Does Not Recommend Your Hotel, Is the Hotel Weak or Just Poorly Understood?",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-06",
     readTime: "8分钟",
@@ -129,8 +129,8 @@ export const articlesData: Record<string, {
 
   "summer-family-night-economy-service-capacity-2026-07-05": {
     id: 611,
-    title: "为什么游客更多了，酒店老板反而更累？暑期经营先看服务承载力",
-    titleEn: "Why More Travelers Can Make Hotel Owners More Tired",
+    title: "游客变多了，为什么酒店旺季反而更容易累出差评？",
+    titleEn: "Why Can More Travelers Make Hotels Busier, More Tired, and More Exposed to Complaints?",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-05",
     readTime: "9分钟",
@@ -191,8 +191,8 @@ export const articlesData: Record<string, {
 
   "hotel-full-occupancy-monday-negative-reviews-2026-07-04": {
     id: 608,
-    title: "一家周末满房的酒店，为什么周一差评反而变多？",
-    titleEn: "Why Does a Hotel That Sells Out on the Weekend Suddenly See More Negative Reviews on Monday?",
+    title: "酒店周末满房，为什么周一差评反而集中爆发？",
+    titleEn: "Why Do Negative Reviews Often Surge After a Sold-Out Hotel Weekend?",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-04",
     readTime: "7分钟",
@@ -202,8 +202,8 @@ export const articlesData: Record<string, {
   },
   "why-investors-still-enter-hotel-sector-2026-07-04": {
     id: 609,
-    title: "酒店越来越难做，为什么投资人还在进入？",
-    titleEn: "Why Are Hotels Becoming Harder to Operate, Yet Investors Still Keep Entering the Sector?",
+    title: "酒店越来越难做，为什么还有投资人愿意进场？",
+    titleEn: "Why Do Investors Still Enter Hotels When Operations Are Getting Harder?",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-04",
     readTime: "8分钟",
@@ -213,8 +213,8 @@ export const articlesData: Record<string, {
   },
   "ai-search-hotel-inquiries-need-lead-scoring": {
     id: 605,
-    title: "AI 搜索带来的酒店咨询线索，为什么更需要先分级再跟进？",
-    titleEn: "Why AI-Driven Hotel Inquiries Need Lead Scoring Before Follow-Up",
+    title: "AI 搜索带来更多酒店咨询，为什么先分级再跟进？",
+    titleEn: "Why Should Hotels Score AI-Driven Inquiries Before Following Up?",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-02",
     readTime: "12分钟",
@@ -9749,8 +9749,8 @@ Date: June 12, 2026`,
   },
   "hotel-pricing-discipline-ai-search-demand-profit-floor-2026-07-03": {
     id: 606,
-    title: "2026 酒店报价纪律报告:AI 和搜索带来需求后,酒店为什么更要守住利润底线?",
-    titleEn: "2026 Hotel Pricing Discipline Report: Why Hotels Must Hold the Profit Floor When AI and Search Bring New Demand",
+    title: "AI 和搜索带来需求后，酒店为什么更要守住报价底线？",
+    titleEn: "When AI and Search Bring New Demand, Why Must Hotels Protect Their Pricing Floor?",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-03",
     readTime: "8分钟",
@@ -9760,8 +9760,8 @@ Date: June 12, 2026`,
   },
   "urban-business-hotel-more-orders-less-profit-2026-07-03": {
     id: 607,
-    title: "一家城市商务酒店咨询变多后,为什么越接单越不赚钱?",
-    titleEn: "Why a City Business Hotel Made Less Money with More Orders: A Case Study on Inquiry Growth and Profit Quality",
+    title: "城市商务酒店咨询变多，为什么越接单越不赚钱？",
+    titleEn: "Why Can a City Business Hotel Get More Inquiries but Earn Less Profit?",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-03",
     readTime: "7分钟",
