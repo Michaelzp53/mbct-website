@@ -12,6 +12,8 @@ export const articlesData: Record<string, {
   id: number
   title: string
   titleEn?: string
+  description?: string
+  descriptionEn?: string
   author: string
   date: string
   readTime: string
@@ -23,6 +25,8 @@ export const articlesData: Record<string, {
     id: 613,
     title: "酒店官网有访问量，为什么客人还是不直接预订？",
     titleEn: "Why Does a Hotel Website Get Traffic but Still Fail to Win Direct Bookings?",
+    description: "很多酒店官网有人看，却很少有人直接订。问题往往不是 OTA 太强，而是官网没有把价格、权益、取消、发票和联系方式讲清楚。AI 搜索时代，官网要先让客人和 AI 都读懂，才有机会承接直订。",
+    descriptionEn: "Many hotel websites receive visitors but still fail to convert direct bookings. The issue is often not that OTAs are too strong, but that the website does not clearly answer pricing, benefits, cancellation, invoice, and contact questions before guests decide.",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-07",
     readTime: "7分钟",
@@ -35,6 +39,8 @@ export const articlesData: Record<string, {
     id: 612,
     title: "AI 搜索没有推荐你的酒店，是酒店不好，还是信息没被读懂？",
     titleEn: "If AI Search Does Not Recommend Your Hotel, Is the Hotel Weak or Just Poorly Understood?",
+    description: "客人越来越习惯先问 AI，再去 OTA 比价。酒店如果官网、地图、OTA 和社媒信息分散，优势场景又讲不清，AI 可能不是不认可酒店，而是根本没有读懂酒店适合谁。",
+    descriptionEn: "Guests increasingly ask AI before comparing hotels on OTAs. If website, map, OTA, and social information are fragmented or vague, AI may skip the hotel not because it is weak, but because it cannot understand who the hotel is for.",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-06",
     readTime: "8分钟",
@@ -131,6 +137,8 @@ export const articlesData: Record<string, {
     id: 611,
     title: "游客变多了，为什么酒店旺季反而更容易累出差评？",
     titleEn: "Why Can More Travelers Make Hotels Busier, More Tired, and More Exposed to Complaints?",
+    description: "旺季客流上来了，酒店却可能更累、更乱、更容易出差评。原因不只是人多，而是家庭客、夜间消费、早餐高峰和一线响应同时压上来。先看服务承载力，再谈涨价和收入增长。",
+    descriptionEn: "Peak-season traffic can make a hotel busier, messier, and more vulnerable to complaints. The issue is not only more guests, but family demand, night consumption, breakfast peaks, and front-line response pressure arriving together.",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-05",
     readTime: "9分钟",
@@ -193,6 +201,8 @@ export const articlesData: Record<string, {
     id: 608,
     title: "酒店周末满房，为什么周一差评反而集中爆发？",
     titleEn: "Why Do Negative Reviews Often Surge After a Sold-Out Hotel Weekend?",
+    description: "周末满房看起来是好事，但如果翻房、早餐、前台响应和服务承诺都被压到极限，差评往往会在周一集中出现。满房不是终点，而是服务系统的压力测试。",
+    descriptionEn: "A sold-out weekend looks like good news, but if housekeeping, breakfast, front desk response, and service promises are pushed beyond capacity, negative reviews often appear on Monday. Full occupancy is a stress test, not the finish line.",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-04",
     readTime: "7分钟",
@@ -204,6 +214,8 @@ export const articlesData: Record<string, {
     id: 609,
     title: "酒店越来越难做，为什么还有投资人愿意进场？",
     titleEn: "Why Do Investors Still Enter Hotels When Operations Are Getting Harder?",
+    description: "一线经营者觉得酒店越来越难，投资人却仍在看项目。两者并不矛盾：经营端看到的是利润变薄、团队更累，资产端看到的是存量重构、低效物业和专业化运营机会。关键在于谁能把酒店从资产买卖做成经营能力。",
+    descriptionEn: "Operators see thinner margins and harder work, while investors still see asset restructuring and professional operating opportunities. The contradiction disappears once hotel investment is viewed not only as property buying, but as operating capability.",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-04",
     readTime: "8分钟",
@@ -215,6 +227,8 @@ export const articlesData: Record<string, {
     id: 605,
     title: "AI 搜索带来更多酒店咨询，为什么先分级再跟进？",
     titleEn: "Why Should Hotels Score AI-Driven Inquiries Before Following Up?",
+    description: "AI 搜索会带来更多咨询，但咨询多不等于成交多。酒店如果来一个报一个，很容易把高价值企业客户淹没在普通询价里。先分级、再画像、再跟进，才能把真正有意向的客户留下来。",
+    descriptionEn: "AI search can bring more inquiries, but more inquiries do not automatically mean more bookings. If every inquiry receives the same quote, valuable corporate leads get buried. Hotels need lead scoring and client profiles before follow-up.",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-02",
     readTime: "12分钟",
@@ -9751,6 +9765,8 @@ Date: June 12, 2026`,
     id: 606,
     title: "AI 和搜索带来需求后，酒店为什么更要守住报价底线？",
     titleEn: "When AI and Search Bring New Demand, Why Must Hotels Protect Their Pricing Floor?",
+    description: "需求来了以后，酒店最容易为了成交先降价。真正决定利润质量的不是询盘数量，而是能不能先判断需求质量、渠道成本和服务承载力，再设置清楚的报价底线。没有报价纪律，新增需求也可能变成低利润订单。",
+    descriptionEn: "When new demand arrives, hotels are often tempted to cut prices first. Profit quality depends not on inquiry volume, but on judging demand quality, channel cost, and service capacity before setting a clear pricing floor.",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-03",
     readTime: "8分钟",
@@ -9762,6 +9778,8 @@ Date: June 12, 2026`,
     id: 607,
     title: "城市商务酒店咨询变多，为什么越接单越不赚钱？",
     titleEn: "Why Can a City Business Hotel Get More Inquiries but Earn Less Profit?",
+    description: "咨询量、订单量、入住率都上去了，利润却没有跟上。问题常常不是市场不好，也不是销售不努力，而是酒店没有算清净贡献、客户分级、报价权限和服务成本。接单不等于经营，结构错了，越忙越不赚钱。",
+    descriptionEn: "More inquiries, more orders, and higher occupancy do not guarantee more profit. Without net contribution, lead tiers, quote authority, and service-cost discipline, a hotel may become busier while earning less.",
     author: "迈创兄弟C&T（MarvelBros C&T）",
     date: "2026-07-03",
     readTime: "7分钟",
@@ -9809,7 +9827,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
   const title = isEnglish && article.titleEn ? article.titleEn : article.title
   const content = isEnglish && article.contentEn ? article.contentEn : article.content
-  const description = getPlainDescription(content, title)
+  const description = (isEnglish ? article.descriptionEn : article.description) || getPlainDescription(content, title)
   const canonical = `https://www.marvelbros.com/${lang}/knowledge/${decodedSlug}`
 
   return {
