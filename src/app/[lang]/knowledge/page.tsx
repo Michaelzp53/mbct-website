@@ -72,6 +72,26 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 613,
+      type: "article",
+      title: "酒店官网访问量不低，直订却很少：AI 搜索时代官网到底缺什么？",
+      titleEn: "Hotel Websites Get Traffic but Few Direct Bookings: What's Missing in the AI Search Era?",
+      slug: "hotel-website-traffic-but-few-direct-bookings-2026-07-07",
+      summary: "官网每天都有人看，直订就是上不去。问题不在 OTA 太强，而是官网没有回答客人下单前最关心的问题。AI 搜索时代，官网正在重新变成酒店被理解和被信任的入口。",
+      summaryEn: "Hotel websites get daily traffic but few direct bookings. The problem isn't that OTAs are too strong — it's that websites fail to answer guests' key pre-booking questions. In the AI search era, websites are becoming the entry point for hotels to be understood and trusted.",
+      firstLine: "很多酒店老板都有这样一个困惑：官网每天都有人看，有时访问量还不低，但直订就是上不去。客人看完官网，最后还是习惯性地回到携程、美团下单。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-07",
+      category: "industry-insights",
+      tag: "趋势分析",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 7,
+      featured: true,
+      image: "",
+    },
+
+    {
       id: 612,
       type: "article",
       title: "客人在 AI 搜索里问“附近高品质酒店”，为什么你的酒店没有被推荐？",
