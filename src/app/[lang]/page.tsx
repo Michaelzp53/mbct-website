@@ -217,7 +217,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/lean/article/hotel-website-direct-booking-ota-trust-2026-07-07`}
+                  href={`/${lang}/knowledge/hotel-website-traffic-but-few-direct-bookings-2026-07-07`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -225,13 +225,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? '酒店官网有了，为什么客人看完还是回到携程、美团下单？'
-                      : 'Why do hotel guests still go back to OTAs after visiting the website?'}
+                      ? '酒店官网访问量不低，直订却很少：AI 搜索时代官网到底缺什么？'
+                      : 'Hotel Websites Get Traffic but Few Direct Bookings: What\'s Missing in the AI Search Era?'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '不是官网没用，而是官网还没有回答客人下单前最关心的问题。看看酒店如何把 AI 流量接到自己的直订和私域入口。'
-                      : 'The issue is not that hotel websites are useless. They often fail to answer the questions guests need before booking directly.'}
+                      ? '官网每天都有人看，直订就是上不去。问题不在 OTA 太强，而是官网没有回答客人下单前最关心的问题。AI 搜索时代，官网正在重新变成酒店被理解和被信任的入口。'
+                      : 'Hotel websites get daily traffic but few direct bookings. The problem isn\'t that OTAs are too strong — it\'s that websites fail to answer guests\' key pre-booking questions. In the AI search era, websites are becoming the entry point for hotels to be understood and trusted.'}
                   </p>
                 </Link>
               </div>
