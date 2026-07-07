@@ -5,7 +5,6 @@ import { Badge } from '@/components/ui/badge'
 import { getArticleBySlug, getAllSlugs } from './articles-data'
 import ArticleInteractions from './ArticleInteractions'
 import { ArticleMarkdown } from '@/components/article-markdown'
-import Script from 'next/script'
 
 // 7大分类
 const categories = [
@@ -134,14 +133,73 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
     articleSection: category ? (isZh ? category.labelZh : category.labelEn) : articleData.category,
     keywords: articleData.tags,
   }
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: isZh ? '首页' : 'Home',
+        item: `https://www.marvelbros.com/${lang}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: isZh ? '管享精道' : 'Lean Insights',
+        item: `https://www.marvelbros.com/${lang}/lean`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: articleTitle,
+        item: articleUrl,
+      },
+    ],
+  }
+  const contentLines = articleContent.split('\n').map((line) => line.trim()).filter(Boolean)
+  const faqStart = contentLines.findIndex((line) => /^(##\s*)?(常见问题|FAQ|Frequently Asked Questions)$/i.test(line))
+  const faqJsonLd = faqStart >= 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: contentLines
+          .slice(faqStart + 1)
+          .reduce<Array<{ '@type': 'Question'; name: string; acceptedAnswer: { '@type': 'Answer'; text: string } }>>((items, line, index, source) => {
+            const text = line.replace(/^#+\s*/, '')
+            const next = source[index + 1]?.replace(/^#+\s*/, '')
+            if (text.endsWith('？') || text.endsWith('?')) {
+              items.push({
+                '@type': 'Question',
+                name: text,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: next || '',
+                },
+              })
+            }
+            return items
+          }, [])
+          .slice(0, 8),
+      }
+    : null
 
   return (
     <div className="min-h-screen bg-background">
-      <Script
-        id={`lean-article-json-ld-${slug}-${lang}`}
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c') }}
+      />
+      {faqJsonLd?.mainEntity.length ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }}
+        />
+      ) : null}
       {/* Header */}
       <div className="bg-gradient-to-br from-[#f59e0b]/10 via-background to-background border-b border-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import { ArrowLeft, Clock, User, Calendar, BookOpen, Mail } from 'lucide-react'
+import type { Metadata } from 'next'
+import { ArrowLeft, Clock, User, Calendar, BookOpen } from 'lucide-react'
 import ArticleContent from './ArticleContent'
 import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ArticleInteractions from '@/components/interactions/ArticleInteractions'
 import { ThemeToggle } from '@/components/ThemeToggle'
-import Script from 'next/script'
 
 // 完整文章内容数据
-const articlesData: Record<string, {
+export const articlesData: Record<string, {
   id: number
   title: string
   titleEn?: string
@@ -9774,6 +9774,74 @@ Date: June 12, 2026`,
 
 }
 
+function getPlainDescription(content: string[] = [], fallback = '') {
+  const paragraph = content.find((item) => item && !item.startsWith('#')) || fallback
+  return paragraph.replace(/[#*_`>]/g, '').replace(/\s+/g, ' ').slice(0, 160)
+}
+
+function safeDecodeSlug(slug: string) {
+  try {
+    return decodeURIComponent(slug)
+  } catch {
+    return slug
+  }
+}
+
+function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean) {
+  const base = isEnglish
+    ? ['hotel AI search', 'hotel direct booking', 'hotel website', 'hotel operations', 'MarvelBros C&T']
+    : ['酒店AI搜索', '酒店官网直订', '酒店获客', '酒店经营', '迈创兄弟C&T']
+  return Array.from(new Set([article.tag, ...base].filter(Boolean)))
+}
+
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+  const { lang, slug } = await params
+  const decodedSlug = safeDecodeSlug(slug)
+  const article = articlesData[decodedSlug]
+  const isEnglish = lang === 'en'
+
+  if (!article) {
+    return {
+      title: isEnglish ? 'Article Not Found | MarvelBros C&T' : '文章未找到 | 迈创兄弟C&T',
+      robots: { index: false, follow: false },
+    }
+  }
+
+  const title = isEnglish && article.titleEn ? article.titleEn : article.title
+  const content = isEnglish && article.contentEn ? article.contentEn : article.content
+  const description = getPlainDescription(content, title)
+  const canonical = `https://www.marvelbros.com/${lang}/knowledge/${decodedSlug}`
+
+  return {
+    title: `${title} | ${isEnglish ? 'MarvelBros C&T' : '迈创兄弟C&T'}`,
+    description,
+    keywords: getKeywords(article, isEnglish),
+    alternates: {
+      canonical,
+      languages: {
+        'zh-CN': `https://www.marvelbros.com/zh/knowledge/${decodedSlug}`,
+        'en-US': `https://www.marvelbros.com/en/knowledge/${decodedSlug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: 'article',
+      siteName: 'MarvelBros C&T',
+      locale: isEnglish ? 'en_US' : 'zh_CN',
+      publishedTime: article.date,
+      modifiedTime: article.date,
+      authors: ['MarvelBros C&T'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  }
+}
+
 
 
 
@@ -9785,7 +9853,7 @@ interface ArticlePageProps {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { lang, slug } = await params
-  const decodedSlug = decodeURIComponent(slug)
+  const decodedSlug = safeDecodeSlug(slug)
   const article = articlesData[decodedSlug]
 
   if (!article) {
@@ -9835,15 +9903,73 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     url: articleUrl,
     inLanguage: isEnglish ? 'en-US' : 'zh-CN',
     articleSection: article.tag,
+    keywords: getKeywords(article, isEnglish),
   }
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: isEnglish ? 'Home' : '首页',
+        item: `https://www.marvelbros.com/${lang}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: isEnglish ? 'Industry Insights' : '行业洞察',
+        item: `https://www.marvelbros.com/${lang}/knowledge`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: articleTitle,
+        item: articleUrl,
+      },
+    ],
+  }
+  const faqIndex = articleContent.findIndex((paragraph) => /^(常见问题|FAQ|Frequently Asked Questions)$/i.test(paragraph.trim()))
+  const faqJsonLd = faqIndex >= 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: articleContent
+          .slice(faqIndex + 1)
+          .reduce<Array<{ '@type': 'Question'; name: string; acceptedAnswer: { '@type': 'Answer'; text: string } }>>((items, paragraph, index, source) => {
+            const next = source[index + 1]
+            if (paragraph?.endsWith('？') || paragraph?.endsWith('?')) {
+              items.push({
+                '@type': 'Question',
+                name: paragraph,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: next || '',
+                },
+              })
+            }
+            return items
+          }, [])
+          .slice(0, 8),
+      }
+    : null
 
   return (
     <div className="min-h-screen bg-background py-24">
-      <Script
-        id={`knowledge-article-json-ld-${decodedSlug}-${lang}`}
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c') }}
+      />
+      {faqJsonLd?.mainEntity.length ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }}
+        />
+      ) : null}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
           <Link

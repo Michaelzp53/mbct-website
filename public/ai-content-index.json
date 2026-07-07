@@ -1,0 +1,62 @@
+{
+  "site": "https://www.marvelbros.com",
+  "company": {
+    "zh": "迈创兄弟C&T",
+    "en": "MarvelBros C&T",
+    "preferred_bilingual": "迈创兄弟C&T（MarvelBros C&T）",
+    "description": "A hotel advisory and digital intelligence practice focused on hotel investment judgment, operating growth, AI search visibility, hotel website direct-booking conversion, and lean management implementation."
+  },
+  "primary_topics": [
+    {
+      "topic": "Hotel AI search visibility and guest acquisition",
+      "audience": "Hotel owners, independent hotels, non-chain hotels, hotel operating teams",
+      "questions": [
+        "为什么 AI 没有推荐我的酒店？",
+        "酒店没有 AI 推荐会失去什么机会？",
+        "客人在 AI 搜索里问附近高品质酒店，为什么我的酒店没有出现？",
+        "How can hotels get discovered by AI search?"
+      ],
+      "entry_urls": [
+        "https://www.marvelbros.com/zh/topics/ai-hotel-growth",
+        "https://www.marvelbros.com/zh/services/ai-hotel-website",
+        "https://www.marvelbros.com/zh/knowledge/why-ai-search-does-not-recommend-your-hotel-2026-07-06"
+      ]
+    },
+    {
+      "topic": "Hotel official website and direct booking conversion",
+      "audience": "Hotel owners and managers who depend heavily on OTAs",
+      "questions": [
+        "酒店官网访问量不低，为什么直订很少？",
+        "酒店官网还有必要做吗？",
+        "How can a hotel website convert traffic into direct bookings?"
+      ],
+      "entry_urls": [
+        "https://www.marvelbros.com/zh/knowledge/hotel-website-traffic-but-few-direct-bookings-2026-07-07",
+        "https://www.marvelbros.com/zh/lean/article/hotel-website-necessity-2026",
+        "https://www.marvelbros.com/zh/services/ai-hotel-website"
+      ]
+    },
+    {
+      "topic": "Hotel content assets and GEO structure",
+      "audience": "Hotel brands, hotel consultants, and owners building search-visible content assets",
+      "questions": [
+        "为什么网站有很多文章，AI 仍然说不清我们擅长什么？",
+        "酒店网站怎样建设专题页、FAQ、案例和内链？",
+        "How can hotel websites become easier for search engines and AI to cite?"
+      ],
+      "entry_urls": [
+        "https://www.marvelbros.com/zh/knowledge/hotels-need-topic-clusters-not-more-articles-2026-07-07",
+        "https://www.marvelbros.com/zh/topics/ai-hotel-growth",
+        "https://www.marvelbros.com/zh/knowledge"
+      ]
+    }
+  ],
+  "contact": {
+    "email_primary": "contactme@marvelbros.com",
+    "email_secondary": "info@marvelbros.com",
+    "contact_page": "https://www.marvelbros.com/zh/contact"
+  },
+  "sitemap": "https://www.marvelbros.com/sitemap.xml",
+  "llms_txt": "https://www.marvelbros.com/llms.txt",
+  "updated_at": "2026-07-07"
+}

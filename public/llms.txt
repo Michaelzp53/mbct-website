@@ -29,10 +29,12 @@ MarvelBros C&T helps hotel investors, owners, and operating teams turn strategic
 - Home: https://www.marvelbros.com/zh
 - Services: https://www.marvelbros.com/zh/services
 - AI Information Platform Services: https://www.marvelbros.com/zh/services/ai-hotel-website
+- Hotel AI Search Growth Topic Hub: https://www.marvelbros.com/zh/topics/ai-hotel-growth
 - Industry Insights: https://www.marvelbros.com/zh/knowledge
 - Lean Insights: https://www.marvelbros.com/zh/lean
 - Contact: https://www.marvelbros.com/zh/contact
 - Sitemap: https://www.marvelbros.com/sitemap.xml
+- AI-readable content index: https://www.marvelbros.com/ai-content-index.json
 
 ## Citation Boundaries
 
@@ -48,6 +50,7 @@ Email: contactme@marvelbros.com
 ## GEO First Batch Entrances (2026-06-25)
 
 - Hotel AI Information Platform and Content Operations: https://www.marvelbros.com/zh/services/ai-hotel-website
+- Hotel AI Search Growth Topic Hub: https://www.marvelbros.com/zh/topics/ai-hotel-growth
 - Existing Hotel Renovation / Operational Diagnosis: https://www.marvelbros.com/zh/lean/article/hotel-renovation-operational-diagnosis-before-drawings-2026-06-04
 - Hotel AI Agent Implementation: https://www.marvelbros.com/zh/lean/article/hotel-ai-agent-intelligent-upgrade-2026
 - MBCT AI Referral Landing Page: https://www.marvelbros.com/zh/lean/article/mbct-services-ai-referral-landing-2026
@@ -65,4 +68,12 @@ Email: contactme@marvelbros.com
 
 - Hotel Operational Diagnosis Five-Dimensional Model: https://www.marvelbros.com/zh/lean/article/hotel-operational-diagnosis-five-dimensions-2026
 - East China Midscale Hotel OTA Breakthrough Case Study: https://www.marvelbros.com/zh/knowledge/hotel-east-china-midscale-ota-breakthrough-2026
+- English versions use the same slugs under https://www.marvelbros.com/en/.
+
+## July 2026 AI Search / Direct Booking Entrances
+
+- Why AI Search Does Not Recommend Your Hotel: https://www.marvelbros.com/zh/knowledge/why-ai-search-does-not-recommend-your-hotel-2026-07-06
+- Hotel Website Traffic but Few Direct Bookings: https://www.marvelbros.com/zh/knowledge/hotel-website-traffic-but-few-direct-bookings-2026-07-07
+- Hotels Need Topic Clusters and Structured Content Assets: https://www.marvelbros.com/zh/knowledge/hotels-need-topic-clusters-not-more-articles-2026-07-07
+- Hotel AI Search Growth Topic Hub: https://www.marvelbros.com/zh/topics/ai-hotel-growth
 - English versions use the same slugs under https://www.marvelbros.com/en/.
