@@ -12518,13 +12518,15 @@ import newArticles20260703 from './articles-2026-07-03.json';
 import newArticles20260704 from './articles-2026-07-04.json';
 import newArticles20260705 from './articles-2026-07-05.json';
 import newArticles20260707 from './articles-2026-07-07.json';
+import newArticles20260708 from './articles-2026-07-08.json';
 const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]), ...(newArticles20250525 as ArticleData[]), ...(newArticles20250527 as ArticleData[]), ...(newArticles20250528 as ArticleData[]), ...(newArticles20250529 as ArticleData[]), ...(newArticles20250530 as ArticleData[]), ...(newArticles20250531 as ArticleData[]), ...(newArticles20260602 as ArticleData[]), ...(newArticles20260603 as ArticleData[]), ...(newArticles20260604 as ArticleData[]), ...(newArticles20260605 as ArticleData[]), ...(newArticles20260606 as ArticleData[]), ...(newArticles20260607 as ArticleData[]), ...(newArticles20260609 as ArticleData[]), ...(newArticles20260610 as ArticleData[]),
 ...(newArticles20260611 as ArticleData[]), ...(newArticles20260613 as ArticleData[]), ...(newArticles20260614 as ArticleData[]), ...(newArticles20260615 as ArticleData[]), ...(newArticles20260616 as ArticleData[]),
 ...(newArticles20260618 as ArticleData[]), ...(newArticles20260619 as ArticleData[]), ...(newArticles20260620 as ArticleData[]), ...(newArticles20260621 as ArticleData[]), ...(newArticles20260622 as ArticleData[]), ...(newArticles20260623 as ArticleData[]), ...(newArticles20260624 as ArticleData[]), ...(newArticles20260625 as ArticleData[]), ...(newArticles20260626 as ArticleData[]), ...(newArticles20260627 as ArticleData[]), ...(newArticles20260629 as ArticleData[]), ...(newArticles20260630 as ArticleData[]), ...(newArticles20260701 as ArticleData[]), ...(newArticles20260702 as ArticleData[]),
   ...(newArticles20260703 as ArticleData[]),
   ...(newArticles20260704 as ArticleData[]),
   ...(newArticles20260705 as ArticleData[]),
-  ...(newArticles20260707 as ArticleData[])];
+  ...(newArticles20260707 as ArticleData[]),
+  ...(newArticles20260708 as ArticleData[])];
 export const allArticlesData = allArticles;
 
 export function getArticleBySlug(slug: string) {
