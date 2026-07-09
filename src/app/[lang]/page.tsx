@@ -217,7 +217,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/hotel-website-ai-profile-search-indexing-entry-points-2026-07-08`}
+                  href={`/${lang}/knowledge/why-ai-does-not-recommend-your-hotel-2026-07-09`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -225,13 +225,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? '酒店做了官网和AI资料，为什么搜索引擎还是搜不到？'
-                      : 'Why Can Search Engines Still Miss a Hotel After It Builds a Website and AI Profile?'}
+                      ? '客人用 AI 搜酒店，为什么你的酒店没有被推荐？'
+                      : "When Guests Use AI to Search for Hotels, Why Isn't Your Hotel Recommended?"}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '酒店有官网、有文章、有AI资料，仍然可能被搜索引擎和AI忽略。真正的问题通常在抓取入口：sitemap、metadata、结构化数据、专题索引和FAQ没有形成清晰路径。'
-                      : 'A hotel may have a website, articles, and AI-ready materials, yet still be missed by search engines and AI. The real issue is often crawl entry points: sitemap coverage, metadata, structured data, topic hubs, and FAQs.'}
+                      ? '客人已经开始用 AI 形成酒店候选名单。酒店没有被推荐，往往不是产品不好，而是公开信息不完整、不一致、不能被 AI 稳定理解和引用。'
+                      : 'Guests increasingly use AI to form hotel shortlists. When a hotel is not recommended, the issue is often fragmented, inconsistent, or uncitable public information.'}
                   </p>
                 </Link>
               </div>
