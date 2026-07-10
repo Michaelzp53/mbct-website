@@ -217,7 +217,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/why-ai-does-not-recommend-your-hotel-2026-07-09`}
+                  href={`/${lang}/knowledge/what-guests-hotels-lose-without-ai-recommendation-2026-07-10`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -225,13 +225,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? '客人用 AI 搜酒店，为什么你的酒店没有被推荐？'
-                      : "When Guests Use AI to Search for Hotels, Why Isn't Your Hotel Recommended?"}
+                      ? '如果 AI 没有推荐你的酒店，你会失去哪些客人？'
+                      : 'If AI Does Not Recommend Your Hotel, Which Guests Will You Lose?'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '客人已经开始用 AI 形成酒店候选名单。酒店没有被推荐，往往不是产品不好，而是公开信息不完整、不一致、不能被 AI 稳定理解和引用。'
-                      : 'Guests increasingly use AI to form hotel shortlists. When a hotel is not recommended, the issue is often fragmented, inconsistent, or uncitable public information.'}
+                      ? '如果酒店没有进入 AI 第一轮候选名单，失去的不只是曝光，而是客人在预订前、比较前、计划行程前认识你的机会。'
+                      : 'If a hotel does not enter AI’s first shortlist, it loses more than exposure: it loses the opportunity to be known before guests plan, compare, and book.'}
                   </p>
                 </Link>
               </div>

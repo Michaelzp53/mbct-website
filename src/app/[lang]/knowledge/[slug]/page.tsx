@@ -21,6 +21,53 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  "what-guests-hotels-lose-without-ai-recommendation-2026-07-10": {
+    "id": 616,
+    "title": "如果 AI 没有推荐你的酒店，你会失去哪些客人？",
+    "titleEn": "If AI Does Not Recommend Your Hotel, Which Guests Will You Lose?",
+    "description": "如果酒店没有进入 AI 给出的第一轮候选名单，失去的不只是一次曝光，而是客人在预订前、比较前、计划行程前认识酒店的机会。",
+    "descriptionEn": "If a hotel does not enter AI's first shortlist, it loses more than exposure. It loses the opportunity to be known before guests plan, compare, and book.",
+    "author": "迈创兄弟C&T（MarvelBros C&T）",
+    "date": "2026-07-10",
+    "readTime": "6分钟",
+    "tag": "趋势分析",
+    "content": [
+      "很多酒店老板会觉得，客人没有看到自己，可能是广告投少了，OTA 排名不够靠前，或者价格没有别人有吸引力。",
+      "这些当然会影响生意。但现在还有一个更早、更隐蔽的入口正在发生变化：一部分客人已经不再先打开 OTA，而是先问 AI。",
+      "他们会问：“这个城市适合亲子住的酒店有哪些？”“带老人出行住哪里更方便？”“附近有没有适合小型会议、停车方便、早餐稳定的酒店？”“哪家酒店的餐厅值得顺便安排一顿饭？”",
+      "如果你的酒店没有出现在 AI 给出的第一轮候选名单里，客人可能还没看到价格，还没看图片，还没比较评分，就已经绕开了你。",
+      "一句话讲清楚：如果 AI 没有推荐你的酒店，你失去的不只是一次曝光，而是客人在预订前、比较前、计划行程前认识你的机会。",
+      "酒店首先失去的是第一轮候选名单的位置。过去，客人愿意自己翻几页搜索结果，再慢慢比较酒店。现在，AI 正在替客人先缩小选择范围。",
+      "第二，酒店会失去带场景的客人。亲子家庭会问儿童设施、家庭房、早餐、加床、周边游玩和停车。商务客会问会议室、发票、安静客房、交通效率和早餐时间。",
+      "第三，酒店会失去餐饮、会议和二次消费机会。AI 不只会帮客人找房间，也会回答附近哪里适合吃饭、有没有酒店带会议空间、带孩子住哪里方便。",
+      "第四，酒店会越来越依赖别人替自己解释。如果酒店自己的官网和内容资产不完整，AI 只能从 OTA 页面、点评、地图、旧文章和零散图片里拼出一个印象。",
+      "酒店可以先做 6 项自查：问 AI 本城市适合亲子入住和商务会议的酒店有没有自己；搜索酒店名称加餐厅、停车、会议室、早餐是否准确；检查官网是否有完整房型、餐饮、会议、交通、FAQ 和联系方式；对照地图、OTA、官网、公众号和社媒信息是否一致；确认客人能否从官网进入电话、微信、咨询或直订入口。",
+      "常见问题",
+      "AI 没有推荐我的酒店，是不是说明酒店不好？不是。更多时候，是酒店的公开信息不完整、不一致，或者没有清楚说明适合哪些客人场景。",
+      "酒店没有官网，还能被 AI 推荐吗？有可能，但会更被动。没有官网，AI 更依赖 OTA、地图和点评来理解酒店。",
+      "酒店的餐厅和会议室信息，会影响 AI 推荐吗？会。因为客人问 AI 时，很多问题并不只围绕客房，而是围绕整趟出行。",
+      "迈创兄弟C&T（MarvelBros C&T）可以帮助酒店做 AI 信息体检、官网内容整理、FAQ 与场景资料补全、餐饮会议与二次消费信息结构化、官网直订与私域入口梳理。",
+      "AI 推荐不是一个可以承诺控制的广告位，而是一套信息竞争机制。酒店要做的不是追着 AI 讨推荐，而是把自己的基础信息、服务证据、场景优势和承接入口整理成 AI 与客人都能读懂的结构。"
+    ],
+    "contentEn": [
+      "Many hotel owners assume that if guests do not see their hotel, the reason must be simple: not enough advertising, weaker OTA ranking, or a less competitive price.",
+      "Those factors still matter. But there is now an earlier and quieter entry point changing the way guests choose hotels: some guests ask AI before opening an OTA.",
+      "They ask which hotels are good for families, where to stay with older parents, which hotel has a small meeting room and easy parking, and which hotel has a restaurant worth arranging dinner at.",
+      "If your hotel does not appear in the first shortlist produced by AI, the guest may pass you before seeing your price, photos, reviews, or website.",
+      "The direct answer is this: if AI does not recommend your hotel, you are not only losing exposure. You are losing the chance to be known before the guest plans, compares, and books.",
+      "The first loss is the first-round shortlist. AI may give three to five hotel options first, and only then will the guest continue to an OTA, a map platform, or an official website.",
+      "The second loss is scenario-based guests. Family travelers, business travelers, weekend leisure guests, and long-stay guests all ask different questions that AI needs clear information to answer.",
+      "The third loss is dining, meeting, and secondary consumption. AI is not only helping guests find rooms; it also answers questions about where to eat, where to meet, and what is convenient for a trip.",
+      "The fourth loss is control over how the hotel is explained. If the hotel’s own website and content assets are incomplete, AI has to build its impression from OTAs, reviews, maps, old articles, and scattered images.",
+      "Hotels can start with six checks: ask AI whether the hotel appears for family and business-meeting searches; search the hotel name with restaurant, parking, meeting room, and breakfast; review whether the official website covers room types, dining, meetings, transportation, FAQs, and contact paths; compare maps, OTAs, the website, social accounts, and public profiles for consistency; and confirm whether guests can move from the website to phone, WeChat, inquiry, or direct booking without friction.",
+      "Frequently Asked Questions",
+      "If AI does not recommend my hotel, does it mean the hotel is bad? No. More often, it means public information is incomplete, inconsistent, or unclear about which guest scenarios the hotel serves.",
+      "Can a hotel without an official website still be recommended by AI? Possibly, but it is more passive. Without an official website, AI depends more heavily on OTAs, maps, and reviews.",
+      "Can restaurant and meeting room information affect AI recommendations? Yes. Guests do not only ask about rooms; dining, meetings, parking, family needs, and nearby experiences can all affect whether a hotel enters a scenario-based answer.",
+      "MBCT（MarvelBros C&T） helps hotels conduct AI information audits, organize official website content, complete FAQs and scenario materials, structure dining, meeting, and secondary-consumption information, and improve direct booking and private-domain entry points.",
+      "AI recommendation is not an advertising position that anyone can guarantee or control. It is an information competition mechanism. Hotels should organize their basic information, service evidence, scenario strengths, and conversion paths into a structure that both AI and guests can understand."
+    ]
+  },
   "why-ai-does-not-recommend-your-hotel-2026-07-09": {
     "id": 615,
     "title": "客人用 AI 搜酒店，为什么你的酒店没有被推荐？",
@@ -10048,6 +10095,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   const isEnglish = lang === 'en'
   const articleTitle = isEnglish && article.titleEn ? article.titleEn : article.title
+  const breadcrumbTitle = articleTitle?.trim() || decodedSlug
   const articleContent = isEnglish && article.contentEn ? article.contentEn : article.content
   const articleUrl = `https://www.marvelbros.com/${lang}/knowledge/${decodedSlug}`
   const articleDescription = articleContent
@@ -10101,7 +10149,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       {
         '@type': 'ListItem',
         position: 3,
-        name: articleTitle,
+        name: breadcrumbTitle,
         item: articleUrl,
       },
     ],
