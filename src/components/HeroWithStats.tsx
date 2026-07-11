@@ -179,6 +179,12 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
               >
                 {isZh ? '了解 AI 信息平台建设方案' : 'Explore the AI Information Platform'}
               </Link>
+              <Link
+                href={`/${lang}/topics/ai-hotel-growth`}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-amber-200/60 bg-amber-300/15 text-amber-100 font-medium rounded-xl backdrop-blur-sm hover:border-amber-200 hover:bg-amber-300/25 transition-all"
+              >
+                {isZh ? '进入 AI 搜索获客专题' : 'AI Search Growth Hub'}
+              </Link>
             </div>
           </div>
 

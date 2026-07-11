@@ -215,6 +215,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   >
                     {isZh ? '了解体检怎么做' : 'How the diagnostic works'}
                   </Link>
+                  <Link
+                    href={`/${lang}/topics/ai-hotel-growth`}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-amber-300 bg-amber-50 px-6 py-3 text-sm font-semibold text-amber-800 transition-colors hover:border-amber-400 hover:bg-amber-100 dark:border-amber-300/25 dark:bg-amber-300/10 dark:text-amber-200 dark:hover:bg-amber-300/15"
+                  >
+                    {isZh ? '进入 AI 搜索获客专题' : 'AI Search Growth Hub'}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
                 <Link
                   href={`/${lang}/knowledge/hotel-ai-recommendation-guest-avoid-direct-booking-2026-07-11`}
