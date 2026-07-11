@@ -217,7 +217,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/what-guests-hotels-lose-without-ai-recommendation-2026-07-10`}
+                  href={`/${lang}/knowledge/hotel-ai-recommendation-guest-avoid-direct-booking-2026-07-11`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -225,13 +225,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? '如果 AI 没有推荐你的酒店，你会失去哪些客人？'
-                      : 'If AI Does Not Recommend Your Hotel, Which Guests Will You Lose?'}
+                      ? 'AI 推荐酒店后，客人为什么不愿直接联系酒店或在酒店平台下单？'
+                      : 'If AI Recommends a Hotel, Why Do Guests Still Avoid Booking Direct?'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '如果酒店没有进入 AI 第一轮候选名单，失去的不只是曝光，而是客人在预订前、比较前、计划行程前认识你的机会。'
-                      : 'If a hotel does not enter AI’s first shortlist, it loses more than exposure: it loses the opportunity to be known before guests plan, compare, and book.'}
+                      ? 'AI 推荐解决了"被看见"的问题，但从被看见到被选择，中间隔着价格透明度、手机端体验、推荐说服力、官网可信度、联系安全感和直接行动理由六个判断。任何一个环节让客人犹豫，他就会回到最熟悉的 OTA 渠道。'
+                      : 'AI recommendation solves the visibility problem, but between being seen and being chosen lie six judgments: price transparency, mobile experience, recommendation persuasiveness, website credibility, contact safety, and a clear reason to act directly.'}
                   </p>
                 </Link>
               </div>
