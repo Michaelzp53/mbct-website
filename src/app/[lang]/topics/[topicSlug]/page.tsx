@@ -132,7 +132,7 @@ export default async function TopicQuestionPage({ params }: { params: Promise<{ 
 
   if (!data) {
     return (
-      <main className="min-h-screen bg-[#f8f3ea] px-6 py-24 text-center">
+      <main className="min-h-screen bg-[#f8f3ea] px-6 py-24 text-center dark:bg-[#17120d] dark:text-white">
         <h1 className="text-3xl font-bold">{isZh ? '专题未找到' : 'Topic Not Found'}</h1>
       </main>
     )
@@ -155,33 +155,33 @@ export default async function TopicQuestionPage({ params }: { params: Promise<{ 
   }
 
   return (
-    <main className="min-h-screen bg-[#f8f3ea] text-[#241b12]">
+    <main className="min-h-screen bg-[#f8f3ea] text-[#241b12] dark:bg-[#17120d] dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
-        <Link href={`/${lang}/topics/ai-hotel-growth`} className="text-sm font-semibold text-[#92400e] hover:underline">
+        <Link href={`/${lang}/topics/ai-hotel-growth`} className="text-sm font-semibold text-[#92400e] hover:underline dark:text-amber-300">
           {isZh ? '返回酒店 AI 搜索获客专题' : 'Back to Hotel AI Search Growth Hub'}
         </Link>
-        <div className="mt-8 rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-[#92400e]/10 md:p-12">
-          <HelpCircle className="h-10 w-10 text-[#d97706]" />
+        <div className="mt-8 rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-[#92400e]/10 md:p-12 dark:bg-white/[0.06] dark:ring-white/10">
+          <HelpCircle className="h-10 w-10 text-[#d97706] dark:text-amber-300" />
           <h1 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">{data.title}</h1>
-          <p className="mt-5 text-lg leading-8 text-[#5f5142]">{data.description}</p>
-          <div className="mt-8 rounded-2xl bg-[#f8f3ea] p-6">
+          <p className="mt-5 text-lg leading-8 text-[#5f5142] dark:text-slate-300">{data.description}</p>
+          <div className="mt-8 rounded-2xl bg-[#f8f3ea] p-6 dark:bg-white/[0.05]">
             <h2 className="text-lg font-bold">{isZh ? '简短答案' : 'Short answer'}</h2>
-            <p className="mt-3 leading-8 text-[#4b4034]">{data.answer}</p>
+            <p className="mt-3 leading-8 text-[#4b4034] dark:text-slate-300">{data.answer}</p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <Link href={`/${lang}/services/ai-hotel-website`} className="rounded-2xl bg-[#92400e] px-5 py-4 text-sm font-semibold text-white">
+            <Link href={`/${lang}/services/ai-hotel-website`} className="rounded-2xl bg-[#92400e] px-5 py-4 text-sm font-semibold text-white dark:bg-amber-300 dark:text-[#17120d]">
               {isZh ? '查看 MBCT 服务' : 'View MBCT Service'}
             </Link>
-            <Link href={`/${lang}/knowledge/why-ai-search-does-not-recommend-your-hotel-2026-07-06`} className="rounded-2xl bg-[#fff7ed] px-5 py-4 text-sm font-semibold text-[#7c2d12]">
+            <Link href={`/${lang}/knowledge/why-ai-search-does-not-recommend-your-hotel-2026-07-06`} className="rounded-2xl bg-[#fff7ed] px-5 py-4 text-sm font-semibold text-[#7c2d12] dark:bg-white/[0.08] dark:text-amber-200">
               {isZh ? '阅读相关文章' : 'Read Related Article'}
             </Link>
-            <Link href={`/${lang}/contact`} className="inline-flex items-center rounded-2xl bg-[#fff7ed] px-5 py-4 text-sm font-semibold text-[#7c2d12]">
+            <Link href={`/${lang}/contact`} className="inline-flex items-center rounded-2xl bg-[#fff7ed] px-5 py-4 text-sm font-semibold text-[#7c2d12] dark:bg-white/[0.08] dark:text-amber-200">
               {isZh ? '联系 MBCT' : 'Contact MBCT'}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
-          <p className="mt-8 text-xs text-[#7c6b5b]">{url}</p>
+          <p className="mt-8 text-xs text-[#7c6b5b] dark:text-slate-400">{url}</p>
         </div>
       </section>
     </main>

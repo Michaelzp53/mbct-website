@@ -130,22 +130,22 @@ export default async function AiHotelGrowthTopicPage({ params }: { params: Promi
   }
 
   return (
-    <main className="min-h-screen bg-[#f8f3ea] text-[#241b12]">
+    <main className="min-h-screen bg-[#f8f3ea] text-[#241b12] dark:bg-[#17120d] dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }} />
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <p className="mb-4 inline-flex rounded-full bg-[#d97706]/10 px-4 py-2 text-sm font-semibold text-[#92400e]">
+          <p className="mb-4 inline-flex rounded-full bg-[#d97706]/10 px-4 py-2 text-sm font-semibold text-[#92400e] dark:bg-amber-300/10 dark:text-amber-300">
             {isZh ? '酒店 AI 搜索获客专题' : 'Hotel AI Search Growth Hub'}
           </p>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
-          <p className="mt-6 text-lg leading-8 text-[#5f5142]">{description}</p>
+          <p className="mt-6 text-lg leading-8 text-[#5f5142] dark:text-slate-300">{description}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href={`/${lang}/contact`} className="inline-flex items-center rounded-full bg-[#92400e] px-6 py-3 text-sm font-semibold text-white hover:bg-[#78350f]">
+            <Link href={`/${lang}/contact`} className="inline-flex items-center rounded-full bg-[#92400e] px-6 py-3 text-sm font-semibold text-white hover:bg-[#78350f] dark:bg-amber-300 dark:text-[#17120d] dark:hover:bg-amber-200">
               {isZh ? '让 MBCT 帮我做一次 AI 信息体检' : 'Request an AI Information Audit'}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-            <Link href={`/${lang}/services/ai-hotel-website`} className="inline-flex items-center rounded-full border border-[#92400e]/30 px-6 py-3 text-sm font-semibold text-[#7c2d12] hover:bg-white/60">
+            <Link href={`/${lang}/services/ai-hotel-website`} className="inline-flex items-center rounded-full border border-[#92400e]/30 px-6 py-3 text-sm font-semibold text-[#7c2d12] hover:bg-white/60 dark:border-white/15 dark:text-amber-200 dark:hover:bg-white/10">
               {isZh ? '查看服务说明' : 'View Service'}
             </Link>
           </div>
@@ -157,21 +157,21 @@ export default async function AiHotelGrowthTopicPage({ params }: { params: Promi
             { icon: Sparkles, title: isZh ? '被理解' : 'Understanding', text: isZh ? '把酒店适合谁、解决什么问题、优势是什么讲清楚。' : 'Explain who the hotel is for, what it solves, and why it is different.' },
             { icon: Users, title: isZh ? '被承接' : 'Conversion', text: isZh ? '把咨询、直订和私域沉淀路径放到客人容易行动的位置。' : 'Place inquiry, booking, and retention paths where guests can act.' },
           ].map((item) => (
-            <div key={item.title} className="rounded-3xl bg-white/75 p-6 shadow-sm ring-1 ring-[#92400e]/10">
-              <item.icon className="h-8 w-8 text-[#d97706]" />
+            <div key={item.title} className="rounded-3xl bg-white/75 p-6 shadow-sm ring-1 ring-[#92400e]/10 dark:bg-white/[0.06] dark:ring-white/10">
+              <item.icon className="h-8 w-8 text-[#d97706] dark:text-amber-300" />
               <h2 className="mt-4 text-xl font-bold">{item.title}</h2>
-              <p className="mt-2 text-sm leading-6 text-[#6b5d4c]">{item.text}</p>
+              <p className="mt-2 text-sm leading-6 text-[#6b5d4c] dark:text-slate-300">{item.text}</p>
             </div>
           ))}
         </div>
 
-        <section className="mt-16 rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-[#92400e]/10">
+        <section className="mt-16 rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-[#92400e]/10 dark:bg-white/[0.06] dark:ring-white/10">
           <h2 className="text-2xl font-bold">{isZh ? 'MBCT 可以帮酒店做什么？' : 'What can MarvelBros C&T do for hotels?'}</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {services.map((service) => (
-              <div key={service} className="flex gap-3 rounded-2xl bg-[#f8f3ea] p-4">
-                <CheckCircle2 className="mt-1 h-5 w-5 flex-none text-[#d97706]" />
-                <p className="text-sm leading-6 text-[#4b4034]">{service}</p>
+              <div key={service} className="flex gap-3 rounded-2xl bg-[#f8f3ea] p-4 dark:bg-white/[0.05]">
+                <CheckCircle2 className="mt-1 h-5 w-5 flex-none text-[#d97706] dark:text-amber-300" />
+                <p className="text-sm leading-6 text-[#4b4034] dark:text-slate-300">{service}</p>
               </div>
             ))}
           </div>
@@ -182,7 +182,7 @@ export default async function AiHotelGrowthTopicPage({ params }: { params: Promi
             <h2 className="text-2xl font-bold">{isZh ? '酒店老板正在搜索的问题' : 'Questions hotel owners are searching'}</h2>
             <div className="mt-5 space-y-3">
               {questions.map((question) => (
-                <p key={question} className="rounded-2xl bg-white/80 px-5 py-4 text-sm font-medium shadow-sm ring-1 ring-[#92400e]/10">
+                <p key={question} className="rounded-2xl bg-white/80 px-5 py-4 text-sm font-medium shadow-sm ring-1 ring-[#92400e]/10 dark:bg-white/[0.06] dark:ring-white/10">
                   {question}
                 </p>
               ))}
@@ -192,9 +192,9 @@ export default async function AiHotelGrowthTopicPage({ params }: { params: Promi
             <h2 className="text-2xl font-bold">{isZh ? '继续阅读' : 'Continue reading'}</h2>
             <div className="mt-5 space-y-3">
               {related.map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center justify-between rounded-2xl bg-white/80 px-5 py-4 text-sm font-semibold shadow-sm ring-1 ring-[#92400e]/10 hover:bg-white">
+                <Link key={item.href} href={item.href} className="flex items-center justify-between rounded-2xl bg-white/80 px-5 py-4 text-sm font-semibold shadow-sm ring-1 ring-[#92400e]/10 hover:bg-white dark:bg-white/[0.06] dark:ring-white/10 dark:hover:bg-white/10">
                   {item.label}
-                  <ArrowRight className="h-4 w-4 text-[#d97706]" />
+                  <ArrowRight className="h-4 w-4 text-[#d97706] dark:text-amber-300" />
                 </Link>
               ))}
             </div>
