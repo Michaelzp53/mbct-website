@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/hotel-ai-recommendation-guest-avoid-direct-booking-2026-07-11`}
+                  href={`/${lang}/knowledge/hotel-ai-information-audit-2026-07-12`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -232,13 +232,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? 'AI 推荐酒店后，客人为什么不愿直接联系酒店或在酒店平台下单？'
-                      : 'If AI Recommends a Hotel, Why Do Guests Still Avoid Booking Direct?'}
+                      ? '酒店 AI 信息体检，到底能帮老板看清什么？'
+                      : 'What Can a Hotel AI Information Audit Help Owners Understand?'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? 'AI 推荐解决了"被看见"的问题，但从被看见到被选择，中间隔着价格透明度、手机端体验、推荐说服力、官网可信度、联系安全感和直接行动理由六个判断。任何一个环节让客人犹豫，他就会回到最熟悉的 OTA 渠道。'
-                      : 'AI recommendation solves the visibility problem, but between being seen and being chosen lie six judgments: price transparency, mobile experience, recommendation persuasiveness, website credibility, contact safety, and a clear reason to act directly.'}
+                      ? '酒店 AI 信息体检不是检查酒店会不会用 AI，而是看关键信息能不能被找到、读懂、信任，并把有兴趣的客人引向咨询、官网、直订或私域触点。'
+                      : 'A hotel AI information audit examines whether essential hotel information can be found, understood and trusted, then guides interested guests toward enquiry, the official website, direct booking or owned contact points.'}
                   </p>
                 </Link>
               </div>
