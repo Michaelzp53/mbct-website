@@ -72,6 +72,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 618,
+      type: "report",
+      title: "酒店 AI 信息体检，到底能帮老板看清什么？",
+      titleEn: "What Can a Hotel AI Information Audit Help Owners Understand?",
+      slug: "hotel-ai-information-audit-2026-07-12",
+      summary: "一家酒店位置不错，房间、餐饮和服务也有亮点。但当客人向 AI 提问“附近哪家适合商务出差”“带孩子住哪里方便”或“会议团队住哪合适”时，这家酒店很少出现在答案里。即使偶尔被提到，优势也说得含糊，联系电话、停车条件或会议能力甚至已经过时。",
+      summaryEn: "What Can a Hotel AI Information Audit Help Owners Understand?",
+      firstLine: "一家酒店位置不错，房间、餐饮和服务也有亮点。但当客人向 AI 提问“附近哪家适合商务出差”“带孩子住哪里方便”或“会议团队住哪合适”时，这家酒店很少出现在答案里。即使偶尔被提到，优势也说得含糊，联系电话、停车条件或会议能力甚至已经过时。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-12",
+      readTime: 7,
+      tag: "行业报告",
+      tagColor: "bg-[#3b82f6]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
+    {
     id: 617,
     type: "article",
     title: "AI 推荐酒店后，客人为什么不愿直接联系酒店或在酒店平台下单？",
