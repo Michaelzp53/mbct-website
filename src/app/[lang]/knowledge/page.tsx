@@ -1044,6 +1044,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
   // 行业报告 - 2026-06-10新增1篇（案例研究）
   const reports = [
     {
+      id: 619,
+      type: "article",
+      title: "如果 AI 没有推荐你的酒店，你最容易失去哪些客人？",
+      titleEn: "Which Guests Are Hotels Most Likely to Lose When AI Does Not Recommend Them?",
+      slug: "what-guests-hotels-lose-without-ai-recommendation-2026-07-14",
+      summary: "酒店老板看入住率变化时，通常能追溯到 OTA 订单、协议客户和会员复购各自贡献了多少。但有一类损失从来不会出现在任何一张报表里：客人打开手机问了 AI，却没有在答案里看到你的酒店。",
+      summaryEn: "A hotel owner reviewing occupancy can usually trace exactly how much came from OTAs, corporate accounts, and member repeats. But one category of loss never appears on any report: t",
+      firstLine: "酒店老板看入住率变化时，通常能追溯到 OTA 订单、协议客户和会员复购各自贡献了多少。但有一类损失从来不会出现在任何一张报表里：客人打开手机问了 AI，却没有在答案里看到你的酒店。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-14",
+      readTime: 7,
+      tag: "趋势分析",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      featured: true,
+    },
+    {
       id: 501,
       type: "report",
       title: "2026 酒店搜索流量报告：AI 摘要和零点击搜索正在改变客人找酒店的路径",

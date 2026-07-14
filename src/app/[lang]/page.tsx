@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/hotel-ai-information-audit-2026-07-12`}
+                  href={`/${lang}/knowledge/what-guests-hotels-lose-without-ai-recommendation-2026-07-14`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -232,13 +232,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? '酒店 AI 信息体检，到底能帮老板看清什么？'
-                      : 'What Can a Hotel AI Information Audit Help Owners Understand?'}
+                      ? '如果 AI 没有推荐你的酒店，你最容易失去哪些客人？'
+                      : 'Which Guests Are Hotels Most Likely to Lose When AI Does Not Recommend Them?'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '酒店 AI 信息体检不是检查酒店会不会用 AI，而是看关键信息能不能被找到、读懂、信任，并把有兴趣的客人引向咨询、官网、直订或私域触点。'
-                      : 'A hotel AI information audit examines whether essential hotel information can be found, understood and trusted, then guides interested guests toward enquiry, the official website, direct booking or owned contact points.'}
+                      ? '酒店老板看入住率变化时，通常能追溯到 OTA 订单、协议客户和会员复购各自贡献了多少。但有一类损失从来不会出现在任何一张报表里：客人打开手机问了 AI，却没有在答案里看到你的酒店。'
+                      : 'A hotel owner reviewing occupancy can usually trace exactly how much came from OTAs, corporate accounts, and member repeats. But one category of loss never appears on any report: the guest who opened their phone, asked AI a question, and never saw your hotel in the answer.'}
                   </p>
                 </Link>
               </div>
