@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/what-guests-hotels-lose-without-ai-recommendation-2026-07-14`}
+                  href={`/${lang}/knowledge/ai-introduces-hotel-dining-meetings-family-facilities-2026-07-15`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -232,13 +232,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? '如果 AI 没有推荐你的酒店，你最容易失去哪些客人？'
-                      : 'Which Guests Are Hotels Most Likely to Lose When AI Does Not Recommend Them?'}
+                      ? 'AI 如果提前介绍酒店的餐饮、会议和亲子设施，会给酒店带来什么好处？'
+                      : 'What Benefits Can Hotels Gain When AI Introduces Dining, Meeting, and Family Facilities?'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '酒店老板看入住率变化时，通常能追溯到 OTA 订单、协议客户和会员复购各自贡献了多少。但有一类损失从来不会出现在任何一张报表里：客人打开手机问了 AI，却没有在答案里看到你的酒店。'
-                      : 'A hotel owner reviewing occupancy can usually trace exactly how much came from OTAs, corporate accounts, and member repeats. But one category of loss never appears on any report: the guest who opened their phone, asked AI a question, and never saw your hotel in the answer.'}
+                      ? '酒店的餐饮、会议和亲子设施如果没有在客人决策前被讲清楚，酒店就容易只剩房价和位置可比较。准确的场景信息能帮助酒店进入更多真实需求的候选名单。'
+                      : 'When dining, meeting, and family facilities are not explained before guests decide, a hotel is reduced to price and location. Accurate scenario information helps it enter more relevant consideration sets.'}
                   </p>
                 </Link>
               </div>

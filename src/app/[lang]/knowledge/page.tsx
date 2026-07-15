@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 620,
+      type: "article",
+      title: "AI 如果提前介绍酒店的餐饮、会议和亲子设施，会给酒店带来什么好处？",
+      titleEn: "What Benefits Can Hotels Gain When AI Introduces Their Dining, Meeting, and Family Facilities in Advance?",
+      slug: "ai-introduces-hotel-dining-meetings-family-facilities-2026-07-15",
+      summary: "酒店的餐饮、会议和亲子设施如果没有在客人决策前被讲清楚，酒店就容易只剩房价和位置可比较。准确、完整的场景信息能帮助酒店进入更多真实需求的候选名单。",
+      summaryEn: "When dining, meeting, and family facilities are not explained before guests decide, a hotel is reduced to price and location. Accurate scenario information helps it enter more relevant consideration sets.",
+      firstLine: "很多酒店老板都有过这样的困惑：明明投入了不少资金打造餐厅、会议室、亲子空间或特色体验，但客人似乎只把酒店当成一个睡觉的地方。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-07-15",
+      category: "industry-insights",
+      tag: isZh ? "趋势分析" : "Trend Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 618,
       type: "report",
       title: "酒店 AI 信息体检，到底能帮老板看清什么？",
