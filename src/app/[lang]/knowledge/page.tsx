@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 621,
+      type: "article",
+      title: "2026 年酒店为什么必须开始做 AI 获客？",
+      titleEn: "Why Should Hotels Start AI Lead Generation in 2026?",
+      slug: "why-hotels-start-ai-lead-generation-2026-07-16",
+      summary: "酒店做 AI 获客，真正要抢的是客人做决定前的第一轮理解和比较机会。第一步不是买复杂系统，而是把酒店的信息、官网、内容和咨询入口整理成 AI 与客人都能读懂、能信任、能继续联系的结构。",
+      summaryEn: "Hotel AI lead generation is about entering the guest's first shortlist before booking decisions are made. The first step is not buying a complex system, but organizing hotel information, website content, and inquiry paths so AI and guests can understand and act on them.",
+      firstLine: "很多酒店老板最近都有一个类似的困惑：酒店并不差，房间干净、位置方便、餐饮也有特色，但客人在搜索引擎或 AI 工具里问相关问题时，答案里往往没有自己。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-07-16",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 620,
       type: "article",
       title: "AI 如果提前介绍酒店的餐饮、会议和亲子设施，会给酒店带来什么好处？",

@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/ai-introduces-hotel-dining-meetings-family-facilities-2026-07-15`}
+                  href={`/${lang}/knowledge/why-hotels-start-ai-lead-generation-2026-07-16`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -232,13 +232,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? 'AI 如果提前介绍酒店的餐饮、会议和亲子设施，会给酒店带来什么好处？'
-                      : 'What Benefits Can Hotels Gain When AI Introduces Dining, Meeting, and Family Facilities?'}
+                      ? '2026 年酒店为什么必须开始做 AI 获客？'
+                      : 'Why Should Hotels Start AI Lead Generation in 2026?'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '酒店的餐饮、会议和亲子设施如果没有在客人决策前被讲清楚，酒店就容易只剩房价和位置可比较。准确的场景信息能帮助酒店进入更多真实需求的候选名单。'
-                      : 'When dining, meeting, and family facilities are not explained before guests decide, a hotel is reduced to price and location. Accurate scenario information helps it enter more relevant consideration sets.'}
+                      ? '酒店做 AI 获客，真正要抢的是客人做决定前的第一轮理解和比较机会。第一步不是买复杂系统，而是把酒店的信息、官网、内容和咨询入口整理清楚。'
+                      : 'Hotel AI lead generation is about entering the guest\'s first shortlist before booking decisions are made, starting with clearer hotel information, website content, and inquiry paths.'}
                   </p>
                 </Link>
               </div>
