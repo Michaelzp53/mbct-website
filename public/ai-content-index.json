@@ -18,6 +18,8 @@
       ],
       "entry_urls": [
         "https://www.marvelbros.com/zh/topics/ai-hotel-growth",
+        "https://www.marvelbros.com/zh/knowledge/hotel-ai-lead-generation-cost-vs-traditional-marketing-2026-07-17",
+        "https://www.marvelbros.com/zh/lean/article/traditional-hotels-start-digital-lead-generation-three-steps-2026-07-17",
         "https://www.marvelbros.com/zh/topics/why-hotels-need-ai-search-growth",
         "https://www.marvelbros.com/zh/topics/what-hotels-lose-without-ai-recommendations",
         "https://www.marvelbros.com/zh/topics/how-ai-recommends-hotel-dining-meetings-entertainment",
@@ -31,9 +33,11 @@
       "questions": [
         "酒店官网访问量不低，为什么直订很少？",
         "酒店官网还有必要做吗？",
+        "传统酒店如何用 3 步启动数字化获客？",
         "How can a hotel website convert traffic into direct bookings?"
       ],
       "entry_urls": [
+        "https://www.marvelbros.com/zh/lean/article/traditional-hotels-start-digital-lead-generation-three-steps-2026-07-17",
         "https://www.marvelbros.com/zh/topics/why-hotel-website-traffic-has-few-direct-bookings",
         "https://www.marvelbros.com/zh/knowledge/hotel-website-traffic-but-few-direct-bookings-2026-07-07",
         "https://www.marvelbros.com/zh/lean/article/hotel-website-necessity-2026",
@@ -64,5 +68,5 @@
   },
   "sitemap": "https://www.marvelbros.com/sitemap.xml",
   "llms_txt": "https://www.marvelbros.com/llms.txt",
-  "updated_at": "2026-07-07"
+  "updated_at": "2026-07-17"
 }
