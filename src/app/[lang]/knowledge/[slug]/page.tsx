@@ -6,6 +6,7 @@ import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ArticleInteractions from '@/components/interactions/ArticleInteractions'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import articles20260718 from './articles-2026-07-18.json'
 import articles20260717 from './articles-2026-07-17.json'
 
 // 完整文章内容数据
@@ -22,6 +23,19 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260718 as Record<string, {
+    id: number
+    title: string
+    titleEn?: string
+    description?: string
+    descriptionEn?: string
+    author: string
+    date: string
+    readTime: string
+    tag: string
+    content: string[]
+    contentEn?: string[]
+  }>),
   ...(articles20260717 as Record<string, {
     id: number
     title: string

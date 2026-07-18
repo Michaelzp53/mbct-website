@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/hotel-ai-lead-generation-cost-vs-traditional-marketing-2026-07-17`}
+                  href={`/${lang}/knowledge/four-metric-groups-for-hotel-ai-lead-generation-2026-07-18`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -232,13 +232,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? "酒店做 AI 获客，成本该怎样和传统获客比较？"
-                      : "How Should Hotels Compare AI Lead Generation Costs with Traditional Marketing?"}
+                      ? "酒店想看清 AI 获客效果，应该先建立哪四组指标？"
+                      : "Which Four Metric Groups Should Hotels Track to Measure AI Lead Generation?"}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? "很多酒店老板听到 AI 获客，第一反应不是要不要做，而是会不会又是一笔看不见结果的钱。"
-                      : "When hotel owners hear about AI lead generation, the first concern is whether it will become another expense with no visible return."}
+                      ? `设想这样一个场景：一家城市商务酒店的总经理在一次行业交流后，决定认真做 AI 获客。几周后，他打开后台数据面板，看到满屏的访问、点击、跳出率、平均停留时间——数字很多，但他不知道应该先看哪一个，也不知道哪些数字变了才算"有效果"。`
+                      : "Walk into most hotel review meetings and you will find a strange thing. Everyone has data, and everyone is looking at a different number. The marketing lead points to search visibility and site visits. The front office talks about occupancy. The sales team counts inquiries. Finance reads ADR and RevPAR. Each is correct in isolation, and yet no one in the room can trace a single guest from AI discovery all the way to a booked, paid stay."}
                   </p>
                 </Link>
               </div>
