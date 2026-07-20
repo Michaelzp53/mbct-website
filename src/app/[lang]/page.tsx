@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/four-metric-groups-for-hotel-ai-lead-generation-2026-07-18`}
+                  href={`/${lang}/knowledge/summer-demand-rate-increase-hotel-owners-2026-07-20`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -232,13 +232,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? "酒店想看清 AI 获客效果，应该先建立哪四组指标？"
-                      : "Which Four Metric Groups Should Hotels Track to Measure AI Lead Generation?"}
+                      ? '暑期客流回来了，为什么酒店老板还是不敢轻易涨价？'
+                      : 'Summer Guests Are Back. Why Are Hotel Owners Still Hesitant to Raise Rates?'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? `设想这样一个场景：一家城市商务酒店的总经理在一次行业交流后，决定认真做 AI 获客。几周后，他打开后台数据面板，看到满屏的访问、点击、跳出率、平均停留时间——数字很多，但他不知道应该先看哪一个，也不知道哪些数字变了才算"有效果"。`
-                      : "Walk into most hotel review meetings and you will find a strange thing. Everyone has data, and everyone is looking at a different number. The marketing lead points to search visibility and site visits. The front office talks about occupancy. The sales team counts inquiries. Finance reads ADR and RevPAR. Each is correct in isolation, and yet no one in the room can trace a single guest from AI discovery all the way to a booked, paid stay."}
+                      ? '暑期客流回来了，但涨价不能只看订单量。酒店真正要判断的是客群结构、竞品价格、服务承载力、取消率和差评风险。'
+                      : 'Summer demand is back, but rate increases should be based on guest mix, competitor pricing, service capacity, cancellation risk, and review impact.'}
                   </p>
                 </Link>
               </div>

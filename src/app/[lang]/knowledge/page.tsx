@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 624,
+      type: "article",
+      title: "暑期客流回来了，为什么酒店老板还是不敢轻易涨价？",
+      titleEn: "Summer Guests Are Back. Why Are Hotel Owners Still Hesitant to Raise Rates?",
+      slug: "summer-demand-rate-increase-hotel-owners-2026-07-20",
+      summary: "游客多了，订单多了，前台忙起来了。但很多酒店老板看着线上的订单曲线，心里不是激动，是犹豫——这个价，到底涨不涨？",
+      summaryEn: "More guests are coming in. Orders are picking up. The front desk is busy again. But many hotel owners look at that booking curve and feel something closer to anxiety than excitement.",
+      firstLine: "游客多了，订单多了，前台忙起来了。但很多酒店老板看着线上的订单曲线，心里不是激动，是犹豫——这个价，到底涨不涨？",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-20",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 5,
+      featured: true,
+      image: "",
+    },
+    {
       id: 623,
       type: "article",
       title: "酒店想看清 AI 获客效果，应该先建立哪四组指标？",
