@@ -6,6 +6,7 @@ import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ArticleInteractions from '@/components/interactions/ArticleInteractions'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import articles20260721 from './articles-2026-07-21.json'
 import articles20260718 from './articles-2026-07-18.json'
 import articles20260717 from './articles-2026-07-17.json'
 
@@ -23,6 +24,19 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260721 as Record<string, {
+    id: number
+    title: string
+    titleEn?: string
+    description?: string
+    descriptionEn?: string
+    author: string
+    date: string
+    readTime: string
+    tag: string
+    content: string[]
+    contentEn?: string[]
+  }>),
   "summer-demand-rate-increase-hotel-owners-2026-07-20": {
     id: 624,
     title: "暑期客流回来了，为什么酒店老板还是不敢轻易涨价？",

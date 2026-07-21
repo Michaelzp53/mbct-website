@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 625,
+      type: "article",
+      title: "酒店想被游客记住，不能只靠房价便宜",
+      titleEn: "Hotels Are Remembered for Value, Not Just Low Price",
+      slug: "hotel-value-beyond-cheap-2026-07-21",
+      summary: "暑期客流回来了，酒店更容易被看到，也更容易被比较。真正决定一家酒店能不能被记住的，不只是房价，而是它能不能让不同客群在出行中感到省心、独特、值得推荐。",
+      summaryEn: "Summer traffic brings more visibility and more comparison. What determines whether a hotel is remembered is not price alone, but whether different guest segments feel it is convenient, distinctive, and worth recommending.",
+      firstLine: "很多酒店在暑期最容易掉进一个习惯性判断：客流回来了，先看价格；同行降了，自己也跟着降；只要够便宜，客人就会来。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-21",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 624,
       type: "article",
       title: "暑期客流回来了，为什么酒店老板还是不敢轻易涨价？",

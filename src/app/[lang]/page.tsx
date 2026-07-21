@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/summer-demand-rate-increase-hotel-owners-2026-07-20`}
+                  href={`/${lang}/knowledge/hotel-value-beyond-cheap-2026-07-21`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -232,13 +232,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? '暑期客流回来了，为什么酒店老板还是不敢轻易涨价？'
-                      : 'Summer Guests Are Back. Why Are Hotel Owners Still Hesitant to Raise Rates?'}
+                      ? '酒店想被游客记住，不能只靠房价便宜'
+                      : 'Hotels Are Remembered for Value, Not Just Low Price'}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '暑期客流回来了，但涨价不能只看订单量。酒店真正要判断的是客群结构、竞品价格、服务承载力、取消率和差评风险。'
-                      : 'Summer demand is back, but rate increases should be based on guest mix, competitor pricing, service capacity, cancellation risk, and review impact.'}
+                      ? '暑期客流回来了，但真正能被游客记住的不是最低价，而是省心、独特、可被推荐的体验。'
+                      : 'Summer traffic is back, but what guests remember is not the lowest price. It is a stay that feels convenient, distinctive, and worth recommending.'}
                   </p>
                 </Link>
               </div>
