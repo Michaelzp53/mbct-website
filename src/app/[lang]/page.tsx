@@ -1,507 +1,379 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2, Compass, Target, TrendingUp, Shield, Users, Briefcase, Building2, LineChart, Cpu, FolderKanban, SearchCheck, Hotel, MessagesSquare } from 'lucide-react'
+import Image from 'next/image'
+import {
+  ArrowRight,
+  BarChart3,
+  BookOpen,
+  Building2,
+  ClipboardCheck,
+  Coins,
+  FileText,
+  Globe2,
+  Hotel,
+  LineChart,
+  Phone,
+  Search,
+  Sparkles,
+  Users,
+} from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
-import ScrollFade from '@/components/scroll-fade'
-import SectionWithBg from '@/components/SectionWithBg'
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
   const isZh = lang === 'zh'
 
-  const capabilityGroups = [
-    {
-      icon: Compass,
-      title: isZh ? '投前决策' : 'Investment Decisions',
-      summary: isZh
-        ? '判断项目该不该投、怎么投、风险在哪里。'
-        : 'Clarify whether a project should move forward, how it should be structured, and where the risks sit.',
-      items: isZh
-        ? ['可行性研究', '市场与竞争判断', '投资测算与回报模型']
-        : ['Feasibility studies', 'Market and competitive assessment', 'Return modeling and investment scenarios'],
-      color: '#0072ce',
-    },
-    {
-      icon: TrendingUp,
-      title: isZh ? '经营增长' : 'Operating Growth',
-      summary: isZh
-        ? '围绕 RevPAR、直销、复购与团队执行，把增长做成持续系统。'
-        : 'Build a repeatable system around RevPAR, direct bookings, retention, and execution discipline.',
-      items: isZh
-        ? ['运营诊断与增长', '私域与会员增长', '品牌定位与升级']
-        : ['Operations diagnosis and growth', 'Private-domain and membership growth', 'Brand positioning and upgrades'],
-      color: '#16a34a',
-    },
-    {
-      icon: Shield,
-      title: isZh ? 'AI 落地' : 'AI Implementation',
-      summary: isZh
-        ? '把 AI 从概念变成经营动作、数据机制与组织效率。'
-        : 'Turn AI from a concept into operating routines, management visibility, and team efficiency.',
-      items: isZh
-        ? ['AI 管理系统', '数据看板与流程机制', '陪跑式顾问支持']
-        : ['AI management systems', 'Dashboards and operating mechanisms', 'Execution partnership and advisory support'],
-      color: '#8ab4f8',
-    },
-  ]
-
-  const fitCases = [
-    isZh ? '新项目需要判断是否值得投、如何筹开更稳。' : 'A new project needs sharper go/no-go judgment and a more stable opening path.',
-    isZh ? '存量酒店增长遇到瓶颈，RevPAR、直销或复购停滞。' : 'An existing hotel has stalled on RevPAR, direct bookings, or repeat business.',
-    isZh ? '团队执行很忙，但数据、节奏与结果没有形成闭环。' : 'The team is active, but data, operating rhythm, and results are not yet connected.',
-  ]
-
-  const decisionPaths = [
-    {
-      icon: FolderKanban,
-      title: isZh ? '新项目判断' : 'Project Assessment',
-      desc: isZh
-        ? '适合正在做投资判断、筹开规划或重新定位的项目。'
-        : 'For projects evaluating investment, pre-opening structure, or repositioning.',
-      iconBg: 'bg-sky-100 dark:bg-[#8ab4f8]/15',
-      iconColor: 'text-[#006bb6] dark:text-[#8ab4f8]',
-      iconRing: 'ring-sky-200/80 dark:ring-sky-300/20',
-    },
+  const knowledgeAreas = [
     {
       icon: LineChart,
-      title: isZh ? '经营增长' : 'Growth Execution',
-      desc: isZh
-        ? '适合增长卡住、RevPAR承压、直销和复购偏弱的酒店。'
-        : 'For hotels under RevPAR pressure, weak direct sales, or stalled repeat business.',
-      iconBg: 'bg-emerald-100 dark:bg-emerald-400/15',
-      iconColor: 'text-emerald-700 dark:text-emerald-300',
-      iconRing: 'ring-emerald-200/80 dark:ring-emerald-400/20',
-    },
-    {
-      icon: Cpu,
-      title: isZh ? 'AI落地' : 'AI Execution',
-      desc: isZh
-        ? '适合希望推进数字化，但不想停留在概念层面的团队。'
-        : 'For teams that want digital execution without stopping at surface-level concepts.',
-      iconBg: 'bg-violet-100 dark:bg-violet-400/15',
-      iconColor: 'text-violet-700 dark:text-violet-300',
-      iconRing: 'ring-violet-200/80 dark:ring-violet-400/20',
-    },
-  ]
-
-  const aiWebsiteCards = [
-    {
-      icon: SearchCheck,
-      title: isZh ? 'AI 信息体检' : 'AI Information Audit',
-      desc: isZh
-        ? '检查 AI、地图、OTA、社交内容和已有官网里的酒店信息，找出哪些内容 AI 抓不到、读不懂。'
-        : 'Review AI, maps, OTAs, social content, and any existing website to find what AI cannot crawl or understand.',
+      title: isZh ? '市场与收益' : 'Market and revenue',
+      copy: isZh ? '需求判断、定价、渠道、RevPAR与收益策略' : 'Demand, pricing, channels, RevPAR, and revenue strategy',
     },
     {
       icon: Hotel,
-      title: isZh ? '信息平台建设' : 'Information Platform Build',
-      desc: isZh
-        ? '把房型、位置、会议、长住和企业客户整理成 AI 能抓取、客人能看懂、销售能承接的信息平台。'
-        : 'Turn rooms, location, meetings, long stays, and corporate clients into an AI-readable platform guests and sales teams can use.',
+      title: isZh ? '产品与服务' : 'Product and service',
+      copy: isZh ? '产品定位、客群体验、服务设计与品质管理' : 'Positioning, guest experience, service design, and quality',
     },
     {
-      icon: MessagesSquare,
-      title: isZh ? '内容托管运营' : 'Content Operations',
-      desc: isZh
-        ? '长期代写、上传和维护页面、推文、FAQ 和关键词，让 AI 持续有准确内容可以抓取。'
-        : 'Continuously write, upload, and maintain pages, posts, FAQs, and keywords so AI has accurate content to crawl.',
-    },
-  ]
-
-  const hospitalityScenes = [
-    {
-      image: '/images/home-named/about-us.png',
-      eyebrow: isZh ? '服务触点' : 'Service Touchpoint',
-      title: isZh ? '把前台服务变成可复盘的经营线索' : 'Turn front-desk service into reviewable operating signals',
-      desc: isZh
-        ? '从客人咨询、到店、投诉和复购线索里，看清团队执行和产品表达的真实状态。'
-        : 'Read the real state of team execution and product expression through inquiries, arrivals, complaints, and repeat intent.',
-    },
-    {
-      image: '/images/home-named/solutions-lounge.jpeg',
-      eyebrow: isZh ? '体验细节' : 'Experience Detail',
-      title: isZh ? '把空间美感转化为可定价的体验价值' : 'Translate space quality into priceable experience value',
-      desc: isZh
-        ? '不只看装修是否漂亮，更看它能否支撑客单价、套餐、停留时间和复购理由。'
-        : 'Beyond looking beautiful, the experience must support rate, packages, dwell time, and reasons to return.',
-    },
-    {
-      image: '/images/home-named/solutions-dining.jpg',
-      eyebrow: isZh ? '收益场景' : 'Revenue Scene',
-      title: isZh ? '让餐饮、会议和目的地内容共同带动收益' : 'Connect dining, events, and destination content to revenue',
-      desc: isZh
-        ? '把餐饮和空间优势放进经营模型里，而不是停留在宣传照片里。'
-        : 'Place dining and space advantages inside the operating model, not just inside marketing photos.',
-    },
-  ]
-
-  const whyMbct = [
-    {
-      icon: Briefcase,
-      title: isZh ? '既懂投资，也懂经营' : 'Understands investment and operations',
-      desc: isZh
-        ? '不是只会写报告，也不是只会做系统，而是把投前判断、经营动作与后续执行放在同一张图里。'
-        : 'Not just reports and not just software. We connect investment judgment, operating actions, and implementation in one commercial logic.',
+      icon: Coins,
+      title: isZh ? '成本与效率' : 'Cost and efficiency',
+      copy: isZh ? '成本结构、人效、流程与经营利润' : 'Cost structure, productivity, process, and operating profit',
     },
     {
       icon: Building2,
-      title: isZh ? '只做酒店，不做泛咨询' : 'Hospitality-focused, not generic consulting',
-      desc: isZh
-        ? '品牌、流量、收益、组织、成本都围绕酒店经营场景展开，更容易落地。'
-        : 'Brand, traffic, revenue, teams, and cost structures are all handled through real hospitality operating scenarios.',
+      title: isZh ? '投资与筹开' : 'Investment and pre-opening',
+      copy: isZh ? '投资判断、定位、建设控制与筹开落地' : 'Investment judgment, positioning, build control, and opening',
     },
     {
       icon: Users,
-      title: isZh ? '不是卖工具，而是盯结果' : 'Built around outcomes, not tools',
-      desc: isZh
-        ? '先判断问题本质，再决定是做诊断、做方案，还是进入完整合作。'
-        : 'We start by diagnosing the real issue, then decide whether the right next step is advice, a diagnostic review, or a full engagement.',
+      title: isZh ? '团队与管理' : 'Teams and management',
+      copy: isZh ? '组织建设、人才培养、绩效与执行能力' : 'Organization, talent, performance, and execution',
+    },
+    {
+      icon: Search,
+      title: isZh ? 'AI搜索与增长' : 'AI search and growth',
+      copy: isZh ? '信息可见度、内容资产、搜索入口与客户转化' : 'Visibility, content assets, search entry points, and conversion',
+    },
+  ]
+
+  const latestArticles = [
+    {
+      title: isZh ? '加盟酒店品牌怎么选？别只看名气，要看它的持续创造价值能力' : "How to Choose a Hotel Franchise Brand: It's About Long-Term Value Creation",
+      summary: isZh
+        ? '品牌名气只能降低第一次选择成本，真正决定加盟价值的是它能否长期改善产品、价格、渠道、运营与收益。'
+        : 'Recognition may lower the first-choice barrier. Long-term franchise value depends on sustained improvements to product, pricing, channels, operations, and returns.',
+      slug: 'how-to-choose-hotel-franchise-brand-long-term-value-2026-07-25',
+      date: '2026.07.25',
+    },
+    {
+      title: isZh ? '暑期客群变复杂，酒店行业的新机会藏在哪里？' : 'As summer guests get more diverse, where is the real opportunity for hotels?',
+      summary: isZh
+        ? '真正的新机会，藏在客群结构变复杂以后，酒店能不能识别需求、调整服务承载和线上表达。'
+        : 'The opportunity lies in reading a more diverse guest mix, adjusting service capacity, and expressing value clearly online.',
+      slug: 'summer-guest-mix-opportunity-hotels-2026-07-24',
+      date: '2026.07.24',
+    },
+    {
+      title: isZh ? '酒店想被游客记住，不能只靠房价便宜' : 'Hotels are remembered for value, not just low price',
+      summary: isZh
+        ? '决定一家酒店能不能被记住的，是它能不能让不同客群感到省心、独特、值得推荐。'
+        : 'Memorable hotels make different guest groups feel understood, confident, and ready to recommend the stay.',
+      slug: 'hotel-value-beyond-cheap-2026-07-21',
+      date: '2026.07.21',
+    },
+  ]
+
+  const methods = [
+    isZh ? '看清真实经营数据和现场' : 'Read the real data and the operating floor',
+    isZh ? '找到影响利润的关键问题' : 'Find the issues that materially affect profit',
+    isZh ? '把策略变成清晰的执行动作' : 'Turn strategy into clear operating actions',
+    isZh ? '跟踪结果，持续校准' : 'Track outcomes and keep improving',
+  ]
+
+  const services = [
+    {
+      icon: ClipboardCheck,
+      title: isZh ? '酒店经营诊断' : 'Hotel operational diagnosis',
+      copy: isZh ? '从收入、成本、产品、服务和渠道中找到真正影响经营的关键问题。' : 'Find the issues across revenue, cost, product, service, and channels that truly shape performance.',
+    },
+    {
+      icon: Building2,
+      title: isZh ? '筹开与投资控制' : 'Pre-opening and investment control',
+      copy: isZh ? '从定位、建设、装修到筹开，控制投入，减少浪费，确保开业质量。' : 'Control positioning, construction, fit-out, and opening expenditure while protecting launch quality.',
+    },
+    {
+      icon: BarChart3,
+      title: isZh ? '经营改善与托管' : 'Business improvement and management',
+      copy: isZh ? '让经营策略进入每天的管理动作，持续改善收入、成本和团队执行。' : 'Move strategy into daily management and improve revenue, cost, and team execution.',
+    },
+    {
+      icon: Globe2,
+      title: isZh ? 'AI搜索获客' : 'AI search acquisition',
+      copy: isZh ? '把酒店真实优势变成可搜索、可理解、可引用、可咨询的信息资产。' : 'Turn real hotel strengths into searchable, understandable, citable, and inquiry-ready information.',
     },
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <HeroWithStats lang={lang} />
 
-      <section className="relative overflow-hidden bg-white py-16 md:py-20 dark:bg-[#0b1020]">
-        <div className="absolute inset-0 opacity-60">
-          <div className="absolute left-[-8rem] top-[-8rem] h-80 w-80 rounded-full bg-sky-100/80 blur-3xl dark:bg-sky-500/10" />
-          <div className="absolute right-[-6rem] bottom-[-10rem] h-96 w-96 rounded-full bg-blue-100/70 blur-3xl dark:bg-emerald-500/10" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <ScrollFade>
-              <div>
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-4 py-2 text-sm font-medium text-[#003b71] shadow-sm dark:border-sky-300/25 dark:bg-white/5 dark:text-[#8ab4f8]">
-                  <SearchCheck className="h-4 w-4" />
-                  {isZh ? '新服务：酒店 AI 信息平台建设与内容托管' : 'New service: AI-readable hotel information platform'}
-                </div>
-                <h2 className="max-w-3xl text-3xl font-bold leading-tight text-[#101828] md:text-5xl dark:text-white">
-                  {isZh ? '你的酒店被 AI 推荐了吗？客人搜到了吗？' : 'Is your hotel being recommended by AI, and can guests find it?'}
-                </h2>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#344054] md:text-lg dark:text-slate-300">
-                  {isZh
-                    ? '酒店优势如果只散落在图片、OTA 页面和零散介绍里，AI 读不懂，就推不出去。迈创兄弟C&T 帮酒店把信息整理成可抓取、可理解、可询价的内容资产。'
-                    : 'If hotel strengths are scattered across images, OTA pages, and generic descriptions, AI cannot understand or recommend them. MarvelBros C&T turns hotel information into crawlable, understandable, inquiry-ready content assets.'}
-                </p>
-                <div className="mt-7 space-y-3 text-sm leading-relaxed text-[#344054] dark:text-slate-300">
-                  {(isZh
-                    ? [
-                        '没有官网的酒店，可以从轻量信息平台开始。',
-                        '已有官网但没人维护的酒店，可以从内容托管和关键词更新开始。',
-                        '我们不做渠道对立，只帮酒店增加一条可被 AI 理解的自有信息入口。',
-                      ]
-                    : [
-                        'Hotels without a website can start with a lightweight information platform.',
-                        'Hotels with an unattended website can start with content operations and keyword maintenance.',
-                        'We do not position this against any channel. We add an owned information entry point that AI can understand.',
-                      ]).map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#006bb6] dark:text-[#8ab4f8]" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    href={`/${lang}/services/ai-hotel-website`}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#003b71] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-900/10 transition-all hover:-translate-y-0.5 hover:bg-[#002f5f] hover:shadow-xl dark:bg-[#8ab4f8] dark:text-[#06101f]"
-                  >
-                    {isZh ? '获取 AI 信息平台建议' : 'Get AI platform recommendations'}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    href={`/${lang}/services/ai-hotel-website#process`}
-                    className="inline-flex items-center justify-center rounded-xl border border-sky-300 bg-white/60 px-6 py-3 text-sm font-semibold text-[#344054] transition-colors hover:border-[#003b71] hover:text-[#101828] dark:border-sky-300/25 dark:bg-white/5 dark:text-sky-100 dark:hover:text-white"
-                  >
-                    {isZh ? '了解体检怎么做' : 'How the diagnostic works'}
-                  </Link>
-                  <Link
-                    href={`/${lang}/topics/ai-hotel-growth`}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-amber-300 bg-amber-50 px-6 py-3 text-sm font-semibold text-amber-800 transition-colors hover:border-amber-400 hover:bg-amber-100 dark:border-amber-300/25 dark:bg-amber-300/10 dark:text-amber-200 dark:hover:bg-amber-300/15"
-                  >
-                    {isZh ? '进入 AI 搜索获客专题' : 'AI Search Growth Hub'}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
+      <section className="border-b border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-slate-950 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '酒店经营者的知识索引' : 'The hotel operator’s knowledge index'}</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+                {isZh ? '遇到经营问题，从这里找到方法' : 'Find the method behind every operating challenge'}
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
+                {isZh
+                  ? '我们持续整理酒店投资、筹开、经营、市场、成本、服务和团队管理中的真实问题，让网站成为酒店经营者随时能用的专业字典。'
+                  : 'We organize real questions across hotel investment, opening, operations, marketing, cost, service, and people into a practical reference operators can use every day.'}
+              </p>
+              <Link href={`/${lang}/knowledge`} className="mt-8 inline-flex items-center gap-2 font-semibold text-[#0b4a6f] hover:text-[#d98b28] dark:text-sky-300 dark:hover:text-amber-300">
+                {isZh ? '浏览全部酒店知识' : 'Browse all hotel knowledge'}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="border-t border-slate-300 dark:border-slate-700">
+              {knowledgeAreas.map(({ icon: Icon, title, copy }) => (
                 <Link
-                  href={`/${lang}/knowledge/how-to-choose-hotel-franchise-brand-long-term-value-2026-07-25`}
-                  className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
+                  key={title}
+                  href={`/${lang}/knowledge`}
+                  className="group grid min-h-28 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-5 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-900 sm:grid-cols-[3.5rem_0.6fr_1fr_auto]"
                 >
-                  <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
-                    {isZh ? '今日热门话题' : 'Today\'s Hot Topic'}
-                  </div>
-                  <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
-                    {isZh
-                      ? '加盟酒店品牌怎么选？别只看名气，要看它的持续创造价值能力'
-                      : "How to Choose a Hotel Franchise Brand: It's About Long-Term Value Creation"}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
-                    {isZh
-                      ? '品牌名气只能降低第一次选择成本，真正决定加盟价值的是它能否长期改善产品、价格、渠道、运营与收益。'
-                      : 'Recognition may lower the first-choice barrier. Long-term franchise value depends on sustained improvements to product, pricing, channels, operations, and returns.'}
-                  </p>
+                  <Icon className="h-6 w-6 text-[#d98b28]" />
+                  <h3 className="text-lg font-semibold sm:text-xl">{title}</h3>
+                  <p className="hidden text-sm leading-6 text-slate-600 dark:text-slate-300 sm:block">{copy}</p>
+                  <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-[#0b4a6f]" />
                 </Link>
-              </div>
-            </ScrollFade>
-
-            <ScrollFade delay={120}>
-              <div className="grid gap-4">
-                {aiWebsiteCards.map((item, index) => {
-                  const Icon = item.icon
-                  return (
-                    <div key={item.title} className="rounded-3xl border border-slate-200 bg-white/75 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/[0.06]">
-                      <div className="flex gap-4">
-                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-sky-100 text-[#003b71] ring-1 ring-sky-200 dark:bg-[#8ab4f8]/10 dark:text-[#8ab4f8] dark:ring-sky-300/20">
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-[#006bb6]/80 dark:text-[#8ab4f8]/80">
-                            {String(index + 1).padStart(2, '0')}
-                          </p>
-                          <h3 className="text-lg font-semibold text-[#101828] dark:text-white">{item.title}</h3>
-                          <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">{item.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </ScrollFade>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-16 md:py-20 bg-[#f5f7fb] dark:bg-[#0b1020]">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-[-8rem] top-[-10rem] h-80 w-80 rounded-full bg-sky-100/80 blur-3xl dark:bg-sky-500/10" />
-          <div className="absolute left-[-10rem] bottom-[-12rem] h-96 w-96 rounded-full bg-[#8faf9a]/20 blur-3xl dark:bg-emerald-500/10" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollFade>
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 border border-slate-200 shadow-sm dark:bg-white/5 dark:border-sky-300/25 mb-6">
-                <Target className="w-4 h-4 text-[#006bb6] dark:text-[#8ab4f8]" />
-                <span className="text-[#003b71] dark:text-[#8ab4f8] text-sm font-medium">
-                  {isZh ? '先判断你属于哪一种项目场景' : 'Start with the project situation you are in'}
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#101828] dark:text-white mb-4">
-                {isZh ? '迈创兄弟C&T 不是给所有人一套标准答案' : 'MarvelBros C&T does not force one standard answer on every client'}
-              </h2>
-              <p className="text-[#344054] dark:text-slate-300 text-base md:text-lg leading-relaxed">
-                {isZh
-                  ? <>我们先判断项目所处阶段、真正卡住的问题和更适合的推进路径，<br />再决定是做诊断、做方案，还是进入完整合作。</>
-
-                  : 'We first identify the project stage, the real constraint, and the right way forward, then decide whether diagnosis, solution design, or a full engagement is the right next step.'}
-              </p>
+      <section className="bg-[#f4f7f8] py-20 dark:bg-slate-900 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="flex flex-col gap-5 border-b border-slate-300 pb-8 dark:border-slate-700 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '最新研究与观察' : 'Latest research and observations'}</p>
+              <h2 className="mt-4 text-4xl font-semibold md:text-5xl">{isZh ? '正在影响酒店经营的事' : 'What is shaping hotel performance now'}</h2>
             </div>
-          </ScrollFade>
+            <Link href={`/${lang}/knowledge`} className="inline-flex items-center gap-2 font-semibold text-[#0b4a6f] hover:text-[#d98b28] dark:text-sky-300">
+              {isZh ? '查看全部文章' : 'View all articles'}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {decisionPaths.map((item, index) => {
-              const Icon = item.icon
-              return (
-                <ScrollFade key={item.title} delay={index * 100}>
-                  <div className="h-full rounded-3xl border border-white/80 dark:border-white/10 bg-white/82 dark:bg-white/[0.06] p-7 shadow-sm shadow-slate-900/5 backdrop-blur">
-                    <div className={`w-12 h-12 rounded-2xl ${item.iconBg} ${item.iconColor} ring-1 ${item.iconRing} flex items-center justify-center mb-5`}>
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#101828] dark:text-white mb-3">{item.title}</h3>
-                    <p className="text-[#475467] dark:text-slate-300 leading-relaxed text-sm md:text-base">{item.desc}</p>
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+            <Link href={`/${lang}/knowledge/${latestArticles[0].slug}`} className="group block">
+              <div className="relative aspect-[16/9] overflow-hidden bg-slate-200">
+                <Image
+                  src="/images/home-modern/signature-lounge.jpeg"
+                  alt={isZh ? '酒店品牌与产品价值评估' : 'Hotel brand and product value assessment'}
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                />
+              </div>
+              <div className="mt-6 flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                <span>{latestArticles[0].date}</span>
+                <span aria-hidden="true">/</span>
+                <span>{isZh ? '今日热门话题' : "Today's Hot Topic"}</span>
+              </div>
+              <h3 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight transition-colors group-hover:text-[#0b4a6f] dark:group-hover:text-sky-300 md:text-4xl">
+                {latestArticles[0].title}
+              </h3>
+              <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300">{latestArticles[0].summary}</p>
+            </Link>
+
+            <div className="border-t border-slate-300 dark:border-slate-700">
+              {latestArticles.slice(1).map((article) => (
+                <Link key={article.slug} href={`/${lang}/knowledge/${article.slug}`} className="group block border-b border-slate-300 py-8 dark:border-slate-700">
+                  <div className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                    <span>{article.date}</span>
+                    <span aria-hidden="true">/</span>
+                    <span>{isZh ? '行业洞察' : 'Industry insight'}</span>
                   </div>
-                </ScrollFade>
-              )
-            })}
+                  <h3 className="mt-3 text-2xl font-semibold leading-snug transition-colors group-hover:text-[#0b4a6f] dark:group-hover:text-sky-300">{article.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{article.summary}</p>
+                  <ArrowRight className="mt-5 h-5 w-5 text-[#d98b28] transition-transform group-hover:translate-x-1" />
+                </Link>
+              ))}
+              <Link href={`/${lang}/lean`} className="group flex items-center justify-between border-b border-slate-300 py-7 font-semibold dark:border-slate-700">
+                <span>{isZh ? '进入“管享精道”管理知识专栏' : 'Enter the Lean Insights management column'}</span>
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-16 md:py-24 dark:bg-[#0b1020]">
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#f5f7fb] to-transparent dark:from-black/20" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollFade>
-            <div className="mx-auto mb-12 max-w-3xl text-center">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-sm font-medium text-[#003b71] shadow-sm dark:border-sky-300/25 dark:bg-white/5 dark:text-[#8ab4f8]">
-                <Hotel className="h-4 w-4" />
-                {isZh ? '把酒店现场，转化为经营价值' : 'Turning hotel moments into operating value'}
-              </div>
-              <h2 className="text-3xl font-bold leading-tight text-[#101828] md:text-4xl dark:text-white">
-                {isZh ? '真正的酒店增长，发生在每一个服务触点里' : 'Real hotel growth happens at every service touchpoint'}
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-[#344054] md:text-lg dark:text-slate-300">
-                {isZh
-                  ? '从前台接待、空间体验到餐饮收益，MBCT 关注的不只是表面呈现，而是酒店现场每一个影响转化、复购和经营效率的关键细节。'
-                  : 'From front-desk service and spatial experience to dining revenue, MBCT focuses on the operational details that shape conversion, repeat demand, and management efficiency.'}
-              </p>
+      <section className="border-b border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-slate-950 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-20">
+            <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+              <Image
+                src="/images/home-modern/advisory-conversation.png"
+                alt={isZh ? '酒店经营专家分析项目数据' : 'Hospitality specialists analyzing project data'}
+                fill
+                sizes="(min-width: 1024px) 48vw, 100vw"
+                className="object-cover"
+              />
             </div>
-          </ScrollFade>
+            <div>
+              <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? 'MBCT工作方法' : 'The MBCT method'}</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+                {isZh ? '我们不止提出观点，更把问题变成结果' : 'We go beyond opinions and turn issues into results'}
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
+                {isZh
+                  ? '酒店不赚钱，不是单一的环节出了问题。酒店经营、商业策划、市场增长和技术数据能力共同进入项目。我们从现场和数据中建立判断，用清晰的策略和执行动作推动改善。'
+                  : 'When a hotel is not profitable, the cause is rarely one isolated link. Hotel operations, commercial planning, market growth, and technology work together on every project. We build judgment from evidence and move improvement through clear strategy and action.'}
+              </p>
+              <ol className="mt-9 border-t border-slate-300 dark:border-slate-700">
+                {methods.map((item, index) => (
+                  <li key={item} className="grid grid-cols-[3rem_1fr] items-center border-b border-slate-300 py-5 dark:border-slate-700">
+                    <span className="text-sm font-bold text-[#d98b28]">0{index + 1}</span>
+                    <span className="font-semibold">{item}</span>
+                  </li>
+                ))}
+              </ol>
+              <Link href={`/${lang}/about`} className="mt-8 inline-flex items-center gap-2 font-semibold text-[#0b4a6f] hover:text-[#d98b28] dark:text-sky-300">
+                {isZh ? '了解MBCT专业力量' : 'Explore MBCT capabilities'}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {hospitalityScenes.map((scene, index) => (
-              <ScrollFade key={scene.title} delay={index * 120}>
-                <article className="group h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 dark:border-white/10 dark:bg-white/[0.06] dark:hover:shadow-black/30">
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={scene.image}
-                      alt={scene.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#07111f]/68 via-transparent to-transparent" />
-                    <div className="absolute bottom-5 left-5 rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-white backdrop-blur">
-                      {scene.eyebrow}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold leading-snug text-[#101828] dark:text-white">{scene.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#475467] dark:text-slate-300">{scene.desc}</p>
-                  </div>
-                </article>
-              </ScrollFade>
+          <div className="mt-16 grid border-y border-slate-300 dark:border-slate-700 sm:grid-cols-2 lg:grid-cols-4">
+            {(
+              isZh
+                ? [
+                    ['超过百家', '核心专业人员酒店项目实践'],
+                    ['50+', '项目经验覆盖城市'],
+                    ['千万级', '筹开项目节省投资成果'],
+                    ['25%', '代表性项目运营成本降幅'],
+                  ]
+                : [
+                    ['100+', 'hotel projects across core specialists'],
+                    ['50+', 'cities covered by project experience'],
+                    ['RMB 30m+', 'saved in one pre-opening project'],
+                    ['25%', 'cost reduction in a representative case'],
+                  ]
+            ).map(([value, label]) => (
+              <div key={label} className="border-b border-slate-300 py-7 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 dark:border-slate-700">
+                <p className="text-3xl font-semibold text-[#0b4a6f] dark:text-sky-300">{value}</p>
+                <p className="mt-2 pr-5 text-sm leading-6 text-slate-600 dark:text-slate-300">{label}</p>
+              </div>
             ))}
           </div>
+          <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
+            {isZh ? '以上为核心专业人员职业项目经验；项目名称与客户信息按行业惯例脱敏。' : 'Figures reflect the professional project experience of core specialists. Project and client identities are anonymized in line with industry practice.'}
+          </p>
+
+          <div className="mt-12 grid gap-8 border-y border-amber-300 bg-amber-50/55 px-6 py-8 dark:border-amber-700/60 dark:bg-amber-950/15 md:grid-cols-[0.75fr_1.25fr] md:px-8">
+            <h3 className="text-2xl font-semibold text-slate-950 dark:text-white">
+              {isZh ? '我们为筹开酒店节省投资' : 'We protect investment in hotel pre-opening'}
+            </h3>
+            <p className="leading-7 text-slate-700 dark:text-slate-200">
+              {isZh
+                ? '在某国有企业酒店筹开项目中，我们通过建设投资控制、装修方案优化和筹开费用管理，为业主节省超过3000万元投资。该成果由业主项目感谢信确认。'
+                : 'In one state-owned hotel pre-opening project, construction control, fit-out optimization, and opening-cost management saved the owner more than RMB 30 million, as confirmed in the owner’s project letter.'}
+            </p>
+          </div>
         </div>
       </section>
 
-      <SectionWithBg bgImage="/images/home-named/industry-insights.jpg" overlayOpacity={0.82}>
-        <ScrollFade>
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
-              <Target className="w-4 h-4 text-primary" />
-              <span className="text-primary text-sm font-medium">
-                {isZh ? '从业务罗列，回到增长主线' : 'From service lists back to the growth logic'}
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {isZh ? '迈创兄弟C&T 的核心能力，不止是做很多事' : 'MarvelBros C&T is not defined by doing many things'}
-            </h2>
-            <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-              {isZh
-                ? '我们更擅长的是：把酒店投资判断、经营增长和 AI 落地，组织成一套能执行、能复盘、能持续优化的增长系统。'
-                : 'What matters more is our ability to organize hotel investment judgment, operating growth, and AI implementation into one system that can be executed, reviewed, and improved.'}
-            </p>
-          </div>
-        </ScrollFade>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {capabilityGroups.map((group, index) => {
-            const Icon = group.icon
-            return (
-              <ScrollFade key={group.title} delay={index * 120}>
-                <div className="h-full rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-white/10 p-6">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                    style={{ backgroundColor: `${group.color}22` }}
-                  >
-                    <Icon className="w-6 h-6" style={{ color: group.color }} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{group.title}</h3>
-                  <p className="text-slate-300 text-sm leading-relaxed mb-5">{group.summary}</p>
-                  <div className="space-y-3">
-                    {group.items.map((item) => (
-                      <div key={item} className="flex items-start gap-3 text-sm text-slate-200">
-                        <CheckCircle2 className="w-4 h-4 text-sky-300 mt-0.5 flex-shrink-0" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </ScrollFade>
-            )
-          })}
-        </div>
-      </SectionWithBg>
-
-      <SectionWithBg bgImage="/images/home-named/about-us.png" overlayOpacity={0.84}>
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
-          <ScrollFade>
+      <section className="bg-[#0b2d42] py-20 text-white md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                {isZh ? '为什么是迈创兄弟C&T？' : 'Why MarvelBros C&T?'}
+              <p className="text-sm font-semibold text-amber-300">{isZh ? '从知识进入行动' : 'From knowledge to action'}</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl">
+                {isZh ? '当酒店需要改变，我们直接推动结果' : 'When a hotel needs to change, we move the result'}
               </h2>
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mb-8">
+              <p className="mt-6 text-lg leading-8 text-slate-200">
                 {isZh
-                  ? '传统顾问常停在建议，纯技术公司常停在工具。迈创兄弟C&T 更适合需要判断、执行与复盘同时在线的酒店项目。'
-                  : 'Traditional advisors often stop at recommendations. Pure technology vendors often stop at tools. MarvelBros C&T is built for hotel projects that need judgment, execution, and review working together.'}
+                  ? '每项服务都围绕经营结果组织。我们看清问题、制定策略、进入现场、推动执行。'
+                  : 'Every service is organized around operating outcomes. We identify the issue, define the strategy, enter the operation, and drive execution.'}
               </p>
-              <div className="space-y-4">
-                {whyMbct.map((item) => {
-                  const Icon = item.icon
-                  return (
-                    <div key={item.title} className="rounded-2xl bg-slate-900/60 border border-white/10 p-5">
-                      <div className="flex items-start gap-4">
-                        <div className="w-11 h-11 rounded-xl bg-sky-400/10 flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-5 h-5 text-sky-300" />
-                        </div>
-                        <div>
-                          <h3 className="text-white font-semibold mb-2">{item.title}</h3>
-                          <p className="text-slate-300 text-sm leading-relaxed">{item.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
             </div>
-          </ScrollFade>
-
-          <ScrollFade delay={140}>
-            <div className="rounded-2xl bg-slate-900/60 border border-white/10 p-6 md:p-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-400/10 border border-sky-300/25 mb-5">
-                <Users className="w-4 h-4 text-sky-300" />
-                <span className="text-sky-300 text-sm font-medium">
-                  {isZh ? '适合什么项目先来聊' : 'Good fit for an initial conversation'}
-                </span>
-              </div>
-              <div className="space-y-4">
-                {fitCases.map((item) => (
-                  <div key={item} className="flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
-                    <CheckCircle2 className="w-4 h-4 text-sky-300 mt-0.5 flex-shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <Link
-                  href={`/${lang}/services`}
-                  className="inline-flex items-center gap-2 text-sky-300 font-semibold hover:opacity-80 transition-opacity"
-                >
-                  {isZh ? '查看解决方案' : 'See the solution structure'}
-                  <ArrowRight className="w-4 h-4" />
+            <div className="border-t border-white/25">
+              {services.map(({ icon: Icon, title, copy }) => (
+                <div key={title} className="grid grid-cols-[2.5rem_1fr] gap-4 border-b border-white/25 py-6 sm:grid-cols-[3rem_0.55fr_1fr] sm:items-start">
+                  <Icon className="h-6 w-6 text-amber-300" />
+                  <h3 className="text-xl font-semibold text-white">{title}</h3>
+                  <p className="col-start-2 text-sm leading-6 text-slate-200 sm:col-start-auto">{copy}</p>
+                </div>
+              ))}
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link href={`/${lang}/services`} className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d98b28] px-6 py-3 font-semibold text-slate-950 hover:bg-amber-400">
+                  {isZh ? '查看完整解决方案' : 'Explore all solutions'}
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+                <Link href={`/${lang}/services/ai-hotel-website`} className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/50 px-6 py-3 font-semibold text-white hover:border-white">
+                  {isZh ? '进入AI搜索获客方案' : 'Explore AI search acquisition'}
                 </Link>
               </div>
             </div>
-          </ScrollFade>
+          </div>
         </div>
-      </SectionWithBg>
+      </section>
 
-      <SectionWithBg bgImage="/images/home-named/contact-us.jpg" overlayOpacity={0.82}>
-        <ScrollFade>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              {isZh ? '如果项目正在卡住，就从一次项目沟通开始' : 'If the project is stuck, start with an initial project conversation'}
-            </h2>
-            <p className="text-slate-300 mb-6 text-sm md:text-base leading-relaxed">
-              {isZh
-                ? '先把项目现状、目标和关键卡点讲清楚，再决定更适合做诊断、做方案，还是进入完整合作。'
-                : 'Share the current situation, target outcomes, and key bottlenecks first. Then decide whether the right next step is a diagnostic review, a working plan, or a full engagement.'}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href={`/${lang}/contact?type=plan`}
-                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#003b71] to-[#0072ce] text-white font-bold rounded-lg hover:shadow-lg hover:shadow-sky-500/25 transition-all"
-              >
-                {isZh ? '获取方案' : 'Get a Plan'}
-              </Link>
-              <Link
-                href={`/${lang}/services`}
-                className="inline-flex items-center justify-center px-6 py-3 border border-white/25 text-white rounded-lg hover:border-sky-300 hover:text-sky-200 transition-colors"
-              >
-                {isZh ? '查看解决方案' : 'View Solutions'}
-              </Link>
+      <section className="bg-white py-20 dark:bg-slate-950 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:gap-20">
+            <div>
+              <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '使命与愿景' : 'Mission and vision'}</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+                {isZh ? '让专业判断成为酒店长期增长的力量' : 'Make professional judgment a force for lasting hotel growth'}
+              </h2>
+            </div>
+            <div className="grid gap-px bg-slate-300 dark:bg-slate-700 md:grid-cols-2">
+              <div className="bg-white p-8 dark:bg-slate-950">
+                <Sparkles className="h-7 w-7 text-[#d98b28]" />
+                <h3 className="mt-6 text-2xl font-semibold">{isZh ? '我们的使命' : 'Our mission'}</h3>
+                <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">
+                  {isZh ? '分享真正有用的酒店经营知识，用专业能力帮助酒店解决问题、改善经营、创造价值。' : 'Share knowledge that operators can use, and apply professional capability to solve problems, improve performance, and create value.'}
+                </p>
+              </div>
+              <div className="bg-white p-8 dark:bg-slate-950">
+                <BookOpen className="h-7 w-7 text-[#0b4a6f] dark:text-sky-300" />
+                <h3 className="mt-6 text-2xl font-semibold">{isZh ? '我们的愿景' : 'Our vision'}</h3>
+                <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">
+                  {isZh ? '成为酒店经营者最值得信赖的知识平台和实战伙伴，让每一家酒店都能找到更好的经营答案。' : 'Become the knowledge platform and operating partner hotel leaders trust most, so every hotel can find a better answer.'}
+                </p>
+              </div>
             </div>
           </div>
-        </ScrollFade>
-      </SectionWithBg>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900 md:py-20">
+        <div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 xl:px-16">
+          <div>
+            <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '酒店经营诊断' : 'Hotel operational diagnosis'}</p>
+            <h2 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight md:text-4xl">
+              {isZh ? '把酒店情况告诉我们，MBCT直接找到关键问题和改善路径' : 'Tell us what is happening. MBCT will find the key issue and the path forward'}
+            </h2>
+            <p className="mt-4 max-w-3xl leading-7 text-slate-600 dark:text-slate-300">
+              {isZh ? '提交酒店所在城市、客房规模和当前最需要解决的问题。我们在48小时内给出明确回应，并安排项目沟通。' : 'Share the city, room count, and most urgent operating issue. We respond clearly within 48 hours and arrange a project conversation.'}
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-13 items-center justify-center gap-2 bg-[#0b4a6f] px-6 py-3.5 font-semibold text-white hover:bg-[#073a58]">
+              <FileText className="h-5 w-5" />
+              {isZh ? '发起经营诊断' : 'Start an operational diagnosis'}
+            </Link>
+            <a href="tel:18941579333" className="inline-flex min-h-13 items-center justify-center gap-2 border border-slate-400 px-6 py-3.5 font-semibold hover:border-[#0b4a6f] hover:text-[#0b4a6f] dark:border-slate-600 dark:hover:border-sky-300 dark:hover:text-sky-300">
+              <Phone className="h-5 w-5" />
+              18941579333
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

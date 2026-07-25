@@ -17,10 +17,13 @@ export async function generateMetadata({
   const { type } = await searchParams
   const dict = getDict(lang)
   const isPlan = type === 'plan'
+  const isDiagnosis = type === 'diagnosis'
   const isAiWebsiteAudit = type === 'ai-website-audit' || type === 'ai-info-platform'
   return {
     title: isAiWebsiteAudit
       ? (lang === 'zh' ? '获取酒店 AI 信息平台建议' : 'Request AI Information Platform Recommendations')
+      : isDiagnosis
+        ? (lang === 'zh' ? '申请酒店经营诊断' : 'Request a Hotel Operational Diagnosis')
       : isPlan
         ? dict.nav.getPlan
         : dict.nav.contact,
@@ -39,6 +42,7 @@ export default async function ContactPage({
   const dict = getDict(lang)
   const isZh = lang === 'zh'
   const isPlan = type === 'plan'
+  const isDiagnosis = type === 'diagnosis'
   const isAiWebsiteAudit = type === 'ai-website-audit' || type === 'ai-info-platform'
 
   const scenarios = [
@@ -112,7 +116,7 @@ export default async function ContactPage({
       icon: Mail,
     },
     {
-      label: isZh ? '地址' : 'Address',
+      label: isZh ? '服务范围' : 'Service Coverage',
       value: dict.contact.info.address,
       icon: MapPin,
     },
@@ -123,11 +127,15 @@ export default async function ContactPage({
       <PageHero
         title={isAiWebsiteAudit
           ? (isZh ? '先做一次酒店 AI 信息体检，再决定如何建设与托管内容' : 'Start with an AI information audit before building and operating the right content platform')
+          : isDiagnosis
+            ? (isZh ? '酒店业主经营诊断' : 'Hotel Operational Diagnosis for Owners')
           : isPlan
             ? (isZh ? '先获取项目判断路径，再决定下一步怎么推进' : 'Get a clear project path before deciding the next move')
             : (isZh ? '先把项目现状讲清楚，再决定下一步怎么做' : 'Clarify the current project situation first, then decide what should happen next')}
         subtitle={isAiWebsiteAudit
           ? (isZh ? '告诉我们酒店名称、所在城市、是否已有官网、目前主要依赖哪些平台，以及是否需要内容代运营。迈创兄弟C&T 会先判断：您的酒店信息是否被 AI 和客人正确理解，以及是否具备搜索、展示和询价承接能力。' : 'Share the hotel name, city, whether it has a website, which platforms it currently depends on, and whether ongoing content operations are needed. MarvelBros C&T will first assess whether AI systems and guests can understand the hotel correctly, and whether it has the search, presentation, and inquiry readiness needed.')
+          : isDiagnosis
+            ? (isZh ? '只需说明酒店所在城市、客房规模和当前最想解决的问题。MBCT将在48小时内完成初步判断，并安排一次约30分钟的项目沟通。也可以直接拨打电话或添加同号微信。' : 'Share the city, room count, and the most urgent business issue. MBCT will make an initial assessment within 48 hours and arrange a 30-minute project conversation.')
           : isPlan
             ? (isZh ? '“获取方案”不是立即拿一份通用答案，而是先让 MBCT 帮你判断：这个项目该怎么切入、该先解决什么、以及更适合的推进路径是什么。' : 'Getting a plan does not mean receiving a generic answer. It means letting MBCT first determine where the project should start, what should be solved first, and what path forward makes the most sense.')
             : (isZh ? '你不需要一开始就准备得非常完整。只要把项目阶段、核心目标和目前最难推进的问题告诉我们，我们会先帮你判断，从哪里切入更合适。' : 'You do not need a perfect brief to start. Share the project stage, your main objective, and the hardest issue to move forward, and we will help you decide the most suitable point of entry.')}
@@ -136,22 +144,28 @@ export default async function ContactPage({
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {(isPlan || isAiWebsiteAudit) && (
+          {(isPlan || isDiagnosis || isAiWebsiteAudit) && (
             <div className="mb-10 rounded-3xl border border-primary/20 bg-primary/5 p-8 md:p-10">
               <div className="max-w-3xl mb-8">
                 <p className="text-sm font-medium text-primary mb-4">
                   {isAiWebsiteAudit
                     ? (isZh ? '开始体检之前，先明确这三件事' : 'Before the audit, clarify these three things')
+                    : isDiagnosis
+                      ? (isZh ? '初步判断只关注三件事' : 'The initial review focuses on three things')
                     : (isZh ? '获取方案之前，先明确这三件事' : 'Before a plan, clarify these three things')}
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   {isAiWebsiteAudit
                     ? (isZh ? '先判断酒店信息是否被 AI 看懂，再决定补平台还是补内容' : 'Judge whether AI can understand the hotel information before choosing platform build or content operations')
+                    : isDiagnosis
+                      ? (isZh ? '先看清问题值不值得进一步诊断' : 'First determine whether a deeper diagnosis is warranted')
                     : (isZh ? 'MBCT 先帮你判断，再决定更适合的合作方式' : 'MBCT helps you judge first, then choose the right engagement path')}
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {isAiWebsiteAudit
                     ? (isZh ? '这一步的重点不是立刻做网站，而是先看清酒店信息、现有线上入口、询价路径和内容更新能力是否已经具备 AI 搜索时代的基本承接能力。没有官网、没有 IT、没有文案团队的酒店，也可以从轻量信息平台和内容托管开始。' : 'The goal is not to build a website immediately. It is to understand whether the hotel information, current online entry points, inquiry path, and content update capability are ready for the age of AI search. Hotels without a website, IT team, or content team can start with a lightweight information platform and managed content operations.')
+                    : isDiagnosis
+                      ? (isZh ? '初步沟通不要求提交完整经营资料。我们先判断问题可能出在哪里、是否需要数据分析或现场勘察，以及下一步是否值得投入。' : 'The initial conversation does not require a complete data room. We first determine where the issue may sit, whether data analysis or an on-site review is needed, and whether further work is justified.')
                     : (isZh ? '这一步的重点不是立刻给出一份通用方案，而是先看清项目属于什么场景、问题出在什么地方、以及更适合进入哪一种支持方式。' : 'The goal is not to hand over a generic solution immediately. It is to identify the project situation, locate the real problem, and determine the right form of support.')}
                 </p>
               </div>

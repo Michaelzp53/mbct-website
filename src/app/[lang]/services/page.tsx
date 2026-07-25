@@ -241,7 +241,7 @@ export default async function ServicesPage({
       '@id': 'https://www.marvelbros.com/#organization',
       name: 'MarvelBros C&T',
     },
-    areaServed: ['Hong Kong', 'Mainland China', 'Southeast Asia'],
+    areaServed: 'China',
     serviceType: isZh
       ? ['酒店投前决策', '酒店经营增长', '酒店数字化与AI精益管理']
       : ['Hotel investment decision support', 'Hotel operating growth', 'Hotel digitalization and AI lean management'],
@@ -300,8 +300,8 @@ export default async function ServicesPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <PageHero
-        title={isZh ? '三个能力群组，覆盖酒店增长最关键的事' : 'Three capability clusters covering what matters most for hotel growth'}
-        subtitle={isZh ? '围绕投前决策、经营增长与AI落地三大方向，MBCT把每个服务模块组织成从诊断到执行的可交付能力链——不是零散产品，而是推进结果的完整系统。' : 'Organized around pre-investment decisions, operational growth, and AI implementation—each module is a link in a deliverable chain from diagnosis to execution, not a standalone product.'}
+        title={isZh ? '从经营诊断到获客增长，把酒店问题变成可执行的路径' : 'From operational diagnosis to customer acquisition, turn hotel challenges into executable paths'}
+        subtitle={isZh ? '酒店经营、商业策划、市场增长和技术数据四类专业力量协同，重点提供酒店经营诊断与 AI 搜索获客服务。' : 'Four disciplines work together—hotel operations, commercial planning, market growth, and technology—with operational diagnosis and AI search acquisition as priority services.'}
         bgImage="/images/home-named/solutions-lounge.jpeg"
       />
 
@@ -348,6 +348,49 @@ export default async function ServicesPage({
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ai-search-acquisition" className="scroll-mt-24 border-y border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:items-center">
+          <div>
+            <p className="mb-3 text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">
+              {isZh ? '主推业务 · AI 搜索获客' : 'Featured service · AI search acquisition'}
+            </p>
+            <h2 className="text-3xl font-bold leading-tight text-foreground md:text-4xl">
+              {isZh ? '让酒店的真实优势被 AI 理解、引用和推荐' : 'Make the hotel’s real strengths understandable, citable, and recommendable by AI'}
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              {isZh
+                ? '我们不承诺虚假排名，而是检查酒店在官网、地图、OTA 和内容平台的信息是否一致，建立 AI 可抓取、客人可理解、销售可承接的自有信息入口。'
+                : 'We do not promise artificial rankings. We audit information consistency across the hotel website, maps, OTAs, and content platforms, then build an owned information entry point that AI can crawl, guests can understand, and sales teams can convert.'}
+            </p>
+            <Link href={`/${lang}/services/ai-hotel-website`} className="mt-7 inline-flex items-center gap-2 font-semibold text-[#0b4a6f] hover:text-[#d98b28] dark:text-sky-300 dark:hover:text-amber-300">
+              {isZh ? '查看完整方案' : 'View the complete solution'}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                title: isZh ? 'AI 信息体检' : 'AI information audit',
+                text: isZh ? '找出错误、缺失、冲突和无法被理解的信息。' : 'Find inaccurate, missing, conflicting, or unreadable information.',
+              },
+              {
+                title: isZh ? '信息平台建设' : 'Information platform',
+                text: isZh ? '构建结构清晰、可搜索、可询价的官网信息入口。' : 'Build a structured, searchable, inquiry-ready owned website entry point.',
+              },
+              {
+                title: isZh ? '内容托管运营' : 'Managed content operations',
+                text: isZh ? '持续更新页面、FAQ 和场景内容，让信息保持鲜活。' : 'Maintain pages, FAQs, and scenario content so information stays current.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-md border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-950">
+                <h3 className="font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

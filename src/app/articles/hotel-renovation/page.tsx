@@ -43,11 +43,11 @@ export default function HotelRenovationArticle() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="prose prose-lg max-w-none prose-headings:text-brand-navy prose-a:text-brand-gold">
             
-            <h2>引言：当"老"成为原罪</h2>
+            <h2>引言：当“老”成为原罪</h2>
             <p>2022年春天，一家位于历史文化街区、始建于1993年的三十年历史酒店，正面临着严峻的生存危机。这家曾经辉煌的三星级酒店，OTA评分跌破3.8分，入住率常年徘徊在45%左右。</p>
             
             <blockquote className="border-l-4 border-brand-gold pl-6 py-4 my-8 bg-gray-50 rounded-r-lg">
-              <p className="text-gray-700 italic">"隔壁新开的设计师民宿每晚售价1200元还一房难求，我们的标准间挂牌价380元却无人问津。"——业主老王回忆道。</p>
+              <p className="text-gray-700 italic">“隔壁新开的设计师民宿每晚售价1200元还一房难求，我们的标准间挂牌价380元却无人问津。”——业主老王回忆道。</p>
             </blockquote>
 
             <h2>第一章：存量时代的酒店困境</h2>
@@ -60,7 +60,7 @@ export default function HotelRenovationArticle() {
             </ul>
 
             <h2>第二章：MBCT存量更新策略</h2>
-            <p>当老王找到MBCT时，团队给出的建议是："不要关，而是改。不是大改，而是巧改。"</p>
+            <p>当老王找到MBCT时，团队给出的建议是：“不要关，而是改。不是大改，而是巧改。”</p>
             
             <div className="bg-brand-navy/5 rounded-xl p-6 my-8 border-l-4 border-brand-gold">
               <h3 className="font-bold text-brand-navy mb-3">三大认知转变</h3>
@@ -72,7 +72,7 @@ export default function HotelRenovationArticle() {
             </div>
 
             <h2>第三章：180天蜕变实录</h2>
-            <p>2022年6月，改造工程正式启动。MBCT团队进驻，开始了为期6个月的"酒店重生计划"。</p>
+            <p>2022年6月，改造工程正式启动。MBCT团队进驻，开始了为期6个月的“酒店重生计划”。</p>
             
             <h3>第一步：深度诊断（第1-30天）</h3>
             <ul className="list-disc pl-6 space-y-2">
@@ -82,7 +82,7 @@ export default function HotelRenovationArticle() {
             </ul>
 
             <h3>第二步：精准定位（第31-45天）</h3>
-            <p>新品牌定位：<strong>"江南客栈——住在市区的千年时光里"</strong></p>
+            <p>新品牌定位：<strong>“江南客栈——住在市区的千年时光里”</strong></p>
             <ul className="list-disc pl-6 space-y-2">
               <li>文化沉浸：不是住酒店，而是住进当地历史</li>
               <li>现代舒适：保留古意，绝不牺牲居住品质</li>
@@ -142,10 +142,10 @@ export default function HotelRenovationArticle() {
             </table>
 
             <h2>结语：存量时代的酒店改造哲学</h2>
-            <p>老酒店的价值不在于"新"，而在于"独特"。改造不是装修工程，而是体验设计。在这个增量红利消失的时代，存量更新不是退而求其次的选择，而是酒店业进化的必经之路。</p>
+            <p>老酒店的价值不在于“新”，而在于“独特”。改造不是装修工程，而是体验设计。在这个增量红利消失的时代，存量更新不是退而求其次的选择，而是酒店业进化的必经之路。</p>
             
             <blockquote className="border-l-4 border-brand-gold pl-6 py-4 my-8 bg-gray-50 rounded-r-lg">
-              <p className="text-gray-700 italic font-medium">"每一座老酒店，都是一座等待被唤醒的城市记忆。我们的工作，就是让这些记忆在当代重新发光。"——MBCT创始人</p>
+              <p className="text-gray-700 italic font-medium">“每一座老酒店，都是一座等待被唤醒的城市记忆。我们的工作，就是让这些记忆在当代重新发光。”——MBCT专业顾问团队</p>
             </blockquote>
 
           </div>

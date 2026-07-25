@@ -13,14 +13,14 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
   const isZh = lang === 'zh'
 
   return (
-    <div className={`relative flex items-center gap-1 px-1 py-1 rounded-lg border border-border bg-muted/50 ${className}`}>
+    <div className={`relative flex items-center gap-0.5 border border-slate-300 bg-white p-0.5 dark:border-slate-700 dark:bg-slate-900 ${className}`}>
       <button
         onClick={() => setTheme('light')}
         className={`
-          flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-200 cursor-pointer
+          flex cursor-pointer items-center gap-1.5 px-2 py-1.5 text-xs font-medium transition-colors
           ${theme === 'light'
-            ? 'bg-white border border-sky-200 text-[#003b71] shadow-sm'
-            : 'text-muted-foreground hover:text-foreground hover:bg-muted/80'}
+            ? 'bg-[#0b4a6f] text-white'
+            : 'text-slate-500 hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300'}
         `}
         title={isZh ? '白天模式' : 'Light mode'}
       >
@@ -31,10 +31,10 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
       <button
         onClick={() => setTheme('dark')}
         className={`
-          flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-200 cursor-pointer
+          flex cursor-pointer items-center gap-1.5 px-2 py-1.5 text-xs font-medium transition-colors
           ${theme === 'dark'
-            ? 'bg-[#172033] border border-sky-300/30 text-sky-100 shadow-sm'
-            : 'text-muted-foreground hover:text-foreground hover:bg-muted/80'}
+            ? 'bg-slate-800 text-white'
+            : 'text-slate-500 hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300'}
         `}
         title={isZh ? '夜间模式' : 'Dark mode'}
       >
@@ -43,7 +43,7 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
       </button>
 
       {isManualOverride && (
-        <span className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full" title={isZh ? '已手动切换，关闭浏览器后恢复自动' : 'Manual override, will reset on browser close'} />
+        <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-[#d98b28]" title={isZh ? '已手动切换，关闭浏览器后恢复自动' : 'Manual override, will reset on browser close'} />
       )}
     </div>
   )

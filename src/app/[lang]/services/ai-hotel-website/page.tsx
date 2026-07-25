@@ -146,7 +146,7 @@ export default async function AiHotelWebsitePage({
       name: 'MarvelBros C&T',
       alternateName: '迈创兄弟C&T',
     },
-    areaServed: ['Mainland China', 'Hong Kong', 'Southeast Asia'],
+    areaServed: 'China',
     serviceType: isZh
       ? ['酒店 AI 信息体检', 'AI 搜索可见度', '酒店信息平台建设', '酒店内容托管运营']
       : ['Hotel AI information audit', 'AI search visibility', 'Hotel information platform build', 'Hotel content operations'],
@@ -165,10 +165,6 @@ export default async function AiHotelWebsitePage({
 
       <main className="min-h-screen bg-[#f5f7fb] text-[#101828] dark:bg-[#0b1020] dark:text-white">
         <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
-          <div className="absolute inset-0">
-            <div className="absolute left-[-12rem] top-[-10rem] h-96 w-96 rounded-full bg-sky-100/80 blur-3xl dark:bg-sky-500/10" />
-            <div className="absolute right-[-10rem] top-24 h-96 w-96 rounded-full bg-blue-100/70 blur-3xl dark:bg-emerald-500/10" />
-          </div>
           <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-4 py-2 text-sm font-medium text-[#003b71] shadow-sm dark:border-sky-300/25 dark:bg-white/5 dark:text-[#8ab4f8]">

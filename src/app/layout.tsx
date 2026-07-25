@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.marvelbros.com'),
   title: {
     template: '%s | 迈创兄弟C&T',
-    default: '迈创兄弟C&T｜酒店增长、数字化赋能与AI信息平台建设',
+    default: '迈创兄弟C&T｜酒店经营知识、行业洞察与实战方法',
   },
-  description: '迈创兄弟C&T（MarvelBros C&T）面向酒店投资人与经营团队，提供投前判断、经营诊断、数字化赋能与AI信息平台建设，帮助酒店把产品、服务、数据和内容转化为可执行的增长系统。',
-  keywords: '酒店管理, 酒店投资, 酒店经营诊断, 酒店数字化赋能, AI信息平台, 酒店咨询, 可行性分析, 生成式AI搜索',
+  description: '迈创兄弟C&T（MarvelBros C&T）汇集酒店经营知识、行业洞察和实战方法，并提供经营诊断、筹开控制、经营改善与AI搜索获客服务。',
+  keywords: '酒店经营知识, 酒店管理, 酒店投资, 酒店经营诊断, 酒店筹开, 酒店收益管理, AI搜索获客, 酒店咨询',
   authors: [{ name: '迈创兄弟C&T（MarvelBros C&T）' }],
   openGraph: {
     type: 'website',
@@ -42,12 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     alternateName: ['迈创兄弟C&T', 'MBCT'],
     url: 'https://www.marvelbros.com',
     logo: 'https://www.marvelbros.com/logo-new.png',
-    foundingDate: '2018-08-14',
     email: 'contactme@marvelbros.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'HK',
-    },
     sameAs: ['https://www.marvelbros.com'],
   }
 
@@ -70,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <Script
           id="organization-json-ld"

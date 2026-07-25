@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { ArrowUpRight, Mail, Phone } from 'lucide-react'
 import type { Dict } from '@/lib/dicts'
 
 interface FooterProps {
@@ -8,93 +9,92 @@ interface FooterProps {
 }
 
 export function Footer({ lang, dict }: FooterProps) {
-  const { footer: f } = dict
+  const { footer } = dict
   const isZh = lang === 'zh'
 
-  const primaryLinks = [
-    { label: isZh ? '关于我们' : 'About Us', href: `/${lang}/about` },
-    { label: isZh ? '解决方案' : 'Solutions', href: `/${lang}/services` },
-    { label: isZh ? '行业洞察' : 'Industry Insights', href: `/${lang}/knowledge` },
-    { label: isZh ? '案例成果' : 'Case Results', href: `/${lang}/cases` },
+  const knowledgeLinks = [
+    { label: isZh ? '酒店知识库' : 'Hotel knowledge', href: `/${lang}/knowledge` },
     { label: isZh ? '管享精道' : 'Lean Insights', href: `/${lang}/lean` },
+    { label: isZh ? '行业专题' : 'Industry topics', href: `/${lang}/topics/ai-hotel-growth` },
+    { label: isZh ? '案例成果' : 'Case results', href: `/${lang}/cases` },
+  ]
+
+  const companyLinks = [
+    { label: isZh ? '专业力量' : 'Capabilities', href: `/${lang}/about` },
+    { label: isZh ? '解决方案' : 'Solutions', href: `/${lang}/services` },
+    { label: isZh ? 'AI搜索获客' : 'AI search acquisition', href: `/${lang}/services/ai-hotel-website` },
     { label: isZh ? '联系我们' : 'Contact', href: `/${lang}/contact` },
   ]
 
   return (
-    <footer className="bg-[#f5f7fb] dark:bg-[#0b1020] text-foreground">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.9fr_0.95fr]">
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <Image src="/logo-new.png" alt={isZh ? '迈创兄弟C&T 标志' : 'MarvelBros C&T Logo'} width={52} height={52} className="object-contain" />
+    <footer className="border-t border-slate-200 bg-white text-slate-950 dark:border-slate-800 dark:bg-slate-950 dark:text-white">
+      <div className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 lg:px-12 lg:py-20 xl:px-16">
+        <div className="grid gap-12 border-b border-slate-300 pb-14 dark:border-slate-700 lg:grid-cols-[1.25fr_0.65fr_0.65fr_0.95fr] lg:gap-10">
+          <div className="max-w-md">
+            <div className="flex items-center gap-3">
+              <Image src="/logo-new.png" alt={isZh ? '迈创兄弟C&T 标志' : 'MarvelBros C&T Logo'} width={48} height={48} className="object-contain" />
               <div>
-                <span className="font-bold text-[14px] text-foreground">MarvelBros C&amp;T</span>
-                <p className="text-[10px] sm:text-xs text-gradient-rainbow font-medium">{isZh ? '迈创兄弟C&T' : 'Hotel Operations Advisory'}</p>
+                <p className="text-sm font-semibold">MarvelBros C&amp;T</p>
+                <p className="mt-1 text-xs font-medium text-[#0b4a6f] dark:text-sky-300">{isZh ? '迈创兄弟C&T' : 'Hospitality Knowledge & Action'}</p>
               </div>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {isZh
-                ? '专注于数字化赋能酒店行业的全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。'
-                : 'A full-lifecycle hospitality advisory and solution partner driving hotel growth through efficiency and experience.'}
+            <p className="mt-6 text-lg font-semibold leading-7">
+              {isZh ? '让酒店经营者找到答案，让专业判断推动结果。' : 'Find the answer. Make the judgment. Move the result.'}
             </p>
-            <div className="flex flex-col gap-2 mt-6">
-              <a href="mailto:info@marvelbros.com" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
-                <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20 4H4c-1.1 0 2 .9 2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-                <span>info@marvelbros.com</span>
-              </a>
-              <a href="tel:18941579333" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
-                <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                <span>18941579333</span>
-              </a>
-            </div>
+            <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+              {isZh
+                ? 'MBCT（MarvelBros C&T）分享酒店经营知识，并提供经营诊断、筹开控制、经营改善与AI搜索获客服务。'
+                : 'MarvelBros C&T shares hotel operating knowledge and delivers operational diagnosis, pre-opening control, business improvement, and AI search acquisition.'}
+            </p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-sm text-foreground mb-4">{isZh ? '网站导航' : 'Navigation'}</h3>
-            <ul className="space-y-3">
-              {primaryLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    {link.label}
-                  </Link>
+            <h2 className="text-sm font-semibold">{isZh ? '知识' : 'Knowledge'}</h2>
+            <ul className="mt-5 space-y-3">
+              {knowledgeLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-slate-600 transition-colors hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300">{link.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-sm text-foreground mb-4">{isZh ? '联系与说明' : 'Contact & Legal'}</h3>
-            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
-              <p>{isZh ? '聚焦酒店投资判断、经营增长与 AI 落地。' : 'Focused on hotel investment judgment, operating growth, and AI implementation.'}</p>
-              <p>{isZh ? '主转化入口：获取方案' : 'Primary conversion path: Get a Plan'}</p>
-              <p>{isZh ? '支持项目沟通、经营诊断与数字化落地咨询。' : 'Supporting project conversations, diagnostics, and digital execution.'}</p>
-            </div>
-            <div className="flex gap-6 text-sm mt-6">
-              <Link href={`/${lang}/privacy`} className="text-muted-foreground hover:text-primary transition-colors">
-                {f.privacy}
-              </Link>
-              <Link href={`/${lang}/terms`} className="text-muted-foreground hover:text-primary transition-colors">
-                {f.terms}
-              </Link>
-              <Link href="/sitemap.xml" className="text-muted-foreground hover:text-primary transition-colors">
-                {f.sitemap}
+            <h2 className="text-sm font-semibold">{isZh ? 'MBCT' : 'MBCT'}</h2>
+            <ul className="mt-5 space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-slate-600 transition-colors hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300">{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-semibold">{isZh ? '直接联系' : 'Direct contact'}</h2>
+            <div className="mt-5 space-y-4">
+              <a href="tel:18941579333" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-[#0b4a6f] dark:text-slate-200 dark:hover:text-sky-300">
+                <Phone className="h-4 w-4 text-[#d98b28]" />
+                18941579333
+              </a>
+              <a href="mailto:info@marvelbros.com" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-[#0b4a6f] dark:text-slate-200 dark:hover:text-sky-300">
+                <Mail className="h-4 w-4 text-[#d98b28]" />
+                info@marvelbros.com
+              </a>
+              <Link href={`/${lang}/contact?type=diagnosis`} className="mt-5 inline-flex items-center gap-2 border-b-2 border-[#d98b28] pb-1 text-sm font-semibold">
+                {isZh ? '发起经营诊断' : 'Start a diagnosis'}
+                <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">{f.copyright}</p>
-            <div className="flex gap-6 text-sm text-muted-foreground">
-              <span>{isZh ? '酒店投资判断' : 'Investment Judgment'}</span>
-              <span>{isZh ? '经营增长' : 'Operating Growth'}</span>
-              <span>{isZh ? 'AI 落地' : 'AI Implementation'}</span>
-            </div>
+        <div className="flex flex-col gap-5 pt-7 text-xs text-slate-500 dark:text-slate-400 md:flex-row md:items-center md:justify-between">
+          <p>{footer.copyright}</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link href={`/${lang}/privacy`} className="hover:text-[#0b4a6f] dark:hover:text-sky-300">{footer.privacy}</Link>
+            <Link href={`/${lang}/terms`} className="hover:text-[#0b4a6f] dark:hover:text-sky-300">{footer.terms}</Link>
+            <Link href="/sitemap.xml" className="hover:text-[#0b4a6f] dark:hover:text-sky-300">{footer.sitemap}</Link>
           </div>
         </div>
       </div>

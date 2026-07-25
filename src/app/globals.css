@@ -3,50 +3,41 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ============================================
-   MBCT 主题色系统 - 浅色 + 深色双版本
-   浅色配色参考 Hilton 中国站：明亮白底、深蓝文字、清晰商务按钮
-   深色配色参考 Gemini 风格：深蓝黑背景、高对比冷白文字、蓝紫高亮
-   ============================================ */
-
 :root {
-  /* MBCT Brand Colors */
-  --star-gold: #f5a623;
-  --electric-blue: #4f8cff;
+  --star-gold: #d98b28;
+  --electric-blue: #0b4a6f;
   --growth-green: #16a34a;
-
-  /* -------- 浅色主题：Hilton 式明亮酒店官网 -------- */
   --background: #ffffff;
-  --background-alt: #f5f7fb;
-  --foreground: #101828;
-  
+  --background-alt: #f4f7f8;
+  --foreground: #0f1720;
+
   --card: #ffffff;
-  --card-foreground: #101828;
+  --card-foreground: #0f1720;
   --popover: #ffffff;
-  --popover-foreground: #101828;
-  
-  --primary: #003b71;
+  --popover-foreground: #0f1720;
+
+  --primary: #0b4a6f;
   --primary-foreground: #ffffff;
-  --secondary: #eef4fb;
-  --secondary-foreground: #133b5c;
-  --muted: #eef2f7;
-  --muted-foreground: #475467;
-  --accent: #e6f0fb;
-  --accent-foreground: #003b71;
-  
+  --secondary: #edf3f5;
+  --secondary-foreground: #163f57;
+  --muted: #edf2f3;
+  --muted-foreground: #52606a;
+  --accent: #e8f0f3;
+  --accent-foreground: #0b4a6f;
+
   --destructive: #dc2626;
-  --border: #d9e2ec;
-  --input: #f5f7fb;
-  --ring: #006bb6;
-  --radius: 0.625rem;
+  --border: #d5dde1;
+  --input: #f4f7f8;
+  --ring: #0b4a6f;
+  --radius: 0.375rem;
 
   /* 浅色主题的区块背景（用于内容分隔） */
-  --section-bg: #f5f7fb;
-  --divider: #d9e2ec;
+  --section-bg: #f4f7f8;
+  --divider: #d5dde1;
 
   /* 渐变定义 */
-  --gradient-primary: linear-gradient(135deg, #003b71 0%, #0072ce 100%);
-  --gradient-text: linear-gradient(135deg, #101828 0%, #003b71 100%);
+  --gradient-primary: linear-gradient(135deg, #0b4a6f 0%, #0b4a6f 100%);
+  --gradient-text: linear-gradient(135deg, #0f1720 0%, #0b4a6f 100%);
 }
 
 /* -------- 深色主题：Gemini 式深蓝黑高对比 -------- */
@@ -55,31 +46,31 @@
   --background: #0b1020;
   --background-alt: #111827;
   --foreground: #eef4ff;
-  
+
   --card: #111827;
   --card-foreground: #eef4ff;
   --popover: #111827;
   --popover-foreground: #eef4ff;
-  
-  --primary: #8ab4f8;
+
+  --primary: #7dc7ee;
   --primary-foreground: #06101f;
   --secondary: #172033;
   --secondary-foreground: #dbeafe;
   --muted: #172033;
   --muted-foreground: #a9b7d0;
   --accent: #1b2a4a;
-  --accent-foreground: #a78bfa;
-  
+  --accent-foreground: #9ed9f7;
+
   --destructive: #ea4335;
   --border: rgba(148, 163, 184, 0.22);
   --input: #172033;
   --ring: #8ab4f8;
-  
+
   --section-bg: #111827;
   --divider: rgba(148, 163, 184, 0.22);
 
-  --gradient-primary: linear-gradient(135deg, #8ab4f8 0%, #a78bfa 55%, #f0abfc 100%);
-  --gradient-text: linear-gradient(135deg, #eef4ff 0%, #8ab4f8 50%, #a78bfa 100%);
+  --gradient-primary: linear-gradient(135deg, #7dc7ee 0%, #7dc7ee 100%);
+  --gradient-text: linear-gradient(135deg, #eef4ff 0%, #7dc7ee 100%);
 }
 
 @theme inline {
@@ -130,7 +121,14 @@
     @apply antialiased;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:
+      "Inter",
+      "Noto Sans SC",
+      "PingFang SC",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    letter-spacing: 0;
   }
 }
 
@@ -140,13 +138,25 @@
 
 /* Custom animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .animate-fade-in {
@@ -213,19 +223,8 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Rainbow gradient for MBCT text */
 .text-gradient-rainbow {
-  background: linear-gradient(90deg, #4285f4, #34a853, #fbbc04, #ea4335);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 300% 100%;
-  animation: rainbow-shift 3s ease infinite;
-}
-
-@keyframes rainbow-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  color: #0b4a6f;
 }
 
 /* Smooth scroll */
@@ -290,12 +289,24 @@ html {
 }
 
 /* 标题在暗色模式下的颜色 */
-.dark h1 { color: #ffffff !important; }
-.dark h2 { color: #ffffff !important; }
-.dark h3 { color: #f3f4f6 !important; }
-.dark h4 { color: #e5e7eb !important; }
-.dark h5 { color: #d1d5db !important; }
-.dark h6 { color: #e8e8e8 !important; }
+.dark h1 {
+  color: #ffffff !important;
+}
+.dark h2 {
+  color: #ffffff !important;
+}
+.dark h3 {
+  color: #f3f4f6 !important;
+}
+.dark h4 {
+  color: #e5e7eb !important;
+}
+.dark h5 {
+  color: #d1d5db !important;
+}
+.dark h6 {
+  color: #e8e8e8 !important;
+}
 
 /* 链接在暗色模式下：只保护正文链接，不覆盖按钮、导航和设计组件 */
 .dark .prose a,
@@ -352,12 +363,24 @@ html.dark li {
 }
 
 /* 标题在暗色模式下 */
-html.dark h1 { color: #ffffff !important; }
-html.dark h2 { color: #ffffff !important; }
-html.dark h3 { color: #f3f4f6 !important; }
-html.dark h4 { color: #e5e7eb !important; }
-html.dark h5 { color: #d1d5db !important; }
-html.dark h6 { color: #e8e8e8 !important; }
+html.dark h1 {
+  color: #ffffff !important;
+}
+html.dark h2 {
+  color: #ffffff !important;
+}
+html.dark h3 {
+  color: #f3f4f6 !important;
+}
+html.dark h4 {
+  color: #e5e7eb !important;
+}
+html.dark h5 {
+  color: #d1d5db !important;
+}
+html.dark h6 {
+  color: #e8e8e8 !important;
+}
 
 /* 链接在暗色模式下：只保护正文链接，不覆盖按钮、导航和设计组件 */
 html.dark .prose a,
@@ -397,4 +420,13 @@ html.dark textarea {
   background-color: #111827 !important;
   color: #f3f4f6 !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Native mobile navigation stays usable even before client hydration completes. */
+#mobile-navigation::backdrop {
+  background: transparent;
+}
+
+html:has(#mobile-navigation:popover-open) {
+  overflow: hidden;
 }

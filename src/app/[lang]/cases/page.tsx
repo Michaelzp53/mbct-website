@@ -6,6 +6,7 @@ import { getDict } from '@/lib/dicts'
 import PageHero from '@/components/PageHero'
 import { CheckCircle, ArrowRight, Quote, Target, AlertTriangle, ListChecks, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export async function generateMetadata({
   params,
@@ -25,6 +26,7 @@ export default async function CasesPage({
   const { lang } = await params
   const dict = getDict(lang)
   const isZh = lang === 'zh'
+  const orderedCases = [5, 4, 0, 1, 2, 3].map((index) => dict.cases.items[index]).filter(Boolean)
 
   const badgeGradients = [
     'linear-gradient(135deg, #4285f4, #34a853)',
@@ -54,15 +56,15 @@ export default async function CasesPage({
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-stretch">
             <div className="rounded-3xl border border-border bg-card p-8 md:p-10 shadow-sm">
               <p className="text-sm font-medium text-primary mb-4">
-                {isZh ? '不只是故事，是可重复的方法' : 'Not polished stories — repeatable operating methods'}
+                {isZh ? '真实项目，按商业保密要求脱敏' : 'Real projects, anonymized for commercial confidentiality'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
                 {isZh ? '每一个案例，都对应一类酒店的经营卡点' : 'Every case addresses a real hotel business bottleneck'}
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl">
                 {isZh
-                  ? '我们不再用"漂亮故事"来展示案例。取而代之的，是一套结构化的四要素框架——是什么项目、面对什么难题、做了什么动作、拿到了什么结果。每一个动作都可追溯，每一个数据都可验证。'
-                  : 'We no longer tell "pretty stories." Instead, every case follows a structured four-element framework — project type, core problem, actions taken, and quantified outcome. Every move is traceable. Every number is verifiable.'}
+                  ? '案例重点不是客户名称，而是项目遇到了什么难题、团队采取了什么动作、经营结果发生了什么变化。酒店名称、城市、时间及可能识别客户的信息均已做必要脱敏。'
+                  : 'The value of a case is not the client name. It is the business problem, the actions taken, and the operating change achieved. Names, locations, dates, and identifying details have been anonymized.'}
               </p>
             </div>
 
@@ -95,10 +97,10 @@ export default async function CasesPage({
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {dict.cases.items.map((c, i) => (
+            {orderedCases.map((c, i) => (
               <Card key={c.client} className="border border-border bg-card rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 card-themed h-full flex flex-col">
                 <div className="h-44 relative overflow-hidden flex-shrink-0">
-                  <img src={c.image} alt={c.client} className="w-full h-full object-cover" />
+                  <Image src={c.image} alt={c.client} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
                   <Badge className="absolute top-4 left-4 text-white text-xs font-bold border-0" style={{ background: badgeGradients[i % badgeGradients.length] }}>
                     {c.category}
                   </Badge>
@@ -190,19 +192,14 @@ export default async function CasesPage({
                     {t.avatar}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="font-semibold text-card-foreground">{t.name}</span>
-                      <span className="text-muted-foreground text-sm">·</span>
-                      <span className="text-muted-foreground text-sm">{t.role}</span>
+                    <div className="mb-2">
+                      <span className="font-semibold text-card-foreground">{t.role}</span>
                     </div>
                     <div className="flex items-start gap-2 mb-4">
                       <Quote className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                       <p className="text-muted-foreground leading-relaxed">{t.content}</p>
                     </div>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <span>{t.time}</span>
-                      <span className="flex items-center gap-1">👍 {t.likes}</span>
-                    </div>
+                    <p className="text-xs text-muted-foreground">{isZh ? '真实项目反馈，身份信息已脱敏' : 'Real project feedback, identity anonymized'}</p>
                   </div>
                 </div>
               </div>

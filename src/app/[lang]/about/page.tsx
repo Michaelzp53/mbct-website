@@ -57,16 +57,20 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
   const comparisons = [
     {
-      title: isZh ? '不像传统顾问' : 'Not traditional consulting',
-      desc: isZh ? '不是停在分析和报告里，而是更关心项目能不能真正往前推进。' : 'We do not stop at analysis and reports. We care whether the project actually moves forward.',
+      title: isZh ? '酒店经营专家力量' : 'Hotel operations expertise',
+      desc: isZh ? '覆盖筹开、经营诊断、收益、成本、服务和组织执行。' : 'Pre-opening, operational diagnosis, revenue, cost, service, and execution.',
     },
     {
-      title: isZh ? '也不像纯技术公司' : 'Not just a technology vendor',
-      desc: isZh ? '不是部署完工具就结束，而是看它有没有进入经营现场并改善决策。' : 'We do not end with deployment. The question is whether the tool improves operating decisions in practice.',
+      title: isZh ? '商业策划专家力量' : 'Commercial planning expertise',
+      desc: isZh ? '围绕投资判断、项目定位、产品设计与商业模型形成完整方案。' : 'Investment judgment, positioning, product design, and commercial models.',
     },
     {
-      title: isZh ? '更像长期合作伙伴' : 'Closer to a long-term partner',
-      desc: isZh ? '把判断、动作、节奏和结果真正串起来。' : 'We connect judgment, actions, rhythm, and results into one working path.',
+      title: isZh ? '市场增长专家力量' : 'Market growth expertise',
+      desc: isZh ? '覆盖市场销售、收益策略、渠道结构、会员与客户增长。' : 'Sales, revenue strategy, channel structure, membership, and customer growth.',
+    },
+    {
+      title: isZh ? '技术与数据专家力量' : 'Technology and data expertise',
+      desc: isZh ? '把数据分析、数字化工具和AI搜索获客转化为经营动作。' : 'Turn analytics, digital tools, and AI search acquisition into operating action.',
     },
   ]
 
@@ -133,14 +137,14 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         <section className="mb-16">
           <div className="max-w-3xl mb-8">
             <p className="text-sm font-medium text-primary mb-3">
-              {isZh ? '品牌立场' : 'Brand position'}
+              {isZh ? '复合型专业团队' : 'Multidisciplinary professional team'}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {isZh ? 'MBCT 更像什么，不像什么？' : 'What MBCT is closer to — and what it is not'}
+              {isZh ? '四类专业力量，围绕同一个经营结果协同' : 'Four disciplines aligned around one business outcome'}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {comparisons.map((item, index) => (
               <div key={item.title} className="rounded-2xl bg-card border border-border p-6 h-full">
                 <div className="w-11 h-11 rounded-xl bg-amber-400/10 flex items-center justify-center mb-4">

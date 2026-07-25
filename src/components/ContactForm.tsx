@@ -13,8 +13,11 @@ export function ContactForm({ dict }: ContactFormProps) {
   const searchParams = useSearchParams()
   const type = searchParams.get('type')
   const isAiInfoPlatform = type === 'ai-website-audit' || type === 'ai-info-platform'
+  const isDiagnosis = type === 'diagnosis'
   const defaultService = isAiInfoPlatform
     ? (dict.contact.services.find((service) => service.includes('AI') && (service.includes('信息') || service.includes('Information') || service.includes('官网') || service.includes('Website'))) || dict.contact.services[0] || '')
+    : isDiagnosis
+      ? (dict.contact.services.find((service) => service.includes('经营诊断') || service.includes('Operational Diagnosis')) || dict.contact.services[0] || '')
     : type === 'plan'
       ? dict.contact.services[0] || ''
       : ''
@@ -124,10 +127,9 @@ export function ContactForm({ dict }: ContactFormProps) {
           {/* Email + Company */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.email}</label>
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.email}{isDiagnosis ? (dict.contact.form.email.includes('Email') ? ' (optional)' : '（选填）') : ''}</label>
               <input
                 type="email"
-                required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
@@ -232,7 +234,7 @@ export function ContactForm({ dict }: ContactFormProps) {
           <button
             type="submit"
             disabled={!privacy || status === 'loading'}
-            className="w-full py-3 rounded-lg font-semibold text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 flex items-center justify-center gap-2"
+            className="w-full py-3 rounded-lg font-semibold text-neutral-950 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer bg-amber-500 hover:bg-amber-400 flex items-center justify-center gap-2"
           >
             {status === 'loading' ? (
               <>
