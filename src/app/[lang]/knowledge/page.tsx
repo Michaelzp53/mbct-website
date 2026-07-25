@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 626,
+      type: "article",
+      title: "暑期客群变复杂，酒店行业的新机会藏在哪里？",
+      titleEn: "As Summer Guests Get More Diverse, Where Is the Real Opportunity for Hotels?",
+      slug: "summer-guest-mix-opportunity-hotels-2026-07-24",
+      summary: "暑期客人变多不是唯一变量。真正的新机会，藏在客群结构变复杂以后，酒店能不能识别不同需求、调整服务承载和线上表达。",
+      summaryEn: "More summer guests are not the only shift. The real opportunity lies in whether hotels can read a more diverse guest mix, adjust service capacity, and express their value clearly online.",
+      firstLine: "如果你今年暑期只看入住率和平均房价，那你可能正在错过真正的变量。",
+      author: "迈创兄弟C&T（MarvelBros C&T）",
+      date: "2026-07-24",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 625,
       type: "article",
       title: "酒店想被游客记住，不能只靠房价便宜",
@@ -1937,6 +1956,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   // 案例研究 - 2026-04-22新增1篇
   const cases = [
+    {
+      id: 627,
+      type: "case",
+      title: "加盟酒店品牌怎么选？别只看名气，要看它的持续创造价值能力",
+      titleEn: "How to Choose a Hotel Franchise Brand: It's Not About the Name — It's About Long-Term Value Creation",
+      slug: "how-to-choose-hotel-franchise-brand-long-term-value-2026-07-25",
+      summary: "酒店加盟决策不能只看品牌名气、门店数量和开业支持，更要判断品牌能否长期改善产品、价格、渠道、运营与收益。",
+      summaryEn: "Hotel franchise decisions should go beyond recognition, property count, and opening support. The real test is whether a brand can keep improving product, pricing, channels, operations, and returns.",
+      firstLine: "面前摆着几份加盟品牌的资料。资料都很精美，但真正做投资决策的老板，想的是这块牌子能不能持续为自己的酒店创造价值。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-07-25",
+      category: "case-study",
+      tag: isZh ? "案例研究" : "Case Study",
+      tagColor: "bg-[#16a34a]",
+      tagTextColor: "text-white",
+      readTime: 8,
+      featured: true,
+      image: "",
+    },
     {
       id: 471,
       type: "case",

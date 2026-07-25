@@ -24,6 +24,146 @@ export interface ArticleData {
 
 export const articlesData: ArticleData[] = [
   {
+    id: 458,
+    slug: 'hotel-guest-growth-service-segmentation-2026-07-24',
+    titleZh: '酒店客人变多后，先别急着加服务',
+    titleEn: 'When More Guests Arrive, Do Not Rush to Add More Services',
+    summaryZh: '旺季一来，很多酒店的本能反应是加人、加早餐、加礼包、加服务。可你有没有发现一个奇怪的现象——服务加了不少，差评却没少，客人并没觉得更好。',
+    summaryEn: 'When peak season hits, the instinctive reaction is to add more staff, more breakfast options, more welcome packages and more services. But have you noticed something strange? You have added all these services, yet negative reviews remain high, and guests do not seem any happier.',
+    contentZh: `酒店客人变多后，先别急着加服务
+
+栏目：管享精道 / 经营判断
+
+旺季一来，很多酒店的本能反应是加人、加早餐、加礼包、加服务。可你有没有发现一个奇怪的现象——服务加了不少，差评却没少，客人并没觉得更好。
+
+问题出在哪？
+
+不是服务不够，是服务没有分清楚谁真正需要什么。
+
+想象一个典型的日子：早上七点半，带孩子的家庭挤满了餐厅，孩子跑来跑去，大人忙着拿吃的。八点，早起的一对老夫妇下楼，发现已经没有安静的位置了。中午，一个年轻客人问前台周边哪里好拍照、晚上有没有什么活动，前台说"不好意思，这个不太清楚"。下午三点，一个带着电脑的客人进大堂，说要住三天办公，问有没有安静房型和稳定的网络。
+
+他们在同一天走进同一家酒店，但把"好服务"的定义完全不同。
+
+要破解这个问题，你需要把服务拆成三层来看。
+
+底层基础：底线服务。这是不管谁来都必须做到的基础——卫生、安全、安静、响应速度、准确承诺。如果客人半夜打前台电话没人接、房间有异味、承诺的设施实际上没有，那不管其他服务做得多好，都会差评。底线服务不做到，其他都是空谈。
+
+第二层：客群服务。这是根据不同客群的需求做的差异化安排。亲子客需要儿童餐具、加床和游乐指引；银发客需要电梯方便、安静楼层和一目了然的辅助说明；年轻客需要本地体验推荐和拍照打卡信息；入境客需要多语言指引和支付沟通说明；办公客需要稳定网络和安静环境。这些不需要大投入，但需要提前想好、写在平台信息里、前台能快速响应。
+
+第三层：增值服务。这是让客人愿意多花钱的部分。套餐、活动、延住优惠、餐饮升级、周边联动。只有在底线服务和客群服务做好的基础上，增值服务才能真正带来溢价。否则就是客人觉得"你又加钱了，但基础的事都没做好"。
+
+旺季来了，先别急着加服务。先查五件事。
+
+早餐峰值。有没有明显的排队高峰？高峰时段出现时，有没有不同类型客人的冲突？能不能通过分流、分时段或分区域解决？
+
+第二，前台等待。客人到店后平均等待多久？入住办理高峰期，有没有指引客人先去休息区喝口水、减少焦虑？
+
+第三，停车说明。开车来的客人到店后能不能快速找到停车场？停车指引、费用说明、充电桩位置有没有在平台详情页写清楚？
+
+第四，房型适配。不同类型的客人被分配到最接近他们需求的房型了吗？亲子家庭有没有被安排到走廊尽头的安静端头房？银发客有没有被安排需要走很多楼梯的客房？
+
+第五，投诉高频词。打开最近一个月的差评记录，看看出现最多的词是什么？是"卫生""态度""噪音""早餐"还是"与描述不符"——每个词对应一个可以今天就开始检查的位置。
+
+同时有三件事不要做。
+
+不要所有客人一个礼包。家庭、银发、年轻人要的东西完全不同，一个标准礼包反而让人觉得不贴心。
+
+第二，不要把服务堆成成本。加人手、加早餐、加配送都是成本，但成本花在哪里效率最高要算清楚。不加分析就全面加服务，钱花了，客人也不一定领情。
+
+第三，不要让前台临场解释平台上本该写清楚的信息。客人到店后问的问题，大部分在OTA详情页、官网或预订确认中就可以回答。如果前台一天被问十次同样的问题，不是前台培训不够，是平台信息没写好。
+
+旺季不是看谁加服务加得快，是看谁把服务分得清。
+
+今天就可以开始的事：把差评记录拿出来，找出高频词；把前台最近一周被问最多的问题记下来；对照三层服务框架，标出自己哪些已经做到、哪些可以马上补上、哪些可以优化得更准。
+
+迈创兄弟C&T（MarvelBros C&T）——让好酒店更容易被看见。
+
+
+FAQ
+
+问：酒店旺季服务应该怎么加才不浪费？
+答：先分清楚哪些是底线服务、哪些是客群服务、哪些是增值服务。底线服务必须做到，客群服务按客群需求优先排，增值服务在基础做稳后再推。
+
+问：酒店亲子客和银发客的服务重点有什么不同？
+答：亲子客的重点是安全、便利、儿童友好；银发客的重点是舒适、安静、辅助指引清晰、节奏从容。一个更关注"玩"，一个更关注"安"。
+
+问：酒店客人多了为什么投诉也变多？
+答：因为不同客群之间的服务需求冲突了。家庭客的喧闹影响商务客的安静，年轻人晚归影响早起客的休息。不是服务少了，是没有把客群分开对待。
+
+问：酒店怎么做服务承载力检查？
+答：从早餐高峰、前台等待、停车指引、房型匹配和投诉高频词五个维度入手，结合客群结构和体量对比，找到瓶颈后再针对性调整。`,
+    contentEn: `When More Guests Arrive, Do Not Rush to Add More Services
+
+Section: Guan Xiang Jing Dao / Operational Judgment
+
+When peak season hits, the instinctive reaction is to add more staff, more breakfast options, more welcome packages and more services. But have you noticed something strange? You have added all these services, yet negative reviews remain high, and guests do not seem any happier.
+
+What is going wrong?
+
+The issue is not a lack of service. It is that your services are not tailored to who actually needs what.
+
+Imagine a typical day. At 7:30 AM, families with children fill the dining room. Kids are running around, adults are rushing for food. By 8:00 AM, an elderly couple comes down for a quiet breakfast, only to find no peaceful seats left. At noon, a young guest asks the front desk about good photo spots and night activities nearby. The front desk says, "Sorry, I am not sure about that." At 3:00 PM, a guest carrying a laptop walks in, saying they need three days to work remotely. They need a quiet room with stable Wi-Fi.
+
+These guests walk into the same hotel on the same day. But their definition of "good service" could not be more different.
+
+To solve this, break your services into three layers.
+
+Layer one: Baseline services. These are non-negotiable for every guest—cleanliness, safety, quiet, response time and accurate promised information. If a guest calls the front desk at midnight and nobody answers, if the room smells bad, or if the facilities you promised do not exist, it does not matter how good your other services are—you will get a bad review. Baseline services must be solid before anything else matters.
+
+Layer two: Guest-segment services. These are tailored to different guest needs. Families need kids' utensils, extra beds and play area information. Senior travelers need elevator access, quiet floors and clear auxiliary signage. Young guests need local experience recommendations and photo-worthy spots. Inbound visitors need multilingual guidance and clear payment instructions. Remote workers need stable Wi-Fi and quiet spaces. None of these require large investments—just advance thinking, accurate platform information and a front desk that can respond quickly.
+
+Layer three: Value-added services. These are the extras that make guests willing to spend more—packages, events, late checkout offers, dining upgrades, and partnerships with local attractions. But these only drive premium pricing when baseline and guest-segment services are already strong. Otherwise, guests will feel like you are "charging more while the basics are still not right."
+
+So what should you check first before adding services in peak season? Start with five things.
+
+First, breakfast peak. Is there a visible queue or bottleneck? When the peak hits, do different guest types conflict with each other? Can you solve this through time-slot or area segregation?
+
+Second, front desk wait time. How long does the average guest wait at check-in? When the queue is long during peak hours, can you guide guests to a waiting area, offer water, and reduce their anxiety?
+
+Third, parking information. Can guests arriving by car quickly find the parking lot? Are parking directions, fees and EV charging station locations clearly stated on your OTA and website listings?
+
+Fourth, room-type fit. Are different guest types assigned to the rooms that best match their needs? Are families with children placed near stairwells and elevators for convenience? Are senior guests placed in rooms requiring many stairs?
+
+Fifth, complaint keyword analysis. Open the last month of negative reviews. What are the most frequent words? Cleanliness, attitude, noise, breakfast or mismatch with listing description — each one points to something you can start fixing today.
+
+And three things you should never do.
+
+First, do not give every guest the same welcome package. Families, seniors and young guests want completely different things. A standardized package feels thoughtless to everyone.
+
+Second, do not turn service into cost without measuring return. Hiring more people, expanding breakfast and adding extras all cost money. Spend where it creates the most impact. Without analysis, you spend more and guests do not appreciate it.
+
+Third, do not make the front desk explain information that should have been on your platform. Most guest questions at check-in could have been answered on the OTA listing, official website or booking confirmation. If the front desk answers the same question ten times a day, the issue is not staff training—it is that the platform information is incomplete.
+
+Peak season is not about who adds the most services the fastest. It is about who segments their services the smartest.
+
+Start today: Take out your complaint records and find the most frequent keywords. List the most common questions front desk staff answer each week. Compare against the three-layer service framework—mark what you already do well, what you can improve immediately, and what can be optimized for better precision.
+
+
+FAQ
+
+Q: How should a hotel add services during peak season without waste?
+A: First categorize services into baseline, guest-segment and value-added. Baseline must be solid. Guest-segment services should be prioritized by guest profile. Value-added should only be introduced after the first two layers are stable.
+
+Q: What is the difference between serving family guests and senior guests?
+A: Family guests prioritize safety, convenience and child-friendliness. Senior guests prioritize comfort, quiet, clear wayfinding services and a relaxed pace. One is about "having fun," the other is about "feeling secure."
+
+Q: Why do more guests often mean more complaints?
+A: Because service needs among different guest groups conflict. Active families disturb quiet business travelers. Late-arriving young guests disrupt early-rising seniors. The issue is not a lack of service but a lack of guest segmentation.
+
+Q: How can a hotel conduct a service capacity check?
+A: Start with five dimensions: breakfast peak, front desk wait time, parking guidance, room-type fit and complaint keyword frequency. Compare these against your guest mix and size, then address the bottlenecks one at a time.
+
+MarvelBros C&T — Making great hotels more visible.`,
+    category: 'operations',
+    tags: ['经营判断', '服务承载', '客群分层'],
+    author: '迈创兄弟C&T（MarvelBros C&T）',
+    date: '2026-07-24',
+    readTime: 6,
+    views: 0,
+    likes: 0,
+    comments: 0,
+  },
+  {
     id: 130,
     slug: 'hotel-website-necessity-2026',
     titleZh: '酒店官网还有必要做吗？2026年的答案是：比以前更重要',

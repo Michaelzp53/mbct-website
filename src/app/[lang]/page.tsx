@@ -224,7 +224,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
                 <Link
-                  href={`/${lang}/knowledge/hotel-value-beyond-cheap-2026-07-21`}
+                  href={`/${lang}/knowledge/how-to-choose-hotel-franchise-brand-long-term-value-2026-07-25`}
                   className="mt-6 block rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md dark:border-amber-300/20 dark:bg-amber-300/10"
                 >
                   <div className="mb-2 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-amber-700 dark:bg-amber-300/15 dark:text-amber-200">
@@ -232,13 +232,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <h3 className="text-lg font-bold leading-snug text-[#101828] dark:text-white">
                     {isZh
-                      ? '酒店想被游客记住，不能只靠房价便宜'
-                      : 'Hotels Are Remembered for Value, Not Just Low Price'}
+                      ? '加盟酒店品牌怎么选？别只看名气，要看它的持续创造价值能力'
+                      : "How to Choose a Hotel Franchise Brand: It's About Long-Term Value Creation"}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#475467] dark:text-slate-300">
                     {isZh
-                      ? '暑期客流回来了，但真正能被游客记住的不是最低价，而是省心、独特、可被推荐的体验。'
-                      : 'Summer traffic is back, but what guests remember is not the lowest price. It is a stay that feels convenient, distinctive, and worth recommending.'}
+                      ? '品牌名气只能降低第一次选择成本，真正决定加盟价值的是它能否长期改善产品、价格、渠道、运营与收益。'
+                      : 'Recognition may lower the first-choice barrier. Long-term franchise value depends on sustained improvements to product, pricing, channels, operations, and returns.'}
                   </p>
                 </Link>
               </div>

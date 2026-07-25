@@ -6,6 +6,8 @@ import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ArticleInteractions from '@/components/interactions/ArticleInteractions'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import articles20260725 from './articles-2026-07-25.json'
+import articles20260724 from './articles-2026-07-24.json'
 import articles20260721 from './articles-2026-07-21.json'
 import articles20260718 from './articles-2026-07-18.json'
 import articles20260717 from './articles-2026-07-17.json'
@@ -24,6 +26,32 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260725 as Record<string, {
+    id: number
+    title: string
+    titleEn?: string
+    description?: string
+    descriptionEn?: string
+    author: string
+    date: string
+    readTime: string
+    tag: string
+    content: string[]
+    contentEn?: string[]
+  }>),
+  ...(articles20260724 as Record<string, {
+    id: number
+    title: string
+    titleEn?: string
+    description?: string
+    descriptionEn?: string
+    author: string
+    date: string
+    readTime: string
+    tag: string
+    content: string[]
+    contentEn?: string[]
+  }>),
   ...(articles20260721 as Record<string, {
     id: number
     title: string
@@ -10333,6 +10361,12 @@ function safeDecodeSlug(slug: string) {
 }
 
 function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean) {
+  const isFranchiseArticle = article.title.includes('加盟酒店品牌') || article.titleEn?.includes('Hotel Franchise Brand')
+  if (isFranchiseArticle) {
+    return isEnglish
+      ? ['hotel franchise brand', 'hotel brand selection', 'hotel investment', 'franchise value creation', 'MarvelBros C&T']
+      : ['酒店加盟品牌', '酒店品牌选择', '酒店投资', '加盟价值评估', 'MBCT（MarvelBros C&T）']
+  }
   const base = isEnglish
     ? ['hotel AI search', 'hotel direct booking', 'hotel website', 'hotel operations', 'MarvelBros C&T']
     : ['酒店AI搜索', '酒店官网直订', '酒店获客', '酒店经营', '迈创兄弟C&T']
