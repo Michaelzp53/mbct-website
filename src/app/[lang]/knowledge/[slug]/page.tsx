@@ -10439,9 +10439,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">文章未找到</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">
+            {lang === 'en' ? 'Article Not Found' : '文章未找到'}
+          </h1>
           <Link href={`/${lang}/knowledge`} className="text-primary hover:underline">
-            返回前沿导航
+            {lang === 'en' ? 'Back to Knowledge' : '返回前沿导航'}
           </Link>
         </div>
       </div>
@@ -10557,7 +10559,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            返回前沿导航
+            {isEnglish ? 'Back to Knowledge' : '返回前沿导航'}
           </Link>
           <ThemeToggle lang={lang} />
         </div>
@@ -10576,7 +10578,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
             <span className="flex items-center gap-2">
               <User className="w-4 h-4" />
-              {article.author}
+              {isEnglish ? 'MarvelBros C&T' : article.author}
             </span>
             <span className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
@@ -10590,7 +10592,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
           <ArticleInteractions 
             articleId={article.id.toString()} 
-            articleTitle={article.title}
+            articleTitle={articleTitle}
             articleUrl={articleUrl}
           />
           <ArticleContent content={articleContent} articleTitle={articleTitle} />
