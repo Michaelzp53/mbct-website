@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
-export default function ArticlePage({ params }: { params: { lang: string } }) {
-  const { lang } = params
+export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
   const isZh = lang === 'zh'
 
   const article = {

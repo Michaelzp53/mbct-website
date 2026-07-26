@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     template: '%s | 迈创兄弟C&T',
     default: '迈创兄弟C&T｜酒店经营知识、行业洞察与实战方法',
   },
-  description: '迈创兄弟C&T（MarvelBros C&T）汇集酒店经营知识、行业洞察和实战方法，并提供经营诊断、筹开控制、经营改善与AI搜索获客服务。',
-  keywords: '酒店经营知识, 酒店管理, 酒店投资, 酒店经营诊断, 酒店筹开, 酒店收益管理, AI搜索获客, 酒店咨询',
+  description: '迈创兄弟C&T（MarvelBros C&T）基于30多年酒店经验，分享酒店投资、筹开、经营诊断与运营优化知识。',
+  keywords: '酒店投资咨询, 酒店筹开管理, 酒店经营诊断, 酒店运营优化, 酒店经营知识, 酒店管理',
   authors: [{ name: '迈创兄弟C&T（MarvelBros C&T）' }],
   openGraph: {
     type: 'website',
@@ -43,7 +43,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: 'https://www.marvelbros.com',
     logo: 'https://www.marvelbros.com/logo-new.png',
     email: 'contactme@marvelbros.com',
-    sameAs: ['https://www.marvelbros.com'],
+    telephone: '+86-189-4157-9333',
+    description: 'A hospitality knowledge and advisory platform grounded in more than 30 years of hotel investment, pre-opening, and operating experience.',
+    areaServed: {
+      '@type': 'Country',
+      name: 'China',
+    },
+    knowsAbout: [
+      'Hotel investment consulting',
+      'Hotel pre-opening management',
+      'Hotel operational diagnosis',
+      'Hotel operations improvement',
+      'Hotel revenue management',
+      'Hotel market acquisition',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+86-189-4157-9333',
+      contactType: 'customer service',
+      availableLanguage: ['Chinese', 'English'],
+      areaServed: 'CN',
+    },
   }
 
   const websiteJsonLd = {
