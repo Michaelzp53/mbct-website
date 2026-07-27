@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 628,
+      type: "article",
+      title: "携程被罚没51.79亿元后，酒店能真正拿回定价主动权吗？",
+      titleEn: "After Ctrip's RMB 5.179 Billion Antitrust Penalty, Can Hotels Regain Pricing Control?",
+      slug: "ctrip-antitrust-penalty-hotel-pricing-control-2026-07-27",
+      summary: "携程反垄断处罚改变了平台与酒店的经营边界，但定价主动权不会自动变成利润。酒店需要重新核查合同授权、渠道净收入、价格权益和客户承接。",
+      summaryEn: "Ctrip's antitrust penalty changes the operating boundary between platforms and hotels, but pricing control does not automatically become profit. Hotels need to review contracts, channel net revenue, rate benefits, and guest retention.",
+      firstLine: "许多酒店老板会发现一个矛盾：自己明明拥有酒店，却不一定能决定一间客房以什么价格、通过什么条件、卖给谁。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-07-27",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 7,
+      featured: true,
+      image: "",
+    },
+    {
       id: 626,
       type: "article",
       title: "暑期客群变复杂，酒店行业的新机会藏在哪里？",

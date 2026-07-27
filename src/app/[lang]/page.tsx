@@ -60,12 +60,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
-      title: isZh ? '加盟酒店品牌怎么选？别只看名气，要看它的持续创造价值能力' : "How to Choose a Hotel Franchise Brand: Look Beyond Fame to Long-Term Value",
+      title: isZh ? '携程被罚没51.79亿元后，酒店能真正拿回定价主动权吗？' : "After Ctrip's RMB 5.179 Billion Antitrust Penalty, Can Hotels Regain Pricing Control?",
       summary: isZh
-        ? '品牌名气只能降低第一次选择成本，真正决定加盟价值的是它能否长期改善产品、价格、渠道、运营与收益。'
-        : 'Recognition may lower the first-choice barrier. Long-term value depends on sustained improvements to product, pricing, channels, operations, and returns.',
-      slug: 'how-to-choose-hotel-franchise-brand-long-term-value-2026-07-25',
-      date: '2026.07.25',
+        ? '平台规则发生变化后，酒店能否把经营空间变成利润，取决于合同授权、渠道净收入、价格权益和客户承接是否真正算清。'
+        : 'When platform rules change, hotels still need clear authorization, channel economics, rate benefits, and guest retention to turn operating room into profit.',
+      slug: 'ctrip-antitrust-penalty-hotel-pricing-control-2026-07-27',
+      date: '2026.07.27',
     },
     {
       title: isZh ? '暑期客群变复杂，酒店行业的新机会藏在哪里？' : 'As Summer Guests Get More Diverse, Where Is the Real Opportunity for Hotels?',
