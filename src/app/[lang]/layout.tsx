@@ -13,13 +13,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   
   if (lang === 'en') {
     return {
-      title: { absolute: 'MarvelBros C&T - Hotel Investment, Pre-opening and Operations' },
-      description: 'Hotel investment, pre-opening, operational diagnosis, and performance improvement knowledge for hotel investors, owners, and leaders, grounded in 30+ years of hospitality experience.',
-      keywords: 'hotel investment consulting, hotel pre-opening management, hotel operational diagnosis, hotel operations improvement, hotel knowledge, hotel management',
+      title: { absolute: 'MarvelBros C&T - Hotel Lifecycle Value Advisory' },
+      description: 'Hotel lifecycle advisory for investors, owners, and managers across investment research, brand positioning, development, pre-opening, operational diagnosis, product renewal, and market growth.',
+      keywords: 'hotel lifecycle consulting, hotel investment consulting, hotel brand positioning, hotel pre-opening management, hotel operational diagnosis, hotel performance improvement, hotel product renewal',
       authors: [{ name: 'MarvelBros C&T' }],
       openGraph: {
-        title: 'MarvelBros C&T - Hotel Investment, Pre-opening and Operations',
-        description: 'Practical hotel knowledge and judgment grounded in 30+ years across investment, pre-opening, and operations.',
+        title: 'MarvelBros C&T - Hotel Lifecycle Value Advisory',
+        description: 'Professional judgment and advisory across hotel investment, brand positioning, development, operations, product renewal, and market growth.',
         siteName: 'MarvelBros C&T',
         locale: 'en_US',
         alternateLocale: 'zh_CN',
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'MarvelBros C&T - Hotel Investment, Pre-opening and Operations',
-        description: 'Practical hotel knowledge and judgment grounded in 30+ years across investment, pre-opening, and operations.',
+        title: 'MarvelBros C&T - Hotel Lifecycle Value Advisory',
+        description: 'Professional judgment across the hotel lifecycle, from investment decisions to sustained operations.',
       },
       alternates: {
         canonical: 'https://www.marvelbros.com/en',
@@ -41,13 +41,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
   
   return {
-    title: { absolute: '迈创兄弟C&T - 酒店投资、筹开与经营知识平台' },
-    description: '迈创兄弟C&T基于30多年酒店经验，为酒店投资人、业主和管理者提供酒店投资咨询、酒店筹开管理、酒店经营诊断与酒店运营优化知识。',
-    keywords: '酒店投资咨询, 酒店筹开管理, 酒店经营诊断, 酒店运营优化, 酒店经营知识, 酒店管理, 酒店收益管理',
+    title: { absolute: '迈创兄弟C&T - 酒店全生命周期价值提升咨询' },
+    description: '迈创兄弟C&T面向酒店投资人、业主和管理者，提供酒店投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长咨询。',
+    keywords: '酒店全生命周期咨询, 酒店投资咨询, 酒店品牌定位, 酒店筹建管理, 酒店经营诊断, 酒店运营优化, 酒店产品升级, 酒店市场增长',
     authors: [{ name: '迈创兄弟C&T（MarvelBros C&T）' }],
     openGraph: {
-      title: '迈创兄弟C&T - 酒店投资、筹开与经营知识平台',
-      description: '基于30多年酒店经验，帮助酒店投资人、业主和管理者看清问题、判断方向。',
+      title: '迈创兄弟C&T - 酒店全生命周期价值提升咨询',
+      description: '从投资决策到持续经营，为酒店投资人、业主和管理者提供覆盖全生命周期的专业判断与优化路径。',
       siteName: '迈创兄弟C&T（MarvelBros C&T）',
       locale: 'zh_CN',
       alternateLocale: 'en_US',
@@ -55,8 +55,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: '迈创兄弟C&T - 酒店投资、筹开与经营知识平台',
-      description: '基于30多年酒店经验，帮助酒店投资人、业主和管理者看清问题、判断方向。',
+      title: '迈创兄弟C&T - 酒店全生命周期价值提升咨询',
+      description: '从投资决策到持续经营，为酒店每一个阶段提供专业判断。',
     },
     alternates: {
       canonical: 'https://www.marvelbros.com/zh',

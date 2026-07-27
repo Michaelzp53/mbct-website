@@ -32,7 +32,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
   const primaryCta = {
     href: `/${lang}/contact?type=diagnosis`,
-    label: isZh ? "发起经营诊断" : "Start a Diagnosis",
+    label: isZh ? "交流酒店项目" : "Discuss a Hotel Project",
   };
 
   return (
@@ -57,13 +57,13 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 </span>
                 <span className="mt-1 max-w-[160px] truncate text-[10px] font-medium text-[#0b4a6f] dark:text-sky-300 sm:text-xs lg:max-w-none">
                   {isZh
-                    ? "迈创兄弟C&T · 酒店经营知识与实战"
-                    : "Hospitality Knowledge & Action"}
+                    ? "迈创兄弟C&T · 酒店全生命周期价值咨询"
+                    : "Hotel Lifecycle Value Advisory"}
                 </span>
               </div>
             </Link>
 
-            <nav className="hidden flex-shrink-0 items-center gap-1 xl:flex 2xl:gap-2">
+            <nav className="hidden flex-shrink-0 items-center gap-1 min-[1400px]:flex 2xl:gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -77,7 +77,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               ))}
             </nav>
 
-            <div className="hidden xl:flex items-center gap-3 xl:gap-4 flex-shrink-0">
+            <div className="hidden min-[1400px]:flex items-center gap-3 min-[1400px]:gap-4 flex-shrink-0">
               <Link href={primaryCta.href}>
                 <Button className="flex items-center gap-1.5 rounded-none bg-[#0b4a6f] px-4 py-2 text-xs font-semibold text-white shadow-none hover:bg-[#073a58] sm:text-sm">
                   <span>{primaryCta.label}</span>
@@ -98,7 +98,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
             <button
               type="button"
-              className="inline-flex size-10 items-center justify-center text-slate-600 transition-colors hover:text-[#0b4a6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b4a6f] focus-visible:ring-offset-2 dark:text-slate-300 dark:hover:text-sky-300 xl:hidden"
+              className="inline-flex size-10 items-center justify-center text-slate-600 transition-colors hover:text-[#0b4a6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b4a6f] focus-visible:ring-offset-2 dark:text-slate-300 dark:hover:text-sky-300 min-[1400px]:hidden"
               aria-label={isZh ? "打开导航菜单" : "Open navigation menu"}
               aria-haspopup="dialog"
               aria-controls="mobile-navigation"
@@ -116,7 +116,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
         popover="auto"
         role="dialog"
         aria-label={isZh ? "网站导航" : "Site navigation"}
-        className="fixed inset-0 z-[100] m-0 h-dvh max-h-none w-full max-w-none overflow-hidden border-0 bg-transparent p-0 xl:hidden"
+        className="fixed inset-0 z-[100] m-0 h-dvh max-h-none w-full max-w-none overflow-hidden border-0 bg-transparent p-0 min-[1400px]:hidden"
       >
         <button
           type="button"

@@ -7,12 +7,12 @@ import {
   ClipboardCheck,
   Coins,
   FileText,
-  Hotel,
   Phone,
+  RefreshCw,
   Search,
-  Users,
 } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
+import LifecycleCapabilities from '@/components/home/LifecycleCapabilities'
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -21,47 +21,41 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const problems = [
     {
       icon: Building2,
-      title: isZh ? '准备投资一家酒店？' : 'Planning to invest in a hotel?',
-      copy: isZh ? '先判断市场、定位、投资模型和未来回报。' : 'Test the market, positioning, investment model, and return assumptions first.',
+      title: isZh ? '项目投资阶段' : 'Project investment',
+      copy: isZh ? '如何判断酒店项目是否值得投入？' : 'How can you judge whether a hotel project is worth the investment?',
       href: `/${lang}/knowledge/hotel-investor-pitfalls-guide`,
     },
     {
       icon: ClipboardCheck,
-      title: isZh ? '酒店正在筹备？' : 'Preparing a hotel to open?',
-      copy: isZh ? '提前发现定位、设计、预算和开业准备中的风险。' : 'Find risks in positioning, design, budget, and opening readiness before they become expensive.',
+      title: isZh ? '筹建筹开阶段' : 'Development and pre-opening',
+      copy: isZh ? '如何降低建设投入与开业风险？' : 'How can construction investment and opening risk be reduced?',
       href: `/${lang}/services`,
     },
     {
-      icon: Hotel,
-      title: isZh ? '酒店入住率下降？' : 'Is occupancy falling?',
-      copy: isZh ? '检查产品、价格、渠道和客户需求之间哪里断开了。' : 'Find where product, pricing, channels, and guest demand have stopped connecting.',
-      href: `/${lang}/knowledge`,
-    },
-    {
       icon: Coins,
-      title: isZh ? '收入增长，利润却在下降？' : 'Is revenue rising while profit falls?',
-      copy: isZh ? '重新检查成本结构、渠道质量和经营效率。' : 'Re-examine the cost structure, channel quality, and operating efficiency.',
+      title: isZh ? '经营提升阶段' : 'Performance improvement',
+      copy: isZh ? '为什么收入增长，利润却没有同步提升？' : 'Why does profit fail to improve when revenue is growing?',
       href: `/${lang}/knowledge/revpar-recovery-three-tracks-2026-05-20`,
     },
     {
-      icon: Users,
-      title: isZh ? '团队很忙，但经营没有改善？' : 'Is the team busy without better results?',
-      copy: isZh ? '分析管理机制、工作流程和执行效率。' : 'Review management mechanisms, workflows, and execution quality.',
-      href: `/${lang}/lean`,
+      icon: RefreshCw,
+      title: isZh ? '产品升级阶段' : 'Product renewal',
+      copy: isZh ? '成熟酒店如何重新获得市场竞争力？' : 'How can an established hotel regain market competitiveness?',
+      href: `/${lang}/knowledge/hotel-renovation`,
     },
     {
       icon: Search,
-      title: isZh ? '客户越来越难获得？' : 'Are guests getting harder to acquire?',
-      copy: isZh ? '重新判断产品表达、市场渠道和新的获客方式。' : 'Rethink product communication, market channels, and new routes to demand.',
+      title: isZh ? '市场增长阶段' : 'Market growth',
+      copy: isZh ? '如何在新的搜索环境中获得有效客户？' : 'How can hotels acquire qualified customers in the new search environment?',
       href: `/${lang}/services/ai-hotel-website`,
     },
   ]
 
   const methods = [
-    isZh ? '看真实数据，也看酒店现场' : 'Read the data and the operating floor',
-    isZh ? '先找原因，再判断行动' : 'Find the cause before prescribing action',
-    isZh ? '把判断变成可执行的方法' : 'Turn judgment into practical action',
-    isZh ? '跟踪结果，持续校准' : 'Track outcomes and keep adjusting',
+    isZh ? '深入数据，洞察经营现状' : 'Study the data to understand current performance',
+    isZh ? '结合现场，分析真实问题' : 'Use field observation to identify the real issue',
+    isZh ? '基于判断，制定优化策略' : 'Turn professional judgment into an optimization strategy',
+    isZh ? '持续跟踪，推动价值提升' : 'Track implementation and drive sustained improvement',
   ]
 
   const latestArticles = [
@@ -94,11 +88,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: isZh ? '迈创兄弟C&T酒店经营知识平台' : 'MarvelBros C&T Hotel Knowledge Platform',
+    name: isZh ? '迈创兄弟C&T酒店全生命周期价值提升咨询' : 'MarvelBros C&T Hotel Lifecycle Value Advisory',
     url: `https://www.marvelbros.com/${lang}`,
     description: isZh
-      ? '面向酒店投资人、业主和管理者的酒店投资咨询、酒店筹开管理、酒店经营诊断与酒店运营优化知识平台。'
-      : 'A hospitality knowledge platform for hotel investors, owners, and leaders covering investment, pre-opening, operational diagnosis, and performance improvement.',
+      ? '面向酒店投资人、业主和管理者，提供酒店投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长咨询。'
+      : 'Hotel lifecycle advisory for investors, owners, and managers across investment research, brand positioning, development, operations, product renewal, and market growth.',
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     about: problems.map((problem) => problem.title),
     isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
@@ -108,6 +102,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }} />
       <HeroWithStats lang={lang} />
+      <LifecycleCapabilities lang={lang} />
 
       <section className="border-b border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-slate-950 md:py-28">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
@@ -124,12 +119,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div>
               <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '为什么选择迈创兄弟C&T' : 'Why MarvelBros C&T'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-                {isZh ? '30多年酒店经验，真正的价值不是时间，而是判断' : 'The value of 30+ years in hotels is not time. It is judgment.'}
+                {isZh ? '长期酒店实践，沉淀的是判断复杂问题的方法' : 'Long-term hotel practice builds a method for judging complex problems'}
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
                 {isZh
-                  ? '同样是入住率下降，原因可能来自产品、价格、渠道、客群或市场变化。真正的经验，是知道什么时候不能急着给答案。'
-                  : 'The same drop in occupancy may come from product, pricing, channels, guest mix, or a changing market. Real experience includes knowing when not to rush to an answer.'}
+                  ? '酒店经营中的问题，往往不是单一环节造成。投资定位、品牌选择、产品设计、运营体系、市场策略与管理机制相互影响，一个阶段的判断，会持续影响后续经营结果。'
+                  : 'Hotel performance problems rarely come from one isolated link. Investment positioning, brand choice, product design, operating systems, market strategy, and management mechanisms influence one another, and one decision can shape every stage that follows.'}
+              </p>
+              <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
+                {isZh
+                  ? '迈创兄弟C&T长期参与酒店投资、建设与运营过程，形成了基于数据分析、现场观察和行业经验的判断方法。我们不仅发现问题，更找到影响酒店价值的关键因素，并制定可执行的优化路径。'
+                  : 'Through long-term involvement in hotel investment, development, and operations, MarvelBros C&T has built a judgment method grounded in data, field observation, and industry experience. We identify the factors that shape hotel value and turn them into an executable path for improvement.'}
               </p>
               <p className="mt-5 border-l-4 border-[#d98b28] pl-5 text-xl font-semibold leading-8">
                 {isZh ? '没有看过真实数据和现场，我们不会轻易下结论。' : 'Without real data and a view of the operation, we do not jump to conclusions.'}
@@ -175,19 +175,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section id="hotel-problems" className="scroll-mt-20 bg-[#f4f7f8] py-20 dark:bg-slate-900 md:py-28">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '先从问题开始' : 'Start with the problem'}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '你的酒店，现在卡在哪里？' : 'Where is your hotel getting stuck?'}</h2>
+            <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店经营中的关键问题，需要专业判断' : 'Critical hotel challenges require professional judgment'}</h2>
             <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
-              {isZh ? '很多酒店问题，并不是缺少努力，而是没有找到真正原因。先从你正在面对的问题开始。' : 'Many hotel problems persist not for lack of effort, but because the real cause has not been found. Start with the issue in front of you.'}
+              {isZh ? '不同阶段的问题相互关联。越早识别关键因素，越能降低后续调整成本。' : 'Challenges at different stages are connected. The earlier the critical factors are identified, the lower the cost of later correction.'}
             </p>
           </div>
 
           <div className="mt-12 grid border-t border-slate-300 dark:border-slate-700 lg:grid-cols-2 lg:gap-x-12">
-            {problems.map(({ icon: Icon, title, copy, href }) => (
+            {problems.map(({ icon: Icon, title, copy, href }, index) => (
               <Link
                 key={title}
                 href={href}
-                className="group grid min-h-36 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-6 transition-colors hover:bg-white/70 dark:border-slate-700 dark:hover:bg-slate-950/40 sm:grid-cols-[3.5rem_1fr_auto]"
+                className={`group grid min-h-36 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-6 transition-colors hover:bg-white/70 dark:border-slate-700 dark:hover:bg-slate-950/40 sm:grid-cols-[3.5rem_1fr_auto] ${index === problems.length - 1 ? 'lg:col-span-2' : ''}`}
               >
                 <Icon className="h-6 w-6 text-[#d98b28]" />
                 <div>
@@ -207,9 +207,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="max-w-xl">
               <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '持续更新的专业索引' : 'A practical reference, continuously updated'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店经营知识库' : 'Hotel Knowledge Base'}</h2>
-              <p className="mt-5 text-xl font-semibold leading-8">{isZh ? '把复杂的酒店问题，讲成可以判断、可以执行的方法。' : 'Turn complex hotel problems into methods leaders can judge and use.'}</p>
+              <p className="mt-5 text-xl font-semibold leading-8">{isZh ? '沉淀行业实践经验，形成可判断、可执行的方法体系。' : 'Turning industry practice into a system of judgment and action.'}</p>
               <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
-                {isZh ? '这里不只是行业资讯。我们持续回答三个问题：为什么发生、如何判断、下一步怎么做。' : 'This is more than an industry news feed. We keep answering three questions: why did it happen, how should it be judged, and what comes next?'}
+                {isZh ? '我们持续整理酒店投资、筹建、运营、收益、成本、产品和市场增长中的真实问题，通过案例分析、经营观察和行业研究，帮助酒店经营者理解原因、建立判断逻辑，并找到下一步优化方向。' : 'We examine real issues across hotel investment, development, operations, revenue, cost, product, and market growth. Cases, operating observations, and industry research help hotel leaders understand causes, build sound judgment, and identify the next direction for improvement.'}
               </p>
               <Link href={`/${lang}/knowledge`} className="mt-8 inline-flex min-h-12 items-center gap-2 bg-[#0b4a6f] px-6 py-3 font-semibold text-white hover:bg-[#073a58]">
                 <BookOpen className="h-5 w-5" />
@@ -251,16 +251,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div>
               <p className="text-sm font-semibold text-amber-300">{isZh ? '案例与成果' : 'Cases and outcomes'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl">
-                {isZh ? '真实项目经验，是专业判断的基础' : 'Professional judgment is built on real project experience'}
+                {isZh ? '真实项目经验，是专业判断的最好证明' : 'Real project experience is the strongest proof of professional judgment'}
               </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-200">
-                {isZh ? '在某国有企业酒店筹开项目中，业主需要控制持续增加的建设、装修和筹开投入。' : 'In a state-owned hotel pre-opening project, the owner needed to control rising construction, fit-out, and opening expenditure.'}
-              </p>
               <dl className="mt-8 border-t border-white/25">
                 {[
-                  [isZh ? '判断过程' : 'Judgment', isZh ? '从定位、建设方案、装修标准和筹开预算逐项复核投入必要性。' : 'Review the necessity of each investment across positioning, construction, fit-out standards, and the opening budget.'],
-                  [isZh ? '解决方法' : 'Action', isZh ? '优化建设投资、装修方案和筹开费用，把预算控制落实到具体项目。' : 'Optimize construction investment, fit-out plans, and opening costs at line-item level.'],
-                  [isZh ? '最终结果' : 'Outcome', isZh ? '为业主节省投资超过3000万元，结果由业主项目感谢信确认。' : 'More than RMB 30 million saved for the owner, confirmed in the owner’s project letter.'],
+                  [isZh ? '项目背景' : 'Project background', isZh ? '某国有企业酒店筹开过程中，建设、装修和筹开投入持续增加。' : 'During the pre-opening of a state-owned hotel, construction, fit-out, and opening expenditure continued to rise.'],
+                  [isZh ? '专业判断' : 'Professional judgment', isZh ? '问题不只是预算超支，更在于定位、建设标准与投入项目之间缺少系统复核。' : 'The issue was not simply budget overrun, but a lack of systematic review across positioning, building standards, and investment items.'],
+                  [isZh ? '优化方案' : 'Optimization plan', isZh ? '逐项复核建设方案、装修标准和筹开预算，把成本控制落实到具体项目。' : 'Review construction plans, fit-out standards, and the opening budget line by line, turning cost control into specific actions.'],
+                  [isZh ? '项目结果' : 'Project result', isZh ? '为业主节省投资超过3000万元，结果由业主项目感谢信确认。' : 'More than RMB 30 million saved for the owner, confirmed in the owner’s project letter.'],
                 ].map(([term, description]) => (
                   <div key={term} className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[7rem_1fr]">
                     <dt className="font-semibold text-amber-300">{term}</dt>
@@ -280,18 +278,18 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section className="border-t border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900 md:py-20">
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 xl:px-16">
           <div>
-            <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '先把问题谈清楚' : 'Clarify the issue first'}</p>
+            <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '专业交流' : 'Professional conversation'}</p>
             <h2 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight md:text-4xl">
-              {isZh ? '如果你的酒店遇到了问题，可以先和我们交流' : 'If your hotel is facing a problem, start with a conversation'}
+              {isZh ? '当酒店面临关键决策，可以先交流问题' : 'When a hotel faces a critical decision, start by discussing the issue'}
             </h2>
             <p className="mt-4 max-w-3xl leading-7 text-slate-600 dark:text-slate-300">
-              {isZh ? '不需要准备完整方案，也不需要立即决定合作。告诉我们酒店所在城市、项目阶段、当前问题和已有数据，我们先一起判断下一步应该看什么。' : 'You do not need a finished plan or an immediate commitment. Share the city, project stage, current issue, and available data. We will first decide together what deserves a closer look.'}
+              {isZh ? '酒店投资、筹建或经营过程中，很多问题越早判断，调整成本越低。您可以告诉我们项目阶段、所在区域以及当前面临的问题，我们会基于实际情况共同分析问题来源，判断下一步需要关注的重点。' : 'Across hotel investment, development, and operations, earlier judgment usually means a lower cost of correction. Tell us the project stage, location, and current challenge. We will examine the situation with you and identify what deserves attention next.'}
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
             <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-13 items-center justify-center gap-2 bg-[#0b4a6f] px-6 py-3.5 font-semibold text-white hover:bg-[#073a58]">
               <FileText className="h-5 w-5" />
-              {isZh ? '和我们聊一个酒店问题' : 'Discuss a hotel challenge'}
+              {isZh ? '交流一个酒店问题' : 'Discuss a hotel issue'}
             </Link>
             <a href="tel:18941579333" className="inline-flex min-h-13 items-center justify-center gap-2 border border-slate-400 px-6 py-3.5 font-semibold hover:border-[#0b4a6f] hover:text-[#0b4a6f] dark:border-slate-600 dark:hover:border-sky-300 dark:hover:text-sky-300">
               <Phone className="h-5 w-5" />
