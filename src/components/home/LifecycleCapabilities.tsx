@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   ChartNoAxesCombined,
   ClipboardCheck,
   Compass,
@@ -6,6 +7,7 @@ import {
   RefreshCw,
   Search,
 } from 'lucide-react'
+import Link from 'next/link'
 
 interface LifecycleCapabilitiesProps {
   lang: string
@@ -96,6 +98,13 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
             </article>
           ))}
         </div>
+        <Link
+          href={`/${lang}/contact?type=diagnosis`}
+          className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 bg-[#0b4a6f] px-6 py-3 font-semibold text-white transition hover:bg-[#073a58] dark:bg-sky-800 dark:hover:bg-sky-700"
+        >
+          {isZh ? '不确定属于哪个阶段？先交流判断' : 'Not sure which stage you are in? Start with a conversation'}
+          <ArrowRight className="h-5 w-5" />
+        </Link>
       </div>
     </section>
   )

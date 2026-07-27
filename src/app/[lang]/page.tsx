@@ -266,6 +266,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                 ))}
               </dl>
+              <dl className="mt-6 border-t border-white/20 bg-white/5 px-5 py-2">
+                {[
+                  [isZh ? '项目背景' : 'Project background', isZh ? '某存量酒店入住率稳定，但净利润连续两个季度低于预期。' : 'An operating hotel maintained stable occupancy, but net profit stayed below target for two quarters.'],
+                  [isZh ? '专业判断' : 'Professional judgment', isZh ? '核心问题不在客流，而在客源结构、报价权限和赠送成本失控。' : 'The core issue was not demand, but guest mix, pricing authority, and uncontrolled complimentary costs.'],
+                  [isZh ? '优化方案' : 'Optimization plan', isZh ? '重建客户分级、净价表和销售复盘机制，把资源转向高贡献客群。' : 'We rebuilt customer tiers, net-rate rules, and sales review routines to focus resources on higher-contribution segments.'],
+                  [isZh ? '项目结果' : 'Project result', isZh ? '团队动作更聚焦，代表性项目运营成本降低25%。' : 'The team focused execution, and operating cost fell by 25% in a representative case.'],
+                ].map(([term, description]) => (
+                  <div key={term} className="grid gap-2 border-b border-white/15 py-4 last:border-b-0 sm:grid-cols-[7rem_1fr]">
+                    <dt className="font-semibold text-amber-300">{term}</dt>
+                    <dd className="text-sm leading-6 text-slate-200">{description}</dd>
+                  </div>
+                ))}
+              </dl>
               <Link href={`/${lang}/cases`} className="mt-8 inline-flex items-center gap-2 font-semibold text-white hover:text-amber-300">
                 {isZh ? '查看案例与工作方法' : 'See cases and working methods'}
                 <ArrowRight className="h-5 w-5" />
