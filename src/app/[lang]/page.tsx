@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '亲子房成了暑期卖点，酒店为什么还是留不住家庭客？' : 'Family Rooms Are a Summer Bestseller. Why Do Hotels Still Struggle to Retain Family Guests?',
+      summary: isZh
+        ? '家庭客买的不只是儿童设施，而是酒店能否把安全、服务、费用和复购承诺完整兑现。'
+        : 'Family guests buy more than amenities. Hotels must deliver safety, service consistency, pricing clarity, and a reason to return.',
+      slug: 'family-room-operational-readiness-2026-07-28',
+      date: '2026.07.28',
+    },
+    {
       title: isZh ? '携程被罚没51.79亿元后，酒店能真正拿回定价主动权吗？' : "After Ctrip's RMB 5.179 Billion Antitrust Penalty, Can Hotels Regain Pricing Control?",
       summary: isZh
         ? '平台规则发生变化后，酒店能否把经营空间变成利润，取决于合同授权、渠道净收入、价格权益和客户承接是否真正算清。'
@@ -74,14 +82,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         : 'The opportunity lies in reading a more diverse guest mix, adjusting service capacity, and expressing value clearly online.',
       slug: 'summer-guest-mix-opportunity-hotels-2026-07-24',
       date: '2026.07.24',
-    },
-    {
-      title: isZh ? '酒店想被游客记住，不能只靠房价便宜' : 'Hotels Are Remembered for Value, Not Just Low Price',
-      summary: isZh
-        ? '决定一家酒店能不能被记住的，是它能不能让不同客群感到省心、独特、值得推荐。'
-        : 'Memorable hotels make different guest groups feel understood, confident, and ready to recommend the stay.',
-      slug: 'hotel-value-beyond-cheap-2026-07-21',
-      date: '2026.07.21',
     },
   ]
 

@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 629,
+      type: "article",
+      title: "亲子房成了暑期卖点，酒店为什么还是留不住家庭客？",
+      titleEn: "Family Rooms Are a Summer Bestseller. Why Do Hotels Still Struggle to Retain Family Guests?",
+      slug: "family-room-operational-readiness-2026-07-28",
+      summary: "暑期家庭旅行升温，亲子房成为酒店显性卖点。但家庭客买的不只是设施，而是酒店能否把安全、服务、费用和复购承诺完整兑现。",
+      summaryEn: "Family travel is rising, but amenities alone do not retain guests. Hotels need operational readiness across safety, service, pricing clarity, and repeat-guest engagement.",
+      firstLine: "很多酒店在暑期把亲子房放到首页和 OTA 首屏，但旺季结束后，家庭客却没有留下来。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-07-28",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 8,
+      featured: true,
+      image: "",
+    },
+    {
       id: 628,
       type: "article",
       title: "携程被罚没51.79亿元后，酒店能真正拿回定价主动权吗？",
