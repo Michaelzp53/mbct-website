@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 630,
+      type: "article",
+      title: "避暑游升温，酒店不能只卖“一间有空调的客房”；",
+      titleEn: "As Summer Escape Travel Grows, Hotels Must Offer More Than “An Air-Conditioned Guest Room”",
+      slug: "summer-escape-hotels-air-conditioned-room-2026-07-29",
+      summary: "避暑需求升温后，客人购买的不只是一间有空调的客房，而是从到店到离店的全天舒适体验。酒店需要重新识别服务时段错位与履约断点。",
+      summaryEn: "As summer escape demand grows, guests expect more than an air-conditioned room. Hotels need to identify service-timing gaps and delivery risks across the full guest day.",
+      firstLine: "天气越热，避暑目的地越忙，但客人真正购买的是从到店到离店的一整天舒适感。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-07-29",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 7,
+      featured: true,
+      image: "",
+    },
+    {
       id: 629,
       type: "article",
       title: "亲子房成了暑期卖点，酒店为什么还是留不住家庭客？",

@@ -6,6 +6,7 @@ import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ArticleInteractions from '@/components/interactions/ArticleInteractions'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import articles20260729 from './articles-2026-07-29.json'
 import articles20260728 from './articles-2026-07-28.json'
 import articles20260727 from './articles-2026-07-27.json'
 import articles20260725 from './articles-2026-07-25.json'
@@ -28,6 +29,19 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260729 as Record<string, {
+    id: number
+    title: string
+    titleEn?: string
+    description?: string
+    descriptionEn?: string
+    author: string
+    date: string
+    readTime: string
+    tag: string
+    content: string[]
+    contentEn?: string[]
+  }>),
   ...(articles20260728 as Record<string, {
     id: number
     title: string
@@ -10389,6 +10403,12 @@ function safeDecodeSlug(slug: string) {
 }
 
 function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean) {
+  const isSummerEscapeArticle = article.title.includes('避暑游升温') || article.titleEn?.includes('Summer Escape Travel')
+  if (isSummerEscapeArticle) {
+    return isEnglish
+      ? ['summer escape travel', 'hotel operations', 'guest experience', 'service delivery', 'MarvelBros C&T']
+      : ['避暑游', '酒店经营', '客人体验', '服务履约', 'MBCT（MarvelBros C&T）']
+  }
   const isFranchiseArticle = article.title.includes('加盟酒店品牌') || article.titleEn?.includes('Hotel Franchise Brand')
   if (isFranchiseArticle) {
     return isEnglish

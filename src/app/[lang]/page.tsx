@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '避暑游升温，酒店不能只卖“一间有空调的客房”；' : 'As Summer Escape Travel Grows, Hotels Must Offer More Than “An Air-Conditioned Guest Room”',
+      summary: isZh
+        ? '客人购买的不只是一间有空调的客房，而是从到店到离店的全天舒适体验。'
+        : 'Guests expect more than an air-conditioned room. Hotels need to deliver comfort across the full guest day.',
+      slug: 'summer-escape-hotels-air-conditioned-room-2026-07-29',
+      date: '2026.07.29',
+    },
+    {
       title: isZh ? '亲子房成了暑期卖点，酒店为什么还是留不住家庭客？' : 'Family Rooms Are a Summer Bestseller. Why Do Hotels Still Struggle to Retain Family Guests?',
       summary: isZh
         ? '家庭客买的不只是儿童设施，而是酒店能否把安全、服务、费用和复购承诺完整兑现。'
@@ -74,14 +82,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         : 'When platform rules change, hotels still need clear authorization, channel economics, rate benefits, and guest retention to turn operating room into profit.',
       slug: 'ctrip-antitrust-penalty-hotel-pricing-control-2026-07-27',
       date: '2026.07.27',
-    },
-    {
-      title: isZh ? '暑期客群变复杂，酒店行业的新机会藏在哪里？' : 'As Summer Guests Get More Diverse, Where Is the Real Opportunity for Hotels?',
-      summary: isZh
-        ? '真正的新机会，藏在客群结构变复杂以后，酒店能不能识别需求、调整服务承载和线上表达。'
-        : 'The opportunity lies in reading a more diverse guest mix, adjusting service capacity, and expressing value clearly online.',
-      slug: 'summer-guest-mix-opportunity-hotels-2026-07-24',
-      date: '2026.07.24',
     },
   ]
 
