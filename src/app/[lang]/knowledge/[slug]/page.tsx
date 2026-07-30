@@ -6,6 +6,7 @@ import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ArticleInteractions from '@/components/interactions/ArticleInteractions'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import articles20260730 from './articles-2026-07-30.json'
 import articles20260729 from './articles-2026-07-29.json'
 import articles20260728 from './articles-2026-07-28.json'
 import articles20260727 from './articles-2026-07-27.json'
@@ -29,6 +30,19 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260730 as Record<string, {
+    id: number
+    title: string
+    titleEn?: string
+    description?: string
+    descriptionEn?: string
+    author: string
+    date: string
+    readTime: string
+    tag: string
+    content: string[]
+    contentEn?: string[]
+  }>),
   ...(articles20260729 as Record<string, {
     id: number
     title: string
@@ -10403,6 +10417,12 @@ function safeDecodeSlug(slug: string) {
 }
 
 function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean) {
+  const isEducationalTravelArticle = article.title.includes('研学旅行升温') || article.titleEn?.includes('Educational Family Travel')
+  if (isEducationalTravelArticle) {
+    return isEnglish
+      ? ['educational family travel', 'family hotel rooms', 'hotel product design', 'hotel operations', 'MBCT']
+      : ['研学旅行', '研学客房', '亲子酒店', '酒店产品设计', 'MBCT（MarvelBros C&T）']
+  }
   const isSummerEscapeArticle = article.title.includes('避暑游升温') || article.titleEn?.includes('Summer Escape Travel')
   if (isSummerEscapeArticle) {
     return isEnglish
@@ -10503,10 +10523,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const breadcrumbTitle = articleTitle?.trim() || decodedSlug
   const articleContent = isEnglish && article.contentEn ? article.contentEn : article.content
   const articleUrl = `https://www.marvelbros.com/${lang}/knowledge/${decodedSlug}`
-  const articleDescription = articleContent
-    .find((paragraph) => paragraph && !paragraph.startsWith('#'))
-    ?.replace(/\s+/g, ' ')
-    .slice(0, 220)
+  const articleDescription = (isEnglish ? article.descriptionEn : article.description)
+    || articleContent
+      .find((paragraph) => paragraph && paragraph !== articleTitle && !paragraph.startsWith('#'))
+      ?.replace(/\s+/g, ' ')
+      .slice(0, 220)
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -10518,7 +10539,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     author: {
       '@type': 'Organization',
       '@id': 'https://www.marvelbros.com/#organization',
-      name: isEnglish ? 'MarvelBros C&T' : '迈创兄弟C&T（MarvelBros C&T）',
+      name: isEnglish ? 'MBCT (MarvelBros C&T)' : article.author,
     },
     publisher: {
       '@type': 'Organization',

@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '研学旅行升温，酒店怎样准备一间真正可用的“研学客房”？' : 'Educational Family Travel Is Growing. How Should Hotels Adapt the Guest Room?',
+      summary: isZh
+        ? '家庭需要的不只是亲子装饰，而是能学习、能收纳、能安静休息的客房。'
+        : 'Families need more than themed decoration: functional study space, practical storage and reliable quiet-room delivery.',
+      slug: 'educational-family-travel-hotel-room-2026-07-30',
+      date: '2026.07.30',
+    },
+    {
       title: isZh ? '避暑游升温，酒店不能只卖“一间有空调的客房”；' : 'As Summer Escape Travel Grows, Hotels Must Offer More Than “An Air-Conditioned Guest Room”',
       summary: isZh
         ? '客人购买的不只是一间有空调的客房，而是从到店到离店的全天舒适体验。'
@@ -74,14 +82,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         : 'Family guests buy more than amenities. Hotels must deliver safety, service consistency, pricing clarity, and a reason to return.',
       slug: 'family-room-operational-readiness-2026-07-28',
       date: '2026.07.28',
-    },
-    {
-      title: isZh ? '携程被罚没51.79亿元后，酒店能真正拿回定价主动权吗？' : "After Ctrip's RMB 5.179 Billion Antitrust Penalty, Can Hotels Regain Pricing Control?",
-      summary: isZh
-        ? '平台规则发生变化后，酒店能否把经营空间变成利润，取决于合同授权、渠道净收入、价格权益和客户承接是否真正算清。'
-        : 'When platform rules change, hotels still need clear authorization, channel economics, rate benefits, and guest retention to turn operating room into profit.',
-      slug: 'ctrip-antitrust-penalty-hotel-pricing-control-2026-07-27',
-      date: '2026.07.27',
     },
   ]
 

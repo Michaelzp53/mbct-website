@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 631,
+      type: "article",
+      title: "研学旅行升温，酒店怎样准备一间真正可用的“研学客房”？",
+      titleEn: "Educational Family Travel Is Growing. How Should Hotels Adapt the Guest Room?",
+      slug: "educational-family-travel-hotel-room-2026-07-30",
+      summary: "研学旅行升温后，家庭需要的不只是亲子装饰，而是能学习、能收纳、能安静休息的客房。酒店应先小规模测试，再用转化、连住和评价验证结果。",
+      summaryEn: "Educational family travel requires more than themed decoration. Hotels should test functional study space, storage, quiet-room delivery and local information before scaling.",
+      firstLine: "研学旅行带来的机会，是把普通客房重新组织成更适合真实家庭行程的住宿方案。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-07-30",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 7,
+      featured: true,
+      image: "",
+    },
+    {
       id: 630,
       type: "article",
       title: "避暑游升温，酒店不能只卖“一间有空调的客房”；",
