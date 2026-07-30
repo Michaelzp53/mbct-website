@@ -321,7 +321,7 @@ export const zh = {
   },
   footer: {
     description: '专注于数字化赋能酒店行业的全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。',
-    copyright: '© 2026 迈创兄弟C&T（MarvelBros C&T）. 保留所有权利。',
+    copyright: '© 2026 迈创兄弟C&T. 保留所有权利。',
     privacy: '隐私政策',
     terms: '服务条款',
     sitemap: '网站地图',

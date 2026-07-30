@@ -21,33 +21,33 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const problems = [
     {
       icon: Building2,
-      title: isZh ? '项目投资阶段' : 'Project investment',
-      copy: isZh ? '如何判断酒店项目是否值得投入？' : 'How can you judge whether a hotel project is worth the investment?',
-      href: `/${lang}/knowledge/hotel-investor-pitfalls-guide`,
+      title: isZh ? '准备投资一家酒店？' : 'Planning to invest in a hotel?',
+      copy: isZh ? '如何判断项目是否值得投资？' : 'How can you judge whether the project is worth the investment?',
+      href: `/${lang}/hotel-investment`,
     },
     {
       icon: ClipboardCheck,
-      title: isZh ? '筹建筹开阶段' : 'Development and pre-opening',
-      copy: isZh ? '如何降低建设投入与开业风险？' : 'How can construction investment and opening risk be reduced?',
-      href: `/${lang}/services`,
+      title: isZh ? '酒店正在筹开？' : 'Is the hotel preparing to open?',
+      copy: isZh ? '如何避免开业前的关键错误？' : 'How can critical pre-opening mistakes be avoided?',
+      href: `/${lang}/hotel-opening`,
     },
     {
       icon: Coins,
-      title: isZh ? '经营提升阶段' : 'Performance improvement',
-      copy: isZh ? '为什么收入增长，利润却没有同步提升？' : 'Why does profit fail to improve when revenue is growing?',
-      href: `/${lang}/knowledge/revpar-recovery-three-tracks-2026-05-20`,
+      title: isZh ? '酒店经营困难？' : 'Is hotel performance under pressure?',
+      copy: isZh ? '为什么入住率提高了，利润仍然下降？' : 'Why can profit fall even when occupancy rises?',
+      href: `/${lang}/hotel-operation-improvement`,
     },
     {
       icon: RefreshCw,
-      title: isZh ? '产品升级阶段' : 'Product renewal',
-      copy: isZh ? '成熟酒店如何重新获得市场竞争力？' : 'How can an established hotel regain market competitiveness?',
-      href: `/${lang}/knowledge/hotel-renovation`,
+      title: isZh ? '酒店成本越来越高？' : 'Are hotel costs continuing to rise?',
+      copy: isZh ? '如何提升运营效率？' : 'How can operating efficiency be improved?',
+      href: `/${lang}/hotel-operation-improvement`,
     },
     {
       icon: Search,
-      title: isZh ? '市场增长阶段' : 'Market growth',
-      copy: isZh ? '如何在新的搜索环境中获得有效客户？' : 'How can hotels acquire qualified customers in the new search environment?',
-      href: `/${lang}/services/ai-hotel-website`,
+      title: isZh ? '酒店团队很忙？' : 'Is the hotel team always busy?',
+      copy: isZh ? '为什么经营结果没有改善？' : 'Why are operating results still not improving?',
+      href: `/${lang}/hotel-revenue`,
     },
   ]
 
@@ -117,9 +117,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               />
             </div>
             <div>
-              <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '为什么选择迈创兄弟C&T' : 'Why MarvelBros C&T'}</p>
+              <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '30多年酒店行业实践' : 'More than 30 years in hospitality'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-                {isZh ? '长期酒店实践，沉淀的是判断复杂问题的方法' : 'Long-term hotel practice builds a method for judging complex problems'}
+                {isZh ? '为什么酒店项目需要专业判断？' : 'Why do hotel projects require professional judgment?'}
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
                 {isZh
@@ -128,8 +128,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </p>
               <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
                 {isZh
-                  ? '迈创兄弟C&T长期参与酒店投资、建设与运营过程，形成了基于数据分析、现场观察和行业经验的判断方法。我们不仅发现问题，更找到影响酒店价值的关键因素，并制定可执行的优化路径。'
-                  : 'Through long-term involvement in hotel investment, development, and operations, MarvelBros C&T has built a judgment method grounded in data, field observation, and industry experience. We identify the factors that shape hotel value and turn them into an executable path for improvement.'}
+                  ? '迈创兄弟C&T的复合型专业力量覆盖酒店投资分析、筹开管理、运营管理与经营改善。我们以数据分析、现场观察和跨专业协同找到影响酒店价值的关键因素，并制定可执行的优化路径。'
+                  : 'MarvelBros C&T brings together hotel investment analysis, pre-opening management, operations, and performance improvement. Data, field observation, and multidisciplinary collaboration are used to identify the factors shaping hotel value and turn them into an executable path.'}
               </p>
               <p className="mt-5 border-l-4 border-[#d98b28] pl-5 text-xl font-semibold leading-8">
                 {isZh ? '没有看过真实数据和现场，我们不会轻易下结论。' : 'Without real data and a view of the operation, we do not jump to conclusions.'}
@@ -176,7 +176,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店经营中的关键问题，需要专业判断' : 'Critical hotel challenges require professional judgment'}</h2>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店投资人和管理者经常遇到的问题' : 'Questions hotel investors and managers often face'}</h2>
             <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
               {isZh ? '不同阶段的问题相互关联。越早识别关键因素，越能降低后续调整成本。' : 'Challenges at different stages are connected. The earlier the critical factors are identified, the lower the cost of later correction.'}
             </p>

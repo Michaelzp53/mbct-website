@@ -10,7 +10,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
  summary: isZh 
  ? '中国酒店业中，中档酒店（客房单价200-400元）数量最多、竞争最激烈、同质化最严重。本文从连锁化、品牌化、差异化三大策略，为中档酒店投资人提供突围路径。'
  : 'Mid-scale hotels are the most numerous and competitive in China. This article provides three strategies for breakthrough.',
- author: '迈创兄弟C&T（MarvelBros C&T）',
+ author: '迈创兄弟C&T',
  date: '2026-05-11',
  readTime: isZh ? '15分钟' : '15 min',
  tag: isZh ? '行业分析' : 'Industry Analysis',
@@ -173,7 +173,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*
+*文章来源：管享精道 | 迈创兄弟C&T*
  ` : `
 ## Introduction
 
@@ -419,7 +419,7 @@ Results:
  </div>
  <div>
  <p className="font-semibold text-brand-navy">{article.author}</p>
- <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MBCT Content Team'}</p>
+ <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T' : 'MBCT Content Team'}</p>
  </div>
  </div>
  </div>

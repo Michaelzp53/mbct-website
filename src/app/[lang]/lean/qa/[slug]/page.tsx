@@ -104,7 +104,7 @@ FAQ 的最佳来源不是"拍脑袋想"，而是过去一年销售团队真实�
 
 以上六个问题是酒店官网内容升级时最常被问到的。把这六个问题想清楚，官网内容升级的方向就会清晰很多。
 
-MBCT（MarvelBros C&T）专注酒店经营诊断与 AI 信息平台建设，帮助酒店从"写过"升级到"资产"。了解 AI 信息平台建设方案：https://www.marvelbros.com/zh/services/ai-hotel-website`,
+迈创兄弟C&T专注酒店经营诊断与 AI 信息平台建设，帮助酒店从"写过"升级到"资产"。了解 AI 信息平台建设方案：https://www.marvelbros.com/zh/services/ai-hotel-website`,
     tools: [
       { name: '服务页写作清单', url: 'https://www.marvelbros.com/zh/services/ai-hotel-website' },
       { name: 'FAQ 主题分组模板', url: 'https://www.marvelbros.com/zh/services/ai-hotel-website' },
@@ -177,7 +177,7 @@ Minimum configuration: one content lead (4-6 hours per week), one topic complete
 
 The six questions above are the most frequently asked when upgrading a hotel website. Once they are thought through, the upgrade direction becomes much clearer.
 
-MBCT (MarvelBros C&T) focuses on hotel operations diagnostics and AI information platform construction, helping hotels move from "written" to "asset." Learn about AI information platform construction: https://www.marvelbros.com/en/services/ai-hotel-website`,
+MarvelBros C&T focuses on hotel operations diagnostics and AI information platform construction, helping hotels move from "written" to "asset." Learn about AI information platform construction: https://www.marvelbros.com/en/services/ai-hotel-website`,
     tools: [
       { name: 'Service Page Writing Checklist', url: 'https://www.marvelbros.com/en/services/ai-hotel-website' },
       { name: 'FAQ Topic Grouping Template', url: 'https://www.marvelbros.com/en/services/ai-hotel-website' },

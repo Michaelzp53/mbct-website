@@ -116,7 +116,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
     author: {
       '@type': 'Organization',
       '@id': 'https://www.marvelbros.com/#organization',
-      name: isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MarvelBros C&T',
+      name: isZh ? '迈创兄弟C&T' : 'MarvelBros C&T',
     },
     publisher: {
       '@type': 'Organization',

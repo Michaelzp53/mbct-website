@@ -10,7 +10,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
     summary: isZh 
       ? '2026年中国酒店行业正在从"拼扩张"转向"拼回报"，RevPAR修复有三条主线：价格修复、渠道效率修复、产品与服务修复。本文深度分析三条主线的逻辑与实操路径。'
       : 'China\'s hotel industry in 2026 is shifting from "competing on expansion" to "competing on returns." This article deeply analyzes the logic and practical paths of three main lines of RevPAR repair.',
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-05-20',
     readTime: isZh ? '12分钟' : '12 min',
     tag: isZh ? '趋势分析' : 'Trend Analysis',
@@ -161,9 +161,9 @@ MBCT在多个项目中验证了这一判断。在某二线城市中端酒店项�
 
 ---
 
-**作者**：迈创兄弟C&T（MarvelBros C&T）
+**作者**：迈创兄弟C&T
 
-**关于MBCT**：迈创兄弟C&T（MarvelBros C&T）专注于酒店行业全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
+**关于MBCT**：迈创兄弟C&T专注于酒店行业全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
 
 **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 

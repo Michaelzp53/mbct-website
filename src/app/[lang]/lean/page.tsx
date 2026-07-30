@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       locale: isZh ? 'zh_CN' : 'en_US',
       alternateLocale: isZh ? 'en_US' : 'zh_CN',
       url: `https://www.marvelbros.com/${lang}/lean`,
-      siteName: isZh ? '迈创兄弟C&T（MarvelBros C&T）' : 'MarvelBros C&T',
+      siteName: isZh ? '迈创兄弟C&T' : 'MarvelBros C&T',
     },
     twitter: {
       card: 'summary_large_image',

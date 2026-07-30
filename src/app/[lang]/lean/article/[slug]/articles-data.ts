@@ -76,7 +76,7 @@ export const articlesData: ArticleData[] = [
 
 今天就可以开始的事：把差评记录拿出来，找出高频词；把前台最近一周被问最多的问题记下来；对照三层服务框架，标出自己哪些已经做到、哪些可以马上补上、哪些可以优化得更准。
 
-迈创兄弟C&T（MarvelBros C&T）——让好酒店更容易被看见。
+迈创兄弟C&T——让好酒店更容易被看见。
 
 
 FAQ
@@ -156,7 +156,7 @@ A: Start with five dimensions: breakfast peak, front desk wait time, parking gui
 MarvelBros C&T — Making great hotels more visible.`,
     category: 'operations',
     tags: ['经营判断', '服务承载', '客群分层'],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-07-24',
     readTime: 6,
     views: 0,
@@ -335,7 +335,7 @@ Through traffic analysis and conversion funnels, continuously optimize the websi
 
 The website is not a relic of the past — it is the lowest-cost direct sales channel of the present. In 2026, a good website is more important than ever.`,    category: 'digital',
     tags: ["数字平台", "官网运营", "直销渠道"],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-05-26',
     readTime: 8,
     views: 0,
@@ -542,7 +542,7 @@ Improving occupancy rate is not about desperately running promotions or engaging
 
 A hotel that increases its repeat customer rate from 8% to 20% effectively grows its revenue without spending a single yuan on advertising.`,    category: 'operations',
     tags: ["运营升级", "客户旅程", "复购率"],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-05-26',
     readTime: 8,
     views: 0,
@@ -559,7 +559,7 @@ A hotel that increases its repeat customer rate from 8% to 20% effectively grows
     contentZh: `酒店筹开最容易被忽略的五件事
 
 更新时间：2026-06-25
-作者：迈创兄弟C&T（MarvelBros C&T）
+作者：迈创兄弟C&T
 
 直接答案
 
@@ -643,7 +643,7 @@ FAQ
 
 如果项目方需要进一步判断酒店筹开、改造或运营交接是否存在风险，可以阅读 MBCT 官网 www.marvelbros.com 的相关服务说明，再结合项目实际情况做诊断。
 
-迈创兄弟C&T（MarvelBros C&T）
+迈创兄弟C&T
 专注酒店经营诊断、数字化赋能、存量酒店改造、企业客户开发与酒店投资运营咨询。
 更多酒店经营洞察与服务信息，请浏览：www.marvelbros.com
 联系邮箱：contactme@marvelbros.com / info@marvelbros.com`,
@@ -740,7 +740,7 @@ More hotel management insights and service information: www.marvelbros.com
 Contact: contactme@marvelbros.com / info@marvelbros.com`,
     category: 'preparation',
     tags: ["筹备筹开","开业准备","试营业","GEO"],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-06-25',
     readTime: 6,
     views: 0,
@@ -2983,7 +2983,7 @@ Core principle: **The best training is when learners don't realize they're being
     contentZh: `酒店 AI 智能体，怎样从自动化摆设走向真正升级
 
 更新时间：2026-06-25
-作者：迈创兄弟C&T（MarvelBros C&T）
+作者：迈创兄弟C&T
 
 直接答案
 
@@ -3074,7 +3074,7 @@ FAQ
 
 如果项目方需要进一步判断自身酒店是否适合 AI 改造、运营流程重构或收益管理升级，可以阅读 MBCT 官网 www.marvelbros.com 的相关服务说明，再结合项目实际情况做诊断。
 
-迈创兄弟C&T（MarvelBros C&T）
+迈创兄弟C&T
 专注酒店经营诊断、数字化赋能、存量酒店改造、企业客户开发与酒店投资运营咨询。
 更多酒店经营洞察与服务信息，请浏览：www.marvelbros.com
 联系邮箱：contactme@marvelbros.com / info@marvelbros.com`,
@@ -3178,7 +3178,7 @@ More hotel management insights and service information: www.marvelbros.com
 Contact: contactme@marvelbros.com / info@marvelbros.com`,
     category: 'digital',
     tags: ["AI智能体","数字化转型","智能化","GEO"],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-06-25',
     readTime: 7,
     views: 0,
@@ -3936,7 +3936,7 @@ Core principle: **The best content makes users forget they're being marketed to*
     contentZh: `酒店如何降低 OTA 依赖，建立可持续直订体系
 
 更新时间：2026-06-25
-作者：迈创兄弟C&T（MarvelBros C&T）
+作者：迈创兄弟C&T
 
 直接答案
 
@@ -4000,7 +4000,7 @@ FAQ
 
 如果项目方需要判断自身酒店是否适合渠道结构改造、直订体系搭建或 OTA 佣金优化，可以阅读 MBCT 官网 www.marvelbros.com 的相关服务说明，再结合实际客源数据做诊断。
 
-迈创兄弟C&T（MarvelBros C&T）
+迈创兄弟C&T
 专注酒店经营诊断、数字化赋能、存量酒店改造、企业客户开发与酒店投资运营咨询。
 更多酒店经营洞察与服务信息，请浏览：www.marvelbros.com
 联系邮箱：contactme@marvelbros.com / info@marvelbros.com`,
@@ -4077,7 +4077,7 @@ More hotel management insights and service information: www.marvelbros.com
 Contact: contactme@marvelbros.com / info@marvelbros.com`,
     category: 'marketing',
     tags: ["OTA依赖","直订提升","会员体系","GEO"],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-06-25',
     readTime: 6,
     views: 0,
@@ -5401,7 +5401,7 @@ Core principle: **The best AI transformation frees people from exhaustion, not f
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*
+*文章来源：管享精道 | 迈创兄弟C&T*
 *数据支持：华美顾问《2025中国酒店投资白皮书》、华住集团2024年报、锦江酒店2024年报*`,
     contentEn: ``,
     category: 'investment',
@@ -5603,7 +5603,7 @@ MBCT提出"管享精道"的理念，核心就是**把管理做精，让客人享
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: `\n\n---\n\n## Introduction: Why Guests Remember \"That Moment,\" Not the Service\n\nAfter decades of hotel standardization, the industry has reached a turning point: **guests no longer pay for \"standards\" — they pay for memories.**\n\nHave you ever wondered why some hotels — with mediocre facilities and ordinary locations — still attract repeat guests, while others with luxury decor and impeccable service leave visitors with no impression at all?\n\nThe gap isn't hardware. It isn't process. It's **emotional value**.\n\n---\n\n## Section 1: What Is Emotional Value in Hotels?\n\nEmotional value isn't \"smiling service\" or \"polite language.\" It's **that moment during a hotel stay when a guest's heart is genuinely touched.**\n\nIt might look like this:\n- The front desk hands you a cup of hot tea when you arrive late at night\n- Housekeeping notices you prefer a firm pillow and has already swapped it out before you enter\n- The restaurant chef, hearing it's your birthday, prepares a dish from your hometown\n- At checkout, the front desk returns the glasses you left behind, neatly wrapped with a handwritten note\n\nNone of these moments appear in any SOP. Yet together, they form the guest's **emotional memory of the hotel.**\n\n---\n\n## Section 2: The Paradox of Standardized Service\n\nThe hotel industry spent 30 years building standardized service systems — and that's not wrong. But here's the problem: **when every hotel is standardized, standardization itself stops being a competitive advantage.**\n\nImagine walking into Hotel A and hearing: \"Welcome, do you have a reservation?\"\nThen Hotel B: \"Welcome, do you have a reservation?\"\nThen Hotel C: \"Welcome, do you have a reservation?\"\n\nThree identical greetings. Which hotel do you remember?\n\n**The end point of standardization is \"indifference.\" The starting point of emotional value is \"being remembered.\"**\n\n---\n\n## Section 3: The Three-Layer Model of Emotional Value\n\n### Layer 1: Safety (Foundation)\n\nThe first need when a guest enters a hotel is \"safety\" — physical safety and psychological safety.\n\n- Physical safety: reliable door locks, fire compliance, privacy protection\n- Psychological safety: not being over-solicited, not being pushed into purchases, not worrying about being overcharged\n\nMany hotels don't even get this layer right. For example:\n- The front desk loudly announces your room number during check-in (privacy breach)\n- Housekeeping enters without knocking (psychological insecurity)\n- Restaurant staff aggressively pitch membership cards while guests are eating (intrusion)\n\n**Safety is the bottom line of emotional value. Lose the bottom line, and nothing else matters.**\n\n### Layer 2: Feeling Respected (Middle)\n\nOnce safety is established, guests begin seeking \"respect\" — that their needs are seen and their preferences are remembered.\n\nMBCT implemented a \"Guest Preference Profile\" system in hotels we work with:\n\n| Preference Type | Information Recorded | Application Scenario |\n|----------------|---------------------|-------------------|\n| Sleep preferences | Pillow firmness, room temperature, blackout needs | Room prepared in advance |\n| Dining preferences | Allergens, flavor profiles, breakfast timing | Restaurant prepares ahead |\n| Travel preferences | Pickup time, transportation, destination | Front desk proactively asks |\n| Special occasions | Birthdays, anniversaries | Surprise preparation |\n\nThis system requires no advanced technology — just **genuine care**.\n\n### Layer 3: Feeling Moved (Top)\n\nThe highest level of emotional value is being \"moved\" — the hotel does something the guest didn't even expect.\n\nReal cases from MBCT client hotels:\n\n**Case 1: Ginger Tea on a Rainy Night**\nAt a boutique inn in Hangzhou, the front desk noticed a guest returning drenched from rain. Without being asked, housekeeping arrived five minutes later with a thermos of ginger tea and a dry towel. The guest later wrote in a review: \"That cup of ginger tea was warmer than the executive lounge at any five-star hotel.\"\n\n**Case 2: The Breakfast Pack at Checkout**\nAt a business hotel in Chengdu, a guest needed to catch an early flight and had no time for breakfast. The front desk had asked the night before if a \"breakfast pack\" was needed — containing bread, fruit, yogurt, and a handwritten note: \"Wishing you a smooth journey.\" The guest said: \"This is the most personable business hotel I've ever stayed in.\"\n\n**Case 3: The Children's \"Exploration Map\"**\nAt a resort hotel in Sanya, the front desk noticed guests checking in with two five-year-old children. During check-in, the front desk handed the children a \"hotel exploration map\" marking the pool, kids' club, and ice cream shop, along with a small mission: \"Find these three places and claim a mystery gift at the front desk.\" The children spent the entire vacation \"exploring,\" parents relaxed, kids were happy, and the hotel was remembered.\n\n---\n\n## Section 4: How to Design Emotional Value\n\nEmotional value isn't \"improvised.\" It's **systematically designed.**\n\n### Method 1: Map the \"Guest Emotional Journey\"\n\nChart the guest's complete journey through the hotel, marking the emotional state at each touchpoint:\n\n\`\`\`\nBooking stage: Anticipation (+1)\nArrival at hotel: Exhaustion (-1)\nCheck-in: Anxiety (-1) If queue exceeds 5 minutes, anxiety escalates (-2)\nEntering guest room: Relaxation (+1)\nDiscovering a surprise: Delight (+2)\nDining experience: Satisfaction (+1) or Disappointment (-2)\nSleep experience: Comfort (+2) or Discomfort (-2)\nCheckout and departure: Haste (-1) If a small gift is received, Delight (+1)\n\`\`\`\n\n**Design principle**: Create \"emotional compensation\" at emotional low points (like exhaustion upon arrival or haste at checkout), and design \"emotional surprises\" at neutral moments.\n\n### Method 2: Build an \"Emotional Value SOP\"\n\nTraditional SOPs answer \"what to do.\" Emotional value SOPs answer \"what the guest should feel.\"\n\n| Touchpoint | Traditional SOP | Emotional Value SOP |\n|------------|----------------|--------------------|\n| Guest arrival | Process check-in | Make guest feel \"welcomed\" |\n| Entering room | Introduce facilities | Make guest feel \"cared for\" |\n| Dining | Take order, serve food | Make guest feel \"valued\" |\n| Guest complaint | Log and handle | Make guest feel \"understood\" |\n| Checkout | Process departure | Make guest feel \"remembered\" |\n\n### Method 3: Train \"Emotional Intelligence\"\n\nThe most important skill for service staff isn't \"following procedures\" — it's \"reading guest emotions.\"\n\nMBCT trains staff to observe three signals:\n1. **Verbal signals**: Guest's tone, word choice, speaking pace\n2. **Behavioral signals**: Guest's expressions, movements, eye contact\n3. **Situational signals**: Guest's companions, luggage, time of day\n\nSome examples:\n- Guest with luggage, exhausted expression, brief responses - May have just landed, needs fast check-in + quiet room\n- Guest with children who are crying - May need children's amenities + quick appeasement\n- Guest in formal attire with laptop bag - May need business services + quiet working environment\n\n---\n\n## Section 5: The ROI of Emotional Value\n\nMany hotel owners ask: Can emotional value generate revenue?\n\nThe answer: **Yes — and it generates more revenue than standardized service.**\n\n**Data support**:\n- Hotels providing emotional value services see repeat guest rates increase by 35-50%\n- Word-of-mouth driven by emotional value reduces customer acquisition cost by 40%\n- 62% of guests are willing to pay a premium for \"emotional experiences\" (MBCT research data)\n\n**Cost analysis**:\n- A cup of ginger tea: \xc2\xa52\n- A breakfast pack: \xc2\xa58\n- A handwritten note: \xc2\xa50.1\n- An \"exploration map\": \xc2\xa51\n\nThese investments can return:\n- One photo review with positive feedback (worth \xc2\xa5500+ in exposure)\n- One repeat booking (worth \xc2\xa5800+ in revenue)\n- One word-of-mouth referral (priceless)\n\n---\n\n## Section 6: Emotional Value Through the Lens of Lean Insights\n\nMBCT's concept of **\"Guan Xiang Jing Dao\"** (Lean Insights) is built on this core idea: **refine management, let guests enjoy, and ultimately reach the realm of \"Dao\" (the Way).**\n\nWhat is \"Dao\"?\n- Not the pinnacle of technology\n- Not the perfection of process\n- But the **heart-to-heart connection between people**\n\nWhen a hotel can make guests feel understood, respected, and remembered, it becomes more than a place to stay — it becomes a **rest stop for the soul on every journey.**\n\n---\n\n## 3 Actions You Can Take Today\n\n1. **Map your \"Guest Emotional Journey\"**: Identify 3 emotional low points and design compensation plans\n2. **Build a \"Guest Preference Profile\"**: Starting tomorrow, record one preference for each guest\n3. **Share one \"Emotional Intelligence\" case with your team**: This week, discuss a real example of reading a guest's emotions\n\n---\n\n*Article source: Guan Xiang Jing Dao (Lean Insights) | MarvelBros C&T*\n\n---\n\n## Data Sources\n\n- MBCT Guest Experience Research Database (2025-2026)\n- MBCT Hotel Operations Case Studies (sample n=156 partner hotels)\n- IDC Hospitality Technology Adoption Report 2026\n- McKinsey Hotel Digital Transformation White Paper\n\n---\n\n*Source: Guan Xiang Jing Dao | MarvelBros C&T*\n\n\n`, category: 'investment',
     tags: ['情绪价值', '服务体验', '品牌建设'],
     author: '迈创兄弟',
@@ -5810,7 +5810,7 @@ MBCT提出"管享精道"的理念，核心就是**把管理做精，让客人享
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'investment',
     tags: ['文化体验', '差异化', '品牌建设'],
@@ -6078,7 +6078,7 @@ RevPAR 高不代表赚钱。有些酒店 RevPAR 很高，但成本更高，最�
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'investment',
     tags: ['投资回报', 'RevPAR', '成本分析'],
@@ -6283,7 +6283,7 @@ RevPAR 高不代表赚钱。有些酒店 RevPAR 很高，但成本更高，最�
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'preparation',
     tags: ['存量改造', '品牌升级', '华住模式'],
@@ -6503,7 +6503,7 @@ MBCT在服务过的改造项目中，总结了**最常见的5个改造陷阱**�
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'preparation',
     tags: ['改造避坑', '设计审查', '预算控制'],
@@ -6725,7 +6725,7 @@ MBCT服务过的酒店中，通过能耗优化，平均每年节省15-30%的能�
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'operations',
     tags: ['能耗管理', '成本管控', '效率提升'],
@@ -6959,7 +6959,7 @@ MBCT服务过的酒店中，通过能耗优化，平均每年节省15-30%的能�
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'operations',
     tags: ['人力成本', '效率提升', '服务品质'],
@@ -7184,7 +7184,7 @@ MBCT服务过的酒店中，通过能耗优化，平均每年节省15-30%的能�
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'marketing',
     tags: ['收入优化', '非房收入', '现金流'],
@@ -7395,7 +7395,7 @@ MBCT服务过的酒店中，通过能耗优化，平均每年节省15-30%的能�
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'marketing',
     tags: ['客房管理', '利润增长', '库存优化'],
@@ -7653,7 +7653,7 @@ MBCT服务过的酒店中，通过能耗优化，平均每年节省15-30%的能�
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'team',
     tags: ['人才流失', '员工保留', '培训成本'],
@@ -7893,7 +7893,7 @@ MBCT提出酒店人才培养的"三维模型"：
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'team',
     tags: ['人才培养', '标准化', '执行力'],
@@ -8052,7 +8052,7 @@ MBCT提出酒店人才培养的"三维模型"：
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'operations',
     tags: ['服务温度', '客户体验', '复购率'],
@@ -8192,7 +8192,7 @@ MBCT提出酒店人才培养的"三维模型"：
 
 ---
 
-*文章来源：管享精道 | 迈创兄弟C&T（MarvelBros C&T）*`,
+*文章来源：管享精道 | 迈创兄弟C&T*`,
     contentEn: ``,
     category: 'operations',
     tags: ['情绪价值', '服务设计', '客户记忆'],
@@ -9176,7 +9176,7 @@ www.marvelbros.com | info@marvelbros.com
 
 ---
 
-**作者**：迈创兄弟C&T（MarvelBros C&T）
+**作者**：迈创兄弟C&T
 **简介**：MBCT专注酒店行业全流程解决方案与咨询服务，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
 **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 **网址**：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
@@ -9466,7 +9466,7 @@ MBCT在多个酒店筹备项目中，已将AI工具深度嵌入筹备流程，�
 
 ---
 
-**作者**：迈创兄弟C&T（MarvelBros C&T）
+**作者**：迈创兄弟C&T
 **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 **网址**：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
 **邮箱**：info@marvelbros.com
@@ -9684,7 +9684,7 @@ AI的效率优势和酒店服务的"人感"温度，真的可以兼得。
 
 ---
 
-**作者**：迈创兄弟C&T（MarvelBros C&T）
+**作者**：迈创兄弟C&T
 **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 **网址**：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
 **邮箱**：info@marvelbros.com
@@ -10131,7 +10131,7 @@ OTA运营的核心原则是：**开业前点评数量不重要，点评质量才
 
 ## 品牌信息
 
-**作者**：迈创兄弟C&T（MarvelBros C&T）
+**作者**：迈创兄弟C&T
 **简介**：MBCT专注酒店行业全流程解决方案与咨询服务，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
 **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 **网址**：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
@@ -10435,7 +10435,7 @@ MBCT specializes in comprehensive hotel industry solutions and consulting servic
 
 选址看可达性，定位看人群，产品看匹配，空间看比例，供需链看前置，验证看数据——这六个关键节点，不是选择题，而是必答题。答对了，康养酒店是一门好生意；答错了，开业那天就是噩梦的开始。
 
-**作者：迈创兄弟C&T（MarvelBros C&T）**
+**作者：迈创兄弟C&T**
 
 > **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 > **网址**：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
@@ -10516,7 +10516,7 @@ Wellness hotels are a trending opportunity, but projects in the wind's eye die t
 
 Site selection depends on accessibility; positioning depends on the target audience; products depend on alignment; space depends on proportion; supply chain depends on being front-loaded; verification depends on data—these six key nodes are not optional choices, they are mandatory requirements. Answer them correctly, and wellness hotels are a good business. Answer them wrong, and the day of opening is just the beginning of a nightmare.
 
-**Author: 迈创兄弟C&T（MarvelBros C&T）**
+**Author: 迈创兄弟C&T**
 
 > **Nine Business Pillars**: Marketing & Quoting | Client Reception | On-Site Negotiation | Implementation | Financial Analysis | Data Analysis | Logistics Services
 > **Website**: www.marvelbros.com | Visit for more information and diagnostic support
@@ -10525,7 +10525,7 @@ Site selection depends on accessibility; positioning depends on the target audie
 `,
     category: "preparation",
     tags: ["筹备筹开", "康养酒店", "选址决策", "定位决策"],
-    author: "迈创兄弟C&T（MarvelBros C&T）",
+    author: "迈创兄弟C&T",
     date: "2026-05-19",
     readTime: 12,
     views: 0, likes: 0, comments: 0,
@@ -10609,9 +10609,9 @@ Site selection depends on accessibility; positioning depends on the target audie
 
 **品牌署名**
 
-作者：迈创兄弟C&T（MarvelBros C&T）
+作者：迈创兄弟C&T
 
-> **注意**：统一使用 \`迈创兄弟C&T（MarvelBros C&T）\`，禁止添加"团队"等额外字样。
+> **注意**：统一使用 \`迈创兄弟C&T\`，禁止添加"团队"等额外字样。
 > **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 > **网址**：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
 > **邮箱**：info@marvelbros.com
@@ -10689,7 +10689,7 @@ Recruitment must be precise, training must be thorough, evaluation must be accur
 
 When your team can provide personalized programs, accompany clients through a complete health improvement cycle, and deliver consistent results—your wellness center is no longer just a spa with a wellness concept. It becomes a truly defensible health and lifestyle destination.
 
-**Author: 迈创兄弟C&T（MarvelBros C&T）**
+**Author: 迈创兄弟C&T**
 
 > **Nine Business Pillars**: Marketing & Quoting | Client Reception | On-Site Negotiation | Implementation | Financial Analysis | Data Analysis | Logistics Services
 > **Website**: www.marvelbros.com | Visit for more information and diagnostic support
@@ -10698,7 +10698,7 @@ When your team can provide personalized programs, accompany clients through a co
 `,
     category: "team",
     tags: ["素质提升", "康养团队", "人才培养", "服务团队"],
-    author: "迈创兄弟C&T（MarvelBros C&T）",
+    author: "迈创兄弟C&T",
     date: "2026-05-19",
     readTime: 10,
     views: 0, likes: 0, comments: 0,
@@ -10888,9 +10888,9 @@ When your team can provide personalized programs, accompany clients through a co
 
 ---
 
-作者：迈创兄弟C&T（MarvelBros C&T）
+作者：迈创兄弟C&T
 
-> **注意**：统一使用 \`迈创兄弟C&T（MarvelBros C&T）\`，禁止添加"团队"等额外字样。
+> **注意**：统一使用 \`迈创兄弟C&T\`，禁止添加"团队"等额外字样。
 
 **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 
@@ -11077,7 +11077,7 @@ Remember one foundational principle: **Wellness is not a hotel addition — it i
 
 ---
 
-Author: 迈创兄弟C&T（MarvelBros C&T）
+Author: 迈创兄弟C&T
 
 **About**: MBCT specializes in comprehensive hotel industry solutions and consulting services, dedicated to driving hotel performance through the dual-track improvement of "Efficiency + Experience."
 
@@ -11088,7 +11088,7 @@ Author: 迈创兄弟C&T（MarvelBros C&T）
 **Email**: info@marvelbros.com`,
     category: "operations",
     tags: ["运营升级", "康养改造", "空间设计", "服务体系"],
-    author: "迈创兄弟C&T（MarvelBros C&T）",
+    author: "迈创兄弟C&T",
     date: "2026-05-19",
     readTime: 18,
     views: 0, likes: 0, comments: 0,
@@ -11204,9 +11204,9 @@ MBCT在多个项目中的经验表明，当酒店建立了渠道健康度评估�
 
 单点优化只会让你越忙越累，三杠联动才能让经营回到正轨。
 
-作者：迈创兄弟C&T（MarvelBros C&T）
+作者：迈创兄弟C&T
 
-关于MBCT：迈创兄弟C&T（MarvelBros C&T）专注于酒店行业全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
+关于MBCT：迈创兄弟C&T专注于酒店行业全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
 
 九大业务支撑：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 
@@ -11332,7 +11332,7 @@ Email: info@marvelbros.com
 Guan Xiang Jing Dao: www.marvelbros.com/gxjzd`,
     category: "operations",
     tags: ["运营升级", "价格策略", "渠道管理", "服务提升"],
-    author: "迈创兄弟C&T（MarvelBros C&T）",
+    author: "迈创兄弟C&T",
     date: "2026-05-20",
     readTime: 12,
     views: 0, likes: 0, comments: 0,
@@ -11489,7 +11489,7 @@ Guan Xiang Jing Dao: www.marvelbros.com/gxjzd`,
 
 ---
 
-作者：迈创兄弟C&T（MarvelBros C&T）
+作者：迈创兄弟C&T
 九大业务支撑：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 网址：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
 邮箱：info@marvelbros.com`,
@@ -11640,14 +11640,14 @@ When these three mindsets are in place, guests being willing to pay a premium fo
 
 ---
 
-**Author: 迈创兄弟C&T（MarvelBros C&T）**
+**Author: 迈创兄弟C&T**
 **About:** MBCT specializes in comprehensive hotel industry solutions and consulting services, dedicated to driving hotel performance through the dual-track improvement of "Efficiency + Experience".
 **Services:** Branding & Pricing | Client Reception | On-site Negotiation | Implementation | Financial Analysis | Data Analytics | Logistics
 **Website:** www.marvelbros.com | Get online consultation and diagnostic support
 **Email:** info@marvelbros.com`,
     category: "operations",
     tags: ["运营升级", "人感服务", "客户复购", "服务设计"],
-    author: "迈创兄弟C&T（MarvelBros C&T）",
+    author: "迈创兄弟C&T",
     date: "2026-05-21",
     readTime: 9,
     views: 0,
@@ -11790,7 +11790,7 @@ STR Global数据显示，2024年中国酒店业新增供给增速约为4.1%，�
 
 ---
 
-**作者：迈创兄弟C&T（MarvelBros C&T）**
+**作者：迈创兄弟C&T**
 
 > **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 > **网址**：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
@@ -11925,7 +11925,7 @@ STR Global数据显示，2024年中国酒店业新增供给增速约为4.1%，�
 
 ---
 
-**作者：迈创兄弟C&T（MarvelBros C&T）**
+**作者：迈创兄弟C&T**
 
 > **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 > **网址**：www.marvelbros.com | 请浏览获取更多资讯与诊断支持
@@ -11934,7 +11934,7 @@ STR Global数据显示，2024年中国酒店业新增供给增速约为4.1%，�
 `,
     category: "marketing",
     tags: ["存量时代", "单店模型", "渠道优化", "行业资讯", "趋势分析"],
-    author: "迈创兄弟C&T（MarvelBros C&T）",
+    author: "迈创兄弟C&T",
     date: "2026-05-21",
     readTime: 15,
     views: 0,
@@ -12044,7 +12044,7 @@ MBCT视角：三个问题之外，还有第四个问题
 
 关于MBCT
 
-迈创兄弟C&T（MarvelBros C&T） 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
+迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
     contentEn: `---
 
 一家"看起来很便宜"的酒店，你敢投吗？
@@ -12141,10 +12141,10 @@ MBCT视角：三个问题之外，还有第四个问题
 
 关于MBCT
 
-迈创兄弟C&T（MarvelBros C&T） 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
+迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
     category: 'investment',
     tags: ['酒店管理', '投资决策'],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-05-24',
     readTime: 11,
     views: 0,
@@ -12231,7 +12231,7 @@ MBCT视角：三个动作，构建留人"铁三角"
 
 ---
 
-迈创兄弟C&T（MarvelBros C&T） 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com （全文约2850字）`,
+迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com （全文约2850字）`,
     contentEn: `---
 
 开篇：一个让人心酸的场景
@@ -12304,10 +12304,10 @@ MBCT视角：三个动作，构建留人"铁三角"
 
 ---
 
-迈创兄弟C&T（MarvelBros C&T） 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com （全文约2850字）`,
+迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com （全文约2850字）`,
     category: 'team',
     tags: ['酒店管理', '投资决策'],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-05-24',
     readTime: 13,
     views: 0,
@@ -12426,7 +12426,7 @@ OTA费率越来越高，这件事不会停。酒店靠OTA活着，短期没问�
 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 九大业务支撑：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com 管享精道：www.marvelbros.com/gxjzd`,
     category: 'marketing',
     tags: ['酒店管理', '投资决策'],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-05-24',
     readTime: 12,
     views: 0,
@@ -12441,7 +12441,7 @@ OTA费率越来越高，这件事不会停。酒店靠OTA活着，短期没问�
     titleEn: 'Hotel Energy Costs at 8%-15% of Revenue: 3 Light Renovations That Save 20% Monthly',
     summaryZh: '酒店能耗成本占营收8%-15%，客房智能控温、公区LED分区、分楼层水表三个轻量化改造每月能省20%，投资回收期3-18个月。',
     summaryEn: '',
-    contentZh: `作者：迈创兄弟C&T（MarvelBros C&T）
+    contentZh: `作者：迈创兄弟C&T
 
 ---
 
@@ -12514,7 +12514,7 @@ MBCT视角：节能改造的本质是"重新管理"
 ---
 
 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
-    contentEn: `作者：迈创兄弟C&T（MarvelBros C&T）
+    contentEn: `作者：迈创兄弟C&T
 
 ---
 
@@ -12589,7 +12589,7 @@ MBCT视角：节能改造的本质是"重新管理"
 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
     category: 'cost',
     tags: ['酒店管理', '投资决策'],
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-05-24',
     readTime: 13,
     views: 0,

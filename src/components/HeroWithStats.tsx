@@ -18,27 +18,27 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
       <div className="relative mx-auto flex min-h-[650px] max-w-[1440px] items-center px-5 py-14 sm:min-h-[720px] sm:px-8 sm:py-20 lg:min-h-[calc(100vh-72px)] lg:px-12 xl:px-16">
         <div className="max-w-[860px] pb-14 pt-4 sm:pb-16 sm:pt-10 lg:pb-24">
           <p className="mb-5 text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">
-            {isZh ? '酒店投资｜品牌落地｜筹建运营｜经营提升' : 'Investment | Brand | Development | Performance'}
+            {isZh ? '酒店投资｜酒店筹开｜酒店经营改善' : 'Hotel Investment | Pre-opening | Performance Improvement'}
           </p>
           <h1 className={`max-w-[1000px] font-semibold leading-[1.12] text-slate-950 dark:text-white sm:leading-[1.08] ${isZh ? 'text-[40px] sm:text-6xl lg:text-[60px] xl:text-[64px]' : 'text-[36px] sm:text-5xl lg:text-[54px] xl:text-[58px]'}`}>
-            {isZh ? '从投资决策到持续经营，酒店每一个阶段都需要正确判断' : 'Sound judgment from hotel investment to sustained operations'}
+            {isZh ? '酒店投资、筹开与经营改善专家' : 'Hotel Investment, Pre-opening and Performance Improvement Specialists'}
           </h1>
           <p className="mt-6 max-w-[720px] text-base leading-7 text-slate-700 dark:text-slate-200 sm:text-lg sm:leading-8">
             {isZh
-              ? '迈创兄弟C&T专注于酒店全生命周期价值提升，为投资人、业主及管理者提供覆盖项目投资、品牌落地、筹建运营、经营优化与持续增长的专业咨询服务。'
-              : 'MarvelBros C&T advises hotel investors, owners, and managers across investment, brand implementation, development, operations, and sustainable growth.'}
+              ? '迈创兄弟C&T沉淀30多年酒店行业实战经验，帮助酒店投资人、业主和管理者判断项目价值、解决经营问题，实现酒店长期价值增长。'
+              : 'Drawing on more than 30 years of practical hospitality experience, MarvelBros C&T helps hotel investors, owners, and managers assess project value, solve operating problems, and build long-term growth.'}
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
-              href="#lifecycle-capabilities"
+              href={`/${lang}/hotel-investment`}
               className="inline-flex min-h-13 items-center justify-center gap-2 bg-[#0b4a6f] px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#073a58] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b4a6f]"
             >
               <ArrowRight className="h-5 w-5" />
-              {isZh ? '了解酒店价值提升路径' : 'Explore the hotel value path'}
+              {isZh ? '了解酒店投资如何判断' : 'How to assess a hotel investment'}
             </Link>
             <Link
               href={`/${lang}/knowledge`}
-              className="inline-flex min-h-13 items-center justify-center gap-2 border-b-2 border-[#d98b28] px-1 py-3 text-base font-semibold text-slate-950 transition-colors hover:text-[#0b4a6f] dark:text-white dark:hover:text-amber-300"
+              className="inline-flex min-h-13 items-center justify-center gap-2 border-b-2 border-[#d98b28] bg-slate-950/80 px-5 py-3 text-base font-semibold text-white! transition-colors hover:bg-slate-950 hover:text-amber-300! dark:bg-white/10 dark:hover:bg-white/15"
             >
               <BookOpen className="h-5 w-5" />
               {isZh ? '进入酒店经营知识库' : 'Enter the hotel knowledge base'}

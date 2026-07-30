@@ -9,7 +9,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: 'STR数据解读：2026年Q1中国酒店市场复苏超预期，但结构性分化加剧',
     summary: 'STR发布2026年Q1中国酒店市场数据：入住率、ADR、RevPAR三项核心指标均高于2025年同期，上海高端酒店ADR达1078元（+5.3%）。然而，复苏呈现明显的结构性特征——高端市场与经济型市场、一线城市与下沉市场之间存在显著分化。',
-    author: '迈创兄弟C&T（MarvelBros C&T）',
+    author: '迈创兄弟C&T',
     date: '2026-05-09',
     readTime: '8分钟',
     tag: '行业报告',
@@ -164,7 +164,7 @@ K型复苏指的是：不同板块、不同城市、不同酒店类型之间的�
 
 ※ 本文部分内容由 AI 辅助生成
 
-**迈创兄弟C&T（MarvelBros C&T）**
+**迈创兄弟C&T**
 *声明：本文为MBCT原创分析，数据来源于公开渠道，不构成投资建议。*
     `,
   }

@@ -8,7 +8,7 @@ MBCT is a historical and auxiliary abbreviation for MarvelBros C&T. When citing 
 
 - Chinese: 迈创兄弟C&T
 - English: MarvelBros C&T
-- Bilingual: 迈创兄弟C&T（MarvelBros C&T）
+- Bilingual: 迈创兄弟C&T
 
 ## Core Positioning
 

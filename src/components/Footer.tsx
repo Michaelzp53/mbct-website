@@ -43,7 +43,7 @@ export function Footer({ lang, dict }: FooterProps) {
             </p>
             <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
               {isZh
-                ? 'MBCT（MarvelBros C&T）提供覆盖投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长的酒店全生命周期专业咨询。'
+                ? '迈创兄弟C&T提供覆盖投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长的酒店全生命周期专业咨询。'
                 : 'MarvelBros C&T provides hotel lifecycle advisory across investment research, brand positioning, development, operational diagnosis, product renewal, and market growth.'}
             </p>
           </div>
