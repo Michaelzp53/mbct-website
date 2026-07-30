@@ -13,7 +13,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
         className="absolute inset-0 bg-cover bg-[58%_center] lg:bg-center"
         style={{ backgroundImage: "url('/images/home-named/hotel-city-skyline-hero.webp')" }}
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.94)_42%,rgba(255,255,255,0.56)_66%,rgba(255,255,255,0.08)_100%)] dark:bg-[linear-gradient(90deg,rgba(8,15,28,0.98)_0%,rgba(8,15,28,0.93)_46%,rgba(8,15,28,0.52)_72%,rgba(8,15,28,0.18)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_38%,rgba(255,255,255,0.42)_56%,rgba(255,255,255,0.08)_68%,rgba(255,255,255,0)_76%)] dark:bg-[linear-gradient(90deg,rgba(8,15,28,0.98)_0%,rgba(8,15,28,0.93)_46%,rgba(8,15,28,0.52)_72%,rgba(8,15,28,0.18)_100%)]" />
 
       <div className="relative mx-auto flex min-h-[650px] max-w-[1440px] items-center px-5 py-14 sm:min-h-[720px] sm:px-8 sm:py-20 lg:min-h-[calc(100vh-72px)] lg:px-12 xl:px-16">
         <div className="max-w-[860px] pb-14 pt-4 sm:pb-16 sm:pt-10 lg:pb-24">
