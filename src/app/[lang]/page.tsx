@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '自驾游“黄金大外环”升温，沿线酒店怎样把过路客变成住店客？' : "China's Golden Highway Loop Is Gaining Attention. How Can Roadside Hotels Turn Passing Traffic into Stays?",
+      summary: isZh
+        ? '公路带来的是车流，不是自动送上门的订单；停车、充电、晚到与次日出发信息决定酒店能否进入候选名单。'
+        : 'Road traffic is not automatic occupancy. Parking, charging, late-arrival and next-day information determine whether a hotel enters the shortlist.',
+      slug: 'self-driving-tour-hotels-turn-passing-traffic-into-stays-2026-07-31',
+      date: '2026.07.31',
+    },
+    {
       title: isZh ? '研学旅行升温，酒店怎样准备一间真正可用的“研学客房”？' : 'Educational Family Travel Is Growing. How Should Hotels Adapt the Guest Room?',
       summary: isZh
         ? '家庭需要的不只是亲子装饰，而是能学习、能收纳、能安静休息的客房。'

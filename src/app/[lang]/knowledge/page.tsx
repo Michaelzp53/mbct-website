@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 632,
+      type: "article",
+      title: "自驾游“黄金大外环”升温，沿线酒店怎样把过路客变成住店客？",
+      titleEn: "China's Golden Highway Loop Is Gaining Attention. How Can Roadside Hotels Turn Passing Traffic into Stays?",
+      slug: "self-driving-tour-hotels-turn-passing-traffic-into-stays-2026-07-31",
+      summary: "“黄金大外环”相关线路受到关注，但公路车流不会自动变成酒店订单。酒店应先讲清停车、充电、晚到入住、补给与次日出发信息。",
+      summaryEn: "Attention around the Golden Highway Loop raises a practical question: how can roadside hotels turn parking, charging, late-arrival and departure information into qualified stays?",
+      firstLine: "公路带来的是车流，不是自动送上门的酒店订单。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-07-31",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 631,
       type: "article",
       title: "研学旅行升温，酒店怎样准备一间真正可用的“研学客房”？",
