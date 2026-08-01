@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '酒店推广套餐做出来了，为什么客人还是不知道？' : "Why Do Guests Still Not Know About a Hotel's Promotional Packages After They Launch?",
+      summary: isZh
+        ? '套餐上线不等于完成推广；广告、员工介绍和预订前后信息必须进入同一条客人决策链。'
+        : 'Launching a package is not enough. Advertising, staff recommendations and pre- and post-booking information must form one guest decision chain.',
+      slug: 'hotel-promotional-package-guest-awareness-2026-08-01',
+      date: '2026.08.01',
+    },
+    {
       title: isZh ? '自驾游“黄金大外环”升温，沿线酒店怎样把过路客变成住店客？' : "China's Golden Highway Loop Is Gaining Attention. How Can Roadside Hotels Turn Passing Traffic into Stays?",
       summary: isZh
         ? '公路带来的是车流，不是自动送上门的订单；停车、充电、晚到与次日出发信息决定酒店能否进入候选名单。'

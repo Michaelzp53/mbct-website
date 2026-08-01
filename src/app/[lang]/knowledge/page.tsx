@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 633,
+      type: "article",
+      title: "酒店推广套餐做出来了，为什么客人还是不知道？",
+      titleEn: "Why Do Guests Still Not Know About a Hotel's Promotional Packages After They Launch?",
+      slug: "hotel-promotional-package-guest-awareness-2026-08-01",
+      summary: "套餐上线不等于完成推广。酒店需要把广告触达、员工介绍和预订前后信息接成一条完整的客人决策与使用链。",
+      summaryEn: "Launching a package is not the same as promoting it. Hotels need one connected chain across advertising, staff recommendations and guest information before and after booking.",
+      firstLine: "套餐上线不等于完成推广。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-08-01",
+      category: "industry-insights",
+      tag: isZh ? "案例研究" : "Case Study",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 632,
       type: "article",
       title: "自驾游“黄金大外环”升温，沿线酒店怎样把过路客变成住店客？",
