@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 634,
+      type: "article",
+      title: "入境游客增多了，本土品牌酒店为什么还接不住？",
+      titleEn: "Inbound Travel Is Growing. Why China's Local Hotel Brands Still Miss Overseas Guests?",
+      slug: "inbound-travel-local-hotel-brands-overseas-guests-2026-08-02",
+      summary: "入境需求不会自动变成酒店订单。本土品牌酒店需要逐层检查客源匹配、线上可见、信息信任、支付确认与到店服务连续性。",
+      summaryEn: "Inbound demand does not automatically become hotel bookings. Local brands need to test source-market fit, discoverability, trust, payment readiness and on-property service continuity.",
+      firstLine: "市场热度不会自动变成某一家酒店的订单。",
+      author: "迈创兄弟C&T",
+      date: "2026-08-02",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 7,
+      featured: true,
+      image: "",
+    },
+    {
       id: 633,
       type: "article",
       title: "酒店推广套餐做出来了，为什么客人还是不知道？",

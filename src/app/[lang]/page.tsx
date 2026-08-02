@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '入境游客增多了，本土品牌酒店为什么还接不住？' : "Inbound Travel Is Growing. Why China's Local Hotel Brands Still Miss Overseas Guests?",
+      summary: isZh
+        ? '入境需求不会自动变成酒店订单；客源匹配、线上可见、支付确认和到店服务必须形成完整承接链。'
+        : 'Inbound demand does not automatically become bookings. Hotels need a complete chain from source-market fit and discovery to payment and on-property service.',
+      slug: 'inbound-travel-local-hotel-brands-overseas-guests-2026-08-02',
+      date: '2026.08.02',
+    },
+    {
       title: isZh ? '酒店推广套餐做出来了，为什么客人还是不知道？' : "Why Do Guests Still Not Know About a Hotel's Promotional Packages After They Launch?",
       summary: isZh
         ? '套餐上线不等于完成推广；广告、员工介绍和预订前后信息必须进入同一条客人决策链。'
