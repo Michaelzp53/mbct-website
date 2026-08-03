@@ -300,8 +300,8 @@ export default async function ServicesPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <PageHero
-        title={isZh ? '从经营诊断到获客增长，把酒店问题变成可执行的路径' : 'From operational diagnosis to customer acquisition, turn hotel challenges into executable paths'}
-        subtitle={isZh ? '酒店经营、商业策划、市场增长和技术数据四类专业力量协同，重点提供酒店经营诊断与 AI 搜索获客服务。' : 'Four disciplines work together—hotel operations, commercial planning, market growth, and technology—with operational diagnosis and AI search acquisition as priority services.'}
+        title={isZh ? '先看清酒店问题，再决定怎么改、怎么增长' : 'See the hotel problem clearly before deciding how to improve and grow.'}
+        subtitle={isZh ? '先识别影响结果的核心问题，再组合投资判断、经营改善、筹建筹开与增长能力，避免从错误的服务入口开始。' : 'Identify the issue shaping outcomes first, then combine investment, operations, pre-opening, and growth capabilities without starting from the wrong service entry point.'}
         bgImage="/images/home-named/solutions-lounge.jpeg"
       />
 
@@ -313,7 +313,7 @@ export default async function ServicesPage({
                 {isZh ? '不是堆服务，而是重建增长系统' : 'Not a menu of services — a rebuilt growth system'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
-                {isZh ? 'MBCT 用一套从诊断到落地的服务链，帮酒店把增长做实' : 'MBCT links diagnosis, execution, and follow-through into one hospitality growth system'}
+                {isZh ? '迈创兄弟C&T贯通诊断、方案与执行，让每一步改善都落到经营结果上' : 'MarvelBros C&T links diagnosis, execution, and follow-through into one hospitality growth system'}
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl">
                 {isZh

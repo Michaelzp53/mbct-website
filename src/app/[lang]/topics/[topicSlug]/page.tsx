@@ -132,7 +132,7 @@ export default async function TopicQuestionPage({ params }: { params: Promise<{ 
 
   if (!data) {
     return (
-      <main className="min-h-screen bg-[#f8f3ea] px-6 py-24 text-center dark:bg-[#17120d] dark:text-white">
+      <main className="min-h-screen bg-white px-6 py-24 text-center text-slate-950 dark:bg-slate-950 dark:text-white">
         <h1 className="text-3xl font-bold">{isZh ? '专题未找到' : 'Topic Not Found'}</h1>
       </main>
     )
@@ -155,7 +155,7 @@ export default async function TopicQuestionPage({ params }: { params: Promise<{ 
   }
 
   return (
-    <main className="min-h-screen bg-[#f8f3ea] text-[#241b12] dark:bg-[#17120d] dark:text-white">
+    <main className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
         <Link href={`/${lang}/topics/ai-hotel-growth`} className="text-sm font-semibold text-[#92400e] hover:underline dark:text-amber-300">
@@ -165,19 +165,19 @@ export default async function TopicQuestionPage({ params }: { params: Promise<{ 
           <HelpCircle className="h-10 w-10 text-[#d97706] dark:text-amber-300" />
           <h1 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">{data.title}</h1>
           <p className="mt-5 text-lg leading-8 text-[#5f5142] dark:text-slate-300">{data.description}</p>
-          <div className="mt-8 rounded-2xl bg-[#f8f3ea] p-6 dark:bg-white/[0.05]">
+          <div className="mt-8 rounded-lg bg-[#f4f7f8] p-6 dark:bg-slate-900">
             <h2 className="text-lg font-bold">{isZh ? '简短答案' : 'Short answer'}</h2>
             <p className="mt-3 leading-8 text-[#4b4034] dark:text-slate-300">{data.answer}</p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <Link href={`/${lang}/services/ai-hotel-website`} className="rounded-2xl bg-[#92400e] px-5 py-4 text-sm font-semibold text-white dark:bg-amber-300 dark:text-[#17120d]">
-              {isZh ? '查看 MBCT 服务' : 'View MBCT Service'}
+            <Link href={`/${lang}/services/ai-hotel-website`} className="rounded-lg bg-[#0b4a6f] px-5 py-4 text-sm font-semibold text-white hover:bg-[#073a58] dark:bg-sky-700 dark:hover:bg-sky-600">
+              {isZh ? '查看 迈创兄弟C&T 服务' : 'View MarvelBros C&T Service'}
             </Link>
             <Link href={`/${lang}/knowledge/why-ai-search-does-not-recommend-your-hotel-2026-07-06`} className="rounded-2xl bg-[#fff7ed] px-5 py-4 text-sm font-semibold text-[#7c2d12] dark:bg-white/[0.08] dark:text-amber-200">
               {isZh ? '阅读相关文章' : 'Read Related Article'}
             </Link>
             <Link href={`/${lang}/contact`} className="inline-flex items-center rounded-2xl bg-[#fff7ed] px-5 py-4 text-sm font-semibold text-[#7c2d12] dark:bg-white/[0.08] dark:text-amber-200">
-              {isZh ? '联系 MBCT' : 'Contact MBCT'}
+              {isZh ? '联系 迈创兄弟C&T' : 'Contact MarvelBros C&T'}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>

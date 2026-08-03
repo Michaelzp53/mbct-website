@@ -141,15 +141,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-20">
             <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
               <Image
-                src="/images/home-modern/advisory-conversation.png"
-                alt={isZh ? '酒店专业人员结合经营数据分析项目' : 'Hospitality specialists reviewing operating data'}
+                src="/images/home-modern/modern-service.jpg"
+                alt={isZh ? '酒店团队在真实服务场景中协同工作' : 'A hotel team collaborating in a real service setting'}
                 fill
                 sizes="(min-width: 1024px) 46vw, 100vw"
                 className="object-cover"
               />
             </div>
             <div>
-              <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '30多年酒店行业实践' : 'More than 30 years in hospitality'}</p>
+              <p className="-translate-y-5 text-[21px] font-semibold leading-8 text-[#24745c] dark:text-emerald-300">{isZh ? '30多年酒店行业实践' : 'More than 30 years in hospitality'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
                 {isZh ? '为什么酒店项目需要专业判断？' : 'Why do hotel projects require professional judgment?'}
               </h2>
@@ -166,6 +166,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <p className="mt-5 border-l-4 border-[#d98b28] pl-5 text-xl font-semibold leading-8">
                 {isZh ? '没有看过真实数据和现场，我们不会轻易下结论。' : 'Without real data and a view of the operation, we do not jump to conclusions.'}
               </p>
+              <Link href={`/${lang}/about`} className="mt-7 inline-flex items-center gap-2 font-semibold text-[#0b4a6f] hover:text-[#b86d13] dark:text-sky-300">
+                {isZh ? '了解团队如何协作' : 'See how the team works together'}
+                <ArrowRight className="h-5 w-5" />
+              </Link>
               <ol className="mt-9 border-t border-slate-300 dark:border-slate-700">
                 {methods.map((item, index) => (
                   <li key={item} className="grid grid-cols-[3rem_1fr] items-center border-b border-slate-300 py-4 dark:border-slate-700">
@@ -199,7 +203,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             ))}
           </div>
           <p className="mt-3 text-xs leading-5 text-slate-500 dark:text-slate-400">
-            {isZh ? '以上为核心专业人员职业项目经验；项目名称与客户信息按行业惯例脱敏。' : 'Figures reflect the career project experience of core specialists. Project and client identities are anonymized in line with industry practice.'}
+            {isZh ? '以上成果来自核心专业人员的职业项目经验，以经营问题、专业行动和结果证据呈现。' : 'These results reflect the career project experience of core specialists, presented through business problems, professional actions, and outcome evidence.'}
           </p>
         </div>
       </section>
@@ -207,7 +211,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section id="hotel-problems" className="scroll-mt-20 bg-[#f4f7f8] py-20 dark:bg-slate-900 md:py-28">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
+            <p className="-translate-y-5 text-[21px] font-semibold leading-8 text-[#0b4a6f] dark:text-sky-300">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店投资人和管理者经常遇到的问题' : 'Questions hotel investors and managers often face'}</h2>
             <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
               {isZh ? '不同阶段的问题相互关联。越早识别关键因素，越能降低后续调整成本。' : 'Challenges at different stages are connected. The earlier the critical factors are identified, the lower the cost of later correction.'}
@@ -237,7 +241,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
             <div className="max-w-xl">
-              <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '持续更新的专业索引' : 'A practical reference, continuously updated'}</p>
+              <p className="-translate-y-5 text-[21px] font-semibold leading-8 text-[#0b4a6f] dark:text-sky-300">{isZh ? '持续更新的专业索引' : 'A practical reference, continuously updated'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店经营知识库' : 'Hotel Knowledge Base'}</h2>
               <p className="mt-5 text-xl font-semibold leading-8">{isZh ? '沉淀行业实践经验，形成可判断、可执行的方法体系。' : 'Turning industry practice into a system of judgment and action.'}</p>
               <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
@@ -281,9 +285,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div className="absolute inset-0 bg-slate-950/15" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-amber-300">{isZh ? '案例与成果' : 'Cases and outcomes'}</p>
+              <p className="-translate-y-5 text-[21px] font-semibold leading-8 text-amber-300">{isZh ? '案例与成果' : 'Cases and outcomes'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl">
-                {isZh ? '真实项目经验，是专业判断的最好证明' : 'Real project experience is the strongest proof of professional judgment'}
+                {isZh ? '项目经验，是团队专业的最好证明' : 'Project experience is the strongest proof of team expertise'}
               </h2>
               <dl className="mt-8 border-t border-white/25">
                 {[
@@ -323,9 +327,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section className="border-t border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900 md:py-20">
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 xl:px-16">
           <div>
-            <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '专业交流' : 'Professional conversation'}</p>
+            <p className="-translate-y-5 text-[21px] font-semibold leading-8 text-[#24745c] dark:text-emerald-300">{isZh ? '专业交流' : 'Professional conversation'}</p>
             <h2 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight md:text-4xl">
-              {isZh ? '当酒店面临关键决策，可以先交流问题' : 'When a hotel faces a critical decision, start by discussing the issue'}
+              {isZh ? '你的酒店现在最需要先解决哪个问题？' : 'Which problem should your hotel solve first?'}
             </h2>
             <p className="mt-4 max-w-3xl leading-7 text-slate-600 dark:text-slate-300">
               {isZh ? '酒店投资、筹建或经营过程中，很多问题越早判断，调整成本越低。您可以告诉我们项目阶段、所在区域以及当前面临的问题，我们会基于实际情况共同分析问题来源，判断下一步需要关注的重点。' : 'Across hotel investment, development, and operations, earlier judgment usually means a lower cost of correction. Tell us the project stage, location, and current challenge. We will examine the situation with you and identify what deserves attention next.'}
@@ -334,11 +338,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
             <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-13 items-center justify-center gap-2 bg-[#0b4a6f] px-6 py-3.5 font-semibold text-white hover:bg-[#073a58]">
               <FileText className="h-5 w-5" />
-              {isZh ? '交流一个酒店问题' : 'Discuss a hotel issue'}
+              {isZh ? '申请酒店项目初步诊断' : 'Request an initial hotel diagnosis'}
             </Link>
-            <a href="tel:18941579333" className="inline-flex min-h-13 items-center justify-center gap-2 border border-slate-400 px-6 py-3.5 font-semibold hover:border-[#0b4a6f] hover:text-[#0b4a6f] dark:border-slate-600 dark:hover:border-sky-300 dark:hover:text-sky-300">
+            <a href="tel:+8618941579333" className="inline-flex min-h-13 items-center justify-center gap-2 border border-slate-400 px-6 py-3.5 font-semibold hover:border-[#0b4a6f] hover:text-[#0b4a6f] dark:border-slate-600 dark:hover:border-sky-300 dark:hover:text-sky-300">
               <Phone className="h-5 w-5" />
-              18941579333
+              +86 189 4157 9333
             </a>
             <p className="text-center text-xs text-slate-500 dark:text-slate-400">{isZh ? '电话与微信同号' : 'Phone and WeChat use the same number'}</p>
           </div>

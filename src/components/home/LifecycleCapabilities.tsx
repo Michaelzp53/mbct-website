@@ -68,7 +68,7 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
     >
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
         <div className="max-w-4xl">
-          <p className="text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">
+          <p className="-translate-y-5 text-[21px] font-semibold leading-8 text-[#0b4a6f] dark:text-sky-300">
             {isZh ? '六项全生命周期服务能力' : 'Six Lifecycle Consulting Capabilities'}
           </p>
           <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">

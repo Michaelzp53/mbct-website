@@ -130,7 +130,7 @@ export default async function AiHotelGrowthTopicPage({ params }: { params: Promi
   }
 
   return (
-    <main className="min-h-screen bg-[#f8f3ea] text-[#241b12] dark:bg-[#17120d] dark:text-white">
+    <main className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }} />
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
@@ -141,8 +141,8 @@ export default async function AiHotelGrowthTopicPage({ params }: { params: Promi
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
           <p className="mt-6 text-lg leading-8 text-[#5f5142] dark:text-slate-300">{description}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href={`/${lang}/contact`} className="inline-flex items-center rounded-full bg-[#92400e] px-6 py-3 text-sm font-semibold text-white hover:bg-[#78350f] dark:bg-amber-300 dark:text-[#17120d] dark:hover:bg-amber-200">
-              {isZh ? '让 MBCT 帮我做一次 AI 信息体检' : 'Request an AI Information Audit'}
+            <Link href={`/${lang}/contact`} className="inline-flex items-center rounded-full bg-[#0b4a6f] px-6 py-3 text-sm font-semibold text-white hover:bg-[#073a58] dark:bg-sky-700 dark:hover:bg-sky-600">
+              {isZh ? '让 迈创兄弟C&T 帮我做一次 AI 信息体检' : 'Request an AI Information Audit'}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <Link href={`/${lang}/services/ai-hotel-website`} className="inline-flex items-center rounded-full border border-[#92400e]/30 px-6 py-3 text-sm font-semibold text-[#7c2d12] hover:bg-white/60 dark:border-white/15 dark:text-amber-200 dark:hover:bg-white/10">
@@ -166,10 +166,10 @@ export default async function AiHotelGrowthTopicPage({ params }: { params: Promi
         </div>
 
         <section className="mt-16 rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-[#92400e]/10 dark:bg-white/[0.06] dark:ring-white/10">
-          <h2 className="text-2xl font-bold">{isZh ? 'MBCT 可以帮酒店做什么？' : 'What can MarvelBros C&T do for hotels?'}</h2>
+          <h2 className="text-2xl font-bold">{isZh ? '迈创兄弟C&T 可以帮酒店做什么？' : 'What can MarvelBros C&T do for hotels?'}</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {services.map((service) => (
-              <div key={service} className="flex gap-3 rounded-2xl bg-[#f8f3ea] p-4 dark:bg-white/[0.05]">
+              <div key={service} className="flex gap-3 rounded-lg bg-[#f4f7f8] p-4 dark:bg-slate-900">
                 <CheckCircle2 className="mt-1 h-5 w-5 flex-none text-[#d97706] dark:text-amber-300" />
                 <p className="text-sm leading-6 text-[#4b4034] dark:text-slate-300">{service}</p>
               </div>

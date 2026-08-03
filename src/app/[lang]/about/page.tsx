@@ -1,188 +1,194 @@
-import { Target, Compass, TrendingUp, Briefcase, Building2, Users, CheckCircle2 } from 'lucide-react'
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import Script from 'next/script'
+import {
+  ArrowRight,
+  BarChart3,
+  Building2,
+  CheckCircle2,
+  Compass,
+  LineChart,
+  SearchCheck,
+  Users,
+} from 'lucide-react'
 import PageHero from '@/components/PageHero'
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params
+  const isZh = lang === 'zh'
+  const title = isZh ? '关于我们｜谁在帮助酒店看清问题并推动结果？' : 'About Us | Who Helps Hotels Turn Problems into Results?'
+  const description = isZh
+    ? '了解迈创兄弟C&T五位酒店咨询专家的专业分工、30多年实战经验、协作方式、优先服务方向与项目成果。'
+    : 'Meet the five hospitality consulting specialists behind MarvelBros C&T, grounded in more than 30 years of practical experience, collaborative delivery, and project results.'
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.marvelbros.com/${lang}/about`,
+      languages: { zh: 'https://www.marvelbros.com/zh/about', en: 'https://www.marvelbros.com/en/about' },
+    },
+  }
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
   const isZh = lang === 'zh'
 
-  const reasons = [
+  const disciplines = [
     {
-      title: isZh ? '为什么只做酒店' : 'Why hospitality only',
-      body: isZh
-        ? '酒店不是只靠装修、流量或系统就能做好的行业。它同时牵涉投前判断、产品定位、运营效率、渠道结构、服务体验与长期复购。MBCT 选择专注酒店，不是缩小边界，而是把理解做深，把方法做实，把结果做得更稳定。'
-        : 'Hotels are not improved by design, traffic, or software alone. The work sits at the intersection of investment judgment, positioning, operating efficiency, channel structure, guest experience, and repeat business. MBCT focuses on hospitality so the thinking can go deeper and the results can become more stable.',
-      icon: Building2,
-      color: '#f59e0b',
-    },
-    {
-      title: isZh ? '我们如何理解增长' : 'How we define growth',
-      body: isZh
-        ? '真正健康的增长，不是短期数据冲高，而是项目逻辑、产品定位、经营动作与利润结构逐步对齐。我们不把增长理解成某一个爆点动作，而是看它能不能被诊断、被执行、被复盘，并最终形成系统能力。'
-        : 'Healthy growth is not a temporary spike. It is the gradual alignment of project logic, positioning, operating actions, and profit structure. We do not treat growth as a one-off tactic. We care whether it can be diagnosed, executed, reviewed, and turned into a repeatable capability.',
-      icon: TrendingUp,
-      color: '#4285f4',
-    },
-    {
-      title: isZh ? '我们如何进入项目' : 'How we enter a project',
-      body: isZh
-        ? '先判断项目阶段、现实约束和关键目标，再找出真正影响结果的核心问题。之后决定更适合先做可行性研究、运营诊断、AI 管理切入，还是专项支持。推进过程中持续复盘，而不是把一次交付当作结束。'
-        : 'We begin by clarifying stage, constraints, and target outcomes. Then we isolate the issue that is truly holding results back. Only after that do we decide whether the right entry point is feasibility, operations diagnosis, AI management, or a focused intervention. Delivery is followed by review, not treated as the finish line.',
       icon: Compass,
-      color: '#22c55e',
+      title: isZh ? '资深品牌策划 / 创始人' : 'Senior Brand Strategist / Founder',
+      scope: isZh ? '负责公司专业方向、酒店品牌定位、价值主张与跨专业决策整合。' : 'Leads the firm’s professional direction, hotel positioning, value proposition, and cross-disciplinary decisions.',
+      strength: isZh ? '突出优势：从业主目标和市场机会出发，统一品牌表达、产品逻辑与经营结果。' : 'Key strength: aligning brand expression, product logic, and operating outcomes around owner goals and market opportunity.',
+    },
+    {
+      icon: LineChart,
+      title: isZh ? '资深酒店运营专家' : 'Senior Hotel Operations Specialist',
+      scope: isZh ? '负责经营诊断、收益与成本、服务质量、组织机制和改善落地。' : 'Covers operational diagnosis, revenue and cost, service quality, organization, and implementation.',
+      strength: isZh ? '突出优势：穿透表面经营数据，找到收入质量、成本结构和执行机制中的真正瓶颈。' : 'Key strength: looking through headline metrics to find the real constraint in revenue quality, cost structure, and execution.',
+    },
+    {
+      icon: Building2,
+      title: isZh ? '资深酒店投资策划专家' : 'Senior Hotel Investment Planning Specialist',
+      scope: isZh ? '负责可行性判断、投资边界、项目定位、品牌选择、投入结构与风险识别。' : 'Covers feasibility, investment boundaries, positioning, brand selection, capital structure, and risk.',
+      strength: isZh ? '突出优势：在资金投入前识别项目逻辑和回报风险，把投资意愿转化为有条件的决策。' : 'Key strength: identifying project logic and return risk before capital is committed.',
+    },
+    {
+      icon: BarChart3,
+      title: isZh ? '资深酒店技术与支持专家' : 'Senior Hotel Technology and Support Specialist',
+      scope: isZh ? '负责酒店系统、数据基础、技术适配、流程支持与数字能力落地。' : 'Covers hotel systems, data foundations, technology fit, process support, and digital implementation.',
+      strength: isZh ? '突出优势：让技术匹配真实经营流程，避免系统采购与一线执行脱节。' : 'Key strength: fitting technology to real operating workflows so systems and frontline execution stay connected.',
+    },
+    {
+      icon: SearchCheck,
+      title: isZh ? '酒店数字化营销专家' : 'Hotel Digital Marketing Specialist',
+      scope: isZh ? '负责市场增长、内容资产、官网转化、直订路径和搜索可见度。' : 'Covers market growth, content assets, website conversion, direct booking, and search visibility.',
+      strength: isZh ? '突出优势：把内容、渠道与咨询入口连成可追踪的获客路径，而不是只增加曝光。' : 'Key strength: connecting content, channels, and inquiry paths into measurable acquisition rather than visibility alone.',
     },
   ]
 
-  const steps = [
+  const priorities = [
     {
-      step: '01',
-      title: isZh ? '判断现状' : 'Assess the situation',
-      desc: isZh ? '先看项目阶段、现实约束与目标。' : 'Start with the project stage, operating reality, and target outcomes.',
+      number: '01',
+      title: isZh ? '这个酒店项目值得投吗？' : 'Is this hotel project worth investing in?',
+      copy: isZh ? '优先服务投资人、业主和筹备项目方，完成投前判断、定位选择、投入边界和风险识别。' : 'For investors, owners, and project sponsors needing feasibility, positioning, investment boundaries, and risk clarity.',
     },
     {
-      step: '02',
-      title: isZh ? '找出核心问题' : 'Find the core issue',
-      desc: isZh ? '不是把所有问题都做一遍，而是先找到真正影响结果的环节。' : 'Do not attack everything at once. Find the factor that is actually shaping results.',
+      number: '02',
+      title: isZh ? '为什么酒店很忙，利润却没有改善？' : 'Why is the hotel busy while profit fails to improve?',
+      copy: isZh ? '优先服务在营酒店业主和管理者，从收入质量、成本结构、渠道、产品和组织执行中锁定经营瓶颈。' : 'For owners and operators of trading hotels who need to identify constraints across revenue quality, cost, channels, product, and execution.',
     },
     {
-      step: '03',
-      title: isZh ? '确定切入方式' : 'Choose the right entry point',
-      desc: isZh ? '判断更适合做诊断、方案、系统还是专项支持。' : 'Decide whether diagnosis, strategy, systems, or targeted support is the right next move.',
-    },
-    {
-      step: '04',
-      title: isZh ? '推进与复盘' : 'Execute and review',
-      desc: isZh ? '围绕重点问题推进，并根据结果持续调整。' : 'Push on the critical issue and keep adjusting based on outcomes.',
+      number: '03',
+      title: isZh ? '怎样避免筹开阶段留下长期经营问题？' : 'How can pre-opening decisions avoid long-term operating problems?',
+      copy: isZh ? '优先服务新建、改造和重新定位项目，让品牌、产品、建设标准、预算与运营准备相互匹配。' : 'For new-build, renovation, and repositioning projects aligning brand, product, development standards, budget, and readiness.',
     },
   ]
 
-  const comparisons = [
-    {
-      title: isZh ? '酒店经营专家力量' : 'Hotel operations expertise',
-      desc: isZh ? '覆盖筹开、经营诊断、收益、成本、服务和组织执行。' : 'Pre-opening, operational diagnosis, revenue, cost, service, and execution.',
-    },
-    {
-      title: isZh ? '商业策划专家力量' : 'Commercial planning expertise',
-      desc: isZh ? '围绕投资判断、项目定位、产品设计与商业模型形成完整方案。' : 'Investment judgment, positioning, product design, and commercial models.',
-    },
-    {
-      title: isZh ? '市场增长专家力量' : 'Market growth expertise',
-      desc: isZh ? '覆盖市场销售、收益策略、渠道结构、会员与客户增长。' : 'Sales, revenue strategy, channel structure, membership, and customer growth.',
-    },
-    {
-      title: isZh ? '技术与数据专家力量' : 'Technology and data expertise',
-      desc: isZh ? '把数据分析、数字化工具和AI搜索获客转化为经营动作。' : 'Turn analytics, digital tools, and AI search acquisition into operating action.',
-    },
-  ]
+  const workflow = [
+    [SearchCheck, isZh ? '先看问题' : 'Understand the issue', isZh ? '核对项目阶段、数据、现场条件和决策目标。' : 'Review stage, data, operating conditions, and decision goals.'],
+    [Compass, isZh ? '再定路径' : 'Choose the path', isZh ? '找出最影响结果的变量，明确优先级与工作边界。' : 'Identify the variable shaping outcomes and set priorities and scope.'],
+    [Users, isZh ? '跨专业协作' : 'Work across disciplines', isZh ? '投资、筹开、运营和增长视角共同参与，不让局部优化伤害整体结果。' : 'Bring investment, pre-opening, operations, and growth perspectives together.'],
+    [CheckCircle2, isZh ? '验证结果' : 'Verify the result', isZh ? '以可执行动作、责任节点和复盘证据完成闭环。' : 'Close the loop with actions, ownership, and review evidence.'],
+  ] as const
 
-  const fitClients = [
-    isZh ? '正在做投前判断的投资方或业主方。' : 'Investors or owners evaluating a project before committing capital.',
-    isZh ? '品牌与经营方向都需要重新梳理的酒店项目。' : 'Hotel projects that need a clearer brand and operating direction.',
-    isZh ? '已有团队，但经营改进始终不够稳定的管理者。' : 'Managers with a team in place but unstable operating improvement.',
-    isZh ? '希望认真推进 AI 落地，而不是做表面数字化的经营者。' : 'Operators who want practical AI implementation rather than surface-level digitization.',
-  ]
+  const aboutJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: isZh ? '关于迈创兄弟C&T' : 'About MarvelBros C&T',
+    url: `https://www.marvelbros.com/${lang}/about`,
+    inLanguage: isZh ? 'zh-CN' : 'en-US',
+    about: { '@id': 'https://www.marvelbros.com/#organization' },
+    mainEntity: {
+      '@id': 'https://www.marvelbros.com/#organization',
+      knowsAbout: disciplines.map((item) => item.title),
+      audience: { '@type': 'Audience', audienceType: isZh ? '酒店投资人、业主和管理者' : 'Hotel investors, owners, and managers' },
+    },
+  }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
+      <Script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
       <PageHero
-        title={isZh ? 'MBCT 不是为了把酒店讲得更好听，而是为了把项目做得更明白' : 'MBCT exists to make hotel projects clearer, not just better presented'}
-        titleSize="text-3xl md:text-4xl"
-        subtitle={isZh ? '我们专注酒店行业，因为这个行业同时需要商业判断、经营理解与落地执行，而这三件事往往很少被真正放到一起解决。' : 'We focus on hospitality because this industry demands business judgment, operating understanding, and real execution at the same time — and those three things are rarely solved together.'}
-        bgImage="/images/home-named/about-us.png"
+        title={isZh ? '迈创兄弟C&T，看透问题，讲清逻辑，落实到位！' : 'MarvelBros C&T sees the issue clearly, explains the logic, and follows through.'}
+        titleSize="text-3xl md:text-5xl"
+        subtitle={isZh ? '我们专注酒店行业，因为这个行业同时需要商业判断、经营理解与落地执行。然而在行业里，这三件事往往被忽视，很少被真正放到一起解决。' : 'We focus on hospitality because the industry requires business judgment, operating understanding, and practical execution. Yet these three disciplines are often overlooked and rarely addressed together.'}
+        bgImage="/images/home-named/solutions-lounge.jpeg"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <section className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {reasons.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} className="rounded-2xl bg-card border border-border p-6 md:p-7">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: `${item.color}20` }}>
-                    <Icon className="w-6 h-6" style={{ color: item.color }} />
+      <section className="border-b border-slate-200 bg-[#f4f7f8] py-12 dark:border-slate-800 dark:bg-slate-900 md:py-16">
+        <div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:px-12 xl:px-16">
+          <div>
+            <p className="text-5xl font-semibold text-[#b86d13]">30+</p>
+            <p className="mt-2 text-lg font-semibold">{isZh ? '年酒店行业实战经验基础' : 'years of practical hospitality experience'}</p>
+          </div>
+          <p className="max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-200">
+            {isZh ? '团队拥有30多年酒店行业实战经验，专业能力覆盖品牌、投资、运营、技术支持与数字化营销。五位专家围绕同一个经营目标协同判断，以清晰的问题诊断、可执行的改善路径和项目成果验证专业实力。' : 'The team brings more than 30 years of practical hospitality experience across brand strategy, investment, operations, technology support, and digital marketing. Five specialists work around one business objective, demonstrating expertise through clear diagnosis, actionable improvement paths, and project results.'}
+          </p>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="max-w-4xl">
+            <h2 className="text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '从五个维度，围绕同一个经营结果推进' : 'Five dimensions advancing one shared business result'}</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">{isZh ? '从品牌定位、投资判断到运营改善、技术支持和数字化增长，每一项专业判断都服务于酒店投资回报和长期经营结果。' : 'From brand positioning and investment decisions to operational improvement, technology support, and digital growth, every specialist judgment serves investment returns and durable operating outcomes.'}</p>
+          </div>
+          <div className="mt-12 grid border-t border-amber-200 dark:border-slate-700 lg:grid-cols-2">
+            {disciplines.map(({ icon: Icon, title, scope, strength }, index) => (
+              <article key={title} className={`border-b border-amber-200 py-8 dark:border-slate-700 lg:px-8 ${index === disciplines.length - 1 ? 'lg:col-span-2 lg:px-0' : index % 2 === 0 ? 'lg:border-r lg:pl-0' : 'lg:pr-0'}`}>
+                <div className="flex items-start gap-5">
+                  <div className="flex size-12 shrink-0 items-center justify-center bg-[#e7f5ef] text-[#24745c] dark:bg-emerald-950 dark:text-emerald-300"><Icon className="size-6" /></div>
+                  <div>
+                    <h3 className="text-2xl font-semibold">{title}</h3>
+                    <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">{scope}</p>
+                    <p className="mt-3 leading-7 font-medium">{strength}</p>
                   </div>
-                  <h2 className="text-xl font-bold text-foreground mb-3">{item.title}</h2>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item.body}</p>
                 </div>
-              )
-            })}
-          </div>
-        </section>
-
-        <section className="mb-16 rounded-3xl border border-primary/20 bg-primary/5 p-8 md:p-10">
-          <div className="max-w-3xl mb-8">
-            <p className="text-sm font-medium text-primary mb-3">
-              {isZh ? '项目进入方式' : 'How we typically work'}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {isZh ? '我们通常这样进入一个项目' : 'We usually enter a project through four practical steps'}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              {isZh
-                ? '不是把所有问题都一次性铺开，而是先把真正影响结果的部分识别出来，再决定最合适的推进路径。'
-                : 'We do not open every workstream at once. We first identify what is truly affecting outcomes, then choose the most appropriate path forward.'}
-            </p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {steps.map((item) => (
-              <div key={item.step} className="rounded-2xl border border-border bg-card p-6">
-                <div className="text-primary font-bold text-sm mb-3">{item.step}</div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
+              </article>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="mb-16">
-          <div className="max-w-3xl mb-8">
-            <p className="text-sm font-medium text-primary mb-3">
-              {isZh ? '复合型专业团队' : 'Multidisciplinary professional team'}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {isZh ? '四类专业力量，围绕同一个经营结果协同' : 'Four disciplines aligned around one business outcome'}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {comparisons.map((item, index) => (
-              <div key={item.title} className="rounded-2xl bg-card border border-border p-6 h-full">
-                <div className="w-11 h-11 rounded-xl bg-amber-400/10 flex items-center justify-center mb-4">
-                  {index === 0 ? <Briefcase className="w-5 h-5 text-amber-400" /> : index === 1 ? <Target className="w-5 h-5 text-amber-400" /> : <Users className="w-5 h-5 text-amber-400" />}
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
+      <section className="bg-[#f1f7f3] py-20 dark:bg-slate-900 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <h2 className="max-w-4xl text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '现在最值得先解决的三个酒店问题是什么？' : 'Which three hotel questions should be solved first?'}</h2>
+          <div className="mt-12 grid gap-8 lg:grid-cols-3">
+            {priorities.map((item) => (
+              <article key={item.number} className="border-t-4 border-[#d98b28] bg-white p-7 shadow-sm dark:bg-slate-950">
+                <p className="text-sm font-bold text-[#b86d13]">{item.number}</p>
+                <h3 className="mt-5 text-2xl font-semibold leading-snug">{item.title}</h3>
+                <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">{item.copy}</p>
+              </article>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {isZh ? '什么样的客户更适合和 MBCT 合作' : 'Who tends to be a strong fit for MBCT'}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-2xl">
-                {isZh
-                  ? '如果你希望有人把项目讲得更漂亮，MBCT 未必合适。如果你希望有人和你一起把问题看清、路径定准、动作推进，MBCT 会更适合。'
-                  : 'If you only want a better-looking narrative, MBCT may not be the right fit. If you want a partner to clarify the issue, choose the path, and push execution forward, the fit is much stronger.'}
-              </p>
+      <section className="py-20 md:py-28">
+        <div className="mx-auto grid max-w-[1440px] gap-14 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-12 xl:px-16">
+          <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+            <Image src="/images/home-refresh/front-desk-service.jpg" alt={isZh ? '酒店团队在真实服务现场协同工作' : 'A hotel team collaborating in a real service setting'} fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" loading="eager" unoptimized />
+          </div>
+          <div>
+            <h2 className="text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '团队协作，避免“各说各话”？' : 'How does team collaboration prevent disconnected advice?'}</h2>
+            <div className="mt-8 border-t border-amber-200 dark:border-slate-700">
+              {workflow.map(([Icon, title, copy], index) => (
+                <div key={title} className="grid grid-cols-[3rem_1fr] gap-4 border-b border-amber-200 py-5 dark:border-slate-700">
+                  <Icon className="mt-1 size-6 text-[#24745c]" />
+                  <div><p className="font-semibold"><span className="mr-3 text-[#b86d13]">0{index + 1}</span>{title}</p><p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{copy}</p></div>
+                </div>
+              ))}
             </div>
-
-            <div className="rounded-2xl bg-card border border-border p-6 md:p-7">
-              <div className="space-y-4">
-                {fitClients.map((item) => (
-                  <div key={item} className="flex items-start gap-3 text-sm text-foreground leading-relaxed">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href={`/${lang}/cases`} className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d98b28] px-6 py-3 font-semibold text-slate-950 hover:bg-amber-400">{isZh ? '查看案例成果' : 'Review case results'}<ArrowRight className="size-5" /></Link>
+              <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#d98b28] px-6 py-3 font-semibold text-[#b86d13] hover:bg-amber-50 dark:text-amber-300 dark:hover:bg-white/10">{isZh ? '申请免费初步诊断' : 'Request a free diagnosis'}<ArrowRight className="size-5" /></Link>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   )
 }
