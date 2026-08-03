@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 635,
+      type: "article",
+      title: "极端天气打乱行程，酒店的取消政策该不该更灵活？",
+      titleEn: "When Extreme Weather Disrupts Travel, Should Hotel Cancellation Policies Be More Flexible?",
+      slug: "extreme-weather-hotel-cancellation-policy-2026-08-03",
+      summary: "极端天气下，酒店需要结合责任归属、可验证证据、再售窗口与岗位授权，建立兼顾收入、客诉和长期信任的分级取消规则。",
+      summaryEn: "During extreme weather, hotels need tiered cancellation rules that combine responsibility, verifiable evidence, reselling windows and decision rights to balance revenue, disputes and long-term trust.",
+      firstLine: "条款是边界，但处置方式决定实际损失。",
+      author: "迈创兄弟C&T",
+      date: "2026-08-03",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 634,
       type: "article",
       title: "入境游客增多了，本土品牌酒店为什么还接不住？",

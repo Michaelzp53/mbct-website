@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '极端天气打乱行程，酒店的取消政策该不该更灵活？' : 'When Extreme Weather Disrupts Travel, Should Hotel Cancellation Policies Be More Flexible?',
+      summary: isZh
+        ? '把责任归属、可验证证据、再售窗口和岗位授权放进同一套分级规则，兼顾收入、客诉与长期信任。'
+        : 'Use one tiered framework for responsibility, verifiable evidence, reselling windows and decision rights to balance revenue, disputes and long-term trust.',
+      slug: 'extreme-weather-hotel-cancellation-policy-2026-08-03',
+      date: '2026.08.03',
+    },
+    {
       title: isZh ? '入境游客增多了，本土品牌酒店为什么还接不住？' : "Inbound Travel Is Growing. Why China's Local Hotel Brands Still Miss Overseas Guests?",
       summary: isZh
         ? '入境需求不会自动变成酒店订单；客源匹配、线上可见、支付确认和到店服务必须形成完整承接链。'
