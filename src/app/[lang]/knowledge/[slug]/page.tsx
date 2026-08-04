@@ -6,6 +6,7 @@ import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ArticleInteractions from '@/components/interactions/ArticleInteractions'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import articles20260804 from './articles-2026-08-04.json'
 import articles20260803 from './articles-2026-08-03.json'
 import articles20260802 from './articles-2026-08-02.json'
 import articles20260801 from './articles-2026-08-01.json'
@@ -34,6 +35,19 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260804 as Record<string, {
+    id: number
+    title: string
+    titleEn?: string
+    description?: string
+    descriptionEn?: string
+    author: string
+    date: string
+    readTime: string
+    tag: string
+    content: string[]
+    contentEn?: string[]
+  }>),
   ...(articles20260803 as Record<string, {
     id: number
     title: string

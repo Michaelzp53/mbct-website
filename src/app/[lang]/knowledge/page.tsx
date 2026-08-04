@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 636,
+      type: "article",
+      title: "游客开始“住久一点”，酒店为什么还只会做一晚生意？",
+      titleEn: "Travelers Are Staying Longer. Why Are Hotels Still Built for One-Night Stays?",
+      slug: "slow-travel-multi-night-hotel-service-2026-08-04",
+      summary: "当客人选择连续停留时，酒店需要重新设计预订信息、入住引导、客房节奏、餐饮变化和离店承接，而不是复制一晚服务。",
+      summaryEn: "When guests choose multi-night stays, hotels need to redesign booking information, arrival guidance, housekeeping rhythm, dining variety and departure follow-up instead of repeating one-night service.",
+      firstLine: "房晚变长，不等于价值自然增长。",
+      author: "MBCT（MarvelBros C&T）",
+      date: "2026-08-04",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 635,
       type: "article",
       title: "极端天气打乱行程，酒店的取消政策该不该更灵活？",

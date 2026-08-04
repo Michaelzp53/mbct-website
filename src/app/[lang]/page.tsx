@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '游客开始“住久一点”，酒店为什么还只会做一晚生意？' : 'Travelers Are Staying Longer. Why Are Hotels Still Built for One-Night Stays?',
+      summary: isZh
+        ? '连续停留不是把一晚服务复制几次；预订信息、客房节奏、餐饮变化和离店承接都需要重新设计。'
+        : 'A multi-night stay is not a one-night template repeated. Booking information, service rhythm, dining variety and departure follow-up all need deliberate design.',
+      slug: 'slow-travel-multi-night-hotel-service-2026-08-04',
+      date: '2026.08.04',
+    },
+    {
       title: isZh ? '极端天气打乱行程，酒店的取消政策该不该更灵活？' : 'When Extreme Weather Disrupts Travel, Should Hotel Cancellation Policies Be More Flexible?',
       summary: isZh
         ? '把责任归属、可验证证据、再售窗口和岗位授权放进同一套分级规则，兼顾收入、客诉与长期信任。'
