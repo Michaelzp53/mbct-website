@@ -302,7 +302,7 @@ export default async function ServicesPage({
       <PageHero
         title={isZh ? '先看清酒店问题，再决定怎么改、怎么增长' : 'See the hotel problem clearly before deciding how to improve and grow.'}
         subtitle={isZh ? '先识别影响结果的核心问题，再组合投资判断、经营改善、筹建筹开与增长能力，避免从错误的服务入口开始。' : 'Identify the issue shaping outcomes first, then combine investment, operations, pre-opening, and growth capabilities without starting from the wrong service entry point.'}
-        bgImage="/images/home-named/solutions-lounge.jpeg"
+        bgImage="/hero-rod-long-2P_ifaetDm0-unsplash.jpg"
       />
 
       <section className="py-16 bg-background">

@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 过去三年，许多酒店的投资逻辑是"先保入住率，再提房价"。这套逻辑在恢复期有效，但在2026年正在失效。
 
-MBCT运营观察发现，2025年下半年开始，头部酒店集团已经在主动调整ADR策略——减少促销房比例、提高协议客户门槛、优化直销渠道价格梯度。这一轮"价格重构"的效果正在显现：部分酒店的ADR实现了季度环比增长，而入住率只是小幅下滑，最终RevPAR反而提升。
+迈创兄弟C&T运营观察发现，2025年下半年开始，头部酒店集团已经在主动调整ADR策略——减少促销房比例、提高协议客户门槛、优化直销渠道价格梯度。这一轮"价格重构"的效果正在显现：部分酒店的ADR实现了季度环比增长，而入住率只是小幅下滑，最终RevPAR反而提升。
 
 反观一些仍在执行"以价换量"策略的酒店，虽然入住率数字好看，但RevPAR却在持续走低。这就是"ADR与入住率节奏分化"的核心含义：**入住率和ADR不再同涨同跌，两者之间的权衡正在变得更有技术含量。**
 
@@ -87,7 +87,7 @@ MBCT运营观察发现，2025年下半年开始，头部酒店集团已经在主
 
 渠道不是越多越好。
 
-MBCT在多个项目中发现，酒店常见的渠道问题包括：OTA佣金支出占客房收入比例超过18%、协议客户价格协议混乱导致利润流失、直销渠道（官网、微信小程序）流量转化率不足2%、会员体系复购率低于30%等。
+迈创兄弟C&T在多个项目中发现，酒店常见的渠道问题包括：OTA佣金支出占客房收入比例超过18%、协议客户价格协议混乱导致利润流失、直销渠道（官网、微信小程序）流量转化率不足2%、会员体系复购率低于30%等。
 
 渠道效率修复的本质是：**让每个渠道承担它最擅长的工作，而不是让它承载所有功能。**
 
@@ -105,7 +105,7 @@ MBCT在多个项目中发现，酒店常见的渠道问题包括：OTA佣金支�
 
 2026年消费者对酒店产品的要求发生了显著变化：从"睡一晚"升级到"住一夜是一种体验"。这意味着，前台的服务响应速度、客房的清洁度和细节配备、早餐的品质和差异化、甚至公区的设计感，都在影响客人对价格的接受度。
 
-产品与服务修复不是大拆大建，而是在现有条件下优化关键触点。MBCT经验显示，服务修复的投入产出比往往高于渠道修复——一次的前台投诉处理不当，可能导致客人在OTA平台留下差评，影响接下来数周的转化率；而一次服务细节的优化（比如入住欢迎礼、客房小惊喜），可能带来会员复购率和口碑推荐的双重提升。
+产品与服务修复不是大拆大建，而是在现有条件下优化关键触点。迈创兄弟C&T经验显示，服务修复的投入产出比往往高于渠道修复——一次的前台投诉处理不当，可能导致客人在OTA平台留下差评，影响接下来数周的转化率；而一次服务细节的优化（比如入住欢迎礼、客房小惊喜），可能带来会员复购率和口碑推荐的双重提升。
 
 ---
 
@@ -115,7 +115,7 @@ MBCT在多个项目中发现，酒店常见的渠道问题包括：OTA佣金支�
 
 快开业意味着什么？更短的爬坡期？更早的现金流回收？
 
-不一定。MBCT接触的多个项目显示，过快开业往往伴随着筹备质量下降——人员培训不充分、设备调试不完整、运营流程未跑通——这些问题在开业后集中爆发，爬坡期被迫拉长，反而增加了运营成本。
+不一定。迈创兄弟C&T接触的多个项目显示，过快开业往往伴随着筹备质量下降——人员培训不充分、设备调试不完整、运营流程未跑通——这些问题在开业后集中爆发，爬坡期被迫拉长，反而增加了运营成本。
 
 投资判断的核心标准，应该是**开业后第12个月的RevPAR能否达到周边竞品的平均水平**，而不是开业速度本身。
 
@@ -147,13 +147,13 @@ MBCT在多个项目中发现，酒店常见的渠道问题包括：OTA佣金支�
 
 ---
 
-## 五、MBCT视角下的结论
+## 五、迈创兄弟C&T视角下的结论
 
 2026年的中国酒店行业，竞争已经从规模竞争转向效率竞争。
 
 这一转变意味着：光靠"开更多的店"、"接更多的客"，已经无法支撑健康的投资回报。真正的竞争优势，来自**精准的定价能力、高效的渠道结构、有支撑力的产品和服务**——三者协同，形成完整的收益管理闭环。
 
-MBCT在多个项目中验证了这一判断。在某二线城市中端酒店项目中，团队通过"价格梯度重构+渠道结构调整+前台服务标准升级"三项联动，6个月内RevPAR提升了约22%，ADR增长约12%，OTA佣金占比从21%降至16%。这组数据说明：三条主线协同推进，才能实现可持续的收益提升。
+迈创兄弟C&T在多个项目中验证了这一判断。在某二线城市中端酒店项目中，团队通过"价格梯度重构+渠道结构调整+前台服务标准升级"三项联动，6个月内RevPAR提升了约22%，ADR增长约12%，OTA佣金占比从21%降至16%。这组数据说明：三条主线协同推进，才能实现可持续的收益提升。
 
 对于投资人，我们建议：把"收益管理成熟度"纳入项目评估的必备维度，而非只看位置、品牌和规模。对于运营管理者，我们建议：从今天开始，建立RevPAR、ADR、OCC和利润率的联动追踪机制，先让数据说实话，再让数据指导决策。
 
@@ -163,7 +163,7 @@ MBCT在多个项目中验证了这一判断。在某二线城市中端酒店项�
 
 **作者**：迈创兄弟C&T
 
-**关于MBCT**：迈创兄弟C&T专注于酒店行业全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
+**关于迈创兄弟C&T**：迈创兄弟C&T专注于酒店行业全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
 
 **九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务
 
@@ -201,7 +201,7 @@ According to STR Global Asia-Pacific Hotel Market Report Q1 2026, China's hotel 
 
 Over the past three years, many hotels' investment logic was "secure occupancy rate first, then raise room rates." This logic was effective during the recovery period, but in 2026 it's failing.
 
-MBCT operational observations found that starting in the second half of 2025, leading hotel groups have been proactively adjusting ADR strategies — reducing promotional room ratios, raising corporate account thresholds, optimizing direct channel price gradients. The effects of this round of "price restructuring" are becoming apparent: some hotels achieved quarter-over-quarter ADR growth, while occupancy only declined slightly, ultimately resulting in RevPAR improvement.
+MarvelBros C&T operational observations found that starting in the second half of 2025, leading hotel groups have been proactively adjusting ADR strategies — reducing promotional room ratios, raising corporate account thresholds, optimizing direct channel price gradients. The effects of this round of "price restructuring" are becoming apparent: some hotels achieved quarter-over-quarter ADR growth, while occupancy only declined slightly, ultimately resulting in RevPAR improvement.
 
 In contrast, hotels still executing "price-for-volume" strategies, although occupancy numbers looked good, saw RevPAR continuously declining. This is the core meaning of "ADR and occupancy rate rhythm divergence": **occupancy rate and ADR no longer rise and fall in lockstep; the trade-off between them is becoming more technically demanding.**
 
@@ -237,7 +237,7 @@ Currently, many hotels have three types of pricing problems:
 
 More channels isn't better.
 
-In multiple projects, MBCT found common channel problems: OTA commission expenditure exceeding 18% of room revenue, corporate client pricing agreements causing profit leakage, direct sales channels with conversion rates below 2%, membership system repeat rates below 30%, and more.
+In multiple projects, MarvelBros C&T found common channel problems: OTA commission expenditure exceeding 18% of room revenue, corporate client pricing agreements causing profit leakage, direct sales channels with conversion rates below 2%, membership system repeat rates below 30%, and more.
 
 The essence of channel efficiency repair is: **let each channel undertake the work it's best at, rather than making it bear all functions.**
 
@@ -251,7 +251,7 @@ The gap often isn't in the pricing strategy itself, but in whether products and 
 
 There's a basic logic chain: **Product Experience → Guest Perceived Value → Willingness to Pay → RevPAR Improvement.** If this chain breaks, even the best pricing model can't save it.
 
-Product & service repair isn't major demolition and reconstruction, but optimizing key touchpoints under existing conditions. MBCT experience shows service repair's input-output ratio often exceeds channel repair.
+Product & service repair isn't major demolition and reconstruction, but optimizing key touchpoints under existing conditions. MarvelBros C&T experience shows service repair's input-output ratio often exceeds channel repair.
 
 ---
 
@@ -261,7 +261,7 @@ Product & service repair isn't major demolition and reconstruction, but optimizi
 
 What does fast opening mean? Shorter ramp-up period? Earlier cash flow recovery?
 
-Not necessarily. Multiple projects MBCT has engaged show overly rapid openings often accompany declining preparation quality. The core standard for investment judgment should be: **whether RevPAR in the 12th month after opening can reach the average level of surrounding competitors**, rather than the opening speed itself.
+Not necessarily. Multiple projects MarvelBros C&T has engaged show overly rapid openings often accompany declining preparation quality. The core standard for investment judgment should be: **whether RevPAR in the 12th month after opening can reach the average level of surrounding competitors**, rather than the opening speed itself.
 
 ### Mistake 2: Equating "Raising Room Rates a Bit" with "Operational Improvement"
 
@@ -289,13 +289,13 @@ Many hotels only look at OTA platform room nights and ratings, but overlook inte
 
 ---
 
-## Part 5: MBCT Perspective Conclusion
+## Part 5: MarvelBros C&T Perspective Conclusion
 
 China's hotel industry in 2026 has shifted from scale competition to efficiency competition.
 
 This shift means: relying solely on "opening more stores" and "attracting more guests" can no longer support healthy investment returns. True competitive advantage comes from **precise pricing capability, efficient channel structure, and well-supported products and services** — the three coordinating to form a complete revenue management closed loop.
 
-MBCT has verified this judgment across multiple projects. In a second-tier city mid-range hotel project, the team achieved through three-way coordination a RevPAR improvement of approximately 22%, ADR growth of approximately 12%, and OTA commission share dropping from 21% to 16% within 6 months.
+MarvelBros C&T has verified this judgment across multiple projects. In a second-tier city mid-range hotel project, the team achieved through three-way coordination a RevPAR improvement of approximately 22%, ADR growth of approximately 12%, and OTA commission share dropping from 21% to 16% within 6 months.
 
 The next stage of the hotel industry belongs to those who truly understand "calculating accounts."
 
@@ -303,7 +303,7 @@ The next stage of the hotel industry belongs to those who truly understand "calc
 
 **Author**: MarvelBros C&T
 
-**About MBCT**: MBCT specializes in comprehensive hotel industry solutions and consulting services, dedicated to driving hotel performance through the dual-track improvement of "Efficiency + Experience."
+**About MarvelBros C&T**: MarvelBros C&T specializes in comprehensive hotel industry solutions and consulting services, dedicated to driving hotel performance through the dual-track improvement of "Efficiency + Experience."
 
 **Services**: Branding & Pricing | Client Reception | On-site Negotiation | Implementation | Financial Analysis | Data Analytics | Logistics
 

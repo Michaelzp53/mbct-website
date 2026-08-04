@@ -62,17 +62,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 ---
 
-## 三、MBCT突围方法论
+## 三、迈创兄弟C&T突围方法论
 
-MBCT基于对上百个酒店项目的深度服务，总结出**"诊断—评估—行动"三步法**，帮助酒店投资人找到最适合自己的突围节奏。
+迈创兄弟C&T基于对上百个酒店项目的深度服务，总结出**"诊断—评估—行动"三步法**，帮助酒店投资人找到最适合自己的突围节奏。
 
 ### 第一步：定位诊断（你的酒店在哪个战场？）
 
-你的酒店服务的核心客群是谁？他们在哪里、如何预订、决策因素是什么？你的竞争对手究竟是谁——是同档次的隔壁酒店，还是正在跨界打劫的新业态？**定位不清的酒店，所有运营动作都是盲目的。** MBCT通过商圈热力图、客户画像矩阵和竞争态势图，为酒店完成精准的战场定位。
+你的酒店服务的核心客群是谁？他们在哪里、如何预订、决策因素是什么？你的竞争对手究竟是谁——是同档次的隔壁酒店，还是正在跨界打劫的新业态？**定位不清的酒店，所有运营动作都是盲目的。** 迈创兄弟C&T通过商圈热力图、客户画像矩阵和竞争态势图，为酒店完成精准的战场定位。
 
 ### 第二步：竞争力评估（你的护城河是什么？）
 
-你的酒店有没有护城河？有的话能维持多久？是地理位置的不可复制性，是产品的独特性，还是服务品牌的心智占领？**没有护城河的酒店，本质上是在刀尖上跳舞。** MBCT采用"护城河四维评估模型"——资源壁垒、产品壁垒、运营壁垒、品牌壁垒——帮助酒店找到真正的长期竞争力来源。
+你的酒店有没有护城河？有的话能维持多久？是地理位置的不可复制性，是产品的独特性，还是服务品牌的心智占领？**没有护城河的酒店，本质上是在刀尖上跳舞。** 迈创兄弟C&T采用"护城河四维评估模型"——资源壁垒、产品壁垒、运营壁垒、品牌壁垒——帮助酒店找到真正的长期竞争力来源。
 
 ### 第三步：行动路线图（6个月可见效的三个优先动作）
 
@@ -82,7 +82,7 @@ MBCT基于对上百个酒店项目的深度服务，总结出**"诊断—评估�
 | 第31—90天 | RMS部署+CDP私域体系搭建+团队专项培训 | 工具用起来，团队会打仗 |
 | 第91—180天 | 精细化运营冲刺：动态定价优化+会员活跃度提升+口碑管理 | RevPAR提升10%+，复购率提升5%+ |
 
-**6个月，是MBCT给客户的行动承诺。** 不是等市场变好，而是主动变强。
+**6个月，是迈创兄弟C&T给客户的行动承诺。** 不是等市场变好，而是主动变强。
 
 ---
 
@@ -104,7 +104,7 @@ MBCT基于对上百个酒店项目的深度服务，总结出**"诊断—评估�
 
 **2026年，酒店投资已从"拼胆量"进入"拼内功"的时代。** 40万+的赛场里，存活下来的不是最有钱的，而是最懂运营的。
 
-MBCT致力于成为酒店投资者的深度伙伴——从战略定位到落地执行，提供全链路护航服务。
+迈创兄弟C&T致力于成为酒店投资者的深度伙伴——从战略定位到落地执行，提供全链路护航服务。
 ` : `
 ## 1. Market Status: Survival Map of 400,000+ Hotels
 
@@ -153,17 +153,17 @@ Digitalization is not as simple as buying a system — **the real barrier is the
 
 ---
 
-## 3. MBCT Breakthrough Methodology
+## 3. 迈创兄弟C&T Breakthrough Methodology
 
-Based on deep services for hundreds of hotel projects, MBCT has summarized the **"Diagnosis—Assessment—Action" three-step method** to help hotel investors find the breakthrough rhythm most suitable for them.
+Based on deep services for hundreds of hotel projects, 迈创兄弟C&T has summarized the **"Diagnosis—Assessment—Action" three-step method** to help hotel investors find the breakthrough rhythm most suitable for them.
 
 ### Step 1: Positioning Diagnosis (Which Battlefield Is Your Hotel In?)
 
-Who are the core guests your hotel serves? Where are they, how do they book, what are their decision factors? Who is your real competitor — the hotel next door at the same tier, or a new format cross-border raider? **Hotels with unclear positioning have blind operational actions.** MBCT completes precise battlefield positioning for hotels through commercial district heat maps, customer profile matrices, and competitive situation maps.
+Who are the core guests your hotel serves? Where are they, how do they book, what are their decision factors? Who is your real competitor — the hotel next door at the same tier, or a new format cross-border raider? **Hotels with unclear positioning have blind operational actions.** 迈创兄弟C&T completes precise battlefield positioning for hotels through commercial district heat maps, customer profile matrices, and competitive situation maps.
 
 ### Step 2: Competitiveness Assessment (What Is Your Moat?)
 
-Does your hotel have a moat? If so, how long can it be maintained? Is it the irreplicability of geographic location, the uniqueness of the product, or the mental ownership of the service brand? **Hotels without moats are essentially dancing on the edge of a blade.** MBCT uses the "Four-Dimensional Moat Assessment Model" — resource barriers, product barriers, operational barriers, brand barriers — to help hotels find the real source of long-term competitive advantage.
+Does your hotel have a moat? If so, how long can it be maintained? Is it the irreplicability of geographic location, the uniqueness of the product, or the mental ownership of the service brand? **Hotels without moats are essentially dancing on the edge of a blade.** 迈创兄弟C&T uses the "Four-Dimensional Moat Assessment Model" — resource barriers, product barriers, operational barriers, brand barriers — to help hotels find the real source of long-term competitive advantage.
 
 ### Step 3: Action Roadmap (Three Priority Actions Visible in 6 Months)
 
@@ -173,7 +173,7 @@ Does your hotel have a moat? If so, how long can it be maintained? Is it the irr
 | Day 31—90 | RMS deployment + CDP private domain system setup + team special training | Tools are used, team can fight |
 | Day 91—180 | Refined operations sprint: dynamic pricing optimization + member activity improvement + reputation management | RevPAR improves 10%+, repeat rate improves 5%+ |
 
-**6 months is MBCT's action commitment to clients.** Not waiting for the market to improve, but proactively becoming stronger.
+**6 months is 迈创兄弟C&T's action commitment to clients.** Not waiting for the market to improve, but proactively becoming stronger.
 
 ---
 
@@ -195,7 +195,7 @@ Does your hotel have a moat? If so, how long can it be maintained? Is it the irr
 
 **In 2026, hotel investment has entered an era of "competing on internal strength" rather than "competing on courage."** In the 400,000+ arena, those who survive are not the wealthiest, but those who understand operations best.
 
-MBCT is committed to being a deep partner for hotel investors — providing full-chain escort services from strategic positioning to implementation.
+迈创兄弟C&T is committed to being a deep partner for hotel investors — providing full-chain escort services from strategic positioning to implementation.
 `,
   }
 
@@ -291,9 +291,9 @@ MBCT is committed to being a deep partner for hotel investors — providing full
               {isZh ? '需要专业咨询？' : 'Need Professional Consulting?'}
             </h3>
             <p className="text-muted-foreground mb-4">
-              {isZh 
-                ? 'MBCT为酒店投资人和运营管理者提供全流程咨询服务，帮助您做出更明智的决策。' 
-                : 'MBCT provides full-process consulting services for hotel investors and operation managers.'}
+              {isZh
+                ? '迈创兄弟C&T为酒店投资人和运营管理者提供全流程咨询服务，帮助您做出更明智的决策。'
+                : 'MarvelBros C&T provides full-process consulting services for hotel investors and operation managers.'}
             </p>
             <div className="text-sm text-muted-foreground">
               <p>www.marvelbros.com</p>

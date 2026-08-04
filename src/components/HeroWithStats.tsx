@@ -1,62 +1,69 @@
 import Link from 'next/link'
-import { ArrowRight, BookOpen } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Building2, ClipboardCheck, RefreshCw } from 'lucide-react'
 
 interface HeroWithStatsProps {
   lang: string
 }
 export default function HeroWithStats({ lang }: HeroWithStatsProps) {
   const isZh = lang === 'zh'
-  const capabilities = isZh
-    ? ['投资研究', '品牌定位', '筹建管理', '经营诊断', '产品升级', '市场增长']
-    : ['Investment research', 'Brand positioning', 'Development', 'Diagnosis', 'Product renewal', 'Market growth']
+  const entryPoints = [
+    { icon: Building2, label: isZh ? '准备投资' : 'Planning an investment', href: `/${lang}/hotel-investment` },
+    { icon: ClipboardCheck, label: isZh ? '正在筹开' : 'Preparing to open', href: `/${lang}/hotel-opening` },
+    { icon: RefreshCw, label: isZh ? '经营改善' : 'Improving operations', href: `/${lang}/hotel-operation-improvement` },
+  ]
 
   return (
-    <section className="relative min-h-[650px] overflow-hidden border-b border-slate-200 bg-white text-slate-950 dark:border-slate-800 dark:bg-slate-950 dark:text-white lg:min-h-[calc(100vh-72px)]">
-      <div
-        className="absolute inset-0 bg-cover bg-[58%_center] lg:bg-center"
-        style={{ backgroundImage: "url('/images/home-named/hotel-city-skyline-hero.webp')" }}
+    <section className="relative min-h-[620px] overflow-hidden border-b border-slate-200 bg-[#17231f] text-white dark:border-slate-800 lg:min-h-[660px]">
+      <Image
+        src="/hero-hung-li-1HbWj9BDbjE-unsplash.jpg"
+        alt={isZh ? '夜幕中的真实酒店建筑与接待空间' : 'A real hotel building and arrival space at night'}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_38%,rgba(255,255,255,0.42)_56%,rgba(255,255,255,0.08)_68%,rgba(255,255,255,0)_76%)] dark:bg-[linear-gradient(90deg,rgba(8,15,28,0.98)_0%,rgba(8,15,28,0.93)_46%,rgba(8,15,28,0.52)_72%,rgba(8,15,28,0.18)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,31,27,0.94)_0%,rgba(19,31,27,0.82)_43%,rgba(19,31,27,0.36)_72%,rgba(19,31,27,0.16)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-[#d98b28]" />
 
-      <div className="relative mx-auto flex min-h-[650px] max-w-[1440px] flex-col justify-center px-5 py-14 sm:min-h-[720px] sm:px-8 sm:py-20 lg:min-h-[calc(100vh-72px)] lg:px-12 xl:px-16">
-        <div className="min-w-0 max-w-[980px] py-4 sm:py-8 lg:-translate-y-[4.5rem]">
-          <p className="mb-[60px] text-[21px] font-semibold leading-8 text-[#0b4a6f] dark:text-sky-300">
+      <div className="relative mx-auto flex min-h-[620px] max-w-[1440px] flex-col justify-center px-5 py-16 sm:px-8 lg:min-h-[660px] lg:px-12 xl:px-16">
+        <div className="min-w-0 max-w-[820px]">
+          <p className="mb-6 text-sm font-semibold leading-6 text-amber-300 sm:text-base">
             {isZh ? '酒店投资｜酒店筹开｜酒店经营改善' : 'Hotel Investment | Pre-opening | Performance Improvement'}
           </p>
-          <h1 className={`max-w-full font-semibold leading-[1.12] text-slate-950 [overflow-wrap:anywhere] dark:text-white sm:max-w-[1000px] sm:leading-[1.08] ${isZh ? 'text-[40px] sm:text-6xl lg:text-[60px] xl:text-[64px]' : 'text-[36px] sm:text-5xl lg:text-[54px] xl:text-[58px]'}`}>
-            {isZh ? '酒店投资筹开与经营改善专家' : 'Hotel Investment and Operations Specialists'}
+          <h1 className={`max-w-full font-semibold leading-[1.12] text-white [overflow-wrap:anywhere] ${isZh ? 'text-[38px] sm:text-[52px] lg:text-[58px]' : 'text-[36px] sm:text-5xl lg:text-[54px]'}`}>
+            {isZh ? '酒店投资、筹开与经营改善专家' : 'Hotel Investment, Development and Operations Specialists'}
           </h1>
-          <p className="mt-12 max-w-[760px] text-base leading-7 text-slate-700 dark:text-slate-200 sm:text-lg sm:leading-8">
+          <p className="mt-7 max-w-[720px] text-base leading-7 text-slate-100 sm:text-lg sm:leading-8">
             {isZh
               ? '迈创兄弟C&T沉淀30多年酒店行业实战经验，帮助酒店投资人、业主和管理者判断项目价值、解决经营问题，实现酒店长期价值增长。'
               : 'Drawing on more than 30 years of practical hospitality experience, MarvelBros C&T helps hotel investors, owners, and managers assess project value, solve operating problems, and build long-term growth.'}
           </p>
-          <div className="mt-20 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
-              href={`/${lang}/hotel-investment`}
-              className="inline-flex min-h-13 items-center justify-center gap-2 bg-[#0b4a6f] px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#073a58] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b4a6f]"
+              href={`/${lang}/contact?type=diagnosis`}
+              className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d98b28] px-6 py-3 text-base font-semibold text-slate-950 transition-colors hover:bg-[#efaa4d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
+              {isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}
               <ArrowRight className="h-5 w-5" />
-              {isZh ? '了解酒店投资如何判断' : 'How to assess a hotel investment'}
             </Link>
             <Link
-              href={`/${lang}/knowledge`}
-              className="inline-flex min-h-13 items-center justify-center gap-2 border-b-2 border-[#d98b28] bg-slate-950/80 px-5 py-3 text-base font-semibold text-white! transition-colors hover:bg-slate-950 hover:text-amber-300! dark:bg-white/10 dark:hover:bg-white/15"
+              href={`/${lang}/cases`}
+              className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/60 bg-black/15 px-6 py-3 text-base font-semibold text-white transition-colors hover:border-white hover:bg-black/30"
             >
-              <BookOpen className="h-5 w-5" />
-              {isZh ? '进入酒店经营知识库' : 'Enter the hotel knowledge base'}
+              {isZh ? '查看案例成果' : 'View Case Results'}
+              <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
         </div>
 
-        <div className="mt-8 w-full border-y border-slate-900/15 py-5 text-slate-700 dark:border-white/20 dark:text-slate-200 sm:mt-10 sm:py-6">
-          <div className="grid grid-cols-2 text-[21px] font-bold leading-9 sm:grid-cols-3 lg:grid-cols-6">
-            {capabilities.map((item) => (
-              <span key={item} className="border-l border-[#d98b28]/45 px-3 py-1 first:border-l-0 sm:px-4 lg:first:border-l-0">
-                {item}
-              </span>
+        <div className="mt-12 grid max-w-[820px] border-y border-white/25 sm:grid-cols-3">
+          {entryPoints.map(({ icon: Icon, label, href }) => (
+            <Link key={label} href={href} className="group flex min-h-16 items-center justify-between gap-3 border-b border-white/25 px-1 py-4 text-sm font-semibold text-white transition-colors hover:text-amber-300 sm:border-r sm:border-b-0 sm:px-4 sm:first:pl-0 sm:last:border-r-0">
+              <span className="flex items-center gap-3"><Icon className="h-5 w-5 text-amber-300" />{label}</span>
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
             ))}
-          </div>
         </div>
       </div>
     </section>

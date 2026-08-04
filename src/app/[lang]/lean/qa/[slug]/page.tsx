@@ -50,7 +50,7 @@ const newQA20260629Zh = {
   questionDetail: '准备做官网、改官网或搭建AI信息平台的酒店业主和经营团队，最常见的疑问是：内容建设的顺序应该怎么排？是先铺一批文章，还是先把核心结构搭起来？',
   pillar: 'cost-optimization',
   wasteType: 'over-processing',
-  author: '匿名酒店业主',
+  author: '酒店业主',
   date: '2026-06-29',
   likes: 0,
   views: 0,
@@ -80,7 +80,7 @@ FAQ 的最佳来源不是"拍脑袋想"，而是过去一年销售团队真实�
 
 四、案例没有公开客户名还能不能写？
 
-可以。脱敏后的案例照样有说服力，关键是三件事不能省：客户画像（行业、规模、典型需求）、问题（客人最痛的点是什么）、结果（用了什么方法、带来了什么变化）。
+可以。结构完整的案例照样有说服力，关键是三件事不能省：客户画像（行业、规模、典型需求）、问题（客人最痛的点是什么）、结果（用了什么方法、带来了什么变化）。
 
 案例不需要写真实姓名，写成"某连锁酒店集团""某城市商务酒店"即可。AI 引用案例时，更看重结构和逻辑，不在乎真实名字。
 
@@ -123,7 +123,7 @@ const newQA20260629En = {
   questionDetail: 'Hotel owners and operating teams preparing to build or rebuild their website or AI information platform often ask: what should come first? Should we publish a batch of articles quickly, or build the core structural framework first?',
   pillar: 'cost-optimization',
   wasteType: 'over-processing',
-  author: 'Anonymous hotel owner',
+  author: 'Hotel owner',
   date: '2026-06-29',
   likes: 0,
   views: 0,
@@ -153,7 +153,7 @@ Common FAQ groupings: location and transport, room differences, breakfast and la
 
 4. Can cases be written without revealing real customer names?
 
-Yes. Anonymized cases remain persuasive, as long as three elements are not omitted: customer profile (industry, scale, typical need), problem (the guest's most painful point), result (what method was used and what changed).
+Yes. project cases remain persuasive, as long as three elements are not omitted: customer profile (industry, scale, typical need), problem (the guest's most painful point), result (what method was used and what changed).
 
 Cases do not need real names. Phrases like "a chain hotel group" or "a city business hotel" work. When AI cites cases, it values structure and logic more than real names.
 
@@ -196,7 +196,7 @@ const qaDetailZhMap: Record<string, any> = {
   questionDetail: `我们是一家120间客房的商务酒店，前台只有2名员工。高峰入住时段（下午2-4点）客人经常要等5分钟以上，产生很多投诉。我们试过增加1名临时工，但效果不大，因为培训成本高且临时工效率低。这是精益管理中的什么浪费？有没有系统性的改善方法？`,
   pillar: 'guest-service',
   wasteType: 'waiting',
-  author: '匿名酒店业主',
+  author: '酒店业主',
   date: '2026-05-08',
   likes: 12,
   views: 156,
@@ -277,7 +277,7 @@ const qaDetailEnMap: Record<string, any> = {
   questionDetail: `We are a 120-room business hotel with only 2 front desk staff. During peak check-in hours (2-4 PM), guests often wait over 5 minutes, generating many complaints. We tried adding 1 temporary worker, but the effect was minimal because training costs are high and temporary staff efficiency is low. What type of lean waste is this? Are there systematic improvement methods?`,
   pillar: 'guest-service',
   wasteType: 'waiting',
-  author: 'Anonymous Hotel Owner',
+  author: 'Hotel owner',
   date: '2026-05-08',
   likes: 12,
   views: 156,

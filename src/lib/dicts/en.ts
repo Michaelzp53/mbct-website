@@ -236,10 +236,10 @@ export const en = {
     title: 'If you are already thinking about the next move, start with one clear conversation',
     subtitle: 'Before discussing many solutions, it is more important to clarify the real issue in the project. MarvelBros C&T will first help identify the problem clearly, then choose the most suitable path forward.',
     cta1: 'Book an Initial Project Conversation',
-    cta2: 'Call: 18941579333',
+    cta2: 'Call: +86 189 4157 9333',
   },
   contact: {
-    title: 'Clarify the current project situation first, then decide what should happen next',
+    title: 'Clarifying the project situation is already half the battle',
     subtitle: 'You do not need a perfect brief to start. Share the project stage, your main objective, and the hardest issue to move forward, and we will help you decide the most suitable point of entry.',
     form: {
       name: 'Your Name',
@@ -259,7 +259,7 @@ export const en = {
       servicePlaceholder: 'Select service type',
       message: 'Message',
       messagePlaceholder: 'Tell us the city, room count, and the operating issue you most want to solve...',
-      privacy: 'I have read and agree to the Privacy Policy. MarvelBros C&T will keep project information confidential.',
+      privacy: 'I have read and agree to the Privacy Policy. MarvelBros C&T will strictly protect project information.',
       submit: 'Submit',
       submitting: 'Submitting...',
       success: 'Submitted successfully! We will contact you within 24 hours.',
@@ -279,7 +279,7 @@ export const en = {
       '⑨ Industry Research & Content',
     ],
     info: {
-      phone: '18941579333',
+      phone: '+86 189 4157 9333',
       email: 'info@marvelbros.com',
       address: 'Nationwide project coverage; travel and staffing costs for on-site assessments are confirmed per engagement',
     },
@@ -351,7 +351,7 @@ export const en = {
       {
         id: 'cases',
         title: 'Case Studies',
-        desc: 'In-depth project retrospectives with data anonymized',
+        desc: 'In-depth project retrospectives focused on methods and results',
       },
       {
         id: 'blogs',

@@ -127,7 +127,7 @@ export default function ArticleInteractions({ slug, initialLikes, initialComment
         const data = await res.json()
         const newComment: Comment = {
           id: String(data.comment.id),
-          author: data.comment.nickname || (isZh ? '匿名用户' : 'Anonymous'),
+          author: data.comment.nickname || (isZh ? '酒店同行' : 'Hospitality peer'),
           avatar: (data.comment.nickname || (isZh ? '匿' : 'A')).charAt(0).toUpperCase(),
           content: data.comment.content,
           date: new Date(data.comment.created_at).toLocaleDateString(isZh ? 'zh-CN' : 'en-US', {

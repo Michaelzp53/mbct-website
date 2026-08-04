@@ -64,7 +64,7 @@ async function sendEmailNotification(question: LeanQuestion) {
 详情：${question.detail || '无详情'}
 分类：${question.pillar || '未分类'}
 浪费类型：${wasteText}
-昵称：${question.nickname || '匿名'}
+昵称：${question.nickname || '酒店同行'}
 酒店：${question.hotel_name || '未填写'}
 时间：${question.created_at || new Date().toISOString()}
 

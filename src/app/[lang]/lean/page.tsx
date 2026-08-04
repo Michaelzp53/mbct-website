@@ -145,7 +145,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
       <PageHero
         title={ui.pageTitle}
         subtitle={ui.pageSubtitle}
-        bgImage="/images/home-named/industry-insights.jpg"
+        bgImage="/hero-pexels-jimmy-liao.jpg"
       />
 
       {/* Header */}
@@ -155,7 +155,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
               <BookOpen className="w-4 h-4 text-[#f59e0b]" />
               <span className="text-[#f59e0b] text-sm font-medium">
-                {isZh ? 'MBCT · 知识库' : 'MBCT · Knowledge Base'}
+                {isZh ? '迈创兄弟C&T · 知识库' : 'MarvelBros C&T · Knowledge Base'}
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">

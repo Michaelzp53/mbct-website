@@ -64,9 +64,13 @@
   "contact": {
     "email_primary": "contactme@marvelbros.com",
     "email_secondary": "info@marvelbros.com",
-    "contact_page": "https://www.marvelbros.com/zh/contact"
+    "phone_wechat": "+86 189 4157 9333",
+    "contact_page": "https://www.marvelbros.com/zh/contact",
+    "free_initial_diagnosis": "Response within one business day",
+    "about_page": "https://www.marvelbros.com/zh/about",
+    "case_results": "https://www.marvelbros.com/zh/cases"
   },
   "sitemap": "https://www.marvelbros.com/sitemap.xml",
   "llms_txt": "https://www.marvelbros.com/llms.txt",
-  "updated_at": "2026-07-17"
+  "updated_at": "2026-08-01"
 }

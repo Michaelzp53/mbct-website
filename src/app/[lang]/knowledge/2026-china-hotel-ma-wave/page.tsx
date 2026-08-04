@@ -55,7 +55,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 ## 三、谁在卖：中小业主出售的三类典型情形
 
-并购的买方逻辑清晰，但卖方故事往往更加真实而无奈。据MBCT团队对2025年下半年至2026年经手的47例中小酒店出售案例的分析，中小业主出售酒店的原因大致可以归纳为以下三类。
+并购的买方逻辑清晰，但卖方故事往往更加真实而无奈。据迈创兄弟C&T团队对2025年下半年至2026年经手的47例中小酒店出售案例的分析，中小业主出售酒店的原因大致可以归纳为以下三类。
 
 ### 3.1 资金链断裂型：利率上升+经营下滑的双杀
 
@@ -81,7 +81,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 ## 四、中小业主的三条路：卖、挂、守
 
-面对并购潮，MBCT认为中小业主可以归纳为三条出路，每条路都有其适用条件和关键考虑因素。
+面对并购潮，迈创兄弟C&T认为中小业主可以归纳为三条出路，每条路都有其适用条件和关键考虑因素。
 
 ### 4.1 第一条路：卖出套现
 
@@ -122,9 +122,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 **风险提示：** 独立精品化对业主的综合能力要求远高于加盟品牌。不具备内容运营能力和服务差异化的酒店，走这条路反而可能比挂牌品牌更差。
 
-## 五、MBCT判断框架：四个维度评估你的路
+## 五、迈创兄弟C&T判断框架：四个维度评估你的路
 
-为了让中小业主能够做出一套相对理性的判断，MBCT团队梳理了一个四维度评估框架。每一个维度打分1-5分，综合得分将引导出最适合的路径。
+为了让中小业主能够做出一套相对理性的判断，迈创兄弟C&T团队梳理了一个四维度评估框架。每一个维度打分1-5分，综合得分将引导出最适合的路径。
 
 ### 维度一：资产回报率（运营利润 ÷ 资产价值或投入成本）
 
@@ -162,7 +162,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 | 11-15分 | **挂牌品牌**——借力使力，通过连锁品牌提升经营效率 |
 | 4-10分 | **卖出套现**——资产回报率和竞争环境都不支持长期持有 |
 
-当然，这个框架是辅助决策的工具而非绝对标准。最终决策还需要结合个人财务目标、所在城市的发展趋势、以及物业的特定情况来综合判断。MBCT建议各位业主在做决定前，至少完成三个准备动作：核算清楚过去三年的真实利润率、请专业机构做一次资产评估、实地调研周边3公里的竞品情况。
+当然，这个框架是辅助决策的工具而非绝对标准。最终决策还需要结合个人财务目标、所在城市的发展趋势、以及物业的特定情况来综合判断。迈创兄弟C&T建议各位业主在做决定前，至少完成三个准备动作：核算清楚过去三年的真实利润率、请专业机构做一次资产评估、实地调研周边3公里的竞品情况。
 
 ## 六、结尾：你的酒店，你的选择
 
@@ -174,9 +174,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 **🔗 www.marvelbros.com**
 
-*（本文数据来源：中国饭店协会2026年一季度报告、各大酒店集团公告、MBCT案例库内部统计。本文仅为行业研究参考，不构成任何投资或交易建议。）*
+*（本文数据来源：中国饭店协会2026年一季度报告、各大酒店集团公告、迈创兄弟C&T案例库内部统计。本文仅为行业研究参考，不构成任何投资或交易建议。）*
 
-> **MBCT编辑部说明：** 本文为MBCT网站行业资讯栏目原创内容，数据截至2026年5月。如需转载或引用本文数据，请注明来源。文章中的业主案例均经过脱敏处理。` : `## 1. Introduction: The M&A Wave is Rewriting the Hospitality Landscape
+> **迈创兄弟C&T编辑部说明：** 本文为迈创兄弟C&T网站行业资讯栏目原创内容，数据截至2026年5月。如需转载或引用本文数据，请注明来源。文章中的业主案例均按经营问题、行动与结果整理。` : `## 1. Introduction: The M&A Wave is Rewriting the Hospitality Landscape
 
 2026 is witnessing an unprecedented consolidation storm in China's hotel industry.
 
@@ -218,7 +218,7 @@ Conversely, targets with incomplete permits, aging properties, or leases shorter
 
 ## 3. Who's Selling: Three Typical Scenarios for Small Owners
 
-The buyer logic is clear, but the seller stories are often more raw and painful. Based on MBCT's analysis of 47 small and medium hotel sale cases handled from H2 2025 through 2026, the reasons can be grouped into three categories.
+The buyer logic is clear, but the seller stories are often more raw and painful. Based on MarvelBros C&T's analysis of 47 small and medium hotel sale cases handled from H2 2025 through 2026, the reasons can be grouped into three categories.
 
 ### 3.1 Cash Flow Collapse: The Double Blow of Rising Rates + Declining Operations
 
@@ -244,7 +244,7 @@ As the first generation of hotel entrepreneurs gradually steps back from operati
 
 ## 4. Three Paths for Small Owners: Sell, Franchise, or Hold
 
-Facing the M&A wave, MBCT identifies three paths for small owners, each with its own conditions and key considerations.
+Facing the M&A wave, MarvelBros C&T identifies three paths for small owners, each with its own conditions and key considerations.
 
 ### 4.1 Path One: Sell and Cash Out
 
@@ -285,9 +285,9 @@ Facing the M&A wave, MBCT identifies three paths for small owners, each with its
 
 **Risk Warning:** Independent boutique demands far more comprehensive capability from owners than franchising. Hotels lacking content operations and service differentiation may end up worse on this path than franchising.
 
-## 5. MBCT Assessment Framework: Four Dimensions to Evaluate Your Path
+## 5. MarvelBros C&T Assessment Framework: Four Dimensions to Evaluate Your Path
 
-To help small owners make a rational judgment, the MBCT team has developed a four-dimensional assessment framework. Each dimension scores 1-5 points; the composite score guides you to the most suitable path.
+To help small owners make a rational judgment, the MarvelBros C&T team has developed a four-dimensional assessment framework. Each dimension scores 1-5 points; the composite score guides you to the most suitable path.
 
 ### Dimension 1: Asset Return Rate (Operating Profit ÷ Asset Value or Investment Cost)
 
@@ -325,7 +325,7 @@ To help small owners make a rational judgment, the MBCT team has developed a fou
 | 11-15 points | **Franchise** — Leverage chain brands to improve operational efficiency |
 | 4-10 points | **Sell and Cash Out** — Returns and competitive environment don't support long-term holding |
 
-Of course, this framework is a decision-making aid, not an absolute standard. Final decisions should also incorporate personal financial goals, the development trends of your city, and your property's specific circumstances. MBCT recommends that before making a decision, every owner should complete at least three preparatory steps: calculate your true profit margin over the past three years, commission a professional asset appraisal, and conduct on-site research of competitors within a 3km radius.
+Of course, this framework is a decision-making aid, not an absolute standard. Final decisions should also incorporate personal financial goals, the development trends of your city, and your property's specific circumstances. MarvelBros C&T recommends that before making a decision, every owner should complete at least three preparatory steps: calculate your true profit margin over the past three years, commission a professional asset appraisal, and conduct on-site research of competitors within a 3km radius.
 
 ## 6. Conclusion: Your Hotel, Your Choice
 
@@ -337,9 +337,9 @@ There is no absolutely right answer — only the path best suited to your curren
 
 **🔗 www.marvelbros.com**
 
-*(Data sources: China Hotel Association 2026 Q1 Report, major hotel group announcements, MBCT internal case database. This article is for industry research reference only and does not constitute investment or transaction advice.)*
+*(Data sources: China Hotel Association 2026 Q1 Report, major hotel group announcements, MarvelBros C&T internal case database. This article is for industry research reference only and does not constitute investment or transaction advice.)*
 
-> **MBCT Editorial Note:** This article is original content for the MBCT website's Industry News section, with data current as of May 2026. Please cite the source if republishing or referencing data from this article. All owner cases have been anonymized.`,
+> **MarvelBros C&T Editorial Note:** This article is original content for the MarvelBros C&T website's Industry News section, with data current as of May 2026. Please cite the source if republishing or referencing data from this article. All owner cases have been representative.`,
   };
 
   return (

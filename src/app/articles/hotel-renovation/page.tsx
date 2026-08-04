@@ -28,7 +28,7 @@ export default function HotelRenovationArticle() {
             </div>
             
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              30年老酒店的逆袭之路：从濒临倒闭到一房难求的MBCT改造实录
+              30年老酒店的逆袭之路：从濒临倒闭到一房难求的迈创兄弟C&T改造实录
             </h1>
             
             <p className="text-xl text-gray-300">
@@ -59,8 +59,8 @@ export default function HotelRenovationArticle() {
               <li>品牌褪色：曾经的区域标杆逐渐淡出消费者记忆</li>
             </ul>
 
-            <h2>第二章：MBCT存量更新策略</h2>
-            <p>当老王找到MBCT时，团队给出的建议是：“不要关，而是改。不是大改，而是巧改。”</p>
+            <h2>第二章：迈创兄弟C&T存量更新策略</h2>
+            <p>当老王找到迈创兄弟C&T时，团队给出的建议是：“不要关，而是改。不是大改，而是巧改。”</p>
             
             <div className="bg-brand-navy/5 rounded-xl p-6 my-8 border-l-4 border-brand-gold">
               <h3 className="font-bold text-brand-navy mb-3">三大认知转变</h3>
@@ -72,7 +72,7 @@ export default function HotelRenovationArticle() {
             </div>
 
             <h2>第三章：180天蜕变实录</h2>
-            <p>2022年6月，改造工程正式启动。MBCT团队进驻，开始了为期6个月的“酒店重生计划”。</p>
+            <p>2022年6月，改造工程正式启动。迈创兄弟C&T团队进驻，开始了为期6个月的“酒店重生计划”。</p>
             
             <h3>第一步：深度诊断（第1-30天）</h3>
             <ul className="list-disc pl-6 space-y-2">
@@ -145,7 +145,7 @@ export default function HotelRenovationArticle() {
             <p>老酒店的价值不在于“新”，而在于“独特”。改造不是装修工程，而是体验设计。在这个增量红利消失的时代，存量更新不是退而求其次的选择，而是酒店业进化的必经之路。</p>
             
             <blockquote className="border-l-4 border-brand-gold pl-6 py-4 my-8 bg-gray-50 rounded-r-lg">
-              <p className="text-gray-700 italic font-medium">“每一座老酒店，都是一座等待被唤醒的城市记忆。我们的工作，就是让这些记忆在当代重新发光。”——MBCT专业顾问团队</p>
+              <p className="text-gray-700 italic font-medium">“每一座老酒店，都是一座等待被唤醒的城市记忆。我们的工作，就是让这些记忆在当代重新发光。”——迈创兄弟C&T专业顾问团队</p>
             </blockquote>
 
           </div>
@@ -156,7 +156,7 @@ export default function HotelRenovationArticle() {
       <section className="py-12 bg-brand-navy">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold text-white mb-4">需要存量酒店改造咨询？</h3>
-          <p className="text-gray-300 mb-6">MBCT 提供免费初步评估，帮您测算投资回报周期</p>
+          <p className="text-gray-300 mb-6">迈创兄弟C&T 提供免费初步评估，帮您测算投资回报周期</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="btn-gold" size="lg">
               获取免费评估 <ArrowRight className="ml-2 h-5 w-5" />

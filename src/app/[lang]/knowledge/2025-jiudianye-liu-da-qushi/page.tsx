@@ -185,7 +185,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 ---
 
-## 七、MBCT的建议
+## 七、迈创兄弟C&T的建议
 
 ### 建议1：技术投入要"务实"
 
@@ -289,7 +289,7 @@ Remote and hybrid work create demand for:
 
 ---
 
-## MBCT Recommendations
+## MarvelBros C&T Recommendations
 
 1. **Practical technology investment**: Solve real pain points first
 2. **Warm personalization**: Use tech to collect preferences, people to deliver service
@@ -459,7 +459,7 @@ Remote and hybrid work create demand for:
  </div>
  <div>
  <p className="font-semibold text-brand-navy">{article.author}</p>
- <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T' : 'MBCT Content Team'}</p>
+ <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T' : 'MarvelBros C&T Content Team'}</p>
  </div>
  </div>
  </div>

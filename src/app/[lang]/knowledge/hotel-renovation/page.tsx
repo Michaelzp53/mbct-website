@@ -6,9 +6,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const isZh = lang === 'zh'
 
   const article = {
-    title: '30年老酒店的逆袭之路：从濒临倒闭到一房难求的MBCT改造实录',
-    summary: '一家三十年历史酒店如何用1800万改造实现271% RevPAR提升？看MBCT如何用"微手术"激活沉睡资产。',
-    author: 'MarvelBros - MBCT',
+    title: '30年老酒店的逆袭之路：从濒临倒闭到一房难求的迈创兄弟C&T改造实录',
+    summary: '一家三十年历史酒店如何用1800万改造实现271% RevPAR提升？看迈创兄弟C&T如何用"微手术"激活沉睡资产。',
+    author: 'MarvelBros - MarvelBros C&T',
     date: '2026-04-19',
     readTime: '15分钟',
     tag: '案例研究',
@@ -26,9 +26,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 **成本压力：** 人工成本年增8-10%，能耗成本占营收比例超过15%
 **品牌褪色：** 曾经的区域标杆逐渐淡出消费者记忆
 
-## 第二章：MBCT存量更新策略
+## 第二章：迈创兄弟C&T存量更新策略
 
-当业主找到MBCT时，团队给出的建议是："不要关，而是改。不是大改，而是巧改。"
+当业主找到迈创兄弟C&T时，团队给出的建议是："不要关，而是改。不是大改，而是巧改。"
 
 **三大认知转变：**
 1. **存量不是包袱，而是资产** - 拥有新酒店无法复制的时间资产
@@ -37,7 +37,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 ## 第三章：180天蜕变实录
 
-2022年6月，改造工程正式启动。MBCT团队进驻，开始了为期6个月的"酒店重生计划"。
+2022年6月，改造工程正式启动。迈创兄弟C&T团队进驻，开始了为期6个月的"酒店重生计划"。
 
 **第一步：深度诊断（第1-30天）**
 - 访谈120位住店客人，发现核心痛点
@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 老酒店的价值不在于"新"，而在于"独特"。改造不是装修工程，而是体验设计。在这个增量红利消失的时代，存量更新不是退而求其次的选择，而是酒店业进化的必经之路。
 
-> "每一座老酒店，都是一座等待被唤醒的城市记忆。我们的工作，就是让这些记忆在当代重新发光。" —— MBCT专业顾问团队
+> "每一座老酒店，都是一座等待被唤醒的城市记忆。我们的工作，就是让这些记忆在当代重新发光。" —— 迈创兄弟C&T专业顾问团队
     `,
   }
 

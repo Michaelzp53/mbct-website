@@ -289,7 +289,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
               {isZh ? '查看服务' : 'View Service'}
             </Link>
             <Link href={`/${lang}/contact`} className="rounded-full border border-[#f59e0b]/40 px-4 py-2 text-sm font-semibold text-[#b45309]">
-              {isZh ? '联系 MBCT' : 'Contact MBCT'}
+              {isZh ? '联系 迈创兄弟C&T' : 'Contact MarvelBros C&T'}
             </Link>
           </div>
         </div>

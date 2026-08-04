@@ -22,7 +22,7 @@ async function ensureCommentTables() {
     CREATE TABLE IF NOT EXISTS comments (
       id SERIAL PRIMARY KEY,
       article_slug VARCHAR(255) NOT NULL,
-      nickname VARCHAR(100) DEFAULT '匿名用户',
+      nickname VARCHAR(100) DEFAULT '酒店同行',
       content TEXT NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
@@ -43,14 +43,14 @@ export async function POST(request: Request) {
 
     await ensureCommentTables();
 
-    let article = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
+    const article = await sql`SELECT * FROM articles WHERE slug = ${slug}`;
     if (article.rows.length === 0) {
       await sql`INSERT INTO articles (slug, title, category, views, likes) VALUES (${slug}, ${slug}, 'unknown', 0, 0) ON CONFLICT (slug) DO NOTHING`;
     }
 
     const result = await sql`
       INSERT INTO comments (article_slug, nickname, content)
-      VALUES (${slug}, ${nickname || '匿名用户'}, ${content.trim()})
+      VALUES (${slug}, ${nickname || '酒店同行'}, ${content.trim()})
       RETURNING *
     `;
 

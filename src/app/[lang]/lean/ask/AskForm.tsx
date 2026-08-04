@@ -82,8 +82,8 @@ export default function AskForm({ lang }: AskFormProps) {
     submit: isZh ? '提交问题' : 'Submit Question',
     submitting: isZh ? '提交中...' : 'Submitting...',
     privacy: isZh
-      ? '提交即表示同意将问题公开（匿名化），供其他酒店管理者参考'
-      : 'By submitting, you agree to make this question public (anonymized) for other hotel managers to learn from',
+      ? '提交即表示同意将问题收录为行业问答，供其他酒店管理者参考'
+      : 'By submitting, you agree that the question may be included in the industry Q&A for other hotel managers.',
     successTitle: isZh ? '问题已收到！' : 'Question Received!',
     successMessage: isZh
       ? '迈创兄弟将在48小时内回复。精选问答将在管享精道展示。'

@@ -7,9 +7,11 @@ import type { Dict } from '@/lib/dicts'
 
 interface ContactFormProps {
   dict: Dict
+  lang: string
 }
 
-export function ContactForm({ dict }: ContactFormProps) {
+export function ContactForm({ dict, lang }: ContactFormProps) {
+  const isZh = lang === 'zh'
   const searchParams = useSearchParams()
   const type = searchParams.get('type')
   const isAiInfoPlatform = type === 'ai-website-audit' || type === 'ai-info-platform'
@@ -25,7 +27,11 @@ export function ContactForm({ dict }: ContactFormProps) {
     name: '',
     phone: '',
     email: '',
-    company: '',
+    identity: '',
+    location: '',
+    projectStage: '',
+    roomCount: '',
+    preferredTime: '',
     websiteStatus: '',
     priorityIssue: '',
     otaShare: '',
@@ -49,7 +55,13 @@ export function ContactForm({ dict }: ContactFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
+          company: form.identity,
           message: [
+            `${isZh ? '身份' : 'Role'}: ${form.identity}`,
+            `${isZh ? '酒店所在地' : 'Hotel location'}: ${form.location}`,
+            `${isZh ? '项目阶段' : 'Project stage'}: ${form.projectStage}`,
+            `${isZh ? '客房数' : 'Room count'}: ${form.roomCount}`,
+            `${isZh ? '期望沟通时间' : 'Preferred contact time'}: ${form.preferredTime}`,
             isAiInfoPlatform && form.websiteStatus ? `${dict.contact.form.websiteStatus}: ${form.websiteStatus}` : '',
             isAiInfoPlatform && form.priorityIssue ? `${dict.contact.form.priorityIssue}: ${form.priorityIssue}` : '',
             isAiInfoPlatform && form.otaShare ? `${dict.contact.form.otaShare}: ${form.otaShare}` : '',
@@ -71,7 +83,11 @@ export function ContactForm({ dict }: ContactFormProps) {
         name: '',
         phone: '',
         email: '',
-        company: '',
+        identity: '',
+        location: '',
+        projectStage: '',
+        roomCount: '',
+        preferredTime: '',
         websiteStatus: '',
         priorityIssue: '',
         otaShare: '',
@@ -124,25 +140,47 @@ export function ContactForm({ dict }: ContactFormProps) {
             </div>
           </div>
 
-          {/* Email + Company */}
+          {/* Identity + Location */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.email}{isDiagnosis ? (dict.contact.form.email.includes('Email') ? ' (optional)' : '（选填）') : ''}</label>
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{isZh ? '您的身份' : 'Your role'}</label>
+              <select
+                required
+                value={form.identity}
+                onChange={(e) => setForm({ ...form, identity: e.target.value })}
+                className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+              >
+                <option value="">{isZh ? '请选择' : 'Select one'}</option>
+                {(isZh ? ['酒店投资人', '酒店业主', '总经理/管理者', '酒店集团/品牌方', '筹开项目负责人', '其他'] : ['Hotel investor', 'Hotel owner', 'General manager / operator', 'Hotel group / brand', 'Pre-opening project lead', 'Other']).map((option) => <option key={option} value={option}>{option}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{isZh ? '酒店所在地' : 'Hotel location'}</label>
               <input
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                type="text"
+                required
+                value={form.location}
+                onChange={(e) => setForm({ ...form, location: e.target.value })}
                 className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
               />
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <div>
-              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.company}</label>
-              <input
-                type="text"
-                value={form.company}
-                onChange={(e) => setForm({ ...form, company: e.target.value })}
-                className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
-              />
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{isZh ? '项目阶段' : 'Project stage'}</label>
+              <select required value={form.projectStage} onChange={(e) => setForm({ ...form, projectStage: e.target.value })} className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
+                <option value="">{isZh ? '请选择' : 'Select one'}</option>
+                {(isZh ? ['投前评估', '定位/设计', '筹建筹开', '在营改善', '改造/重塑'] : ['Pre-investment', 'Positioning / design', 'Development / pre-opening', 'Operating improvement', 'Renovation / repositioning']).map((option) => <option key={option} value={option}>{option}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{isZh ? '客房数' : 'Room count'}</label>
+              <input type="number" min="1" required value={form.roomCount} onChange={(e) => setForm({ ...form, roomCount: e.target.value })} className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">{isZh ? '期望沟通时间' : 'Preferred contact time'}</label>
+              <input type="text" required value={form.preferredTime} onChange={(e) => setForm({ ...form, preferredTime: e.target.value })} placeholder={isZh ? '如：工作日下午' : 'e.g. weekday afternoons'} className="w-full h-10 px-3 rounded-lg border border-input bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
             </div>
           </div>
 
@@ -208,7 +246,7 @@ export function ContactForm({ dict }: ContactFormProps) {
 
           {/* Message */}
           <div>
-            <label className="block text-sm font-medium text-muted-foreground mb-1.5">{dict.contact.form.message}</label>
+            <label className="block text-sm font-medium text-muted-foreground mb-1.5">{isZh ? '当前最主要的问题' : 'Your most urgent issue'}</label>
             <textarea
               required
               rows={4}

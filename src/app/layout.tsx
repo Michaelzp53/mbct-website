@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     '@type': 'Organization',
     '@id': 'https://www.marvelbros.com/#organization',
     name: 'MarvelBros C&T',
-    alternateName: ['迈创兄弟C&T', 'MBCT'],
+    alternateName: ['迈创兄弟C&T', 'MarvelBros C&T'],
     url: 'https://www.marvelbros.com',
     logo: 'https://www.marvelbros.com/logo-new.png',
     email: 'contactme@marvelbros.com',

@@ -56,7 +56,7 @@ export async function POST(request: Request) {
     const service = body.service?.trim() || ''
     const message = body.message?.trim() || ''
 
-    if (!name || !phone || !email || !service || !message) {
+    if (!name || !phone || !service || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
@@ -95,9 +95,9 @@ export async function POST(request: Request) {
       },
     })
 
-    const subject = `【MBCT官网新咨询】${service} - ${name}`
+    const subject = `【迈创兄弟C&T官网新咨询】${service} - ${name}`
     const text = [
-      'MBCT 官网收到新的咨询表单：',
+      '迈创兄弟C&T 官网收到新的咨询表单：',
       '',
       `姓名：${name}`,
       `电话：${phone}`,

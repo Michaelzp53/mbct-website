@@ -154,7 +154,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
 **免责声明**：本文数据来源为政府公开文件、行业研究报告及媒体报道，部分数据为估算值，仅供参考。投资决策需自行判断。
 
-**关于MBCT**：卖创兄弟商业科技，专注于酒店业资讯与分析。
+**关于迈创兄弟C&T**：卖创兄弟商业科技，专注于酒店业资讯与分析。
 
 ※ 本文部分内容由 AI 辅助生成
  ` : `
@@ -277,7 +277,7 @@ The answer isn't in the policy. It's in your choices.
 
 **Disclaimer**: Data sourced from government documents, industry research, and media reports. Some figures are estimates. Investment decisions require independent judgment.
 
-**About MBCT**: Marvel Bros. Commercial Technology — Hotel Industry Insights & Analysis.
+**About MarvelBros C&T**: Marvel Bros. Commercial Technology — Hotel Industry Insights & Analysis.
 
 ※ Portions of this article were AI-assisted.
  `,
@@ -441,7 +441,7 @@ The answer isn't in the policy. It's in your choices.
  </div>
  <div>
  <p className="font-semibold text-brand-navy">{article.author}</p>
- <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T' : 'MBCT Content Team'}</p>
+ <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T' : 'MarvelBros C&T Content Team'}</p>
  </div>
  </div>
  </div>

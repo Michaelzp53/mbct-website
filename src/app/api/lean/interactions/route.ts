@@ -33,7 +33,7 @@ async function ensureInteractionTables() {
     CREATE TABLE IF NOT EXISTS comments (
       id SERIAL PRIMARY KEY,
       article_slug VARCHAR(255) NOT NULL,
-      nickname VARCHAR(100) DEFAULT '匿名用户',
+      nickname VARCHAR(100) DEFAULT '酒店同行',
       content TEXT NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )

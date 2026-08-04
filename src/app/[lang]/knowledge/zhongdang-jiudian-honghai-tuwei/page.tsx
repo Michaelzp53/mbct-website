@@ -60,7 +60,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 - 优点：完全自主，品牌溢价归自己
 - 缺点：投入大，风险高，成功概率低
 
-### 1.3 MBCT建议
+### 1.3 迈创兄弟C&T建议
 
 **对于新手投资人**：选择头部品牌加盟，降低风险
 **对于有经验的投资人**：可以考虑区域品牌或自创品牌
@@ -419,7 +419,7 @@ Results:
  </div>
  <div>
  <p className="font-semibold text-brand-navy">{article.author}</p>
- <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T' : 'MBCT Content Team'}</p>
+ <p className="text-sm text-muted-foreground">{isZh ? '迈创兄弟C&T' : 'MarvelBros C&T Content Team'}</p>
  </div>
  </div>
  </div>

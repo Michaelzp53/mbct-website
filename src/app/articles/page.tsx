@@ -6,6 +6,6 @@ export default function ArticlesPage() {
 
 export function generateMetadata() {
   return {
-    title: '管享精道 - MBCT',
+    title: '管享精道 - 迈创兄弟C&T',
   }
 }

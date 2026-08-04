@@ -8,8 +8,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
  const article = {
  title: isZh ? '万豪希尔顿首次警告：ChatGPT等AI平台正在威胁酒店直订渠道' : 'Marriott and Hilton Warn: AI Platforms Threaten Direct Bookings',
  summary: isZh 
- ? '万豪和希尔顿在SEC文件中首次将AI平台列为风险因素。AI可能将客户导向OTA，佣金率15-25%。MBCT分析两种结局：酒店沦为内容供应商，或AI成为直订利器。'
- : 'Marriott and Hilton first list AI platforms as risk factors in SEC filings. AI may redirect customers to OTAs with 15-25% commission rates. MBCT analyzes two outcomes.',
+ ? '万豪和希尔顿在SEC文件中首次将AI平台列为风险因素。AI可能将客户导向OTA，佣金率15-25%。迈创兄弟C&T分析两种结局：酒店沦为内容供应商，或AI成为直订利器。'
+ : 'Marriott and Hilton first list AI platforms as risk factors in SEC filings. AI may redirect customers to OTAs with 15-25% commission rates. MarvelBros C&T analyzes two outcomes.',
  author: '迈创兄弟C&T',
  date: '2026-05-09',
  readTime: isZh ? '6分钟' : '6 min',
@@ -39,9 +39,9 @@ OTA平台佣金率15%-25%，酒店官网直订仅需0%-5%（忠诚度会员维�
 
 希尔顿选择自建AI能力：推出Hilton Studios自有AI助手，在自有数字生态内完成客户咨询到预订的闭环。战略逻辑：把入口掌控在自己手里。
 
-## 五、MBCT观察：AI是威胁还是机遇？
+## 五、迈创兄弟C&T观察：AI是威胁还是机遇？
 
-MBCT认为，AI对酒店直订渠道的影响取决于一个核心问题：谁掌控客户入口。
+迈创兄弟C&T认为，AI对酒店直订渠道的影响取决于一个核心问题：谁掌控客户入口。
 
 结局A：酒店沦为内容供应商。AI平台主导搜索入口，酒店官网成为后台库存，佣金成本持续攀升，品牌与客户的直接联系被切断。
 
@@ -63,7 +63,7 @@ MBCT认为，AI对酒店直订渠道的影响取决于一个核心问题：谁�
 
 对酒店而言，这既是成本威胁，也是效率机遇。关键在于，主动布局者将赢得先机，被动等待者将被佣金成本吞噬利润。
 
-MBCT将持续关注AI与酒店业的融合发展，为行业提供最新洞察。
+迈创兄弟C&T将持续关注AI与酒店业的融合发展，为行业提供最新洞察。
 
 ---
 
@@ -93,9 +93,9 @@ Marriott chose to partner with Google for AI direct bookings: embedding direct b
 
 Hilton chose to build its own AI capabilities: launching Hilton Studios proprietary AI assistant, completing the closed loop from customer inquiry to booking within its own digital ecosystem. Strategic logic: keep the entry point in their own hands.
 
-## V. MBCT Observation: Threat or Opportunity?
+## V. MarvelBros C&T Observation: Threat or Opportunity?
 
-MBCT believes the impact of AI on hotel direct booking channels depends on one core question: who controls the customer entry point.
+MarvelBros C&T believes the impact of AI on hotel direct booking channels depends on one core question: who controls the customer entry point.
 
 Outcome A: Hotels become content suppliers. AI platforms dominate search entry points, hotel websites become backend inventory, commission costs continue to rise, and direct brand-customer connections are severed.
 
@@ -117,7 +117,7 @@ The warnings from Marriott and Hilton reveal an undeniable trend: AI is reshapin
 
 For hotels, this is both a cost threat and an efficiency opportunity. The key is that proactive planners will gain the advantage, while passive waiters will see profits eroded by commission costs.
 
-MBCT will continue to monitor the integration of AI and the hotel industry, providing the latest insights for the sector.
+MarvelBros C&T will continue to monitor the integration of AI and the hotel industry, providing the latest insights for the sector.
 
 ---
 

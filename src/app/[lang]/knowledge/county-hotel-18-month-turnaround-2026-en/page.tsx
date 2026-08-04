@@ -7,8 +7,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
 
   const article = {
     title: 'From Loss to Profit: A County-Town Single Hotel\'s 18-Month Turnaround Story',
-    summary: 'A county-town business hotel with 60 rooms, occupancy consistently below 45%. After MBCT intervention, 18 months to achieve occupancy from 45% to 68%, RevPAR doubled, cumulative profit restored.',
-    author: 'MBCT',
+    summary: 'A county-town business hotel with 60 rooms, occupancy consistently below 45%. After MarvelBros C&T intervention, 18 months to achieve occupancy from 45% to 68%, RevPAR doubled, cumulative profit restored.',
+    author: 'MarvelBros C&T',
     date: '2026-05-27',
     readTime: '18 min',
     tag: 'Case Study',
@@ -19,13 +19,13 @@ Early 2024. A county town in Central China.
 
 Lao Zhou had been running a business hotel in this county for five years. Sixty rooms—and in the early days after opening, things had hummed along nicely. But over time, the situation had steadily deteriorated. Occupancy had been stuck below 45% for ages, and during the off-season, it would dip below 30%. The numbers in his ledger looked grimmer by the month. He couldn't remember the last time he'd actually slept through the night without worry.
 
-"The pricing was completely out of control." Lao Zhou sighed just talking about it. During the tourism peak season, he'd wanted to raise rates—but staff had taken it upon themselves to charge returning customers extra without authorization, which led to guests screenshotting their invoices and posting scathing reviews online. When the off-season came and he wanted to offer discounts, he held back for fear of upsetting regular clients who might feel they'd been overcharged. So nothing changed. Room rates were like a poorly seasoned soup—exactly the same in peak and off-peak, the same on weekdays and weekends, and sometimes even two adjacent rooms would be quoted fifty yuan apart.
+"The pricing was completely out of control." Lao Zhou sighed just talking about it. During the tourism peak season, he'd wanted to raise rates—but staff had taken it upon themselves to charge returning customers extra outside approved procedures, which led to guests screenshotting their invoices and posting scathing reviews online. When the off-season came and he wanted to offer discounts, he held back for fear of upsetting regular clients who might feel they'd been overcharged. So nothing changed. Room rates were like a poorly seasoned soup—exactly the same in peak and off-peak, the same on weekdays and weekends, and sometimes even two adjacent rooms would be quoted fifty yuan apart.
 
 The staffing situation was equally thorny. Labor costs at 38% of revenue was already considered on the high side for this county town, yet his team still couldn't hold onto people. Within six months, the front desk had cycled through three different supervisors. Service standards existed in name only. Guests complained about twenty-minute waits for check-in; when Lao Zhou reviewed the security footage, he found the front desk staff chatting with each other instead. "It's not that I didn't try to manage them—it's that even when I did, they still left." He said it with resignation.
 
 What kept him up at night even more was the distribution channel structure. OTA bookings accounted for more than 80% of his business. Commission rates kept climbing, squeezing his margins thinner and thinner. Guests were "one-offs"—they checked in, they checked out, and that was it. No loyalty, no repeat visits. The hotel ranked poorly on platforms, yet it had no choice but to depend on them—a vicious cycle with no obvious exit.
 
-In March 2024, Lao Zhou attended a regional hotel industry seminar. It was there, for the first time, that he heard the name MBCT. After the session ended, he didn't rush to leave. Instead, he approached one of MBCT's consultants and talked for twenty minutes.
+In March 2024, Lao Zhou attended a regional hotel industry seminar. It was there, for the first time, that he heard the name MarvelBros C&T. After the session ended, he didn't rush to leave. Instead, he approached one of MarvelBros C&T's consultants and talked for twenty minutes.
 
 "You're right—I have a small operation, limited capital. I can't afford a dramatic overhaul," Lao Zhou told him. "But I'm tired of just limping along like this. I need someone to tell me exactly what's wrong with my hotel."
 
@@ -33,7 +33,7 @@ In March 2024, Lao Zhou attended a regional hotel industry seminar. It was there
 
 ## 2. Diagnosis: 72 Hours of Deep Investigation to Find the Real Problems
 
-The MBCT team took on the project. On their first day on-site, the consultants didn't rush to present a solution. Instead, they spent a full 72 hours conducting a comprehensive "health check" of the hotel.
+The MarvelBros C&T team took on the project. On their first day on-site, the consultants didn't rush to present a solution. Instead, they spent a full 72 hours conducting a comprehensive "health check" of the hotel.
 
 Over those three days, team members split up and worked in parallel: observing check-in procedures from the front desk, pulling historical data from various OTA platforms, conducting one-on-one interviews with frontline staff, reviewing two years of financial statements and booking records, and even staying overnight as a "mystery guest" to experience the full guest journey from reservation to checkout.
 
@@ -57,25 +57,25 @@ On the last page of the report, there was a handwritten note from the lead consu
 
 ## 3. The Plan: 18 Months, Three Phases, No Unnecessary Disruption
 
-Based on the diagnostic findings, MBCT tailored an 18-month rectification roadmap for the hotel, structured across three distinct phases.
+Based on the diagnostic findings, MarvelBros C&T tailored an 18-month rectification roadmap for the hotel, structured across three distinct phases.
 
 **Months 1–3: The Bleeding-Stopping Phase**
 
-Stopping the bleeding came first. MBCT consultants helped the hotel systematically develop and implement new dynamic pricing rules for rooms. These rules, built on occupancy data, established four pricing tiers—Early Bird, Standard, High-Demand, and Sold-Out—corresponding to different booking lead times and occupancy ranges. Front desk SOPs (Standard Operating Procedures) were updated simultaneously, covering the full guest journey from check-in and room introductions to complaint handling and check-out farewells, followed by on-site training to ensure every staff member could execute them correctly.
+Stopping the bleeding came first. MarvelBros C&T consultants helped the hotel systematically develop and implement new dynamic pricing rules for rooms. These rules, built on occupancy data, established four pricing tiers—Early Bird, Standard, High-Demand, and Sold-Out—corresponding to different booking lead times and occupancy ranges. Front desk SOPs (Standard Operating Procedures) were updated simultaneously, covering the full guest journey from check-in and room introductions to complaint handling and check-out farewells, followed by on-site training to ensure every staff member could execute them correctly.
 
-"For the first three months, we didn't make any major marketing moves—we focused on building solid fundamentals," an MBCT consultant recalled. "We made sure staff understood what the standards were, and we made sure the pricing system knew how to move."
+"For the first three months, we didn't make any major marketing moves—we focused on building solid fundamentals," an MarvelBros C&T consultant recalled. "We made sure staff understood what the standards were, and we made sure the pricing system knew how to move."
 
 **Months 4–9: The Stabilization Phase**
 
-In the second phase, the hotel began building its own membership program. MBCT helped set up a simple points-based membership system, opening up direct booking channels through phone and WeChat, and launching a targeted outreach campaign inviting past guests to join. Members enjoyed perks like late check-out, complimentary room upgrades, and points redemption—benefits that gradually moved the needle on repeat bookings.
+In the second phase, the hotel began building its own membership program. MarvelBros C&T helped set up a simple points-based membership system, opening up direct booking channels through phone and WeChat, and launching a targeted outreach campaign inviting past guests to join. Members enjoyed perks like late check-out, complimentary room upgrades, and points redemption—benefits that gradually moved the needle on repeat bookings.
 
 Labor costs were also optimized during this phase. Through role consolidation, skills training, and more precise scheduling, the hotel gradually brought its labor cost ratio down from 38% to 28%. Two employees did leave due to role adjustments, but the overwhelming majority of core staff stayed on. "The people who stayed did so because they could see the change—they felt like there was finally something worth working toward here." the consultant noted.
 
 **Months 10–18: The Growth Phase**
 
-The third phase focused on diversifying the guest base. MBCT helped the hotel negotiate weekday corporate rate agreements with two nearby scenic attractions, attracting self-drive tourists during mid-week stays. Simultaneously, the hotel signed travel agreements with several large local enterprises, launching monthly package services with preferential rates for business travelers with frequent trips. These two initiatives directly boosted Monday-through-Thursday occupancy, addressing the traditional weakness cycle that plagues business hotels.
+The third phase focused on diversifying the guest base. MarvelBros C&T helped the hotel negotiate weekday corporate rate agreements with two nearby scenic attractions, attracting self-drive tourists during mid-week stays. Simultaneously, the hotel signed travel agreements with several large local enterprises, launching monthly package services with preferential rates for business travelers with frequent trips. These two initiatives directly boosted Monday-through-Thursday occupancy, addressing the traditional weakness cycle that plagues business hotels.
 
-Alongside this, MBCT consultants conducted monthly data reviews, tracking RevPAR trends, membership conversion rates, and channel contribution percentages—continuously refining pricing strategies and marketing investment direction.
+Alongside this, MarvelBros C&T consultants conducted monthly data reviews, tracking RevPAR trends, membership conversion rates, and channel contribution percentages—continuously refining pricing strategies and marketing investment direction.
 
 ---
 
@@ -99,21 +99,21 @@ By month 18, cumulative P&L officially turned positive.
 
 OTA dependency dropped from 80% to 52%. In tandem, the direct sales channel contributed 28% of bookings, with a member repeat-booking rate of 22%. For a county-town business hotel, that number represented a qualitative leap—it meant the hotel had finally begun building its own kind of "fixed asset": not the rooms, but the guests who kept coming back.
 
-"The hardest part was never making the numbers look better. It was making this hotel into a system that could actually run on its own." The MBCT consultant wrote in the project debrief. "Lao Zhou can finally sleep through the night now, because he knows—even if he's not at the hotel, this system keeps turning."
+"The hardest part was never making the numbers look better. It was making this hotel into a system that could actually run on its own." The MarvelBros C&T consultant wrote in the project debrief. "Lao Zhou can finally sleep through the night now, because he knows—even if he's not at the hotel, this system keeps turning."
 
 ---
 
-## 5. MBCT's Perspective: For County-Town Single Hotels, the Answer Isn't in the Renovation
+## 5. MarvelBros C&T's Perspective: For County-Town Single Hotels, the Answer Isn't in the Renovation
 
 This story is a microcosm of countless county-town single hotels across the country.
 
 They're not short on guests—China's county-level economy is full of momentum, and demand for business travel, family visits, and weekend getaways continues to grow. What they lack is an operational system that can capture that demand, retain guests, and convert them into repeat customers.
 
-MBCT has always maintained: the core of a turnaround for county-town single hotels doesn't lie in cosmetic renovations. It lies in **rebuilding the management system.** Clear pricing logic, executable service standards, and a membership system that builds guest loyalty—these things may not sound glamorous, but they are precisely what allows a small hotel to truly stand on solid ground.
+MarvelBros C&T has always maintained: the core of a turnaround for county-town single hotels doesn't lie in cosmetic renovations. It lies in **rebuilding the management system.** Clear pricing logic, executable service standards, and a membership system that builds guest loyalty—these things may not sound glamorous, but they are precisely what allows a small hotel to truly stand on solid ground.
 
 Diagnosis before strategy. Data before intuition.
 
-This is the starting point of MBCT's methodology—and the first action taken on every project. We don't buy into the fairy tale of "one solution fits all stores." Every hotel faces a unique set of challenges. Only by genuinely immersing ourselves in day-to-day operations and understanding the data can we develop truly effective solutions.
+This is the starting point of MarvelBros C&T's methodology—and the first action taken on every project. We don't buy into the fairy tale of "one solution fits all stores." Every hotel faces a unique set of challenges. Only by genuinely immersing ourselves in day-to-day operations and understanding the data can we develop truly effective solutions.
 
 ---
 
@@ -212,9 +212,9 @@ Website: www.marvelbros.com | Email: info@marvelbros.com
             {isZh ? '想了解您的酒店如何提升业绩？' : 'Want to improve your hotel performance?'}
           </h3>
           <p className="text-blue-700 dark:text-blue-300 mb-4">
-            {isZh 
-              ? 'MBCT提供免费经营诊断，分析您酒店的核心问题与提升空间。' 
-              : 'MBCT offers free operational diagnosis to analyze your hotel core issues and improvement opportunities.'}
+            {isZh
+              ? '迈创兄弟C&T提供免费经营诊断，分析您酒店的核心问题与提升空间。'
+              : 'MarvelBros C&T offers free operational diagnosis to analyze your hotel core issues and improvement opportunities.'}
           </p>
           <Link 
             href={`/${lang}/contact`}

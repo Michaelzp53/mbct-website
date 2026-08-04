@@ -67,7 +67,7 @@ export default async function PrivacyPage({
               </h2>
               <p>
                 {lang === 'zh'
-                  ? '我们采用行业标准的安全措施保护您的个人信息，防止未经授权的访问、使用或泄露。'
+                  ? '我们采用行业标准的安全措施保护您的个人信息，防止非法访问、使用或泄露。'
                   : 'We employ industry-standard security measures to protect your personal information from unauthorized access, use, or disclosure.'}
               </p>
             </section>

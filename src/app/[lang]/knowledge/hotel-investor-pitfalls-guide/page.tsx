@@ -9,7 +9,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
   const article = {
     title: '酒店投资人避坑指南：3个"伪热点"让多少投资人亏钱？',
     summary: '下沉市场翻番增长、电竞酒店合规化红利、OTA高佣金认命论——三个看起来很美的伪热点，实际分析后发现都是坑。',
-    author: 'MBCT机构研究中心',
+    author: '迈创兄弟C&T机构研究中心',
     date: '2026-05-02',
     readTime: '10分钟',
     tag: '案例研究',

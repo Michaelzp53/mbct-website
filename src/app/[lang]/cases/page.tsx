@@ -14,8 +14,11 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>
 }): Promise<Metadata> {
   const { lang } = await params
-  const dict = getDict(lang)
-  return { title: dict.nav.cases }
+  const isZh = lang === 'zh'
+  return {
+    title: isZh ? '案例成果｜酒店问题如何被诊断并转化为结果？' : 'Case Results | How Hotel Problems Become Results',
+    description: isZh ? '查看迈创兄弟C&T酒店项目案例，了解核心问题、执行动作与量化结果。' : 'Review MarvelBros C&T hotel projects through the core problem, actions taken, and quantified results.',
+  }
 }
 
 export default async function CasesPage({
@@ -46,8 +49,8 @@ export default async function CasesPage({
   return (
     <>
       <PageHero
-        title={dict.nav.cases}
-        subtitle={dict.cases.subtitle}
+        title={isZh ? '经营问题如何从判断到验证直至改善结果？' : 'How do operating problems move from judgment to verification and measurable improvement?'}
+        subtitle={isZh ? '从核心问题、关键行动到量化结果，以下项目案例展示迈创兄弟C&T如何推动酒店经营改善。' : 'From core problems and decisive actions to quantified results, these project cases show how MarvelBros C&T advances hotel performance.'}
         bgImage="/images/home-named/solutions-dining.jpg"
       />
 
@@ -56,15 +59,15 @@ export default async function CasesPage({
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-stretch">
             <div className="rounded-3xl border border-border bg-card p-8 md:p-10 shadow-sm">
               <p className="text-sm font-medium text-primary mb-4">
-                {isZh ? '真实项目，按商业保密要求脱敏' : 'Real projects, anonymized for commercial confidentiality'}
+                {isZh ? '项目成果，以问题、行动和结果为证' : 'Project results evidenced by problems, actions, and outcomes'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
-                {isZh ? '每一个案例，都对应一类酒店的经营卡点' : 'Every case addresses a real hotel business bottleneck'}
+                {isZh ? '我们为酒店投资者，补足筹开和经营短板' : 'We help hotel investors close pre-opening and operating gaps'}
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl">
                 {isZh
-                  ? '案例重点不是客户名称，而是项目遇到了什么难题、团队采取了什么动作、经营结果发生了什么变化。酒店名称、城市、时间及可能识别客户的信息均已做必要脱敏。'
-                  : 'The value of a case is not the client name. It is the business problem, the actions taken, and the operating change achieved. Names, locations, dates, and identifying details have been anonymized.'}
+                  ? '每个案例都围绕三个关键事实展开：项目遇到了什么难题、团队采取了什么行动、经营结果发生了什么变化。'
+                  : 'Each case is built around three essential facts: the business problem, the actions taken, and the operating change achieved.'}
               </p>
             </div>
 
@@ -199,7 +202,7 @@ export default async function CasesPage({
                       <Quote className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                       <p className="text-muted-foreground leading-relaxed">{t.content}</p>
                     </div>
-                    <p className="text-xs text-muted-foreground">{isZh ? '真实项目反馈，身份信息已脱敏' : 'Real project feedback, identity anonymized'}</p>
+                    <p className="text-xs text-muted-foreground">{isZh ? '项目反馈，聚焦实际改善结果' : 'Project feedback focused on measurable improvement'}</p>
                   </div>
                 </div>
               </div>

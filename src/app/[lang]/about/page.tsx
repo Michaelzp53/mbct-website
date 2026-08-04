@@ -170,7 +170,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="py-20 md:py-28">
         <div className="mx-auto grid max-w-[1440px] gap-14 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-12 xl:px-16">
           <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
-            <Image src="/images/home-refresh/front-desk-service.jpg" alt={isZh ? '酒店团队在真实服务现场协同工作' : 'A hotel team collaborating in a real service setting'} fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" loading="eager" unoptimized />
+            <Image src="/images/photography/team-advisory.jpg" alt={isZh ? '专业顾问团队围绕酒店项目开展讨论' : 'Professional advisers discussing a hotel project'} fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover object-center" />
           </div>
           <div>
             <h2 className="text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '团队协作，避免“各说各话”？' : 'How does team collaboration prevent disconnected advice?'}</h2>
@@ -184,7 +184,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href={`/${lang}/cases`} className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d98b28] px-6 py-3 font-semibold text-slate-950 hover:bg-amber-400">{isZh ? '查看案例成果' : 'Review case results'}<ArrowRight className="size-5" /></Link>
-              <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#d98b28] px-6 py-3 font-semibold text-[#b86d13] hover:bg-amber-50 dark:text-amber-300 dark:hover:bg-white/10">{isZh ? '申请免费初步诊断' : 'Request a free diagnosis'}<ArrowRight className="size-5" /></Link>
+              <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#d98b28] px-6 py-3 font-semibold text-[#b86d13] hover:bg-amber-50 dark:text-amber-300 dark:hover:bg-white/10">{isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}<ArrowRight className="size-5" /></Link>
             </div>
           </div>
         </div>

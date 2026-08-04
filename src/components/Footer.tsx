@@ -20,7 +20,7 @@ export function Footer({ lang, dict }: FooterProps) {
   ]
 
   const companyLinks = [
-    { label: isZh ? '专业力量' : 'Capabilities', href: `/${lang}/about` },
+    { label: isZh ? '关于我们' : 'About Us', href: `/${lang}/about` },
     { label: isZh ? '解决方案' : 'Solutions', href: `/${lang}/services` },
     { label: isZh ? 'AI搜索获客' : 'AI search acquisition', href: `/${lang}/services/ai-hotel-website` },
     { label: isZh ? '联系我们' : 'Contact', href: `/${lang}/contact` },
@@ -60,7 +60,7 @@ export function Footer({ lang, dict }: FooterProps) {
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold">{isZh ? 'MBCT' : 'MBCT'}</h2>
+            <h2 className="text-sm font-semibold">{isZh ? '迈创兄弟C&T' : 'MarvelBros C&T'}</h2>
             <ul className="mt-5 space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.href}>
@@ -73,16 +73,16 @@ export function Footer({ lang, dict }: FooterProps) {
           <div>
             <h2 className="text-sm font-semibold">{isZh ? '直接联系' : 'Direct contact'}</h2>
             <div className="mt-5 space-y-4">
-              <a href="tel:18941579333" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-[#0b4a6f] dark:text-slate-200 dark:hover:text-sky-300">
+              <a href="tel:+8618941579333" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-[#0b4a6f] dark:text-slate-200 dark:hover:text-sky-300">
                 <Phone className="h-4 w-4 text-[#d98b28]" />
-                18941579333
+                +86 189 4157 9333
               </a>
               <a href="mailto:info@marvelbros.com" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-[#0b4a6f] dark:text-slate-200 dark:hover:text-sky-300">
                 <Mail className="h-4 w-4 text-[#d98b28]" />
                 info@marvelbros.com
               </a>
               <Link href={`/${lang}/contact?type=diagnosis`} className="mt-5 inline-flex items-center gap-2 border-b-2 border-[#d98b28] pb-1 text-sm font-semibold">
-                {isZh ? '交流酒店项目' : 'Discuss a hotel project'}
+                {isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

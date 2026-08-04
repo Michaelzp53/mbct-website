@@ -131,13 +131,13 @@ export default async function ContactPage({
             ? (isZh ? '酒店业主经营诊断' : 'Hotel Operational Diagnosis for Owners')
           : isPlan
             ? (isZh ? '先获取项目判断路径，再决定下一步怎么推进' : 'Get a clear project path before deciding the next move')
-            : (isZh ? '先把项目现状讲清楚，再决定下一步怎么做' : 'Clarify the current project situation first, then decide what should happen next')}
+            : (isZh ? '把项目现状理清，已经事半功倍' : 'Clarifying the project situation is already half the battle')}
         subtitle={isAiWebsiteAudit
           ? (isZh ? '告诉我们酒店名称、所在城市、是否已有官网、目前主要依赖哪些平台，以及是否需要内容代运营。迈创兄弟C&T 会先判断：您的酒店信息是否被 AI 和客人正确理解，以及是否具备搜索、展示和询价承接能力。' : 'Share the hotel name, city, whether it has a website, which platforms it currently depends on, and whether ongoing content operations are needed. MarvelBros C&T will first assess whether AI systems and guests can understand the hotel correctly, and whether it has the search, presentation, and inquiry readiness needed.')
           : isDiagnosis
-            ? (isZh ? '只需说明酒店所在城市、客房规模和当前最想解决的问题。MBCT将在48小时内完成初步判断，并安排一次约30分钟的项目沟通。也可以直接拨打电话或添加同号微信。' : 'Share the city, room count, and the most urgent business issue. MBCT will make an initial assessment within 48 hours and arrange a 30-minute project conversation.')
+            ? (isZh ? '填写酒店所在地、客房规模、项目阶段和当前最想解决的问题。初步诊断免费，迈创兄弟C&T将在1个工作日内回复，也可以直接拨打电话或添加同号微信。' : 'Share the hotel location, room count, project stage, and most urgent issue. The initial diagnosis is free, and MarvelBros C&T will respond within one business day. You can also call or add the same number on WeChat.')
           : isPlan
-            ? (isZh ? '“获取方案”不是立即拿一份通用答案，而是先让 MBCT 帮你判断：这个项目该怎么切入、该先解决什么、以及更适合的推进路径是什么。' : 'Getting a plan does not mean receiving a generic answer. It means letting MBCT first determine where the project should start, what should be solved first, and what path forward makes the most sense.')
+            ? (isZh ? '“获取方案”不是立即拿一份通用答案，而是先让 迈创兄弟C&T 帮你判断：这个项目该怎么切入、该先解决什么、以及更适合的推进路径是什么。' : 'Getting a plan does not mean receiving a generic answer. It means letting MarvelBros C&T first determine where the project should start, what should be solved first, and what path forward makes the most sense.')
             : (isZh ? '你不需要一开始就准备得非常完整。只要把项目阶段、核心目标和目前最难推进的问题告诉我们，我们会先帮你判断，从哪里切入更合适。' : 'You do not need a perfect brief to start. Share the project stage, your main objective, and the hardest issue to move forward, and we will help you decide the most suitable point of entry.')}
         bgImage="/images/home-named/contact-us.jpg"
       />
@@ -159,7 +159,7 @@ export default async function ContactPage({
                     ? (isZh ? '先判断酒店信息是否被 AI 看懂，再决定补平台还是补内容' : 'Judge whether AI can understand the hotel information before choosing platform build or content operations')
                     : isDiagnosis
                       ? (isZh ? '先看清问题值不值得进一步诊断' : 'First determine whether a deeper diagnosis is warranted')
-                    : (isZh ? 'MBCT 先帮你判断，再决定更适合的合作方式' : 'MBCT helps you judge first, then choose the right engagement path')}
+                    : (isZh ? '迈创兄弟C&T 先帮你判断，再决定更适合的合作方式' : 'MarvelBros C&T helps you judge first, then choose the right engagement path')}
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {isAiWebsiteAudit
@@ -190,7 +190,7 @@ export default async function ContactPage({
             <div className="space-y-6">
               <div className="rounded-3xl border border-border bg-card p-8 md:p-10 shadow-sm">
                 <p className="text-sm font-medium text-primary mb-4">
-                  {isZh ? '适合直接联系 MBCT 的常见情况' : 'Typical situations where it makes sense to contact MBCT'}
+                  {isZh ? '适合直接联系 迈创兄弟C&T 的常见情况' : 'Typical situations where it makes sense to contact MarvelBros C&T'}
                 </p>
                 <div className="space-y-4 text-sm md:text-base text-foreground">
                   {scenarios.map((item) => (
@@ -250,7 +250,7 @@ export default async function ContactPage({
                             {value}
                           </a>
                         ) : label === dict.contact.form.phone ? (
-                          <a href={`tel:${value}`} className="text-sm text-foreground font-medium leading-relaxed hover:text-primary transition-colors">
+                          <a href="tel:+8618941579333" className="text-sm text-foreground font-medium leading-relaxed hover:text-primary transition-colors">
                             {value}
                           </a>
                         ) : (
@@ -265,7 +265,7 @@ export default async function ContactPage({
 
             <div className="lg:sticky lg:top-24 space-y-6">
               <Suspense fallback={<div className="h-96 animate-pulse bg-muted rounded-xl" />}>
-                <ContactForm dict={dict} />
+                  <ContactForm dict={dict} lang={lang} />
               </Suspense>
               <div className="rounded-3xl border border-primary/20 bg-primary/5 p-6 md:p-7">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
@@ -279,8 +279,8 @@ export default async function ContactPage({
                   {isAiWebsiteAudit
                     ? (isZh ? '提交酒店名称、城市、是否已有官网、主要依赖平台和内容维护需求后，迈创兄弟C&T 会先判断酒店信息是否被 AI 和客人正确理解，再决定应新建轻量信息平台、优化已有入口，还是由我们代写、上传和维护可抓取内容。' : 'After you submit the hotel name, city, whether it has a website, the platforms it depends on, and content maintenance needs, MarvelBros C&T will first assess whether the hotel information can be understood by AI and guests before recommending a lightweight platform, stronger existing entry points, or managed AI-readable content operations.')
                     : isPlan
-                      ? (isZh ? '提交项目情况后，MBCT 会先帮助你判断：更适合做项目判断、经营诊断，还是进入完整合作。' : 'After you submit the project situation, MBCT will first determine whether the right next step is project assessment, operational diagnosis, or a fuller engagement.')
-                    : (isZh ? '比起先讨论很多方案，更重要的是先把项目真正的问题说清楚。MBCT 会先帮你判断问题本质，再决定更合适的推进方式。' : 'Before discussing many solutions, it is more important to clarify the real issue in the project. MBCT will first help identify the problem clearly, then choose the most suitable path forward.')}
+                      ? (isZh ? '提交项目情况后，迈创兄弟C&T 会先帮助你判断：更适合做项目判断、经营诊断，还是进入完整合作。' : 'After you submit the project situation, MarvelBros C&T will first determine whether the right next step is project assessment, operational diagnosis, or a fuller engagement.')
+                    : (isZh ? '比起先讨论很多方案，更重要的是先把项目真正的问题说清楚。迈创兄弟C&T 会先帮你判断问题本质，再决定更合适的推进方式。' : 'Before discussing many solutions, it is more important to clarify the real issue in the project. MarvelBros C&T will first help identify the problem clearly, then choose the most suitable path forward.')}
                 </p>
               </div>
             </div>

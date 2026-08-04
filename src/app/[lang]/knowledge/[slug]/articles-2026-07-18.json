@@ -36,7 +36,7 @@
       "一个实用的方法是给 AI 引导的流量设置专属落地页和 UTM 标记，同时在所有咨询和预订环节中，以自然的方式询问客人来源。不需要技术团队就能做到，但需要有专人负责持续记录和归类。",
       "AI 获客效果应该看入住率还是平均房价？",
       "两个都要看，而且要结合起来看。入住率上涨但平均房价大幅下降，可能说明在通过低价换客源。平均房价上涨但入住率下滑，可能说明筛选过于严格导致客源不足。RevPAR 把两者合并在一起，是更完整的衡量。",
-      "MBCT 能做什么",
+      "迈创兄弟C&T 能做什么",
       "迈创兄弟C&T的做法不是交付一批内容然后等结果，而是帮助酒店把 AI 可见性、官网承接、来源追踪和经营指标放在同一张诊断表里。这张表不做复杂的数学模型，而是用一个经营者能看懂的框架，让每个月的讨论可以从\"流量涨了\"自然过渡到\"这些流量里有多少变成了有效咨询，多少变成了预订，最终对每间房的收入有没有帮助\"。有了这张表，酒店才能判断继续投入、调整策略还是暂停——不是靠感觉，而是靠证据。",
       "如果你正在复盘酒店 AI 获客，可以先把流量、咨询、预订和 RevPAR 放在同一张表上，再判断哪些投入值得继续，哪些需要调整。"
     ],
@@ -75,9 +75,9 @@
       "We already see more website visits. Is that not enough proof?\nMore visits confirm exposure improved. They do not confirm revenue improved. The visits have to be traced through qualified inquiries and bookings before they count toward RevPAR.",
       "What if we cannot tag every source perfectly?\nStart with the highest-value entry points and be consistent there. Partial but reliable attribution is far more useful than complete but inconsistent tagging.",
       "Our RevPAR went up during peak season. Was that AI?\nPossibly in part, but peak season lifts the whole market. Compare against the same season in prior periods and note events, or you risk crediting AI for demand it did not create.",
-      "Where MBCT Fits",
+      "Where MarvelBros C&T Fits",
       "This verification becomes difficult when marketing data, website behavior, inquiry records, and financial performance sit in separate systems. In that setup, the connection between AI visibility and RevPAR is difficult to establish.",
-      "MBCT works to close that gap. We help hotels connect AI visibility, website content, source tracking, and performance metrics into a single diagnostic view, so hotel owners and management teams can see the full path from an AI-driven discovery to a booked, revenue-generating stay."
+      "MarvelBros C&T works to close that gap. We help hotels connect AI visibility, website content, source tracking, and performance metrics into a single diagnostic view, so hotel owners and management teams can see the full path from an AI-driven discovery to a booked, revenue-generating stay."
     ]
   },
   "four-metric-groups-for-hotel-ai-lead-generation-2026-07-18": {
@@ -110,7 +110,7 @@
       "数据收集之后，复盘要简单直接：第一，这一周哪类内容带来了最多的有效需求？不是访问量最高的，而是真正产生了咨询和预订的内容。第二，需求在哪一步出现了集中流失——是看完页面没有咨询，还是咨询后没有成交？第三，下周只修一个问题：是优化某类内容的页面信息，还是调整某个咨询入口的响应方式，还是更新某个话术？一周只修一个入口，修完验证，再修下一个。",
       "常见误区",
       "最常见的有五个。只看流量不看转化——流量涨了就觉得效果到了，这是最普遍的错觉。只看订单不看来源——把自然旺季的预订算给了 AI，把 AI 带来的长周期预订漏掉了。不做基线——跟\"没有 AI 获客时\"对比才是真正的增量，跟空白周期比什么都是涨的。把自然旺季或渠道活动的影响当成 AI 成果——复盘时没有把季节、促销、展会等因素单独剥离。以及为了归因而增加客人操作负担——在表单里塞了一长串必填问题，结果客人直接关掉了页面。归因的前提是不影响客人体验。",
-      "MBCT 的承接",
+      "迈创兄弟C&T 的承接",
       "迈创兄弟C&T帮助酒店设计一套轻量的四组指标表，定义关键场景的内容入口和官网咨询路径，然后建立持续复盘机制——不是做一次就停，而是把\"发现问题、调整入口、验证效果\"变成一个每月可以跑的循环。",
       "小酒店没有数据团队，怎样追踪 AI 获客？",
       "用最基础的工具就够了：在网址后面加 UTM 标记区分来源，在官网表单里加一个可选的\"从哪里了解到我们\"，让前台在入住登记时多问一句并做好记录。每月花半天时间把记录整理成一张表，就能看出基本趋势。",
@@ -155,8 +155,8 @@
       "The conversion group then confirms the pattern, showing a long cycle and few event bookings from that entry point. So the fix is specific and small: rewrite the meeting-space page to lead with capacity, catering options, and a clear request-a-proposal path, and tag that path as its own source. Over the following comparable periods, qualified meeting inquiries from the page become the metric to watch, tracked against the earlier baseline rather than against a hopeful guess. The point is not the outcome of one page. It is that no single group will reveal the problem or verify the fix on its own. Only the four groups read together make the demand traceable and the review honest.",
       "Common Mistakes to Avoid",
       "Looking only at traffic, and mistaking exposure for results. Looking only at bookings, and missing the mid-funnel signals that explain why bookings rose or fell. Reviewing without a baseline, so no comparison is fair. Attributing a peak-season lift to AI when the whole market rose. And adding so much attribution friction that guests feel interrogated, which quietly suppresses the very conversions you are trying to measure.",
-      "Where MBCT Fits",
-      "Most hotels do not lack effort. They lack a structure that connects the four groups into one view. MBCT helps hotels design lightweight metric dashboards, practical content entry points, clear website inquiry paths, and a continuous review mechanism that fits the way a hotel actually operates. The aim is a system a revenue manager can run every week, not a report that gathers dust.",
+      "Where MarvelBros C&T Fits",
+      "Most hotels do not lack effort. They lack a structure that connects the four groups into one view. MarvelBros C&T helps hotels design lightweight metric dashboards, practical content entry points, clear website inquiry paths, and a continuous review mechanism that fits the way a hotel actually operates. The aim is a system a revenue manager can run every week, not a report that gathers dust.",
       "Frequently Asked Questions",
       "Do we need new software to track all four groups?\nNo. Most hotels can start with existing analytics, consistent source labels, and a front-desk question. Tools help later; structure matters first.",
       "Which group should we build first?\nStart with inquiry and conversion metrics, since that is where value or leakage becomes visible fastest, then extend upward to discovery and downward to revenue.",

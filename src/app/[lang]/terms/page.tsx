@@ -45,8 +45,8 @@ export default async function TermsPage({
               </h2>
               <p>
                 {lang === 'zh'
-                  ? 'MBCT迈创兄弟致力于为酒店行业提供数字化转型解决方案，包括但不限于：酒店SaaS管理系统、可行性分析报告、运营诊断、收益管理优化等服务。'
-                  : 'MBCT Commercial Technology is committed to providing digital transformation solutions for the hotel industry, including but not limited to: Hotel SaaS Management System, Feasibility Analysis Reports, Operations Diagnosis, Revenue Management Optimization, and other services.'}
+                  ? '迈创兄弟C&T迈创兄弟致力于为酒店行业提供数字化转型解决方案，包括但不限于：酒店SaaS管理系统、可行性分析报告、运营诊断、收益管理优化等服务。'
+                  : 'MarvelBros C&T Commercial Technology is committed to providing digital transformation solutions for the hotel industry, including but not limited to: Hotel SaaS Management System, Feasibility Analysis Reports, Operations Diagnosis, Revenue Management Optimization, and other services.'}
               </p>
             </section>
 
@@ -78,19 +78,19 @@ export default async function TermsPage({
               </h2>
               <p>
                 {lang === 'zh'
-                  ? '网站内容、设计、代码等知识产权归迈创兄弟所有。未经授权，您不得复制、修改或传播我们的内容。'
-                  : 'Website content, design, code, and other intellectual property belong to MBCT. Without authorization, you may not copy, modify, or disseminate our content.'}
+                  ? '网站内容、设计、代码等知识产权归迈创兄弟所有。复制、修改或传播相关内容须取得书面许可。'
+                  : 'Website content, design, code, and other intellectual property belong to MarvelBros C&T. Written permission is required to copy, modify, or distribute this content.'}
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-white">
-                {lang === 'zh' ? '5. 保密义务' : '5. Confidentiality'}
+                {lang === 'zh' ? '5. 信息保护' : '5. Information Protection'}
               </h2>
               <p>
                 {lang === 'zh'
-                  ? '我们对您在服务过程中提供的商业信息负有保密义务，未经您的许可，不会向第三方披露。'
-                  : 'We have confidentiality obligations regarding business information you provide during service, and will not disclose it to third parties without your permission.'}
+                  ? '我们严格保护您在服务过程中提供的商业信息，仅在取得您明确许可后向指定第三方披露。'
+                  : 'We strictly protect business information provided during service and disclose it to a designated third party only with your explicit permission.'}
               </p>
             </section>
 
