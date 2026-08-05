@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 637,
+      type: "article",
+      title: "旺季差评增加，酒店经营者为什么需要24小时内分析48小时补救？",
+      titleEn: "Why Hotel Operators Need a 24-Hour Analysis and a 48-Hour Recovery Plan During Peak Season",
+      slug: "hotel-peak-season-negative-review-24-hour-analysis-48-hour-recovery-2026-08-05",
+      summary: "旺季差评最危险的不是数量，而是问题在组织没有学习前持续复制。24小时分析时钟和48小时补救时钟，帮酒店尽快止损并阻止同类问题继续发生。",
+      summaryEn: "The real risk of peak-season negative reviews is not volume — it is problems repeating before the organisation learns. A 24-hour analysis clock and a 48-hour recovery clock help hotels stop losses fast and prevent the same failures from spreading.",
+      firstLine: "旺季差评的真正风险，是同类问题在组织完成学习前持续复制。",
+      author: "迈创兄弟C&T",
+      date: "2026-08-05",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 636,
       type: "article",
       title: "游客开始“住久一点”，酒店为什么还只会做一晚生意？",
