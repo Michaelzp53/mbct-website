@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 638,
+      type: "article",
+      title: "消费券和暑期优惠来了，酒店为什么不能只等客人下单？",
+      titleEn: "Why Hotels Need More Than Discounts When Summer Travel Vouchers Bring Demand",
+      slug: "hotel-consumption-voucher-summer-promotion-net-revenue-customer-retention-2026-08-06",
+      summary: "平台活动一上线订单变多，但月底复盘发现平均房价下滑、增值消费不明显、客人没有留下联系方式。消费券和优惠活动能带来第一次点击，不能自动带来利润和复购。",
+      summaryEn: "Summer vouchers and platform subsidies drive bookings, but hotels that treat promotions as strategy lose net revenue, overload operations, and miss guest capture. Learn how to protect profitability before, during, and after peak-season campaigns.",
+      firstLine: "消费券和平台补贴能带来第一次点击，但净收益、履约能力和客户沉淀必须由酒店自己守住。",
+      author: "迈创兄弟C&T",
+      date: "2026-08-06",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 6,
+      featured: true,
+      image: "",
+    },
+    {
       id: 637,
       type: "article",
       title: "旺季差评增加，酒店经营者为什么需要24小时内分析48小时补救？",

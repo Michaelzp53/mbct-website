@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '消费券和暑期优惠来了，酒店为什么不能只等客人下单？' : 'Why Hotels Need More Than Discounts When Summer Travel Vouchers Bring Demand',
+      summary: isZh
+        ? '平台活动一上线订单变多，但月底复盘发现平均房价下滑、增值消费不明显、客人没有留下联系方式。消费券和优惠活动能带来第一次点击，不能自动带来利润和复购。'
+        : 'Summer vouchers and platform subsidies drive bookings, but hotels that treat promotions as strategy lose net revenue, overload operations, and miss guest capture. Learn how to protect profitability before, during, and after peak-season campaigns.',
+      slug: 'hotel-consumption-voucher-summer-promotion-net-revenue-customer-retention-2026-08-06',
+      date: '2026.08.06',
+    },
+    {
       title: isZh ? '旺季差评增加，酒店经营者为什么需要24小时内分析48小时补救？' : 'Why Hotel Operators Need a 24-Hour Analysis and a 48-Hour Recovery Plan During Peak Season',
       summary: isZh
         ? '旺季差评最危险的不是数量，而是问题在组织没有学习前持续复制。24小时分析时钟和48小时补救时钟，帮酒店尽快止损并阻止同类问题继续发生。'
