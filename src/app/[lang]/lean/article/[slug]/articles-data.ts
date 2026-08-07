@@ -12674,6 +12674,7 @@ import newArticles20260729 from './articles-2026-07-29.json';
 import newArticles20260801 from './articles-2026-08-01.json';
 import newArticles20260802 from './articles-2026-08-02.json';
 import newArticles20260803 from './articles-2026-08-03.json';
+import newArticles20260807 from './articles-2026-08-07.json';
 import newArticles20260806 from './articles-2026-08-06.json';
 import newArticles20260805 from './articles-2026-08-05.json';
 import newArticles20260804 from './articles-2026-08-04.json';
@@ -12705,7 +12706,8 @@ const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]),
   ...(newArticles20260803 as ArticleData[]),
   ...(newArticles20260804 as ArticleData[]),
   ...(newArticles20260805 as ArticleData[]),
-  ...(newArticles20260806 as ArticleData[])];
+  ...(newArticles20260806 as ArticleData[]),
+  ...(newArticles20260807 as ArticleData[])];
 export const allArticlesData = allArticles;
 
 export function getArticleBySlug(slug: string) {

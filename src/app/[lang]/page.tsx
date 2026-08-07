@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? "从中国\"峰谷交替\"到全球投资分化：2026年下半年酒店业将走向哪里？" : "From Peak-Trough Demand in China to Global Investment Divergence: Where Is the Hotel Industry Heading in the Second Half of 2026?",
+      summary: isZh
+        ? "2026年下半年酒店业不会同步回暖，而会在假期与平日、入住率与利润、国内供给与全球资本之间出现更明显分化。本文用五项指标建立未来六个月的观察框架。"
+        : "The second half of 2026 is likely to bring sharper divergence across peak and weekday demand, occupancy and profit, domestic supply and global hotel capital. Five indicators provide a practical six-month monitoring framework.",
+      slug: "china-hotel-peak-trough-global-investment-divergence-2026-08-07",
+      date: '2026.08.07',
+    },
+    {
       title: isZh ? '消费券和暑期优惠来了，酒店为什么不能只等客人下单？' : 'Why Hotels Need More Than Discounts When Summer Travel Vouchers Bring Demand',
       summary: isZh
         ? '平台活动一上线订单变多，但月底复盘发现平均房价下滑、增值消费不明显、客人没有留下联系方式。消费券和优惠活动能带来第一次点击，不能自动带来利润和复购。'
