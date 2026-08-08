@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '暑期订单热但均价承压，酒店需要靠“组合产品”把旺季做成增收' : 'Summer bookings are strong but average rates are under pressure. Hotels need package products to turn the peak season into revenue',
+      summary: isZh
+        ? '这个暑期很多酒店入住率不差、利润却没跟上。用组合产品重构报价单元，把精打细算的客人收进更高价值的预订单元。'
+        : 'This summer many hotels report decent occupancy but flat profit. Package products can restructure the booking unit and bring budget-conscious guests into higher-value bookings.',
+      slug: "summer-bookings-package-products-peak-season-revenue-2026-08-08",
+      date: '2026.08.08',
+    },
+    {
       title: isZh ? "从中国\"峰谷交替\"到全球投资分化：2026年下半年酒店业将走向哪里？" : "From Peak-Trough Demand in China to Global Investment Divergence: Where Is the Hotel Industry Heading in the Second Half of 2026?",
       summary: isZh
         ? "2026年下半年酒店业不会同步回暖，而会在假期与平日、入住率与利润、国内供给与全球资本之间出现更明显分化。本文用五项指标建立未来六个月的观察框架。"

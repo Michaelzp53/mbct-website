@@ -72,6 +72,25 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
 
   const articles = [
     {
+      id: 640,
+      type: "article",
+      title: "暑期订单热但均价承压，酒店需要靠“组合产品”把旺季做成增收",
+      titleEn: "Summer bookings are strong but average rates are under pressure. Hotels need package products to turn the peak season into revenue",
+      slug: "summer-bookings-package-products-peak-season-revenue-2026-08-08",
+      summary: "这个暑期很多酒店入住率不差、利润却没跟上。用组合产品重构报价单元，把精打细算的客人收进更高价值的预订单元。",
+      summaryEn: "This summer many hotels report decent occupancy but flat profit. Package products restructure the booking unit and bring budget-conscious guests into higher-value bookings.",
+      firstLine: "旺季订单热但利润没跟上，问题不在客人变抠，而在酒店还在只卖一间房一晚。",
+      author: "迈创兄弟C&T",
+      date: "2026-08-08",
+      category: "industry-insights",
+      tag: isZh ? "案例研究" : "Case Study",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 8,
+      featured: true,
+      image: "",
+    },
+    {
       id: 639,
       type: "article",
       title: "从中国\"峰谷交替\"到全球投资分化：2026年下半年酒店业将走向哪里？",
