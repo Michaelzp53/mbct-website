@@ -15,14 +15,14 @@ export function Footer({ lang, dict }: FooterProps) {
   const knowledgeLinks = [
     { label: isZh ? '酒店知识库' : 'Hotel knowledge', href: `/${lang}/knowledge` },
     { label: isZh ? '管享精道' : 'Lean Insights', href: `/${lang}/lean` },
-    { label: isZh ? '行业专题' : 'Industry topics', href: `/${lang}/topics/ai-hotel-growth` },
+    { label: isZh ? '经营问题专题' : 'Operating topics', href: `/${lang}/knowledge` },
     { label: isZh ? '案例成果' : 'Case results', href: `/${lang}/cases` },
   ]
 
   const companyLinks = [
     { label: isZh ? '关于我们' : 'About Us', href: `/${lang}/about` },
     { label: isZh ? '解决方案' : 'Solutions', href: `/${lang}/services` },
-    { label: isZh ? 'AI搜索获客' : 'AI search acquisition', href: `/${lang}/services/ai-hotel-website` },
+    { label: isZh ? '酒店经营改善' : 'Operating improvement', href: `/${lang}/hotel-operation-improvement` },
     { label: isZh ? '联系我们' : 'Contact', href: `/${lang}/contact` },
   ]
 
