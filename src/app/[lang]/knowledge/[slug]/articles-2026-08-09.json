@@ -1,0 +1,45 @@
+{
+  "hotel-opening-budget-three-cost-layers-2026-08-09": {
+    "id": 641,
+    "title": "酒店筹开预算为什么总是越做越大？先把三类成本分开再谈控制",
+    "titleEn": "Why Hotel Opening Budgets Keep Expanding: Separate These Three Cost Layers Before Trying to Cut",
+    "description": "预算持续追加，通常不是某个单价单独失控，而是资产基础、产品选择和开业准备三类成本混在一起。拆层、管变更、看工期，才能知道哪些该批、哪些该停。",
+    "descriptionEn": "Repeated budget additions rarely come from one bad unit price. Asset and compliance, product choice, and opening readiness are mixed together. Separate the layers, manage changes and track schedule impact before deciding what to approve.",
+    "author": "迈创兄弟C&T",
+    "date": "2026-08-09",
+    "readTime": "7分钟",
+    "tag": "行业分析",
+    "content": [
+      "酒店筹开预算为什么总是越做越大？先把三类成本分开再谈控制",
+      "预算做到第三版，总额又涨了。设计深化了一轮，设备换了两项，开业准备也从“以后再说”变成“现在必须补”。每一项看起来都有理由，但总额持续上升。问题往往不是某个单价太高，而是三类成本被揉成一团，没人能说清楚每一块钱服务于什么目的。",
+      "预算变大的来源通常有三种：物业基础条件被低估，深化设计时才暴露结构、消防和机电问题；产品定位不断变化，大堂、房型和智能设备反复调整；开业准备拖到最后，招聘、培训、系统调试和试运营被压缩，只能用更高成本抢时间。",
+      "第一层是资产与合规基础，包括结构、消防、机电、无障碍和强制标准。这一层的管理规则是“不能省”，但要在概念设计阶段完成独立核查，不能等到施工图阶段才被动追加。",
+      "第二层是产品与体验选择，包括装修标准、客房配置、公共区域、餐饮会议空间、品牌标准、智能系统和导视。管理规则是“必须判断”：每一笔增量都要回答，它改变了哪个客群选择、能否支撑房价或形成可感知的体验优势。",
+      "第三层是开业与运营准备，包括招聘、培训、系统上线、初始物资、试营业和市场启动。管理规则是“必须排期”。施工延期后把三到六个月的工作压进最后四到六周，往往会带来临时采购、外包和重复返工。",
+      "从第三版预算开始，每一项变更都要回答四个问题：为什么变、金额影响多少、会不会影响开业倒排期、未来靠什么经营结果回收投入。答不清这四个问题的变更，不应直接进入总额。",
+      "CoStar依据2025年第三季度数据发布的公开说明显示，欧洲是当季酒店建设和整体管线活动增加的主要区域，亚太在建客房量仍大，但区域总签约量略有下降（[CoStar公开说明](https://www.costar.com/products/str-benchmark/resources/press-releases/hotel-pipeline-expands-europe-all-other-regions)）。这不能直接替代中国项目的造价核查，却提醒投资人：翻新、结构重建、定位升级和基础达标，对应的是不同预算逻辑。",
+      "筹开团队每周至少复盘五项指标：预算变更额、待决事项、采购锁价率、工期影响，以及支撑预算的房价和入住率假设是否仍然成立。未来六到十二个月，预算管理会越来越从压单价转向管理变更和经营回收路径。",
+      "投资人应先按三层成本判断追加是否合理；项目团队应每周复盘变更，而不是月底才发现偏差；业主和经营团队应尽早锁定开业节奏，避免把仓促变成成本。正在评估筹开预算时，可以先把未决变更逐条标出，再按三层框架重新归位。关于具体项目应用，可参考[酒店筹开服务页](https://www.marvelbros.com/zh/hotel-opening)。",
+      "FAQ",
+      "设计费是预算最容易超支的地方吗？不是。设计费本身通常占比有限，真正推高总额的往往是设计深化引发的工程变更。",
+      "设备采购可以最后再定吗？可以延后决策，但应尽早锁定价格和交期，避免最后阶段同时承担涨价和交付风险。",
+      "压缩预算会不会损害酒店定位？应当区分。与客人选择无关的自由裁量投入可以压缩，影响房型层级和体验判断的关键投入不能简单砍掉。"
+    ],
+    "contentEn": [
+      "Why Hotel Opening Budgets Keep Expanding: Separate These Three Cost Layers Before Trying to Cut",
+      "By the third version of the budget, the total has climbed again. Design was deepened, equipment was changed and opening preparation moved from later to now. Each change looks reasonable, yet the total keeps rising. The problem is usually not one price; it is that three different cost categories have been blended into one pile.",
+      "Budgets normally grow through three sources: underestimated asset conditions, shifting product positioning, and opening readiness left to the last minute. Structural, fire and MEP issues surface during design development; lobby, room mix and smart-device choices keep changing; recruitment, training and system integration are then compressed into an expensive final sprint.",
+      "Layer one is the asset and compliance baseline: structure, fire protection, MEP, accessibility and mandatory standards. Its rule is “cannot be saved,” but the baseline must be independently checked early instead of becoming a forced addition during construction drawings.",
+      "Layer two is product and experience choice: fit-out standards, room configuration, public areas, F&B and meeting spaces, brand standards, smart systems and wayfinding. Its rule is “must be judged.” Every increment should answer which guest decision it changes and whether it can support rate or a visible experience advantage.",
+      "Layer three is opening and operating readiness: recruitment, training, system go-live, initial supplies, trial operations and launch. Its rule is “must be scheduled.” Compressing three to six months of work into the final four to six weeks usually creates rush procurement, outsourcing and rework.",
+      "From the third version onward, every change must answer four questions: why it changed, how much it affects the amount, what schedule impact it creates, and which operating result will recover the spend. A change that cannot answer these questions should not enter the total.",
+      "CoStar’s public release based on third-quarter 2025 data shows Europe as the main region with increased hotel construction and overall pipeline activity, while Asia Pacific retained a large construction base but saw a slight decline in total rooms under contract ([CoStar public release](https://www.costar.com/products/str-benchmark/resources/press-releases/hotel-pipeline-expands-europe-all-other-regions)). This does not replace a Chinese project cost check; it is a reminder that a refresh, structural rebuild, positioning upgrade and compliance fix follow different budget logic.",
+      "The opening team should review five indicators every week: total change amount, pending decisions, procurement lock-in rate, schedule impact, and whether the average-rate and occupancy assumptions supporting the budget still hold. Over the next six to twelve months, budget management will move from squeezing unit prices toward managing changes and operating recovery paths.",
+      "Investors should split the budget before deciding whether an addition is reasonable. Project teams should review changes weekly. Owners and operators should lock the opening rhythm early. If you are evaluating an opening budget, tag every unresolved change and re-file it against the three-layer framework. See MarvelBros C&T’s [hotel opening service page](https://www.marvelbros.com/en/hotel-opening) for a fuller application.",
+      "FAQ",
+      "Are design fees where budgets most often overrun? No. Construction changes triggered by design development usually push the total up, so manage the source of changes rather than the design line alone.",
+      "Can equipment procurement be left to the end? It can be decided later, but price and lead time should be locked early to avoid taking both escalation and delivery risk at once.",
+      "Does compressing the budget hurt positioning? Treat them separately. Cut discretionary spend unrelated to guest choice, but do not simply cut inputs that define room tiers and the guest decision experience."
+    ]
+  }
+}

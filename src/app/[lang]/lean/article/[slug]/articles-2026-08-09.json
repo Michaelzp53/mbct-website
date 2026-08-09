@@ -1,0 +1,20 @@
+[
+  {
+    "id": 737,
+    "slug": "hotel-handover-missing-records-2026-08-09",
+    "titleZh": "酒店交接班总出错，为什么不是员工粗心而是信息没有落表？",
+    "titleEn": "Why Hotel Handovers Keep Failing: The Problem Is Often Missing Records, Not Careless Staff",
+    "summaryZh": "交接班出错，通常不是员工没有说，而是事项没有固定责任人、完成时限、验证人和当前状态。用五类事项和一张表，把信息传递变成可追踪的管理闭环。",
+    "summaryEn": "Handover failures are often not caused by careless staff, but by missing owners, deadlines, verifiers and status fields. Five item categories and one simple sheet can turn information transfer into a trackable management loop.",
+    "contentZh": "酒店交接班总出错，为什么不是员工粗心而是信息没有落表？\n\n早班接手时，交班本上只写着“一切正常”，但302房空调报修、416房退房待复核、客人延迟退房的承诺都没有被记录。信息被传递过，事项却没有闭环。\n\n口头交代、微信群消息和便利贴都不等于完成交接，因为它们回答不了三个问题：谁负责、何时完成、谁来确认。真正的交接闭环，还需要当前状态。\n\n先把事项分成五类：客人事项、房态事项、设施事项、收入事项和待验证事项。客人事项记录需求、承诺和承诺人；房态事项记录变化原因和恢复时间；设施事项记录故障、工程反馈和客人影响；收入事项记录金额、处理人和关闭条件；待验证事项记录谁声称完成、谁验证以及验证结果。\n\n一张可落地的交接表只需要六列：事项、影响对象、责任岗位、完成时限、验证人、当前状态。状态可写未开始、进行中、待验证或已闭环。时间要写到具体日期和时点，不要只写“尽快”或“今天”。验证人最好不要与责任人相同。\n\n例如：302房空调不制冷；责任岗位是工程部值班工程师；8月9日14点前修复并实测；由客房部主管到房间确认；状态为已报修、待上门维修。下一班看到这条记录，就能直接进入执行状态。\n\n管理者每周只查三类痕迹：没有闭环的事项、被反复追问的事项、在部门之间来回返工的事项。它们分别帮助判断漏洞是在验证、责任分配，还是跨部门协同。\n\n交接班不是行政流程，而是酒店最高频的管理动作之一。每天三次、每周二十一次，只有把责任人、时限和验证固定下来，信息才会变成可检查、可回溯的经营动作。\n\n今天就抽查最近两天的交接记录，找出三条没有责任人、完成时间或验证人的事项。关于信息闭环和跨部门协同，可参考迈创兄弟C&T的[酒店运营改善服务](https://www.marvelbros.com/zh/hotel-operation-improvement)；如果需要进一步梳理交接体系，可从[经营诊断](https://www.marvelbros.com/zh/contact?type=diagnosis)开始。",
+    "contentEn": "Why Hotel Handovers Keep Failing: The Problem Is Often Missing Records, Not Careless Staff\n\nThe morning shift takes over and the handover log says only “Everything is fine.” Yet Room 302 has an air-conditioning repair pending, Room 416 is waiting for inspection, and a guest was promised late checkout. The information was passed, but the matters were never closed.\n\nA verbal message, a group-chat note or a sticky note is not a completed handover. None answers three essential questions: who owns the item, by when it must be completed, and who will verify it. A real close-out also needs a current status.\n\nStart by separating five categories: guest matters, room status, facility matters, revenue matters and pending verification. Record the request and promise for guest matters; the cause and recovery time for room status; the fault, engineering feedback and guest impact for facilities; the amount, owner and closing condition for revenue; and the claimed completion, verifier and result for pending verification.\n\nA practical handover sheet needs only six fields: item, affected party, responsible role, deadline, verifier and status. Use not started, in progress, awaiting verification or closed. Write a specific date and time, not “ASAP” or “today.” The verifier should ideally be different from the responsible person.\n\nFor example: Room 302 air conditioning is not cooling; the engineering duty technician owns it; repair and testing are due by 2:00 PM on August 9; the housekeeping supervisor verifies the room; status is reported and awaiting repair. The next shift can move straight into execution.\n\nManagers only need to review three traces each week: unclosed items, items repeatedly chased, and items sent back and forth between departments. These reveal whether the gap is in verification, ownership or cross-department coordination.\n\nHandover is not an administrative routine. It is one of the most frequent management actions in a hotel. Once owner, deadline and verifier become fixed fields, information becomes a checkable and traceable operating action.\n\nToday, sample the last two days of handover records and find three items with no owner, deadline or verifier. For a broader view, see MarvelBros C&T’s [hotel operations improvement service](https://www.marvelbros.com/en/hotel-operation-improvement) or begin with a [management diagnosis](https://www.marvelbros.com/en/contact?type=diagnosis).",
+    "category": "operations",
+    "tags": ["酒店交接班", "部门协同", "运营管理", "管理闭环"],
+    "author": "迈创兄弟C&T",
+    "date": "2026-08-09",
+    "readTime": 6,
+    "views": 0,
+    "likes": 0,
+    "comments": 0
+  }
+]

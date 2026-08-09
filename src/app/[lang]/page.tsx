@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '酒店筹开预算为什么总是越做越大？先把三类成本分开再谈控制' : 'Why Hotel Opening Budgets Keep Expanding: Separate These Three Cost Layers Before Trying to Cut',
+      summary: isZh
+        ? '预算追加通常不是某个单价单独失控，而是资产基础、产品选择和开业准备三类成本混在一起。拆层、管变更、看工期，才能知道哪些该批、哪些该停。'
+        : 'Repeated budget additions rarely come from one bad unit price. Separate asset and compliance, product choice, and opening readiness before deciding what to approve.',
+      slug: "hotel-opening-budget-three-cost-layers-2026-08-09",
+      date: '2026.08.09',
+    },
+    {
       title: isZh ? '暑期订单热但均价承压，酒店需要靠“组合产品”把旺季做成增收' : 'Summer bookings are strong but average rates are under pressure. Hotels need package products to turn the peak season into revenue',
       summary: isZh
         ? '这个暑期很多酒店入住率不差、利润却没跟上。用组合产品重构报价单元，把精打细算的客人收进更高价值的预订单元。'
