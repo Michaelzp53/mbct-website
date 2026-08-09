@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { CheckCircle, Loader2 } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import type { Dict } from '@/lib/dicts'
+import { trackEvent } from '@/lib/analytics'
 
 interface ContactFormProps {
   dict: Dict
@@ -78,6 +79,10 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
       }
 
       await res.json().catch(() => null)
+      trackEvent('contact_form_submit_success', {
+        contact_type: type || 'general',
+        selected_service: form.service,
+      })
       setStatus('success')
       setForm({
         name: '',

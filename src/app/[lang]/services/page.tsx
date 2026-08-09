@@ -38,10 +38,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
-  const title = isZh ? '酒店增长解决方案｜投前判断、经营诊断与AI信息平台' : 'Hotel Growth Solutions | Investment Judgment, Operations Diagnosis and AI Information Platform'
+  const title = isZh ? '酒店投资判断、筹建筹开与经营改善' : 'Hotel Investment, Pre-Opening and Operating Improvement'
   const description = isZh
-    ? '迈创兄弟C&T围绕酒店投前决策、经营增长、数字化赋能与AI信息平台建设，帮助投资人与经营团队把判断、动作和结果连成可执行路径。'
-    : 'MarvelBros C&T connects hotel investment judgment, operating growth, digital enablement, and AI-ready information platforms into executable paths for investors and operators.'
+    ? '迈创兄弟C&T围绕酒店投资判断、筹建筹开和经营改善，帮助投资人与经营团队把问题、动作和结果连成可执行路径。'
+    : 'MarvelBros C&T connects hotel investment judgment, pre-opening, and operating improvement into executable paths for investors and operators.'
 
   return {
     title,
@@ -78,9 +78,7 @@ export default async function ServicesPage({
   const { lang } = await params
   const dict = getDict(lang)
   const isZh = lang === 'zh'
-  // icons reordered to match new 3-group service layout: 投前决策 → 经营增长 → AI落地
-  const icons = ['Building2', 'Sparkles', 'Landmark', 'TrendingUp', 'Users', 'Megaphone', 'BookOpen', 'BarChart3', 'Shield']
-
+  // 服务页面以投资判断、筹建筹开、经营改善三条主线组织。
   const iconGradients = [
     'linear-gradient(135deg, #4285f4, #34a853)',
     'linear-gradient(135deg, #34a853, #fbbc04)',
@@ -98,8 +96,8 @@ export default async function ServicesPage({
       step: '01',
       title: isZh ? '诊断现状，锁定真问题' : 'Diagnose & Pinpoint',
       description: isZh
-        ? '不急着给方案。先围绕投前决策、经营增长或AI落地场景，数据化地拆清项目当前的真实卡点和机会所在。'
-        : 'No rush to solutions. We first use data to break down the real bottlenecks and opportunities—whether in pre-investment, operations, or AI implementation.',
+        ? '不急着给方案。先围绕投资判断、筹建筹开或经营改善，拆清项目当前的真实卡点和机会所在。'
+        : 'No rush to solutions. We first identify the real bottlenecks and opportunities across investment, pre-opening, and operations.',
     },
     {
       step: '02',
@@ -230,12 +228,50 @@ export default async function ServicesPage({
         : 'Transparent execution dashboard, phase-based review reports, outcome tracking, and continuous improvement guidance.',
     },
   ]
+  // Keep legacy metadata available while the remaining locale dictionaries are retired.
+  void serviceMeta
+
+  const serviceGroups = [
+    {
+      title: isZh ? '酒店投资判断' : 'Hotel investment decisions',
+      description: isZh
+        ? '适用于新项目、品牌选择、改造和投资前的关键判断。'
+        : 'For the key decisions before a new project, brand choice, repositioning, or capital commitment.',
+      items: [
+        { title: isZh ? '项目可行性与风险判断' : 'Feasibility and risk judgment', audience: isZh ? '投资人 / 业主' : 'Investors / owners', problem: isZh ? '项目值不值得投、关键假设是否站得住。' : 'Whether the project is worth pursuing and its key assumptions hold.', deliverable: isZh ? '市场与财务假设梳理、情景测算和风险清单。' : 'Market and financial assumptions, scenarios, and a risk register.', icon: 'Building2' },
+        { title: isZh ? '品牌与定位选择' : 'Brand and positioning choice', audience: isZh ? '业主 / 项目负责人' : 'Owners / project leaders', problem: isZh ? '客群、产品与品牌承诺是否匹配。' : 'Whether guest segment, product, and brand promise fit together.', deliverable: isZh ? '定位判断、客群逻辑和落地原则。' : 'Positioning judgment, guest logic, and delivery principles.', icon: 'Sparkles' },
+        { title: isZh ? '改造与资本安排' : 'Renovation and capital planning', audience: isZh ? '存量资产持有人' : 'Existing asset owners', problem: isZh ? '先改哪里、如何控制投入边界。' : 'What to change first and how to control the investment boundary.', deliverable: isZh ? '优先级建议、阶段路径和决策材料。' : 'Priority recommendations, phased path, and decision materials.', icon: 'Landmark' },
+      ],
+    },
+    {
+      title: isZh ? '酒店筹建筹开' : 'Hotel pre-opening',
+      description: isZh
+        ? '把预算、工程接口、团队、流程与开业节奏拉到同一张执行表上。'
+        : 'Put budget, technical interfaces, team, processes, and opening readiness on one execution plan.',
+      items: [
+        { title: isZh ? '筹开预算与里程碑' : 'Opening budget and milestones', audience: isZh ? '筹开负责人 / 业主' : 'Pre-opening leaders / owners', problem: isZh ? '预算与节点脱节，责任无法前置。' : 'Budget and milestones are disconnected and accountability arrives too late.', deliverable: isZh ? '筹开任务分解、关键节点和检查口径。' : 'Task breakdown, key milestones, and review criteria.', icon: 'BookOpen' },
+        { title: isZh ? '运营流程与服务准备' : 'Operating process and service readiness', audience: isZh ? '总经理 / 部门负责人' : 'General managers / department leaders', problem: isZh ? '部门准备不一致，开业后靠临时救火。' : 'Department readiness is uneven and opening relies on firefighting.', deliverable: isZh ? '核心流程清单、岗位接口和演练安排。' : 'Core process checklist, role interfaces, and rehearsal plan.', icon: 'Shield' },
+        { title: isZh ? '团队组织与开业节奏' : 'Team organization and launch cadence', audience: isZh ? '业主 / 人力与运营团队' : 'Owners / HR and operations teams', problem: isZh ? '岗位、培训与排班无法支撑开业服务。' : 'Roles, training, and rosters cannot support opening service.', deliverable: isZh ? '组织分工、培训重点和开业后复盘节奏。' : 'Organization design, training priorities, and post-opening review cadence.', icon: 'Users' },
+      ],
+    },
+    {
+      title: isZh ? '酒店经营改善' : 'Hotel operating improvement',
+      description: isZh
+        ? '从经营诊断到收入、成本、团队和市场承接，建立可复盘的改善路径。'
+        : 'From diagnosis to revenue, cost, team, and market capture, build an improvement path that can be reviewed.',
+      items: [
+        { title: isZh ? '经营诊断与改善优先级' : 'Operating diagnosis and priorities', audience: isZh ? '总经理 / 经营团队' : 'General managers / operating teams', problem: isZh ? '动作很多，却无法判断真正的经营瓶颈。' : 'Many actions are underway, but the real bottleneck remains unclear.', deliverable: isZh ? '问题分层、优先级和行动路线。' : 'Issue hierarchy, priorities, and an action path.', icon: 'TrendingUp' },
+        { title: isZh ? '收益、渠道与成本协同' : 'Revenue, channel, and cost alignment', audience: isZh ? '收益 / 销售 / 财务团队' : 'Revenue / sales / finance teams', problem: isZh ? '有客流但利润、价格与渠道结构不稳定。' : 'Demand exists, but profit, pricing, and channel mix are unstable.', deliverable: isZh ? '关键经营指标、协同机制和复盘口径。' : 'Key operating metrics, coordination mechanisms, and review criteria.', icon: 'BarChart3' },
+        { title: isZh ? '市场、会员与信息承接' : 'Market, membership, and information capture', audience: isZh ? '市场销售 / 运营团队' : 'Sales, marketing, and operating teams', problem: isZh ? '客群、产品、渠道和官网信息彼此脱节。' : 'Guest segments, product, channels, and website information are disconnected.', deliverable: isZh ? '客群与产品表达、触点梳理和持续维护建议。' : 'Guest and product articulation, touchpoint review, and maintenance recommendations.', icon: 'Megaphone' },
+      ],
+    },
+  ]
 
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `https://www.marvelbros.com/${lang}/services#service`,
-    name: isZh ? '迈创兄弟C&T酒店咨询与AI精益管理服务' : 'MarvelBros C&T Hotel Advisory and AI Lean Management Services',
+    name: isZh ? '迈创兄弟C&T酒店投资、筹开与经营改善服务' : 'MarvelBros C&T Hotel Investment, Pre-Opening and Operating Improvement Services',
     provider: {
       '@type': 'Organization',
       '@id': 'https://www.marvelbros.com/#organization',
@@ -243,18 +279,18 @@ export default async function ServicesPage({
     },
     areaServed: 'China',
     serviceType: isZh
-      ? ['酒店投前决策', '酒店经营增长', '酒店数字化与AI精益管理']
-      : ['Hotel investment decision support', 'Hotel operating growth', 'Hotel digitalization and AI lean management'],
+      ? ['酒店投资判断', '酒店筹建筹开', '酒店经营改善']
+      : ['Hotel investment decisions', 'Hotel pre-opening', 'Hotel operating improvement'],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: isZh ? '迈创兄弟C&T核心服务模块' : 'MarvelBros C&T Core Service Modules',
-      itemListElement: dict.services.items.map((service, index) => ({
+      itemListElement: serviceGroups.flatMap((group) => group.items).map((service) => ({
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
           name: service.title,
-          description: service.description,
-          audience: serviceMeta[index]?.audience,
+          description: service.deliverable,
+          audience: service.audience,
         },
       })),
     },
@@ -270,8 +306,8 @@ export default async function ServicesPage({
         acceptedAnswer: {
           '@type': 'Answer',
           text: isZh
-            ? '适合酒店投资人、业主、筹开项目负责人、存量酒店经营团队，以及希望通过数字化和AI精益管理提升经营结果的团队。'
-            : 'We work with hotel investors, owners, pre-opening teams, existing hotel operators, and teams seeking measurable improvement through digital intelligence and AI lean management.',
+            ? '适合酒店投资人、业主、筹开项目负责人和存量酒店经营团队。服务从项目判断、筹开准备到经营改善，按实际问题组合。'
+            : 'We work with hotel investors, owners, pre-opening teams, and existing hotel operators, combining services around the actual question from investment through operating improvement.',
         },
       },
       {
@@ -352,38 +388,38 @@ export default async function ServicesPage({
         </div>
       </section>
 
-      <section id="ai-search-acquisition" className="scroll-mt-24 border-y border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900">
+      <section id="growth-acquisition" className="scroll-mt-24 border-y border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:items-center">
           <div>
             <p className="mb-3 text-sm font-semibold text-[#0b4a6f] dark:text-sky-300">
-              {isZh ? '主推业务 · AI 搜索获客' : 'Featured service · AI search acquisition'}
+              {isZh ? '经营增长与获客能力之一' : 'One capability within operating growth'}
             </p>
             <h2 className="text-3xl font-bold leading-tight text-foreground md:text-4xl">
-              {isZh ? '让酒店的真实优势被 AI 理解、引用和推荐' : 'Make the hotel’s real strengths understandable, citable, and recommendable by AI'}
+              {isZh ? '把客群、产品、渠道与官网信息接成一条可判断的路径' : 'Connect guest segments, products, channels, and website information into one clear operating path'}
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               {isZh
-                ? '我们不承诺虚假排名，而是检查酒店在官网、地图、OTA 和内容平台的信息是否一致，建立 AI 可抓取、客人可理解、销售可承接的自有信息入口。'
-                : 'We do not promise artificial rankings. We audit information consistency across the hotel website, maps, OTAs, and content platforms, then build an owned information entry point that AI can crawl, guests can understand, and sales teams can convert.'}
+                ? '官网、地图、OTA 和内容平台的信息，只有与真实产品、服务能力和销售承接一致，才可能帮助酒店进入合适客群的候选范围。'
+                : 'Website, map, OTA, and content information helps only when it is consistent with the actual product, service capacity, and sales path.'}
             </p>
-            <Link href={`/${lang}/services/ai-hotel-website`} className="mt-7 inline-flex items-center gap-2 font-semibold text-[#0b4a6f] hover:text-[#d98b28] dark:text-sky-300 dark:hover:text-amber-300">
-              {isZh ? '查看完整方案' : 'View the complete solution'}
+            <Link href={`/${lang}/hotel-operation-improvement`} className="mt-7 inline-flex items-center gap-2 font-semibold text-[#0b4a6f] hover:text-[#d98b28] dark:text-sky-300 dark:hover:text-amber-300">
+              {isZh ? '查看经营改善方法' : 'View the operating improvement method'}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {[
               {
-                title: isZh ? 'AI 信息体检' : 'AI information audit',
-                text: isZh ? '找出错误、缺失、冲突和无法被理解的信息。' : 'Find inaccurate, missing, conflicting, or unreadable information.',
+                title: isZh ? '客群与需求判断' : 'Guest and demand judgment',
+                text: isZh ? '先明确哪些客人值得争取，以及他们真正关心什么。' : 'Clarify which guests matter and what they actually value.',
               },
               {
-                title: isZh ? '信息平台建设' : 'Information platform',
-                text: isZh ? '构建结构清晰、可搜索、可询价的官网信息入口。' : 'Build a structured, searchable, inquiry-ready owned website entry point.',
+                title: isZh ? '产品与渠道承接' : 'Product and channel capture',
+                text: isZh ? '让房价、套餐、渠道与可交付能力保持一致。' : 'Keep rate, packages, channels, and delivery capacity aligned.',
               },
               {
-                title: isZh ? '内容托管运营' : 'Managed content operations',
-                text: isZh ? '持续更新页面、FAQ 和场景内容，让信息保持鲜活。' : 'Maintain pages, FAQs, and scenario content so information stays current.',
+                title: isZh ? '信息与复购维护' : 'Information and retention maintenance',
+                text: isZh ? '持续维护客人需要的信息与复购触点。' : 'Maintain the information and touchpoints guests need to return.',
               },
             ].map((item) => (
               <div key={item.title} className="rounded-md border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-950">
@@ -425,52 +461,44 @@ export default async function ServicesPage({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {dict.services.items.map((service, i) => {
-              const Icon = iconMap[icons[i]] ?? Building2
-              const meta = serviceMeta[i]
-              return (
-                <Card key={service.title} className="border border-border bg-card rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 card-themed h-full">
-                  <CardHeader className="pb-3">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                      style={{ background: iconGradients[i % iconGradients.length] }}
-                    >
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-xl font-semibold text-card-foreground leading-snug">{service.title}</CardTitle>
-                    <p className="text-xs font-medium text-primary">{meta.audience}</p>
-                  </CardHeader>
-                  <CardContent className="flex flex-col gap-5">
-                    <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
-
-                    <div className="space-y-3 rounded-xl bg-muted/40 p-4">
-                      <div>
-                        <p className="text-xs font-semibold text-foreground mb-1">{isZh ? '适合谁' : 'Best for'}</p>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{meta.forWho}</p>
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-foreground mb-1">{isZh ? '解决什么' : 'What it solves'}</p>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{meta.problem}</p>
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-foreground mb-1">{isZh ? '交付什么' : 'What you receive'}</p>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{meta.deliverable}</p>
-                      </div>
-                    </div>
-
-                    <ul className="space-y-3">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start text-sm text-muted-foreground leading-relaxed">
-                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              )
-            })}
+          <div className="space-y-12">
+            {serviceGroups.map((group, groupIndex) => (
+              <div key={group.title}>
+                <div className="mb-6 max-w-3xl border-l-4 border-primary pl-4">
+                  <h3 className="text-2xl font-bold text-foreground">{group.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{group.description}</p>
+                </div>
+                <div className="grid gap-6 md:grid-cols-3">
+                  {group.items.map((service, itemIndex) => {
+                    const Icon = iconMap[service.icon] ?? Building2
+                    const cardIndex = groupIndex * 3 + itemIndex
+                    return (
+                      <Card key={service.title} className="h-full overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:shadow-lg card-themed">
+                        <CardHeader className="pb-3">
+                          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: iconGradients[cardIndex % iconGradients.length] }}>
+                            <Icon className="h-6 w-6 text-white" />
+                          </div>
+                          <CardTitle className="text-xl font-semibold leading-snug text-card-foreground">{service.title}</CardTitle>
+                          <p className="text-xs font-medium text-primary">{service.audience}</p>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3 rounded-xl bg-muted/40 p-4">
+                            <div>
+                              <p className="mb-1 text-xs font-semibold text-foreground">{isZh ? '解决什么' : 'What it solves'}</p>
+                              <p className="text-sm leading-relaxed text-muted-foreground">{service.problem}</p>
+                            </div>
+                            <div>
+                              <p className="mb-1 text-xs font-semibold text-foreground">{isZh ? '交付什么' : 'What you receive'}</p>
+                              <p className="text-sm leading-relaxed text-muted-foreground">{service.deliverable}</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    )
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

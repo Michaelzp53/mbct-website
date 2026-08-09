@@ -4,8 +4,10 @@ import { ArrowLeft, Clock, User, Calendar, BookOpen } from 'lucide-react'
 import ArticleContent from './ArticleContent'
 import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
-import ArticleInteractions from '@/components/interactions/ArticleInteractions'
+import ContentPathway from '@/components/knowledge/ContentPathway'
+import ArticleEngagementTracker from '@/components/knowledge/ArticleEngagementTracker'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { getPrimaryTopic } from '@/lib/knowledge-topics'
 import articles20260808 from './articles-2026-08-08.json'
 import articles20260809 from './articles-2026-08-09.json'
 import articles20260807 from './articles-2026-08-07.json'
@@ -10575,10 +10577,59 @@ function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean)
       ? ['hotel franchise brand', 'hotel brand selection', 'hotel investment', 'franchise value creation', 'MarvelBros C&T']
       : ['酒店加盟品牌', '酒店品牌选择', '酒店投资', '加盟价值评估', '迈创兄弟C&T']
   }
-  const base = isEnglish
-    ? ['hotel AI search', 'hotel direct booking', 'hotel website', 'hotel operations', 'MarvelBros C&T']
-    : ['酒店AI搜索', '酒店官网直订', '酒店获客', '酒店经营', '迈创兄弟C&T']
+  const topic = getPrimaryTopic(article)
+  const topicKeywords = {
+    investment: isEnglish ? ['hotel investment', 'hotel feasibility', 'hotel brand selection'] : ['酒店投资', '酒店可行性', '酒店品牌选择'],
+    'hotel-opening': isEnglish ? ['hotel pre-opening', 'hotel opening budget', 'hotel opening readiness'] : ['酒店筹开', '酒店开业预算', '酒店开业准备'],
+    operations: isEnglish ? ['hotel operations', 'hotel service process', 'hotel management'] : ['酒店经营', '酒店服务流程', '酒店管理'],
+    revenue: isEnglish ? ['hotel revenue management', 'hotel pricing', 'hotel profitability'] : ['酒店收益管理', '酒店房价', '酒店利润'],
+    cost: isEnglish ? ['hotel cost control', 'hotel labor efficiency', 'hotel energy management'] : ['酒店成本控制', '酒店人效', '酒店能耗管理'],
+    marketing: isEnglish ? ['hotel marketing', 'hotel guest acquisition', 'hotel membership'] : ['酒店市场营销', '酒店获客', '酒店会员'],
+    distribution: isEnglish ? ['hotel distribution', 'hotel direct booking', 'OTA management'] : ['酒店分销', '酒店直订', 'OTA管理'],
+    renovation: isEnglish ? ['hotel renovation', 'hotel repositioning', 'hotel investment'] : ['酒店改造', '酒店焕新', '酒店投资'],
+    team: isEnglish ? ['hotel team management', 'hotel training', 'hotel handover'] : ['酒店团队管理', '酒店培训', '酒店交接班'],
+    'ai-search': isEnglish ? ['hotel AI search', 'hotel website information', 'hotel digital readiness'] : ['酒店AI搜索', '酒店官网信息', '酒店数字化准备'],
+  }[topic]
+  const base = [...topicKeywords, isEnglish ? 'MarvelBros C&T' : '迈创兄弟C&T']
   return Array.from(new Set([article.tag, ...base].filter(Boolean)))
+}
+
+function getRelatedArticles(currentSlug: string, currentArticle: (typeof articlesData)[string]) {
+  const primaryTopic = getPrimaryTopic(currentArticle)
+  const currentDate = new Date(currentArticle.date).getTime()
+  const candidates = Object.entries(articlesData)
+    .filter(([slug, article]) => slug !== currentSlug && getPrimaryTopic(article) === primaryTopic)
+    .sort(([, left], [, right]) => {
+      const dateDifference = new Date(right.date).getTime() - new Date(left.date).getTime()
+      if (dateDifference !== 0) return dateDifference
+      return Math.abs(new Date(right.date).getTime() - currentDate) - Math.abs(new Date(left.date).getTime() - currentDate)
+    })
+    .slice(0, 3)
+    .map(([slug, article]) => ({
+      slug,
+      title: article.title,
+      titleEn: article.titleEn,
+      summary: article.description || getPlainDescription(article.content, article.title),
+      summaryEn: article.descriptionEn || getPlainDescription(article.contentEn || article.content, article.titleEn || article.title),
+      readTime: article.readTime,
+      tag: article.tag,
+    }))
+
+  if (candidates.length >= 2) return candidates
+
+  return Object.entries(articlesData)
+    .filter(([slug]) => slug !== currentSlug)
+    .sort(([, left], [, right]) => new Date(right.date).getTime() - new Date(left.date).getTime())
+    .slice(0, 3)
+    .map(([slug, article]) => ({
+      slug,
+      title: article.title,
+      titleEn: article.titleEn,
+      summary: article.description || getPlainDescription(article.content, article.title),
+      summaryEn: article.descriptionEn || getPlainDescription(article.contentEn || article.content, article.titleEn || article.title),
+      readTime: article.readTime,
+      tag: article.tag,
+    }))
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
@@ -10747,6 +10798,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const keyTakeaway = articleDescription || (isEnglish
     ? 'This article explains the operating issue, the factors behind it, and a practical path for hotel investors, owners, and managers.'
     : '本文说明这一经营问题的成因、判断重点与可执行路径，帮助酒店投资人、业主和管理者更快抓住核心。')
+  const primaryTopic = getPrimaryTopic(article)
+  const relatedArticles = getRelatedArticles(decodedSlug, article)
+  const hasRelatedCase = Object.entries(articlesData).some(([candidateSlug, candidate]) => (
+    candidateSlug !== decodedSlug
+    && candidate.tag === '案例研究'
+    && getPrimaryTopic(candidate) === primaryTopic
+  ))
 
   return (
     <div className="min-h-screen bg-background py-24">
@@ -10810,38 +10868,20 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <h2 className="text-lg font-bold text-card-foreground">{isEnglish ? 'Key Takeaway' : '核心观点'}</h2>
             <p className="mt-2 leading-7 text-muted-foreground">{keyTakeaway}</p>
             <p className="mt-3 text-sm font-medium text-muted-foreground">
-              {isEnglish ? 'Reviewed by a hospitality industry specialist' : '酒店行业专家审核'}
+              {isEnglish ? 'Reviewed by the MarvelBros C&T professional team' : '迈创兄弟C&T专业团队审核'}
             </p>
           </div>
 
-          <ArticleInteractions 
-            articleId={article.id.toString()} 
-            articleTitle={articleTitle}
-            articleUrl={articleUrl}
-          />
           <ArticleContent content={articleContent} articleTitle={articleTitle} />
+          <ArticleEngagementTracker articleSlug={decodedSlug} />
 
-          <div className="mt-10 rounded-2xl border border-primary/20 bg-primary/5 p-6">
-            <h2 className="text-xl font-bold text-card-foreground">
-              {isEnglish ? 'Want to make your hotel easier for AI and guests to understand?' : '想让 AI 和客人更容易读懂你的酒店？'}
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              {isEnglish
-                ? 'MarvelBros C&T helps hotels structure official websites, topic pages, FAQs, and direct-booking paths so search engines, AI assistants, and guests can understand the hotel more clearly.'
-                : '迈创兄弟C&T可以帮助酒店梳理官网、专题页、FAQ、案例和直订承接路径，让搜索引擎、AI 助手和真实客人更容易理解酒店价值。'}
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <Link href={`/${lang}/topics/ai-hotel-growth`} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">
-                {isEnglish ? 'AI Search Growth Hub' : '酒店 AI 搜索获客专题'}
-              </Link>
-              <Link href={`/${lang}/services/ai-hotel-website`} className="rounded-full border border-primary/30 px-4 py-2 text-sm font-semibold text-primary">
-                {isEnglish ? 'View Service' : '查看服务'}
-              </Link>
-              <Link href={`/${lang}/contact`} className="rounded-full border border-primary/30 px-4 py-2 text-sm font-semibold text-primary">
-                {isEnglish ? 'Contact MBCT' : '联系 MBCT'}
-              </Link>
-            </div>
-          </div>
+          <ContentPathway
+            lang={lang}
+            articleSlug={decodedSlug}
+            primaryTopic={primaryTopic}
+            relatedArticles={relatedArticles}
+            hasRelatedCase={hasRelatedCase}
+          />
 
           {/* 评论功能暂时隐藏 - 等待GitHub Discussions配置完成 */}
           <ArticleComments slug={slug} />

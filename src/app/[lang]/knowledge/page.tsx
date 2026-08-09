@@ -3,14 +3,15 @@ import type { Metadata } from 'next'
 import { BookOpen, FileText, BarChart3, ArrowRight, Clock, User, Calendar } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import KnowledgeSearchBox from './KnowledgeSearchBox'
+import { getPrimaryTopic, getTopicCopy, topicOrder, type PrimaryTopic } from '@/lib/knowledge-topics'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
-  const title = isZh ? '酒店行业洞察｜投资判断、经营增长与AI搜索可见度' : 'Hotel Industry Insights | Investment Judgment, Operating Growth and AI Search Visibility'
+  const title = isZh ? '酒店投资、筹开与经营问题知识库' : 'Hotel Investment, Pre-Opening and Operations Knowledge Hub'
   const description = isZh
-    ? '迈创兄弟C&T行业洞察聚焦酒店投资逻辑、经营诊断、客户资产、数字化赋能与AI搜索可见度，帮助投资人与经营团队形成更清晰的判断。'
-    : 'MarvelBros C&T Industry Insights covers hotel investment logic, operating diagnosis, customer assets, digital enablement, and AI search visibility for sharper hospitality decisions.'
+    ? '从酒店投资判断、筹建筹开到经营改善，按真实酒店问题找到判断方法、案例与下一步行动。'
+    : 'Find practical methods, cases, and next steps for hotel investment, pre-opening, and operating improvement through real hospitality questions.'
 
   return {
     title,
@@ -39,19 +40,26 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 }
 
-export default async function KnowledgePage({ params }: { params: Promise<{ lang: string }> }) {
+export default async function KnowledgePage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ lang: string }>
+  searchParams: Promise<{ topic?: string }>
+}) {
   const { lang } = await params
+  const { topic: requestedTopic } = await searchParams
   const isZh = lang === 'zh'
 
   // 页面UI翻译
   const ui = {
-    pageTitle: isZh ? '行业洞察' : 'Industry Insights',
+    pageTitle: isZh ? '酒店投资、筹开与经营问题知识库' : 'Hotel Investment, Pre-Opening and Operations Knowledge Hub',
     pageSubtitle: isZh
-      ? '以数据驱动的前瞻视角，深度解析酒店行业趋势、投资逻辑与运营变革'
-      : 'Data-driven foresight — in-depth analysis of hotel industry trends, investment logic, and operational transformation',
+      ? '从投资判断、筹建筹开到经营改善，按真实酒店问题找到判断方法、案例和下一步行动。'
+      : 'Find methods, cases, and next steps for real hotel questions — from investment and pre-opening to operating improvement.',
     heroSubtitle: isZh
-      ? 'MBCT研究院出品，以数据驱动的前瞻视角，为酒店行业提供深度洞察与实战指南'
-      : 'By MBCT Institute — data-driven strategic foresight, delivering deep insights and practical guidance for the hospitality industry',
+      ? '从投资判断、筹建筹开到经营改善，按真实酒店问题找到判断方法、案例和下一步行动。'
+      : 'Find methods, cases, and next steps for real hotel questions — from investment and pre-opening to operating improvement.',
     leanBannerTitle: isZh ? '管享精道 · 专题栏目' : 'Lean Insights · Special Column',
     leanBannerDesc: isZh
       ? '专为酒店管理者打造的精益管理知识体系 —— 从投资决策到运营升级，7大模块系统赋能。独立入口，直达实战精华。'
@@ -2760,6 +2768,23 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
     return new Date(article.date) > new Date(latest.date) ? article : latest
   }, allArticles[0])
 
+  const questionTopics: PrimaryTopic[] = [
+    'investment',
+    'hotel-opening',
+    'revenue',
+    'operations',
+    'cost',
+    'renovation',
+    'team',
+    'marketing',
+  ]
+  const selectedTopic = topicOrder.includes(requestedTopic as PrimaryTopic)
+    ? requestedTopic as PrimaryTopic
+    : null
+  const selectedTopicArticles = selectedTopic
+    ? allArticles.filter((article) => getPrimaryTopic(article) === selectedTopic)
+    : []
+
   const categories = [
     {
       id: 'academic',
@@ -2817,6 +2842,81 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
           placeholder={ui.searchPlaceholder}
         />
 
+        <section id="problem-navigation" className="mb-16">
+          <div className="max-w-3xl mb-8">
+            <p className="text-sm font-medium text-primary mb-3">{isZh ? '按问题开始' : 'Start with the question'}</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {isZh ? '先找到正在影响酒店结果的那个问题' : 'Start with the issue shaping the hotel result'}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              {isZh ? '每个入口只保留少量精选文章，帮助你先缩小判断范围，而不是在长目录里反复筛选。' : 'Each entry contains a small editorial selection so readers can narrow the judgment before opening a long directory.'}
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {questionTopics.map((topic) => {
+              const copy = getTopicCopy(topic, isZh)
+              const selected = allArticles
+                .filter((article) => getPrimaryTopic(article) === topic)
+                .sort((left, right) => new Date(right.date).getTime() - new Date(left.date).getTime())
+                .slice(0, 3)
+
+              return (
+                <section key={topic} className="rounded-2xl border border-border bg-card p-6">
+                  <h3 className="text-xl font-bold text-card-foreground">{copy.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{copy.description}</p>
+                  <div className="mt-5 space-y-3">
+                    {selected.map((article) => (
+                      <Link
+                        key={`${topic}-${article.slug}`}
+                        href={`/${lang}/knowledge/${encodeURIComponent(article.slug)}`}
+                        className="group flex items-start justify-between gap-3 text-sm font-medium text-foreground hover:text-primary"
+                      >
+                        <span>{isZh ? article.title : article.titleEn || article.title}</span>
+                        <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
+                      </Link>
+                    ))}
+                  </div>
+                  <Link
+                    href={`/${lang}/knowledge?topic=${topic}#topic-results`}
+                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:opacity-80"
+                  >
+                    {isZh ? '查看该主题全部内容' : 'View all in this topic'} <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </section>
+              )
+            })}
+          </div>
+        </section>
+
+        {selectedTopic && (
+          <section id="topic-results" className="mb-16 scroll-mt-24">
+            <div className="flex flex-col gap-3 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-sm font-medium text-primary">{isZh ? '主题内容' : 'Topic content'}</p>
+                <h2 className="mt-2 text-2xl font-bold text-foreground">{getTopicCopy(selectedTopic, isZh).title}</h2>
+              </div>
+              <Link href={`/${lang}/knowledge`} className="text-sm font-semibold text-primary hover:opacity-80">
+                {isZh ? '返回问题导航' : 'Back to question navigation'}
+              </Link>
+            </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {selectedTopicArticles.map((article) => (
+                <Link
+                  key={`topic-result-${article.slug}`}
+                  href={`/${lang}/knowledge/${encodeURIComponent(article.slug)}`}
+                  className="rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/50"
+                >
+                  <p className="text-xs font-medium text-primary">{isZh ? article.tag : article.tag.replace('行业报告', 'Industry Report').replace('行业分析', 'Industry Analysis').replace('案例研究', 'Case Study')}</p>
+                  <h3 className="mt-2 font-semibold text-card-foreground">{isZh ? article.title : article.titleEn || article.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">{isZh ? article.summary : article.summaryEn || article.summary}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {false && <>
         {/* 管享精道 · 专题栏目入口 */}
         <section className="mb-12">
           <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200 dark:from-amber-900/20 dark:to-yellow-900/20 dark:border-amber-500/30">
@@ -3028,6 +3128,8 @@ export default async function KnowledgePage({ params }: { params: Promise<{ lang
         </section>
 
 
+
+        </>}
 
         <section className="mt-16 text-center">
           <div className="p-8 rounded-2xl bg-card border border-border">

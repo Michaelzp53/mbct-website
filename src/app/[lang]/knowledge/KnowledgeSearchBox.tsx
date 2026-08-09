@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Search } from 'lucide-react'
 import { useMemo, useState } from 'react'
+import { trackEvent } from '@/lib/analytics'
 
 type KnowledgeArticle = {
   id: number
@@ -64,6 +65,11 @@ export default function KnowledgeSearchBox({
           placeholder={placeholder}
           value={query}
           onChange={(event) => setQuery(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' && normalizedQuery) {
+              trackEvent('knowledge_search', { query_length: normalizedQuery.length, result_count: results.length })
+            }
+          }}
           className="w-full px-6 py-4 bg-card border border-border rounded-2xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b] transition-colors pl-14"
           aria-label={placeholder}
         />

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
+import PageViewTracker from '@/components/analytics/PageViewTracker'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -104,7 +105,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-DWV89MEG50', {
-            send_page_view: true,
+            send_page_view: false,
             cookie_flags: 'SameSite=None;Secure',
             // 增强测量:滚动深度/外链点击/site search 由 GA 后台配置控制
             // 这里只做基础配置
@@ -114,6 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
+          <PageViewTracker />
           {children}
         </ThemeProvider>
         <Analytics />
