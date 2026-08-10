@@ -2873,6 +2873,24 @@ export default async function KnowledgePage({
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
+            <section className="rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-yellow-50 p-6 dark:border-amber-500/30 dark:from-amber-900/20 dark:to-yellow-900/20 md:col-span-2">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-sm font-medium text-amber-700 dark:text-amber-300">{isZh ? '酒店实际经营案例' : 'Real hotel operating cases'}</p>
+                  <h3 className="mt-2 text-xl font-bold text-card-foreground">{ui.leanTitle}</h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
+                    {isZh ? '从真实经营问题出发，查看收益、运营、团队与成本等场景中的判断方法和改进动作。' : 'Start with real operating problems and explore practical judgments and improvement actions across revenue, operations, teams, and costs.'}
+                  </p>
+                </div>
+                <Link
+                  href={`/${lang}/lean`}
+                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#f59e0b] px-5 py-3 font-bold text-[#0f172a] transition-colors hover:bg-[#d98b28]"
+                >
+                  {ui.enterLean}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </section>
             {questionTopics.map((topic) => {
               const copy = getTopicCopy(topic, isZh)
               const selected = allArticles
@@ -2936,36 +2954,6 @@ export default async function KnowledgePage({
         )}
 
         {false && <>
-        {/* 管享精道 · 专题栏目入口 */}
-        <section className="mb-12">
-          <div className="p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200 dark:from-amber-900/20 dark:to-yellow-900/20 dark:border-amber-500/30">
-            <div className="flex flex-col lg:flex-row items-center gap-6">
-              <div className="flex-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-300 text-sm font-medium mb-3">
-                  <BookOpen className="w-4 h-4" />
-                  {isZh ? '专题栏目' : 'Special Column'}
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  {ui.leanTitle}
-                </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {ui.leanBannerDesc}
-                </p>
-                <Link
-                  href={`/${lang}/lean`}
-                  className="inline-flex items-center px-6 py-3 bg-[#f59e0b] text-[#0f172a] font-bold rounded-xl hover:bg-[#f59e0b]/90 transition-all"
-                >
-                  {ui.enterLean}
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </div>
-              <div className="hidden lg:flex items-center justify-center w-48 h-48 rounded-2xl bg-amber-100/50 dark:bg-amber-900/20 border border-amber-200/30 dark:border-amber-500/20">
-                <BookOpen className="w-24 h-24 text-amber-500/40" />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Categories */}
         <section id="categories" className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
