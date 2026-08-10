@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 642,
+      type: "article",
+      title: "暑期需求集中之后，酒店如何判断订单增加是否真的改善经营？",
+      titleEn: "After Summer Demand Concentrates, How Can Hotels Tell Whether More Orders Mean Better Performance?",
+      slug: "summer-demand-operating-improvement-2026-08-10",
+      summary: "订单增加不是经营改善的完整证明。把需求质量、价格兑现、渠道净收入、服务承载和长期客源放在一起，才能判断旺季机会是否真正留下价值。",
+      summaryEn: "More orders are not proof of operating improvement. Test demand quality, realised rates, net channel revenue, service capacity and durable demand together before drawing a conclusion.",
+      firstLine: "订单增加是好消息，但不是经营改善的完整证明。",
+      author: "迈创兄弟C&T",
+      date: "2026-08-10",
+      category: "industry-insights",
+      tag: isZh ? "行业分析" : "Industry Analysis",
+      tagColor: "bg-[#f97316]",
+      tagTextColor: "text-white",
+      readTime: 8,
+      featured: true,
+      image: "",
+    },
+    {
       id: 641,
       type: "article",
       title: "酒店筹开预算为什么总是越做越大？先把三类成本分开再谈控制",
