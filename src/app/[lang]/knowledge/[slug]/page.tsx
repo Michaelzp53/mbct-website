@@ -10602,6 +10602,7 @@ function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean)
     distribution: isEnglish ? ['hotel distribution', 'hotel direct booking', 'OTA management'] : ['酒店分销', '酒店直订', 'OTA管理'],
     renovation: isEnglish ? ['hotel renovation', 'hotel repositioning', 'hotel investment'] : ['酒店改造', '酒店焕新', '酒店投资'],
     team: isEnglish ? ['hotel team management', 'hotel training', 'hotel handover'] : ['酒店团队管理', '酒店培训', '酒店交接班'],
+    governance: isEnglish ? ['hotel operating governance', 'hotel owners and management teams', 'goal translation'] : ['酒店经营治理', '酒店业主与经营团队', '经营目标翻译'],
     'ai-search': isEnglish ? ['hotel AI search', 'hotel website information', 'hotel digital readiness'] : ['酒店AI搜索', '酒店官网信息', '酒店数字化准备'],
   }[topic]
   const base = [...topicKeywords, isEnglish ? 'MarvelBros C&T' : '迈创兄弟C&T']
@@ -10611,15 +10612,34 @@ function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean)
 function getRelatedArticles(currentSlug: string, currentArticle: (typeof articlesData)[string]) {
   const primaryTopic = getPrimaryTopic(currentArticle)
   const currentDate = new Date(currentArticle.date).getTime()
-  const candidates = Object.entries(articlesData)
-    .filter(([slug, article]) => slug !== currentSlug && getPrimaryTopic(article) === primaryTopic)
+  const entries = Object.entries(articlesData)
+    .filter(([slug]) => slug !== currentSlug)
     .sort(([, left], [, right]) => {
       const dateDifference = new Date(right.date).getTime() - new Date(left.date).getTime()
       if (dateDifference !== 0) return dateDifference
       return Math.abs(new Date(right.date).getTime() - currentDate) - Math.abs(new Date(left.date).getTime() - currentDate)
     })
-    .slice(0, 3)
-    .map(([slug, article]) => ({
+
+  type Relation = 'deep-dive' | 'execution' | 'governance' | 'case'
+  const selected: Array<[string, (typeof articlesData)[string], Relation]> = []
+  const addFirst = (relation: Relation, predicate: (article: (typeof articlesData)[string]) => boolean) => {
+    const match = entries.find(([slug, article]) => !selected.some(([selectedSlug]) => selectedSlug === slug) && predicate(article))
+    if (match) selected.push([match[0], match[1], relation])
+  }
+
+  addFirst('deep-dive', (article) => getPrimaryTopic(article) === primaryTopic && article.tag !== '案例研究')
+  addFirst('execution', (article) => getPrimaryTopic(article) === primaryTopic && /如何|怎样|检查|指标|方法|清单|how|checklist|framework|method/iu.test(`${article.title} ${article.titleEn || ''}`))
+  addFirst('governance', (article) => getPrimaryTopic(article) === 'governance')
+  addFirst('case', (article) => article.tag === '案例研究' && getPrimaryTopic(article) === primaryTopic)
+
+  for (const [slug, article] of entries) {
+    if (selected.length >= 4) break
+    if (!selected.some(([selectedSlug]) => selectedSlug === slug)) {
+      selected.push([slug, article, getPrimaryTopic(article) === 'governance' ? 'governance' : article.tag === '案例研究' ? 'case' : 'deep-dive'])
+    }
+  }
+
+  return selected.slice(0, 4).map(([slug, article, relation]) => ({
       slug,
       title: article.title,
       titleEn: article.titleEn,
@@ -10627,22 +10647,7 @@ function getRelatedArticles(currentSlug: string, currentArticle: (typeof article
       summaryEn: article.descriptionEn || getPlainDescription(article.contentEn || article.content, article.titleEn || article.title),
       readTime: article.readTime,
       tag: article.tag,
-    }))
-
-  if (candidates.length >= 2) return candidates
-
-  return Object.entries(articlesData)
-    .filter(([slug]) => slug !== currentSlug)
-    .sort(([, left], [, right]) => new Date(right.date).getTime() - new Date(left.date).getTime())
-    .slice(0, 3)
-    .map(([slug, article]) => ({
-      slug,
-      title: article.title,
-      titleEn: article.titleEn,
-      summary: article.description || getPlainDescription(article.content, article.title),
-      summaryEn: article.descriptionEn || getPlainDescription(article.contentEn || article.content, article.titleEn || article.title),
-      readTime: article.readTime,
-      tag: article.tag,
+      relation,
     }))
 }
 

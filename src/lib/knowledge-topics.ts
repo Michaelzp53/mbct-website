@@ -8,6 +8,7 @@ export type PrimaryTopic =
   | 'distribution'
   | 'renovation'
   | 'team'
+  | 'governance'
   | 'ai-search'
 
 export type KnowledgeLike = {
@@ -30,10 +31,12 @@ export const topicOrder: PrimaryTopic[] = [
   'distribution',
   'renovation',
   'team',
+  'governance',
   'ai-search',
 ]
 
 const topicKeywords: Array<[PrimaryTopic, RegExp]> = [
+  ['governance', /经营治理|目标传递|业主.{0,12}(总经理|团队|管理公司)|管理公司.{0,12}(单店|业主|总经理)|组织变革|hotel governance|operating governance|owner.{0,30}(general manager|management team|operator)|management company.{0,30}(property|owner|general manager)|organizational change/iu],
   ['ai-search', /\bai\b|人工智能|ai搜索|ai可见|geo|digital transformation|information platform|信息平台/iu],
   ['hotel-opening', /筹开|筹建|开业|pre-opening|opening budget|hotel opening/iu],
   ['investment', /投资|可行性|融资|品牌选择|加盟|investment|feasibility|financing|franchise/iu],
@@ -129,10 +132,18 @@ export function getTopicCopy(topic: PrimaryTopic, isZh: boolean) {
       contact: ['团队很忙，但服务和效率没有改善？', 'The team is busy, but service and efficiency are not improving?'],
       contactHref: '/contact?type=diagnosis',
     },
+    governance: {
+      title: ['业主与经营团队', 'Owners and hotel management teams'],
+      description: ['把业主目标翻译成经营变量，减少管理公司、总经理与部门之间的目标传递损耗。', 'Translate owner objectives into operating variables and reduce execution loss across owners, operators, general managers, and departments.'],
+      hub: ['酒店经营治理方法', 'Hotel operating governance'],
+      href: '/knowledge?topic=governance#topic-results',
+      contact: ['目标说清了，结果为什么仍然没有发生？', 'The goal was clear, so why did the result still fail to materialize?'],
+      contactHref: '/contact?type=diagnosis',
+    },
     'ai-search': {
-      title: ['AI搜索与数字化', 'AI search and digital readiness'],
-      description: ['只有信息表达与新搜索入口直接相关时，才从这里开始。', 'Start here only when the question is directly about information clarity and new search entry points.'],
-      hub: ['AI搜索专题', 'AI search hub'],
+      title: ['线上获客与渠道变化', 'Digital acquisition and channel change'],
+      description: ['判断官网内容、新搜索入口与客户承接怎样影响有效咨询和直订。', 'Assess how website content, new discovery paths, and lead handling affect qualified enquiries and direct bookings.'],
+      hub: ['线上获客与信息承接专题', 'Digital acquisition and information hub'],
       href: '/topics/ai-hotel-growth',
       contact: ['酒店在新搜索入口里几乎看不到？', 'Is the hotel hard to find in new search entry points?'],
       contactHref: '/contact?type=ai-website-audit',

@@ -14,6 +14,7 @@ type RelatedArticle = {
   summaryEn?: string
   readTime: string
   tag: string
+  relation: 'deep-dive' | 'execution' | 'governance' | 'case'
 }
 
 export default function ContentPathway({
@@ -40,7 +41,7 @@ export default function ContentPathway({
         <h2 className="mt-2 text-2xl font-bold text-card-foreground">{isZh ? '下一步，你可能还需要判断' : 'The next questions worth answering'}</h2>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {relatedArticles.map((article) => (
           <Link
             key={article.slug}
@@ -52,7 +53,15 @@ export default function ContentPathway({
             })}
             className="group rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/50 hover:bg-primary/5"
           >
-            <p className="text-xs font-medium text-primary">{isZh ? article.tag : article.tag.replace('行业报告', 'Industry Report').replace('行业分析', 'Industry Analysis').replace('案例研究', 'Case Study')}</p>
+            <p className="text-xs font-medium text-primary">
+              {{
+                'deep-dive': isZh ? '深度解释' : 'Deep dive',
+                execution: isZh ? '执行方法' : 'Execution method',
+                governance: isZh ? '治理视角' : 'Governance view',
+                case: isZh ? '相关案例' : 'Related case',
+              }[article.relation]}
+            </p>
+            <p className="mt-2 text-xs text-muted-foreground">{isZh ? article.tag : article.tag.replace('行业报告', 'Industry Report').replace('行业分析', 'Industry Analysis').replace('案例研究', 'Case Study')}</p>
             <h3 className="mt-3 font-semibold leading-6 text-card-foreground group-hover:text-primary">
               {isZh ? article.title : article.titleEn || article.title}
             </h3>

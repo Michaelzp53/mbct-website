@@ -66,7 +66,7 @@ export default async function KnowledgePage({
       : 'A Lean management knowledge system built for hotel executives — 7 modules empowering decisions from investment to operations. Independent entry to a world of practical wisdom.',
     enterLean: isZh ? '进入管享精道' : 'Enter Lean Insights',
     academicTitle: isZh ? '行业分析' : 'Industry Analysis',
-    academicDesc: isZh ? '学术研究论文,理论与实践结合' : 'Peer-reviewed research combining theory and practice',
+    academicDesc: isZh ? '用行业证据解释变化，帮助投资者、业主和经营团队形成判断' : 'Use industry evidence to help investors, owners, and operators make better judgments',
     reportTitle: isZh ? '行业报告' : 'Industry Reports',
     reportDesc: isZh ? '行业深度报告,实战案例分析' : 'In-depth industry analysis with real cases',
     caseTitle: isZh ? '案例研究' : 'Case Studies',
@@ -2795,7 +2795,36 @@ export default async function KnowledgePage({
     'cost',
     'renovation',
     'team',
+    'governance',
     'marketing',
+    'distribution',
+  ]
+  const knowledgeMap = [
+    {
+      step: isZh ? '投资前' : 'Before investment',
+      title: isZh ? '判断项目、品牌、回报与风险' : 'Judge the project, brand, return, and risk',
+      topics: ['investment'] as PrimaryTopic[],
+    },
+    {
+      step: isZh ? '筹开期' : 'Pre-opening',
+      title: isZh ? '把定位、产品、预算与开业准备连起来' : 'Connect positioning, product, budget, and opening readiness',
+      topics: ['hotel-opening', 'renovation'] as PrimaryTopic[],
+    },
+    {
+      step: isZh ? '经营期' : 'In operation',
+      title: isZh ? '同时看收入、利润、客源、成本与服务' : 'Read revenue, profit, demand, cost, and service together',
+      topics: ['revenue', 'operations', 'cost', 'marketing', 'distribution'] as PrimaryTopic[],
+    },
+    {
+      step: isZh ? '治理层' : 'Governance',
+      title: isZh ? '让业主目标被管理公司和团队正确承接' : 'Help operators and teams carry owner objectives correctly',
+      topics: ['governance', 'team'] as PrimaryTopic[],
+    },
+    {
+      step: isZh ? '改善期' : 'Improvement',
+      title: isZh ? '诊断、拆解、测试、验证，再决定是否扩大' : 'Diagnose, break down, test, verify, then decide whether to scale',
+      topics: ['operations', 'renovation'] as PrimaryTopic[],
+    },
   ]
   const selectedTopic = topicOrder.includes(requestedTopic as PrimaryTopic)
     ? requestedTopic as PrimaryTopic
@@ -2844,7 +2873,7 @@ export default async function KnowledgePage({
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
             <BookOpen className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-[#f59e0b] text-sm font-medium">{isZh ? '思想领导力' : 'Thought Leadership'}</span>
+            <span className="text-[#f59e0b] text-sm font-medium">{isZh ? '酒店经营知识库' : 'Hotel Management Knowledge Base'}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             {ui.pageTitle}
@@ -2923,6 +2952,38 @@ export default async function KnowledgePage({
                 </section>
               )
             })}
+          </div>
+        </section>
+
+        <section id="knowledge-map" className="mb-16 rounded-3xl border border-border bg-card p-6 sm:p-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-medium text-primary">{isZh ? '知识体系地图' : 'Knowledge map'}</p>
+            <h2 className="mt-2 text-3xl font-bold text-card-foreground">
+              {isZh ? '按酒店经营全周期，找到下一步需要补齐的知识' : 'Find the next knowledge gap across the hotel lifecycle'}
+            </h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              {isZh ? '知识库不是文章的堆叠。它把投资、筹开、经营、治理和改善连接成一条可持续查阅的经营路径。' : 'This knowledge base connects investment, pre-opening, operations, governance, and improvement into one durable reference path.'}
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+            {knowledgeMap.map((stage, index) => (
+              <div key={stage.step} className="rounded-2xl border border-border bg-background/60 p-5">
+                <span className="text-xs font-bold tracking-[0.18em] text-primary">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="mt-3 text-lg font-bold text-card-foreground">{stage.step}</h3>
+                <p className="mt-2 min-h-16 text-sm leading-6 text-muted-foreground">{stage.title}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {stage.topics.map((topic) => (
+                    <Link
+                      key={`${stage.step}-${topic}`}
+                      href={`/${lang}/knowledge?topic=${topic}#topic-results`}
+                      className="rounded-full border border-border px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                    >
+                      {getTopicCopy(topic, isZh).title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
