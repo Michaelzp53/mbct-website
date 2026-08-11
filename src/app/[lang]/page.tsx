@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '酒店投资回报不确定时，为什么要先做三种需求压力测试？' : 'When Hotel Returns Are Uncertain, Why Test Three Demand Scenarios First?',
+      summary: isZh
+        ? '一张只写一种未来的测算表，无法说明项目在需求变化时是否安全。用三种情景把继续、调整与暂停的门槛提前写清。'
+        : 'Test base, pressure and recovery scenarios before deciding whether a hotel project should proceed, adapt or pause.',
+      slug: 'hotel-demand-stress-tests-investment-2026-08-12',
+      date: '2026.08.12',
+    },
+    {
       title: isZh ? '暑期需求集中之后，酒店如何判断订单增加是否真的改善经营？' : 'After Summer Demand Concentrates, How Can Hotels Tell Whether More Orders Mean Better Performance?',
       summary: isZh
         ? '订单增加不是经营改善的完整证明。把需求质量、价格兑现、渠道净收入、服务承载和长期客源放在一起，才能判断旺季机会是否真正留下价值。'

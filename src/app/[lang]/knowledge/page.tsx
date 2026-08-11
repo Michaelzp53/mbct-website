@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 644,
+      type: 'article',
+      title: '酒店投资回报不确定时，为什么要先做三种需求压力测试？',
+      titleEn: 'When Hotel Returns Are Uncertain, Why Test Three Demand Scenarios First?',
+      slug: 'hotel-demand-stress-tests-investment-2026-08-12',
+      summary: '一张只写一种未来的测算表，无法说明项目在需求变化时是否安全。用三种情景把继续、调整与暂停的门槛提前写清。',
+      summaryEn: 'Test base, pressure and recovery scenarios before deciding whether a hotel project should proceed, adapt or pause.',
+      firstLine: '可行性研究不是把最可能的数字算得更漂亮，而是先知道变化时如何决定。',
+      author: '迈创兄弟C&T',
+      date: '2026-08-12',
+      category: 'industry-insights',
+      tag: isZh ? '酒店投资判断' : 'Hotel Investment',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+      readTime: 8,
+      featured: true,
+      image: '',
+    },
+    {
       id: 643,
       type: 'article',
       title: '业主看到一个赚钱机会，为什么传到酒店管理团队手里就变了样？',

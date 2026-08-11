@@ -1,0 +1,37 @@
+{
+  "hotel-demand-stress-tests-investment-2026-08-12": {
+    "id": 644,
+    "title": "酒店投资回报不确定时，为什么要先做三种需求压力测试？",
+    "titleEn": "When Hotel Returns Are Uncertain, Why Test Three Demand Scenarios First?",
+    "description": "一张只写一种未来的测算表，无法说明项目在需求变化时是否安全。用基准、承压和反弹三种情景，把继续、调整与暂停的门槛提前写清。",
+    "descriptionEn": "A feasibility model built around one future cannot show whether a hotel is safe when demand shifts. Test a base, pressure and recovery scenario before deciding to proceed, adapt or pause.",
+    "author": "迈创兄弟C&T（MarvelBros C&T）",
+    "date": "2026-08-12",
+    "readTime": "8分钟",
+    "tag": "酒店投资判断",
+    "content": [
+      "酒店投资回报不确定时，为什么要先做三种需求压力测试？",
+      "投资评审会上，财务模型可能把未来十年的入住率、房价和利润都算得很清楚。可业主真正要问的是：如果开业第二年淡季入住率明显低于预测，项目还能不能撑住？只写一种未来的模型回答不了这个问题。",
+      "平均入住率和平均房价可以描述一个结果，却会掩盖需求变化时最先失效的环节。中国饭店协会发布的《2026中国酒店业发展报告》显示，截至2025年底，酒店业设施约37.5万家、客房约1873.6万间；供给趋于饱和，单一平均数更不足以替代对波动的判断。",
+      "三种情景不是简单排列乐观和悲观。基准情景回答：在当前可验证假设下，经营底盘是什么。承压情景回答：需求变弱、渠道变贵或价格守不住时，现金流能否覆盖固定成本。反弹情景回答：哪些证据出现后，才值得重新加大投入。",
+      "真正需要拆开的不是回报率结论，而是四类变量。先看需求质量：新增订单来自高净价散客、协议客户，还是一次性低价流量。再看价格与渠道净收入：面价之外，还要计算佣金、促销和分摊后的实际到手。然后看可交付能力：高入住时的人力、早餐、设备和服务能否接住需求。最后看现金流与退出弹性：回本周期拉长后，债务、管理费和退出时点还能否承受。",
+      "假设一间180间房的中高端酒店，基准情景入住率为68%、平均房价420元。承压情景中，商务需求减少、入住率下滑、OTA占比被动提高，净房价和现金流覆盖能力都会被压缩。管理层不应先用降价回应，而应先核算每个渠道的净收入、调整可变成本，并验证替代客源是否真实存在。这里的数字只用于说明判断顺序，不代表任何项目预测。",
+      "三种情景最终要落成三条决策门槛。继续投入：承压情景下仍能覆盖固定成本与债务，且客源没有过度集中。调整产品与节奏：现金流覆盖月数、回本周期或单一渠道依赖触及预设边界。暂停投入：基准情景本身的关键假设无法用市场证据验证。",
+      "正式签约或重投入前，先做一次低成本验证：观察周边同类酒店的预订提前期和客群画像，访谈目标协议客户，核对不同季节和价格区间的真实需求。目的不是证明项目一定成功，而是尽早发现模型与市场的差距。",
+      "投资人应盯住承压上限，业主应盯住客源集中度与渠道净收入，品牌和管理公司应盯住产品与客群匹配，经营团队应盯住成本弹性。不同角色看的是同一组情景，但负责的决定不同。",
+      "明天先做一件事：把现有测算表中的关键假设逐条标为“已验证”或“待验证”，并为承压情景写下一个明确的调整或暂停条件。好的可行性研究不是预测未来，而是提前知道未来变化时如何决定。",
+      "延伸阅读：酒店投资判断与项目测算（https://www.marvelbros.com/zh/hotel-investment）"
+    ],
+    "contentEn": [
+      "When Hotel Returns Are Uncertain, Why Test Three Demand Scenarios First?",
+      "An investment committee may have ten years of occupancy, rate and profit projections on one tidy spreadsheet. The owner’s harder question is different: if second-year low-season occupancy falls materially below plan, can the asset still carry itself? A model with only one future cannot answer that.",
+      "Average occupancy and average rate describe an outcome, but they can hide the first point of failure when demand changes. China Hotel Association’s 2026 industry report puts the 2025 hotel stock at roughly 375,000 facilities and 18.7 million rooms. In a maturing supply market, one average is not a risk view.",
+      "The three scenarios are not an optimistic-to-pessimistic ladder. The base scenario establishes the operating floor under verifiable assumptions. The pressure scenario tests weaker demand, higher channel cost or rate erosion. The recovery scenario identifies the evidence that would justify renewed investment.",
+      "Break the model into four variables. Test demand quality, not just occupancy: which guests, which channels and how repeatable are they? Test net revenue, not public rate: account for commission, promotion and subsidy. Test delivery capacity: can staffing, breakfast, equipment and service absorb a peak? Test cash-flow and exit flexibility: what happens when the payback period lengthens?",
+      "Consider an illustrative 180-room upper-midscale project. A pressure case may combine weaker corporate demand, lower occupancy and a higher OTA mix. The first response should not be an automatic discount. It should be a channel net-revenue review, a variable-cost adjustment and a test of replacement demand. The figures are illustrative; the decision sequence is the point.",
+      "The output is three decision thresholds. Continue when the pressure case still covers fixed commitments and demand is not overly concentrated. Adjust when cash coverage, payback or channel dependency crosses an agreed boundary. Pause when the base case itself rests on assumptions that cannot be verified.",
+      "Before signing or committing major capital, run a low-cost market test: observe booking windows and guest mix at comparable hotels, speak to target corporate accounts, and check demand across seasons and price bands. The aim is not to prove success. It is to expose the gap between the model and the market while it is still inexpensive to act.",
+      "A practical first step is to mark every material model assumption as verified or unverified, then write one explicit adjustment-or-pause trigger for the pressure case. A useful feasibility study does not predict one future; it prepares the decision maker for several."
+    ]
+  }
+}
