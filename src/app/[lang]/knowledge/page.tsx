@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 643,
+      type: 'article',
+      title: '业主看到一个赚钱机会，为什么传到酒店管理团队手里就变了样？',
+      titleEn: 'Why Does an Owner’s Revenue Opportunity Look Different by the Time It Reaches the Hotel Management Team?',
+      slug: 'owner-opportunity-goal-translation-2026-08-11',
+      summary: '业主提出的是机会信号，团队却常把它直接翻成任务。先用目标、基线、客群、变量和停止条件，把想法变成可验证的经营试验。',
+      summaryEn: 'Translate an owner’s opportunity signal through objectives, baselines, customers, variables and stop conditions before committing resources.',
+      firstLine: '业主提出的不是一张待办单，而是一个需要被重新翻译的经营信号。',
+      author: '迈创兄弟C&T',
+      date: '2026-08-11',
+      category: 'industry-insights',
+      tag: isZh ? '经营治理' : 'Operating Governance',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 7,
+      featured: true,
+      image: '',
+    },
+    {
       id: 642,
       type: "article",
       title: "暑期需求集中之后，酒店如何判断订单增加是否真的改善经营？",
