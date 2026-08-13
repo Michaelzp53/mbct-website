@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '暑期客流之后，酒店为什么不能把9月直接当成淡季' : 'Why September Demand Should Not Be Treated as a Simple Hotel Low Season',
+      summary: isZh
+        ? '暑期结束不等于需求消失。把客源、提前期、入住日型、产品承载和渠道净收入拆开，用90天需求桥接法决定9月该降价、缩产品还是调整排班。'
+        : 'The end of summer is not the end of demand. Separate source mix, lead time, day-of-week patterns, product fit and net channel income before deciding whether September needs lower rates, fewer products or different staffing.',
+      slug: 'hotel-september-demand-structure-2026-08-13',
+      date: '2026.08.13',
+    },
+    {
       title: isZh ? '酒店投资回报不确定时，为什么要先做三种需求压力测试？' : 'When Hotel Returns Are Uncertain, Why Test Three Demand Scenarios First?',
       summary: isZh
         ? '一张只写一种未来的测算表，无法说明项目在需求变化时是否安全。用三种情景把继续、调整与暂停的门槛提前写清。'

@@ -11,6 +11,7 @@ import { getPrimaryTopic } from '@/lib/knowledge-topics'
 import articles20260808 from './articles-2026-08-08.json'
 import articles20260811 from './articles-2026-08-11.json'
 import articles20260812 from './articles-2026-08-12.json'
+import articles20260813 from './articles-2026-08-13.json'
 import articles20260809 from './articles-2026-08-09.json'
 import articles20260810 from './articles-2026-08-10.json'
 import articles20260807 from './articles-2026-08-07.json'
@@ -45,6 +46,9 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260813 as Record<string, {
+    id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
+  }>),
   ...(articles20260812 as Record<string, {
     id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
   }>),
