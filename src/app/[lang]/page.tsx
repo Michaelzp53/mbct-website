@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '会员体系越做越大，独立酒店该不该自建积分？' : 'As Hotel Loyalty Platforms Scale, Should Independent Hotels Build Their Own Points Programme?',
+      summary: isZh
+        ? '大型集团的会员规模不能直接证明单店积分有效。独立酒店应先验证识别、权益兑现和净复购，再决定是否投资积分体系。'
+        : 'Global loyalty scale does not prove that points will work for one property. Independent hotels should validate recognition, benefit fulfilment and net repeat demand before investing.',
+      slug: 'independent-hotel-points-programme-2026-08-14',
+      date: '2026.08.14',
+    },
+    {
       title: isZh ? '暑期客流之后，酒店为什么不能把9月直接当成淡季' : 'Why September Demand Should Not Be Treated as a Simple Hotel Low Season',
       summary: isZh
         ? '暑期结束不等于需求消失。把客源、提前期、入住日型、产品承载和渠道净收入拆开，用90天需求桥接法决定9月该降价、缩产品还是调整排班。'
