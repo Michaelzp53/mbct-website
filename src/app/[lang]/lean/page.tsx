@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import SearchBox from './SearchBox'
 import PageHero from '@/components/PageHero'
 import { allArticlesData } from './article/[slug]/articles-data'
+import { knowledgeCategories, normalizeLeanCategory } from '@/lib/knowledge-taxonomy'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
@@ -42,8 +43,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 }
 
-// 7大分类（老马叔叔确认顺序）
-const categories = [
+// Canonical eight-category taxonomy; legacy article IDs are normalized at read time.
+const categories = knowledgeCategories.map((category) => ({
+  id: category.slug,
+  labelZh: category.zh,
+  labelEn: category.en,
+  descZh: category.descriptionZh,
+  descEn: category.descriptionEn,
+  color: category.color,
+  icon: category.icon,
+}))
+/* const legacyCategories = [
   { 
     id: 'investment', 
     labelZh: '投资决策', 
@@ -107,16 +117,16 @@ const categories = [
     color: '#f59e0b',
     icon: '📊'
   },
-]
+] */
 
 const categoryCounts: Record<string, number> = categories.reduce((acc, cat) => {
-  acc[cat.id] = allArticlesData.filter(article => article.category === cat.id).length
+  acc[cat.id] = allArticlesData.filter(article => normalizeLeanCategory(article.category) === cat.id).length
   return acc
 }, {} as Record<string, number>)
 
 const latestArticlesByCategory: Record<string, typeof allArticlesData[number] | undefined> = categories.reduce((acc, cat) => {
   acc[cat.id] = [...allArticlesData]
-    .filter(article => article.category === cat.id)
+    .filter(article => normalizeLeanCategory(article.category) === cat.id)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime() || b.id - a.id)[0]
   return acc
 }, {} as Record<string, typeof allArticlesData[number] | undefined>)

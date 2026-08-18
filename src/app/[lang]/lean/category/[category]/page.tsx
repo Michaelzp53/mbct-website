@@ -3,19 +3,11 @@ import { ArrowLeft, Search, Clock, User, Eye, ThumbsUp, MessageSquare, ChevronRi
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { allArticlesData } from '../../article/[slug]/articles-data'
+import { knowledgeCategories, normalizeLeanCategory } from '@/lib/knowledge-taxonomy'
 
 type SortMode = 'latest' | 'hottest' | 'mostComments'
 
-// 7大分类
-const categories = [
-  { id: 'investment', labelZh: '投资决策', labelEn: 'Investment', color: '#ef4444', icon: '💰' },
-  { id: 'preparation', labelZh: '筹备筹开', labelEn: 'Preparation', color: '#f97316', icon: '🏗️' },
-  { id: 'team', labelZh: '团队建设', labelEn: 'Team Building', color: '#8b5cf6', icon: '👥' },
-  { id: 'operations', labelZh: '运营升级', labelEn: 'Operations', color: '#22c55e', icon: '⚙️' },
-  { id: 'marketing', labelZh: '营销策略', labelEn: 'Marketing', color: '#3b82f6', icon: '📢' },
-  { id: 'digital', labelZh: '数字平台', labelEn: 'Digital', color: '#06b6d4', icon: '💻' },
-  { id: 'cost', labelZh: '成本优化', labelEn: 'Cost Control', color: '#f59e0b', icon: '📊' },
-]
+const categories = knowledgeCategories.map((category) => ({ id: category.slug, labelZh: category.zh, labelEn: category.en, color: category.color, icon: category.icon }))
 
 function sortArticles(mode: SortMode) {
   return [...allArticlesData].sort((a, b) => {
@@ -39,7 +31,7 @@ function sortArticles(mode: SortMode) {
 
 
 export async function generateStaticParams() {
-  const categoryIds = ['investment', 'preparation', 'team', 'operations', 'marketing', 'digital', 'cost']
+  const categoryIds = [...knowledgeCategories.map(({ slug }) => slug), 'investment', 'preparation', 'team', 'operations', 'marketing', 'digital', 'cost']
   
   return categoryIds.flatMap((category) => [
     { lang: 'zh', category },
@@ -52,10 +44,11 @@ export default async function CategoryPage({ params, searchParams }: { params: P
   const resolvedSearchParams = searchParams ? await searchParams : undefined
   const isZh = lang === 'zh'
 
-  const currentCategory = categories.find(c => c.id === category)
-  const latestArticles = sortArticles('latest').filter(a => a.category === category)
-  const hottestArticles = sortArticles('hottest').filter(a => a.category === category)
-  const mostCommentedArticles = sortArticles('mostComments').filter(a => a.category === category)
+  const canonicalCategory = normalizeLeanCategory(category)
+  const currentCategory = categories.find(c => c.id === canonicalCategory)
+  const latestArticles = sortArticles('latest').filter(a => normalizeLeanCategory(a.category) === canonicalCategory)
+  const hottestArticles = sortArticles('hottest').filter(a => normalizeLeanCategory(a.category) === canonicalCategory)
+  const mostCommentedArticles = sortArticles('mostComments').filter(a => normalizeLeanCategory(a.category) === canonicalCategory)
   const requestedSort = resolvedSearchParams?.sort
   const activeSort: SortMode = requestedSort === 'hottest' || requestedSort === 'mostComments' ? requestedSort : 'latest'
   const searchQuery = (resolvedSearchParams?.q || '').trim()
@@ -155,7 +148,7 @@ export default async function CategoryPage({ params, searchParams }: { params: P
                           {isZh ? cat.labelZh : cat.labelEn}
                         </span>
                         <span className="ml-auto text-xs text-muted-foreground">
-                          {allArticlesData.filter(a => a.category === cat.id).length}
+                          {allArticlesData.filter(a => normalizeLeanCategory(a.category) === cat.id).length}
                         </span>
                       </Link>
                     ))}

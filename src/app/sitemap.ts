@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { articlesData as knowledgeArticlesData } from './[lang]/knowledge/[slug]/page'
 import { allArticlesData as leanArticlesData } from './[lang]/lean/article/[slug]/articles-data'
+import { knowledgeCategories } from '@/lib/knowledge-taxonomy'
 
 const siteUrl = 'https://www.marvelbros.com'
 const languages = ['zh', 'en'] as const
@@ -42,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localized('/hotel-opening', 0.95, 'weekly'),
     ...localized('/hotel-operation-improvement', 0.95, 'weekly'),
     ...localized('/hotel-revenue', 0.95, 'weekly'),
+    ...knowledgeCategories.flatMap(({ slug }) => localized(`/knowledge/category/${slug}`, 0.85, 'weekly')),
   ]
 
   const knowledgeArticles = Object.entries(knowledgeArticlesData).flatMap(([slug, article]) =>

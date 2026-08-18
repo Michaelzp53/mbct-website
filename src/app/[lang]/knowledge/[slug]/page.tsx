@@ -8,6 +8,7 @@ import ContentPathway from '@/components/knowledge/ContentPathway'
 import ArticleEngagementTracker from '@/components/knowledge/ArticleEngagementTracker'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { getPrimaryTopic } from '@/lib/knowledge-topics'
+import { categoryBySlug, categoryForKnowledgeTopic } from '@/lib/knowledge-taxonomy'
 import articles20260814 from './articles-2026-08-14.json'
 import articles20260808 from './articles-2026-08-08.json'
 import articles20260811 from './articles-2026-08-11.json'
@@ -10667,6 +10668,22 @@ function getRelatedArticles(currentSlug: string, currentArticle: (typeof article
     }))
 }
 
+function getCategoryArticles(currentSlug: string, currentArticle: (typeof articlesData)[string]) {
+  const categorySlug = categoryForKnowledgeTopic(getPrimaryTopic(currentArticle))
+  return Object.entries(articlesData)
+    .filter(([slug, article]) => slug !== currentSlug && categoryForKnowledgeTopic(getPrimaryTopic(article)) === categorySlug)
+    .sort(([, left], [, right]) => right.date.localeCompare(left.date))
+    .slice(0, 3)
+    .map(([slug, article]) => ({
+      slug,
+      title: article.title,
+      titleEn: article.titleEn,
+      summary: article.description || getPlainDescription(article.content, article.title),
+      summaryEn: article.descriptionEn || getPlainDescription(article.contentEn || article.content, article.titleEn || article.title),
+      date: article.date,
+    }))
+}
+
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { lang, slug } = await params
   const decodedSlug = safeDecodeSlug(slug)
@@ -10795,12 +10812,20 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       {
         '@type': 'ListItem',
         position: 2,
-        name: isEnglish ? 'Industry Insights' : '行业洞察',
+        name: isEnglish ? 'Knowledge base' : '知识库',
         item: `https://www.marvelbros.com/${lang}/knowledge`,
       },
       {
         '@type': 'ListItem',
         position: 3,
+        name: isEnglish
+          ? categoryBySlug[categoryForKnowledgeTopic(getPrimaryTopic(article))].en
+          : categoryBySlug[categoryForKnowledgeTopic(getPrimaryTopic(article))].zh,
+        item: `https://www.marvelbros.com/${lang}/knowledge/category/${categoryForKnowledgeTopic(getPrimaryTopic(article))}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
         name: breadcrumbTitle,
         item: articleUrl,
       },
@@ -10834,7 +10859,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     ? 'This article explains the operating issue, the factors behind it, and a practical path for hotel investors, owners, and managers.'
     : '本文说明这一经营问题的成因、判断重点与可执行路径，帮助酒店投资人、业主和管理者更快抓住核心。')
   const primaryTopic = getPrimaryTopic(article)
+  const categorySlug = categoryForKnowledgeTopic(primaryTopic)
+  const knowledgeCategory = categoryBySlug[categorySlug]
   const relatedArticles = getRelatedArticles(decodedSlug, article)
+  const categoryArticles = getCategoryArticles(decodedSlug, article)
   const hasRelatedCase = Object.entries(articlesData).some(([candidateSlug, candidate]) => (
     candidateSlug !== decodedSlug
     && candidate.tag === '案例研究'
@@ -10869,8 +10897,26 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <ThemeToggle lang={lang} />
         </div>
 
+        <nav aria-label={isEnglish ? 'Breadcrumb' : '面包屑'} className="mb-6 text-sm text-muted-foreground">
+          <Link href={`/${lang}`}>{isEnglish ? 'Home' : '首页'}</Link>
+          <span className="mx-2">/</span>
+          <Link href={`/${lang}/knowledge`}>{isEnglish ? 'Knowledge base' : '知识库'}</Link>
+          <span className="mx-2">/</span>
+          <Link href={`/${lang}/knowledge/category/${categorySlug}`} className="hover:text-primary hover:underline">
+            {isEnglish ? knowledgeCategory.en : knowledgeCategory.zh}
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="line-clamp-1 inline-block max-w-[18rem] align-bottom">{breadcrumbTitle}</span>
+        </nav>
+
         <article className="bg-card rounded-2xl border border-border p-8 md:p-12">
           <div className="mb-6">
+            <Link
+              href={`/${lang}/knowledge/category/${knowledgeCategory.slug}`}
+              className="mr-2 inline-flex items-center rounded-full border border-[#d98b28]/40 bg-[#fffaf0] px-3 py-1 text-sm font-semibold text-[#9a5b13] transition hover:bg-[#fff1d6] dark:bg-white/[0.06] dark:text-amber-300"
+            >
+              {isEnglish ? knowledgeCategory.en : knowledgeCategory.zh}
+            </Link>
             <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium">
               {lang === 'en' ? article.tag.replace('行业报告', 'Industry Report').replace('行业分析', 'Industry Analysis').replace('案例研究', 'Case Study').replace('博客文章', 'Blog Post') : article.tag}
             </span>
@@ -10909,6 +10955,27 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
           <ArticleContent content={articleContent} articleTitle={articleTitle} />
           <ArticleEngagementTracker articleSlug={decodedSlug} />
+
+          {categoryArticles.length > 0 ? (
+            <section className="mt-12 border-t border-border pt-8" aria-labelledby="same-category-heading">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="text-sm font-medium text-primary">{isEnglish ? 'Continue in this category' : '继续阅读本栏目'}</p>
+                  <h2 id="same-category-heading" className="mt-1 text-2xl font-bold text-card-foreground">{isEnglish ? knowledgeCategory.en : knowledgeCategory.zh}</h2>
+                </div>
+                <Link href={`/${lang}/knowledge/category/${categorySlug}`} className="text-sm font-medium text-primary hover:underline">{isEnglish ? 'View all' : '查看全部'} →</Link>
+              </div>
+              <div className="mt-5 grid gap-4 md:grid-cols-3">
+                {categoryArticles.map((item) => (
+                  <Link key={item.slug} href={`/${lang}/knowledge/${item.slug}`} className="rounded-xl border border-border p-4 transition-colors hover:border-primary/50 hover:bg-primary/5">
+                    <p className="text-xs text-muted-foreground">{item.date}</p>
+                    <h3 className="mt-2 line-clamp-3 font-semibold leading-6 text-card-foreground">{isEnglish && item.titleEn ? item.titleEn : item.title}</h3>
+                    <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">{isEnglish ? item.summaryEn : item.summary}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
           <ContentPathway
             lang={lang}

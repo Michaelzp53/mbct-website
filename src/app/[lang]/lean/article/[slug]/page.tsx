@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { getArticleBySlug, getAllSlugs } from './articles-data'
 import ArticleInteractions from './ArticleInteractions'
 import { ArticleMarkdown } from '@/components/article-markdown'
+import { categoryBySlug, normalizeLeanCategory } from '@/lib/knowledge-taxonomy'
 
 // 7大分类
 const categories = [
@@ -102,7 +103,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
     loadMore: isZh ? '加载更多' : 'Load More',
   }
 
-  const category = categories.find(c => c.id === articleData.category)
+  const category = categoryBySlug[normalizeLeanCategory(articleData.category)]
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const articleUrl = `https://www.marvelbros.com/${lang}/lean/article/${slug}`
@@ -130,7 +131,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
     mainEntityOfPage: articleUrl,
     url: articleUrl,
     inLanguage: isZh ? 'zh-CN' : 'en-US',
-    articleSection: category ? (isZh ? category.labelZh : category.labelEn) : articleData.category,
+    articleSection: category ? (isZh ? category.zh : category.en) : articleData.category,
     keywords: articleData.tags,
   }
   const breadcrumbJsonLd = {
@@ -218,7 +219,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
                 className="text-white border-0"
                 style={{ backgroundColor: category.color }}
               >
-                {isZh ? category.labelZh : category.labelEn}
+                {isZh ? category.zh : category.en}
               </Badge>
             )}
             <Badge variant="outline" className="border-[#f59e0b]/50 text-[#f59e0b]">
