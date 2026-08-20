@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 650,
+      type: 'article',
+      title: '豆包开始收酒店订房佣金：AI推荐会不会改变客人找到好酒店的机会？',
+      titleEn: 'When AI Recommends Hotels and Earns on the Booking, What Must Stay Independent?',
+      slug: 'doubao-ai-hotel-recommendation-channel-governance-2026-08-20',
+      summary: '豆包酒店订单开始作为独立渠道结算后，酒店、传统OTA与住客都要重新理解推荐、交易和履约之间的边界。',
+      summaryEn: 'As Doubao hotel bookings become a separately priced channel, hotels, OTAs and guests must reconsider the boundary between recommendation, transaction and fulfilment.',
+      firstLine: 'AI推荐开始参与酒店交易分发后，酒店不该先研究怎样排在前面，而应先确认推荐承诺能否兑现。',
+      author: '迈创兄弟C&T',
+      date: '2026-08-20',
+      category: 'industry-insights',
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#f97316]',
+      tagTextColor: 'text-white',
+      readTime: 10,
+      featured: true,
+      image: '',
+    },
+    {
       id: 649,
       type: 'article',
       title: '酒店会员数在涨，为什么前台还是认不出回头客？',
