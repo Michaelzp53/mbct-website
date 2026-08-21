@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 652,
+      type: 'article',
+      title: '酒店改造前，业主先做一次资产现金流重估',
+      titleEn: "Before Renovating a Hotel, Re-underwrite the Asset's Cash Flow",
+      slug: 'hotel-renovation-asset-repricing-2026-08-21',
+      summary: '设施显旧不等于必须翻新。改造前，业主应把需求、房价、渠道、停业损失、资金成本和退出价值放回同一张现金流表。',
+      summaryEn: 'A tired-looking hotel does not automatically need a renovation. Put demand, rate, channel mix, disruption, funding cost and exit value on one cash-flow view first.',
+      firstLine: '酒店改造不是设计决策，而是资产现金流重估。',
+      author: '迈创兄弟C&T',
+      date: '2026-08-21',
+      category: 'industry-insights',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 12,
+      featured: true,
+      image: '',
+    },
+    {
       id: 650,
       type: 'article',
       title: '豆包开始收酒店订房佣金：AI推荐会不会改变客人找到好酒店的机会？',
