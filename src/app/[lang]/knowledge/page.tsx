@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 653,
+      type: 'article',
+      title: '酒店加盟后，谁来对经营拍板？业主可以高枕无忧了吗？',
+      titleEn: 'Asset-Light Growth Makes Governance an Operating Issue',
+      slug: 'hotel-franchise-governance-2026-08-22',
+      summary: '加盟不等于托管，更不等于躺赚。签约前把经营权、费用权和结果责任写进三张表，业主才知道该授权什么、监督什么，以及亏损和退出时谁承担责任。',
+      summaryEn: 'Franchising is not trusteeship or passive income. Map operating authority, spending authority and accountability before signing so the owner knows what to delegate, verify and govern.',
+      firstLine: '加盟不等于托管，业主真正要先建的是一套能核验数字、分清责任的治理机制。',
+      author: '迈创兄弟C&T',
+      date: '2026-08-22',
+      category: 'industry-insights',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 15,
+      featured: true,
+      image: '',
+    },
+    {
       id: 652,
       type: 'article',
       title: '酒店改造前，业主先做一次资产现金流重估',

@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '酒店加盟后，谁来对经营拍板？业主可以高枕无忧了吗？' : 'Asset-Light Growth Makes Governance an Operating Issue',
+      summary: isZh
+        ? '加盟不等于托管，更不等于躺赚。签约前把经营权、费用权和结果责任写进三张表，业主才知道该授权什么、监督什么，以及亏损和退出时谁承担责任。'
+        : 'Franchising is not trusteeship or passive income. Map operating authority, spending authority and accountability before signing so the owner knows what to delegate, verify and govern.',
+      slug: 'hotel-franchise-governance-2026-08-22',
+      date: '2026.08.22',
+    },
+    {
       title: isZh ? '会员体系越做越大，独立酒店该不该自建积分？' : 'As Hotel Loyalty Platforms Scale, Should Independent Hotels Build Their Own Points Programme?',
       summary: isZh
         ? '大型集团的会员规模不能直接证明单店积分有效。独立酒店应先验证识别、权益兑现和净复购，再决定是否投资积分体系。'
