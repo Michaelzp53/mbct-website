@@ -53,6 +53,54 @@ const copies: Record<TopicSlug, { zh: TopicCopy; en: TopicCopy }> = {
   },
 }
 
+type ServiceModule = {
+  id: string
+  title: string
+  audience: string
+  problem: string
+  deliverable: string
+  firstStep: string
+}
+
+const topicServiceModules: Partial<Record<TopicSlug, { zh: ServiceModule[]; en: ServiceModule[] }>> = {
+  'hotel-investment': {
+    zh: [
+      { id: 'project-feasibility', title: '项目可行性与风险判断', audience: '投资人 / 业主', problem: '验证市场需求、物业条件和投资假设是否能够支撑目标房价、入住率与现金流。', deliverable: '市场与竞争基线、情景测算、风险清单和继续、调整或暂停的决策条件。', firstStep: '先整理物业资料、投资边界和目标客群，再核对测算中的关键假设。' },
+      { id: 'brand-positioning', title: '品牌与定位选择', audience: '业主 / 项目负责人', problem: '判断品牌承诺、目标客群、产品标准和投资承受力是否真正匹配。', deliverable: '品牌与定位比较、客群逻辑、产品边界和落地原则。', firstStep: '先说明项目要服务哪类客人，以及物业能够稳定交付什么体验。' },
+      { id: 'product-renewal', title: '改造与资本安排', audience: '存量资产持有人', problem: '确定先改哪里、投入多少，以及哪些改造能够改善现金流和资产竞争力。', deliverable: '改造优先级、阶段预算、经营影响判断和资本安排建议。', firstStep: '先把必须修复、能够增收和只改善外观的项目分开。' },
+    ],
+    en: [
+      { id: 'project-feasibility', title: 'Feasibility and risk judgment', audience: 'Investors / owners', problem: 'Test whether demand, property fundamentals, and investment assumptions support the target rate, occupancy, and cash flow.', deliverable: 'A market baseline, scenarios, risk register, and decision conditions to proceed, adjust, or pause.', firstStep: 'Start with the property facts, capital boundary, target guests, and the assumptions carrying the model.' },
+      { id: 'brand-positioning', title: 'Brand and positioning choice', audience: 'Owners / project leaders', problem: 'Judge whether the brand promise, target guests, product standard, and capital tolerance genuinely fit.', deliverable: 'Brand and positioning comparison, guest logic, product boundaries, and delivery principles.', firstStep: 'Define who the hotel must serve and what experience the property can deliver consistently.' },
+      { id: 'product-renewal', title: 'Renovation and capital planning', audience: 'Existing asset owners', problem: 'Decide what to change first, how much to commit, and which improvements can strengthen cash flow and asset competitiveness.', deliverable: 'Renovation priorities, phased budget, operating impact, and capital planning recommendations.', firstStep: 'Separate mandatory repairs, revenue-producing improvements, and cosmetic upgrades.' },
+    ],
+  },
+  'hotel-opening': {
+    zh: [
+      { id: 'pre-opening-budget', title: '筹开预算与里程碑', audience: '筹开负责人 / 业主', problem: '防止预算、工程节点、采购和开业承诺彼此脱节。', deliverable: '筹开总控表、阶段预算、关键路径、责任人和检查标准。', firstStep: '先把影响开业日期的关键节点与对应预算放进同一张表。' },
+      { id: 'service-readiness', title: '运营流程与服务准备', audience: '总经理 / 部门负责人', problem: '检验人员、系统、设备和服务流程是否已经能够共同运转。', deliverable: '核心流程清单、岗位接口、模拟运营安排和问题关闭记录。', firstStep: '从一次完整客人旅程开始，逐项验证预订、入住、在店和离店流程。' },
+      { id: 'opening-team', title: '团队组织与开业节奏', audience: '业主 / 人力与运营团队', problem: '避免岗位、培训、排班和现场需求不匹配，导致开业后持续救火。', deliverable: '组织分工、人员到岗计划、培训重点、排班原则和开业复盘节奏。', firstStep: '先按真实业务高峰确认关键岗位、到岗时间和培训验收人。' },
+    ],
+    en: [
+      { id: 'pre-opening-budget', title: 'Opening budget and milestones', audience: 'Pre-opening leaders / owners', problem: 'Prevent the budget, construction milestones, procurement, and opening promises from drifting apart.', deliverable: 'An integrated opening plan, phased budget, critical path, owners, and review criteria.', firstStep: 'Put every date-critical milestone and its budget on one control sheet.' },
+      { id: 'service-readiness', title: 'Operating process and service readiness', audience: 'General managers / department leaders', problem: 'Test whether people, systems, equipment, and service processes can operate together.', deliverable: 'Core process checklists, role interfaces, mock-operation plans, and issue-closure records.', firstStep: 'Walk through one complete guest journey from booking to departure and test every handoff.' },
+      { id: 'opening-team', title: 'Team organization and launch cadence', audience: 'Owners / HR and operations teams', problem: 'Avoid roles, training, rosters, and field demand becoming misaligned after opening.', deliverable: 'Organization roles, arrival plan, training priorities, roster principles, and post-opening reviews.', firstStep: 'Confirm the critical roles, arrival dates, and training owners against real operating peaks.' },
+    ],
+  },
+  'hotel-operation-improvement': {
+    zh: [
+      { id: 'operating-diagnosis', title: '经营诊断与改善优先级', audience: '总经理 / 经营团队', problem: '区分表面症状和真正影响利润、服务与效率的少数关键问题。', deliverable: '问题分层、优先级、责任人、行动路线和复盘指标。', firstStep: '先统一收入、成本、服务和客户数据口径，再决定现场动作。' },
+      { id: 'revenue-channel-cost', title: '收益、渠道与成本协同', audience: '收益 / 销售 / 财务团队', problem: '解决订单增长但净收入、价格纪律和渠道结构没有同步改善的问题。', deliverable: '净贡献指标、价格边界、渠道协同机制和周度复盘口径。', firstStep: '先按客群和渠道重算净收入，而不是继续只看订单量。' },
+      { id: 'market-information', title: '市场、会员与信息承接', audience: '市场销售 / 运营团队', problem: '让客群、产品、渠道、官网信息和复购触点不再彼此脱节。', deliverable: '客群与产品表达、渠道触点地图、信息维护责任和复购路径。', firstStep: '先选择一个重点客群，核对从搜索、预订到离店后的全部信息是否一致。' },
+    ],
+    en: [
+      { id: 'operating-diagnosis', title: 'Operating diagnosis and priorities', audience: 'General managers / operating teams', problem: 'Separate visible symptoms from the few issues materially affecting profit, service, and efficiency.', deliverable: 'An issue hierarchy, priorities, owners, action path, and review measures.', firstStep: 'Align revenue, cost, service, and customer data before choosing field actions.' },
+      { id: 'revenue-channel-cost', title: 'Revenue, channel, and cost alignment', audience: 'Revenue / sales / finance teams', problem: 'Fix the gap between order growth and weak net revenue, pricing discipline, or channel structure.', deliverable: 'Net-contribution measures, pricing boundaries, channel coordination, and a weekly review cadence.', firstStep: 'Recalculate net revenue by segment and channel instead of tracking volume alone.' },
+      { id: 'market-information', title: 'Market, membership, and information capture', audience: 'Sales, marketing, and operating teams', problem: 'Reconnect guest segments, products, channels, website information, and repeat-business touchpoints.', deliverable: 'Guest and product articulation, channel touchpoint map, information ownership, and retention path.', firstStep: 'Choose one priority guest segment and audit information from search and booking through post-stay follow-up.' },
+    ],
+  },
+}
+
 export function topicMetadata(slug: TopicSlug, lang: string): Metadata {
   const copy = copies[slug][lang === 'en' ? 'en' : 'zh']
   const canonical = `https://www.marvelbros.com/${lang}/${slug}`
@@ -61,6 +109,7 @@ export function topicMetadata(slug: TopicSlug, lang: string): Metadata {
 
 export default function HotelTopicPage({ slug, lang }: { slug: TopicSlug; lang: string }) {
   const isZh = lang === 'zh'; const copy = copies[slug][isZh ? 'zh' : 'en']; const url = `https://www.marvelbros.com/${lang}/${slug}`
+  const serviceModules = topicServiceModules[slug]?.[isZh ? 'zh' : 'en'] ?? []
   const related = [
     { slug: 'hotel-investor-pitfalls-guide', zh: '酒店投资中容易被忽视的关键风险', en: 'Critical risks hotel investors often overlook' },
     { slug: 'family-room-operational-readiness-2026-07-28', zh: '亲子房为什么留不住家庭客？', en: 'Why do family rooms struggle to retain family guests?' },
@@ -75,6 +124,7 @@ export default function HotelTopicPage({ slug, lang }: { slug: TopicSlug; lang: 
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c') }} />
     <header className="border-b border-slate-200 bg-[#f4f7f8] py-20 dark:border-slate-800 dark:bg-slate-900 md:py-28"><div className="mx-auto max-w-6xl px-5 sm:px-8"><p className="font-semibold text-[#0b4a6f] dark:text-sky-300">{copy.eyebrow}</p><h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">{copy.title}</h1><p className="mt-7 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">{copy.summary}</p><Link href={`/${lang}/contact?type=diagnosis`} className="mt-9 inline-flex items-center gap-2 bg-[#0b4a6f] px-6 py-3.5 font-semibold text-white">{isZh ? '交流项目现状' : 'Discuss your situation'}<ArrowRight className="size-5" /></Link></div></header>
     <main><section className="border-b border-slate-200 py-16 dark:border-slate-800 md:py-24"><div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-2"><div><h2 className="text-3xl font-semibold">{copy.problemTitle}</h2><p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">{copy.problem}</p></div><div><h2 className="text-3xl font-semibold">{isZh ? '专业分析重点' : 'Professional analysis'}</h2><ul className="mt-5 space-y-4">{copy.analysis.map(x => <li key={x} className="flex gap-3 leading-7 text-slate-700 dark:text-slate-200"><CheckCircle2 className="mt-1 size-5 shrink-0 text-[#d98b28]" />{x}</li>)}</ul></div></div></section>
+    {serviceModules.length > 0 && <section className="border-b border-[#d8b98a]/60 bg-[#fff8ec] py-16 dark:border-slate-800 dark:bg-slate-900 md:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8"><p className="font-semibold text-[#8a5a16] dark:text-amber-300">{isZh ? '具体服务模块' : 'Specific service modules'}</p><h2 className="mt-3 text-3xl font-semibold">{isZh ? '从经营问题进入对应的解决路径' : 'Move from the operating problem to the right service path'}</h2><div className="mt-9 grid gap-6 lg:grid-cols-3">{serviceModules.map((service, index) => <article id={service.id} key={service.id} className="scroll-mt-24 border border-[#d8b98a] bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-950"><div className="flex items-start justify-between gap-4"><span className="text-sm font-bold text-[#d98b28]">0{index + 1}</span><span className="text-right text-xs font-semibold text-[#8a5a16] dark:text-amber-300">{service.audience}</span></div><h3 className="mt-5 text-2xl font-semibold leading-snug text-[#0b4a6f] dark:text-sky-200">{service.title}</h3><div className="mt-5 space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300"><div><p className="font-semibold text-slate-950 dark:text-white">{isZh ? '重点解决' : 'Focus'}</p><p>{service.problem}</p></div><div><p className="font-semibold text-slate-950 dark:text-white">{isZh ? '主要交付' : 'Deliverable'}</p><p>{service.deliverable}</p></div><div><p className="font-semibold text-slate-950 dark:text-white">{isZh ? '建议第一步' : 'First step'}</p><p>{service.firstStep}</p></div></div><Link href={`/${lang}/contact?type=${service.id}`} className="mt-6 inline-flex items-center gap-2 font-semibold text-[#8a5a16] hover:text-[#0b4a6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c79a3b] dark:text-amber-300 dark:hover:text-sky-200">{isZh ? '提交这个问题' : 'Discuss this service'}<ArrowRight className="size-4" aria-hidden="true" /></Link></article>)}</div></div></section>}
     <section className="bg-[#f4f7f8] py-16 dark:bg-slate-900 md:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-3xl font-semibold">{isZh ? '解决方法' : 'Method'}</h2><ol className="mt-8 grid border-y border-slate-300 dark:border-slate-700 md:grid-cols-2">{copy.method.map((x,i)=><li key={x} className="grid grid-cols-[3rem_1fr] border-b border-slate-300 py-6 md:odd:border-r dark:border-slate-700"><span className="font-bold text-[#d98b28]">0{i+1}</span><span className="pr-6 font-semibold">{x}</span></li>)}</ol></div></section>
     <section className="border-b border-slate-200 py-16 dark:border-slate-800 md:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8"><p className="font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '项目实践' : 'Project practice'}</p><h2 className="mt-3 text-3xl font-semibold">{copy.caseTitle}</h2><p className="mt-5 max-w-4xl text-lg leading-8 text-slate-600 dark:text-slate-300">{copy.caseBody}</p></div></section>
     <section className="border-b border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900 md:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-3xl font-semibold">{isZh ? '相关文章' : 'Related articles'}</h2><div className="mt-8 grid border-t border-slate-300 dark:border-slate-700 md:grid-cols-3">{related.map(item=><Link key={item.slug} href={`/${lang}/knowledge/${item.slug}`} className="group flex min-h-36 items-center justify-between gap-4 border-b border-slate-300 py-6 pr-6 md:border-r dark:border-slate-700"><span className="font-semibold leading-7">{isZh ? item.zh : item.en}</span><ArrowRight className="size-5 shrink-0 transition group-hover:translate-x-1" /></Link>)}</div></div></section>

@@ -80,15 +80,15 @@ export default async function ServicesPage({
   const isZh = lang === 'zh'
   // 服务页面以投资判断、筹建筹开、经营改善三条主线组织。
   const iconGradients = [
-    'linear-gradient(135deg, #4285f4, #34a853)',
-    'linear-gradient(135deg, #34a853, #fbbc04)',
-    'linear-gradient(135deg, #fbbc04, #ea4335)',
-    'linear-gradient(135deg, #ea4335, #764ba2)',
-    'linear-gradient(135deg, #764ba2, #4285f4)',
-    'linear-gradient(135deg, #4285f4, #ea4335)',
-    'linear-gradient(135deg, #4285f4, #34a853)',
-    'linear-gradient(135deg, #34a853, #fbbc04)',
-    'linear-gradient(135deg, #fbbc04, #ea4335)',
+    'linear-gradient(135deg, #5b4631, #c79a3b)',
+    'linear-gradient(135deg, #8a5a16, #d8b98a)',
+    'linear-gradient(135deg, #17120d, #8faf9a)',
+    'linear-gradient(135deg, #5b4631, #d98b28)',
+    'linear-gradient(135deg, #8faf9a, #5b4631)',
+    'linear-gradient(135deg, #c79a3b, #17120d)',
+    'linear-gradient(135deg, #5b4631, #c79a3b)',
+    'linear-gradient(135deg, #8a5a16, #d8b98a)',
+    'linear-gradient(135deg, #17120d, #8faf9a)',
   ]
 
   const processSteps = [
@@ -233,36 +233,39 @@ export default async function ServicesPage({
 
   const serviceGroups = [
     {
+      href: `/${lang}/hotel-investment`,
       title: isZh ? '酒店投资判断' : 'Hotel investment decisions',
       description: isZh
         ? '适用于新项目、品牌选择、改造和投资前的关键判断。'
         : 'For the key decisions before a new project, brand choice, repositioning, or capital commitment.',
       items: [
-        { id: 'project-feasibility', title: isZh ? '项目可行性与风险判断' : 'Feasibility and risk judgment', audience: isZh ? '投资人 / 业主' : 'Investors / owners', problem: isZh ? '项目值不值得投、关键假设是否站得住。' : 'Whether the project is worth pursuing and its key assumptions hold.', deliverable: isZh ? '市场与财务假设梳理、情景测算和风险清单。' : 'Market and financial assumptions, scenarios, and a risk register.', icon: 'Building2' },
-        { id: 'brand-positioning', title: isZh ? '品牌与定位选择' : 'Brand and positioning choice', audience: isZh ? '业主 / 项目负责人' : 'Owners / project leaders', problem: isZh ? '客群、产品与品牌承诺是否匹配。' : 'Whether guest segment, product, and brand promise fit together.', deliverable: isZh ? '定位判断、客群逻辑和落地原则。' : 'Positioning judgment, guest logic, and delivery principles.', icon: 'Sparkles' },
-        { id: 'product-renewal', title: isZh ? '改造与资本安排' : 'Renovation and capital planning', audience: isZh ? '存量资产持有人' : 'Existing asset owners', problem: isZh ? '先改哪里、如何控制投入边界。' : 'What to change first and how to control the investment boundary.', deliverable: isZh ? '优先级建议、阶段路径和决策材料。' : 'Priority recommendations, phased path, and decision materials.', icon: 'Landmark' },
+        { id: 'project-feasibility', href: `/${lang}/hotel-investment#project-feasibility`, title: isZh ? '项目可行性与风险判断' : 'Feasibility and risk judgment', audience: isZh ? '投资人 / 业主' : 'Investors / owners', problem: isZh ? '项目值不值得投、关键假设是否站得住。' : 'Whether the project is worth pursuing and its key assumptions hold.', deliverable: isZh ? '市场与财务假设梳理、情景测算和风险清单。' : 'Market and financial assumptions, scenarios, and a risk register.', icon: 'Building2' },
+        { id: 'brand-positioning', href: `/${lang}/hotel-investment#brand-positioning`, title: isZh ? '品牌与定位选择' : 'Brand and positioning choice', audience: isZh ? '业主 / 项目负责人' : 'Owners / project leaders', problem: isZh ? '客群、产品与品牌承诺是否匹配。' : 'Whether guest segment, product, and brand promise fit together.', deliverable: isZh ? '定位判断、客群逻辑和落地原则。' : 'Positioning judgment, guest logic, and delivery principles.', icon: 'Sparkles' },
+        { id: 'product-renewal', href: `/${lang}/hotel-investment#product-renewal`, title: isZh ? '改造与资本安排' : 'Renovation and capital planning', audience: isZh ? '存量资产持有人' : 'Existing asset owners', problem: isZh ? '先改哪里、如何控制投入边界。' : 'What to change first and how to control the investment boundary.', deliverable: isZh ? '优先级建议、阶段路径和决策材料。' : 'Priority recommendations, phased path, and decision materials.', icon: 'Landmark' },
       ],
     },
     {
+      href: `/${lang}/hotel-opening`,
       title: isZh ? '酒店筹建筹开' : 'Hotel pre-opening',
       description: isZh
         ? '把预算、工程接口、团队、流程与开业节奏拉到同一张执行表上。'
         : 'Put budget, technical interfaces, team, processes, and opening readiness on one execution plan.',
       items: [
-        { id: 'pre-opening-budget', title: isZh ? '筹开预算与里程碑' : 'Opening budget and milestones', audience: isZh ? '筹开负责人 / 业主' : 'Pre-opening leaders / owners', problem: isZh ? '预算与节点脱节，责任无法前置。' : 'Budget and milestones are disconnected and accountability arrives too late.', deliverable: isZh ? '筹开任务分解、关键节点和检查口径。' : 'Task breakdown, key milestones, and review criteria.', icon: 'BookOpen' },
-        { id: 'service-readiness', title: isZh ? '运营流程与服务准备' : 'Operating process and service readiness', audience: isZh ? '总经理 / 部门负责人' : 'General managers / department leaders', problem: isZh ? '部门准备不一致，开业后靠临时救火。' : 'Department readiness is uneven and opening relies on firefighting.', deliverable: isZh ? '核心流程清单、岗位接口和演练安排。' : 'Core process checklist, role interfaces, and rehearsal plan.', icon: 'Shield' },
-        { id: 'opening-team', title: isZh ? '团队组织与开业节奏' : 'Team organization and launch cadence', audience: isZh ? '业主 / 人力与运营团队' : 'Owners / HR and operations teams', problem: isZh ? '岗位、培训与排班无法支撑开业服务。' : 'Roles, training, and rosters cannot support opening service.', deliverable: isZh ? '组织分工、培训重点和开业后复盘节奏。' : 'Organization design, training priorities, and post-opening review cadence.', icon: 'Users' },
+        { id: 'pre-opening-budget', href: `/${lang}/hotel-opening#pre-opening-budget`, title: isZh ? '筹开预算与里程碑' : 'Opening budget and milestones', audience: isZh ? '筹开负责人 / 业主' : 'Pre-opening leaders / owners', problem: isZh ? '预算与节点脱节，责任无法前置。' : 'Budget and milestones are disconnected and accountability arrives too late.', deliverable: isZh ? '筹开任务分解、关键节点和检查口径。' : 'Task breakdown, key milestones, and review criteria.', icon: 'BookOpen' },
+        { id: 'service-readiness', href: `/${lang}/hotel-opening#service-readiness`, title: isZh ? '运营流程与服务准备' : 'Operating process and service readiness', audience: isZh ? '总经理 / 部门负责人' : 'General managers / department leaders', problem: isZh ? '部门准备不一致，开业后靠临时救火。' : 'Department readiness is uneven and opening relies on firefighting.', deliverable: isZh ? '核心流程清单、岗位接口和演练安排。' : 'Core process checklist, role interfaces, and rehearsal plan.', icon: 'Shield' },
+        { id: 'opening-team', href: `/${lang}/hotel-opening#opening-team`, title: isZh ? '团队组织与开业节奏' : 'Team organization and launch cadence', audience: isZh ? '业主 / 人力与运营团队' : 'Owners / HR and operations teams', problem: isZh ? '岗位、培训与排班无法支撑开业服务。' : 'Roles, training, and rosters cannot support opening service.', deliverable: isZh ? '组织分工、培训重点和开业后复盘节奏。' : 'Organization design, training priorities, and post-opening review cadence.', icon: 'Users' },
       ],
     },
     {
+      href: `/${lang}/hotel-operation-improvement`,
       title: isZh ? '酒店经营改善' : 'Hotel operating improvement',
       description: isZh
         ? '从经营诊断到收入、成本、团队和市场承接，建立可复盘的改善路径。'
         : 'From diagnosis to revenue, cost, team, and market capture, build an improvement path that can be reviewed.',
       items: [
-        { id: 'operating-diagnosis', title: isZh ? '经营诊断与改善优先级' : 'Operating diagnosis and priorities', audience: isZh ? '总经理 / 经营团队' : 'General managers / operating teams', problem: isZh ? '动作很多，却无法判断真正的经营瓶颈。' : 'Many actions are underway, but the real bottleneck remains unclear.', deliverable: isZh ? '问题分层、优先级和行动路线。' : 'Issue hierarchy, priorities, and an action path.', icon: 'TrendingUp' },
-        { id: 'revenue-channel-cost', title: isZh ? '收益、渠道与成本协同' : 'Revenue, channel, and cost alignment', audience: isZh ? '收益 / 销售 / 财务团队' : 'Revenue / sales / finance teams', problem: isZh ? '有客流但利润、价格与渠道结构不稳定。' : 'Demand exists, but profit, pricing, and channel mix are unstable.', deliverable: isZh ? '关键经营指标、协同机制和复盘口径。' : 'Key operating metrics, coordination mechanisms, and review criteria.', icon: 'BarChart3' },
-        { id: 'market-information', title: isZh ? '市场、会员与信息承接' : 'Market, membership, and information capture', audience: isZh ? '市场销售 / 运营团队' : 'Sales, marketing, and operating teams', problem: isZh ? '客群、产品、渠道和官网信息彼此脱节。' : 'Guest segments, product, channels, and website information are disconnected.', deliverable: isZh ? '客群与产品表达、触点梳理和持续维护建议。' : 'Guest and product articulation, touchpoint review, and maintenance recommendations.', icon: 'Megaphone' },
+        { id: 'operating-diagnosis', href: `/${lang}/hotel-operation-improvement#operating-diagnosis`, title: isZh ? '经营诊断与改善优先级' : 'Operating diagnosis and priorities', audience: isZh ? '总经理 / 经营团队' : 'General managers / operating teams', problem: isZh ? '动作很多，却无法判断真正的经营瓶颈。' : 'Many actions are underway, but the real bottleneck remains unclear.', deliverable: isZh ? '问题分层、优先级和行动路线。' : 'Issue hierarchy, priorities, and an action path.', icon: 'TrendingUp' },
+        { id: 'revenue-channel-cost', href: `/${lang}/hotel-operation-improvement#revenue-channel-cost`, title: isZh ? '收益、渠道与成本协同' : 'Revenue, channel, and cost alignment', audience: isZh ? '收益 / 销售 / 财务团队' : 'Revenue / sales / finance teams', problem: isZh ? '有客流但利润、价格与渠道结构不稳定。' : 'Demand exists, but profit, pricing, and channel mix are unstable.', deliverable: isZh ? '关键经营指标、协同机制和复盘口径。' : 'Key operating metrics, coordination mechanisms, and review criteria.', icon: 'BarChart3' },
+        { id: 'market-information', href: `/${lang}/hotel-operation-improvement#market-information`, title: isZh ? '市场、会员与信息承接' : 'Market, membership, and information capture', audience: isZh ? '市场销售 / 运营团队' : 'Sales, marketing, and operating teams', problem: isZh ? '客群、产品、渠道和官网信息彼此脱节。' : 'Guest segments, product, channels, and website information are disconnected.', deliverable: isZh ? '客群与产品表达、触点梳理和持续维护建议。' : 'Guest and product articulation, touchpoint review, and maintenance recommendations.', icon: 'Megaphone' },
       ],
     },
   ]
@@ -464,16 +467,23 @@ export default async function ServicesPage({
           <div className="space-y-12">
             {serviceGroups.map((group, groupIndex) => (
               <div key={group.title}>
-                <div className="mb-6 max-w-3xl border-l-4 border-primary pl-4">
-                  <h3 className="text-2xl font-bold text-foreground">{group.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{group.description}</p>
+                <div className="mb-6 flex max-w-4xl flex-col gap-4 border-l-4 border-[#c79a3b] pl-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">{group.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{group.description}</p>
+                  </div>
+                  <Link href={group.href} className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#8a5a16] hover:text-[#0b4a6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c79a3b] dark:text-amber-300 dark:hover:text-sky-200">
+                    {isZh ? '查看完整服务方案' : 'View the complete service path'}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
                 </div>
                 <div className="grid gap-6 md:grid-cols-3">
                   {group.items.map((service, itemIndex) => {
                     const Icon = iconMap[service.icon] ?? Building2
                     const cardIndex = groupIndex * 3 + itemIndex
                     return (
-                      <Card id={service.id} key={service.title} className="h-full scroll-mt-24 overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:shadow-lg card-themed">
+                      <Link key={service.title} href={service.href} aria-label={`${isZh ? '查看服务详情：' : 'View service details: '}${service.title}`} className="group block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c79a3b] focus-visible:ring-offset-4">
+                      <Card id={service.id} className="h-full scroll-mt-24 overflow-hidden rounded-2xl border border-[#d8b98a]/60 bg-card transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#c79a3b] group-hover:shadow-lg motion-reduce:transform-none card-themed">
                         <CardHeader className="pb-3">
                           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: iconGradients[cardIndex % iconGradients.length] }}>
                             <Icon className="h-6 w-6 text-white" />
@@ -492,8 +502,13 @@ export default async function ServicesPage({
                               <p className="text-sm leading-relaxed text-muted-foreground">{service.deliverable}</p>
                             </div>
                           </div>
+                          <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#8a5a16] group-hover:text-[#0b4a6f] dark:text-amber-300 dark:group-hover:text-sky-200">
+                            {isZh ? '查看该项服务' : 'View this service'}
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" />
+                          </span>
                         </CardContent>
                       </Card>
+                      </Link>
                     )
                   })}
                 </div>
