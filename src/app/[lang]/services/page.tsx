@@ -238,9 +238,9 @@ export default async function ServicesPage({
         ? '适用于新项目、品牌选择、改造和投资前的关键判断。'
         : 'For the key decisions before a new project, brand choice, repositioning, or capital commitment.',
       items: [
-        { title: isZh ? '项目可行性与风险判断' : 'Feasibility and risk judgment', audience: isZh ? '投资人 / 业主' : 'Investors / owners', problem: isZh ? '项目值不值得投、关键假设是否站得住。' : 'Whether the project is worth pursuing and its key assumptions hold.', deliverable: isZh ? '市场与财务假设梳理、情景测算和风险清单。' : 'Market and financial assumptions, scenarios, and a risk register.', icon: 'Building2' },
-        { title: isZh ? '品牌与定位选择' : 'Brand and positioning choice', audience: isZh ? '业主 / 项目负责人' : 'Owners / project leaders', problem: isZh ? '客群、产品与品牌承诺是否匹配。' : 'Whether guest segment, product, and brand promise fit together.', deliverable: isZh ? '定位判断、客群逻辑和落地原则。' : 'Positioning judgment, guest logic, and delivery principles.', icon: 'Sparkles' },
-        { title: isZh ? '改造与资本安排' : 'Renovation and capital planning', audience: isZh ? '存量资产持有人' : 'Existing asset owners', problem: isZh ? '先改哪里、如何控制投入边界。' : 'What to change first and how to control the investment boundary.', deliverable: isZh ? '优先级建议、阶段路径和决策材料。' : 'Priority recommendations, phased path, and decision materials.', icon: 'Landmark' },
+        { id: 'project-feasibility', title: isZh ? '项目可行性与风险判断' : 'Feasibility and risk judgment', audience: isZh ? '投资人 / 业主' : 'Investors / owners', problem: isZh ? '项目值不值得投、关键假设是否站得住。' : 'Whether the project is worth pursuing and its key assumptions hold.', deliverable: isZh ? '市场与财务假设梳理、情景测算和风险清单。' : 'Market and financial assumptions, scenarios, and a risk register.', icon: 'Building2' },
+        { id: 'brand-positioning', title: isZh ? '品牌与定位选择' : 'Brand and positioning choice', audience: isZh ? '业主 / 项目负责人' : 'Owners / project leaders', problem: isZh ? '客群、产品与品牌承诺是否匹配。' : 'Whether guest segment, product, and brand promise fit together.', deliverable: isZh ? '定位判断、客群逻辑和落地原则。' : 'Positioning judgment, guest logic, and delivery principles.', icon: 'Sparkles' },
+        { id: 'product-renewal', title: isZh ? '改造与资本安排' : 'Renovation and capital planning', audience: isZh ? '存量资产持有人' : 'Existing asset owners', problem: isZh ? '先改哪里、如何控制投入边界。' : 'What to change first and how to control the investment boundary.', deliverable: isZh ? '优先级建议、阶段路径和决策材料。' : 'Priority recommendations, phased path, and decision materials.', icon: 'Landmark' },
       ],
     },
     {
@@ -249,9 +249,9 @@ export default async function ServicesPage({
         ? '把预算、工程接口、团队、流程与开业节奏拉到同一张执行表上。'
         : 'Put budget, technical interfaces, team, processes, and opening readiness on one execution plan.',
       items: [
-        { title: isZh ? '筹开预算与里程碑' : 'Opening budget and milestones', audience: isZh ? '筹开负责人 / 业主' : 'Pre-opening leaders / owners', problem: isZh ? '预算与节点脱节，责任无法前置。' : 'Budget and milestones are disconnected and accountability arrives too late.', deliverable: isZh ? '筹开任务分解、关键节点和检查口径。' : 'Task breakdown, key milestones, and review criteria.', icon: 'BookOpen' },
-        { title: isZh ? '运营流程与服务准备' : 'Operating process and service readiness', audience: isZh ? '总经理 / 部门负责人' : 'General managers / department leaders', problem: isZh ? '部门准备不一致，开业后靠临时救火。' : 'Department readiness is uneven and opening relies on firefighting.', deliverable: isZh ? '核心流程清单、岗位接口和演练安排。' : 'Core process checklist, role interfaces, and rehearsal plan.', icon: 'Shield' },
-        { title: isZh ? '团队组织与开业节奏' : 'Team organization and launch cadence', audience: isZh ? '业主 / 人力与运营团队' : 'Owners / HR and operations teams', problem: isZh ? '岗位、培训与排班无法支撑开业服务。' : 'Roles, training, and rosters cannot support opening service.', deliverable: isZh ? '组织分工、培训重点和开业后复盘节奏。' : 'Organization design, training priorities, and post-opening review cadence.', icon: 'Users' },
+        { id: 'pre-opening-budget', title: isZh ? '筹开预算与里程碑' : 'Opening budget and milestones', audience: isZh ? '筹开负责人 / 业主' : 'Pre-opening leaders / owners', problem: isZh ? '预算与节点脱节，责任无法前置。' : 'Budget and milestones are disconnected and accountability arrives too late.', deliverable: isZh ? '筹开任务分解、关键节点和检查口径。' : 'Task breakdown, key milestones, and review criteria.', icon: 'BookOpen' },
+        { id: 'service-readiness', title: isZh ? '运营流程与服务准备' : 'Operating process and service readiness', audience: isZh ? '总经理 / 部门负责人' : 'General managers / department leaders', problem: isZh ? '部门准备不一致，开业后靠临时救火。' : 'Department readiness is uneven and opening relies on firefighting.', deliverable: isZh ? '核心流程清单、岗位接口和演练安排。' : 'Core process checklist, role interfaces, and rehearsal plan.', icon: 'Shield' },
+        { id: 'opening-team', title: isZh ? '团队组织与开业节奏' : 'Team organization and launch cadence', audience: isZh ? '业主 / 人力与运营团队' : 'Owners / HR and operations teams', problem: isZh ? '岗位、培训与排班无法支撑开业服务。' : 'Roles, training, and rosters cannot support opening service.', deliverable: isZh ? '组织分工、培训重点和开业后复盘节奏。' : 'Organization design, training priorities, and post-opening review cadence.', icon: 'Users' },
       ],
     },
     {
@@ -260,9 +260,9 @@ export default async function ServicesPage({
         ? '从经营诊断到收入、成本、团队和市场承接，建立可复盘的改善路径。'
         : 'From diagnosis to revenue, cost, team, and market capture, build an improvement path that can be reviewed.',
       items: [
-        { title: isZh ? '经营诊断与改善优先级' : 'Operating diagnosis and priorities', audience: isZh ? '总经理 / 经营团队' : 'General managers / operating teams', problem: isZh ? '动作很多，却无法判断真正的经营瓶颈。' : 'Many actions are underway, but the real bottleneck remains unclear.', deliverable: isZh ? '问题分层、优先级和行动路线。' : 'Issue hierarchy, priorities, and an action path.', icon: 'TrendingUp' },
-        { title: isZh ? '收益、渠道与成本协同' : 'Revenue, channel, and cost alignment', audience: isZh ? '收益 / 销售 / 财务团队' : 'Revenue / sales / finance teams', problem: isZh ? '有客流但利润、价格与渠道结构不稳定。' : 'Demand exists, but profit, pricing, and channel mix are unstable.', deliverable: isZh ? '关键经营指标、协同机制和复盘口径。' : 'Key operating metrics, coordination mechanisms, and review criteria.', icon: 'BarChart3' },
-        { title: isZh ? '市场、会员与信息承接' : 'Market, membership, and information capture', audience: isZh ? '市场销售 / 运营团队' : 'Sales, marketing, and operating teams', problem: isZh ? '客群、产品、渠道和官网信息彼此脱节。' : 'Guest segments, product, channels, and website information are disconnected.', deliverable: isZh ? '客群与产品表达、触点梳理和持续维护建议。' : 'Guest and product articulation, touchpoint review, and maintenance recommendations.', icon: 'Megaphone' },
+        { id: 'operating-diagnosis', title: isZh ? '经营诊断与改善优先级' : 'Operating diagnosis and priorities', audience: isZh ? '总经理 / 经营团队' : 'General managers / operating teams', problem: isZh ? '动作很多，却无法判断真正的经营瓶颈。' : 'Many actions are underway, but the real bottleneck remains unclear.', deliverable: isZh ? '问题分层、优先级和行动路线。' : 'Issue hierarchy, priorities, and an action path.', icon: 'TrendingUp' },
+        { id: 'revenue-channel-cost', title: isZh ? '收益、渠道与成本协同' : 'Revenue, channel, and cost alignment', audience: isZh ? '收益 / 销售 / 财务团队' : 'Revenue / sales / finance teams', problem: isZh ? '有客流但利润、价格与渠道结构不稳定。' : 'Demand exists, but profit, pricing, and channel mix are unstable.', deliverable: isZh ? '关键经营指标、协同机制和复盘口径。' : 'Key operating metrics, coordination mechanisms, and review criteria.', icon: 'BarChart3' },
+        { id: 'market-information', title: isZh ? '市场、会员与信息承接' : 'Market, membership, and information capture', audience: isZh ? '市场销售 / 运营团队' : 'Sales, marketing, and operating teams', problem: isZh ? '客群、产品、渠道和官网信息彼此脱节。' : 'Guest segments, product, channels, and website information are disconnected.', deliverable: isZh ? '客群与产品表达、触点梳理和持续维护建议。' : 'Guest and product articulation, touchpoint review, and maintenance recommendations.', icon: 'Megaphone' },
       ],
     },
   ]
@@ -473,7 +473,7 @@ export default async function ServicesPage({
                     const Icon = iconMap[service.icon] ?? Building2
                     const cardIndex = groupIndex * 3 + itemIndex
                     return (
-                      <Card key={service.title} className="h-full overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:shadow-lg card-themed">
+                      <Card id={service.id} key={service.title} className="h-full scroll-mt-24 overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:shadow-lg card-themed">
                         <CardHeader className="pb-3">
                           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: iconGradients[cardIndex % iconGradients.length] }}>
                             <Icon className="h-6 w-6 text-white" />

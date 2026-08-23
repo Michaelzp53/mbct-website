@@ -19,6 +19,7 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
   const capabilities = [
     {
       icon: ChartNoAxesCombined,
+      href: `/${lang}/hotel-investment`,
       title: isZh ? '投资研究与可行性判断' : 'Investment Research & Feasibility',
       description: isZh
         ? '基于市场环境、区域竞争、物业条件和投资模型，判断项目价值、风险与发展空间。'
@@ -26,6 +27,7 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
     },
     {
       icon: Compass,
+      href: `/${lang}/services#brand-positioning`,
       title: isZh ? '品牌定位与产品规划' : 'Brand Positioning & Product Planning',
       description: isZh
         ? '明确酒店目标市场、产品定位和体验体系，让投资逻辑转化为市场竞争力。'
@@ -33,6 +35,7 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
     },
     {
       icon: ClipboardCheck,
+      href: `/${lang}/hotel-opening`,
       title: isZh ? '筹建管理与开业准备' : 'Development & Pre-opening Management',
       description: isZh
         ? '围绕建设投入、工程管理、团队搭建和运营准备，降低筹建过程中的不确定性。'
@@ -40,6 +43,7 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
     },
     {
       icon: Hotel,
+      href: `/${lang}/hotel-operation-improvement`,
       title: isZh ? '经营诊断与效益提升' : 'Operational Diagnosis & Performance Improvement',
       description: isZh
         ? '通过经营数据分析和现场诊断，识别影响收入、利润和效率的关键因素。'
@@ -47,6 +51,7 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
     },
     {
       icon: RefreshCw,
+      href: `/${lang}/services#product-renewal`,
       title: isZh ? '产品升级与价值重塑' : 'Product Renewal & Value Enhancement',
       description: isZh
         ? '针对市场变化和经营阶段，通过产品优化和服务提升，重新释放酒店竞争价值。'
@@ -54,6 +59,7 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
     },
     {
       icon: Search,
+      href: `/${lang}/services#growth-acquisition`,
       title: isZh ? '市场增长与AI智能获客' : 'Market Growth & AI-enabled Acquisition',
       description: isZh
         ? '结合市场渠道、新媒体和AI搜索环境，帮助酒店建立新的客户连接和增长方式。'
@@ -82,10 +88,12 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {capabilities.map(({ icon: Icon, title, description }, index) => (
-            <article
+          {capabilities.map(({ icon: Icon, href, title, description }, index) => (
+            <Link
               key={title}
-              className="group min-h-64 border border-slate-200 bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#0b4a6f]/35 hover:shadow-lg dark:border-slate-700 dark:bg-slate-950 dark:hover:border-sky-300/40 sm:p-8"
+              href={href}
+              aria-label={`${isZh ? '查看服务详情：' : 'View service details: '}${title}`}
+              className="group flex min-h-64 flex-col border border-[#d8b98a]/60 bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-[#c79a3b] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c79a3b] focus-visible:ring-offset-4 motion-reduce:transform-none dark:border-slate-700 dark:bg-slate-950 dark:hover:border-amber-300 sm:p-8"
             >
               <div className="flex items-center justify-between">
                 <span className="inline-flex size-11 items-center justify-center bg-[#0b4a6f] text-white dark:bg-sky-900">
@@ -95,7 +103,11 @@ export default function LifecycleCapabilities({ lang }: LifecycleCapabilitiesPro
               </div>
               <h3 className="mt-8 text-2xl font-semibold leading-snug text-[#0b4a6f] dark:text-sky-200">{title}</h3>
               <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{description}</p>
-            </article>
+              <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[#8a5a16] transition-colors group-hover:text-[#0b4a6f] dark:text-amber-300 dark:group-hover:text-sky-200">
+                {isZh ? '查看服务详情' : 'View service details'}
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true" />
+              </span>
+            </Link>
           ))}
         </div>
         <Link
