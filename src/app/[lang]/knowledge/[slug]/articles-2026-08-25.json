@@ -1,0 +1,53 @@
+{
+  "hotel-supply-sensitivity-test-2026-08-25": {
+    "id": 655,
+    "title": "酒店供给在增加，筹开项目先做一次供给敏感性测试",
+    "titleEn": "Hotel Supply Is Growing. Run a Supply Sensitivity Test Before You Open.",
+    "description": "区域开发管线只能提示方向，不能替单店下结论。用客群重叠和四项条件筛出核心竞争集，再重算筹开项目的爬坡与现金承受期。",
+    "descriptionEn": "A regional pipeline gives direction, not a single-asset forecast. Identify direct competitors through guest overlap and four practical tests, then rerun ramp-up and cash runway.",
+    "author": "迈创兄弟C&T（MarvelBros C&T）",
+    "date": "2026-08-25",
+    "readTime": "10分钟",
+    "tag": "专业洞察",
+    "content": [
+      "这篇文章写给正在筹开的业主、投资人和资产管理者。它解决一个具体问题：当区域开发管线创下新高，你的项目要不要重算竞争集、开业爬坡和现金缓冲。结论先说，区域供给增加不是停项目的理由，而是触发一次本地供给敏感性测试的信号。",
+      "Lodging Econometrics 2026 年第二季度报告显示，亚太不含中国的开发管线截至季度末达到 2,506 个项目、452,972 间客房，项目数同比涨 17%，房间数同比涨 11%，两项都创下该区域的历史新高。印度以 1,033 个项目、137,601 间客房领跑，越南、日本、印尼、泰国紧随其后。",
+      "这样的数字会制造一种氛围：供给在全面涌来，筹开的风险在上升。于是我们经常看到两种反应。一种是关掉消息，继续按立项时的竞争集和时间表推进。另一种是立刻惊动投资委员会，把供给变多当成暂停或降价的理由。",
+      "这两种反应都不对。第一种忽略了可验证的新项目已经进入你所在的城市。第二种把区域平均数当成了单店结论。真正该做的动作在两者之间：先判断哪些新供给真的会挤压你，再决定要不要改。",
+      "区域管线是一个背景，不是一个预测。2,506 个项目和 452,972 间客房分散在十几个国家、几十个城市。印度一家就占了近四成，而你的项目未必在印度。即便在你所在的国家，也还有城市差异、商圈差异、细分市场差异。",
+      "更重要的是，管线数据里有三种状态不能混在一起当即将开业看。在建中的项目，比未来十二个月内开工的项目更接近落地；未来十二个月内开工的，又比早期规划更接近落地。早期规划阶段的项目数量很大，但它们未必进入建设，可能被取消、被推迟、被改品牌。把早期规划加进你的竞争集，等于拿没落地的供给去压低自己真实的入住率预期。",
+      "所以，区域管线数字只能用来回答一个问题：这个市场的大方向是供给在放宽。它不能回答你的单店会遇到什么。要回答后者，你需要换一套证据。",
+      "本地供给敏感性测试由一个动作构成，就是建立一张未来 24 个月的竞争集时间线，并且只把真正构成直接竞争的新项目放进核心竞争集。",
+      "判断一个新项目是否进入核心竞争集，看一个必要条件和附加条件。必要条件是客群重叠：它要和你的项目抢同一类客人。一个主打长住商务客的全服务酒店，和一个面向周末度假客的精品酒店，即使隔一条街，也不构成直接竞争。附加条件从四项里取两项：开业月份在同一窗口、价格带接近、渠道结构重叠、客房容量相当。一个项目只有同时满足客群重叠加上这四项中的两项，才值得进入核心竞争集，进入你的爬坡假设重算。",
+      "举个例子。你在南方一座城市的 CBD 筹开一家 220 间房、定位中高端商务的酒店，预计 18 个月后开业。你发现同城有一家 180 间、同价位带、同样主打 OTA 和协议客户的酒店预计比你早六个月开业。它满足客群重叠，又满足开业窗口、价格带、渠道三项，当然进核心竞争集。同时你发现城郊有一家 400 间、主打会议和度假的酒店也在建。它不满足客群重叠，也不满足价格带和渠道，只列为观察项，不直接影响你的爬坡曲线。",
+      "这张时间线的价值，不在于复杂，而在于每月只更新一次，交叉核对三件事：开业窗口有没有变、价格带有没有变、爬坡假设还成立不成立。三件事里任何一件变了，你把保守爬坡和现金承受期重跑一遍。",
+      "这个方法最容易犯的错，是把看得见的供给全部算成竞争。有三种情况要排除：早期规划、供给尚未落地，以及服务不同客群、渠道或目的地的项目。把它们算进来，只会高估压力，让你在错误的位置上做出降价或停项的决策。",
+      "反过来，真正的风险是漏掉那些看起来不像竞争者的项目。一家改造翻新的老物业，换了个强势品牌，价格带拉高，客群和你重叠，它可能比一家全新的店更早、更快地抢你的客源。所以时间线不只看新签约，也要看改造与品牌转换。",
+      "作为经营者，我最先看的是现金流量表里的承受期，而不是新闻里的项目数。供给敏感性测试的全部目的，是确认你的现金还能不能撑过一波更保守的爬坡。如果测算下来，即使把核心竞争集的新项目全部计入，你的现金也能撑过开业后 12 至 18 个月的保守情景，那区域数据引起的焦虑就没有变成实际的资本决策压力。反过来，如果撑不住，就重新看开业窗口和定位，而不是坐等。",
+      "如果你今天要落地这件事，做三步就够了。第一步，拉出目标城市过去六个月所有公开的酒店签约、开工和开业信息。第二步，把每个项目按客群重叠和四项附加条件筛选，只把核心竞争集的项目按预计开业月份排进 24 个月的时间线。第三步，用更新后的竞争集重跑一次保守爬坡和现金承受期，明确写清哪些项目进入了竞争集、依据是什么、哪些项目被排除、原因是什么。",
+      "记住一条线：区域项目数永远不能用来预测单店入住率、房价或利润。它会给你一个方向感，但方向感替代不了你自己城市的竞争集。",
+      "如果你已经开始筹开，却还没做过这样一次按月滚动的供给敏感性测试，那么今天先做第一步，把过去六个月同城的公开供给信息拉出来。",
+      "迈创兄弟C&T（MarvelBros C&T）"
+    ],
+    "contentEn": [
+      "This article is for owners, investors, pre-opening teams, and asset managers. It answers one practical question: when a regional development pipeline reaches a record, should a project reopen its comp set, ramp-up assumptions, and cash buffer? The short answer is that more supply is not a reason to halt a project. It is a signal to run a local supply sensitivity test.",
+      "Lodging Econometrics reported that the Asia Pacific pipeline excluding China reached 2,506 projects and 452,972 rooms at the end of the second quarter of 2026. Projects were up 17 percent and rooms 11 percent year on year, both regional records. India led with 1,033 projects and 137,601 rooms, followed by Vietnam, Japan, Indonesia, and Thailand.",
+      "Numbers like these create a mood: supply is arriving everywhere and pre-opening risk is rising. Two reactions follow. One is to ignore the news and continue with the comp set and timetable used at underwriting. The other is to treat more supply as a reason to pause or cut rates.",
+      "Neither reaction is sound. The first ignores verifiable new projects that have entered the city. The second turns a regional average into a single-asset conclusion. The useful action sits between them: identify which new supply can actually squeeze the project, then decide whether anything needs to change.",
+      "A regional pipeline is background, not a forecast. Those 2,506 projects and 452,972 rooms are distributed across many countries and cities. India accounts for nearly two fifths, and a project may not be in India. Even within one country, city, submarket, and segment differ.",
+      "The stages in a pipeline cannot all be treated as imminent openings. Projects under construction are nearer to delivery than projects expected to start within twelve months, which are nearer than early planning. Early-planning projects can be cancelled, delayed, or rebranded. Adding them to a comp set uses supply that has not materialised to depress a realistic occupancy assumption.",
+      "A regional number can therefore answer only one question: is the direction of supply becoming looser? It cannot say what one asset will face. That requires different evidence.",
+      "A local supply sensitivity test starts with one practical artifact: a rolling twenty-four-month comp set timeline. Only projects that create direct competition enter the core comp set.",
+      "Admission has one necessary condition and additional conditions. The necessary condition is guest overlap: the other project must pursue the same guests. A full-service hotel for extended-stay corporate guests and a boutique hotel for weekend leisure guests are not direct competitors simply because they are near each other. The additional tests are opening month in the same window, a close rate band, overlapping channel structure, and comparable room capacity. A project enters the core comp set only when it has guest overlap and clears at least two of those four tests.",
+      "Consider a hypothetical example. A 220-room upper-midscale business hotel in a southern Chinese CBD is planned to open in eighteen months. A 180-room hotel in the same rate band, pursuing the same OTA and negotiated-corporate business, is expected to open six months earlier. It has guest overlap and clears the opening-window, rate-band, and channel tests, so it belongs in the core comp set. A 400-room meetings-and-leisure hotel under construction in the suburbs fails guest overlap, rate band, and channel. It stays on a watch list and does not directly alter the ramp-up curve.",
+      "The value of the timeline is not complexity. Update it monthly and check three things: has the opening window moved, has the rate band moved, and does the ramp-up still hold? If any one shifts, rerun the conservative ramp-up and cash runway.",
+      "The most common error is to count all visible supply as competition. Exclude three categories: early planning, supply that has not landed, and projects serving a different guest mix, channel, or destination. Counting them overstates pressure and can lead to the wrong rate cut or project pause.",
+      "The reverse risk is missing projects that do not look like competitors at first. An older asset that renovates, adopts a stronger brand, raises its rate band, and overlaps with your guests may reach the market earlier and faster than a new build. The timeline should therefore cover renovations and brand conversions as well as new signings.",
+      "The first operating number to inspect is the cash runway, not the project count in the news. The purpose of the test is to confirm whether cash can survive a more conservative ramp-up. If cash still covers a conservative scenario twelve to eighteen months after opening once every core competitor is included, the regional headline has not become a capital decision. If it does not, reopen the opening window and positioning rather than simply waiting.",
+      "To start today, take three steps. First, collect every public hotel signing, construction start, and opening in the target city from the last six months. Second, screen each project through guest overlap and the four additional tests, then place only the core comp set on a twenty-four-month timeline by expected opening month. Third, rerun a conservative ramp-up and cash runway, documenting which projects entered, on what basis, and why the others were excluded.",
+      "Hold one line: a regional project count cannot predict one asset's occupancy, rate, or profit. It gives direction, but direction is no substitute for the comp set in your own city.",
+      "If a project is already pre-opening and has never run a monthly supply sensitivity test, start with step one today: pull six months of public, city-level supply information.",
+      "MarvelBros C&T"
+    ]
+  }
+}

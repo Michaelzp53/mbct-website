@@ -11,6 +11,7 @@ import { getPrimaryTopic } from '@/lib/knowledge-topics'
 import { categoryBySlug, categoryForKnowledgeTopic } from '@/lib/knowledge-taxonomy'
 import articles20260822 from './articles-2026-08-22.json'
 import articles20260823 from './articles-2026-08-23.json'
+import articles20260825 from './articles-2026-08-25.json'
 import articles20260814 from './articles-2026-08-14.json'
 import articles20260821 from './articles-2026-08-21.json'
 import articles20260808 from './articles-2026-08-08.json'
@@ -51,6 +52,9 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260825 as Record<string, {
+    id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
+  }>),
   ...(articles20260823 as Record<string, {
     id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
   }>),

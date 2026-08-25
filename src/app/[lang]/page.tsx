@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '酒店供给在增加，筹开项目先做一次供给敏感性测试' : 'Hotel Supply Is Growing. Run a Supply Sensitivity Test Before You Open.',
+      summary: isZh
+        ? '区域开发管线只能提示方向，不能替单店下结论。用客群重叠和四项条件筛出核心竞争集，再重算爬坡与现金承受期。'
+        : 'A regional pipeline gives direction, not a single-asset forecast. Identify direct competitors, then rerun ramp-up and cash runway.',
+      slug: 'hotel-supply-sensitivity-test-2026-08-25',
+      date: '2026.08.25',
+    },
+    {
       title: isZh ? '酒店资产有了新的退出机会，业主先把三笔经营账算清楚' : 'Hotel assets now have a new exit path, and owners should first get three operating ledgers right',
       summary: isZh
         ? '资本通道出现后，业主先别急着讲估值故事。用现金流账、权责账和数据账，检查资产是否经得起持续复核。'
