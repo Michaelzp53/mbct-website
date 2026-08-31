@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '免签入境客人越来越多，你的酒店准备好承接了吗？' : 'Visa-Free Arrivals Are Rising. Can Your Hotel Actually Serve the Demand?',
+      summary: isZh
+        ? '全国入境增长不会自动成为单店订单。用六环节实测，先找出外宾承接链中损失最大的断点。'
+        : 'Inbound growth does not automatically become property-level demand. Test six guest-journey links and repair the highest-loss break first.',
+      slug: 'visa-free-guest-readiness-2026-08-31',
+      date: '2026.08.31',
+    },
+    {
       title: isZh ? '酒店供给在增加，筹开项目先做一次供给敏感性测试' : 'Hotel Supply Is Growing. Run a Supply Sensitivity Test Before You Open.',
       summary: isZh
         ? '区域开发管线只能提示方向，不能替单店下结论。用客群重叠和四项条件筛出核心竞争集，再重算爬坡与现金承受期。'

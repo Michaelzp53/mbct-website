@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 656,
+      type: 'article',
+      title: '免签入境客人越来越多，你的酒店准备好承接了吗？',
+      titleEn: 'Visa-Free Arrivals Are Rising. Can Your Hotel Actually Serve the Demand?',
+      slug: 'visa-free-guest-readiness-2026-08-31',
+      summary: '全国入境增长不会自动成为单店订单。用六环节实测，先找出外宾承接链中损失最大的断点。',
+      summaryEn: 'Inbound growth does not automatically become property-level demand. Test six guest-journey links and repair the highest-loss break first.',
+      firstLine: '入境增长不会自动成为单店订单，先把外宾承接链跑通。',
+      author: '迈创兄弟C&T',
+      date: '2026-08-31',
+      category: 'industry-insights',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 9,
+      featured: true,
+      image: '',
+    },
+    {
       id: 653,
       type: 'article',
       title: '酒店加盟后，谁来对经营拍板？业主可以高枕无忧了吗？',
