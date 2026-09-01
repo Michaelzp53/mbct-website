@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 657,
+      type: 'article',
+      title: '暑期订单回升、房价仍承压：酒店怎样判断哪些价格该守、哪些价格该让？',
+      titleEn: 'Summer Pickup Is Rising, Yet Rate Pressure Persists: How Hotels Govern Rate Holds and Yields Day by Day',
+      slug: 'summer-pickup-rate-fence-governance-2026-09-01',
+      summary: '暑期订单回升不等于全面涨价。用价格瀑布表、四档触发阈值、审批权限和7天治理测试，把每天的守价、让价与停止动作变成团队可复核的经营规则。',
+      summaryEn: 'Summer pickup does not authorize a blanket rate increase. Use a governed rate-fence table, four trigger bands, approval rights and a seven-day test to make daily hold, yield and stop decisions reviewable by the whole team.',
+      firstLine: '订单回温没有给全面涨价授权，先把每天的守价与让价变成团队能复核的规则。',
+      author: '迈创兄弟C&T',
+      date: '2026-09-01',
+      category: 'industry-insights',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 10,
+      featured: true,
+      image: '',
+    },
+    {
       id: 656,
       type: 'article',
       title: '免签入境客人越来越多，你的酒店准备好承接了吗？',
