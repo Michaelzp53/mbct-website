@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 658,
+      type: 'article',
+      title: '无障碍新国标实施后，酒店改造预算先花在哪？',
+      titleEn: "Where Should Your Hotel's Accessibility Renovation Budget Go First After China's New National Standard?",
+      slug: 'accessibility-hotel-renovation-priority-2026-09-03',
+      summary: '以七个入住触点和本店优先矩阵，先找断点再决定无障碍改造预算。',
+      summaryEn: 'Use seven guest-journey touchpoints and a property-specific priority matrix to find breakpoints before approving accessibility renovation spend.',
+      firstLine: '先走查、再排序、后立项，把无障碍预算建立在真实旅程断点上。',
+      author: '迈创兄弟C&T',
+      date: '2026-09-03',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 10,
+      featured: true,
+      image: '',
+    },
+    {
       id: 657,
       type: 'article',
       title: '暑期订单回升、房价仍承压：酒店怎样判断哪些价格该守、哪些价格该让？',

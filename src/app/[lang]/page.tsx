@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '无障碍新国标实施后，酒店改造预算先花在哪？' : "Where Should Your Hotel's Accessibility Renovation Budget Go First After China's New National Standard?",
+      summary: isZh
+        ? '以七个入住触点和本店优先矩阵，先找断点再决定无障碍改造预算。'
+        : 'Use seven guest-journey touchpoints and a property-specific priority matrix to find breakpoints before approving accessibility renovation spend.',
+      slug: 'accessibility-hotel-renovation-priority-2026-09-03',
+      date: '2026.09.03',
+    },
+    {
       title: isZh ? '免签入境客人越来越多，你的酒店准备好承接了吗？' : 'Visa-Free Arrivals Are Rising. Can Your Hotel Actually Serve the Demand?',
       summary: isZh
         ? '全国入境增长不会自动成为单店订单。用六环节实测，先找出外宾承接链中损失最大的断点。'
