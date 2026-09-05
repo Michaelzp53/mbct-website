@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 659,
+      type: 'article',
+      title: '酒店AI不是PPT：工具上线之后，经营现场为什么仍然用不起来？',
+      titleEn: 'Hotel AI Is Not a Slide Deck: Why Does It Still Fail to Work After Go-Live?',
+      slug: 'hotel-ai-implementation-operating-loop-2026-09-05',
+      summary: '系统上线不等于AI进入经营。用六项闭环、三个公开案例和一张30天测试表，判断酒店AI项目是否真正形成业务结果。',
+      summaryEn: 'A system going live does not mean AI has entered hotel operations. Use a six-part operating loop, three public cases, and a 30-day test sheet to judge whether an AI project is producing business results.',
+      firstLine: '系统能运行，只说明技术交付完成；数据、责任、权限、指标和复盘接成闭环，AI才真正进入酒店经营。',
+      author: '迈创兄弟C&T',
+      date: '2026-09-05',
+      category: 'hotel-digital',
+      tag: isZh ? '行业分析' : 'Industry Analysis',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 9,
+      featured: true,
+      image: '',
+    },
+    {
       id: 658,
       type: 'article',
       title: '无障碍新国标实施后，酒店改造预算先花在哪？',

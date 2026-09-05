@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '酒店AI不是PPT：工具上线之后，经营现场为什么仍然用不起来？' : 'Hotel AI Is Not a Slide Deck: Why Does It Still Fail to Work After Go-Live?',
+      summary: isZh
+        ? '系统上线不等于AI进入经营。用六项闭环、三个公开案例和一张30天测试表，判断酒店AI项目是否真正形成业务结果。'
+        : 'A system going live does not mean AI has entered hotel operations. Use a six-part operating loop, three public cases, and a 30-day test sheet to judge whether an AI project is producing business results.',
+      slug: 'hotel-ai-implementation-operating-loop-2026-09-05',
+      date: '2026.09.05',
+    },
+    {
       title: isZh ? '无障碍新国标实施后，酒店改造预算先花在哪？' : "Where Should Your Hotel's Accessibility Renovation Budget Go First After China's New National Standard?",
       summary: isZh
         ? '以七个入住触点和本店优先矩阵，先找断点再决定无障碍改造预算。'
