@@ -80,6 +80,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 660,
+      type: 'article',
+      title: '酒店与在地非遗合作，先从哪一个住客触点开始？',
+      titleEn: 'Which Guest Touchpoint Comes First When a Hotel Partners with Local Intangible Heritage?',
+      slug: 'local-heritage-guest-touchpoint-2026-09-06',
+      summary: '酒店与在地非遗合作，先从一个可交付、可尊重、可验证的住客触点开始，用立项与小试框架判断体验是否值得继续。',
+      summaryEn: 'Start a hotel partnership with local intangible heritage at one deliverable, respectful, measurable guest touchpoint, then use a pilot framework to decide whether it deserves to continue.',
+      firstLine: '非遗体验不是酒店采购的一场节目，而是由住客任务和现场承载验证的一项服务产品。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-06',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 10,
+      featured: true,
+      image: '',
+    },
+    {
       id: 659,
       type: 'article',
       title: '酒店AI不是PPT：工具上线之后，经营现场为什么仍然用不起来？',
