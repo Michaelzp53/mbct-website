@@ -1,20 +1,19 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, ChevronRight, Clock, Eye, ThumbsUp, BookOpen, MessageSquare } from 'lucide-react'
+import { ArrowRight, ChevronRight, Clock, BookOpen, MessageSquare } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import SearchBox from './SearchBox'
-import PageHero from '@/components/PageHero'
 import { allArticlesData } from './article/[slug]/articles-data'
-import { knowledgeCategories, normalizeLeanCategory } from '@/lib/knowledge-taxonomy'
+import { leanCategories, getLeanArticleCategory } from '@/lib/knowledge-taxonomy'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
   const title = isZh ? '管享精道｜酒店管理者的精益经营知识库' : 'Lean Insights | A Practical Hotel Management Knowledge Base'
   const description = isZh
-    ? '管享精道是迈创兄弟C&T面向酒店管理者的精益经营知识库，覆盖投资决策、筹备筹开、团队建设、运营升级、营销策略、数字平台和成本优化。'
-    : 'Lean Insights is MarvelBros C&T’s practical hotel management knowledge base, covering investment, pre-opening, team building, operations, marketing, digital platforms, and cost optimization.'
+    ? '管享精道是迈创兄弟C&T面向酒店管理者的精益经营知识库，涵盖精益投资、筹开、诊断、收益、成本、数字化、营销与治理。'
+    : 'Lean Insights is MarvelBros C&T’s practical hotel management knowledge base, covering lean investment, pre-opening, diagnosis, revenue, cost, digital transformation, marketing, and governance.'
 
   return {
     title,
@@ -44,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 // Canonical eight-category taxonomy; legacy article IDs are normalized at read time.
-const categories = knowledgeCategories.map((category) => ({
+const categories = leanCategories.map((category) => ({
   id: category.slug,
   labelZh: category.zh,
   labelEn: category.en,
@@ -120,13 +119,13 @@ const categories = knowledgeCategories.map((category) => ({
 ] */
 
 const categoryCounts: Record<string, number> = categories.reduce((acc, cat) => {
-  acc[cat.id] = allArticlesData.filter(article => normalizeLeanCategory(article.category) === cat.id).length
+  acc[cat.id] = allArticlesData.filter(article => getLeanArticleCategory(article) === cat.id).length
   return acc
 }, {} as Record<string, number>)
 
 const latestArticlesByCategory: Record<string, typeof allArticlesData[number] | undefined> = categories.reduce((acc, cat) => {
   acc[cat.id] = [...allArticlesData]
-    .filter(article => normalizeLeanCategory(article.category) === cat.id)
+    .filter(article => getLeanArticleCategory(article) === cat.id)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime() || b.id - a.id)[0]
   return acc
 }, {} as Record<string, typeof allArticlesData[number] | undefined>)
@@ -152,23 +151,18 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
 
   return (
     <div className="min-h-screen bg-background">
-      <PageHero
-        title={ui.pageTitle}
-        subtitle={ui.pageSubtitle}
-        bgImage="/hero-pexels-jimmy-liao.jpg"
-      />
 
       {/* Header */}
       <div className="bg-gradient-to-br from-[#f59e0b]/10 via-background to-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-3">
               <BookOpen className="w-4 h-4 text-[#f59e0b]" />
               <span className="text-[#f59e0b] text-sm font-medium">
                 {isZh ? '迈创兄弟C&T · 知识库' : 'MarvelBros C&T · Knowledge Base'}
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {ui.pageTitle}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -181,7 +175,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Category Sections - Vertical Layout */}
         <div className="space-y-8">
           {categories.map((cat) => {
@@ -268,14 +262,8 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                         <Clock className="w-3 h-3" />
                         {latestArticle.readTime} {ui.minRead}
                       </span>
-                      <span className="flex items-center gap-1">
-                        <Eye className="w-3 h-3" />
-                        {latestArticle.views}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <ThumbsUp className="w-3 h-3" />
-                        {latestArticle.likes}
-                      </span>
+
+
                     </div>
                   </div>
                 )}
@@ -286,7 +274,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
 
         {/* Featured Q&A Section */}
         <div className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-foreground mb-3 flex items-center gap-2">
             <MessageSquare className="w-6 h-6 text-[#f59e0b]" />
             {isZh ? '精选问答' : 'Featured Q&A'}
           </h2>
@@ -310,25 +298,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                 <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
               </div>
             </a>
-            <a
-              href={`/${lang}/lean/qa/housekeeping-defect-rate`}
-              className="block p-6 hover:bg-muted/30 transition-colors"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0">
-                  <MessageSquare className="w-5 h-5 text-[#f59e0b]" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-foreground mb-1">
-                    {isZh ? '客房清洁返工率高，如何用精益方法解决？' : 'High housekeeping rework rate — how to solve with Lean?'}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {isZh ? '迈创兄弟解答：建立标准化检查清单...' : 'MarvelBros: Establish standardized checklists...'}
-                  </p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-              </div>
-            </a>
+
             <a
               href={`/${lang}/lean/qa/hotel-website-content-order-service-faq-cases-2026-06-29`}
               className="block p-6 hover:bg-muted/30 transition-colors"
@@ -350,24 +320,24 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
             </a>
 
           </div>
-          <div className="mt-4 text-center">
+          <div className="mt-4 text-left">
             <a
               href={`/${lang}/lean/qa/front-desk-waiting-5min`}
               className="text-sm text-[#f59e0b] hover:text-[#f59e0b]/80 transition-colors"
             >
-              {isZh ? '查看更多问答 →' : 'View more Q&A →'}
+              {isZh ? '阅读前台等候时间问答 →' : 'Read the front-desk waiting time Q&A →'}
             </a>
           </div>
         </div>
 
 
         {/* Ask Button */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-left">
           <div className="p-8 rounded-2xl bg-gradient-to-br from-[#f59e0b]/10 to-[#f59e0b]/5 border border-[#f59e0b]/30">
             <h2 className="text-2xl font-bold text-foreground mb-4">
               {isZh ? '没找到你要的答案？' : 'Not finding your answer?'}
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-3">
               {ui.askDesc}
             </p>
             <Link href={`/${lang}/lean/ask`}>

@@ -1,3 +1,4 @@
+import { ArticleMarkdown } from '@/components/article-markdown'
 import Link from 'next/link'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
@@ -76,7 +77,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-muted-foreground hover:text-[#f59e0b] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          {isZh ? '返回前沿导航' : 'Back to Industry Navigation'}
+          {isZh ? '返回专业洞察' : 'Back to Insights'}
         </Link>
 
         <article className="bg-[#111827] rounded-2xl border border-gray-800 overflow-hidden">
@@ -101,16 +102,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
           </div>
 
           <div className="p-8">
-            <div className="prose prose-invert prose-lg max-w-none"
-              dangerouslySetInnerHTML={{ 
-                __html: article.content
-                  .replace(/## (.*)/g, '<h2 class="text-2xl font-bold text-foreground mt-8 mb-4">$1</h2>')
-                  .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#f59e0b]">$1</strong>')
-                  .replace(/\n\n/g, '</p><p class="text-gray-300 mb-4 leading-relaxed">')
-                  .replace(/^/, '<p class="text-gray-300 mb-4 leading-relaxed">')
-                  .replace(/$/, '</p>')
-              }}
-            />
+            <ArticleMarkdown content={article.content} />
           </div>
         </article>
       </div>

@@ -2,35 +2,47 @@
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { usePathname } from 'next/navigation'
+import { containsChineseBody } from '@/lib/article-labels'
+import { Children, type ReactNode } from 'react'
+
+function cleanText(children: ReactNode) {
+  return Children.map(children, child => typeof child === 'string' ? child.replace(/\*\*/g, '') : child)
+}
 
 interface ArticleMarkdownProps {
   content: string
 }
 
 export function ArticleMarkdown({ content }: ArticleMarkdownProps) {
+  const pathname = usePathname()
+  const originalChinese = pathname.startsWith('/en/') && containsChineseBody(content)
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
+      {originalChinese && <aside className="mb-6 rounded-lg border border-border bg-muted p-4 text-sm leading-7"><strong>Original Chinese article</strong><p>The full English translation of this archived article is not yet available. The original text is provided below; navigation and enquiry options are available in English.</p></aside>}
+      <div lang={originalChinese ? 'zh-CN' : undefined}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
+          h1: ({ children }) => <h2 className="mt-8 mb-4 text-2xl font-bold text-foreground">{children}</h2>,
           h2: ({ children }) => (
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
-              {children}
+              {cleanText(children)}
             </h2>
           ),
           h3: ({ children }) => (
             <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
-              {children}
+              {cleanText(children)}
             </h3>
           ),
           h4: ({ children }) => (
             <h4 className="text-lg font-bold text-foreground mt-6 mb-2">
-              {children}
+              {cleanText(children)}
             </h4>
           ),
           p: ({ children }) => (
-            <p className="text-foreground leading-relaxed mb-4">
-              {children}
+            <p className="text-[17px] text-foreground/85 leading-8 mb-5">
+              {cleanText(children)}
             </p>
           ),
           strong: ({ children }) => (
@@ -104,6 +116,7 @@ export function ArticleMarkdown({ content }: ArticleMarkdownProps) {
       >
         {content}
       </ReactMarkdown>
+      </div>
     </div>
   )
 }

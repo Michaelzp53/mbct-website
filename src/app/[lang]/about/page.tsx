@@ -90,7 +90,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
     [SearchCheck, isZh ? '先看问题' : 'Understand the issue', isZh ? '核对项目阶段、数据、现场条件和决策目标。' : 'Review stage, data, operating conditions, and decision goals.'],
     [Compass, isZh ? '再定路径' : 'Choose the path', isZh ? '找出最影响结果的变量，明确优先级与工作边界。' : 'Identify the variable shaping outcomes and set priorities and scope.'],
     [Users, isZh ? '跨专业协作' : 'Work across disciplines', isZh ? '投资、筹开、运营和增长视角共同参与，不让局部优化伤害整体结果。' : 'Bring investment, pre-opening, operations, and growth perspectives together.'],
-    [CheckCircle2, isZh ? '验证结果' : 'Verify the result', isZh ? '以可执行动作、责任节点和复盘证据完成闭环。' : 'Close the loop with actions, ownership, and review evidence.'],
+    [CheckCircle2, isZh ? '验证结果' : 'Verify the result', isZh ? '明确执行步骤和负责人，通过复盘检查改善效果。' : 'Define actions and responsibilities, then review the evidence of improvement.'],
   ] as const
 
   const aboutJsonLd = {

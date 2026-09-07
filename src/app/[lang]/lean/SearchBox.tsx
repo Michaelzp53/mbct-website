@@ -26,7 +26,7 @@ export default function SearchBox({ lang, isZh, allArticlesData }: { lang: strin
       <div className="relative">
         <input
           type="text"
-          placeholder={isZh ? '搜索文章标题、内容、标签...' : 'Search articles, content, tags...'}
+          placeholder={isZh ? '搜索文章标题或摘要' : 'Search article titles or summaries'}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full px-6 py-4 bg-card border border-border rounded-2xl text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b] transition-colors pl-14"

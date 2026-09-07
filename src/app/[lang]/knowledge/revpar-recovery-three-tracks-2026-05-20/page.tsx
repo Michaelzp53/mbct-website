@@ -1,3 +1,4 @@
+import { ArticleMarkdown } from '@/components/article-markdown'
 import Link from 'next/link'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
@@ -358,21 +359,7 @@ The next stage of the hotel industry belongs to those who truly understand "calc
 
         {/* Content */}
         <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
-          {article.content.split('\n\n').map((paragraph, index) => {
-            if (paragraph.startsWith('## ')) {
-              return <h2 key={index} className="text-2xl font-bold text-foreground mt-8 mb-4">{paragraph.replace('## ', '')}</h2>
-            }
-            if (paragraph.startsWith('### ')) {
-              return <h3 key={index} className="text-xl font-bold text-foreground mt-6 mb-3">{paragraph.replace('### ', '')}</h3>
-            }
-            if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-              return <p key={index} className="font-bold text-foreground">{paragraph.replace(/\*\*/g, '')}</p>
-            }
-            if (paragraph.startsWith('---')) {
-              return <hr key={index} className="my-8 border-border" />
-            }
-            return <p key={index} className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{paragraph}</p>
-          })}
+          <ArticleMarkdown content={article.content} />
         </div>
 
         {/* Footer */}

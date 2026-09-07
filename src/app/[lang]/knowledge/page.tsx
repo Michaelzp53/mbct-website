@@ -1,14 +1,16 @@
+import { articleLabel } from '@/lib/article-labels'
+import { knowledgeCategories } from '@/lib/knowledge-taxonomy'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { BookOpen, FileText, BarChart3, ArrowRight, Clock, User, Calendar } from 'lucide-react'
-import PageHero from '@/components/PageHero'
+import NewsletterSubscribe from './[slug]/NewsletterSubscribe'
 import KnowledgeSearchBox from './KnowledgeSearchBox'
 import { getPrimaryTopic, getTopicCopy, topicOrder, type PrimaryTopic } from '@/lib/knowledge-topics'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
-  const title = isZh ? '酒店投资、筹开与经营问题知识库' : 'Hotel Investment, Pre-Opening and Operations Knowledge Hub'
+  const title = isZh ? '专业洞察：酒店经营问题与方法' : 'Hotel Investment, Pre-Opening and Operations Knowledge Hub'
   const description = isZh
     ? '从酒店投资判断、筹建筹开到经营改善，按真实酒店问题找到判断方法、案例与下一步行动。'
     : 'Find practical methods, cases, and next steps for hotel investment, pre-opening, and operating improvement through real hospitality questions.'
@@ -53,7 +55,7 @@ export default async function KnowledgePage({
 
   // 页面UI翻译
   const ui = {
-    pageTitle: isZh ? '酒店投资、筹开与经营问题知识库' : 'Hotel Investment, Pre-Opening and Operations Knowledge Hub',
+    pageTitle: isZh ? '专业洞察：酒店经营问题与方法' : 'Hotel Investment, Pre-Opening and Operations Knowledge Hub',
     pageSubtitle: isZh
       ? '从投资判断、筹建筹开到经营改善，按真实酒店问题找到判断方法、案例和下一步行动。'
       : 'Find methods, cases, and next steps for real hotel questions — from investment and pre-opening to operating improvement.',
@@ -3049,6 +3051,9 @@ export default async function KnowledgePage({
 
   // 热门话题:自动选择所有文章中日期最新的文章
   const allArticles = [...articles, ...reports, ...cases]
+    .sort((left, right) => new Date(right.date).getTime() - new Date(left.date).getTime())
+    .filter((article, index, entries) => (!isZh || /[\u3400-\u9fff]/u.test(article.title))
+      && entries.findIndex(entry => entry.title.replace(/\s/g, '') === article.title.replace(/\s/g, '')) === index)
   const featuredArticle = allArticles.reduce((latest, article) => {
     return new Date(article.date) > new Date(latest.date) ? article : latest
   }, allArticles[0])
@@ -3064,6 +3069,8 @@ export default async function KnowledgePage({
     'governance',
     'marketing',
     'distribution',
+    'cultural-tourism',
+    'silver-economy',
   ]
   const knowledgeMap = [
     {
@@ -3128,26 +3135,12 @@ export default async function KnowledgePage({
 
   return (
     <div className="min-h-screen bg-background">
-      <PageHero
-        title={ui.pageTitle}
-        subtitle={ui.heroSubtitle}
-        bgImage="/images/home-named/industry-insights.jpg"
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-6">
-            <BookOpen className="w-4 h-4 text-[#f59e0b]" />
-            <span className="text-[#f59e0b] text-sm font-medium">{isZh ? '酒店经营知识库' : 'Hotel Management Knowledge Base'}</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {ui.pageTitle}
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {ui.heroSubtitle}
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <header className="mb-6 max-w-3xl">
+          <p className="text-sm font-semibold text-primary">{isZh ? '迈创兄弟C&T · 酒店经营知识库' : 'MarvelBros C&T · Hotel knowledge'}</p>
+          <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{ui.pageTitle}</h1>
+          <p className="mt-3 text-base leading-7 text-muted-foreground">{ui.heroSubtitle}</p>
+        </header>
 
         <KnowledgeSearchBox
           lang={lang}
@@ -3156,7 +3149,46 @@ export default async function KnowledgePage({
           placeholder={ui.searchPlaceholder}
         />
 
-        <section id="problem-navigation" className="mb-16">
+        <details className="mb-6 rounded-xl border border-border p-4">
+          <summary className="cursor-pointer font-semibold">{isZh ? '按专业洞察栏目浏览' : 'Browse Insights by category'}</summary>
+          <nav aria-label={isZh ? '专业洞察栏目' : 'Insights categories'} className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+            {knowledgeCategories.map(category => <Link key={category.slug} className="rounded-lg bg-muted px-3 py-3 text-sm hover:text-primary" href={`/${lang}/knowledge/category/${category.slug}`}>{isZh ? category.zh : category.en}</Link>)}
+          </nav>
+        </details>
+
+        {selectedTopic && (
+          <section id="topic-results" className="mb-16 scroll-mt-24">
+            <div className="flex flex-col gap-3 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-sm font-medium text-primary">{isZh ? '主题内容' : 'Topic content'}</p>
+                <h2 className="mt-2 text-2xl font-bold text-foreground">{getTopicCopy(selectedTopic, isZh).title}</h2>
+              </div>
+              <Link href={`/${lang}/knowledge`} className="text-sm font-semibold text-primary hover:opacity-80">
+                {isZh ? '返回问题导航' : 'Back to question navigation'}
+              </Link>
+            </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {selectedTopicArticles.map((article) => (
+                <Link
+                  key={`topic-result-${article.slug}`}
+                  href={`/${lang}/knowledge/${encodeURIComponent(article.slug)}`}
+                  className="rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/50"
+                >
+                  <p className="text-xs font-medium text-primary">{isZh ? article.tag : articleLabel(article.tag, 'en')}</p>
+                  <h3 className="mt-2 font-semibold text-card-foreground">{isZh ? article.title : article.titleEn || article.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">{isZh ? article.summary : article.summaryEn || article.summary}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <nav aria-label={isZh ? '按经营问题浏览' : 'Browse by operating problem'} className="mb-8 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+          {questionTopics.map(topic => <Link key={topic} href={`/${lang}/knowledge?topic=${topic}#topic-results`} className="rounded-lg border border-border px-3 py-3 text-sm font-medium hover:border-primary hover:bg-primary/5">{getTopicCopy(topic, isZh).title} →</Link>)}
+        </nav>
+
+        {!selectedTopic && <>
+        <section id="problem-navigation" className="mb-16 scroll-mt-24">
           <div className="max-w-3xl mb-8">
             <p className="text-sm font-medium text-primary mb-3">{isZh ? '按问题开始' : 'Start with the question'}</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -3171,7 +3203,7 @@ export default async function KnowledgePage({
             <section className="rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-yellow-50 p-6 dark:border-amber-500/30 dark:from-amber-900/20 dark:to-yellow-900/20 md:col-span-2">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-sm font-medium text-amber-700 dark:text-amber-300">{isZh ? '酒店实际经营案例' : 'Real hotel operating cases'}</p>
+                  <p className="text-sm font-medium text-amber-700 dark:text-amber-300">{isZh ? '酒店精益管理方法' : 'Practical lean hotel management'}</p>
                   <h3 className="mt-2 text-xl font-bold text-card-foreground">{ui.leanTitle}</h3>
                   <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
                     {isZh ? '从真实经营问题出发，查看收益、运营、团队与成本等场景中的判断方法和改进动作。' : 'Start with real operating problems and explore practical judgments and improvement actions across revenue, operations, teams, and costs.'}
@@ -3228,7 +3260,7 @@ export default async function KnowledgePage({
               {isZh ? '按酒店经营全周期，找到下一步需要补齐的知识' : 'Find the next knowledge gap across the hotel lifecycle'}
             </h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              {isZh ? '知识库不是文章的堆叠。它把投资、筹开、经营、治理和改善连接成一条可持续查阅的经营路径。' : 'This knowledge base connects investment, pre-opening, operations, governance, and improvement into one durable reference path.'}
+              {isZh ? '按酒店所处阶段，查阅投资、筹开、经营、治理与改善的相关知识。' : 'This knowledge base connects investment, pre-opening, operations, governance, and improvement into one durable reference path.'}
             </p>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
@@ -3253,33 +3285,8 @@ export default async function KnowledgePage({
           </div>
         </section>
 
-        {selectedTopic && (
-          <section id="topic-results" className="mb-16 scroll-mt-24">
-            <div className="flex flex-col gap-3 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-sm font-medium text-primary">{isZh ? '主题内容' : 'Topic content'}</p>
-                <h2 className="mt-2 text-2xl font-bold text-foreground">{getTopicCopy(selectedTopic, isZh).title}</h2>
-              </div>
-              <Link href={`/${lang}/knowledge`} className="text-sm font-semibold text-primary hover:opacity-80">
-                {isZh ? '返回问题导航' : 'Back to question navigation'}
-              </Link>
-            </div>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {selectedTopicArticles.map((article) => (
-                <Link
-                  key={`topic-result-${article.slug}`}
-                  href={`/${lang}/knowledge/${encodeURIComponent(article.slug)}`}
-                  className="rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/50"
-                >
-                  <p className="text-xs font-medium text-primary">{isZh ? article.tag : article.tag.replace('行业报告', 'Industry Report').replace('行业分析', 'Industry Analysis').replace('案例研究', 'Case Study')}</p>
-                  <h3 className="mt-2 font-semibold text-card-foreground">{isZh ? article.title : article.titleEn || article.title}</h3>
-                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">{isZh ? article.summary : article.summaryEn || article.summary}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
 
+        </>}
         {false && <>
         {/* Categories */}
         <section id="categories" className="mb-16">
@@ -3465,26 +3472,7 @@ export default async function KnowledgePage({
 
         </>}
 
-        <section className="mt-16 text-center">
-          <div className="p-8 rounded-2xl bg-card border border-border">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              订阅行业洞察
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              每周获取最新研究报告与行业分析,领先一步洞察趋势
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="输入您的邮箱"
-                className="px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-[#f59e0b]"
-              />
-              <button className="px-6 py-3 bg-[#f59e0b] text-[#0f172a] font-bold rounded-lg hover:bg-[#f59e0b]/90 transition-all whitespace-nowrap">
-                立即订阅
-              </button>
-            </div>
-          </div>
-        </section>
+        <NewsletterSubscribe lang={lang} />
       </div>
     </div>
   )

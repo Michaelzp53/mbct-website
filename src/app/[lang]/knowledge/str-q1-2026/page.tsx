@@ -174,7 +174,7 @@ K型复苏指的是：不同板块、不同城市、不同酒店类型之间的�
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href={`/${lang}/knowledge`} className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          {isZh ? '返回前沿导航' : 'Back to Industry'}
+          {isZh ? '返回专业洞察' : 'Back to Insights'}
         </Link>
 
         <article className="bg-card rounded-2xl border border-border overflow-hidden">

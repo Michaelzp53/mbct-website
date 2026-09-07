@@ -23,31 +23,31 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       icon: Building2,
       title: isZh ? '准备投资一家酒店？' : 'Planning to invest in a hotel?',
       copy: isZh ? '如何判断项目是否值得投资？' : 'How can you judge whether the project is worth the investment?',
-      href: `/${lang}/hotel-investment`,
+      href: `/${lang}/knowledge?topic=investment#topic-results`,
     },
     {
       icon: ClipboardCheck,
       title: isZh ? '酒店正在筹开？' : 'Is the hotel preparing to open?',
       copy: isZh ? '如何避免开业前的关键错误？' : 'How can critical pre-opening mistakes be avoided?',
-      href: `/${lang}/hotel-opening`,
+      href: `/${lang}/knowledge?topic=hotel-opening#topic-results`,
     },
     {
       icon: Coins,
       title: isZh ? '酒店经营困难？' : 'Is hotel performance under pressure?',
       copy: isZh ? '为什么入住率提高了，利润仍然下降？' : 'Why can profit fall even when occupancy rises?',
-      href: `/${lang}/hotel-operation-improvement`,
+      href: `/${lang}/knowledge?topic=revenue#topic-results`,
     },
     {
       icon: RefreshCw,
       title: isZh ? '酒店成本越来越高？' : 'Are hotel costs continuing to rise?',
       copy: isZh ? '如何提升运营效率？' : 'How can operating efficiency be improved?',
-      href: `/${lang}/hotel-operation-improvement`,
+      href: `/${lang}/knowledge?topic=cost#topic-results`,
     },
     {
       icon: Search,
       title: isZh ? '酒店团队很忙？' : 'Is the hotel team always busy?',
       copy: isZh ? '为什么经营结果没有改善？' : 'Why are operating results still not improving?',
-      href: `/${lang}/hotel-revenue`,
+      href: `/${lang}/knowledge?topic=team#topic-results`,
     },
   ]
 
@@ -254,6 +254,69 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }} />
       <HeroWithStats lang={lang} />
+      <section id="hotel-problems" className="scroll-mt-20 bg-[#f4f7f8] py-12 dark:bg-slate-900 md:py-20">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="max-w-3xl">
+              <p className="text-sm font-semibold leading-6 text-[#24745c] dark:text-emerald-300">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店投资人和管理者经常遇到的问题' : 'Questions hotel investors and managers often face'}</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
+              {isZh ? '不同阶段的问题相互关联。越早识别关键因素，越能降低后续调整成本。' : 'Challenges at different stages are connected. The earlier the critical factors are identified, the lower the cost of later correction.'}
+            </p>
+          </div>
+
+          <div className="mt-12 grid border-t border-slate-300 dark:border-slate-700 lg:grid-cols-2 lg:gap-x-12">
+            {problems.map(({ icon: Icon, title, copy, href }, index) => (
+              <Link
+                key={title}
+                href={href}
+                className={`group grid min-h-28 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-6 transition-colors hover:bg-white/70 dark:border-slate-700 dark:hover:bg-slate-950/40 sm:grid-cols-[3.5rem_1fr_auto] ${index === problems.length - 1 ? 'lg:col-span-2' : ''}`}
+              >
+                <Icon className="h-6 w-6 text-[#d98b28]" />
+                <div>
+                  <h3 className="text-xl font-semibold sm:text-2xl">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{copy}</p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-[#0b4a6f]" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-slate-950 md:py-28">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold leading-6 text-[#24745c] dark:text-emerald-300">{isZh ? '持续更新的专业索引' : 'A practical reference, continuously updated'}</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店经营知识库' : 'Hotel Knowledge Base'}</h2>
+              <p className="mt-5 text-xl font-semibold leading-8">{isZh ? '沉淀行业实践经验，形成可判断、可执行的方法体系。' : 'Turning industry practice into a system of judgment and action.'}</p>
+              <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
+                {isZh ? '我们持续整理酒店投资、筹建、运营、收益、成本、产品和市场增长中的真实问题，通过案例分析、经营观察和行业研究，帮助酒店经营者理解原因、建立判断逻辑，并找到下一步优化方向。' : 'We examine real issues across hotel investment, development, operations, revenue, cost, product, and market growth. Cases, operating observations, and industry research help hotel leaders understand causes, build sound judgment, and identify the next direction for improvement.'}
+              </p>
+              <Link href={`/${lang}/knowledge`} className="mt-8 inline-flex min-h-12 items-center gap-2 bg-[#0b4a6f] px-6 py-3 font-semibold text-white hover:bg-[#073a58]">
+                <BookOpen className="h-5 w-5" />
+                {isZh ? '进入酒店经营知识库' : 'Enter the knowledge base'}
+              </Link>
+            </div>
+
+            <div className="border-t border-slate-300 dark:border-slate-700">
+              {latestArticles.slice(0, 4).map((article, index) => (
+                <Link key={article.slug} href={`/${lang}/knowledge/${article.slug}`} className={`group block border-b border-slate-300 dark:border-slate-700 ${index === 0 ? 'bg-[#f7f3ea] px-5 py-7 dark:bg-slate-900' : 'py-5'}`}>
+                  <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                    <span>{article.date}</span>
+                    <span aria-hidden="true">/</span>
+                    <span>{index === 0 ? (isZh ? '精选阅读' : "Featured reading") : (isZh ? '行业洞察' : 'Industry Insight')}</span>
+                  </div>
+                  <h3 className={`mt-3 font-semibold leading-snug transition-colors group-hover:text-[#0b4a6f] dark:group-hover:text-sky-300 ${index === 0 ? 'text-2xl' : 'text-xl'}`}>{article.title}</h3>
+                  {index === 0 ? <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{article.summary}</p> : null}
+                  <ArrowRight className={`${index === 0 ? 'mt-5' : 'mt-3'} h-5 w-5 text-[#d98b28] transition-transform group-hover:translate-x-1`} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <LifecycleCapabilities lang={lang} />
 
       <section className="border-b border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-slate-950 md:py-28">
@@ -325,69 +388,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <p className="mt-3 text-xs leading-5 text-slate-500 dark:text-slate-400">
             {isZh ? '以上成果来自核心专业人员的职业项目经验，以经营问题、专业行动和结果证据呈现。' : 'These results reflect the career project experience of core specialists, presented through business problems, professional actions, and outcome evidence.'}
           </p>
-        </div>
-      </section>
-
-      <section id="hotel-problems" className="scroll-mt-20 bg-[#f4f7f8] py-20 dark:bg-slate-900 md:py-28">
-        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
-          <div className="max-w-3xl">
-              <p className="text-sm font-semibold leading-6 text-[#24745c] dark:text-emerald-300">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店投资人和管理者经常遇到的问题' : 'Questions hotel investors and managers often face'}</h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
-              {isZh ? '不同阶段的问题相互关联。越早识别关键因素，越能降低后续调整成本。' : 'Challenges at different stages are connected. The earlier the critical factors are identified, the lower the cost of later correction.'}
-            </p>
-          </div>
-
-          <div className="mt-12 grid border-t border-slate-300 dark:border-slate-700 lg:grid-cols-2 lg:gap-x-12">
-            {problems.map(({ icon: Icon, title, copy, href }, index) => (
-              <Link
-                key={title}
-                href={href}
-                className={`group grid min-h-36 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-6 transition-colors hover:bg-white/70 dark:border-slate-700 dark:hover:bg-slate-950/40 sm:grid-cols-[3.5rem_1fr_auto] ${index === problems.length - 1 ? 'lg:col-span-2' : ''}`}
-              >
-                <Icon className="h-6 w-6 text-[#d98b28]" />
-                <div>
-                  <h3 className="text-xl font-semibold sm:text-2xl">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{copy}</p>
-                </div>
-                <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-[#0b4a6f]" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-slate-950 md:py-28">
-        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
-          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
-            <div className="max-w-xl">
-              <p className="text-sm font-semibold leading-6 text-[#24745c] dark:text-emerald-300">{isZh ? '持续更新的专业索引' : 'A practical reference, continuously updated'}</p>
-              <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店经营知识库' : 'Hotel Knowledge Base'}</h2>
-              <p className="mt-5 text-xl font-semibold leading-8">{isZh ? '沉淀行业实践经验，形成可判断、可执行的方法体系。' : 'Turning industry practice into a system of judgment and action.'}</p>
-              <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
-                {isZh ? '我们持续整理酒店投资、筹建、运营、收益、成本、产品和市场增长中的真实问题，通过案例分析、经营观察和行业研究，帮助酒店经营者理解原因、建立判断逻辑，并找到下一步优化方向。' : 'We examine real issues across hotel investment, development, operations, revenue, cost, product, and market growth. Cases, operating observations, and industry research help hotel leaders understand causes, build sound judgment, and identify the next direction for improvement.'}
-              </p>
-              <Link href={`/${lang}/knowledge`} className="mt-8 inline-flex min-h-12 items-center gap-2 bg-[#0b4a6f] px-6 py-3 font-semibold text-white hover:bg-[#073a58]">
-                <BookOpen className="h-5 w-5" />
-                {isZh ? '进入酒店经营知识库' : 'Enter the knowledge base'}
-              </Link>
-            </div>
-
-            <div className="border-t border-slate-300 dark:border-slate-700">
-              {latestArticles.slice(0, 4).map((article, index) => (
-                <Link key={article.slug} href={`/${lang}/knowledge/${article.slug}`} className={`group block border-b border-slate-300 dark:border-slate-700 ${index === 0 ? 'bg-[#f7f3ea] px-5 py-7 dark:bg-slate-900' : 'py-5'}`}>
-                  <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
-                    <span>{article.date}</span>
-                    <span aria-hidden="true">/</span>
-                    <span>{index === 0 ? (isZh ? '今日热门话题' : "Today's Hot Topic") : (isZh ? '行业洞察' : 'Industry Insight')}</span>
-                  </div>
-                  <h3 className={`mt-3 font-semibold leading-snug transition-colors group-hover:text-[#0b4a6f] dark:group-hover:text-sky-300 ${index === 0 ? 'text-2xl' : 'text-xl'}`}>{article.title}</h3>
-                  {index === 0 ? <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{article.summary}</p> : null}
-                  <ArrowRight className={`${index === 0 ? 'mt-5' : 'mt-3'} h-5 w-5 text-[#d98b28] transition-transform group-hover:translate-x-1`} />
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 

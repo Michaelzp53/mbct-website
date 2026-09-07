@@ -281,7 +281,7 @@ OTA platform page templates are unified, and every hotel's presentation format i
 
 ### Value 3: Data Ownership — Customer Data from Website Bookings Fully Belongs to the Hotel
 
-Guests who book through OTA platforms — their data belongs to the platform. Customers who book through the website are assets the hotel truly owns. Through member systems, email marketing, and private domain operations, this data can be used repeatedly.
+Guests who book through OTA platforms — their data belongs to the platform. Customers who book through the website are assets the hotel truly owns. Through member systems, email marketing, and direct customer relationship management, this data can be used repeatedly.
 
 ---
 
@@ -8536,7 +8536,7 @@ Marketing is one of hotels' largest variable costs and most easily "wasted" — 
 
 **Precision marketing ROI management framework:**
 1. **Channel tiering**: Classify all customer acquisition channels by "acquisition cost" and "guest quality" across two dimensions
-2. **Focus investment**: Cut low-ROI channels (typically high-commission low-quality OTA channels, inefficient traditional advertising), concentrate resources on high-ROI channels (direct sales website, member repeat purchases, private domain operations)
+2. **Focus investment**: Cut low-ROI channels (typically high-commission low-quality OTA channels, inefficient traditional advertising), concentrate resources on high-ROI channels (direct sales website, member repeat purchases, direct customer relationship management)
 3. **Continuous monitoring**: Establish weekly marketing effectiveness tracking, quickly identify ineffective investments, stop losses in time
 
 ---
@@ -12044,7 +12044,7 @@ MBCT视角：三个问题之外，还有第四个问题
 
 关于MBCT
 
-迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
+迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流 邮箱：info@marvelbros.com`,
     contentEn: `---
 
 一家"看起来很便宜"的酒店，你敢投吗？
@@ -12141,7 +12141,7 @@ MBCT视角：三个问题之外，还有第四个问题
 
 关于MBCT
 
-迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
+迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流 邮箱：info@marvelbros.com`,
     category: 'investment',
     tags: ['酒店管理', '投资决策'],
     author: '迈创兄弟C&T',
@@ -12231,7 +12231,7 @@ MBCT视角：三个动作，构建留人"铁三角"
 
 ---
 
-迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com （全文约2850字）`,
+迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流 邮箱：info@marvelbros.com （全文约2850字）`,
     contentEn: `---
 
 开篇：一个让人心酸的场景
@@ -12304,7 +12304,7 @@ MBCT视角：三个动作，构建留人"铁三角"
 
 ---
 
-迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com （全文约2850字）`,
+迈创兄弟C&T 专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流 邮箱：info@marvelbros.com （全文约2850字）`,
     category: 'team',
     tags: ['酒店管理', '投资决策'],
     author: '迈创兄弟C&T',
@@ -12372,7 +12372,7 @@ OTA费率越来越高，这件事不会停。酒店靠OTA活着，短期没问�
 
 ---
 
-专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 九大业务支撑：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com 管享精道：www.marvelbros.com/gxjzd`,
+专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 九大业务支撑：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务 网址：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流 邮箱：info@marvelbros.com 管享精道：www.marvelbros.com/gxjzd`,
     contentEn: `前言
 
 去年底，我陪一位酒店老板看报表。他指着佣金那行数字，眉头皱得很紧："你看，OTA佣金占营收的18%了。上一任签的合同，今年初续约变成了20%。" 他没有发火。只是叹了口气，说了一句让我印象很深的话："你知道最让我难受的是什么吗？不是这20%，是我花了钱买流量，结果客人下次还是直接去携程订。我跟这些客人之间，永远隔着一个APP。" 这是很多酒店的真实处境。OTA费率从十年前的8%、10%，一路涨到今天的15%、18%，部分平台部分城市甚至突破了20%。每提一次百分点，酒店就要重新算一笔账——利润空间又被吃掉一块。 能。但大多数酒店做直销渠道，最后变成了自嗨——官网建了，没流量；会员体系搭了，没人注册；促销做了，转化率低得可怜。 问题出在哪？今天我们把这件事说清楚。
@@ -12423,7 +12423,7 @@ OTA费率越来越高，这件事不会停。酒店靠OTA活着，短期没问�
 
 ---
 
-专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 九大业务支撑：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com 管享精道：www.marvelbros.com/gxjzd`,
+专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 九大业务支撑：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务 网址：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流 邮箱：info@marvelbros.com 管享精道：www.marvelbros.com/gxjzd`,
     category: 'marketing',
     tags: ['酒店管理', '投资决策'],
     author: '迈创兄弟C&T',
@@ -12513,7 +12513,7 @@ MBCT视角：节能改造的本质是"重新管理"
 
 ---
 
-专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
+专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流 邮箱：info@marvelbros.com`,
     contentEn: `作者：迈创兄弟C&T
 
 ---
@@ -12586,7 +12586,7 @@ MBCT视角：节能改造的本质是"重新管理"
 
 ---
 
-专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告 邮箱：info@marvelbros.com`,
+专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。 网址：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流 邮箱：info@marvelbros.com`,
     category: 'cost',
     tags: ['酒店管理', '投资决策'],
     author: '迈创兄弟C&T',

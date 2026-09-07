@@ -1,3 +1,4 @@
+import { articleLabel, plainArticleText } from '@/lib/article-labels'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowLeft, Clock, User, Calendar, BookOpen } from 'lucide-react'
@@ -6,7 +7,6 @@ import NewsletterSubscribe from './NewsletterSubscribe'
 import ArticleComments from './ArticleComments'
 import ContentPathway from '@/components/knowledge/ContentPathway'
 import ArticleEngagementTracker from '@/components/knowledge/ArticleEngagementTracker'
-import { ThemeToggle } from '@/components/ThemeToggle'
 import { getPrimaryTopic } from '@/lib/knowledge-topics'
 import { categoryBySlug, categoryForKnowledgeTopic } from '@/lib/knowledge-taxonomy'
 import articles20260822 from './articles-2026-08-22.json'
@@ -872,7 +872,7 @@ export const articlesData: Record<string, {
     readTime: "7分钟",
     tag: "趋势分析",
     content: ["很多酒店老板都有这样一个困惑：官网每天都有人看，有时访问量还不低，但直订就是上不去。客人看完官网，最后还是习惯性地回到携程、美团下单。老板容易因此得出结论——官网没用，不如把精力放在 OTA 运营上。", "但真正的问题可能不是官网没用，而是官网没有承担它应该承担的功能。", "OTA 给客人的是确定感，官网给客人的往往只是信息", "OTA 之所以让客人愿意下单，不是因为 OTA 比酒店更了解酒店，而是因为 OTA 在客人下单前把最关键的问题都回答了：价格多少、评论怎么样、取消政策是什么、支付是否安全、发票怎么开、出问题找谁。客人不需要额外思考，点几下就能完成预订。", "而多数酒店官网只展示了图片和介绍，没有回答\\\"为什么我应该在这里直接订\\\"。客人看完房型照片，不知道直订有什么权益、取消政策是否灵活、早餐是否适合孩子、停车是否方便。这些不确定性，会把客人推回更熟悉的 OTA。", "官网最容易缺的不是设计，而是下单前的答案", "客人关心的是很具体的问题：房型怎么选才适合家庭出行？早餐种类多不多？停车方不方便？会议和商务需求能不能满足？取消政策是否灵活？发票能不能及时开？", "老板关心的是另一组问题：客人为什么只看不咨询？为什么不留联系方式？为什么不复购？", "这两组问题其实指向同一件事：官网没有把客人最关心的答案讲清楚。客人需要的是能帮他做决定的信息，不是\\\"设施齐全、交通便利\\\"这样的形容词。", "AI 搜索为什么让官网重新变得重要", "过去两年，客人的搜索路径正在发生变化。越来越多客人不再直接打开 OTA 搜关键词，而是先问 AI：这个目的地有哪些适合亲子的酒店？哪家酒店停车方便、离景区近？哪家酒店的会议室适合 20 人以内的小团队？", "AI 会读取和综合官网、地图、OTA、问答和内容平台的信息。官网信息越完整、越一致、场景越清楚，AI 就越容易理解这家酒店适合谁、能解决什么问题。", "换句话说，官网不再只是给客人看的页面，它还是 AI 理解酒店最重要的信息源之一。官网讲不清，AI 和客人都很难判断这家酒店为什么值得被选择。", "酒店老板可以先检查 5 件事", "第一，官网是否有清晰的直订入口和联系方式。客人能不能在 3 秒内找到怎么订、怎么咨询。", "第二，是否说明直订权益，而不是只放价格。直订是否含早餐、含停车、延迟退房或其他增值权益。", "第三，是否回答房型、早餐、停车、交通、发票、取消政策等下单前问题。客人最关心的顾虑，官网有没有主动给出答案。", "第四，是否和 OTA、地图、公众号等信息一致。信息不一致会让客人和 AI 都对酒店产生疑惑。", "第五，是否能把咨询客人沉淀到企业微信、会员体系、公众号或其他私域触点。客人咨询完如果没有留下联系方式，下次还是会通过 OTA 找到酒店。", "MBCT 的判断框架", "迈创兄弟C&T在酒店 AI 搜索可见度和官网直订承接方面，建立了四个判断维度：", "可读：AI 和客人能不能快速读懂酒店适合什么场景。", "可信：客人能不能相信官网信息比零散页面更完整、更可靠。", "可订：客人有没有清楚的咨询、直订和权益路径。", "可留：客人能不能被沉淀到酒店自己的客户池，形成复购和转介绍机会。", "很多酒店的问题不是没有官网，而是官网没有承担解释价值、建立信任和承接直订的作用。MBCT 可以帮助酒店做 AI 信息体检、官网内容重构、直订入口梳理和私域承接设计，让官网从电子宣传册变成真正能承接客人的信息资产。", "常见问题", "酒店已经有 OTA 页面，还需要维护官网吗？", "需要。OTA 承担交易，官网承担解释和信任。客人可能在 OTA 看到酒店，但决定下单前往往会在官网确认信息。官网讲不清，客人就会回到 OTA 比较，而 OTA 上酒店没有差异化优势。", "酒店官网为什么有访问量但没有订单？", "通常是因为官网只展示了信息，没有回答客人下单前的关键顾虑。客人看完不知道直订有什么好处、取消政策是什么、遇到问题找谁，就会回到更熟悉的 OTA 完成预订。", "酒店官网直订一定要比 OTA 便宜吗？", "不一定。直订的核心不是价格战，而是给客人一个更清楚、更安心的预订理由。权益、服务、灵活性和直接沟通，都可以成为直订的价值。", "单体酒店没有技术团队，第一步该改什么？", "先检查官网是否回答了客人最关心的 5 个问题：房型选择、早餐、停车、取消政策和联系方式。这些信息不需要技术开发，只需要把内容讲清楚。", "AI 搜索会不会让酒店官网重新变重要？", "会。AI 需要完整、一致、场景清楚的信息来理解酒店。官网是 AI 理解酒店最重要的信息源之一。官网信息越清楚，AI 越容易向客人推荐这家酒店。", "迈创兄弟C&T持续围绕酒店 AI 信息体检、官网直订承接和私域沉淀，帮助酒店把\\\"被看见\\\"变成\\\"被理解、被咨询、被选择\\\"的机会。"],
-    contentEn: ["Many hotel owners share a common frustration: their website gets visitors every day, sometimes quite a lot, yet direct bookings remain low. Guests browse the website and then go back to OTAs like Ctrip or Meituan to complete their reservations. It's easy to conclude that the website is useless and that effort is better spent on OTA operations.", "But the real problem may not be that the website doesn't work — it's that the website isn't doing what it should.", "OTAs Give Guests Certainty; Websites Often Only Give Information", "The reason guests feel comfortable booking on OTAs is not that OTAs understand hotels better than hoteliers do. It's because OTAs answer the questions guests care about most before they book: the price, real reviews, cancellation policy, payment security, invoice process, and who to contact if something goes wrong. Guests don't need to think twice — a few clicks and the booking is done.", "Most hotel websites, by contrast, only display photos and descriptions. They don't answer the question: \\\"Why should I book directly here?\\\" Guests look at room photos but don't know what benefits direct booking offers, whether cancellation is flexible, if breakfast suits their children, or whether parking is convenient. These uncertainties push guests back to the more familiar OTA.", "What Websites Lack Most Isn't Design — It's Pre-Booking Answers", "Guests ask very specific questions: Which room type works for a family? Is there a good variety at breakfast? Is parking easy? Can the hotel handle meetings and business needs? Is the cancellation policy flexible? Can I get an invoice quickly?", "Owners ask a different set of questions: Why do guests browse but never inquire? Why don't they leave contact details? Why don't they come back?", "Both sets of questions point to the same issue: the website hasn't clearly answered what guests care about most. Guests need information that helps them make a decision, not adjectives like \\\"well-equipped\\\" or \\\"conveniently located.\\\"", "Why AI Search Makes Hotel Websites Important Again", "Over the past two years, the way guests search for hotels has been changing. More and more guests no longer open OTAs to type keywords. Instead, they ask AI first: Which hotels at this destination are good for families? Which hotel has easy parking and is close to the scenic area? Which hotel has a meeting room suitable for a team of 20?", "AI reads and synthesizes information from websites, maps, OTAs, Q&A platforms, and content sites. The more complete, consistent, and scenario-specific the website content is, the easier it is for AI to understand who the hotel is for and what problems it solves.", "In other words, a hotel website is no longer just a page for guests to read — it is one of the most important information sources for AI to understand the hotel. If the website can't explain the hotel clearly, neither AI nor guests can easily determine why this hotel is worth choosing.", "Five Things Hotel Owners Can Check First", "First, does the website have a clear direct booking入口 and contact information? Can guests find how to book or inquire within three seconds?", "Second, does it explain direct booking benefits, not just list prices? Does direct booking include breakfast, parking, late checkout, or other added value?", "Third, does it answer pre-booking questions about room types, breakfast, parking, transportation, invoices, and cancellation policies? Are the concerns guests care about most addressed proactively?", "Fourth, is the information consistent across the website, OTAs, maps, and social media accounts? Inconsistent information creates confusion for both guests and AI.", "Fifth, can inquiring guests be captured into the hotel's own channels — enterprise WeChat, membership system, official account, or other private domain touchpoints? If guests leave without leaving contact details, they'll find the hotel through OTAs again next time.", "MBCT's Assessment Framework", "MarvelBros C&T has developed four assessment dimensions for hotel AI search visibility and direct booking conversion:", "Readable: Can AI and guests quickly understand what scenarios the hotel is suited for?", "Trustworthy: Can guests believe the website offers more complete and reliable information than scattered pages?", "Bookable: Do guests have a clear path for inquiry, direct booking, and benefits?", "Retainable: Can guests be captured into the hotel's own customer pool for repeat bookings and referrals?", "Many hotels' problem is not that they lack a website — it's that their website doesn't serve the functions of explaining value, building trust, and converting direct bookings. MBCT can help hotels conduct AI information audits, restructure website content, streamline direct booking pathways, and design private domain capture strategies — turning the website from a digital brochure into an information asset that genuinely converts guests.", "Frequently Asked Questions", "If my hotel already has OTA pages, do I still need to maintain the website?", "Yes. OTAs handle transactions; websites handle explanation and trust. Guests may discover the hotel on an OTA, but they often check the website before deciding. If the website is unclear, guests return to the OTA to compare — and the hotel has no differentiation advantage there.", "Why does my hotel website get traffic but no bookings?", "Usually because the website only displays information without answering guests' key pre-booking concerns. Guests leave without knowing the benefits of direct booking, the cancellation policy, or who to contact — so they return to the more familiar OTA.", "Does direct booking have to be cheaper than OTA?", "Not necessarily. The core of direct booking isn't a price war — it's giving guests a clearer, more reassuring reason to book directly. Benefits, service, flexibility, and direct communication can all create direct booking value.", "My independent hotel has no tech team. What should I fix first?", "Start by checking whether the website answers guests' top five questions: room types, breakfast, parking, cancellation policy, and contact information. These don't require technical development — just clear content.", "Will AI search make hotel websites important again?", "Yes. AI needs complete, consistent, scenario-specific information to understand a hotel. The website is one of the most important information sources for AI. The clearer the website content, the more likely AI will recommend the hotel to guests.", "MarvelBros C&T continues to focus on hotel AI information audits, direct booking conversion, and private domain retention — helping hotels turn \\\"being seen\\\" into \\\"being understood, being contacted, and being chosen.\\\""],
+    contentEn: ["Many hotel owners share a common frustration: their website gets visitors every day, sometimes quite a lot, yet direct bookings remain low. Guests browse the website and then go back to OTAs like Ctrip or Meituan to complete their reservations. It's easy to conclude that the website is useless and that effort is better spent on OTA operations.", "But the real problem may not be that the website doesn't work — it's that the website isn't doing what it should.", "OTAs Give Guests Certainty; Websites Often Only Give Information", "The reason guests feel comfortable booking on OTAs is not that OTAs understand hotels better than hoteliers do. It's because OTAs answer the questions guests care about most before they book: the price, real reviews, cancellation policy, payment security, invoice process, and who to contact if something goes wrong. Guests don't need to think twice — a few clicks and the booking is done.", "Most hotel websites, by contrast, only display photos and descriptions. They don't answer the question: \\\"Why should I book directly here?\\\" Guests look at room photos but don't know what benefits direct booking offers, whether cancellation is flexible, if breakfast suits their children, or whether parking is convenient. These uncertainties push guests back to the more familiar OTA.", "What Websites Lack Most Isn't Design — It's Pre-Booking Answers", "Guests ask very specific questions: Which room type works for a family? Is there a good variety at breakfast? Is parking easy? Can the hotel handle meetings and business needs? Is the cancellation policy flexible? Can I get an invoice quickly?", "Owners ask a different set of questions: Why do guests browse but never inquire? Why don't they leave contact details? Why don't they come back?", "Both sets of questions point to the same issue: the website hasn't clearly answered what guests care about most. Guests need information that helps them make a decision, not adjectives like \\\"well-equipped\\\" or \\\"conveniently located.\\\"", "Why AI Search Makes Hotel Websites Important Again", "Over the past two years, the way guests search for hotels has been changing. More and more guests no longer open OTAs to type keywords. Instead, they ask AI first: Which hotels at this destination are good for families? Which hotel has easy parking and is close to the scenic area? Which hotel has a meeting room suitable for a team of 20?", "AI reads and synthesizes information from websites, maps, OTAs, Q&A platforms, and content sites. The more complete, consistent, and scenario-specific the website content is, the easier it is for AI to understand who the hotel is for and what problems it solves.", "In other words, a hotel website is no longer just a page for guests to read — it is one of the most important information sources for AI to understand the hotel. If the website can't explain the hotel clearly, neither AI nor guests can easily determine why this hotel is worth choosing.", "Five Things Hotel Owners Can Check First", "First, does the website have a clear direct booking link and contact information? Can guests find how to book or inquire within three seconds?", "Second, does it explain direct booking benefits, not just list prices? Does direct booking include breakfast, parking, late checkout, or other added value?", "Third, does it answer pre-booking questions about room types, breakfast, parking, transportation, invoices, and cancellation policies? Are the concerns guests care about most addressed proactively?", "Fourth, is the information consistent across the website, OTAs, maps, and social media accounts? Inconsistent information creates confusion for both guests and AI.", "Fifth, can inquiring guests be captured into the hotel's own channels — enterprise WeChat, membership system, official account, or other private domain touchpoints? If guests leave without leaving contact details, they'll find the hotel through OTAs again next time.", "MBCT's Assessment Framework", "MarvelBros C&T has developed four assessment dimensions for hotel AI search visibility and direct booking conversion:", "Readable: Can AI and guests quickly understand what scenarios the hotel is suited for?", "Trustworthy: Can guests believe the website offers more complete and reliable information than scattered pages?", "Bookable: Do guests have a clear path for inquiry, direct booking, and benefits?", "Retainable: Can guests be captured into the hotel's own customer pool for repeat bookings and referrals?", "Many hotels' problem is not that they lack a website — it's that their website doesn't serve the functions of explaining value, building trust, and converting direct bookings. MBCT can help hotels conduct AI information audits, restructure website content, streamline direct booking pathways, and design private domain capture strategies — turning the website from a digital brochure into an information asset that genuinely converts guests.", "Frequently Asked Questions", "If my hotel already has OTA pages, do I still need to maintain the website?", "Yes. OTAs handle transactions; websites handle explanation and trust. Guests may discover the hotel on an OTA, but they often check the website before deciding. If the website is unclear, guests return to the OTA to compare — and the hotel has no differentiation advantage there.", "Why does my hotel website get traffic but no bookings?", "Usually because the website only displays information without answering guests' key pre-booking concerns. Guests leave without knowing the benefits of direct booking, the cancellation policy, or who to contact — so they return to the more familiar OTA.", "Does direct booking have to be cheaper than OTA?", "Not necessarily. The core of direct booking isn't a price war — it's giving guests a clearer, more reassuring reason to book directly. Benefits, service, flexibility, and direct communication can all create direct booking value.", "My independent hotel has no tech team. What should I fix first?", "Start by checking whether the website answers guests' top five questions: room types, breakfast, parking, cancellation policy, and contact information. These don't require technical development — just clear content.", "Will AI search make hotel websites important again?", "Yes. AI needs complete, consistent, scenario-specific information to understand a hotel. The website is one of the most important information sources for AI. The clearer the website content, the more likely AI will recommend the hotel to guests.", "MarvelBros C&T continues to focus on hotel AI information audits, direct booking conversion, and private domain retention — helping hotels turn \\\"being seen\\\" into \\\"being understood, being contacted, and being chosen.\\\""],
   },
 
   "why-ai-search-does-not-recommend-your-hotel-2026-07-06": {
@@ -2494,7 +2494,7 @@ export const articlesData: Record<string, {
           "这不是说入住率和平均房价不重要了，而是说它们不再是原因，而是结果。当一家酒店为客人创造了足够的停留理由时，入住率和平均房价自然会跟随。反过来的路径是不存在的：你无法通过强拉入住率来创造价值感，也无法通过硬抬房价来建立客人信任。",
           "2026年以及未来的酒店经营，真正的战场不在OTA的竞价排名里，不在比邻酒店的价格表上，而在每一个客人内心深处那个\"值不值\"的天平上。",
           "酒店行业正在经历一场从\"功能性住宿\"到\"价值感停留\"的进化。那些已经意识到这一点的酒店，正在用实际行动重构自己的价值体系。而那些还在等待客人\"回心转意\"的酒店，恐怕会发现，客人从来没有离开——他们只是住进了隔壁那家让他们觉得\"更值得\"的酒店。",
-          "迈创兄弟C&T\n专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过\"效率+体验\"双轨提升，助力酒店业绩增长。\nwww.marvelbros.com | 免费线上咨询 | 免费诊断报告\ncontactme@marvelbros.com"
+          "迈创兄弟C&T\n专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过\"效率+体验\"双轨提升，助力酒店业绩增长。\nwww.marvelbros.com | 酒店经营知识 | 专业交流\ncontactme@marvelbros.com"
     ],
     contentEn: [
           "2026 Hotel Value-Driven Consumption Report: Guests Are Not Spending Less, They Are Rejecting Experiences That Offer No Value",
@@ -3469,7 +3469,7 @@ export const articlesData: Record<string, {
       '',
       '网址：www.marvelbros.com',
       '邮箱：info@marvelbros.com',
-      '请浏览获取更多资讯、免费线上咨询、免费诊断报告',
+      '请浏览获取更多资讯、酒店经营知识与专业交流',
     ],
     contentEn: [
       '# China Hotel Industry Labor Cost Restructuring 2026: From "Staff-to-Room Ratio" to "Efficiency Ratio" — A Management Transformation',
@@ -3681,7 +3681,7 @@ export const articlesData: Record<string, {
       '',
       'Website: www.marvelbros.com',
       'Email: info@marvelbros.com',
-      'Visit for more insights, free online consultations, and complimentary diagnostic reports.',
+      'Visit for more insights, a discussion of your hotel’s operating questionss, and complimentary diagnostic reports.',
     ],
   },
 
@@ -9181,7 +9181,7 @@ export const articlesData: Record<string, {
       '对于中小投资者而言，下沉市场的机会是真实的。但前提是，必须抛弃一二线城市的投资思维，建立全新的认知框架——这里的消费者不是更穷的一二线人群，而是有自己逻辑的本地人。这里的竞争不是品牌对品牌的战争，而是谁更懂这片土地。这里的成功不是规模复制的结果，而是本地深耕的回报。',
       '下沉市场的门已经打开。走进去的方式，不是带着一二线的地图，而是重新绘制一张属于这里的地图。',
       '---',
-      '迈创兄弟C&T专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过效率+体验双轨提升，助力酒店业绩增长。网址：www.marvelbros.com 请浏览获取更多资讯、免费线上咨询、免费诊断报告。邮箱：info@marvelbros.com',
+      '迈创兄弟C&T专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过效率+体验双轨提升，助力酒店业绩增长。网址：www.marvelbros.com 请浏览获取更多资讯、酒店经营知识与专业交流。邮箱：info@marvelbros.com',
     ],
   },
 
@@ -9244,7 +9244,7 @@ export const articlesData: Record<string, {
       '*管享精道——以情绪价值为根基、文化沉浸式体验为灵魂、人感服务为温度的精品酒店咨询与内容平台*',
       '*九大业务支撑：专注于数字化赋能——酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。*',
       '*官网：www.marvelbros.com | 邮箱：info@marvelbros.com*',
-      '*联系我们提供免费线上咨询，免费诊断报告！*',
+      '*欢迎结合您的酒店经营问题与我们交流。*',
     ],
   },
   '2026-china-hotel-ma-wave': {
@@ -9435,7 +9435,7 @@ export const articlesData: Record<string, {
       '',
       '**九大业务支撑**：宣传报价｜客户接待｜现场谈判｜具体实施｜财务分析｜数据分析｜后勤业务',
       '',
-      '**网址**：www.marvelbros.com | 请浏览获取更多资讯、免费线上咨询、免费诊断报告',
+      '**网址**：www.marvelbros.com | 请浏览获取更多资讯、酒店经营知识与专业交流',
       '',
       '**邮箱**：contactme@marvelbros.com / info@marvelbros.com',
       '',
@@ -9604,7 +9604,7 @@ export const articlesData: Record<string, {
       '',
       '**MBCT GuanXiangJingDao** is MBCT\'s knowledge column for hotel industry managers, covering seven modules: Investment Decisions, Pre-opening Preparation, Team Building, Operations Upgrade, Marketing Strategy, Digital Platforms, and Cost Optimization — providing hotel managers with actionable, replicable, and quantifiable practical methodologies.',
       '',
-      '**Website**: www.marvelbros.com | Visit for more information, free online consultation, and free diagnostic reports',
+      '**Website**: www.marvelbros.com | Visit for more information, a discussion of your hotel’s operating questions, and operating diagnosis guidances',
       '**Email**: contactme@marvelbros.com / info@marvelbros.com',
       '**Industry Insights**: www.marvelbros.com/hangye',
       '',
@@ -10202,7 +10202,7 @@ Hotels should proactively guide guests to leave authentic reviews across multipl
 
 Fifth, connect private domain conversion to efficiently convert intent-driven customers brought by AI.
 
-When AI search brings visitors "with clear intent" to the hotel, whether the hotel can efficiently capture and convert them depends on having a mature private domain operations system. This system should at minimum include: whether the website's booking experience is smooth (loading speed, mobile adaptation, payment experience); whether there are instant communication channels (online customer service, WeChat customer service, etc.) to capture hesitant guests; whether there is a membership system or incentive mechanism to encourage direct booking; and whether guest data capture and reuse mechanisms are established. If AI search delivers a guest to the website's doorstep, but the website's booking experience is poor (slow loading, complex process, unsupported payment methods), then this intent-driven customer will most likely return to the OTA to complete the booking — the hotel loses the commission without gaining any direct customer relationship. Public industry research suggests that hotel brands with mature private-domain operating systems usually convert AI-search visitors into direct bookings more effectively than brands without such systems.`,
+When AI search brings visitors "with clear intent" to the hotel, whether the hotel can efficiently capture and convert them depends on having a mature direct customer relationship management system. This system should at minimum include: whether the website's booking experience is smooth (loading speed, mobile adaptation, payment experience); whether there are instant communication channels (online customer service, WeChat customer service, etc.) to capture hesitant guests; whether there is a membership system or incentive mechanism to encourage direct booking; and whether guest data capture and reuse mechanisms are established. If AI search delivers a guest to the website's doorstep, but the website's booking experience is poor (slow loading, complex process, unsupported payment methods), then this intent-driven customer will most likely return to the OTA to complete the booking — the hotel loses the commission without gaining any direct customer relationship. Public industry research suggests that hotel brands with mature private-domain operating systems usually convert AI-search visitors into direct bookings more effectively than brands without such systems.`,
         `IX. The MBCT Perspective: First Diagnose Customer Source Structure, Then Design the Content and Website Capture System for the AI Search Era
 
 The five actions above may appear straightforward, but their execution involves the multifaceted coordination of content strategy, technical implementation, operational workflows, and channel management. For most independent hotels and small to medium-sized hotel groups, advancing all these dimensions simultaneously is neither realistic nor necessary.
@@ -10213,7 +10213,7 @@ Diagnose first: understand what the hotel's current customer source structure lo
 
 Design second: based on a clear understanding of the customer source structure, design a content and website capture system matched to the AI search era. This includes re-architecting the website's content (shifting from brand display to scenario matching), coordinating multi-platform content strategy (ensuring brand information across all platforms is consistent and complementary), and designing the complete capture chain from AI search to website to booking conversion. The key to design is not pursuing "comprehensive coverage" but "precision and accuracy" — identifying the 2-3 customer segments where the hotel has the strongest differentiated advantage, and concentrating resources on delivering excellent content coverage and experience optimization for those scenarios.
 
-Implement in phases: considering resource constraints in the hotel industry, implementation is recommended in three phases. Phase one (1-3 months): complete foundational website content upgrades — rewrite core page copy, fill in high-frequency scenario pages, establish a FAQ system. Phase two (3-6 months): expand multi-platform content deployment — guide user reviews, establish scenario-based content matrices on content platforms. Phase three (6-12 months): connect private domain operations — optimize booking experience, establish membership mechanisms, achieve guest data capture and reuse.
+Implement in phases: considering resource constraints in the hotel industry, implementation is recommended in three phases. Phase one (1-3 months): complete foundational website content upgrades — rewrite core page copy, fill in high-frequency scenario pages, establish a FAQ system. Phase two (3-6 months): expand multi-platform content deployment — guide user reviews, establish scenario-based content matrices on content platforms. Phase three (6-12 months): connect direct customer relationship management — optimize booking experience, establish membership mechanisms, achieve guest data capture and reuse.
 
 The rewriting of hotel customer acquisition by AI search has only just begun. What is certain is that hotels that are the first to complete content upgrades and capture system development will gain a first-mover advantage in this transformation. Hotels that cling to traditional customer acquisition models and rely on single-channel traffic will gradually lose competitiveness as customer acquisition costs continue to rise.
 
@@ -10666,6 +10666,8 @@ function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean)
   }
   const topic = getPrimaryTopic(article)
   const topicKeywords = {
+    'cultural-tourism': isEnglish ? ['hotel cultural tourism', 'local heritage', 'guest experience'] : ['酒店与文旅融合', '在地文化', '住客体验'],
+    'silver-economy': isEnglish ? ['hotels and the silver economy', 'older travelers', 'age-friendly hotels'] : ['酒店与银发经济', '银发客群', '适老服务'],
     investment: isEnglish ? ['hotel investment', 'hotel feasibility', 'hotel brand selection'] : ['酒店投资', '酒店可行性', '酒店品牌选择'],
     'hotel-opening': isEnglish ? ['hotel pre-opening', 'hotel opening budget', 'hotel opening readiness'] : ['酒店筹开', '酒店开业预算', '酒店开业准备'],
     operations: isEnglish ? ['hotel operations', 'hotel service process', 'hotel management'] : ['酒店经营', '酒店服务流程', '酒店管理'],
@@ -10702,17 +10704,9 @@ function getRelatedArticles(currentSlug: string, currentArticle: (typeof article
 
   addFirst('deep-dive', (article) => getPrimaryTopic(article) === primaryTopic && article.tag !== '案例研究')
   addFirst('execution', (article) => getPrimaryTopic(article) === primaryTopic && /如何|怎样|检查|指标|方法|清单|how|checklist|framework|method/iu.test(`${article.title} ${article.titleEn || ''}`))
-  addFirst('governance', (article) => getPrimaryTopic(article) === 'governance')
   addFirst('case', (article) => article.tag === '案例研究' && getPrimaryTopic(article) === primaryTopic)
 
-  for (const [slug, article] of entries) {
-    if (selected.length >= 4) break
-    if (!selected.some(([selectedSlug]) => selectedSlug === slug)) {
-      selected.push([slug, article, getPrimaryTopic(article) === 'governance' ? 'governance' : article.tag === '案例研究' ? 'case' : 'deep-dive'])
-    }
-  }
-
-  return selected.slice(0, 4).map(([slug, article, relation]) => ({
+  return selected.slice(0, 2).map(([slug, article, relation]) => ({
       slug,
       title: article.title,
       titleEn: article.titleEn,
@@ -10721,22 +10715,6 @@ function getRelatedArticles(currentSlug: string, currentArticle: (typeof article
       readTime: article.readTime,
       tag: article.tag,
       relation,
-    }))
-}
-
-function getCategoryArticles(currentSlug: string, currentArticle: (typeof articlesData)[string]) {
-  const categorySlug = categoryForKnowledgeTopic(getPrimaryTopic(currentArticle))
-  return Object.entries(articlesData)
-    .filter(([slug, article]) => slug !== currentSlug && categoryForKnowledgeTopic(getPrimaryTopic(article)) === categorySlug)
-    .sort(([, left], [, right]) => right.date.localeCompare(left.date))
-    .slice(0, 3)
-    .map(([slug, article]) => ({
-      slug,
-      title: article.title,
-      titleEn: article.titleEn,
-      summary: article.description || getPlainDescription(article.content, article.title),
-      summaryEn: article.descriptionEn || getPlainDescription(article.contentEn || article.content, article.titleEn || article.title),
-      date: article.date,
     }))
 }
 
@@ -10810,7 +10788,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             {lang === 'en' ? 'Article Not Found' : '文章未找到'}
           </h1>
           <Link href={`/${lang}/knowledge`} className="text-primary hover:underline">
-            {lang === 'en' ? 'Back to Knowledge' : '返回前沿导航'}
+            {lang === 'en' ? 'Back to Knowledge' : '返回专业洞察'}
           </Link>
         </div>
       </div>
@@ -10821,7 +10799,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const articleTitle = isEnglish && article.titleEn ? article.titleEn : article.title
   const breadcrumbTitle = articleTitle?.trim() || decodedSlug
   const articleContent = isEnglish && article.contentEn ? article.contentEn : article.content
-  const articleUrl = `https://www.marvelbros.com/${lang}/knowledge/${decodedSlug}`
+  const articleUrl = `https://www.marvelbros.com/${lang}/knowledge/${encodeURIComponent(decodedSlug)}`
   const articleDescription = (isEnglish ? article.descriptionEn : article.description)
     || articleContent
       .find((paragraph) => paragraph && paragraph !== articleTitle && !paragraph.startsWith('#'))
@@ -10918,7 +10896,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const categorySlug = categoryForKnowledgeTopic(primaryTopic)
   const knowledgeCategory = categoryBySlug[categorySlug]
   const relatedArticles = getRelatedArticles(decodedSlug, article)
-  const categoryArticles = getCategoryArticles(decodedSlug, article)
   const hasRelatedCase = Object.entries(articlesData).some(([candidateSlug, candidate]) => (
     candidateSlug !== decodedSlug
     && candidate.tag === '案例研究'
@@ -10926,7 +10903,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   ))
 
   return (
-    <div className="min-h-screen bg-background py-24">
+    <div className="min-h-screen bg-background py-8 sm:py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }}
@@ -10948,9 +10925,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            {isEnglish ? 'Back to Knowledge' : '返回前沿导航'}
+            {isEnglish ? 'Back to Knowledge' : '返回专业洞察'}
           </Link>
-          <ThemeToggle lang={lang} />
         </div>
 
         <nav aria-label={isEnglish ? 'Breadcrumb' : '面包屑'} className="mb-6 text-sm text-muted-foreground">
@@ -10961,11 +10937,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <Link href={`/${lang}/knowledge/category/${categorySlug}`} className="hover:text-primary hover:underline">
             {isEnglish ? knowledgeCategory.en : knowledgeCategory.zh}
           </Link>
-          <span className="mx-2">/</span>
-          <span className="line-clamp-1 inline-block max-w-[18rem] align-bottom">{breadcrumbTitle}</span>
+          <span className="mx-2 hidden sm:inline">/</span>
+          <span className="hidden max-w-[18rem] truncate align-bottom sm:inline-block">{breadcrumbTitle}</span>
         </nav>
 
-        <article className="bg-card rounded-2xl border border-border p-8 md:p-12">
+        <article className="bg-card rounded-2xl border border-border p-5 sm:p-8 md:p-10">
           <div className="mb-6">
             <Link
               href={`/${lang}/knowledge/category/${knowledgeCategory.slug}`}
@@ -10974,7 +10950,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               {isEnglish ? knowledgeCategory.en : knowledgeCategory.zh}
             </Link>
             <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium">
-              {lang === 'en' ? article.tag.replace('行业报告', 'Industry Report').replace('行业分析', 'Industry Analysis').replace('案例研究', 'Case Study').replace('博客文章', 'Blog Post') : article.tag}
+              {lang === 'en' ? articleLabel(article.tag, 'en') : article.tag}
             </span>
           </div>
 
@@ -10982,7 +10958,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             {lang === 'en' && article.titleEn ? article.titleEn : article.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
+          <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-6 pb-5 border-b border-border">
             <span className="flex items-center gap-2">
               <User className="w-4 h-4" />
               {isEnglish ? 'Author: MarvelBros C&T' : '作者：迈创兄弟C&T'}
@@ -10992,10 +10968,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               {isEnglish ? `Published: ${article.date}` : `发布时间：${article.date}`}
             </span>
             <span className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              {isEnglish ? `Updated: ${article.date}` : `更新时间：${article.date}`}
-            </span>
-            <span className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
               {lang === 'en' ? article.readTime.replace('分钟', ' min read') : article.readTime}
             </span>
@@ -11003,35 +10975,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
           <div className="mb-8 border-l-4 border-[#d98b28] bg-primary/5 px-5 py-4">
             <h2 className="text-lg font-bold text-card-foreground">{isEnglish ? 'Key Takeaway' : '核心观点'}</h2>
-            <p className="mt-2 leading-7 text-muted-foreground">{keyTakeaway}</p>
+            <p className="mt-2 leading-7 text-muted-foreground">{plainArticleText(keyTakeaway)}</p>
             <p className="mt-3 text-sm font-medium text-muted-foreground">
               {isEnglish ? 'Reviewed by the MarvelBros C&T professional team' : '迈创兄弟C&T专业团队审核'}
             </p>
           </div>
 
-          <ArticleContent content={articleContent} articleTitle={articleTitle} />
+          <ArticleContent content={articleContent} articleTitle={articleTitle} lang={lang} />
           <ArticleEngagementTracker articleSlug={decodedSlug} />
-
-          {categoryArticles.length > 0 ? (
-            <section className="mt-12 border-t border-border pt-8" aria-labelledby="same-category-heading">
-              <div className="flex flex-wrap items-end justify-between gap-3">
-                <div>
-                  <p className="text-sm font-medium text-primary">{isEnglish ? 'Continue in this category' : '继续阅读本栏目'}</p>
-                  <h2 id="same-category-heading" className="mt-1 text-2xl font-bold text-card-foreground">{isEnglish ? knowledgeCategory.en : knowledgeCategory.zh}</h2>
-                </div>
-                <Link href={`/${lang}/knowledge/category/${categorySlug}`} className="text-sm font-medium text-primary hover:underline">{isEnglish ? 'View all' : '查看全部'} →</Link>
-              </div>
-              <div className="mt-5 grid gap-4 md:grid-cols-3">
-                {categoryArticles.map((item) => (
-                  <Link key={item.slug} href={`/${lang}/knowledge/${item.slug}`} className="rounded-xl border border-border p-4 transition-colors hover:border-primary/50 hover:bg-primary/5">
-                    <p className="text-xs text-muted-foreground">{item.date}</p>
-                    <h3 className="mt-2 line-clamp-3 font-semibold leading-6 text-card-foreground">{isEnglish && item.titleEn ? item.titleEn : item.title}</h3>
-                    <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">{isEnglish ? item.summaryEn : item.summary}</p>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          ) : null}
 
           <ContentPathway
             lang={lang}
@@ -11042,7 +10993,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           />
 
           {/* 评论功能暂时隐藏 - 等待GitHub Discussions配置完成 */}
-          <ArticleComments slug={slug} />
+          <ArticleComments slug={slug} lang={lang} />
 
           {/* Newsletter 订阅 - 下移到全文底部(2026-06-16 优化) */}
           <NewsletterSubscribe lang={lang} />
@@ -11050,10 +11001,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <div className="mt-12 pt-8 border-t border-border text-center">
             <div className="flex items-center justify-center gap-2 text-primary mb-4">
               <BookOpen className="w-5 h-5" />
-              <span className="font-medium">迈创兄弟</span>
+              <span className="font-medium">{isEnglish ? 'MarvelBros C&T' : '迈创兄弟C&T'}</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              版权所有 · 欢迎转发，但请注明出处
+              {isEnglish ? 'All rights reserved. Please credit MarvelBros C&T when sharing.' : '版权所有 · 欢迎分享，请注明出处'}
             </p>
           </div>
         </article>

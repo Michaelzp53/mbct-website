@@ -101,17 +101,17 @@ export default async function ServicesPage({
     },
     {
       step: '02',
-      title: isZh ? '设计路径，匹配能力链' : 'Design & Align',
+      title: isZh ? '明确方案与分工' : 'Agree on the plan and responsibilities',
       description: isZh
-        ? '根据诊断结论，从三大能力群组中组合最适配的服务模块，生成一条从策略到执行的可交付路线图。'
-        : 'Based on findings, we assemble the right modules from three capability clusters into a delivery roadmap from strategy to execution.',
+        ? '根据诊断结果，明确适合的服务内容、实施步骤和责任分工。'
+        : 'Based on the diagnosis, we agree on suitable services, implementation steps, and responsibilities.',
     },
     {
       step: '03',
-      title: isZh ? '落地执行，守住结果' : 'Execute & Deliver',
+      title: isZh ? '推进实施，复盘效果' : 'Implement and review results',
       description: isZh
-        ? '每项建议都有明确的执行路径、责任节点与可验证的成果标准。我们陪跑到结果闭环，而非交付报告就结束。'
-        : 'Every recommendation has a clear execution path, milestones, and verifiable success criteria. We partner through to results closure, not just report delivery.',
+        ? '明确每项建议的执行步骤、负责人和检验标准，并根据约定的服务范围跟踪实施、复盘效果。'
+        : 'Each recommendation specifies steps, responsibilities, and evaluation criteria. Implementation and results are reviewed within the agreed service scope.',
     },
   ]
 

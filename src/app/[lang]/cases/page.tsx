@@ -49,7 +49,7 @@ export default async function CasesPage({
   return (
     <>
       <PageHero
-        title={isZh ? '经营问题如何从判断到验证直至改善结果？' : 'How do operating problems move from judgment to verification and measurable improvement?'}
+        title={isZh ? '酒店经营问题，如何找到原因并推进改善？' : 'How do we identify the causes of hotel operating problems and improve performance?'}
         subtitle={isZh ? '从核心问题、关键行动到量化结果，以下项目案例展示迈创兄弟C&T如何推动酒店经营改善。' : 'From core problems and decisive actions to quantified results, these project cases show how MarvelBros C&T advances hotel performance.'}
         bgImage="/images/home-named/solutions-dining.jpg"
       />
@@ -62,7 +62,7 @@ export default async function CasesPage({
                 {isZh ? '项目成果，以问题、行动和结果为证' : 'Project results evidenced by problems, actions, and outcomes'}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
-                {isZh ? '我们为酒店投资者，补足筹开和经营短板' : 'We help hotel investors close pre-opening and operating gaps'}
+                {isZh ? '帮助酒店投资人与业主解决筹开和经营难题' : 'We help hotel investors close pre-opening and operating gaps'}
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl">
                 {isZh

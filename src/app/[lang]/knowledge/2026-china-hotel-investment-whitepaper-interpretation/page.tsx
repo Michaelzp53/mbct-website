@@ -1,3 +1,4 @@
+import { ArticleMarkdown } from '@/components/article-markdown'
 import Link from 'next/link'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
@@ -136,7 +137,7 @@ Three core standards for choosing a brand:
 
 - **Operational support intensity**: Does the brand send an on-site general manager or provide regular on-site guidance, or just provide a manual?
 - **Technology system maturity**: Do they have self-developed RMS (Revenue Management System) and CRS (Central Reservation System), or rely on third-party patchwork?
-- **Market promotion capability**: Do they simply give traffic (OTA distribution), or truly have private domain operations and member system building capabilities?
+- **Market promotion capability**: Do they simply give traffic (OTA distribution), or truly have direct customer relationship management and member system building capabilities?
 
 The value of technology systems is being re-evaluated. Hotels using unified RMS+CDP (Customer Data Platform) typically see RevPAR improvements of 15%—25% compared to manually managed hotels. This figure alone is enough to redefine the discussion of "whether the brand is worth the franchise fee."
 
@@ -250,19 +251,7 @@ Does your hotel have a moat? If so, how long can it be maintained? Is it the irr
 
         {/* Article Content */}
         <div className="prose prose-lg max-w-none">
-          <div 
-            className="text-foreground leading-relaxed whitespace-pre-wrap"
-            dangerouslySetInnerHTML={{ 
-              __html: article.content
-                .replace(/^## /gm, '<h2 class="text-2xl font-bold text-foreground mt-12 mb-4">')
-                .replace(/^### /gm, '<h3 class="text-xl font-semibold text-foreground mt-8 mb-3">')
-                .replace(/^#### /gm, '<h4 class="text-lg font-medium text-foreground mt-6 mb-2">')
-                .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
-                .replace(/\n\n/g, '</p><p class="mb-4">')
-                .replace(/\n/g, '<br />')
-                .split('<h2 class')[0] ? '</p>' : ''
-            }}
-          />
+          <ArticleMarkdown content={article.content} />
         </div>
 
         {/* Article Footer */}

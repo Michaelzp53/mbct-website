@@ -1,5 +1,7 @@
 'use client'
 
+import { articleLabel } from '@/lib/article-labels'
+
 import Link from 'next/link'
 import { ArrowRight, BookOpen, BriefcaseBusiness, FolderKanban } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics'
@@ -37,11 +39,11 @@ export default function ContentPathway({
   return (
     <section className="mt-12 space-y-6 border-t border-border pt-10" aria-label={isZh ? '文章下一步阅读路径' : 'Next reading path'}>
       <div>
-        <p className="text-sm font-medium text-primary">{isZh ? '继续判断' : 'Continue exploring'}</p>
-        <h2 className="mt-2 text-2xl font-bold text-card-foreground">{isZh ? '下一步，你可能还需要判断' : 'The next questions worth answering'}</h2>
+        <p className="text-sm font-medium text-primary">{isZh ? '延伸阅读' : 'Further reading'}</p>
+        <h2 className="mt-2 text-2xl font-bold text-card-foreground">{isZh ? '接下来，您可以继续了解' : 'Explore these related questions'}</h2>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2">
         {relatedArticles.map((article) => (
           <Link
             key={article.slug}
@@ -61,7 +63,7 @@ export default function ContentPathway({
                 case: isZh ? '相关案例' : 'Related case',
               }[article.relation]}
             </p>
-            <p className="mt-2 text-xs text-muted-foreground">{isZh ? article.tag : article.tag.replace('行业报告', 'Industry Report').replace('行业分析', 'Industry Analysis').replace('案例研究', 'Case Study')}</p>
+            <p className="mt-2 text-xs text-muted-foreground">{isZh ? article.tag : articleLabel(article.tag, 'en')}</p>
             <h3 className="mt-3 font-semibold leading-6 text-card-foreground group-hover:text-primary">
               {isZh ? article.title : article.titleEn || article.title}
             </h3>
@@ -82,7 +84,7 @@ export default function ContentPathway({
           className="rounded-2xl border border-primary/20 bg-primary/5 p-6 transition-colors hover:bg-primary/10"
         >
           <BookOpen className="h-5 w-5 text-primary" />
-          <p className="mt-4 text-sm font-medium text-primary">{isZh ? '对应专题 / 方法' : 'Related framework'}</p>
+          <p className="mt-4 text-sm font-medium text-primary">{isZh ? '相关专题与方法' : 'Related framework'}</p>
           <h3 className="mt-1 text-xl font-bold text-card-foreground">{topic.hub}</h3>
           <p className="mt-2 text-sm leading-6 text-muted-foreground">{topic.description}</p>
           <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">{isZh ? '查看方法' : 'View framework'} <ArrowRight className="h-4 w-4" /></span>
@@ -103,19 +105,19 @@ export default function ContentPathway({
         ) : (
           <div className="rounded-2xl border border-border bg-card p-6">
             <BriefcaseBusiness className="h-5 w-5 text-primary" />
-            <p className="mt-4 text-sm font-medium text-primary">{isZh ? '先把问题看清' : 'Clarify the problem first'}</p>
+            <p className="mt-4 text-sm font-medium text-primary">{isZh ? '先明确问题' : 'Clarify the problem first'}</p>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">{isZh ? '不是每个问题都需要立刻进入案例或方案。先用相关方法判断问题阶段，再决定下一步。' : 'Not every issue needs a case or solution immediately. Use the framework to identify the stage before deciding the next move.'}</p>
           </div>
         )}
       </div>
 
       <Link
-        href={`${prefix}${topic.contactHref}`}
+        href={`${prefix}${topic.contactHref}&article=${encodeURIComponent(articleSlug)}`}
         onClick={() => trackEvent('article_to_contact_click', { from_article: articleSlug, primary_topic: primaryTopic })}
         className="flex items-center justify-between gap-5 rounded-2xl border border-border bg-muted/40 p-6 transition-colors hover:border-primary/50"
       >
         <div>
-          <p className="text-sm font-medium text-primary">{isZh ? '低压力交流' : 'A low-pressure next step'}</p>
+          <p className="text-sm font-medium text-primary">{isZh ? '结合您的酒店交流' : 'Discuss your hotel'}</p>
           <h3 className="mt-1 text-lg font-bold text-card-foreground">{topic.contact}</h3>
           <p className="mt-2 text-sm leading-6 text-muted-foreground">{isZh ? '先描述项目阶段和当前最难判断的问题，再决定是否需要进一步交流。' : 'Start with the project stage and the hardest question to answer, then decide whether a further conversation is useful.'}</p>
         </div>

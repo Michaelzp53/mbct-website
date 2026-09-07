@@ -1,5 +1,7 @@
 'use client'
 
+import { articleLabel } from '@/lib/article-labels'
+
 import Link from 'next/link'
 import { Search } from 'lucide-react'
 import { useMemo, useState } from 'react'
@@ -80,7 +82,7 @@ export default function KnowledgeSearchBox({
         <div className="mt-4 bg-card border border-border rounded-xl p-4 shadow-sm">
           <div className="flex items-center justify-between gap-3 mb-3">
             <p className="text-sm font-medium text-foreground">
-              {isZh ? `搜索结果（${results.length}）` : `Search Results (${results.length})`}
+              {isZh ? `匹配文章（最多显示8篇）` : `Matching articles (up to 8 shown)`}
             </p>
             <button
               type="button"
@@ -101,7 +103,7 @@ export default function KnowledgeSearchBox({
                 >
                   <div className="flex items-center gap-2 mb-1">
                     <span className="px-2 py-0.5 rounded-full bg-[#f59e0b]/10 text-[#f59e0b] text-xs font-medium">
-                      {article.tag}
+                      {articleLabel(article.tag, lang)}
                     </span>
                     <span className="text-xs text-muted-foreground">{article.date}</span>
                   </div>

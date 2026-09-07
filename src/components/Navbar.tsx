@@ -19,9 +19,10 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
+    { href: `/${lang}/knowledge`, label: isZh ? "专业洞察" : "Insights" },
+    { href: `/${lang}/lean`, label: isZh ? "管享精道" : "Lean Insights" },
     { href: `/${lang}/services`, label: isZh ? "解决方案" : "Solutions" },
     { href: `/${lang}/cases`, label: isZh ? "案例成果" : "Results" },
-    { href: `/${lang}/knowledge`, label: isZh ? "专业洞察" : "Insights" },
     { href: `/${lang}/about`, label: isZh ? "关于我们" : "About Us" },
   ];
 

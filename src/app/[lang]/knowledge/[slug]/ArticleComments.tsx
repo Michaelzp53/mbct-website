@@ -1,43 +1,15 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import Link from 'next/link'
+import { trackEvent } from '@/lib/analytics'
 
-interface ArticleCommentsProps {
-  slug: string
-}
-
-export default function ArticleComments({ slug }: ArticleCommentsProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://cdn.commentbox.io_embed.js'
-    script.async = true
-    document.body.appendChild(script)
-
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [slug])
-
+export default function ArticleComments({ slug, lang }: { slug: string; lang: string }) {
+  const zh = lang === 'zh'
   return (
-    <div className="mt-12 pt-8 border-t border-border">
-      <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#f59e0b]">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        </svg>
-        评论交流
-      </h3>
-      <p className="text-muted-foreground text-sm mb-4">
-        欢迎分享您的观点和经验，与其他酒店从业者交流
-      </p>
-      <div 
-        ref={containerRef}
-        className="commentbox" 
-        data-page-id={slug}
-        data-page-url={`https://marvelbros.com/zh/knowledge/${slug}`}
-        data-box-id="5634563627810816-proj"
-      />
-    </div>
+    <section className="mt-8 border-t border-border pt-6">
+      <h2 className="text-xl font-bold">{zh ? '这篇文章与您的酒店有关吗？' : 'Does this article relate to your hotel?'}</h2>
+      <p className="mt-2 text-sm leading-7 text-muted-foreground">{zh ? '把项目阶段和最难判断的问题告诉我们。文章来源会随咨询一起提交，便于结合具体背景交流。' : 'Tell us your project stage and the question you find hardest to answer. The article reference will accompany your enquiry.'}</p>
+      <Link href={`/${lang}/contact?type=diagnosis&article=${encodeURIComponent(slug)}`} onClick={() => trackEvent('article_to_contact_click', { from_article: slug, placement: 'article_question' })} className="mt-4 inline-flex rounded-lg bg-amber-500 px-5 py-3 font-semibold text-slate-950 hover:bg-amber-400">{zh ? '就这篇文章提问' : 'Ask about this article'}</Link>
+    </section>
   )
 }

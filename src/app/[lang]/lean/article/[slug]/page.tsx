@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowLeft, Clock, User, Eye, MessageSquare, ThumbsUp, Tag } from 'lucide-react'
+import { ArrowLeft, Clock, User, Tag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { getArticleBySlug, getAllSlugs } from './articles-data'
-import ArticleInteractions from './ArticleInteractions'
+import ArticleComments from '../../../knowledge/[slug]/ArticleComments'
+import NewsletterSubscribe from '../../../knowledge/[slug]/NewsletterSubscribe'
+import ArticleEngagementTracker from '@/components/knowledge/ArticleEngagementTracker'
 import { ArticleMarkdown } from '@/components/article-markdown'
-import { categoryBySlug, normalizeLeanCategory } from '@/lib/knowledge-taxonomy'
+import { leanCategoryBySlug, getLeanArticleCategory } from '@/lib/knowledge-taxonomy'
 
 // 7大分类
 const categories = [
@@ -93,7 +95,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
   const ui = {
     backToList: isZh ? '返回文章列表' : 'Back to Articles',
-    official: isZh ? '迈创兄弟官方' : 'Official',
+    official: isZh ? '迈创兄弟C&T' : 'Official',
     comments: isZh ? '评论交流' : 'Comments',
     commentsCount: isZh ? '条评论' : 'comments',
     writeComment: isZh ? '写下你的评论...' : 'Write your comment...',
@@ -103,7 +105,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
     loadMore: isZh ? '加载更多' : 'Load More',
   }
 
-  const category = categoryBySlug[normalizeLeanCategory(articleData.category)]
+  const category = leanCategoryBySlug[getLeanArticleCategory(articleData)]
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const articleUrl = `https://www.marvelbros.com/${lang}/lean/article/${slug}`
@@ -248,18 +250,6 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
               <Clock className="w-3.5 h-3.5" />
               {articleData.date}
             </span>
-            <span className="flex items-center gap-1">
-              <Eye className="w-3.5 h-3.5" />
-              {articleData.views}
-            </span>
-            <span className="flex items-center gap-1">
-              <ThumbsUp className="w-3.5 h-3.5" />
-              {articleData.likes}
-            </span>
-            <span className="flex items-center gap-1">
-              <MessageSquare className="w-3.5 h-3.5" />
-              {articleData.comments} {ui.commentsCount}
-            </span>
             <span className="ml-auto">
               {articleData.readTime} {isZh ? '分钟' : 'min'}
             </span>
@@ -269,39 +259,10 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <ArticleMarkdown
-          content={articleContent}
-        />
-
-        <div className="mt-10 rounded-2xl border border-[#f59e0b]/20 bg-[#f59e0b]/5 p-6">
-          <h2 className="text-xl font-bold text-foreground">
-            {isZh ? '想让酒店官网、内容和 AI 搜索形成获客闭环？' : 'Want your website, content, and AI search to work as a growth loop?'}
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-muted-foreground">
-            {isZh
-              ? '迈创兄弟C&T可以帮助酒店把内容资产、官网直订入口、AI 可读信息和私域承接路径连接起来，让更多客人从问题搜索走向咨询和预订。'
-              : 'MarvelBros C&T helps hotels connect content assets, direct-booking paths, AI-readable information, and private traffic conversion so more guests move from search questions to inquiries and bookings.'}
-          </p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <Link href={`/${lang}/topics/ai-hotel-growth`} className="rounded-full bg-[#f59e0b] px-4 py-2 text-sm font-semibold text-white">
-              {isZh ? '酒店 AI 搜索获客专题' : 'AI Search Growth Hub'}
-            </Link>
-            <Link href={`/${lang}/services/ai-hotel-website`} className="rounded-full border border-[#f59e0b]/40 px-4 py-2 text-sm font-semibold text-[#b45309]">
-              {isZh ? '查看服务' : 'View Service'}
-            </Link>
-            <Link href={`/${lang}/contact`} className="rounded-full border border-[#f59e0b]/40 px-4 py-2 text-sm font-semibold text-[#b45309]">
-              {isZh ? '联系 迈创兄弟C&T' : 'Contact MarvelBros C&T'}
-            </Link>
-          </div>
-        </div>
-
-        {/* Interactive: Like & Comment (Client Component) */}
-        <ArticleInteractions
-          slug={slug}
-          initialLikes={articleData.likes}
-          initialComments={[]}
-          isZh={isZh}
-        />
+        <div data-article-body><ArticleMarkdown content={articleContent} /></div>
+        <ArticleEngagementTracker articleSlug={slug} articleType="lean" />
+        <ArticleComments slug={`lean/${slug}`} lang={lang} />
+        <NewsletterSubscribe lang={lang} />
       </div>
     </div>
   )

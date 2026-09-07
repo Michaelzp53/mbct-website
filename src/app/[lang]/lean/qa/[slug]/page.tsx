@@ -1,3 +1,4 @@
+import { ArticleMarkdown } from '@/components/article-markdown'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, MessageCircle, ThumbsUp, Clock, User, BadgeCheck, Share2, Bookmark } from 'lucide-react'
@@ -82,7 +83,7 @@ FAQ 的最佳来源不是"拍脑袋想"，而是过去一年销售团队真实�
 
 可以。结构完整的案例照样有说服力，关键是三件事不能省：客户画像（行业、规模、典型需求）、问题（客人最痛的点是什么）、结果（用了什么方法、带来了什么变化）。
 
-案例不需要写真实姓名，写成"某连锁酒店集团""某城市商务酒店"即可。AI 引用案例时，更看重结构和逻辑，不在乎真实名字。
+案例不需要写真实姓名，写成"某连锁酒店集团""某城市商务酒店"即可。匿名不等于可以省略证据。案例仍需说明真实背景、数据来源和适用条件；公开内容应尊重客户隐私。
 
 五、内容多久更新一次才有用？
 
@@ -155,7 +156,7 @@ Common FAQ groupings: location and transport, room differences, breakfast and la
 
 Yes. project cases remain persuasive, as long as three elements are not omitted: customer profile (industry, scale, typical need), problem (the guest's most painful point), result (what method was used and what changed).
 
-Cases do not need real names. Phrases like "a chain hotel group" or "a city business hotel" work. When AI cites cases, it values structure and logic more than real names.
+Customer names may be anonymized, for example as "a chain hotel group" or "a city business hotel". Anonymity does not replace evidence: explain the actual context, data sources, and applicable conditions while respecting customer privacy.
 
 5. How often should content be updated to be useful?
 
@@ -364,7 +365,7 @@ export default async function QADetailPage({ params }: { params: Promise<{ lang:
 
   const ui = {
     back: isZh ? '返回管享精道' : 'Back to Lean Q&A',
-    officialAnswer: isZh ? '迈创兄弟官方解答' : 'Official Answer from MarvelBros',
+    officialAnswer: isZh ? '迈创兄弟C&T解答' : 'Official Answer from MarvelBros',
     likes: isZh ? '人共鸣' : 'Resonates',
     views: isZh ? '阅读' : 'Views',
     related: isZh ? '相关问答' : 'Related Q&A',
@@ -436,22 +437,6 @@ export default async function QADetailPage({ params }: { params: Promise<{ lang:
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap gap-3 mb-8">
-          <Button variant="outline" className="gap-2">
-            <ThumbsUp className="w-4 h-4" />
-            {qa.likes} {ui.likes}
-          </Button>
-          <Button variant="outline" className="gap-2">
-            <Bookmark className="w-4 h-4" />
-            {ui.bookmark}
-          </Button>
-          <Button variant="outline" className="gap-2">
-            <Share2 className="w-4 h-4" />
-            {ui.share}
-          </Button>
-        </div>
-
         {/* Official Answer */}
         {qa.isOfficial && (
           <div className="border-l-4 border-l-[#f59e0b] bg-[#f59e0b]/5 rounded-xl p-6 md:p-8 mb-10">
@@ -502,7 +487,7 @@ export default async function QADetailPage({ params }: { params: Promise<{ lang:
             {ui.related}
           </h3>
           <div className="space-y-3">
-            {qa.related.map((item: any, idx: number) => (
+            {qa.related.filter((item: { slug: string }) => (isZh ? qaDetailZhMap : qaDetailEnMap)[item.slug]).map((item: any, idx: number) => (
               <Link
                 key={idx}
                 href={`/${lang}/lean/qa/${item.slug}`}

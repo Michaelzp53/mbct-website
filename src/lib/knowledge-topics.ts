@@ -10,6 +10,8 @@ export type PrimaryTopic =
   | 'team'
   | 'governance'
   | 'ai-search'
+  | 'cultural-tourism'
+  | 'silver-economy'
 
 export type KnowledgeLike = {
   title: string
@@ -33,24 +35,35 @@ export const topicOrder: PrimaryTopic[] = [
   'team',
   'governance',
   'ai-search',
+  'cultural-tourism',
+  'silver-economy',
 ]
 
 const topicKeywords: Array<[PrimaryTopic, RegExp]> = [
+  ['silver-economy', /银发|适老|养老|长者|\b(silver economy|senior travelers?|older travelers?|age-friendly)\b/iu],
+  ['cultural-tourism', /非遗|文旅|在地文化|文化旅游|研学|\b(cultural tourism|local heritage|cultural heritage|educational travel)\b/iu],
   ['governance', /经营治理|目标传递|业主.{0,12}(总经理|团队|管理公司)|管理公司.{0,12}(单店|业主|总经理)|组织变革|hotel governance|operating governance|owner.{0,30}(general manager|management team|operator)|management company.{0,30}(property|owner|general manager)|organizational change/iu],
-  ['ai-search', /\bai\b|人工智能|ai搜索|ai可见|geo|digital transformation|information platform|信息平台/iu],
-  ['hotel-opening', /筹开|筹建|开业|pre-opening|opening budget|hotel opening/iu],
-  ['investment', /投资|可行性|融资|品牌选择|加盟|investment|feasibility|financing|franchise/iu],
-  ['renovation', /改造|焕新|翻新|重塑|renovation|renewal|reposition/iu],
-  ['cost', /成本|人工|能耗|采购|人效|cost|labor|efficiency|energy/iu],
-  ['team', /团队|组织|岗位|排班|培训|绩效|交接|team|staff|organization|training|handover/iu],
-  ['distribution', /ota|渠道|直订|分销|distribution|direct booking|channel/iu],
-  ['revenue', /收益|房价|revpar|adr|报价|利润|revenue|rate|pricing|profit/iu],
-  ['marketing', /获客|市场|推广|会员|客人|营销|搜索|marketing|acquisition|guest awareness|member/iu],
-  ['operations', /经营|运营|服务|投诉|客房|入住|体验|operations|operating|service|occupancy|review/iu],
+  ['ai-search', /ai\s*(搜索|可见)|ai search|ai visibility|\bgeo\b|information platform|信息平台/iu],
+  ['hotel-opening', /筹开|筹建|开业|\b(pre-opening|opening budget|hotel opening)\b/iu],
+  ['investment', /投资|可行性|融资|品牌选择|加盟|\b(investments?|feasibility|financing|franchis\w*)\b/iu],
+  ['renovation', /改造|焕新|翻新|重塑|\b(renovations?|renewal|reposition\w*)\b/iu],
+  ['cost', /成本|人工(?!智能)|能耗|采购|人效|降本|\b(costs?|labor|labour|efficiency|energy)\b/iu],
+  ['team', /团队|组织|岗位|排班|培训|绩效|交接|\b(teams?|staff|organization|training|handover)\b/iu],
+  ['distribution', /渠道|直订|分销|\b(otas?|distribution|direct bookings?|channels?)\b/iu],
+  ['revenue', /收益|房价|报价|利润|\b(revpar|adr|revenue|rates?|pricing|profits?)\b/iu],
+  ['marketing', /获客|市场|推广|会员|客人|营销|搜索|\b(marketing|acquisition|guest awareness|members?)\b/iu],
+  ['operations', /经营|运营|服务|投诉|客房|入住|体验|住客|非遗|\b(operations?|operating|services?|occupancy|reviews?)\b/iu],
 ]
 
 export function getPrimaryTopic(article: KnowledgeLike): PrimaryTopic {
-  const source = [article.title, article.titleEn, article.slug, article.summary, article.summaryEn, article.firstLine, article.tag]
+  // Classify the subject before incidental terms in the summary.
+  const title = article.title
+  if (/酒店AI不是PPT|hotel ai is not a slide deck|hotel-ai-implementation-operating-loop/iu.test(`${title} ${article.slug || ''}`)) return 'operations'
+  const titleMatch = topicKeywords.find(([, pattern]) => pattern.test(title))
+  if (titleMatch) return titleMatch[0]
+  const englishMatch = topicKeywords.find(([, pattern]) => pattern.test(article.titleEn || ''))
+  if (englishMatch) return englishMatch[0]
+  const source = [article.summary, article.summaryEn, article.firstLine, article.tag]
     .filter(Boolean)
     .join(' ')
     .toLowerCase()
@@ -60,6 +73,22 @@ export function getPrimaryTopic(article: KnowledgeLike): PrimaryTopic {
 
 export function getTopicCopy(topic: PrimaryTopic, isZh: boolean) {
   const copy = {
+    'cultural-tourism': {
+      title: ['酒店如何融入在地文化', 'Hotels and local culture'],
+      description: ['把文化资源转化为有内容、可交付的住客体验。', 'Turn cultural resources into meaningful, deliverable guest experiences.'],
+      hub: ['酒店与文旅融合', 'Hotels and cultural tourism'],
+      href: '/knowledge/category/hotel-cultural-tourism',
+      contact: ['正在策划酒店文化体验？', 'Planning a cultural experience at your hotel?'],
+      contactHref: '/contact?type=diagnosis',
+    },
+    'silver-economy': {
+      title: ['酒店怎样服务银发客群', 'Serving older travelers'],
+      description: ['从适老设施、服务流程与旅居产品理解银发需求。', 'Address older travelers’ needs through age-friendly facilities, service, and extended-stay products.'],
+      hub: ['酒店与银发经济', 'Hotels and the silver economy'],
+      href: '/knowledge/category/hotel-silver-economy',
+      contact: ['想改善银发客人的入住体验？', 'Improving the stay for older guests?'],
+      contactHref: '/contact?type=diagnosis',
+    },
     investment: {
       title: ['准备投资酒店', 'Hotel investment decisions'],
       description: ['项目值不值得投、品牌怎么选、回报与风险怎么判断。', 'Assess project viability, brand choice, returns, and risk.'],
