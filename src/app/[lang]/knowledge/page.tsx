@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 661,
+      type: 'article',
+      title: '酒店集团重组时，盈利资产装入REITs就能解困吗？',
+      titleEn: 'Can a REIT for Profitable Properties Resolve a Hotel Group’s Financial Distress?',
+      slug: 'hotel-group-restructuring-reit-rescue-2026-09-08',
+      summary: '酒店集团把盈利物业装入REITs，交易对价并不等于可用现金。用交易后剩余业务生存测试，把净回款、债务、担保、改造和月度现金缺口放在同一张表里。',
+      summaryEn: 'Putting profitable properties into a REIT does not make transaction consideration equal to usable cash. Use a post-transaction survival test to connect net proceeds, debt, guarantees, refurbishment and monthly cash gaps.',
+      firstLine: '交易对价很大，可动用现金可能很小；重组要先证明交易后剩余业务还能活下来。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-08',
+      category: 'hotel-investment',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 12,
+      featured: true,
+      image: '',
+    },
+    {
       id: 660,
       type: 'article',
       title: '酒店与在地非遗合作，先从哪一个住客触点开始？',
