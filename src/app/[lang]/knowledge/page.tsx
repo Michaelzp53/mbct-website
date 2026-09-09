@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 662,
+      type: 'article',
+      title: '城市节庆带来酒店订单，先证明哪些房晚真的是活动增量',
+      titleEn: 'A City Festival Brings Hotel Bookings. Which Room Nights Are Truly Incremental?',
+      slug: 'hotel-event-incremental-room-nights-2026-09-09',
+      summary: '城市活动供给增加不等于单店订单增量。用同窗口、同渠道、同价位基线和活动增量桥接表，判断哪些房晚真正来自活动。',
+      summaryEn: 'More city events do not automatically create incremental demand for a single hotel. Use a counterfactual baseline and an incrementality bridge to identify which room nights truly came from the event.',
+      firstLine: '城市活动规模不是单店需求证明；酒店要先证明哪些房晚真的是活动增量。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-09',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 12,
+      featured: true,
+      image: '',
+    },
+    {
       id: 661,
       type: 'article',
       title: '酒店集团重组时，盈利资产装入REITs就能解困吗？',
