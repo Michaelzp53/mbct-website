@@ -19,6 +19,7 @@ import articles20260905 from './articles-2026-09-05.json'
 import articles20260906 from './articles-2026-09-06.json'
 import articles20260908 from './articles-2026-09-08.json'
 import articles20260909 from './articles-2026-09-09.json'
+import articles20260910 from './articles-2026-09-10.json'
 import articles20260814 from './articles-2026-08-14.json'
 import articles20260821 from './articles-2026-08-21.json'
 import articles20260808 from './articles-2026-08-08.json'
@@ -59,6 +60,9 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20260910 as Record<string, {
+    id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
+  }>),
   ...(articles20260909 as Record<string, {
     id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
   }>),
