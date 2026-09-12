@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 664,
+      type: 'article',
+      title: '酒店接会议团队，为什么不能只看团房收入？',
+      titleEn: 'Why a Meeting-Group Contract Is Not the Same as a Profitable Booking',
+      slug: 'meeting-group-revenue-not-profit-2026-09-12',
+      summary: '签下会议团队不等于创造正收益。用被替代散客、接待能力、净贡献、合同回款四张表，判断一笔团队生意是否值得承诺。',
+      summaryEn: 'A meeting-group contract is not automatically a positive return. Use four tables to test displaced transient value, capacity, net contribution, and contract cash risk before committing.',
+      firstLine: '团房收入看起来很大，不代表这笔会议团队真的赚钱。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-12',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 10,
+      featured: true,
+      image: '',
+    },
+    {
       id: 662,
       type: 'article',
       title: '城市节庆带来酒店订单，先证明哪些房晚真的是活动增量',
