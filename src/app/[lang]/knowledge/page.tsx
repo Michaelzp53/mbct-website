@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 666,
+      type: 'article',
+      title: '摘牌、换牌还是独立经营：酒店业主如何算清品牌合同的全口径成本',
+      titleEn: 'Leave the Brand, Rebrand, or Stay Independent: How Hotel Owners Should Calculate the Full Cost of a Brand Contract',
+      slug: 'hotel-brand-contract-total-cost-2026-09-14',
+      summary: '换牌不是营销动作。用全口径成本表、退出条款核查表和90天现金流桥，在续约、换牌或独立经营前完成可验证的决策。',
+      summaryEn: 'Rebranding is not a marketing action. Use a full-cost ledger, exit-clause review, and a 90-day cash bridge before deciding to renew, rebrand, or operate independently.',
+      firstLine: '集团扩张和同行换牌不是单店决策依据。先审合同、算全成本、做过渡期现金流桥，再谈是否换牌。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-14',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 11,
+      featured: true,
+      image: '',
+    },
+    {
       id: 664,
       type: 'article',
       title: '酒店接会议团队，为什么不能只看团房收入？',
