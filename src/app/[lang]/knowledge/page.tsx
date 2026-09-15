@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 667,
+      type: 'article',
+      title: '云南旅馆治安新规10月1日施行，酒店总经理要先完成哪四项走查？',
+      titleEn: "Yunnan's New Hotel Security Rules Take Effect on October 1: Four Checks General Managers Should Complete First",
+      slug: 'yunnan-hotel-security-rules-four-checks-2026-09-15',
+      summary: '云南省旅馆业治安管理新规将于2026年10月1日起施行。本文为酒店总经理提供四条责任线和七天最低可行验证。',
+      summaryEn: "Yunnan's revised public-security rules for lodging businesses take effect on October 1, 2026. This guide gives hotel general managers four connected review lines and a seven-day minimum test.",
+      firstLine: '新规不只是前台登记表更新，总经理需要在10月1日前完成四条责任线的跨部门走查。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-15',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 12,
+      featured: true,
+      image: '',
+    },
+    {
       id: 666,
       type: 'article',
       title: '摘牌、换牌还是独立经营：酒店业主如何算清品牌合同的全口径成本',
