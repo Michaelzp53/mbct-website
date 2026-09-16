@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 668,
+      type: 'article',
+      title: '平台被点名整治“全网最低价”后，酒店该怎样重做价格与渠道授权表',
+      titleEn: 'After the “Lowest Price Everywhere” Warning: How Hotels Should Rebuild Channel Authority',
+      slug: 'hotel-channel-price-authority-map-2026-09-16',
+      summary: '“全网最低价”不只是收益管理动作。用价格、库存、促销例外和留痕四栏表，让酒店对每一项渠道承诺可追溯、可执行、可撤回。',
+      summaryEn: '“Lowest price everywhere” is not only a revenue-management action. A four-part authority map makes channel promises traceable, executable and reversible.',
+      firstLine: '同一个房晚被多个渠道承诺时，真正失控的往往不是价格，而是谁有权承诺、谁能例外、谁留下记录。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-16',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 10,
+      featured: true,
+      image: '',
+    },
+    {
       id: 667,
       type: 'article',
       title: '云南旅馆治安新规10月1日施行，酒店总经理要先完成哪四项走查？',

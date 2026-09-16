@@ -1,0 +1,45 @@
+{
+  "hotel-channel-price-authority-map-2026-09-16": {
+    "id": 668,
+    "title": "平台被点名整治“全网最低价”后，酒店该怎样重做价格与渠道授权表",
+    "titleEn": "After the “Lowest Price Everywhere” Warning: How Hotels Should Rebuild Channel Authority",
+    "description": "“全网最低价”不只是收益管理动作。用价格、库存、促销例外和留痕四栏表，让酒店对每一项渠道承诺可追溯、可执行、可撤回。",
+    "descriptionEn": "“Lowest price everywhere” is not only a revenue-management action. A four-part authority map makes channel promises traceable, executable and reversible.",
+    "author": "迈创兄弟C&T（MarvelBros C&T）",
+    "date": "2026-09-16",
+    "readTime": "10分钟",
+    "tag": "专业洞察",
+    "content": [
+      "同一个房晚，可能同时出现在酒店官网、在线旅行平台、企业协议价和一次临时促销里。问题通常不是哪一个价格更低，而是每一项承诺由谁作出、谁可以例外、系统里能否找到记录、承诺失效时谁负责撤回。",
+      "2026年9月15日，市场监管总局会同文化和旅游部召开在线酒店预订平台服务行业行政指导会，提出防范独家合作、“全网最低价”等竞争风险。这一信号面向平台行业，并不能证明某个酒店或某个平台已经违规，也不能替代合同审查。但它提醒酒店业主：价格、库存和促销不应只留在收益管理后台，它们同样是经营授权问题。",
+      "一、先分清酒店真正承诺了什么",
+      "很多酒店把“全网最低价”理解成一个简单的价格动作。实际上，至少有四种承诺混在一起：价格承诺、库存承诺、促销承诺和对消费者的权益承诺。把它们混在一张比价表里，往往让收益负责人只看房价，销售团队只看活动，前厅只接住客情绪，而业主直到投诉、赔付或渠道争议出现时才发现没有人拥有完整事实。",
+      "二、价格治理不等于让收益经理独自背责",
+      "收益管理应负责价格策略和系统执行，却无法单独决定酒店愿意承担什么商业承诺。当条款涉及排他、优先库存、营销资源置换或跨渠道补偿时，决策已经影响渠道结构、客户体验和现金流风险。业主和总经理需要负责决策权设计，收益负责人负责规则落地，销售或市场负责人负责活动边界，财务和法务分别核验资金影响与合同适用。",
+      "三、用一张渠道授权表把责任接起来",
+      "酒店可以从一张四栏表开始：价格承诺栏写适用渠道、房型、日期、客群和例外审批；库存承诺栏写保留库存、关闭销售、最后一间房和超售处置权限；促销例外栏写活动目的、折扣或权益、起止时间、预计增量、预算影响和撤回时间；证据留痕栏保留合同或授权依据、审批记录、系统配置、页面留存和结束后的核对结果。",
+      "这张表不替代法务意见，也不承诺法律结果。它的价值在于让经营团队把“我们到底答应了什么”变成可以核查的事实。",
+      "四、先做一次三场活动的穿行测试",
+      "抽取最近30天的三次促销：一次平台活动、一次自有渠道活动、一次临近入住日的调整。每次先确认活动商业目标，再核对谁批准了价格、库存和附带权益，随后检查PMS、CRS、渠道后台和页面展示是否一致，最后复盘是否按时撤回、是否产生非预期补偿、投诉或人工处理。任一步找不到责任人或证据，就先补授权与记录，再讨论规模和折扣。",
+      "五、哪些信号说明应暂停新增促销",
+      "出现未经批准的折扣、库存超卖、同一产品无法解释的权益差异、页面撤回滞后或投诉无法追溯时，酒店应暂停新增同类促销。暂停不是放弃渠道，而是防止旧问题被新的流量放大。先看每场活动是否有完整授权、承诺能否在系统和现场一致兑现、异常能否追溯到具体环节、活动能否按时撤回；稳定后再比较渠道成本、取消率、客诉和净收入。",
+      "平台竞争环境会变化，合同条款也有不同适用范围。酒店不能把外部监管信号当成现成答案，却可以把它当作一次治理检查：价格不是一个数字，渠道也不是一个入口；它们共同构成酒店对客户、合作方和自身现金流作出的承诺。"
+    ],
+    "contentEn": [
+      "A single room night can appear on a hotel website, an online travel platform, a corporate rate plan and a short-term promotion at the same time. The real question is rarely which price is lower. It is who made each promise, who may approve an exception, whether the system retains a record and who withdraws the promise when it ends.",
+      "On 15 September 2026, China’s market regulator and Ministry of Culture and Tourism held an administrative guidance meeting for online hotel-booking platforms and highlighted competition risks such as exclusive arrangements and “lowest price everywhere” practices. The meeting does not prove that any hotel or platform has breached a rule, and it does not replace contract review. It does, however, give hotel owners a reason to treat rate, inventory and promotions as authority-design questions rather than only revenue-management settings.",
+      "First, distinguish the promises the hotel has actually made",
+      "At least four promises are often mixed together: the rate promise, the inventory promise, the promotion promise and the guest-benefit promise. A comparison sheet cannot govern all four. When they are mixed, revenue sees rate, sales sees an event, the front office receives the guest complaint, and ownership discovers too late that nobody has the full picture.",
+      "Second, rate governance is not a revenue-manager-only responsibility",
+      "Revenue management should own price strategy and system execution. It cannot alone decide which commercial commitments the hotel is prepared to make. When an arrangement covers exclusivity, priority inventory, marketing exchanges or cross-channel compensation, it affects channel mix, guest experience and cash risk. Owners and general managers should design decision rights; revenue should execute rules; sales and marketing should govern event boundaries; finance and legal should test financial impact and contractual applicability.",
+      "Third, create a four-part channel-authority map",
+      "The first part records rate commitments: channel, room type, dates, guests and approval for exceptions. The second records inventory commitments, including held inventory, close-outs, last-room availability and overbooking authority. The third records promotion exceptions: purpose, discount or benefit, dates, expected incrementality, budget impact and withdrawal time. The fourth records evidence: contractual or authority basis, approval, system configuration, page capture and post-event reconciliation.",
+      "The map is not legal advice and does not promise a legal outcome. Its purpose is to turn “what did we promise?” into a verifiable operating fact.",
+      "Fourth, run a three-promotion trace",
+      "Select three promotions from the past 30 days: one platform event, one direct-channel event and one late-booking adjustment. For each, identify the commercial aim, verify the approval for price, inventory and benefits, compare PMS, CRS, channel and displayed information, then check whether the event was withdrawn on time and produced unexpected compensation, complaints or manual work. If any step has no accountable owner or evidence, repair authority and records before expanding the activity.",
+      "Fifth, know when to pause new promotions",
+      "Unauthorised discounts, inventory oversell, unexplained benefit differences, late withdrawal or untraceable complaints are reasons to pause a similar new promotion. That is not a retreat from distribution. It prevents a new demand spike from amplifying an old control failure. Start by checking whether each event has authority, consistent delivery, traceable exceptions and timely withdrawal; only then compare cost, cancellations, complaints and net revenue.",
+      "Competition conditions and contracts vary. Hotels should not treat an external regulatory signal as a ready-made answer. They can use it as a governance test: price is not merely a number, and a channel is not merely an entry point. Together, they are promises to guests, partners and the hotel’s own cash flow."
+    ]
+  }
+}
