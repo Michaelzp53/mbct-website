@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 669,
+      type: 'article',
+      title: '酒店关键采购依赖一家供应商，怎样准备有效替代？',
+      titleEn: 'When a Critical Hotel Supplier Is the Only One: How to Prepare a Real Alternative',
+      slug: 'hotel-supplier-switchability-test-2026-09-19',
+      summary: '采购治理不以供应商数量为目标。用一张供应依赖与替代实测表，验证关键品类能否在不影响服务和质量的前提下真实切换。',
+      summaryEn: 'Procurement governance is not about supplier count. A supplier-dependency and alternative-test sheet helps hotels verify whether a critical category can genuinely switch without compromising service or quality.',
+      firstLine: '采购风险不在于供应商数量少，而在关键品类发生异常时，酒店能否真实切换且不损害服务。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-19',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 10,
+      featured: true,
+      image: '',
+    },
+    {
       id: 668,
       type: 'article',
       title: '平台被点名整治“全网最低价”后，酒店该怎样重做价格与渠道授权表',

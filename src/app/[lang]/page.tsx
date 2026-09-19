@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? '酒店关键采购依赖一家供应商，怎样准备有效替代？' : 'When a Critical Hotel Supplier Is the Only One: How to Prepare a Real Alternative',
+      summary: isZh
+        ? '采购治理不以供应商数量为目标。用一张供应依赖与替代实测表，验证关键品类能否在不影响服务和质量的前提下真实切换。'
+        : 'Procurement governance is not about supplier count. Use a supplier-dependency and alternative-test sheet to verify real switchability without compromising service or quality.',
+      slug: 'hotel-supplier-switchability-test-2026-09-19',
+      date: '2026.09.19',
+    },
+    {
       title: isZh ? '酒店AI不是PPT：工具上线之后，经营现场为什么仍然用不起来？' : 'Hotel AI Is Not a Slide Deck: Why Does It Still Fail to Work After Go-Live?',
       summary: isZh
         ? '系统上线不等于AI进入经营。用六项闭环、三个公开案例和一张30天测试表，判断酒店AI项目是否真正形成业务结果。'
