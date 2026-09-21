@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      id: 670,
+      type: 'article',
+      title: '2027预算：GOP达标了，为什么现金还是紧？',
+      titleEn: '2027 Budget: GOP Is on Target, So Why Is Cash Still Tight?',
+      slug: 'hotel-2027-budget-gop-cash-flow-2026-09-21',
+      summary: 'GOP是必要的经营目标，但不是现金到账表。用六类现金流、八周滚动表和权限矩阵，把预算从利润目标推进到可执行的现金决策。',
+      summaryEn: 'GOP is essential, but it is not a cash-arrival schedule. Use six cash categories, an eight-week rolling table and an authority matrix to turn a budget into executable cash decisions.',
+      firstLine: '预算通过时，业主还应该知道哪一周会缺钱、哪些动作可以提前做、谁有权拍板。',
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-09-21',
+      category: 'hotel-governance',
+      tag: isZh ? '专业洞察' : 'Professional Insight',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 9,
+      featured: true,
+      image: '',
+    },
+    {
       id: 669,
       type: 'article',
       title: '酒店关键采购依赖一家供应商，怎样准备有效替代？',

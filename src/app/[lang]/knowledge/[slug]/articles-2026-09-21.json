@@ -1,0 +1,39 @@
+{
+  "hotel-2027-budget-gop-cash-flow-2026-09-21": {
+    "id": 670,
+    "title": "2027预算：GOP达标了，为什么现金还是紧？",
+    "titleEn": "2027 Budget: GOP Is on Target, So Why Is Cash Still Tight?",
+    "description": "GOP是必要的经营目标，但不是现金到账表。用六类现金流、八周滚动表和权限矩阵，把预算从利润目标推进到可执行的现金决策。",
+    "descriptionEn": "GOP is essential, but it is not a cash-arrival schedule. Use six cash categories, an eight-week rolling table and an authority matrix to turn a budget into executable cash decisions.",
+    "author": "迈创兄弟C&T（MarvelBros C&T）",
+    "date": "2026-09-21",
+    "readTime": "9分钟",
+    "tag": "专业洞察",
+    "content": [
+      "酒店做2027年预算，GOP是必要的经营目标，但它不是现金到账表。利润可能被应收账款、采购付款、工资税费、偿债和资本性支出错开；如果只批一个GOP数字，预算通过时，经营团队仍不知道哪一周会缺钱、谁有权调整动作。",
+      "GOP回答经营活动预计创造多少利润；现金流回答未来几周什么时候收钱、什么时候付款。两者必须在同一套预算里互相校验，而不是用现金结果去否定GOP，也不是用GOP掩盖现金时点风险。",
+      "预算至少要拆成六类现金流：客房、餐饮、会议及其他收入的收款时点；供应商、能源、外包服务和维修的付款时点；工资、社保、税费及奖金；借款本息、租金、管理费等固定承诺；设备更新、改造和大修等资本性支出；业主分配、关联方往来及最低现金储备要求。每一项都要写清金额来源、发生周、责任人和可调整动作。",
+      "把八周滚动现金表放进预算审批包。表格至少包括期初现金、预计收款、必付支出、可调整支出、借款或资本支出、期末现金和触发动作。每周更新一次，并保留上周预测与实际差异。阈值应由业主、财务和总经理依据酒店自己的债务、工资、税费、供应商信用及集团资金规则共同确认。",
+      "可以采用绿色、黄色、红色三档语言，但颜色不是政策。黄色必须对应暂停或延后哪些非刚性支出、谁复核采购、是否调整营销投放、何时向业主报告；红色必须写明现金保护顺序、付款优先级、融资或业主支持的升级路径，以及谁可以作出停止或恢复决定。",
+      "| 事项 | 经营团队可直接做 | 需总经理批准 | 需业主或董事会决定 |",
+      "|---|---|---|---|",
+      "| 日常排班、采购节奏 | 在已批准政策内执行 | 超出授权或影响服务标准 | — |",
+      "| 非刚性费用与活动 | 提交节省方案 | 批准延后或缩减 | 影响年度策略时 |",
+      "| 资本支出、借款、分配 | 提供现金影响测算 | — | 最终决策 |",
+      "2027预算应当同时批三件事：GOP目标、八周滚动现金表、触发后的授权矩阵。这样业主看到的不只是赚多少，还包括哪一周会紧、怎么提前处理、谁对结果负责。"
+    ],
+    "contentEn": [
+      "GOP is an essential operating target for a hotel's 2027 budget, but it is not a cash-arrival schedule. Receivables, supplier payments, payroll taxes, debt service and capital expenditure can all fall in different weeks. Approving a single GOP number leaves owners and general managers without a shared answer to a practical question: when will cash become tight, and who is authorized to act?",
+      "GOP answers how much profit the hotel expects to create from operations. A cash forecast answers when money is collected and when it must be paid. They should be reviewed together. Cash timing should not dismiss a sound operating plan, and GOP should not hide a short-term funding gap.",
+      "Six cash categories belong in the budget: collection timing for rooms, food and beverage, meetings and other revenue; payment timing for suppliers, utilities, outsourced services and repairs; payroll, social insurance, taxes and bonuses; debt service, rent and management fees; capital expenditure for equipment, refurbishment and major repairs; and owner distributions, related-party movements and the required minimum cash reserve. Each line needs an amount source, expected week, accountable owner and available action.",
+      "Put an eight-week rolling cash table in the approval pack. It should include opening cash, expected collections, mandatory payments, adjustable payments, debt or capex, closing cash and a trigger action. Update it weekly and retain the prior forecast beside actual results. Thresholds should be set by the owner, finance lead and general manager using the hotel's debt, payroll, tax, supplier-credit and group-treasury rules.",
+      "Green, amber and red can provide a shared decision language, but colour is not policy. An amber status must specify which non-essential payments may be delayed, who reviews purchasing, whether marketing spend is adjusted and when the owner is informed. A red status must specify the cash-protection order, payment priorities, escalation for financing or owner support, and who can stop or restart the action.",
+      "| Decision | Operating team may do | General manager approval | Owner or board decision |",
+      "|---|---|---|---|",
+      "| Routine scheduling and purchasing | Within approved policy | When authorization or service standards are exceeded | — |",
+      "| Non-essential costs and activities | Submit a saving plan | Approve delay or reduction | When annual strategy is affected |",
+      "| Capex, borrowing and distributions | Provide cash-impact analysis | — | Final decision |",
+      "A 2027 budget should approve three linked items: the GOP target, an eight-week rolling cash table and an authority matrix for each trigger. That gives the owner more than a profit forecast. It shows which week may become tight, what can be done early and who is accountable."
+    ]
+  }
+}
