@@ -108,6 +108,19 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const category = leanCategoryBySlug[getLeanArticleCategory(articleData)]
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
+  const displayContent = (() => {
+    if (slug !== 'hotel-orders-cash-shortage-operating-loan-2026-09-29') return articleContent
+    const sectionTitles = isZh
+      ? ['订单多，为什么还会缺现金', '政策说了什么，没说什么', '借款前五问：把焦虑变成可核对的问题', '先走完这笔现金，再决定是否开口借款']
+      : ['Why can bookings rise while cash runs short?', 'What the policy says—and does not say', 'Five questions before borrowing', 'Follow the cash before approaching a lender']
+    let content = articleContent.startsWith(`${articleTitle}\n\n`)
+      ? articleContent.slice(articleTitle.length + 2)
+      : articleContent
+    for (const heading of sectionTitles) {
+      content = content.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+    }
+    return content
+  })()
   const articleUrl = `https://www.marvelbros.com/${lang}/lean/article/${slug}`
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -259,7 +272,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div data-article-body><ArticleMarkdown content={articleContent} /></div>
+        <div data-article-body><ArticleMarkdown content={displayContent} /></div>
         <ArticleEngagementTracker articleSlug={slug} articleType="lean" />
         <ArticleComments slug={`lean/${slug}`} lang={lang} />
         <NewsletterSubscribe lang={lang} />
