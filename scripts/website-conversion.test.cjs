@@ -7,7 +7,7 @@ const ts = require('typescript')
 function load(file, mocks = {}, globals = {}) {
   const exports = {}
   const source = ts.transpileModule(fs.readFileSync(file, 'utf8'), {
-    compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, esModuleInterop: true },
+    compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020, esModuleInterop: true, jsx: ts.JsxEmit.ReactJSX },
   }).outputText
   vm.runInNewContext(source, { exports, require: name => {
     if (!(name in mocks)) throw new Error(`Unexpected dependency: ${name}`)
@@ -115,4 +115,36 @@ test('Reading depth requires visible body time and fires once per threshold', ()
   assert.equal(events[0][1].measurement_version, 'body-v2')
   assert.equal(events[0][1].article_type, 'lean')
   cleanup()
+})
+
+test('Contact metadata points to the contact page in each language', async () => {
+  const page = load('src/app/[lang]/contact/page.tsx', {
+    'react/jsx-runtime': { jsx() {}, jsxs() {} },
+    'next/link': {}, '@/components/ContactForm': {}, '@/lib/dicts': {},
+  })
+  for (const lang of ['zh', 'en']) {
+    const metadata = await page.generateMetadata({ params: Promise.resolve({ lang }) })
+    assert.equal(metadata.alternates.canonical, `https://www.marvelbros.com/${lang}/contact`)
+    assert.equal(metadata.openGraph.url, metadata.alternates.canonical)
+    assert.equal(metadata.alternates.languages.zh, 'https://www.marvelbros.com/zh/contact')
+    assert.equal(metadata.alternates.languages.en, 'https://www.marvelbros.com/en/contact')
+    assert.ok(metadata.description)
+  }
+})
+
+test('Editorial selections exist and stay accessible in full topic results', () => {
+  const { topicSelections, selectTopicArticles } = load('src/lib/knowledge-topics.ts')
+  const source = ts.createSourceFile('knowledge.tsx', fs.readFileSync('src/app/[lang]/knowledge/page.tsx', 'utf8'), ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX)
+  const slugs = new Set()
+  function visit(node) {
+    if (ts.isPropertyAssignment(node) && node.name.getText(source).replace(/["']/g, '') === 'slug' && ts.isStringLiteral(node.initializer)) slugs.add(node.initializer.text)
+    ts.forEachChild(node, visit)
+  }
+  visit(source)
+  for (const [topic, pins] of Object.entries(topicSelections)) {
+    for (const slug of pins) assert.ok(slugs.has(slug), `Missing editorial article: ${topic}/${slug}`)
+    const entries = pins.map(slug => ({ slug, title: slug, date: '2026-09-01' }))
+    assert.equal(selectTopicArticles(entries, topic).length, pins.length)
+    assert.equal(new Set(pins).size, pins.length)
+  }
 })

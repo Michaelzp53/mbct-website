@@ -1,10 +1,13 @@
 import { articleLabel } from '@/lib/article-labels'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 import { articlesData } from '../../[slug]/page'
 import { categoryBySlug, categoryForKnowledgeTopic, knowledgeCategories } from '@/lib/knowledge-taxonomy'
 import { getPrimaryTopic } from '@/lib/knowledge-topics'
+
+export const dynamicParams = false
 
 export function generateStaticParams() {
   return knowledgeCategories.flatMap(({ slug: category }) => [{ lang: 'zh', category }, { lang: 'en', category }])
@@ -13,15 +16,29 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; category: string }> }): Promise<Metadata> {
   const { lang, category } = await params
   const item = categoryBySlug[category]
-  const name = item ? (lang === 'zh' ? item.zh : item.en) : 'Knowledge Category'
-  return { title: `${name} | ${lang === 'zh' ? '迈创兄弟C&T' : 'MarvelBros C&T'}`, alternates: { canonical: `https://www.marvelbros.com/${lang}/knowledge/category/${category}` } }
+  if (!item) notFound()
+  const isZh = lang === 'zh'
+  const title = `${isZh ? item.zh : item.en} | ${isZh ? '迈创兄弟C&T' : 'MarvelBros C&T'}`
+  const description = isZh ? item.descriptionZh : item.descriptionEn
+  const path = `/knowledge/category/${category}`
+  const url = `https://www.marvelbros.com/${lang}${path}`
+  return {
+    title: { absolute: title }, description,
+    alternates: { canonical: url, languages: {
+      'zh-CN': `https://www.marvelbros.com/zh${path}`,
+      'en-US': `https://www.marvelbros.com/en${path}`,
+      'x-default': `https://www.marvelbros.com/zh${path}`,
+    } },
+    openGraph: { title, description, url, type: 'website', locale: isZh ? 'zh_CN' : 'en_US' },
+    twitter: { card: 'summary_large_image', title, description },
+  }
 }
 
 export default async function KnowledgeCategoryPage({ params }: { params: Promise<{ lang: string; category: string }> }) {
   const { lang, category } = await params
   const item = categoryBySlug[category]
   const isZh = lang === 'zh'
-  if (!item) return <main className="mx-auto max-w-3xl px-6 py-32 text-center"><h1 className="text-3xl font-bold">{isZh ? '栏目未找到' : 'Category not found'}</h1></main>
+  if (!item) notFound()
   const articles = Object.entries(articlesData).filter(([, article]) => categoryForArticle(article) === category).sort(([, a], [, b]) => b.date.localeCompare(a.date))
   return <main className="min-h-screen bg-[#fffdf8] px-4 py-8 sm:py-12 text-[#2f261f] dark:bg-slate-950 dark:text-white sm:px-8">
     <div className="mx-auto max-w-5xl">

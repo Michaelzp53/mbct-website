@@ -189,3 +189,22 @@ export function getTopicCopy(topic: PrimaryTopic, isZh: boolean) {
     contact: item.contact[index],
   }
 }
+
+// Editorial entry points answer the displayed question; full topic results remain automatic.
+export const topicSelections: Partial<Record<PrimaryTopic, string[]>> = {
+  revenue: ['revpar-recovery-three-tracks-2026-05-20', 'urban-business-hotel-more-orders-less-profit-2026-07-03', 'meeting-group-revenue-not-profit-2026-09-12'],
+  operations: ['hotel-diagnosis-five-blind-spots-2026-06-15', 'renovation-operating-diagnosis-2026-06-05', 'hotel-ai-implementation-operating-loop-2026-09-05'],
+  cost: ['hotel-labor-cost-restructuring-2026', 'hotel-supplier-switchability-test-2026-09-19'],
+  renovation: ['renovation-operating-diagnosis-2026-06-05', 'hotel-renovation-asset-repricing-2026-08-21', 'accessibility-hotel-renovation-priority-2026-09-03'],
+  team: ['hotel-general-manager-team-building-2026-05-22', 'owner-opportunity-goal-translation-2026-08-11'],
+}
+
+export function selectTopicArticles<T extends KnowledgeLike & { date: string }>(articles: T[], topic: PrimaryTopic): T[] {
+  const pinned = topicSelections[topic]
+  if (pinned) return pinned.flatMap(slug => {
+    const article = articles.find(item => item.slug === slug)
+    return article ? [article] : []
+  })
+  return articles.filter(article => getPrimaryTopic(article) === topic)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3)
+}

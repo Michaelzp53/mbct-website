@@ -1,0 +1,420 @@
+{
+  "deployment": "dpl_28BNY2SqKAkSg6fD7Q6tpoSHBvUp",
+  "checkedAt": "2026-10-05",
+  "complete": false,
+  "reason": "Deployment file API truncates nested directories and long file content.",
+  "files": [
+    {
+      "path": ".github/workflows/deploy.yml",
+      "sha1": "659296b78bfa0d531b66d496931d4e5f8718ab23"
+    },
+    {
+      "path": ".vercelignore",
+      "sha1": "885192ed0a59e078e629c26a7bb88c9a74f472b3"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha1": "b402af8a6533dfc73cc5af9164ae5e0c366af9cc"
+    },
+    {
+      "path": "BASELINE_STATUS.md",
+      "sha1": "9fafc1aa8433fa6c30cc3e41a379cd66a3bdcb8b"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha1": "c140473a3a5fbe89301c99d9d0d1b76c5971f2c3"
+    },
+    {
+      "path": "OPENCLAW_WEBSITE_BASELINE.md",
+      "sha1": "9f2597468dfc0a60d2b00db815ba752ec95d5656"
+    },
+    {
+      "path": "Oops.rej",
+      "sha1": "26e13ac4ac55e3696962bcb30d0b04f75e168159"
+    },
+    {
+      "path": "PROJECT_BRIEF.md",
+      "sha1": "a73d53fbd752db39cff7aa9eed2274c169cdde8f"
+    },
+    {
+      "path": "README.md",
+      "sha1": "7ba16f1bf099196063e5d413cf00a5aa850b043d"
+    },
+    {
+      "path": "SOURCE_CODE_INDEX.md",
+      "sha1": "a2a7d77183c9c0b566aab97a974ba095508a1ea8"
+    },
+    {
+      "path": "SPEC.md",
+      "sha1": "65c668134686f4224b92ec4505e96d0212c07bbf"
+    },
+    {
+      "path": "dist/404.html",
+      "sha1": "add8be9c670b76bc2e2f74787e030713ac16deac"
+    },
+    {
+      "path": "dist/_not-found.html",
+      "sha1": "add8be9c670b76bc2e2f74787e030713ac16deac"
+    },
+    {
+      "path": "dist/__next.__PAGE__.txt",
+      "sha1": "8d94a2aaba29ca7a795395e301fe3f9814b1e762"
+    },
+    {
+      "path": "dist/__next._full.txt",
+      "sha1": "81c5bf60e2e13ace39112ce9ba78e7b82638113f"
+    },
+    {
+      "path": "dist/index.txt",
+      "sha1": "81c5bf60e2e13ace39112ce9ba78e7b82638113f"
+    },
+    {
+      "path": "dist/__next._head.txt",
+      "sha1": "6b6b3bd59f7133ebbfb5a727670f239ee75597fc"
+    },
+    {
+      "path": "dist/__next._index.txt",
+      "sha1": "122f721bd0863c428e4c0581e1978669c62c1399"
+    },
+    {
+      "path": "dist/_not-found/__next._index.txt",
+      "sha1": "122f721bd0863c428e4c0581e1978669c62c1399"
+    },
+    {
+      "path": "dist/_not-found/__next._full.txt",
+      "sha1": "b504958aa91cdc10dc570cadfec9e1e2a886b9c9"
+    },
+    {
+      "path": "dist/_not-found/__next._head.txt",
+      "sha1": "fd9d06efb6acfcc3c17ba57c665e812111e480a3"
+    },
+    {
+      "path": "dist/_not-found/__next._not-found.__PAGE__.txt",
+      "sha1": "691fd6174c088951ff87e26611ba2a0dfd37ccb8"
+    },
+    {
+      "path": "dist/_not-found/__next._not-found.txt",
+      "sha1": "24b22beab577be5245eb39017eeaacf6e9485632"
+    },
+    {
+      "path": "dist/_not-found/__next._tree.txt",
+      "sha1": "77d9d8fdda2520fae54eb6ea4146f47842ef651e"
+    },
+    {
+      "path": "dist/en/__next._index.txt",
+      "sha1": "122f721bd0863c428e4c0581e1978669c62c1399"
+    },
+    {
+      "path": "dist/en/__next._full.txt",
+      "sha1": "953688f9723c2e4dbcd300a825f4a9cd2d7941cd"
+    },
+    {
+      "path": "dist/en/__next._head.txt",
+      "sha1": "4fb5a8a898fb67ee7f7477fd0f49cf1ec44105c8"
+    },
+    {
+      "path": "dist/en/__next._tree.txt",
+      "sha1": "ba784c73932c28731a5e24114a5cfa568faa06c9"
+    },
+    {
+      "path": "dist/en/__next.en.__PAGE__.txt",
+      "sha1": "51bd774a363449a419ec06844274f72c3ba03567"
+    },
+    {
+      "path": "dist/en/__next.en.txt",
+      "sha1": "60b46627f1972eb6fca0e487c045b201fe1a5809"
+    },
+    {
+      "path": "dist/__next._tree.txt",
+      "sha1": "9345748df376b79eac723942da15dbfad1e15b9c"
+    },
+    {
+      "path": "dist/favicon.ico",
+      "sha1": "9ecfcc8f0ead0bf3d2d7c39e084b88f41cc89a2e"
+    },
+    {
+      "path": "dist/_not-found.txt",
+      "sha1": "b504958aa91cdc10dc570cadfec9e1e2a886b9c9"
+    },
+    {
+      "path": "dist/baidu_verify_codeva-gQwRux4oUu.html",
+      "sha1": "90afe3270ea9347d2461715c7faf7842b538905a"
+    },
+    {
+      "path": "dist/en.html",
+      "sha1": "3a1d176df5ed0b1ebfe55feed932a003690f7083"
+    },
+    {
+      "path": "dist/en.txt",
+      "sha1": "953688f9723c2e4dbcd300a825f4a9cd2d7941cd"
+    },
+    {
+      "path": "dist/file.svg",
+      "sha1": "fb380eeffe87d50b597383664c02982964d0d28c"
+    },
+    {
+      "path": "dist/globe.svg",
+      "sha1": "2eba23b01a46733bb8423e6d38ebf5f7e95abec5"
+    },
+    {
+      "path": "dist/index.html",
+      "sha1": "7da1b408f4693dee44ff9e0e511e6490cf7e33c1"
+    },
+    {
+      "path": "dist/mbct_logo.png",
+      "sha1": "e39b3d6aa55eec34a7fc1961dcecc1a64b8161ea"
+    },
+    {
+      "path": "dist/next.svg",
+      "sha1": "3f3e95622612b989c5bd6a03299a308c6f3c7e6b"
+    },
+    {
+      "path": "dist/vercel.svg",
+      "sha1": "cebb8852d58c8886be3e9051a26957f42bb82f1a"
+    },
+    {
+      "path": "dist/window.svg",
+      "sha1": "54c48e0daa6caa317fe1b4c419007fd93e948db9"
+    },
+    {
+      "path": "src/app/favicon.ico",
+      "sha1": "9ecfcc8f0ead0bf3d2d7c39e084b88f41cc89a2e"
+    },
+    {
+      "path": "src/app/globals.css",
+      "sha1": "9cade2b0e1d78a08ebab2482a9a23aaf3a346418"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "sha1": "edcd38e1b62a32567c355e5c238b2b266533613c"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "sha1": "9b87cdb80ac7e6a66e4599cc2640feec3c3617a1"
+    },
+    {
+      "path": "src/app/robots.ts",
+      "sha1": "8af6379bd461cdc9a5a8b8b8fe96aa3ba00832c8"
+    },
+    {
+      "path": "src/app/sitemap.ts",
+      "sha1": "9d2122f4f7a896faf3b73000445116b80bec68a5"
+    },
+    {
+      "path": "src/components/BentoServices.tsx",
+      "sha1": "e7279ff41cb597b1a3ea17aeb4201516bdb6d496"
+    },
+    {
+      "path": "src/components/CTASection.tsx",
+      "sha1": "db524afcc64af4651c89592087a133a75d2f5718"
+    },
+    {
+      "path": "src/components/CasesSection.tsx",
+      "sha1": "07ec0bf94d5c97424437f4a7f8c962189403aa55"
+    },
+    {
+      "path": "src/components/ContactForm.tsx",
+      "sha1": "854c2489956735e257efbba34871569d293d1dfa"
+    },
+    {
+      "path": "src/components/Footer.tsx",
+      "sha1": "3b740bda89b6af5fc61610341d55a986364d2761"
+    },
+    {
+      "path": "src/components/Hero.tsx",
+      "sha1": "2c2601d6dc720c155bf0238d9fff2969c7a29650"
+    },
+    {
+      "path": "src/components/HeroWithStats.tsx",
+      "sha1": "2dee3144cd2f9cfb7f8466ee0f6cf229bbe90efe"
+    },
+    {
+      "path": "src/components/HotelTopicPage.tsx",
+      "sha1": "d03d71dec9ec19cc748769b97a0bf7c6f1337388"
+    },
+    {
+      "path": "src/components/Navbar.tsx",
+      "sha1": "f5b52e82c5f0b26f5b7fbd5537e0496773999ece"
+    },
+    {
+      "path": "src/components/PageHero.tsx",
+      "sha1": "b860f9062ba13f180040554b003f3ffbf3b1892c"
+    },
+    {
+      "path": "src/components/SectionWithBg.tsx",
+      "sha1": "13baf20326e61c7ea8d0a37c991e724ac0d41048"
+    },
+    {
+      "path": "src/components/ServicesSection.tsx",
+      "sha1": "35ae4644b4e7051ac4bf029a62b3d435f3a32b0a"
+    },
+    {
+      "path": "src/components/ThemeProvider.tsx",
+      "sha1": "09823b1a02b5b6b656782d521e15b558948eb05f"
+    },
+    {
+      "path": "src/components/ThemeToggle.tsx",
+      "sha1": "b95880c3e652ebf014cd5dae7ff87fe16d3aefbe"
+    },
+    {
+      "path": "src/components/article-markdown.tsx",
+      "sha1": "d84ac349d1cf75be8ee572e9d08441ba097bc1fe"
+    },
+    {
+      "path": "src/components/index.ts",
+      "sha1": "b8e3aea555445bd4d373a9a1f815ce7851b185e4"
+    },
+    {
+      "path": "src/components/scroll-fade.tsx",
+      "sha1": "2c8a0786cfdb96ee84a3832c0ae4a4af0ef349f3"
+    },
+    {
+      "path": "src/lib/analytics.ts",
+      "sha1": "adc4426a77ff9de514988c2ff7275445b1758197"
+    },
+    {
+      "path": "src/lib/article-labels.ts",
+      "sha1": "e095e5cabaea6dd2da0214f2473faeaec3f45853"
+    },
+    {
+      "path": "src/lib/knowledge-taxonomy.ts",
+      "sha1": "6713c10797651c2c532de3a948a53e16c6d65869"
+    },
+    {
+      "path": "src/lib/knowledge-topics.ts",
+      "sha1": "cb102ed96f930dde9994c65467d074eeae5adc97"
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "sha1": "03edf7b44c7cf1d3f48be4f72866007dbb63b8c6"
+    },
+    {
+      "path": "public/baidu_verify_codeva-gQwRux4oUu.html",
+      "sha1": "90afe3270ea9347d2461715c7faf7842b538905a"
+    },
+    {
+      "path": "public/file.svg",
+      "sha1": "fb380eeffe87d50b597383664c02982964d0d28c"
+    },
+    {
+      "path": "public/globe.svg",
+      "sha1": "2eba23b01a46733bb8423e6d38ebf5f7e95abec5"
+    },
+    {
+      "path": "public/logo-new.png",
+      "sha1": "e39b3d6aa55eec34a7fc1961dcecc1a64b8161ea"
+    },
+    {
+      "path": "public/next.svg",
+      "sha1": "3f3e95622612b989c5bd6a03299a308c6f3c7e6b"
+    },
+    {
+      "path": "public/vercel.svg",
+      "sha1": "cebb8852d58c8886be3e9051a26957f42bb82f1a"
+    },
+    {
+      "path": "public/window.svg",
+      "sha1": "54c48e0daa6caa317fe1b4c419007fd93e948db9"
+    },
+    {
+      "path": "public/MBCT_final_gold.png",
+      "sha1": "9d6c4ce9431aeb62216a283ed1839a05a6ea579b"
+    },
+    {
+      "path": "public/ai-content-index.json",
+      "sha1": "2b5c24ee9da26cf9c8e86fb0e93dc6c7a87f34f9"
+    },
+    {
+      "path": "public/baidu_verify_codeva-6Cx3aeBaDo.html",
+      "sha1": "b1af9ea2df40b9ccc34d54a4e3e788bc5a9c058a"
+    },
+    {
+      "path": "public/baidu_verify_codeva-NJPiBtBQvg.html",
+      "sha1": "398fbea1ea451d523d24d1cf0f62d550bd65bd33"
+    },
+    {
+      "path": "public/baidu_verify_codeva-jWqhjgs0K2.html",
+      "sha1": "15238b4b97b6fadc0d91bfee73a686afa4390528"
+    },
+    {
+      "path": "public/hero-franck-morisset-UFhM8kMuQbo-unsplash.jpg",
+      "sha1": "f1f8e49e24e21dc73ce2201b3b8f48ac71b84892"
+    },
+    {
+      "path": "public/hero-hung-li-1HbWj9BDbjE-unsplash.jpg",
+      "sha1": "5e9d2811d68e651b527460c31fecc8bd132781c0"
+    },
+    {
+      "path": "public/hero-pexels-jimmy-liao.jpg",
+      "sha1": "822ef5003946d9386e6a011b1341d5e2e0b2f32b"
+    },
+    {
+      "path": "public/hero-roberto-nickson-MA82mPIZeGI-unsplash.jpg",
+      "sha1": "39609f2fbc4e871d9560df4fc107d397e88c576f"
+    },
+    {
+      "path": "public/hero-rod-long-2P_ifaetDm0-unsplash.jpg",
+      "sha1": "3ebff78af716fa142c9ff5615fb99c1b32936783"
+    },
+    {
+      "path": "public/llms.txt",
+      "sha1": "60b8e2b0cbd8557eb5a66ec56d9e3d77812501a1"
+    },
+    {
+      "path": "public/robots.txt",
+      "sha1": "407f3969b304bdf21a220f33e177dcf603df5e99"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "sha1": "44d5bed565a8dd284af3e17f3b16a1c752008d0e"
+    },
+    {
+      "path": "next-env.d.ts",
+      "sha1": "9bfff799abb9a4d30186f7a8b68f91ac35157611"
+    },
+    {
+      "path": "next.config.ts",
+      "sha1": "fc070e7165b66bb65fbb9168dd69e2839a0ac57c"
+    },
+    {
+      "path": "package-lock.json",
+      "sha1": "23eb504427c6c8aefdb44d7a41ee7122b939886c"
+    },
+    {
+      "path": "package.json",
+      "sha1": "3d9322919bf59cb71e9239f33fa11e178fe8bf7b"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "sha1": "8f8be689e9af58f80351df6e6b551146822f42a4"
+    },
+    {
+      "path": "pre-deploy-check.sh",
+      "sha1": "2b651b9477c59c43fc715efe04d295a1d0fac6a1"
+    },
+    {
+      "path": "prisma.config.ts",
+      "sha1": "44eee388c01782f61a86a5e0fe333284afd155ec"
+    },
+    {
+      "path": "prisma/init.sql",
+      "sha1": "106b1d30d85cb401ebc4a3ca8af961c0933e02ce"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "sha1": "01551d0dcd1e780c454c589c629822eba5a3a5bf"
+    },
+    {
+      "path": "scripts/website-conversion.test.cjs",
+      "sha1": "03d53757b1fcf52797b7d6efa8df9e080d13217e"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha1": "27dded29dc880f958ee67c9ed276fb2b1412f515"
+    },
+    {
+      "path": "vercel.json",
+      "sha1": "28cdac26e3c5985f022dd4a96796570aea3daac3"
+    }
+  ]
+}

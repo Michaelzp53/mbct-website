@@ -9,6 +9,10 @@ export type AnalyticsEventName =
   | 'article_90_percent'
   | 'contact_form_submit_success'
   | 'page_view'
+  | 'contact_page_visit'
+  | 'contact_link_click'
+  | 'phone_click'
+  | 'email_click'
 
 type AnalyticsParameters = Record<string, string | number | boolean | undefined>
 

@@ -4,11 +4,11 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import PageViewTracker from '@/components/analytics/PageViewTracker'
-import './globals.css'
+import '@/app/globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
-export const metadata: Metadata = {
+export const siteMetadata: Metadata = {
   metadataBase: new URL('https://www.marvelbros.com'),
   title: {
     template: '%s | 迈创兄弟C&T',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootDocument({ children, lang = 'zh-CN' }: { children: React.ReactNode; lang?: string }) {
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -43,10 +43,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     alternateName: ['迈创兄弟C&T', 'MarvelBros C&T'],
     url: 'https://www.marvelbros.com',
     logo: 'https://www.marvelbros.com/logo-new.png',
-    email: 'contactme@marvelbros.com',
+    email: 'info@marvelbros.com',
     telephone: '+86-189-4157-9333',
     description: 'MarvelBros C&T is a professional hotel investment, pre-opening, and performance improvement consultancy serving hotel investors, owners, and managers, grounded in more than 30 years of practical hospitality experience.',
-    areaServed: 'International',
     knowsAbout: [
       'Hotel investment consulting',
       'Hotel pre-opening management',
@@ -75,22 +74,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       '@id': 'https://www.marvelbros.com/#organization',
     },
     inLanguage: ['zh-CN', 'en-US'],
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://www.marvelbros.com/zh/knowledge?query={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
+
   }
 
   return (
-    <html suppressHydrationWarning data-scroll-behavior="smooth">
-      <head>
-        <Script
+    <html lang={lang} suppressHydrationWarning data-scroll-behavior="smooth">
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <script
           id="organization-json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <Script
+        <script
           id="website-json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
@@ -100,8 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             - 启用 enhanced measurement(滚动/外链/site search)
             - 启用 cookie_flags:'SameSite=None;Secure' (iOS 14+ 兼容) */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DWV89MEG50" />
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
+        <script id="google-analytics" dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-DWV89MEG50', {
@@ -110,10 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             // 增强测量:滚动深度/外链点击/site search 由 GA 后台配置控制
             // 这里只做基础配置
             transport_type: 'beacon'
-          });`}
-        </Script>
-      </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+          });` }} />
         <ThemeProvider>
           <PageViewTracker />
           {children}

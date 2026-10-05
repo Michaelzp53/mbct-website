@@ -1,4 +1,4 @@
-import { getQuestions } from '../../api/lean/questions/store'
+import { getQuestions } from '@/app/api/lean/questions/store'
 import QuestionsAdminClient from './QuestionsAdminClient'
 
 interface Question {

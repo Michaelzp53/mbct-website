@@ -1,3 +1,4 @@
+import RootDocument, { siteMetadata } from '@/components/RootDocument'
 import { notFound } from 'next/navigation'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   
   if (lang === 'en') {
     return {
+      ...siteMetadata,
       title: { absolute: 'MarvelBros C&T - Hotel Lifecycle Value Advisory' },
       description: 'Hotel lifecycle advisory for investors, owners, and managers across investment research, brand positioning, development, pre-opening, operational diagnosis, product renewal, and market growth.',
       keywords: 'hotel lifecycle consulting, hotel investment consulting, hotel brand positioning, hotel pre-opening management, hotel operational diagnosis, hotel performance improvement, hotel product renewal',
@@ -41,6 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
   
   return {
+    ...siteMetadata,
     title: { absolute: '迈创兄弟C&T - 酒店全生命周期价值提升咨询' },
     description: '迈创兄弟C&T面向酒店投资人、业主和管理者，提供酒店投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长咨询。',
     keywords: '酒店全生命周期咨询, 酒店投资咨询, 酒店品牌定位, 酒店筹建管理, 酒店经营诊断, 酒店运营优化, 酒店产品升级, 酒店市场增长',
@@ -82,11 +85,12 @@ export default async function LangLayout({
   const dict = getDict(lang)
 
   return (
+    <RootDocument lang={lang === 'zh' ? 'zh-CN' : 'en-US'}>
     <div className="flex min-h-screen flex-col bg-white dark:bg-slate-950">
-      <script dangerouslySetInnerHTML={{ __html: `document.documentElement.lang=${JSON.stringify(lang === 'zh' ? 'zh-CN' : 'en-US')}` }} />
       <Navbar lang={lang} dict={dict} />
       <main className="flex-1">{children}</main>
       <Footer lang={lang} dict={dict} />
     </div>
+    </RootDocument>
   )
 }

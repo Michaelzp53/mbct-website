@@ -1,17 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { CheckCircle, Loader2 } from 'lucide-react'
-import { useSearchParams } from 'next/navigation'
 import type { Dict } from '@/lib/dicts'
 import { trackEvent } from '@/lib/analytics'
 
-export function ContactForm({ dict, lang }: { dict: Dict; lang: string }) {
+export function ContactForm({ dict, lang, contactType = 'general', article = '' }: { dict: Dict; lang: string; contactType?: string; article?: string }) {
   const zh = lang === 'zh'
-  const params = useSearchParams()
-  const type = params.get('type') || 'general'
-  const article = params.get('article') || ''
+  const type = contactType
+  const submitting = useRef(false)
   const [form, setForm] = useState({ name: '', phone: '', projectStage: '', message: '', email: '', company: '', service: '', location: '' })
   const [privacy, setPrivacy] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -21,7 +19,8 @@ export function ContactForm({ dict, lang }: { dict: Dict; lang: string }) {
   const update = (key: keyof typeof form, value: string) => setForm(current => ({ ...current, [key]: value }))
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
-    if (!privacy || status === 'loading') return
+    if (!privacy || submitting.current) return
+    submitting.current = true
     setStatus('loading')
     try {
       const response = await fetch('/api/contact', {
@@ -43,9 +42,11 @@ export function ContactForm({ dict, lang }: { dict: Dict; lang: string }) {
       setDelivered(result.delivered === true)
       setReceipt(result.receipt || null)
       setStatus('success')
-      trackEvent('contact_form_submit_success', { contact_type: type, from_article: article || undefined })
+      trackEvent('contact_form_submit_success', { contact_type: type, from_article: article || undefined, receipt_status: result.delivered ? 'mail_accepted' : 'saved' })
     } catch {
       setStatus('error')
+    } finally {
+      submitting.current = false
     }
   }
   return (
