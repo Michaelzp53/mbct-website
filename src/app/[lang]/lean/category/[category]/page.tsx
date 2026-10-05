@@ -6,10 +6,22 @@ import { leanCategories, leanCategoryBySlug, normalizeLeanCategory, getLeanArtic
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; category: string }> }): Promise<Metadata> {
   const { lang, category } = await params
+  if (!isLeanCategory(category)) notFound()
   const item = leanCategoryBySlug[normalizeLeanCategory(category)]
+  const isZh = lang === 'zh'
+  const title = `${isZh ? item.zh : item.en} | ${isZh ? '管享精道 · 迈创兄弟C&T' : 'Lean Insights · MarvelBros C&T'}`
+  const description = isZh ? item.descriptionZh : item.descriptionEn
+  const path = `/lean/category/${item.slug}`
+  const url = `https://www.marvelbros.com/${lang}${path}`
   return {
-    title: `${lang === 'zh' ? item.zh : item.en} | ${lang === 'zh' ? '管享精道' : 'Lean Insights'}`,
-    alternates: { canonical: `https://www.marvelbros.com/${lang}/lean/category/${item.slug}` },
+    title: { absolute: title }, description,
+    alternates: { canonical: url, languages: {
+      'zh-CN': `https://www.marvelbros.com/zh${path}`,
+      'en-US': `https://www.marvelbros.com/en${path}`,
+      'x-default': `https://www.marvelbros.com/zh${path}`,
+    } },
+    openGraph: { title, description, url, type: 'website', locale: isZh ? 'zh_CN' : 'en_US' },
+    twitter: { card: 'summary_large_image', title, description },
   }
 }
 export default async function CategoryPage({ params, searchParams }: {

@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { BookOpen, FileText, BarChart3, ArrowRight, Clock, User, Calendar } from 'lucide-react'
 import NewsletterSubscribe from './[slug]/NewsletterSubscribe'
 import KnowledgeSearchBox from './KnowledgeSearchBox'
-import { getPrimaryTopic, getTopicCopy, topicOrder, type PrimaryTopic } from '@/lib/knowledge-topics'
+import { getPrimaryTopic, getTopicCopy, selectTopicArticles, topicOrder, type PrimaryTopic } from '@/lib/knowledge-topics'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
@@ -3254,8 +3254,9 @@ export default async function KnowledgePage({
   const selectedTopic = topicOrder.includes(requestedTopic as PrimaryTopic)
     ? requestedTopic as PrimaryTopic
     : null
+  const selectedSlugs = new Set(selectedTopic ? selectTopicArticles(allArticles, selectedTopic).map(article => article.slug) : [])
   const selectedTopicArticles = selectedTopic
-    ? allArticles.filter((article) => getPrimaryTopic(article) === selectedTopic)
+    ? allArticles.filter((article) => getPrimaryTopic(article) === selectedTopic || selectedSlugs.has(article.slug))
     : []
 
   const categories = [
@@ -3285,8 +3286,24 @@ export default async function KnowledgePage({
     },
   ]
 
+  const visibleArticles = selectedTopic ? selectedTopicArticles : questionTopics.flatMap(topic => selectTopicArticles(allArticles, topic))
+  const uniqueVisible = visibleArticles.filter((article, index, entries) => entries.findIndex(item => item.slug === article.slug) === index)
+  const collectionJsonLd = {
+    '@context': 'https://schema.org', '@type': 'CollectionPage',
+    '@id': `https://www.marvelbros.com/${lang}/knowledge#collection`,
+    url: `https://www.marvelbros.com/${lang}/knowledge`, name: ui.pageTitle,
+    inLanguage: isZh ? 'zh-CN' : 'en-US',
+    isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
+    mainEntity: { '@type': 'ItemList', itemListElement: uniqueVisible.map((article, index) => ({
+      '@type': 'ListItem', position: index + 1,
+      name: isZh ? article.title : article.titleEn || article.title,
+      url: `https://www.marvelbros.com/${lang}/knowledge/${encodeURIComponent(article.slug)}`,
+    })) },
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <header className="mb-6 max-w-3xl">
           <p className="text-sm font-semibold text-primary">{isZh ? '迈创兄弟C&T · 酒店经营知识库' : 'MarvelBros C&T · Hotel knowledge'}</p>
@@ -3372,10 +3389,7 @@ export default async function KnowledgePage({
             </section>
             {questionTopics.map((topic) => {
               const copy = getTopicCopy(topic, isZh)
-              const selected = allArticles
-                .filter((article) => getPrimaryTopic(article) === topic)
-                .sort((left, right) => new Date(right.date).getTime() - new Date(left.date).getTime())
-                .slice(0, 3)
+              const selected = selectTopicArticles(allArticles, topic)
 
               return (
                 <section key={topic} className="rounded-2xl border border-border bg-card p-6">

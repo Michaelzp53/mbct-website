@@ -1,16 +1,31 @@
 import type { Metadata } from 'next'
-import { Suspense } from 'react'
 import Link from 'next/link'
 import { ContactForm } from '@/components/ContactForm'
 import { getDict } from '@/lib/dicts'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
-  return { title: lang === 'zh' ? '交流酒店经营问题 | 迈创兄弟C&T' : 'Discuss a hotel operating question | MarvelBros C&T' }
+  const zh = lang === 'zh'
+  const title = zh ? '交流酒店经营问题 | 迈创兄弟C&T' : 'Discuss a hotel operating question | MarvelBros C&T'
+  const description = zh
+    ? '从酒店项目阶段和一个具体问题开始交流，判断下一步是否需要补充数据或进一步诊断。首次留言无需上传完整经营资料，也可通过电话、微信或邮箱联系。'
+    : 'Start with your hotel project stage and one operating question. Discuss the next step without uploading full operating records, or contact us by phone, WeChat, or email.'
+  const url = `https://www.marvelbros.com/${lang}/contact`
+  return {
+    title: { absolute: title }, description,
+    alternates: { canonical: url, languages: {
+      zh: 'https://www.marvelbros.com/zh/contact', en: 'https://www.marvelbros.com/en/contact',
+    } },
+    openGraph: { title, description, url, type: 'website', siteName: zh ? '迈创兄弟C&T' : 'MarvelBros C&T', locale: zh ? 'zh_CN' : 'en_US', alternateLocale: zh ? 'en_US' : 'zh_CN' },
+    twitter: { card: 'summary_large_image', title, description },
+  }
 }
 
-export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
+export default async function ContactPage({ params, searchParams }: { params: Promise<{ lang: string }>; searchParams: Promise<{ type?: string | string[]; article?: string | string[] }> }) {
   const { lang } = await params
+  const query = await searchParams
+  const contactType = typeof query.type === 'string' ? query.type.slice(0, 80) : 'general'
+  const article = typeof query.article === 'string' ? query.article.slice(0, 250) : ''
   const zh = lang === 'zh'
   const dict = getDict(lang)
   return (
@@ -21,7 +36,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
         <p className="mt-4 text-base leading-7 text-muted-foreground">{zh ? '从项目阶段和一个具体问题开始。我们结合实际背景交流判断，再确定是否需要进一步分析。' : 'Start with your project stage and one concrete question. We will discuss the context before deciding whether further analysis is useful.'}</p>
       </header>
       <div className="grid items-start gap-8 lg:grid-cols-[1.3fr_1fr]">
-        <Suspense fallback={<div className="h-96 animate-pulse rounded-xl bg-muted" />}><ContactForm dict={dict} lang={lang} /></Suspense>
+        <ContactForm dict={dict} lang={lang} contactType={contactType} article={article} />
         <aside className="space-y-6">
           <section className="rounded-2xl border border-border bg-card p-6">
             <h2 className="text-xl font-bold">{zh ? '也可以直接联系' : 'You can also contact us directly'}</h2>
