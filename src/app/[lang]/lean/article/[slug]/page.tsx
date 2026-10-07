@@ -109,8 +109,13 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
-    if (slug !== 'hotel-orders-cash-shortage-operating-loan-2026-09-29') return articleContent
-    const sectionTitles = isZh
+    const energyArticle = slug === 'hotel-energy-management-after-golden-week-2026-10-07'
+    if (!energyArticle && slug !== 'hotel-orders-cash-shortage-operating-loan-2026-09-29') return articleContent
+    const sectionTitles = energyArticle
+      ? (isZh
+          ? ['客人少了，设备未必跟着少开', '先调整运行，再讨论投入', '一份能落实到现场的运行调整单', '账单变小，还要解释为什么', '节能升级，应当同时守住服务']
+          : ['Fewer guests do not necessarily mean less equipment running', 'Adjust operations before discussing investment', 'An operating adjustment sheet that can be used on site', 'A smaller bill still needs an explanation', 'Better energy management must also protect service'])
+      : isZh
       ? ['订单多，为什么还会缺现金', '政策说了什么，没说什么', '借款前五问：把焦虑变成可核对的问题', '先走完这笔现金，再决定是否开口借款']
       : ['Why can bookings rise while cash runs short?', 'What the policy says—and does not say', 'Five questions before borrowing', 'Follow the cash before approaching a lender']
     let content = articleContent.startsWith(`${articleTitle}\n\n`)
