@@ -60,6 +60,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? "酒店要不要装充电桩？先看住客停车多久、车位够不够" : "Should a Hotel Install EV Chargers? Start with Guests\u2019 Parking Time and Available Spaces",
+      summary: isZh
+        ? "酒店充电设施应先方便住客，再核对经营贡献。从停车时长、车位供需、住宿与餐饮增量和实际成本，判断建设规模与收费方式。"
+        : "Start with guest convenience, then verify the business contribution. Assess parking duration, available spaces, incremental rooms and food and beverage business, and actual costs before choosing the scale and pricing of hotel EV charging.",
+      slug: "hotel-ev-charging-guest-convenience-revenue-2026-10-10",
+      date: '2026.10.10',
+    },
+    {
       title: isZh ? '酒店关键采购依赖一家供应商，怎样准备有效替代？' : 'When a Critical Hotel Supplier Is the Only One: How to Prepare a Real Alternative',
       summary: isZh
         ? '采购治理不以供应商数量为目标。用一张供应依赖与替代实测表，验证关键品类能否在不影响服务和质量的前提下真实切换。'

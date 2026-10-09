@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      "id": 671,
+      "type": "article",
+      "title": "酒店要不要装充电桩？先看住客停车多久、车位够不够",
+      "titleEn": "Should a Hotel Install EV Chargers? Start with Guests’ Parking Time and Available Spaces",
+      "slug": "hotel-ev-charging-guest-convenience-revenue-2026-10-10",
+      "summary": "酒店充电设施应先方便住客，再核对经营贡献。从停车时长、车位供需、住宿与餐饮增量和实际成本，判断建设规模与收费方式。",
+      "summaryEn": "Start with guest convenience, then verify the business contribution. Assess parking duration, available spaces, incremental rooms and food and beverage business, and actual costs before choosing the scale and pricing of hotel EV charging.",
+      "firstLine": "先回答充电能为住客省去什么麻烦，再核对它能为酒店留下什么经营贡献。",
+      "author": "迈创兄弟C&T（MarvelBros C&T）",
+      "date": "2026-10-10",
+      "category": "hotel-investment",
+      "tag": isZh ? '专业洞察' : 'Professional Insight',
+      "tagColor": "bg-[#c67829]",
+      "tagTextColor": "text-white",
+      "readTime": 9,
+      "featured": true,
+      "image": ""
+},
+    {
       id: 670,
       type: 'article',
       title: '2027预算：GOP达标了，为什么现金还是紧？',

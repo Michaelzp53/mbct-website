@@ -10,5 +10,5 @@ export default function ArticleContent({ content, articleTitle }: { content: str
       return /^[一二三四五六七八九十]+、/u.test(clean) && clean.length < 100 ? `## ${clean}` : clean
     })
     .join('\n\n')
-  return <div data-article-body><ArticleMarkdown content={markdown} /></div>
+  return <div data-article-body className="[overflow-wrap:anywhere]"><ArticleMarkdown content={markdown} /></div>
 }

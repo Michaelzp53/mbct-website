@@ -58,6 +58,7 @@ const topicKeywords: Array<[PrimaryTopic, RegExp]> = [
 export function getPrimaryTopic(article: KnowledgeLike): PrimaryTopic {
   // Classify the subject before incidental terms in the summary.
   const title = article.title
+  if (title === "酒店要不要装充电桩？先看住客停车多久、车位够不够") return 'investment'
   if (/酒店AI不是PPT|hotel ai is not a slide deck|hotel-ai-implementation-operating-loop/iu.test(`${title} ${article.slug || ''}`)) return 'operations'
   const titleMatch = topicKeywords.find(([, pattern]) => pattern.test(title))
   if (titleMatch) return titleMatch[0]
