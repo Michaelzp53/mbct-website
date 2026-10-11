@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
     {
+      "id": 672,
+      "type": "article",
+      "title": "酒店投资尽调：水、电、燃气供应要查清哪些问题？",
+      "titleEn": "Water, Power and Gas Supply: Due Diligence for Hotel Investors",
+      "slug": "hotel-utility-supply-investment-due-diligence-2026-10-11",
+      "summary": "从供水、供电及燃气的容量、可靠性、备用安排和增容成本，核查酒店经营计划能否实现，并将供应缺口纳入投资预算与交易条件。",
+      "summaryEn": "Assess water, power and gas capacity, reliability, backup arrangements and upgrade costs, then reflect verified supply gaps in the hotel investment budget and transaction terms.",
+      "firstLine": "一家酒店过去能正常营业，并不意味着它能够支撑下一位投资人的经营计划。增加客房、升级餐饮、延长营业时间，或者把燃气设备改为电力设备，都可能改变原有的供应需求。收购资料中的水电燃气账单，可以帮助了解过去的消耗和支出，却不能单独回答未来够不够用、供应是否可靠，以及接手后还要投入多少钱。",
+      "author": "迈创兄弟C&T（MarvelBros C&T）",
+      "date": "2026-10-11",
+      "category": "hotel-investment",
+      "tag": isZh ? '专业洞察' : 'Professional Insight',
+      "tagColor": "bg-[#c67829]",
+      "tagTextColor": "text-white",
+      "readTime": 12,
+      "featured": true,
+      "image": ""
+},
+    {
       "id": 671,
       "type": "article",
       "title": "酒店要不要装充电桩？先看住客停车多久、车位够不够",

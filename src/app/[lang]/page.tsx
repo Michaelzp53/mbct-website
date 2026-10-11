@@ -60,6 +60,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? "酒店投资尽调：水、电、燃气供应要查清哪些问题？" : "Water, Power and Gas Supply: Due Diligence for Hotel Investors",
+      summary: isZh ? "从供水、供电及燃气的容量、可靠性、备用安排和增容成本，核查酒店经营计划能否实现，并将供应缺口纳入投资预算与交易条件。" : "Assess water, power and gas capacity, reliability, backup arrangements and upgrade costs, then reflect verified supply gaps in the hotel investment budget and transaction terms.",
+      slug: "hotel-utility-supply-investment-due-diligence-2026-10-11",
+      date: '2026.10.11',
+    },
+    {
       title: isZh ? "酒店要不要装充电桩？先看住客停车多久、车位够不够" : "Should a Hotel Install EV Chargers? Start with Guests\u2019 Parking Time and Available Spaces",
       summary: isZh
         ? "酒店充电设施应先方便住客，再核对经营贡献。从停车时长、车位供需、住宿与餐饮增量和实际成本，判断建设规模与收费方式。"

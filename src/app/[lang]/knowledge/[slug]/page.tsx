@@ -9,6 +9,7 @@ import ContentPathway from '@/components/knowledge/ContentPathway'
 import ArticleEngagementTracker from '@/components/knowledge/ArticleEngagementTracker'
 import { getPrimaryTopic } from '@/lib/knowledge-topics'
 import { categoryBySlug, categoryForKnowledgeTopic } from '@/lib/knowledge-taxonomy'
+import articles20261011 from './articles-2026-10-11.json'
 import articles20261010 from './articles-2026-10-10.json'
 import articles20260822 from './articles-2026-08-22.json'
 import articles20260823 from './articles-2026-08-23.json'
@@ -68,6 +69,9 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...(articles20261011 as Record<string, {
+    id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
+  }>),
   ...(articles20261010 as Record<string, {
     id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
   }>),
