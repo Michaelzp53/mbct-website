@@ -12737,7 +12737,9 @@ const allArticles = [...articlesData, ...(newArticles20250523 as ArticleData[]),
 ...(newArticles20260809 as ArticleData[]), ...(newArticles20260810 as ArticleData[]), ...(newArticles20260812 as ArticleData[]), ...(newArticles20260813 as ArticleData[]), ...(newArticles20260814 as ArticleData[]), ...(newArticles20260817 as ArticleData[]), ...(newArticles20260826 as ArticleData[]), ...(newArticles20260827 as ArticleData[]), ...(newArticles20260828 as ArticleData[]), ...(newArticles20260829 as ArticleData[]), ...(newArticles20260830 as ArticleData[]), ...(newArticles20260902 as ArticleData[]), ...(newArticles20260904 as ArticleData[]), ...(newArticles20260911 as ArticleData[]), ...(newArticles20260917 as ArticleData[]), ...(newArticles20260920 as ArticleData[]), ...(newArticles20260922 as ArticleData[]), ...(newArticles20260923 as ArticleData[]), ...newArticles20260924, ...newArticles20260926];
 import newArticles20261013 from './articles-2026-10-13.json';
 
-export const allArticlesData = [...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[])];
+import newArticles20261014 from './articles-2026-10-14.json';
+
+export const allArticlesData = [...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[])];
 
 export function getArticleBySlug(slug: string) {
   return allArticlesData.find(a => a.slug === slug)

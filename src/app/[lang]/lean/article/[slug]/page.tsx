@@ -277,7 +277,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div data-article-body><ArticleMarkdown content={displayContent} /></div>
+        <div data-article-body className="min-w-0 [overflow-wrap:anywhere]"><ArticleMarkdown content={displayContent} /></div>
         <ArticleEngagementTracker articleSlug={slug} articleType="lean" />
         <ArticleComments slug={`lean/${slug}`} lang={lang} />
         <NewsletterSubscribe lang={lang} />
