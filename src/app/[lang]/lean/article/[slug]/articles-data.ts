@@ -12739,7 +12739,9 @@ import newArticles20261013 from './articles-2026-10-13.json';
 
 import newArticles20261014 from './articles-2026-10-14.json';
 
-export const allArticlesData = [...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[])];
+import newArticles20261015 from './articles-2026-10-15.json';
+
+export const allArticlesData = [...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[]), ...(newArticles20261015 as ArticleData[])];
 
 export function getArticleBySlug(slug: string) {
   return allArticlesData.find(a => a.slug === slug)
