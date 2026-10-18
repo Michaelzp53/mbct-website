@@ -1,3 +1,4 @@
+import newArticles20261018 from './articles-2026-10-18.json';
 // 管享精道文章数据 - 14篇完整内容（中英文）
 // 生成时间: 2026-05-10
 // 更新: 2026-05-10 添加英文版完整内容
@@ -12743,7 +12744,7 @@ import newArticles20261015 from './articles-2026-10-15.json';
 
 import newArticles20261016 from './articles-2026-10-16.json';
 
-export const allArticlesData = [...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[]), ...(newArticles20261015 as ArticleData[]), ...(newArticles20261016 as ArticleData[])];
+export const allArticlesData = [...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[]), ...(newArticles20261015 as ArticleData[]), ...(newArticles20261016 as ArticleData[]), ...(newArticles20261018 as ArticleData[])];
 
 export function getArticleBySlug(slug: string) {
   return allArticlesData.find(a => a.slug === slug)
