@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Script from 'next/script'
 import {
   ArrowRight,
   BarChart3,
@@ -117,7 +116,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
   return (
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
-      <Script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
+      <script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
       <PageHero
         title={isZh ? '迈创兄弟C&T，看透问题，讲清逻辑，落实到位！' : 'MarvelBros C&T sees the issue clearly, explains the logic, and follows through.'}
         titleSize="text-3xl md:text-5xl"
