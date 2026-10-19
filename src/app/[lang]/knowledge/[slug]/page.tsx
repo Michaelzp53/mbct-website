@@ -1,6 +1,7 @@
 import { articleLabel, plainArticleText } from '@/lib/article-labels'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { ArrowLeft, Clock, User, Calendar, BookOpen } from 'lucide-react'
 import ArticleContent from './ArticleContent'
 import NewsletterSubscribe from './NewsletterSubscribe'
@@ -10779,10 +10780,10 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     }
   }
 
-  const title = isEnglish && article.titleEn ? article.titleEn : article.title
+  const title = (isEnglish && article.titleEn ? article.titleEn : article.title)?.trim() || decodedSlug
   const content = isEnglish && article.contentEn ? article.contentEn : article.content
   const description = (isEnglish ? article.descriptionEn : article.description) || getPlainDescription(content, title)
-  const canonical = `https://www.marvelbros.com/${lang}/knowledge/${decodedSlug}`
+  const canonical = `https://www.marvelbros.com/${lang}/knowledge/${encodeURIComponent(decodedSlug)}`
 
   return {
     title: `${title} | ${isEnglish ? 'MarvelBros C&T' : '迈创兄弟C&T'}`,
@@ -10791,8 +10792,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     alternates: {
       canonical,
       languages: {
-        'zh-CN': `https://www.marvelbros.com/zh/knowledge/${decodedSlug}`,
-        'en-US': `https://www.marvelbros.com/en/knowledge/${decodedSlug}`,
+        'zh-CN': `https://www.marvelbros.com/zh/knowledge/${encodeURIComponent(decodedSlug)}`,
+        'en-US': `https://www.marvelbros.com/en/knowledge/${encodeURIComponent(decodedSlug)}`,
       },
     },
     openGraph: {
@@ -10829,18 +10830,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const article = articlesData[decodedSlug]
 
   if (!article) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            {lang === 'en' ? 'Article Not Found' : '文章未找到'}
-          </h1>
-          <Link href={`/${lang}/knowledge`} className="text-primary hover:underline">
-            {lang === 'en' ? 'Back to Knowledge' : '返回专业洞察'}
-          </Link>
-        </div>
-      </div>
-    )
+    notFound()
   }
 
   const isEnglish = lang === 'en'
@@ -10857,7 +10847,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: articleTitle,
+    headline: articleTitle?.trim() || decodedSlug,
     description: articleDescription,
     datePublished: article.date,
     dateModified: article.date,

@@ -1,0 +1,9 @@
+import { legacyMetadata, legacyStructuredData } from '@/lib/page-seo'
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  return legacyMetadata(lang, '/knowledge/ai-empowers-hospitality-emotional-value-2026-05-15')
+}
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  return <>{legacyStructuredData(lang, '/knowledge/ai-empowers-hospitality-emotional-value-2026-05-15').map((data, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />)}{children}</>
+}

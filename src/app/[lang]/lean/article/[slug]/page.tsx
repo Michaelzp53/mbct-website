@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { ArrowLeft, Clock, User, Tag } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
@@ -76,21 +77,7 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
   // 如果文章不存在，显示404
   if (!articleData) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground mb-4">
-            {isZh ? '文章未找到' : 'Article Not Found'}
-          </h1>
-          <Link
-            href={`/${lang}/lean`}
-            className="text-[#f59e0b] hover:underline"
-          >
-            {isZh ? '返回文章列表' : 'Back to Articles'}
-          </Link>
-        </div>
-      </div>
-    )
+    notFound()
   }
 
   const ui = {

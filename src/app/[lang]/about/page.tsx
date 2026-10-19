@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isZh = lang === 'zh'
   const title = isZh ? '关于我们｜谁在帮助酒店看清问题并推动结果？' : 'About Us | Who Helps Hotels Turn Problems into Results?'
   const description = isZh
-    ? '了解迈创兄弟C&T五位酒店咨询专家的专业分工、30多年实战经验、协作方式、优先服务方向与项目成果。'
-    : 'Meet the five hospitality consulting specialists behind MarvelBros C&T, grounded in more than 30 years of practical experience, collaborative delivery, and project results.'
+    ? '了解老迈的约30年酒店管理经验，以及迈创兄弟C&T面向酒店投资人、业主和管理者的投资、筹开与经营改善咨询定位。'
+    : 'Learn about Lao Mai’s approximately 30 years in hotel management and MarvelBros C&T’s investment, pre-opening, and operational improvement advisory for hotel investors, owners, and managers.'
   return {
     title,
     description,
@@ -101,9 +101,17 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     about: { '@id': 'https://www.marvelbros.com/#organization' },
     mainEntity: {
+      '@type': 'Organization',
       '@id': 'https://www.marvelbros.com/#organization',
       knowsAbout: disciplines.map((item) => item.title),
       audience: { '@type': 'Audience', audienceType: isZh ? '酒店投资人、业主和管理者' : 'Hotel investors, owners, and managers' },
+    },
+    mentions: {
+      '@type': 'Person',
+      '@id': 'https://www.marvelbros.com/#lao-mai',
+      name: isZh ? '老迈' : 'Lao Mai',
+      description: isZh ? '拥有约30年酒店管理经验。' : 'Approximately 30 years of hotel management experience.',
+      affiliation: { '@id': 'https://www.marvelbros.com/#organization' },
     },
   }
 
@@ -122,6 +130,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <div>
             <p className="text-5xl font-semibold text-[#b86d13]">30+</p>
             <p className="mt-2 text-lg font-semibold">{isZh ? '年酒店行业实战经验基础' : 'years of practical hospitality experience'}</p>
+          </div>
+          <div className="lg:col-span-2 max-w-4xl">
+            <h2 className="text-2xl font-semibold">{isZh ? '老迈：约30年酒店管理经验' : 'Lao Mai: approximately 30 years in hotel management'}</h2>
+            <p className="mt-4 text-lg leading-8 text-slate-700 dark:text-slate-200">{isZh ? '老迈拥有约30年酒店管理经验，关注酒店投资、筹建、运营、市场、成本与团队管理。迈创兄弟C&T面向酒店投资人、业主和管理者，提供酒店全生命周期价值提升咨询；网站通过专业洞察、经营判断和可执行的方法，分享酒店经营知识。' : 'Lao Mai has approximately 30 years of hotel management experience, with a focus on investment, development, operations, marketing, cost, and team management. MarvelBros C&T provides hotel lifecycle value advisory for investors, owners, and managers. Its website shares hospitality knowledge through industry insights, operating judgment, and practical methods.'}</p>
           </div>
           <p className="max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-200">
             {isZh ? '团队拥有30多年酒店行业实战经验，专业能力覆盖品牌、投资、运营、技术支持与数字化营销。五位专家围绕同一个经营目标协同判断，以清晰的问题诊断、可执行的改善路径和项目成果验证专业实力。' : 'The team brings more than 30 years of practical hospitality experience across brand strategy, investment, operations, technology support, and digital marketing. Five specialists work around one business objective, demonstrating expertise through clear diagnosis, actionable improvement paths, and project results.'}

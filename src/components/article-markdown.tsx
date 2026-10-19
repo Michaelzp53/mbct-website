@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 import { usePathname } from 'next/navigation'
 import { containsChineseBody } from '@/lib/article-labels'
 import { Children, type ReactNode } from 'react'
+import { normalizeInternalArticleHref } from '@/lib/article-links'
 
 function cleanText(children: ReactNode) {
   return Children.map(children, child => typeof child === 'string' ? child.replace(/\*\*/g, '') : child)
@@ -86,7 +87,7 @@ export function ArticleMarkdown({ content }: ArticleMarkdownProps) {
           },
           hr: () => <hr className="my-8 border-border" />,
           a: ({ children, href }) => (
-            <a href={href} className="text-primary hover:underline">
+            <a href={normalizeInternalArticleHref(href)} className="text-primary hover:underline">
               {children}
             </a>
           ),
