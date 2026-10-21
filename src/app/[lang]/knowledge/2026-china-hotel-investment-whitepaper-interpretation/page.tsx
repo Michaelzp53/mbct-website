@@ -286,7 +286,7 @@ Does your hotel have a moat? If so, how long can it be maintained? Is it the irr
             </p>
             <div className="text-sm text-muted-foreground">
               <p>www.marvelbros.com</p>
-              <p>info@marvelbros.com</p>
+              <p>info@marvelbros.com / contactme@marvelbros.com</p>
             </div>
           </div>
         </footer>
