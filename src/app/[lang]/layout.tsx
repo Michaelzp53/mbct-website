@@ -1,3 +1,4 @@
+import { brand } from '@/lib/brand'
 import RootDocument, { siteMetadata } from '@/components/RootDocument'
 import { notFound } from 'next/navigation'
 import { Navbar } from '@/components/Navbar'
@@ -16,12 +17,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     return {
       ...siteMetadata,
       title: { absolute: 'MarvelBros C&T - Hotel Lifecycle Value Advisory' },
-      description: 'Hotel lifecycle advisory for investors, owners, and managers across investment research, brand positioning, development, pre-opening, operational diagnosis, product renewal, and market growth.',
+      description: brand.en.description,
       keywords: 'hotel lifecycle consulting, hotel investment consulting, hotel brand positioning, hotel pre-opening management, hotel operational diagnosis, hotel performance improvement, hotel product renewal',
       authors: [{ name: 'MarvelBros C&T' }],
       openGraph: {
         title: 'MarvelBros C&T - Hotel Lifecycle Value Advisory',
-        description: 'Professional judgment and advisory across hotel investment, brand positioning, development, operations, product renewal, and market growth.',
+        description: brand.en.description,
         siteName: 'MarvelBros C&T',
         locale: 'en_US',
         alternateLocale: 'zh_CN',
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       twitter: {
         card: 'summary_large_image',
         title: 'MarvelBros C&T - Hotel Lifecycle Value Advisory',
-        description: 'Professional judgment across the hotel lifecycle, from investment decisions to sustained operations.',
+        description: brand.en.description,
       },
       alternates: {
         canonical: 'https://www.marvelbros.com/en',
@@ -45,12 +46,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     ...siteMetadata,
     title: { absolute: '迈创兄弟C&T - 酒店全生命周期价值提升咨询' },
-    description: '迈创兄弟C&T面向酒店投资人、业主和管理者，提供酒店投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长咨询。',
+    description: brand.zh.description,
     keywords: '酒店全生命周期咨询, 酒店投资咨询, 酒店品牌定位, 酒店筹建管理, 酒店经营诊断, 酒店运营优化, 酒店产品升级, 酒店市场增长',
     authors: [{ name: '迈创兄弟C&T' }],
     openGraph: {
       title: '迈创兄弟C&T - 酒店全生命周期价值提升咨询',
-      description: '从投资决策到持续经营，为酒店投资人、业主和管理者提供覆盖全生命周期的专业判断与优化路径。',
+      description: brand.zh.description,
       siteName: '迈创兄弟C&T',
       locale: 'zh_CN',
       alternateLocale: 'en_US',
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     twitter: {
       card: 'summary_large_image',
       title: '迈创兄弟C&T - 酒店全生命周期价值提升咨询',
-      description: '从投资决策到持续经营，为酒店每一个阶段提供专业判断。',
+      description: brand.zh.description,
     },
     alternates: {
       canonical: 'https://www.marvelbros.com/zh',

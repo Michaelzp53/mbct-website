@@ -1,3 +1,4 @@
+import { brand, brandEmails, organizationId, lifecycleServices } from '@/lib/brand'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
@@ -14,7 +15,7 @@ export const siteMetadata: Metadata = {
     template: '%s | 迈创兄弟C&T',
     default: '迈创兄弟C&T｜酒店经营知识、行业洞察与实战方法',
   },
-  description: '迈创兄弟C&T基于30多年酒店经验，分享酒店投资、筹开、经营诊断与运营优化知识。',
+  description: brand.zh.description,
   keywords: '酒店投资咨询, 酒店筹开管理, 酒店经营诊断, 酒店运营优化, 酒店经营知识, 酒店管理',
   authors: [{ name: '迈创兄弟C&T' }],
   openGraph: {
@@ -38,14 +39,14 @@ export default function RootDocument({ children, lang = 'zh-CN' }: { children: R
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://www.marvelbros.com/#organization',
+    '@id': organizationId,
     name: 'MarvelBros C&T',
     alternateName: ['迈创兄弟C&T', 'MarvelBros C&T'],
     url: 'https://www.marvelbros.com',
     logo: 'https://www.marvelbros.com/logo-new.png',
-    email: 'info@marvelbros.com',
+    email: [...brandEmails],
     telephone: '+86-189-4157-9333',
-    description: 'MarvelBros C&T is a professional hotel investment, pre-opening, and performance improvement consultancy serving hotel investors, owners, and managers, grounded in more than 30 years of practical hospitality experience.',
+    description: lang.startsWith('zh') ? brand.zh.description : brand.en.description,
     knowsAbout: [
       'Hotel investment consulting',
       'Hotel pre-opening management',
@@ -54,10 +55,12 @@ export default function RootDocument({ children, lang = 'zh-CN' }: { children: R
       'Hotel revenue management',
       'Hotel market acquisition',
     ],
+    hasOfferCatalog: { '@type': 'OfferCatalog', name: lang.startsWith('zh') ? brand.zh.services : brand.en.services, itemListElement: lifecycleServices.map(service => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': `https://www.marvelbros.com/${lang.startsWith('zh') ? 'zh' : 'en'}/services#${service.slug}`, name: lang.startsWith('zh') ? service.zh : service.en, provider: { '@id': organizationId } } })) },
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+86-189-4157-9333',
       contactType: 'customer service',
+      email: [...brandEmails],
       availableLanguage: ['Chinese', 'English'],
       areaServed: 'CN',
     },

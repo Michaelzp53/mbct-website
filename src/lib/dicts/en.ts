@@ -1,3 +1,4 @@
+import { brand } from '@/lib/brand'
 export const en = {
   nav: {
     home: 'Home',
@@ -9,10 +10,10 @@ export const en = {
     login: 'Log In / Register',
   },
   hero: {
-    badge: '🏨 Hotel Industry Digital Transformation Expert',
-    title1: 'AI-Powered Hotel Management',
-    title2: 'Cost Reduction & Efficiency Solutions',
-    subtitle: 'MarvelBros C&T—AI-powered full-lifecycle hospitality advisory. From pre-investment judgment to operational growth and AI implementation, we help hotel teams turn strategy into measurable execution.',
+    badge: brand.en.positioning,
+    title1: 'Hotel Investment and Pre-opening',
+    title2: 'Operational Improvement',
+    subtitle: brand.en.description,
     cta1: 'Get a Plan Now',
     cta2: 'Explore Our Services',
     stats: [
@@ -323,7 +324,7 @@ export const en = {
     loading: 'Loading...',
   },
   footer: {
-    description: 'MarvelBros C&T—AI-powered full-lifecycle hospitality advisory covering pre-investment judgment, operational growth, and AI implementation.',
+    description: brand.en.description,
     copyright: '© 2026 MarvelBros C&T. All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',

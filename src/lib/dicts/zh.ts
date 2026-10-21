@@ -1,3 +1,4 @@
+import { brand } from '@/lib/brand'
 export const zh = {
   nav: {
     home: '首页',
@@ -9,10 +10,10 @@ export const zh = {
     login: '登录 / 注册',
   },
   hero: {
-    badge: '🚀 酒店行业数字化转型专家',
-    title1: 'AI赋能酒店管理',
-    title2: '降本增效新方案',
-    subtitle: '迈创兄弟C&T专注于数字化赋能酒店行业，提供覆盖投前判断、经营增长、效率提升与体验优化的全流程解决方案和咨询服务。',
+    badge: brand.zh.positioning,
+    title1: '酒店投资与酒店筹开',
+    title2: '酒店经营改善',
+    subtitle: brand.zh.description,
     cta1: '立即获取方案',
     cta2: '了解我们的服务',
     stats: [
@@ -320,7 +321,7 @@ export const zh = {
     loading: '加载中...',
   },
   footer: {
-    description: '专注于数字化赋能酒店行业的全流程解决方案与咨询服务，通过效率 + 体验双轨提升，助力酒店业绩增长。',
+    description: brand.zh.description,
     copyright: '© 2026 迈创兄弟C&T. 保留所有权利。',
     privacy: '隐私政策',
     terms: '服务条款',

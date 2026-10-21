@@ -1,3 +1,4 @@
+import { brand } from '@/lib/brand'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Building2, ClipboardCheck, RefreshCw } from 'lucide-react'
@@ -35,9 +36,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             {isZh ? '让酒店经营问题，有判断、有方法' : 'Practical answers to hotel operating questions'}
           </h1>
           <p className="mt-5 max-w-[720px] text-base leading-7 text-slate-100 sm:text-lg sm:leading-8">
-            {isZh
-              ? '迈创兄弟C&T沉淀30多年酒店行业实战经验，帮助酒店投资人、业主和管理者判断项目价值、解决经营问题，实现酒店长期价值增长。'
-              : 'Drawing on more than 30 years of practical hospitality experience, MarvelBros C&T helps hotel investors, owners, and managers assess project value, solve operating problems, and build long-term growth.'}
+            {isZh ? brand.zh.description : brand.en.description}
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link

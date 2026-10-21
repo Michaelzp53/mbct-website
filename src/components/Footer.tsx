@@ -1,3 +1,4 @@
+import { brand } from '@/lib/brand'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, Mail, Phone } from 'lucide-react'
@@ -35,16 +36,14 @@ export function Footer({ lang, dict }: FooterProps) {
               <Image src="/logo-new.png" alt={isZh ? '迈创兄弟C&T 标志' : 'MarvelBros C&T Logo'} width={48} height={48} className="object-contain" />
               <div>
                 <p className="text-sm font-semibold">MarvelBros C&amp;T</p>
-                <p className="mt-1 text-xs font-medium text-[#0b4a6f] dark:text-sky-300">{isZh ? '迈创兄弟C&T · 酒店全生命周期价值咨询' : 'Hotel Lifecycle Value Advisory'}</p>
+                <p className="mt-1 text-xs font-medium text-[#0b4a6f] dark:text-sky-300">{isZh ? '迈创兄弟C&T · 酒店全生命周期价值提升咨询服务商' : 'Hotel Lifecycle Value Enhancement Consultancy'}</p>
               </div>
             </div>
             <p className="mt-6 text-lg font-semibold leading-7">
               {isZh ? '从投资决策到持续经营，让专业判断推动酒店价值提升。' : 'From investment decisions to sustained operations, professional judgment drives hotel value.'}
             </p>
             <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-              {isZh
-                ? '迈创兄弟C&T提供覆盖投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长的酒店全生命周期专业咨询。'
-                : 'MarvelBros C&T provides hotel lifecycle advisory across investment research, brand positioning, development, operational diagnosis, product renewal, and market growth.'}
+              {isZh ? brand.zh.description : brand.en.description}
             </p>
           </div>
 
@@ -81,6 +80,7 @@ export function Footer({ lang, dict }: FooterProps) {
                 <Mail className="h-4 w-4 text-[#d98b28]" />
                 info@marvelbros.com
               </a>
+              <a href="mailto:contactme@marvelbros.com" className="flex items-center gap-3 text-sm break-all"><Mail className="h-4 w-4 shrink-0" />contactme@marvelbros.com</a>
               <Link href={`/${lang}/contact?type=diagnosis`} className="mt-5 inline-flex items-center gap-2 border-b-2 border-[#d98b28] pb-1 text-sm font-semibold">
                 {isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}
                 <ArrowUpRight className="h-4 w-4" />

@@ -282,7 +282,7 @@ Does your hotel have a moat? If so, how long can it be maintained? Is it the irr
             <p className="text-muted-foreground mb-4">
               {isZh
                 ? '迈创兄弟C&T为酒店投资人和运营管理者提供全流程咨询服务，帮助您做出更明智的决策。'
-                : 'MarvelBros C&T provides full-process consulting services for hotel investors and operation managers.'}
+                : "MarvelBros C&T is a hotel consultancy focused on value enhancement throughout the hotel lifecycle. We advise hotel investors, owners and managers on hotel investment, pre-opening and operational improvement."}
             </p>
             <div className="text-sm text-muted-foreground">
               <p>www.marvelbros.com</p>

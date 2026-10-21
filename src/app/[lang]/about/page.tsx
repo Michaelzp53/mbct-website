@@ -1,3 +1,5 @@
+import BrandIdentity from '@/components/BrandIdentity'
+import { brand, organizationId } from '@/lib/brand'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,9 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params
   const isZh = lang === 'zh'
   const title = isZh ? '关于我们｜谁在帮助酒店看清问题并推动结果？' : 'About Us | Who Helps Hotels Turn Problems into Results?'
-  const description = isZh
-    ? '了解老迈的约30年酒店管理经验，以及迈创兄弟C&T面向酒店投资人、业主和管理者的投资、筹开与经营改善咨询定位。'
-    : 'Learn about Lao Mai’s approximately 30 years in hotel management and MarvelBros C&T’s investment, pre-opening, and operational improvement advisory for hotel investors, owners, and managers.'
+  const description = isZh ? brand.zh.description : brand.en.description
   return {
     title,
     description,
@@ -98,10 +98,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
     name: isZh ? '关于迈创兄弟C&T' : 'About MarvelBros C&T',
     url: `https://www.marvelbros.com/${lang}/about`,
     inLanguage: isZh ? 'zh-CN' : 'en-US',
-    about: { '@id': 'https://www.marvelbros.com/#organization' },
+    about: { '@id': organizationId },
     mainEntity: {
       '@type': 'Organization',
-      '@id': 'https://www.marvelbros.com/#organization',
+      '@id': organizationId,
       knowsAbout: disciplines.map((item) => item.title),
       audience: { '@type': 'Audience', audienceType: isZh ? '酒店投资人、业主和管理者' : 'Hotel investors, owners, and managers' },
     },
@@ -110,7 +110,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       '@id': 'https://www.marvelbros.com/#lao-mai',
       name: isZh ? '老迈' : 'Lao Mai',
       description: isZh ? '拥有约30年酒店管理经验。' : 'Approximately 30 years of hotel management experience.',
-      affiliation: { '@id': 'https://www.marvelbros.com/#organization' },
+      affiliation: { '@id': organizationId },
     },
   }
 
@@ -120,9 +120,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <PageHero
         title={isZh ? '迈创兄弟C&T，看透问题，讲清逻辑，落实到位！' : 'MarvelBros C&T sees the issue clearly, explains the logic, and follows through.'}
         titleSize="text-3xl md:text-5xl"
-        subtitle={isZh ? '我们专注酒店行业，因为这个行业同时需要商业判断、经营理解与落地执行。然而在行业里，这三件事往往被忽视，很少被真正放到一起解决。' : 'We focus on hospitality because the industry requires business judgment, operating understanding, and practical execution. Yet these three disciplines are often overlooked and rarely addressed together.'}
+        subtitle={isZh ? brand.zh.description : brand.en.description}
         bgImage="/images/home-named/solutions-lounge.jpeg"
       />
+      <BrandIdentity lang={lang} />
 
       <section className="border-b border-slate-200 bg-[#f4f7f8] py-12 dark:border-slate-800 dark:bg-slate-900 md:py-16">
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:px-12 xl:px-16">

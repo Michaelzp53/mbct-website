@@ -53,8 +53,8 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 </span>
                 <span className="mt-1 max-w-[160px] truncate text-[10px] font-medium text-[#0b4a6f] dark:text-sky-300 sm:text-xs lg:max-w-none">
                   {isZh
-                    ? "迈创兄弟C&T · 酒店全生命周期价值咨询"
-                    : "Hotel Lifecycle Value Advisory"}
+                    ? "迈创兄弟C&T · 酒店全生命周期价值提升咨询"
+                    : "Hotel Lifecycle Value Enhancement Consultancy"}
                 </span>
               </div>
             </Link>

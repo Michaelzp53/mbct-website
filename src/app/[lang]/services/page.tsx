@@ -1,3 +1,5 @@
+import BrandIdentity from '@/components/BrandIdentity'
+import { brand, organizationId } from '@/lib/brand'
 import type { Metadata } from 'next'
 import {
   Building2,
@@ -17,7 +19,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CTASection } from '@/components/CTASection'
 import { getDict } from '@/lib/dicts'
 import PageHero from '@/components/PageHero'
-import Script from 'next/script'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Building2,
@@ -39,9 +40,7 @@ export async function generateMetadata({
   const { lang } = await params
   const isZh = lang === 'zh'
   const title = isZh ? '酒店投资判断、筹建筹开与经营改善' : 'Hotel Investment, Pre-Opening and Operating Improvement'
-  const description = isZh
-    ? '迈创兄弟C&T围绕酒店投资判断、筹建筹开和经营改善，帮助投资人与经营团队把问题、动作和结果连成可执行路径。'
-    : 'MarvelBros C&T connects hotel investment judgment, pre-opening, and operating improvement into executable paths for investors and operators.'
+  const description = isZh ? brand.zh.description : brand.en.description
 
   return {
     title,
@@ -277,7 +276,7 @@ export default async function ServicesPage({
     name: isZh ? '迈创兄弟C&T酒店投资、筹开与经营改善服务' : 'MarvelBros C&T Hotel Investment, Pre-Opening and Operating Improvement Services',
     provider: {
       '@type': 'Organization',
-      '@id': 'https://www.marvelbros.com/#organization',
+      '@id': organizationId,
       name: 'MarvelBros C&T',
     },
     areaServed: 'China',
@@ -292,6 +291,7 @@ export default async function ServicesPage({
         itemOffered: {
           '@type': 'Service',
           name: service.title,
+          provider: { '@id': organizationId },
           description: service.deliverable,
           audience: service.audience,
         },
@@ -328,21 +328,22 @@ export default async function ServicesPage({
 
   return (
     <>
-      <Script
+      <script
         id={`services-json-ld-${lang}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <Script
+      <script
         id={`services-faq-json-ld-${lang}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <PageHero
         title={isZh ? '先看清酒店问题，再决定怎么改、怎么增长' : 'See the hotel problem clearly before deciding how to improve and grow.'}
-        subtitle={isZh ? '先识别影响结果的核心问题，再组合投资判断、经营改善、筹建筹开与增长能力，避免从错误的服务入口开始。' : 'Identify the issue shaping outcomes first, then combine investment, operations, pre-opening, and growth capabilities without starting from the wrong service entry point.'}
+        subtitle={isZh ? brand.zh.description : brand.en.description}
         bgImage="/hero-rod-long-2P_ifaetDm0-unsplash.jpg"
       />
+      <BrandIdentity lang={lang} />
 
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
