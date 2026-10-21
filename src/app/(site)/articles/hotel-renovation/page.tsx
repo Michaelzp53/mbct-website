@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { brand, brandEmails } from '@/lib/brand'
 
 export default function HotelRenovationArticle() {
   return (
@@ -147,6 +148,11 @@ export default function HotelRenovationArticle() {
             <blockquote className="border-l-4 border-brand-gold pl-6 py-4 my-8 bg-gray-50 rounded-r-lg">
               <p className="text-gray-700 italic font-medium">“每一座老酒店，都是一座等待被唤醒的城市记忆。我们的工作，就是让这些记忆在当代重新发光。”——迈创兄弟C&T专业顾问团队</p>
             </blockquote>
+
+            <aside aria-label="机构简介与联系方式" className="mt-8 border-t pt-6">
+              <p>{brand.zh.description}</p>
+              {brandEmails.map(email => <p key={email}><a href={`mailto:${email}`}>{email}</a></p>)}
+            </aside>
 
           </div>
         </div>
