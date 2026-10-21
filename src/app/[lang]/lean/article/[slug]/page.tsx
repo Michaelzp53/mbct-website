@@ -96,6 +96,12 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === 'hotel-guest-supply-overstock-purchasing-quantities-2026-10-21') {
+      const headings = isZh ? ['先把客用品库存分清楚', '怎样看清实际消耗', '酒店客用品采购，要同时算数量和到货日', '把采购量核对表带进审批', '先试调一组常用品'] : ['Clarify the guest supply inventory', 'Establish actual consumption', 'Calculate quantities alongside delivery dates', 'Bring a purchasing quantity checklist into approval', 'Trial an adjustment with a small group of common items']
+      let text = articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      return text
+    }
     const energyArticle = slug === 'hotel-energy-management-after-golden-week-2026-10-07'
     if (!energyArticle && slug !== 'hotel-orders-cash-shortage-operating-loan-2026-09-29') return articleContent
     const sectionTitles = energyArticle
