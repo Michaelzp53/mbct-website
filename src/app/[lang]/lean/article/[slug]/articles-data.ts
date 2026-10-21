@@ -7781,7 +7781,7 @@ MBCT在团队建设领域，帮助酒店客户做三件事：
 
 ---
 
-**MBCT（MarvelBros C&T团队）**，专注酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
+迈创兄弟C&T（MarvelBros C&T）是一家酒店全生命周期价值提升咨询服务商，面向酒店投资人、业主和管理者，提供酒店投资、酒店筹开与酒店经营改善咨询服务。
 
 www.marvelbros.com | info@marvelbros.com`,
     contentEn: `English version coming soon.`,
@@ -7926,7 +7926,7 @@ MBCT的成本优化咨询，不是"给一份降本清单"，而是**帮你的酒
 
 ---
 
-**MBCT（MarvelBros C&T团队）**，专注酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
+迈创兄弟C&T（MarvelBros C&T）是一家酒店全生命周期价值提升咨询服务商，面向酒店投资人、业主和管理者，提供酒店投资、酒店筹开与酒店经营改善咨询服务。
 
 www.marvelbros.com | info@marvelbros.com`,
     contentEn: `
@@ -8145,7 +8145,7 @@ MBCT在酒店投资决策阶段提供的核心价值，是**帮助投资者建�
 
 ---
 
-**MBCT（MarvelBros C&T团队）**，专注酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
+迈创兄弟C&T（MarvelBros C&T）是一家酒店全生命周期价值提升咨询服务商，面向酒店投资人、业主和管理者，提供酒店投资、酒店筹开与酒店经营改善咨询服务。
 
 www.marvelbros.com | info@marvelbros.com`,
     contentEn: `
@@ -8360,7 +8360,7 @@ MBCT为酒店客户提供的收益管理服务，涵盖三个层面：
 
 ---
 
-**MBCT（MarvelBros C&T团队）**，专注酒店行业的全流程解决方案与咨询服务机构，致力于通过"效率+体验"双轨提升，助力酒店业绩增长。
+迈创兄弟C&T（MarvelBros C&T）是一家酒店全生命周期价值提升咨询服务商，面向酒店投资人、业主和管理者，提供酒店投资、酒店筹开与酒店经营改善咨询服务。
 
 www.marvelbros.com | info@marvelbros.com`,
     contentEn: `

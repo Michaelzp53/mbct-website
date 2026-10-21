@@ -262,7 +262,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const pageJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: isZh ? '迈创兄弟C&T酒店全生命周期价值提升咨询' : 'MarvelBros C&T Hotel Lifecycle Value Advisory',
+    name: isZh ? '迈创兄弟C&T酒店全生命周期价值提升咨询' : 'MarvelBros C&T Hotel Lifecycle Value Enhancement Consultancy',
     url: `https://www.marvelbros.com/${lang}`,
     description: isZh
       ? '面向酒店投资人、业主和管理者，提供酒店投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长咨询。'

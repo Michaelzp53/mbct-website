@@ -124,12 +124,12 @@ export default function BentoServices({ lang }: BentoServicesProps) {
             <span className="text-primary text-sm font-medium">{isZh ? '迈创兄弟C&T 解决方案' : 'MarvelBros C&T Solutions'}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {isZh ? '全方位酒店数字化解决方案' : 'Comprehensive Hotel Digital Solutions'}
+            {isZh ? '酒店全生命周期价值提升咨询服务' : 'Hotel Lifecycle Value Enhancement Consultancy'}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             {isZh 
-              ? '从战略咨询到技术落地，从会员运营到收益优化，迈创兄弟C&T陪跑式服务助力酒店业绩增长'
-              : 'From strategy consulting to tech implementation, from membership to revenue optimization—MarvelBros C&T partnership services drive hotel growth'}
+              ? '面向酒店投资人、业主和管理者，提供酒店投资、酒店筹开与酒店经营改善咨询服务。'
+              : 'Advising hotel investors, owners and managers on hotel investment, pre-opening and operational improvement.'}
           </p>
         </div>
 

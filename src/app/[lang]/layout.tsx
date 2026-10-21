@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (lang === 'en') {
     return {
       ...siteMetadata,
-      title: { absolute: 'MarvelBros C&T - Hotel Lifecycle Value Advisory' },
+      title: { absolute: 'MarvelBros C&T - Hotel Lifecycle Value Enhancement Consultancy' },
       description: brand.en.description,
       keywords: 'hotel lifecycle consulting, hotel investment consulting, hotel brand positioning, hotel pre-opening management, hotel operational diagnosis, hotel performance improvement, hotel product renewal',
       authors: [{ name: 'MarvelBros C&T' }],
       openGraph: {
-        title: 'MarvelBros C&T - Hotel Lifecycle Value Advisory',
+        title: 'MarvelBros C&T - Hotel Lifecycle Value Enhancement Consultancy',
         description: brand.en.description,
         siteName: 'MarvelBros C&T',
         locale: 'en_US',
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'MarvelBros C&T - Hotel Lifecycle Value Advisory',
+        title: 'MarvelBros C&T - Hotel Lifecycle Value Enhancement Consultancy',
         description: brand.en.description,
       },
       alternates: {
