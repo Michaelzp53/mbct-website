@@ -1,3 +1,4 @@
+import articles20261022 from './articles-2026-10-22.json'
 import { articleLabel, plainArticleText } from '@/lib/article-labels'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -70,6 +71,7 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...articles20261022,
   ...(articles20261011 as Record<string, {
     id: number; title: string; titleEn?: string; description?: string; descriptionEn?: string; author: string; date: string; readTime: string; tag: string; content: string[]; contentEn?: string[]
   }>),
@@ -11006,6 +11008,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </div>
 
           <ArticleContent content={articleContent} articleTitle={articleTitle} lang={lang} />
+            {slug === 'hotel-sale-data-room-document-index-2026-10-22' && <a href="/downloads/hotel-sale-document-index-2026-10-22.csv" download className="block my-6 underline">{!isEnglish ? '下载卖方资料目录与缺件台账（CSV）' : 'Download the seller document index and missing-document register (CSV)'}</a>}
           <ArticleEngagementTracker articleSlug={decodedSlug} />
 
           <ContentPathway

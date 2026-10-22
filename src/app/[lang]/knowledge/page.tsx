@@ -81,6 +81,25 @@ export default async function KnowledgePage({
   }
 
   const articles = [
+{
+    "id": 673,
+    "type": "article",
+    "title": "酒店准备出售，先整理哪一份买方能复核的数据室？",
+    "titleEn": "Preparing to Sell a Hotel: Which Data Room Should the Seller Organise First?",
+    "slug": "hotel-sale-data-room-document-index-2026-10-22",
+    "summary": "酒店出售资料准备应先建立可追到原件的卖方资料目录与缺件台账，明确主体、期间、版本、披露权限、补件责任和问题结案证据。",
+    "summaryEn": "Prepare a traceable hotel sale data room with a document index covering entities, periods, versions, disclosure permissions and unresolved questions.",
+    "firstLine": "酒店准备出售，先建立一份能追到原件的卖方资料目录与缺件台账，再按主体、期间、版本和披露权限组织资料库。酒店出售资料准备的起点，是让买方能够核对每项重要说法的依据，并知道还有哪些问题没有解决。",
+    "author": "迈创兄弟C&T（MarvelBros C&T）",
+    "date": "2026-10-22",
+    "category": "hotel-investment",
+    "tag": "专业洞察",
+    "tagColor": "bg-[#c67829]",
+    "tagTextColor": "text-white",
+    "readTime": 12,
+    "featured": true,
+    "image": ""
+},
     {
       "id": 672,
       "type": "article",
