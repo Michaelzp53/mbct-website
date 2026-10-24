@@ -96,6 +96,24 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === 'hotel-overdue-corporate-accounts-new-credit-bookings-2026-10-24') {
+      const headings = isZh ? ["先确认逾期，别把账龄当成付款期限", "新订单要和已有未收款放在一起看", "在三种处理方式之间作出具体选择", "让批准条件进入预订与结算环节", "把客户挂账决策写在同一张表上", "先用一个客户检验这套决定是否能执行"] : ["Check the due date before treating an aged balance as overdue", "Review new bookings alongside existing unpaid exposure", "Choose a specific response from three options", "Carry approved conditions into reservations and settlement", "Record the corporate credit decision on one sheet", "Test whether the decision can be implemented with one client"]
+      let text = articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`
+
+${heading}
+
+`, `
+
+## ${heading}
+
+`)
+      const relatedTitle = isZh ? '酒店月底周转紧，回款和付款要排到同一张表' : 'Hotel Cash Is Tight at Month-end: Put Collections and Payments on the Same Schedule'
+      text = text.replace(relatedTitle, `[${relatedTitle}](/${lang}/lean/article/hotel-cash-collection-payment-calendar-2026-08-17)`)
+      text = text.replace('Oracle OPERA Cloud 26.2', '[Oracle OPERA Cloud 26.2](https://docs.oracle.com/en/industries/hospitality/opera-cloud/26.2/ocsuh/t_accounts_receivable_creating_account_receivables_accounts.htm)')
+      if (!isZh) text = text.replace('OPERA Cloud 26.2', '[OPERA Cloud 26.2](https://docs.oracle.com/en/industries/hospitality/opera-cloud/26.2/ocsuh/t_accounts_receivable_creating_account_receivables_accounts.htm)')
+      return text
+    }
     if (slug === 'hotel-group-arrival-pre-check-in-queues-2026-10-23') return articleContent.slice(articleTitle.length).trim()
     if (slug === 'hotel-guest-supply-overstock-purchasing-quantities-2026-10-21') {
       const headings = isZh ? ['先把客用品库存分清楚', '怎样看清实际消耗', '酒店客用品采购，要同时算数量和到货日', '把采购量核对表带进审批', '先试调一组常用品'] : ['Clarify the guest supply inventory', 'Establish actual consumption', 'Calculate quantities alongside delivery dates', 'Bring a purchasing quantity checklist into approval', 'Trial an adjustment with a small group of common items']
