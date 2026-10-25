@@ -96,6 +96,17 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === 'hotel-winter-energy-assessment-heating-costs-2026-10-25') {
+      const headings = isZh ? ["冬季酒店电费，要放回供暖方式里看", "沿着热量走一遍，比先买设备更有效", "白天鹅宾馆：先做诊断，再提高供热效率", "万豪案例：体检结果怎样变成分项投入", "选热源时，比较的是每单位有效供热成本", "把冬季体检做成一张有优先级的措施表", "冬季能源控制，最后要同时过两道验收"] : ["Understand winter electricity costs in the context of the heating system", "Follow the heat before buying equipment", "White Swan Hotel: diagnose first, then improve heat-generation efficiency", "The Marriott case: turn an assessment into specific investments", "Compare heat sources by the cost of useful heat delivered", "Turn the winter assessment into a prioritized action sheet", "Winter energy control needs two forms of acceptance"]
+      let text = articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      const links = [["国家发展改革委2020年公布的白天鹅宾馆案例", "A White Swan Hotel case published by China's National Development and Reform Commission in 2020", "https://www.ndrc.gov.cn/xwdt/gdzt/qgjnxcz/jnjsyy/jzjesj/202006/t20200626_1232106.html"], ["项目实施机构CEE", "project delivery organization Center for Energy and Environment, or CEE", "https://www.mncee.org/case-study-marriott-city-center"], ["ENERGY STAR商业建筑检查清单", "ENERGY STAR's commercial-building checklist", "https://www.energystar.gov/buildings/save-energy-commercial-buildings/ways-save/checklists"], ["ASHRAE控制设计资料", "ASHRAE's controls guidance", "https://handbook.ashrae.org/Handbooks/A23/IP/A23_Ch48/A23_Ch48_ip.aspx"], ["比较前后要对齐天气、采暖范围和热水服务", "Align weather, heated areas and hot-water service when comparing periods", "/{lang}/lean/article/hotel-energy-management-after-golden-week-2026-10-07"]]
+      for (const [zhText, enText, target] of links) {
+        const label = isZh ? zhText : enText
+        text = text.replace(label, `[${label}](${target.replace('{lang}', lang)})`)
+      }
+      return text
+    }
     if (slug === 'hotel-overdue-corporate-accounts-new-credit-bookings-2026-10-24') {
       const headings = isZh ? ["先确认逾期，别把账龄当成付款期限", "新订单要和已有未收款放在一起看", "在三种处理方式之间作出具体选择", "让批准条件进入预订与结算环节", "把客户挂账决策写在同一张表上", "先用一个客户检验这套决定是否能执行"] : ["Check the due date before treating an aged balance as overdue", "Review new bookings alongside existing unpaid exposure", "Choose a specific response from three options", "Carry approved conditions into reservations and settlement", "Record the corporate credit decision on one sheet", "Test whether the decision can be implemented with one client"]
       let text = articleContent.slice(articleTitle.length).trim()

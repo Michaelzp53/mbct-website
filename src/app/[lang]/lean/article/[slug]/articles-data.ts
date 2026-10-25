@@ -1,3 +1,4 @@
+import newArticles20261025 from './articles-2026-10-25.json';
 import newArticles20261024 from './articles-2026-10-24.json';
 import newArticles20261023 from './articles-2026-10-23.json';
 import newArticles20261021 from './articles-2026-10-21.json';
@@ -8181,7 +8182,7 @@ import newArticles20261015 from './articles-2026-10-15.json';
 
 import newArticles20261016 from './articles-2026-10-16.json';
 
-export const allArticlesData = [...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[]), ...(newArticles20261015 as ArticleData[]), ...(newArticles20261016 as ArticleData[]), ...(newArticles20261018 as ArticleData[]), ...(newArticles20261019 as ArticleData[]), ...(newArticles20261021 as ArticleData[]), ...(newArticles20261023 as ArticleData[]), ...(newArticles20261024 as ArticleData[])];
+export const allArticlesData = [...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[]), ...(newArticles20261015 as ArticleData[]), ...(newArticles20261016 as ArticleData[]), ...(newArticles20261018 as ArticleData[]), ...(newArticles20261019 as ArticleData[]), ...(newArticles20261021 as ArticleData[]), ...(newArticles20261023 as ArticleData[]), ...(newArticles20261024 as ArticleData[]), ...(newArticles20261025 as ArticleData[])];
 
 export function getArticleBySlug(slug: string) {
   return allArticlesData.find(a => a.slug === slug)
