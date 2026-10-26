@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
 {
+    "id": 674,
+    "type": "article",
+    "title": "买下一家在营酒店前，哪些物业问题应先于收益测算核实？",
+    "titleEn": "Buying an Operating Hotel: Which Property Issues Should You Verify Before Modelling Returns?",
+    "slug": "operating-hotel-property-due-diligence-before-returns-2026-10-26",
+    "summary": "酒店收购物业尽调应先核实权属、用途、消防、改造和空间交付条件，用物业红旗表把核查结果落实到房量、投入、工期和投资决定。",
+    "summaryEn": "Verify ownership, permitted use, fire safety, alteration feasibility and handover conditions, then connect hotel property due diligence to room inventory, expenditure, timing and the investment decision.",
+    "firstLine": "买下一家在营酒店前，应先核实可能改变收购可行性的权属与处分限制、用途、消防与建筑现状，以及买方能否实际控制拟经营的空间，再把这些条件带入收益测算。酒店收购物业尽调，首先要回答的是：买方准备依靠哪些房间、设施和使用权赚钱，这些条件是否有依据。",
+    "author": "迈创兄弟C&T（MarvelBros C&T）",
+    "date": "2026-10-26",
+    "category": "hotel-investment",
+    "tag": "专业洞察",
+    "tagColor": "bg-[#c67829]",
+    "tagTextColor": "text-white",
+    "readTime": 12,
+    "featured": true,
+    "image": ""
+},
+    {
     "id": 673,
     "type": "article",
     "title": "酒店准备出售，先整理哪一份买方能复核的数据室？",

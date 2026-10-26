@@ -60,6 +60,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? "买下一家在营酒店前，哪些物业问题应先于收益测算核实？" : "Buying an Operating Hotel: Which Property Issues Should You Verify Before Modelling Returns?",
+      summary: isZh ? "酒店收购物业尽调应先核实权属、用途、消防、改造和空间交付条件，用物业红旗表把核查结果落实到房量、投入、工期和投资决定。" : "Verify ownership, permitted use, fire safety, alteration feasibility and handover conditions, then connect hotel property due diligence to room inventory, expenditure, timing and the investment decision.",
+      slug: "operating-hotel-property-due-diligence-before-returns-2026-10-26",
+      date: '2026.10.26',
+    },
+    {
       title: isZh ? "酒店投资尽调：水、电、燃气供应要查清哪些问题？" : "Water, Power and Gas Supply: Due Diligence for Hotel Investors",
       summary: isZh ? "从供水、供电及燃气的容量、可靠性、备用安排和增容成本，核查酒店经营计划能否实现，并将供应缺口纳入投资预算与交易条件。" : "Assess water, power and gas capacity, reliability, backup arrangements and upgrade costs, then reflect verified supply gaps in the hotel investment budget and transaction terms.",
       slug: "hotel-utility-supply-investment-due-diligence-2026-10-11",
