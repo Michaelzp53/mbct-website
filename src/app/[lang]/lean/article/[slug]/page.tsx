@@ -96,6 +96,16 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === "hotel-breakfast-sales-non-residents-capacity-profit-2026-10-27") {
+      const headings = isZh ? ["酒店早餐对外销售，先查最忙的那一段", "先决定能承诺什么，再决定卖多少张券", "新增收入扣掉哪些成本，才有比较意义", "把判断落到一张销售表上", "先用可比场次验证，不急着常态化"] : ["Check the busiest period before selling breakfast to non-residents", "Decide what can be promised before deciding how many vouchers to sell", "Which costs must be deducted from additional revenue?", "Put the decision on one sales assessment sheet", "Verify the offer in comparable services before making it routine"]
+      let text = articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      const sourceLabel = isZh ? '前香汇官方餐厅页面' : 'official QT Kitchen page'
+      text = text.replace(sourceLabel, `[${sourceLabel}](https://www.shangri-la.com/cn/shanghai/qiantanshangrila/dining/restaurants/qt-kitchen/)`)
+      const relatedLabel = isZh ? '必要品项是否可得' : 'availability of necessary items'
+      text = text.replace(relatedLabel, `[${relatedLabel}](/${lang}/lean/article/hotel-breakfast-waste-menu-replenishment-2026-10-13)`)
+      return text
+    }
     if (slug === 'hotel-winter-energy-assessment-heating-costs-2026-10-25') {
       const headings = isZh ? ["冬季酒店电费，要放回供暖方式里看", "沿着热量走一遍，比先买设备更有效", "白天鹅宾馆：先做诊断，再提高供热效率", "万豪案例：体检结果怎样变成分项投入", "选热源时，比较的是每单位有效供热成本", "把冬季体检做成一张有优先级的措施表", "冬季能源控制，最后要同时过两道验收"] : ["Understand winter electricity costs in the context of the heating system", "Follow the heat before buying equipment", "White Swan Hotel: diagnose first, then improve heat-generation efficiency", "The Marriott case: turn an assessment into specific investments", "Compare heat sources by the cost of useful heat delivered", "Turn the winter assessment into a prioritized action sheet", "Winter energy control needs two forms of acceptance"]
       let text = articleContent.slice(articleTitle.length).trim()
