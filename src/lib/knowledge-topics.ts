@@ -58,6 +58,7 @@ const topicKeywords: Array<[PrimaryTopic, RegExp]> = [
 export function getPrimaryTopic(article: KnowledgeLike): PrimaryTopic {
   // Classify the subject before incidental terms in the summary.
   const title = article.title
+  if (title === "酒店出售，一次付清和分期付款的报价怎样比较？") return 'investment'
   if (title === "买下一家在营酒店前，哪些物业问题应先于收益测算核实？") return 'investment'
   if (title === "酒店准备出售，先整理哪一份买方能复核的数据室？") return 'investment'
   if (title === "酒店要不要装充电桩？先看住客停车多久、车位够不够") return 'investment'

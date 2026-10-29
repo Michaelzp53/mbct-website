@@ -1,3 +1,4 @@
+import articles20261029 from './articles-2026-10-29.json'
 import articles20261026 from './articles-2026-10-26.json'
 import articles20261022 from './articles-2026-10-22.json'
 import { articleLabel, plainArticleText } from '@/lib/article-labels'
@@ -72,6 +73,7 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...articles20261029,
   ...articles20261026,
   ...articles20261022,
   ...(articles20261011 as Record<string, {
