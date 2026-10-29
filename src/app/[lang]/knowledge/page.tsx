@@ -82,6 +82,25 @@ export default async function KnowledgePage({
 
   const articles = [
 {
+  "id": 2026102901,
+  "type": "article",
+  "title": "酒店出售，一次付清和分期付款的报价怎样比较？",
+  "titleEn": "Selling a Hotel: How Should You Compare Cash and Instalment Offers?",
+  "slug": "hotel-sale-cash-versus-instalment-offers-2026-10-29",
+  "summary": "酒店出售报价比较，先把一次付清与分期收款换算到同一时点，再检查交割资金缺口、尾款延期与付款保障，附假设算例和五项比较工具。",
+  "summaryEn": "Compare cash and instalment offers on the same time basis, then examine completion funding, delayed payments and recovery protection, with hypothetical calculations and a five-part comparison.",
+  "firstLine": "酒店出售，一次付清和分期付款的报价，应先按同一时点比较收款价值，再分别核对交割时的资金缺口和尾款保障。总价更高的分期方案，只有在等待的补偿、收回的把握和卖方自身的资金安排都合适时，才可能更有利。",
+  "author": "迈创兄弟C&T（MarvelBros C&T）",
+  "date": "2026-10-29",
+  "category": "hotel-investment",
+  "tag": "专业洞察",
+  "tagColor": "bg-[#c67829]",
+  "tagTextColor": "text-white",
+  "readTime": 12,
+  "featured": true,
+  "image": ""
+},
+{
     "id": 674,
     "type": "article",
     "title": "买下一家在营酒店前，哪些物业问题应先于收益测算核实？",
