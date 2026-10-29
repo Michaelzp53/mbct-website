@@ -60,6 +60,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const latestArticles = [
     {
+      title: isZh ? "酒店出售，一次付清和分期付款的报价怎样比较？" : "Selling a Hotel: How Should You Compare Cash and Instalment Offers?",
+      summary: isZh ? "酒店出售报价比较，先把一次付清与分期收款换算到同一时点，再检查交割资金缺口、尾款延期与付款保障，附假设算例和五项比较工具。" : "Compare cash and instalment offers on the same time basis, then examine completion funding, delayed payments and recovery protection, with hypothetical calculations and a five-part comparison.",
+      slug: "hotel-sale-cash-versus-instalment-offers-2026-10-29",
+      date: '2026.10.29',
+    },
+    {
       title: isZh ? "买下一家在营酒店前，哪些物业问题应先于收益测算核实？" : "Buying an Operating Hotel: Which Property Issues Should You Verify Before Modelling Returns?",
       summary: isZh ? "酒店收购物业尽调应先核实权属、用途、消防、改造和空间交付条件，用物业红旗表把核查结果落实到房量、投入、工期和投资决定。" : "Verify ownership, permitted use, fire safety, alteration feasibility and handover conditions, then connect hotel property due diligence to room inventory, expenditure, timing and the investment decision.",
       slug: "operating-hotel-property-due-diligence-before-returns-2026-10-26",
