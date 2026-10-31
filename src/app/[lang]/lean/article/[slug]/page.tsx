@@ -96,6 +96,19 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === "hotel-purchasing-receiving-payment-duties-limited-staff-2026-10-31") {
+      const headings = isZh ? ["先分清每个人究竟确认什么", "采购、验收和付款的职责怎样落到人", "人员兼岗时，把缺口写出来", "纸面分工还要对应实际权限", "紧急采购要有一条能走通的路", "用一张职责表和一笔采购验证"] : ["Establish what each person is actually confirming", "Assign purchasing, receiving and payment responsibilities", "Make gaps in combined roles explicit", "Match the responsibility chart to actual access rights", "Provide a workable route for urgent purchases", "Test the arrangements with one responsibility chart and one purchase"]
+      let text = articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      const links = [["《企业内部控制应用指引第7号——采购业务》", "Application Guideline No. 7 for Enterprise Internal Control: Purchasing", "https://kjs.mof.gov.cn/zhengcefabu/201005/P020230421440664863663.pdf"], ["《小企业内部控制规范（试行）》", "Internal Control Standards for Small Enterprises (Trial)", "https://www.mof.gov.cn/gkml/caizhengwengao/2017wg/wg201708/201711/t20171108_2746247.htm"], ["酒店客用品库存积压，采购量该怎么调整？", "Hotel Guest Supply Overstock: How Should Purchasing Quantities Be Adjusted?", "/{lang}/lean/article/hotel-guest-supply-overstock-purchasing-quantities-2026-10-21"]]
+      for (const [zhText, enText, target] of links) {
+        const label = isZh ? zhText : enText
+        text = text.replace(label, `[${label}](${target.replace('{lang}', lang)})`)
+      }
+      const downloads = isZh ? [["采购职责与权限表", "/downloads/2026-10-31-purchasing-responsibility-matrix-zh.csv"], ["从需求提出一直追到付款", "/downloads/2026-10-31-purchase-walkthrough-zh.csv"]] : [["purchasing responsibility and authority chart", "/downloads/2026-10-31-purchasing-responsibility-matrix-en.csv"], ["trace it from the request through to payment", "/downloads/2026-10-31-purchase-walkthrough-en.csv"]]
+      for (const [label, target] of downloads) text = text.replace(label, `[${label}](${target})`)
+      return text
+    }
     if (slug === "hotel-breakfast-sales-non-residents-capacity-profit-2026-10-27") {
       const headings = isZh ? ["酒店早餐对外销售，先查最忙的那一段", "先决定能承诺什么，再决定卖多少张券", "新增收入扣掉哪些成本，才有比较意义", "把判断落到一张销售表上", "先用可比场次验证，不急着常态化"] : ["Check the busiest period before selling breakfast to non-residents", "Decide what can be promised before deciding how many vouchers to sell", "Which costs must be deducted from additional revenue?", "Put the decision on one sales assessment sheet", "Verify the offer in comparable services before making it routine"]
       let text = articleContent.slice(articleTitle.length).trim()

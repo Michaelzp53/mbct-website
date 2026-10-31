@@ -1,0 +1,10 @@
+﻿Purchase identifier,Settlement cycle,Review stage,Review question,Actual personnel and access rights,Original evidence index,Discrepancies found,Person responsible for resolution,Completion deadline,Reviewer and date,Outcome and conditions for restoring authority
+,,Request,"Who requested it, on what basis, and who approved?",,,,,,,
+,,Purchase,"Do supplier, price and specifications match approved terms?",,,,,,,
+,,Changes,"Who changed what, was it authorized, and were original records retained?",,,,,,,
+,,Acceptance,"Who actually verified delivery, were they competent, and was evidence obtained directly?",,,,,,,
+,,Settlement,"Were advances, returns and prior payments checked, and how were discrepancies handled?",,,,,,,
+,,Payment,"Who approved and who executed, and were applicable cash-management requirements met?",,,,,,,
+,,Access rights,Can actual accounts bypass approval or review?,,,,,,,
+,,Exceptions,"Was there contemporaneous authorization, a supplementary-evidence deadline and escalation for overdue review?",,,,,,,
+,,Outcome,Were irregularities closed and unnecessary delays introduced?,,,,,,,
