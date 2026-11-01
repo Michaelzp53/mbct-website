@@ -41,6 +41,7 @@ export default function KnowledgeSearchBox({
     return articles
       .filter((article) => {
         const searchable = [
+          article.slug,
           article.title,
           article.titleEn,
           article.summary,

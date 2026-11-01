@@ -1,5 +1,6 @@
 import { articleLabel } from '@/lib/article-labels'
 import SiteBreadcrumb from '@/components/SiteBreadcrumb'
+import { getKnowledgeIndexSupplements, supplementalKnowledgeSlugs } from '@/lib/knowledge-index-supplements'
 import { knowledgeCategories } from '@/lib/knowledge-taxonomy'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -81,7 +82,7 @@ export default async function KnowledgePage({
     minRead: isZh ? '分钟' : 'min read',
   }
 
-  const articles = [
+  const registeredArticles = [
 {
   "id": 2026102901,
   "type": "article",
@@ -1997,7 +1998,7 @@ export default async function KnowledgePage({
   ]
 
   // 行业报告 - 2026-06-10新增1篇（案例研究）
-  const reports = [
+  const registeredReports = [
     {
       id: 619,
       type: "article",
@@ -2764,7 +2765,7 @@ export default async function KnowledgePage({
   ]
 
   // 案例研究 - 2026-04-22新增1篇
-  const cases = [
+  const registeredCases = [
     {
       id: 627,
       type: "case",
@@ -3297,11 +3298,20 @@ export default async function KnowledgePage({
     },
   ]
 
+  const registeredSlugs = new Set([...registeredArticles, ...registeredReports, ...registeredCases].map(article => article.slug))
+  const supplements = getKnowledgeIndexSupplements().filter(article => !registeredSlugs.has(article.slug))
+  const articles = [...registeredArticles, ...supplements.filter(article => article.type === 'article')]
+  const reports = [...registeredReports, ...supplements.filter(article => article.type === 'report')]
+  const cases = [...registeredCases, ...supplements.filter(article => article.type === 'case')]
+  const supplementalSlugs = new Set(supplementalKnowledgeSlugs)
+
   // 热门话题:自动选择所有文章中日期最新的文章
   const allArticles = [...articles, ...reports, ...cases]
     .sort((left, right) => new Date(right.date).getTime() - new Date(left.date).getTime())
-    .filter((article, index, entries) => (!isZh || /[\u3400-\u9fff]/u.test(article.title))
-      && entries.findIndex(entry => entry.title.replace(/\s/g, '') === article.title.replace(/\s/g, '')) === index)
+    .filter((article, index, entries) => (!isZh || /[\u3400-\u9fff]/u.test(article.title) || supplementalSlugs.has(article.slug))
+      && (supplementalSlugs.has(article.slug)
+        ? entries.findIndex(entry => entry.slug === article.slug) === index
+        : entries.findIndex(entry => entry.title.replace(/\s/g, '') === article.title.replace(/\s/g, '')) === index))
   const featuredArticle = allArticles.reduce((latest, article) => {
     return new Date(article.date) > new Date(latest.date) ? article : latest
   }, allArticles[0])
