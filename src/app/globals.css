@@ -7,6 +7,10 @@
   --star-gold: #d98b28;
   --electric-blue: #0b4a6f;
   --growth-green: #16a34a;
+  --brand-blue: #0b4a6f;
+  --brand-blue-hover: #073a58;
+  --brand-gold: #d98b28;
+  --brand-gold-hover: #efaa4d;
   --background: #ffffff;
   --background-alt: #f4f7f8;
   --foreground: #0f1720;
@@ -74,6 +78,10 @@
 }
 
 @theme inline {
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-hover: var(--brand-blue-hover);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-hover: var(--brand-gold-hover);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -253,173 +261,34 @@ html {
   border-color: var(--divider);
 }
 
-/* ============================================
-   暗色主题下的特殊样式
-   ============================================ */
-
-/* 深色主题中保持文字可读性 */
-.dark h1,
-.dark h2,
-.dark h3,
-.dark h4,
-.dark h5,
-.dark h6 {
+/* Compatibility for older article utilities. Explicit dark variants take precedence. */
+.dark .bg-white:not([class*="dark:bg-"]),
+.dark .bg-gray-50:not([class*="dark:bg-"]),
+.dark .bg-gray-100:not([class*="dark:bg-"]) {
+  background-color: var(--card);
+}
+.dark .text-gray-900:not([class*="dark:text-"]),
+.dark .text-gray-800:not([class*="dark:text-"]),
+.dark .text-gray-700:not([class*="dark:text-"]),
+.dark .text-gray-600:not([class*="dark:text-"]) {
   color: var(--foreground);
 }
-
-/* 深色主题中的浅色区块背景 */
-.dark .bg-white {
-  background-color: var(--background) !important;
+.dark .border-gray-200:not([class*="dark:border-"]) {
+  border-color: var(--border);
 }
-
-/* ============================================
-   深色模式全面覆盖 - 修复文章页面暗色显示
-   ============================================ */
-
-/* 全局暗色背景 */
-.dark body {
-  background-color: #0b1020 !important;
-  color: #eef4ff !important;
-}
-
-/* 所有段落在暗色模式下的文字颜色 */
-.dark p,
-.dark li {
-  color: #dbeafe !important;
-}
-
-/* 标题在暗色模式下的颜色 */
-.dark h1 {
-  color: #ffffff !important;
-}
-.dark h2 {
-  color: #ffffff !important;
-}
-.dark h3 {
-  color: #f3f4f6 !important;
-}
-.dark h4 {
-  color: #e5e7eb !important;
-}
-.dark h5 {
-  color: #d1d5db !important;
-}
-.dark h6 {
-  color: #e8e8e8 !important;
-}
-
-/* 链接在暗色模式下：只保护正文链接，不覆盖按钮、导航和设计组件 */
 .dark .prose a,
 .dark article a:not([class]) {
-  color: #8ab4f8 !important;
+  color: var(--primary);
 }
 .dark .prose a:hover,
 .dark article a:not([class]):hover {
-  color: #c4b5fd !important;
+  text-decoration: underline;
 }
-
-/* 标签和徽章在暗色模式下 */
-.dark .bg-white,
-.dark .bg-gray-50,
-.dark .bg-gray-100 {
-  background-color: #111827 !important;
-}
-
-/* 白色文字变亮 */
-.dark .text-gray-900,
-.dark .text-gray-800,
-.dark .text-gray-700,
-.dark .text-gray-600 {
-  color: #f3f4f6 !important;
-}
-
-/* 边框在暗色模式下 */
-.dark .border-gray-200 {
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* 修复常见组件 */
-.dark input,
-.dark textarea {
-  background-color: #1f2937 !important;
-  color: #f3f4f6 !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-/* ============================================
-   深色模式全面覆盖 - 修复文章页面暗色显示
-   使用 html.dark 前缀确保选择器正确匹配
-   ============================================ */
-
-/* 全局暗色背景 */
-html.dark body {
-  background-color: #0b1020 !important;
-  color: #eef4ff !important;
-}
-
-/* 所有段落在暗色模式下的文字颜色 */
-html.dark p,
-html.dark li {
-  color: #dbeafe !important;
-}
-
-/* 标题在暗色模式下 */
-html.dark h1 {
-  color: #ffffff !important;
-}
-html.dark h2 {
-  color: #ffffff !important;
-}
-html.dark h3 {
-  color: #f3f4f6 !important;
-}
-html.dark h4 {
-  color: #e5e7eb !important;
-}
-html.dark h5 {
-  color: #d1d5db !important;
-}
-html.dark h6 {
-  color: #e8e8e8 !important;
-}
-
-/* 链接在暗色模式下：只保护正文链接，不覆盖按钮、导航和设计组件 */
-html.dark .prose a,
-html.dark article a:not([class]) {
-  color: #8ab4f8 !important;
-}
-html.dark .prose a:hover,
-html.dark article a:not([class]):hover {
-  color: #c4b5fd !important;
-}
-
-/* 标签和徽章在暗色模式下 */
-html.dark .bg-white {
-  background-color: #111827 !important;
-}
-html.dark .bg-gray-50,
-html.dark .bg-gray-100 {
-  background-color: #111827 !important;
-}
-
-/* 白色文字变亮 */
-html.dark .text-gray-900,
-html.dark .text-gray-800,
-html.dark .text-gray-700,
-html.dark .text-gray-600 {
-  color: #f3f4f6 !important;
-}
-
-/* 边框在暗色模式下 */
-html.dark .border-gray-200 {
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* 修复常见组件 */
-html.dark input,
-html.dark textarea {
-  background-color: #111827 !important;
-  color: #f3f4f6 !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
 }
 
 /* Native mobile navigation stays usable even before client hydration completes. */

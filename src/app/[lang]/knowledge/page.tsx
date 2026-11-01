@@ -1,4 +1,5 @@
 import { articleLabel } from '@/lib/article-labels'
+import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import { knowledgeCategories } from '@/lib/knowledge-taxonomy'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -3398,6 +3399,7 @@ export default async function KnowledgePage({
 
   return (
     <div className="min-h-screen bg-background">
+      <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '专业洞察' : 'Insights'} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <header className="mb-6 max-w-3xl">

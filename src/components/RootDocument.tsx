@@ -48,6 +48,12 @@ export default function RootDocument({ children, lang = 'zh-CN' }: { children: R
     telephone: '+86-189-4157-9333',
     description: lang.startsWith('zh') ? brand.zh.description : brand.en.description,
     knowsAbout: [
+      '酒店投资咨询',
+      '酒店筹建筹开',
+      '酒店经营诊断',
+      '酒店经营改善',
+      '酒店收益管理',
+      '酒店市场获客',
       'Hotel investment consulting',
       'Hotel pre-opening management',
       'Hotel operational diagnosis',

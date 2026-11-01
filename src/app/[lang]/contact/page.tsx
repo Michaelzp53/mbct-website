@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import Link from 'next/link'
 import { ContactForm } from '@/components/ContactForm'
 import { getDict } from '@/lib/dicts'
@@ -30,6 +31,7 @@ export default async function ContactPage({ params, searchParams }: { params: Pr
   const dict = getDict(lang)
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
+      <SiteBreadcrumb lang={lang} path="/contact" label={zh ? '联系我们' : 'Contact'} />
       <header className="mb-8 max-w-3xl">
         <p className="text-sm font-semibold text-primary">{zh ? '迈创兄弟C&T · 专业交流' : 'MarvelBros C&T · Talk with us'}</p>
         <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{zh ? '您的酒店，现在最想解决什么问题？' : 'What would you most like to resolve at your hotel?'}</h1>

@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { Menu, X, Globe, ArrowRight } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import type { Dict } from "@/lib/dicts";
 
@@ -16,6 +17,14 @@ interface NavbarProps {
 export function Navbar({ lang, dict }: NavbarProps) {
   const { nav } = dict;
   const isZh = lang === "zh";
+  const pathname = usePathname();
+  const otherLang = isZh ? "en" : "zh";
+  const languageHref = pathname.replace(/^\/(zh|en)(?=\/|$)/, `/${otherLang}`);
+
+  useEffect(() => {
+    const menu = document.getElementById("mobile-navigation");
+    if (menu?.matches(":popover-open")) menu.hidePopover();
+  }, [pathname]);
 
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
@@ -51,7 +60,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 <span className="text-[13px] font-semibold leading-none text-slate-950 dark:text-white lg:text-[14px]">
                   MarvelBros C&amp;T
                 </span>
-                <span className="mt-1 max-w-[160px] truncate text-[10px] font-medium text-[#0b4a6f] dark:text-sky-300 sm:text-xs lg:max-w-none">
+                <span className="mt-1 max-w-[160px] truncate text-[10px] font-medium text-brand-blue dark:text-sky-300 sm:text-xs lg:max-w-none">
                   {isZh
                     ? "迈创兄弟C&T · 酒店全生命周期价值提升咨询"
                     : "Hotel Lifecycle Value Enhancement Consultancy"}
@@ -65,7 +74,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "flex-shrink-0 whitespace-nowrap px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300",
+                    "flex-shrink-0 whitespace-nowrap px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300",
                   )}
                 >
                   {link.label}
@@ -74,27 +83,28 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </nav>
 
             <div className="hidden min-[1180px]:flex items-center gap-3 min-[1180px]:gap-4 flex-shrink-0">
-              <Link href={primaryCta.href}>
-                <Button className="flex items-center gap-1.5 rounded-none bg-[#0b4a6f] px-4 py-2 text-xs font-semibold text-white shadow-none hover:bg-[#073a58] sm:text-sm">
+              <Link href={primaryCta.href} className="inline-flex min-h-11 items-center gap-1.5 bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 sm:text-sm">
                   <span>{primaryCta.label}</span>
                   <ArrowRight className="w-4 h-4" />
-                </Button>
               </Link>
 
               <ThemeToggle lang={lang} />
 
-              <Link
-                href={`/${lang === "zh" ? "en" : "zh"}/`}
-                className="flex flex-shrink-0 items-center gap-1.5 px-2 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300"
+              <a
+                href={languageHref}
+                onClick={event => { event.currentTarget.href = `${languageHref}${window.location.search}${window.location.hash}` }}
+                hrefLang={otherLang}
+                aria-label={isZh ? "Read this page in English" : "以中文阅读本页"}
+                className="flex flex-shrink-0 items-center gap-1.5 px-2 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300"
               >
                 <Globe className="w-4 h-4" />
                 <span>{lang === "zh" ? "EN" : "中文"}</span>
-              </Link>
+              </a>
             </div>
 
             <button
               type="button"
-              className="inline-flex size-10 items-center justify-center text-slate-600 transition-colors hover:text-[#0b4a6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b4a6f] focus-visible:ring-offset-2 dark:text-slate-300 dark:hover:text-sky-300 min-[1180px]:hidden"
+              className="inline-flex size-10 items-center justify-center text-slate-600 transition-colors hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b4a6f] focus-visible:ring-offset-2 dark:text-slate-300 dark:hover:text-sky-300 min-[1180px]:hidden"
               aria-label={isZh ? "打开导航菜单" : "Open navigation menu"}
               aria-haspopup="dialog"
               aria-controls="mobile-navigation"
@@ -138,7 +148,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </div>
             <button
               type="button"
-              className="inline-flex size-10 items-center justify-center text-slate-600 transition-colors hover:text-[#0b4a6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300"
+              className="inline-flex size-10 items-center justify-center text-slate-600 transition-colors hover:text-brand-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300"
               aria-label={isZh ? "关闭导航菜单" : "Close navigation menu"}
               popoverTarget="mobile-navigation"
               popoverTargetAction="hide"
@@ -155,7 +165,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="border-b border-slate-200 px-1 py-3 text-base font-semibold text-slate-700 transition-colors hover:text-[#0b4a6f] dark:border-slate-800 dark:text-slate-200 dark:hover:text-sky-300"
+                className="border-b border-slate-200 px-1 py-3 text-base font-semibold text-slate-700 transition-colors hover:text-brand-blue dark:border-slate-800 dark:text-slate-200 dark:hover:text-sky-300"
               >
                 {link.label}
               </Link>
@@ -163,22 +173,23 @@ export function Navbar({ lang, dict }: NavbarProps) {
           </nav>
 
           <div className="mt-auto space-y-4 border-t border-slate-200 p-5 dark:border-slate-800">
-            <Link href={primaryCta.href}>
-              <Button className="h-11 w-full rounded-none bg-[#0b4a6f] text-white hover:bg-[#073a58]">
+            <Link href={primaryCta.href} className="inline-flex min-h-11 w-full items-center justify-center bg-primary px-4 py-2 font-semibold text-primary-foreground hover:bg-primary/90">
                 {primaryCta.label}
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </Link>
 
             <div className="flex items-center justify-between">
               <ThemeToggle lang={lang} />
-              <Link
-                href={`/${lang === "zh" ? "en" : "zh"}/`}
-                className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300"
+              <a
+                href={languageHref}
+                onClick={event => { event.currentTarget.href = `${languageHref}${window.location.search}${window.location.hash}` }}
+                hrefLang={otherLang}
+                aria-label={isZh ? "Read this page in English" : "以中文阅读本页"}
+                className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300"
               >
                 <Globe className="h-4 w-4" />
                 {lang === "zh" ? "EN" : "中文"}
-              </Link>
+              </a>
             </div>
           </div>
         </aside>

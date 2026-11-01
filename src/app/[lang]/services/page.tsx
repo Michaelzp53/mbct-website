@@ -1,4 +1,5 @@
 import BrandIdentity from '@/components/BrandIdentity'
+import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import { brand, organizationId } from '@/lib/brand'
 import type { Metadata } from 'next'
 import {
@@ -328,6 +329,7 @@ export default async function ServicesPage({
 
   return (
     <>
+      <SiteBreadcrumb lang={lang} path="/services" label={isZh ? '解决方案' : 'Solutions'} />
       <script
         id={`services-json-ld-${lang}`}
         type="application/ld+json"

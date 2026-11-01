@@ -15,17 +15,18 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
   ]
 
   return (
-    <section className="relative min-h-[440px] overflow-hidden border-b border-slate-200 bg-[#17231f] text-white dark:border-slate-800 lg:min-h-[520px]">
+    <section className="relative min-h-[440px] overflow-hidden border-b border-slate-200 bg-brand-blue text-white dark:border-slate-800 lg:min-h-[520px]">
       <Image
         src="/hero-hung-li-1HbWj9BDbjE-unsplash.jpg"
         alt={isZh ? '夜幕中的真实酒店建筑与接待空间' : 'A real hotel building and arrival space at night'}
         fill
         priority
         sizes="100vw"
+        quality={75}
         className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,31,27,0.94)_0%,rgba(19,31,27,0.82)_43%,rgba(19,31,27,0.36)_72%,rgba(19,31,27,0.16)_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-[#d98b28]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,34,52,0.94)_0%,rgba(6,34,52,0.82)_43%,rgba(6,34,52,0.36)_72%,rgba(6,34,52,0.16)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-brand-gold" />
 
       <div className="relative mx-auto flex min-h-[440px] max-w-[1440px] flex-col justify-center px-5 py-10 sm:px-8 lg:min-h-[520px] lg:px-12 xl:px-16">
         <div className="min-w-0 max-w-[820px]">
@@ -41,7 +42,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href={`/${lang}/knowledge#problem-navigation`}
-              className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d98b28] px-6 py-3 text-base font-semibold text-slate-950 transition-colors hover:bg-[#efaa4d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+              className="inline-flex min-h-12 items-center justify-center gap-2 bg-brand-gold px-6 py-3 text-base font-semibold text-slate-950 transition-colors hover:bg-brand-gold-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
             >
               {isZh ? '查找经营问题与方法' : 'Find answers and methods'}
               <ArrowRight className="h-5 w-5" />

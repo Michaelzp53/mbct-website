@@ -15,12 +15,14 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
   return (
     <div className={`relative flex items-center gap-0.5 border border-slate-300 bg-white p-0.5 dark:border-slate-700 dark:bg-slate-900 ${className}`}>
       <button
+        type="button"
+        aria-pressed={theme === 'light'}
         onClick={() => setTheme('light')}
         className={`
           flex cursor-pointer items-center gap-1.5 px-2 py-1.5 text-xs font-medium transition-colors
           ${theme === 'light'
-            ? 'bg-[#0b4a6f] text-white'
-            : 'text-slate-500 hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300'}
+            ? 'bg-brand-blue text-white'
+            : 'text-slate-500 hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300'}
         `}
         title={isZh ? '白天模式' : 'Light mode'}
       >
@@ -29,12 +31,14 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
       </button>
 
       <button
+        type="button"
+        aria-pressed={theme === 'dark'}
         onClick={() => setTheme('dark')}
         className={`
           flex cursor-pointer items-center gap-1.5 px-2 py-1.5 text-xs font-medium transition-colors
           ${theme === 'dark'
             ? 'bg-slate-800 text-white'
-            : 'text-slate-500 hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300'}
+            : 'text-slate-500 hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300'}
         `}
         title={isZh ? '夜间模式' : 'Dark mode'}
       >
@@ -43,7 +47,7 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
       </button>
 
       {isManualOverride && (
-        <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-[#d98b28]" title={isZh ? '已手动切换，关闭浏览器后恢复自动' : 'Manual override, will reset on browser close'} />
+        <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-brand-gold" title={isZh ? '已手动切换，关闭浏览器后恢复自动' : 'Manual override, will reset on browser close'} />
       )}
     </div>
   )

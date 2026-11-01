@@ -1,6 +1,5 @@
 export { Navbar } from './Navbar'
 export { Footer } from './Footer'
-export { Hero } from './Hero'
 export { ServicesSection } from './ServicesSection'
 export { CasesSection } from './CasesSection'
 export { CTASection } from './CTASection'

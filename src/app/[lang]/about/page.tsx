@@ -1,4 +1,5 @@
 import BrandIdentity from '@/components/BrandIdentity'
+import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import { brand, organizationId } from '@/lib/brand'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -116,6 +117,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
   return (
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
+      <SiteBreadcrumb lang={lang} path="/about" label={isZh ? '关于我们' : 'About Us'} />
       <script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
       <PageHero
         title={isZh ? '迈创兄弟C&T，看透问题，讲清逻辑，落实到位！' : 'MarvelBros C&T sees the issue clearly, explains the logic, and follows through.'}

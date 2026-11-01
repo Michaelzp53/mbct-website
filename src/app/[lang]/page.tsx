@@ -1,3 +1,4 @@
+import { getLatestArticles } from '@/lib/latest-articles'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
@@ -58,218 +59,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     isZh ? '持续跟踪，推动价值提升' : 'Track implementation and drive sustained improvement',
   ]
 
-  const latestArticles = [
-    {
-      title: isZh ? "酒店出售，一次付清和分期付款的报价怎样比较？" : "Selling a Hotel: How Should You Compare Cash and Instalment Offers?",
-      summary: isZh ? "酒店出售报价比较，先把一次付清与分期收款换算到同一时点，再检查交割资金缺口、尾款延期与付款保障，附假设算例和五项比较工具。" : "Compare cash and instalment offers on the same time basis, then examine completion funding, delayed payments and recovery protection, with hypothetical calculations and a five-part comparison.",
-      slug: "hotel-sale-cash-versus-instalment-offers-2026-10-29",
-      date: '2026.10.29',
-    },
-    {
-      title: isZh ? "买下一家在营酒店前，哪些物业问题应先于收益测算核实？" : "Buying an Operating Hotel: Which Property Issues Should You Verify Before Modelling Returns?",
-      summary: isZh ? "酒店收购物业尽调应先核实权属、用途、消防、改造和空间交付条件，用物业红旗表把核查结果落实到房量、投入、工期和投资决定。" : "Verify ownership, permitted use, fire safety, alteration feasibility and handover conditions, then connect hotel property due diligence to room inventory, expenditure, timing and the investment decision.",
-      slug: "operating-hotel-property-due-diligence-before-returns-2026-10-26",
-      date: '2026.10.26',
-    },
-    {
-      title: isZh ? "酒店投资尽调：水、电、燃气供应要查清哪些问题？" : "Water, Power and Gas Supply: Due Diligence for Hotel Investors",
-      summary: isZh ? "从供水、供电及燃气的容量、可靠性、备用安排和增容成本，核查酒店经营计划能否实现，并将供应缺口纳入投资预算与交易条件。" : "Assess water, power and gas capacity, reliability, backup arrangements and upgrade costs, then reflect verified supply gaps in the hotel investment budget and transaction terms.",
-      slug: "hotel-utility-supply-investment-due-diligence-2026-10-11",
-      date: '2026.10.11',
-    },
-    {
-      title: isZh ? "酒店要不要装充电桩？先看住客停车多久、车位够不够" : "Should a Hotel Install EV Chargers? Start with Guests\u2019 Parking Time and Available Spaces",
-      summary: isZh
-        ? "酒店充电设施应先方便住客，再核对经营贡献。从停车时长、车位供需、住宿与餐饮增量和实际成本，判断建设规模与收费方式。"
-        : "Start with guest convenience, then verify the business contribution. Assess parking duration, available spaces, incremental rooms and food and beverage business, and actual costs before choosing the scale and pricing of hotel EV charging.",
-      slug: "hotel-ev-charging-guest-convenience-revenue-2026-10-10",
-      date: '2026.10.10',
-    },
-    {
-      title: isZh ? '酒店关键采购依赖一家供应商，怎样准备有效替代？' : 'When a Critical Hotel Supplier Is the Only One: How to Prepare a Real Alternative',
-      summary: isZh
-        ? '采购治理不以供应商数量为目标。用一张供应依赖与替代实测表，验证关键品类能否在不影响服务和质量的前提下真实切换。'
-        : 'Procurement governance is not about supplier count. Use a supplier-dependency and alternative-test sheet to verify real switchability without compromising service or quality.',
-      slug: 'hotel-supplier-switchability-test-2026-09-19',
-      date: '2026.09.19',
-    },
-    {
-      title: isZh ? '酒店AI不是PPT：工具上线之后，经营现场为什么仍然用不起来？' : 'Hotel AI Is Not a Slide Deck: Why Does It Still Fail to Work After Go-Live?',
-      summary: isZh
-        ? '系统上线不等于AI进入经营。用六项闭环、三个公开案例和一张30天测试表，判断酒店AI项目是否真正形成业务结果。'
-        : 'A system going live does not mean AI has entered hotel operations. Use a six-part operating loop, three public cases, and a 30-day test sheet to judge whether an AI project is producing business results.',
-      slug: 'hotel-ai-implementation-operating-loop-2026-09-05',
-      date: '2026.09.05',
-    },
-    {
-      title: isZh ? '无障碍新国标实施后，酒店改造预算先花在哪？' : "Where Should Your Hotel's Accessibility Renovation Budget Go First After China's New National Standard?",
-      summary: isZh
-        ? '以七个入住触点和本店优先矩阵，先找断点再决定无障碍改造预算。'
-        : 'Use seven guest-journey touchpoints and a property-specific priority matrix to find breakpoints before approving accessibility renovation spend.',
-      slug: 'accessibility-hotel-renovation-priority-2026-09-03',
-      date: '2026.09.03',
-    },
-    {
-      title: isZh ? '免签入境客人越来越多，你的酒店准备好承接了吗？' : 'Visa-Free Arrivals Are Rising. Can Your Hotel Actually Serve the Demand?',
-      summary: isZh
-        ? '全国入境增长不会自动成为单店订单。用六环节实测，先找出外宾承接链中损失最大的断点。'
-        : 'Inbound growth does not automatically become property-level demand. Test six guest-journey links and repair the highest-loss break first.',
-      slug: 'visa-free-guest-readiness-2026-08-31',
-      date: '2026.08.31',
-    },
-    {
-      title: isZh ? '酒店供给在增加，筹开项目先做一次供给敏感性测试' : 'Hotel Supply Is Growing. Run a Supply Sensitivity Test Before You Open.',
-      summary: isZh
-        ? '区域开发管线只能提示方向，不能替单店下结论。用客群重叠和四项条件筛出核心竞争集，再重算爬坡与现金承受期。'
-        : 'A regional pipeline gives direction, not a single-asset forecast. Identify direct competitors, then rerun ramp-up and cash runway.',
-      slug: 'hotel-supply-sensitivity-test-2026-08-25',
-      date: '2026.08.25',
-    },
-    {
-      title: isZh ? '酒店资产有了新的退出机会，业主先把三笔经营账算清楚' : 'Hotel assets now have a new exit path, and owners should first get three operating ledgers right',
-      summary: isZh
-        ? '资本通道出现后，业主先别急着讲估值故事。用现金流账、权责账和数据账，检查资产是否经得起持续复核。'
-        : 'A new capital route does not remove operating uncertainty. Owners should first make cash flow, rights and data verifiable.',
-      slug: 'hotel-assets-new-exit-path-three-ledgers-2026-08-23',
-      date: '2026.08.23',
-    },
-    {
-      title: isZh ? '酒店加盟后，谁来对经营拍板？业主可以高枕无忧了吗？' : 'Asset-Light Growth Makes Governance an Operating Issue',
-      summary: isZh
-        ? '加盟不等于托管，更不等于躺赚。签约前把经营权、费用权和结果责任写进三张表，业主才知道该授权什么、监督什么，以及亏损和退出时谁承担责任。'
-        : 'Franchising is not trusteeship or passive income. Map operating authority, spending authority and accountability before signing so the owner knows what to delegate, verify and govern.',
-      slug: 'hotel-franchise-governance-2026-08-22',
-      date: '2026.08.22',
-    },
-    {
-      title: isZh ? '会员体系越做越大，独立酒店该不该自建积分？' : 'As Hotel Loyalty Platforms Scale, Should Independent Hotels Build Their Own Points Programme?',
-      summary: isZh
-        ? '大型集团的会员规模不能直接证明单店积分有效。独立酒店应先验证识别、权益兑现和净复购，再决定是否投资积分体系。'
-        : 'Global loyalty scale does not prove that points will work for one property. Independent hotels should validate recognition, benefit fulfilment and net repeat demand before investing.',
-      slug: 'independent-hotel-points-programme-2026-08-14',
-      date: '2026.08.14',
-    },
-    {
-      title: isZh ? '暑期客流之后，酒店为什么不能把9月直接当成淡季' : 'Why September Demand Should Not Be Treated as a Simple Hotel Low Season',
-      summary: isZh
-        ? '暑期结束不等于需求消失。把客源、提前期、入住日型、产品承载和渠道净收入拆开，用90天需求桥接法决定9月该降价、缩产品还是调整排班。'
-        : 'The end of summer is not the end of demand. Separate source mix, lead time, day-of-week patterns, product fit and net channel income before deciding whether September needs lower rates, fewer products or different staffing.',
-      slug: 'hotel-september-demand-structure-2026-08-13',
-      date: '2026.08.13',
-    },
-    {
-      title: isZh ? '酒店投资回报不确定时，为什么要先做三种需求压力测试？' : 'When Hotel Returns Are Uncertain, Why Test Three Demand Scenarios First?',
-      summary: isZh
-        ? '一张只写一种未来的测算表，无法说明项目在需求变化时是否安全。用三种情景把继续、调整与暂停的门槛提前写清。'
-        : 'Test base, pressure and recovery scenarios before deciding whether a hotel project should proceed, adapt or pause.',
-      slug: 'hotel-demand-stress-tests-investment-2026-08-12',
-      date: '2026.08.12',
-    },
-    {
-      title: isZh ? '暑期需求集中之后，酒店如何判断订单增加是否真的改善经营？' : 'After Summer Demand Concentrates, How Can Hotels Tell Whether More Orders Mean Better Performance?',
-      summary: isZh
-        ? '订单增加不是经营改善的完整证明。把需求质量、价格兑现、渠道净收入、服务承载和长期客源放在一起，才能判断旺季机会是否真正留下价值。'
-        : 'More orders are not proof of operating improvement. Test demand quality, realised rates, net channel revenue, service capacity and durable demand together before drawing a conclusion.',
-      slug: "summer-demand-operating-improvement-2026-08-10",
-      date: '2026.08.10',
-    },
-    {
-      title: isZh ? '暑期订单热但均价承压，酒店需要靠“组合产品”把旺季做成增收' : 'Summer bookings are strong but average rates are under pressure. Hotels need package products to turn the peak season into revenue',
-      summary: isZh
-        ? '这个暑期很多酒店入住率不差、利润却没跟上。用组合产品重构报价单元，把精打细算的客人收进更高价值的预订单元。'
-        : 'This summer many hotels report decent occupancy but flat profit. Package products can restructure the booking unit and bring budget-conscious guests into higher-value bookings.',
-      slug: "summer-bookings-package-products-peak-season-revenue-2026-08-08",
-      date: '2026.08.08',
-    },
-    {
-      title: isZh ? "从中国\"峰谷交替\"到全球投资分化：2026年下半年酒店业将走向哪里？" : "From Peak-Trough Demand in China to Global Investment Divergence: Where Is the Hotel Industry Heading in the Second Half of 2026?",
-      summary: isZh
-        ? "2026年下半年酒店业不会同步回暖，而会在假期与平日、入住率与利润、国内供给与全球资本之间出现更明显分化。本文用五项指标建立未来六个月的观察框架。"
-        : "The second half of 2026 is likely to bring sharper divergence across peak and weekday demand, occupancy and profit, domestic supply and global hotel capital. Five indicators provide a practical six-month monitoring framework.",
-      slug: "china-hotel-peak-trough-global-investment-divergence-2026-08-07",
-      date: '2026.08.07',
-    },
-    {
-      title: isZh ? '消费券和暑期优惠来了，酒店为什么不能只等客人下单？' : 'Why Hotels Need More Than Discounts When Summer Travel Vouchers Bring Demand',
-      summary: isZh
-        ? '平台活动一上线订单变多，但月底复盘发现平均房价下滑、增值消费不明显、客人没有留下联系方式。消费券和优惠活动能带来第一次点击，不能自动带来利润和复购。'
-        : 'Summer vouchers and platform subsidies drive bookings, but hotels that treat promotions as strategy lose net revenue, overload operations, and miss guest capture. Learn how to protect profitability before, during, and after peak-season campaigns.',
-      slug: 'hotel-consumption-voucher-summer-promotion-net-revenue-customer-retention-2026-08-06',
-      date: '2026.08.06',
-    },
-    {
-      title: isZh ? '旺季差评增加，酒店经营者为什么需要24小时内分析48小时补救？' : 'Why Hotel Operators Need a 24-Hour Analysis and a 48-Hour Recovery Plan During Peak Season',
-      summary: isZh
-        ? '旺季差评最危险的不是数量，而是问题在组织没有学习前持续复制。24小时分析时钟和48小时补救时钟，帮酒店尽快止损并阻止同类问题继续发生。'
-        : 'The real risk of peak-season negative reviews is not volume — it is problems repeating before the organisation learns. A 24-hour analysis clock and a 48-hour recovery clock help hotels stop losses fast and prevent the same failures from spreading.',
-      slug: 'hotel-peak-season-negative-review-24-hour-analysis-48-hour-recovery-2026-08-05',
-      date: '2026.08.05',
-    },
-    {
-      title: isZh ? '游客开始“住久一点”，酒店为什么还只会做一晚生意？' : 'Travelers Are Staying Longer. Why Are Hotels Still Built for One-Night Stays?',
-      summary: isZh
-        ? '连续停留不是把一晚服务复制几次；预订信息、客房节奏、餐饮变化和离店承接都需要重新设计。'
-        : 'A multi-night stay is not a one-night template repeated. Booking information, service rhythm, dining variety and departure follow-up all need deliberate design.',
-      slug: 'slow-travel-multi-night-hotel-service-2026-08-04',
-      date: '2026.08.04',
-    },
-    {
-      title: isZh ? '极端天气打乱行程，酒店的取消政策该不该更灵活？' : 'When Extreme Weather Disrupts Travel, Should Hotel Cancellation Policies Be More Flexible?',
-      summary: isZh
-        ? '把责任归属、可验证证据、再售窗口和岗位授权放进同一套分级规则，兼顾收入、客诉与长期信任。'
-        : 'Use one tiered framework for responsibility, verifiable evidence, reselling windows and decision rights to balance revenue, disputes and long-term trust.',
-      slug: 'extreme-weather-hotel-cancellation-policy-2026-08-03',
-      date: '2026.08.03',
-    },
-    {
-      title: isZh ? '入境游客增多了，本土品牌酒店为什么还接不住？' : "Inbound Travel Is Growing. Why China's Local Hotel Brands Still Miss Overseas Guests?",
-      summary: isZh
-        ? '入境需求不会自动变成酒店订单；客源匹配、线上可见、支付确认和到店服务必须形成完整承接链。'
-        : 'Inbound demand does not automatically become bookings. Hotels need a complete chain from source-market fit and discovery to payment and on-property service.',
-      slug: 'inbound-travel-local-hotel-brands-overseas-guests-2026-08-02',
-      date: '2026.08.02',
-    },
-    {
-      title: isZh ? '酒店推广套餐做出来了，为什么客人还是不知道？' : "Why Do Guests Still Not Know About a Hotel's Promotional Packages After They Launch?",
-      summary: isZh
-        ? '套餐上线不等于完成推广；广告、员工介绍和预订前后信息必须进入同一条客人决策链。'
-        : 'Launching a package is not enough. Advertising, staff recommendations and pre- and post-booking information must form one guest decision chain.',
-      slug: 'hotel-promotional-package-guest-awareness-2026-08-01',
-      date: '2026.08.01',
-    },
-    {
-      title: isZh ? '自驾游“黄金大外环”升温，沿线酒店怎样把过路客变成住店客？' : "China's Golden Highway Loop Is Gaining Attention. How Can Roadside Hotels Turn Passing Traffic into Stays?",
-      summary: isZh
-        ? '公路带来的是车流，不是自动送上门的订单；停车、充电、晚到与次日出发信息决定酒店能否进入候选名单。'
-        : 'Road traffic is not automatic occupancy. Parking, charging, late-arrival and next-day information determine whether a hotel enters the shortlist.',
-      slug: 'self-driving-tour-hotels-turn-passing-traffic-into-stays-2026-07-31',
-      date: '2026.07.31',
-    },
-    {
-      title: isZh ? '研学旅行升温，酒店怎样准备一间真正可用的“研学客房”？' : 'Educational Family Travel Is Growing. How Should Hotels Adapt the Guest Room?',
-      summary: isZh
-        ? '家庭需要的不只是亲子装饰，而是能学习、能收纳、能安静休息的客房。'
-        : 'Families need more than themed decoration: functional study space, practical storage and reliable quiet-room delivery.',
-      slug: 'educational-family-travel-hotel-room-2026-07-30',
-      date: '2026.07.30',
-    },
-    {
-      title: isZh ? '避暑游升温，酒店不能只卖“一间有空调的客房”；' : 'As Summer Escape Travel Grows, Hotels Must Offer More Than “An Air-Conditioned Guest Room”',
-      summary: isZh
-        ? '客人购买的不只是一间有空调的客房，而是从到店到离店的全天舒适体验。'
-        : 'Guests expect more than an air-conditioned room. Hotels need to deliver comfort across the full guest day.',
-      slug: 'summer-escape-hotels-air-conditioned-room-2026-07-29',
-      date: '2026.07.29',
-    },
-    {
-      title: isZh ? '亲子房成了暑期卖点，酒店为什么还是留不住家庭客？' : 'Family Rooms Are a Summer Bestseller. Why Do Hotels Still Struggle to Retain Family Guests?',
-      summary: isZh
-        ? '家庭客买的不只是儿童设施，而是酒店能否把安全、服务、费用和复购承诺完整兑现。'
-        : 'Family guests buy more than amenities. Hotels must deliver safety, service consistency, pricing clarity, and a reason to return.',
-      slug: 'family-room-operational-readiness-2026-07-28',
-      date: '2026.07.28',
-    },
-  ]
+  const latestArticles = getLatestArticles(lang)
 
   const pageJsonLd = {
     '@context': 'https://schema.org',
@@ -291,7 +81,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section id="hotel-problems" className="scroll-mt-20 bg-[#f4f7f8] py-12 dark:bg-slate-900 md:py-20">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <div className="max-w-3xl">
-              <p className="text-sm font-semibold leading-6 text-[#24745c] dark:text-emerald-300">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
+              <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店投资人和管理者经常遇到的问题' : 'Questions hotel investors and managers often face'}</h2>
             <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
               {isZh ? '不同阶段的问题相互关联。越早识别关键因素，越能降低后续调整成本。' : 'Challenges at different stages are connected. The earlier the critical factors are identified, the lower the cost of later correction.'}
@@ -305,12 +95,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 href={href}
                 className={`group grid min-h-28 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-6 transition-colors hover:bg-white/70 dark:border-slate-700 dark:hover:bg-slate-950/40 sm:grid-cols-[3.5rem_1fr_auto] ${index === problems.length - 1 ? 'lg:col-span-2' : ''}`}
               >
-                <Icon className="h-6 w-6 text-[#d98b28]" />
+                <Icon className="h-6 w-6 text-brand-gold" />
                 <div>
                   <h3 className="text-xl font-semibold sm:text-2xl">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{copy}</p>
                 </div>
-                <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-[#0b4a6f]" />
+                <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-brand-blue" />
               </Link>
             ))}
           </div>
@@ -321,13 +111,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
             <div className="max-w-xl">
-              <p className="text-sm font-semibold leading-6 text-[#24745c] dark:text-emerald-300">{isZh ? '持续更新的专业索引' : 'A practical reference, continuously updated'}</p>
+              <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '持续更新的专业索引' : 'A practical reference, continuously updated'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '酒店经营知识库' : 'Hotel Knowledge Base'}</h2>
               <p className="mt-5 text-xl font-semibold leading-8">{isZh ? '沉淀行业实践经验，形成可判断、可执行的方法体系。' : 'Turning industry practice into a system of judgment and action.'}</p>
               <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
                 {isZh ? '我们持续整理酒店投资、筹建、运营、收益、成本、产品和市场增长中的真实问题，通过案例分析、经营观察和行业研究，帮助酒店经营者理解原因、建立判断逻辑，并找到下一步优化方向。' : 'We examine real issues across hotel investment, development, operations, revenue, cost, product, and market growth. Cases, operating observations, and industry research help hotel leaders understand causes, build sound judgment, and identify the next direction for improvement.'}
               </p>
-              <Link href={`/${lang}/knowledge`} className="mt-8 inline-flex min-h-12 items-center gap-2 bg-[#0b4a6f] px-6 py-3 font-semibold text-white hover:bg-[#073a58]">
+              <Link href={`/${lang}/knowledge`} className="mt-8 inline-flex min-h-12 items-center gap-2 bg-brand-blue px-6 py-3 font-semibold text-white hover:bg-brand-blue-hover">
                 <BookOpen className="h-5 w-5" />
                 {isZh ? '进入酒店经营知识库' : 'Enter the knowledge base'}
               </Link>
@@ -335,15 +125,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
             <div className="border-t border-slate-300 dark:border-slate-700">
               {latestArticles.slice(0, 4).map((article, index) => (
-                <Link key={article.slug} href={`/${lang}/knowledge/${article.slug}`} className={`group block border-b border-slate-300 dark:border-slate-700 ${index === 0 ? 'bg-[#f7f3ea] px-5 py-7 dark:bg-slate-900' : 'py-5'}`}>
+                <Link key={article.href} href={article.href} className={`group block border-b border-slate-300 dark:border-slate-700 ${index === 0 ? 'bg-[#f7f3ea] px-5 py-7 dark:bg-slate-900' : 'py-5'}`}>
                   <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
-                    <span>{article.date}</span>
+                    <time dateTime={article.date}>{article.date}</time>
                     <span aria-hidden="true">/</span>
-                    <span>{index === 0 ? (isZh ? '精选阅读' : "Featured reading") : (isZh ? '行业洞察' : 'Industry Insight')}</span>
+                    <span>{article.section}</span>
                   </div>
-                  <h3 className={`mt-3 font-semibold leading-snug transition-colors group-hover:text-[#0b4a6f] dark:group-hover:text-sky-300 ${index === 0 ? 'text-2xl' : 'text-xl'}`}>{article.title}</h3>
-                  {index === 0 ? <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{article.summary}</p> : null}
-                  <ArrowRight className={`${index === 0 ? 'mt-5' : 'mt-3'} h-5 w-5 text-[#d98b28] transition-transform group-hover:translate-x-1`} />
+                  <h3 className={`mt-3 font-semibold leading-snug transition-colors group-hover:text-brand-blue dark:group-hover:text-sky-300 ${index === 0 ? 'text-2xl' : 'text-xl'}`}>{article.title}</h3>
+                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{article.summary}</p>
+                  <ArrowRight className={`${index === 0 ? 'mt-5' : 'mt-3'} h-5 w-5 text-brand-gold transition-transform group-hover:translate-x-1`} />
                 </Link>
               ))}
             </div>
@@ -366,7 +156,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               />
             </div>
             <div>
-              <p className="text-sm font-semibold leading-6 text-[#24745c] dark:text-emerald-300">{isZh ? '30多年酒店行业实践' : 'More than 30 years in hospitality'}</p>
+              <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '30多年酒店行业实践' : 'More than 30 years in hospitality'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
                 {isZh ? '为什么酒店项目需要专业判断？' : 'Why do hotel projects require professional judgment?'}
               </h2>
@@ -380,17 +170,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   ? '迈创兄弟C&T的复合型专业力量覆盖酒店投资分析、筹开管理、运营管理与经营改善。我们以数据分析、现场观察和跨专业协同找到影响酒店价值的关键因素，并制定可执行的优化路径。'
                   : 'MarvelBros C&T brings together hotel investment analysis, pre-opening management, operations, and performance improvement. Data, field observation, and multidisciplinary collaboration are used to identify the factors shaping hotel value and turn them into an executable path.'}
               </p>
-              <p className="mt-5 border-l-4 border-[#d98b28] pl-5 text-xl font-semibold leading-8">
+              <p className="mt-5 border-l-4 border-brand-gold pl-5 text-xl font-semibold leading-8">
                 {isZh ? '没有看过真实数据和现场，我们不会轻易下结论。' : 'Without real data and a view of the operation, we do not jump to conclusions.'}
               </p>
-              <Link href={`/${lang}/about`} className="mt-7 inline-flex items-center gap-2 font-semibold text-[#0b4a6f] hover:text-[#b86d13] dark:text-sky-300">
+              <Link href={`/${lang}/about`} className="mt-7 inline-flex items-center gap-2 font-semibold text-brand-blue hover:text-[#b86d13] dark:text-sky-300">
                 {isZh ? '了解团队如何协作' : 'See how the team works together'}
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <ol className="mt-9 border-t border-slate-300 dark:border-slate-700">
                 {methods.map((item, index) => (
                   <li key={item} className="grid grid-cols-[3rem_1fr] items-center border-b border-slate-300 py-4 dark:border-slate-700">
-                    <span className="text-sm font-bold text-[#d98b28]">0{index + 1}</span>
+                    <span className="text-sm font-bold text-brand-gold">0{index + 1}</span>
                     <span className="font-semibold">{item}</span>
                   </li>
                 ))}
@@ -414,7 +204,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 ]
             ).map(([value, label]) => (
               <div key={label} className="border-b border-slate-300 py-7 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 dark:border-slate-700">
-                <p className="text-3xl font-semibold text-[#0b4a6f] dark:text-sky-300">{value}</p>
+                <p className="text-3xl font-semibold text-brand-blue dark:text-sky-300">{value}</p>
                 <p className="mt-2 pr-5 text-sm leading-6 text-slate-600 dark:text-slate-300">{label}</p>
               </div>
             ))}
@@ -481,7 +271,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section className="border-t border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900 md:py-20">
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 xl:px-16">
           <div>
-            <p className="text-sm font-semibold leading-6 text-[#24745c] dark:text-emerald-300">{isZh ? '专业交流' : 'Professional conversation'}</p>
+            <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '专业交流' : 'Professional conversation'}</p>
             <h2 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight md:text-4xl">
               {isZh ? '你的酒店现在最需要先解决哪个问题？' : 'Which problem should your hotel solve first?'}
             </h2>
@@ -490,11 +280,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-            <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-13 items-center justify-center gap-2 bg-[#0b4a6f] px-6 py-3.5 font-semibold text-white hover:bg-[#073a58]">
+            <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-13 items-center justify-center gap-2 bg-brand-blue px-6 py-3.5 font-semibold text-white hover:bg-brand-blue-hover">
               <FileText className="h-5 w-5" />
               {isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}
             </Link>
-            <a href="tel:+8618941579333" className="inline-flex min-h-13 items-center justify-center gap-2 border border-slate-400 px-6 py-3.5 font-semibold hover:border-[#0b4a6f] hover:text-[#0b4a6f] dark:border-slate-600 dark:hover:border-sky-300 dark:hover:text-sky-300">
+            <a href="tel:+8618941579333" className="inline-flex min-h-13 items-center justify-center gap-2 border border-slate-400 px-6 py-3.5 font-semibold hover:border-brand-blue hover:text-brand-blue dark:border-slate-600 dark:hover:border-sky-300 dark:hover:text-sky-300">
               <Phone className="h-5 w-5" />
               +86 189 4157 9333
             </a>

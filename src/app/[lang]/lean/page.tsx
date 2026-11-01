@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import SearchBox from './SearchBox'
 import { allArticlesData } from './article/[slug]/articles-data'
+import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import { leanCategories, getLeanArticleCategory } from '@/lib/knowledge-taxonomy'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -151,6 +152,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
 
   return (
     <div className="min-h-screen bg-background">
+      <SiteBreadcrumb lang={lang} path="/lean" label={isZh ? '管享精道' : 'Lean Insights'} />
 
       {/* Header */}
       <div className="bg-gradient-to-br from-[#f59e0b]/10 via-background to-background border-b border-border">

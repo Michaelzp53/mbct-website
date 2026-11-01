@@ -16,7 +16,6 @@ export function Footer({ lang, dict }: FooterProps) {
   const knowledgeLinks = [
     { label: isZh ? '专业洞察' : 'Hotel knowledge', href: `/${lang}/knowledge` },
     { label: isZh ? '管享精道' : 'Lean Insights', href: `/${lang}/lean` },
-    { label: isZh ? '经营问题专栏' : 'Operating topics', href: `/${lang}/lean` },
     { label: isZh ? '案例成果' : 'Case results', href: `/${lang}/cases` },
   ]
 
@@ -36,7 +35,7 @@ export function Footer({ lang, dict }: FooterProps) {
               <Image src="/logo-new.png" alt={isZh ? '迈创兄弟C&T 标志' : 'MarvelBros C&T Logo'} width={48} height={48} className="object-contain" />
               <div>
                 <p className="text-sm font-semibold">MarvelBros C&amp;T</p>
-                <p className="mt-1 text-xs font-medium text-[#0b4a6f] dark:text-sky-300">{isZh ? '迈创兄弟C&T · 酒店全生命周期价值提升咨询服务商' : 'Hotel Lifecycle Value Enhancement Consultancy'}</p>
+                <p className="mt-1 text-xs font-medium text-brand-blue dark:text-sky-300">{isZh ? '迈创兄弟C&T · 酒店全生命周期价值提升咨询服务商' : 'Hotel Lifecycle Value Enhancement Consultancy'}</p>
               </div>
             </div>
             <p className="mt-6 text-lg font-semibold leading-7">
@@ -52,7 +51,7 @@ export function Footer({ lang, dict }: FooterProps) {
             <ul className="mt-5 space-y-3">
               {knowledgeLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-600 transition-colors hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300">{link.label}</Link>
+                  <Link href={link.href} className="text-sm text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -63,7 +62,7 @@ export function Footer({ lang, dict }: FooterProps) {
             <ul className="mt-5 space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-600 transition-colors hover:text-[#0b4a6f] dark:text-slate-300 dark:hover:text-sky-300">{link.label}</Link>
+                  <Link href={link.href} className="text-sm text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -72,16 +71,16 @@ export function Footer({ lang, dict }: FooterProps) {
           <div>
             <h2 className="text-sm font-semibold">{isZh ? '直接联系' : 'Direct contact'}</h2>
             <div className="mt-5 space-y-4">
-              <a href="tel:+8618941579333" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-[#0b4a6f] dark:text-slate-200 dark:hover:text-sky-300">
-                <Phone className="h-4 w-4 text-[#d98b28]" />
+              <a href="tel:+8618941579333" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-brand-blue dark:text-slate-200 dark:hover:text-sky-300">
+                <Phone className="h-4 w-4 text-brand-gold" />
                 +86 189 4157 9333
               </a>
-              <a href="mailto:info@marvelbros.com" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-[#0b4a6f] dark:text-slate-200 dark:hover:text-sky-300">
-                <Mail className="h-4 w-4 text-[#d98b28]" />
+              <a href="mailto:info@marvelbros.com" className="flex items-center gap-3 text-sm text-slate-700 transition-colors hover:text-brand-blue dark:text-slate-200 dark:hover:text-sky-300">
+                <Mail className="h-4 w-4 text-brand-gold" />
                 info@marvelbros.com
               </a>
-              <a href="mailto:contactme@marvelbros.com" className="flex items-center gap-3 text-sm break-all"><Mail className="h-4 w-4 shrink-0" />contactme@marvelbros.com</a>
-              <Link href={`/${lang}/contact?type=diagnosis`} className="mt-5 inline-flex items-center gap-2 border-b-2 border-[#d98b28] pb-1 text-sm font-semibold">
+              <a href="mailto:contactme@marvelbros.com" className="flex items-center gap-3 break-all text-sm text-slate-700 transition-colors hover:text-brand-blue dark:text-slate-200 dark:hover:text-sky-300"><Mail className="h-4 w-4 shrink-0 text-brand-gold" />contactme@marvelbros.com</a>
+              <Link href={`/${lang}/contact?type=diagnosis`} className="mt-5 inline-flex items-center gap-2 border-b-2 border-brand-gold pb-1 text-sm font-semibold">
                 {isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -92,9 +91,9 @@ export function Footer({ lang, dict }: FooterProps) {
         <div className="flex flex-col gap-5 pt-7 text-xs text-slate-500 dark:text-slate-400 md:flex-row md:items-center md:justify-between">
           <p>{footer.copyright}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link href={`/${lang}/privacy`} className="hover:text-[#0b4a6f] dark:hover:text-sky-300">{footer.privacy}</Link>
-            <Link href={`/${lang}/terms`} className="hover:text-[#0b4a6f] dark:hover:text-sky-300">{footer.terms}</Link>
-            <Link href="/sitemap.xml" className="hover:text-[#0b4a6f] dark:hover:text-sky-300">{footer.sitemap}</Link>
+            <Link href={`/${lang}/privacy`} className="hover:text-brand-blue dark:hover:text-sky-300">{footer.privacy}</Link>
+            <Link href={`/${lang}/terms`} className="hover:text-brand-blue dark:hover:text-sky-300">{footer.terms}</Link>
+            <Link href="/sitemap.xml" className="hover:text-brand-blue dark:hover:text-sky-300">{footer.sitemap}</Link>
           </div>
         </div>
       </div>
