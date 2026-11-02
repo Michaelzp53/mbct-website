@@ -1,3 +1,4 @@
+import articles20261102 from './articles-2026-11-02.json'
 import articles20261029 from './articles-2026-10-29.json'
 import articles20261026 from './articles-2026-10-26.json'
 import articles20261022 from './articles-2026-10-22.json'
@@ -73,6 +74,7 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...articles20261102,
   ...articles20261029,
   ...articles20261026,
   ...articles20261022,
@@ -11013,6 +11015,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
           <ArticleContent content={articleContent} articleTitle={articleTitle} lang={lang} />
             {slug === 'hotel-sale-data-room-document-index-2026-10-22' && <a href="/downloads/hotel-sale-document-index-2026-10-22.csv" download className="block my-6 underline">{!isEnglish ? '下载卖方资料目录与缺件台账（CSV）' : 'Download the seller document index and missing-document register (CSV)'}</a>}
+          {slug === 'hotel-acquisition-sustainable-earnings-review-2026-11-02' && <a href={`/downloads/hotel-acquisition-earnings-review-2026-11-02-${isEnglish ? 'en' : 'zh'}.csv`} download className="block my-6 underline">{isEnglish ? 'Download the Hotel Acquisition Earnings Review and Adjustment Worksheet (CSV)' : '下载酒店收购利润核对与调整表（CSV）'}</a>}
           <ArticleEngagementTracker articleSlug={decodedSlug} />
 
           <ContentPathway

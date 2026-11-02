@@ -84,6 +84,25 @@ export default async function KnowledgePage({
 
   const registeredArticles = [
 {
+  "id": 2026110201,
+  "title": "收购酒店前，怎样判断账面利润能否持续？",
+  "titleEn": "Before Acquiring a Hotel, How Can You Assess Whether Reported Earnings Are Sustainable?",
+  "author": "迈创兄弟C&T（MarvelBros C&T）",
+  "date": "2026-11-02",
+  "tag": "专业洞察",
+  "type": "article",
+  "slug": "hotel-acquisition-sustainable-earnings-review-2026-11-02",
+  "summary": "收购酒店前，要逐项核实报表利润，判断哪些能够在接手后延续，再据此确定估值测算的经营利润起点。一张真实的报表能够说明过去发生了什么，却不能单独证明换了业主以后，同样的利润还会出现。",
+  "summaryEn": "Before acquiring a hotel, verify reported earnings item by item, assess which elements can continue after the takeover, and use that assessment to establish the operating earnings starting point for valuation. An accurate set of accounts can show what happened in the past. On its own, it cannot prove that the same earnings will recur under a new owner.",
+  "firstLine": "收购酒店前，要逐项核实报表利润，判断哪些能够在接手后延续，再据此确定估值测算的经营利润起点。一张真实的报表能够说明过去发生了什么，却不能单独证明换了业主以后，同样的利润还会出现。",
+  "category": "hotel-investment",
+  "tagColor": "bg-[#c67829]",
+  "tagTextColor": "text-white",
+  "readTime": 12,
+  "featured": true,
+  "image": ""
+},
+{
   "id": 2026102901,
   "type": "article",
   "title": "酒店出售，一次付清和分期付款的报价怎样比较？",
