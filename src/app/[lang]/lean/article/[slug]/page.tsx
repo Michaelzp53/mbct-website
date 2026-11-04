@@ -96,6 +96,25 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === "hotel-autumn-break-family-pricing-date-bands-2026-11-04") {
+      const headings = isZh
+        ? ["秋假不是整月同质化淡季", "先看本店日期带，再看家庭产品", "不要用整月折扣代替结构判断", "把判断落到一张检查表上", "谁适用，谁先不要照搬", "先做一次可撤回的小测试"]
+        : ["Autumn break is not a uniform off-season month", "Start with the hotel’s date bands, then family products", "Do not replace structural judgment with a month-wide discount", "Put the judgment on one checklist", "Who should use this, and who should not copy it yet", "Run one reversible small test"]
+      let text = articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      if (isZh) {
+        text = text.replace(
+          "家庭房与连通房配置的贡献比较方法（https://www.marvelbros.com/zh/lean/article/hotel-family-room-extra-bed-suite-connecting-rooms-2026-10-18）",
+          "[家庭房与连通房配置的贡献比较方法](/zh/lean/article/hotel-family-room-extra-bed-suite-connecting-rooms-2026-10-18)"
+        )
+      } else {
+        text = text.replace(
+          "the contribution comparison method for family rooms and connecting rooms (https://www.marvelbros.com/en/lean/article/hotel-family-room-extra-bed-suite-connecting-rooms-2026-10-18)",
+          "[the contribution comparison method for family rooms and connecting rooms](/en/lean/article/hotel-family-room-extra-bed-suite-connecting-rooms-2026-10-18)"
+        )
+      }
+      return text
+    }
     if (slug === "hotel-purchasing-receiving-payment-duties-limited-staff-2026-10-31") {
       const headings = isZh ? ["先分清每个人究竟确认什么", "采购、验收和付款的职责怎样落到人", "人员兼岗时，把缺口写出来", "纸面分工还要对应实际权限", "紧急采购要有一条能走通的路", "用一张职责表和一笔采购验证"] : ["Establish what each person is actually confirming", "Assign purchasing, receiving and payment responsibilities", "Make gaps in combined roles explicit", "Match the responsibility chart to actual access rights", "Provide a workable route for urgent purchases", "Test the arrangements with one responsibility chart and one purchase"]
       let text = articleContent.slice(articleTitle.length).trim()
