@@ -96,6 +96,14 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === "hotel-artificial-carbonated-bath-signature-experience-2026-11-04") {
+      const headings = isZh
+        ? ["先厘清一个前提：人工碳酸浴不是天然温泉", "它回应的是酒店差异化的四个投资条件", "落在哪里：两类酒店与三类场景的选择", "同一套设施，五类客群各有入口", "工程与运营：决定成败的硬条件", "公开案例能证明什么，不能证明什么", "先试点再测算：把判断交给单店数据"]
+        : ["First, a premise: an artificial carbonated bath is not a natural hot spring", "It answers four investment tests for hotel differentiation", "Where to place it: choosing across two hotel types and three scenarios", "One facility, five guest segments, five entry points", "Engineering and operations: the hard conditions that decide success", "What public cases can prove, and what they cannot", "Pilot first, measure later: let single-hotel data make the call"]
+      let text = articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      return text
+    }
     if (slug === "hotel-autumn-break-family-pricing-date-bands-2026-11-04") {
       const headings = isZh
         ? ["秋假不是整月同质化淡季", "先看本店日期带，再看家庭产品", "不要用整月折扣代替结构判断", "把判断落到一张检查表上", "谁适用，谁先不要照搬", "先做一次可撤回的小测试"]
