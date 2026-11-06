@@ -96,6 +96,16 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === "hotel-checkout-versus-stayover-room-attendant-workload-scheduling-2026-11-06") {
+      const headings = isZh
+        ? ["为什么退房与续住不能用同一把尺", "客房排班表怎样看见间数以外的工作", "一张五行观察表，先用于一个真实班次", "哪些情况要停下来，哪些结论不能提前下"]
+        : ["Why Checkout and Stayover Rooms Should Not Be Measured Against the Same Yardstick", "How Room Attendant Scheduling Can Reveal Work Beyond Room Counts", "Start with One Actual Shift and a Five-Line Observation Sheet", "When to Stop and Which Conclusions Not to Draw Prematurely"]
+      let text = articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      // Keep the approved five-line sheets as line breaks inside the same paragraph.
+      text = text.replace(/([^\n])\n(?!\n)/g, "$1  \n")
+      return text
+    }
     if (slug === "hotel-artificial-carbonated-bath-signature-experience-2026-11-04") {
       const headings = isZh
         ? ["先厘清一个前提：人工碳酸浴不是天然温泉", "它回应的是酒店差异化的四个投资条件", "落在哪里：两类酒店与三类场景的选择", "同一套设施，五类客群各有入口", "工程与运营：决定成败的硬条件", "公开案例能证明什么，不能证明什么", "先试点再测算：把判断交给单店数据"]
