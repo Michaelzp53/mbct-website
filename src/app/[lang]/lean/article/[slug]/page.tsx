@@ -10,6 +10,13 @@ import ArticleEngagementTracker from '@/components/knowledge/ArticleEngagementTr
 import { ArticleMarkdown } from '@/components/article-markdown'
 import { leanCategoryBySlug, getLeanArticleCategory } from '@/lib/knowledge-taxonomy'
 
+const storedValueRefundSlug = 'hotel-stored-value-card-refund-rules-2026-11-07'
+const storedValueRefundSeoTitleEn = 'Hotel Stored-Value Card Refunds: Why "Refund the Balance" Is Not Enough'
+const storedValueRefundKeywords = {
+  zh: ['酒店储值卡退款', '酒店储值卡退款怎么算', '充值赠送金额退款', '酒店预付卡消费记录'],
+  en: ['hotel stored-value card refund', 'how to calculate a hotel stored-value card refund', 'refunding bonus top-up credit', 'hotel prepaid card consumption records'],
+}
+
 // 7大分类
 const categories = [
   { id: 'investment', labelZh: '投资决策', labelEn: 'Investment', color: '#ef4444' },
@@ -43,13 +50,15 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 
   const title = isZh ? articleData.titleZh : articleData.titleEn
+  const seoTitle = slug === storedValueRefundSlug && !isZh ? storedValueRefundSeoTitleEn : title
   const description = isZh ? articleData.summaryZh : articleData.summaryEn
+  const keywords = slug === storedValueRefundSlug ? storedValueRefundKeywords[isZh ? 'zh' : 'en'] : articleData.tags
   const canonical = `https://www.marvelbros.com/${lang}/lean/article/${slug}`
 
   return {
-    title: `${title} | ${isZh ? '迈创兄弟C&T' : 'MarvelBros C&T'}`,
+    title: `${seoTitle} | ${isZh ? '迈创兄弟C&T' : 'MarvelBros C&T'}`,
     description,
-    keywords: articleData.tags,
+    keywords,
     alternates: {
       canonical,
       languages: {
@@ -58,7 +67,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       },
     },
     openGraph: {
-      title,
+      title: seoTitle,
       description,
       url: canonical,
       type: 'article',
@@ -94,8 +103,37 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
   const category = leanCategoryBySlug[getLeanArticleCategory(articleData)]
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
+  const visibleTags = slug === storedValueRefundSlug ? storedValueRefundKeywords[isZh ? 'zh' : 'en'] : articleData.tags
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === storedValueRefundSlug) {
+      const chapters = isZh
+        ? ["酒店储值卡退款，先确认为什么退", "同一笔消费，退款原因会改变扣减", "赠送服务和利息，不能塞进余额一起算", "让另一人凭记录复算，而不是再问一次前台"]
+        : ["Hotel Stored-Value Card Refunds: First Establish Why the Money Is Being Returned", "The Same Purchase, Different Deductions Depending on Why the Refund Is Made", "Complimentary Services and Interest Cannot Be Folded into the Balance", "Let Another Person Recalculate from the Records, Instead of Asking the Front Desk Again"]
+      const recordTitle = isZh ? "退款结算记录" : "Refund Settlement Record"
+      const subheads = isZh
+        ? ["资料与依据", "折价与另核", "复核与执行"]
+        : ["Records and Basis", "Pricing and Separate Checks", "Review and Execution"]
+      let text = articleContent.startsWith(articleTitle) ? articleContent.slice(articleTitle.length).trim() : articleContent
+      for (const heading of chapters) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      text = text.replace(`\n\n${recordTitle}\n\n`, `\n\n### ${recordTitle}\n\n`)
+      for (const heading of subheads) text = text.replace(`\n\n${heading}\n\n`, `\n\n#### ${heading}\n\n`)
+      const links: Array<[string, string]> = isZh
+        ? [
+            ["《最高人民法院关于审理预付式消费民事纠纷案件适用法律若干问题的解释》", "https://www.court.gov.cn/zixun/xiangqing/459321.html"],
+            ["最高法2025年3月14日答记者问", "https://www.court.gov.cn/zixun/xiangqing/459341.html"],
+            ["此项七日无理由退款只退本金、不退利息", "https://www.court.gov.cn/zixun/xiangqing/459341.html"],
+            ["人手有限时如何分开经办与复核职责", "https://www.marvelbros.com/zh/lean/article/hotel-purchasing-receiving-payment-duties-limited-staff-2026-10-31"],
+          ]
+        : [
+            ["The Interpretation of the Supreme People's Court on Several Issues Concerning the Application of Law in the Trial of Civil Disputes over Prepaid Consumption", "https://www.court.gov.cn/zixun/xiangqing/459321.html"],
+            ["answers to reporters' questions on March 14, 2025", "https://www.court.gov.cn/zixun/xiangqing/459341.html"],
+            ["this seven-day no-reason refund covers the principal only, not interest", "https://www.court.gov.cn/zixun/xiangqing/459341.html"],
+            ["how to separate handling and review duties when staff are limited", "https://www.marvelbros.com/en/lean/article/hotel-purchasing-receiving-payment-duties-limited-staff-2026-10-31"],
+          ]
+      for (const [label, target] of links) text = text.replace(label, `[${label}](${target})`)
+      return text
+    }
     if (slug === "hotel-checkout-versus-stayover-room-attendant-workload-scheduling-2026-11-06") {
       const headings = isZh
         ? ["为什么退房与续住不能用同一把尺", "客房排班表怎样看见间数以外的工作", "一张五行观察表，先用于一个真实班次", "哪些情况要停下来，哪些结论不能提前下"]
@@ -235,7 +273,7 @@ ${heading}
     url: articleUrl,
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     articleSection: category ? (isZh ? category.zh : category.en) : articleData.category,
-    keywords: articleData.tags,
+    keywords: slug === storedValueRefundSlug ? storedValueRefundKeywords[isZh ? 'zh' : 'en'] : articleData.tags,
   }
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -328,7 +366,7 @@ ${heading}
             <Badge variant="outline" className="border-[#f59e0b]/50 text-[#f59e0b]">
               {ui.official}
             </Badge>
-            {articleData.tags.map((tag, i) => (
+            {visibleTags.map((tag, i) => (
               <Badge key={i} variant="secondary" className="text-xs">
                 <Tag className="w-3 h-3 mr-1" />
                 {tag}
