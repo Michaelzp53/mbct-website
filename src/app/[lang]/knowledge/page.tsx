@@ -84,6 +84,25 @@ export default async function KnowledgePage({
 
   const registeredArticles = [
 {
+  "id": 2026111001,
+  "title": "旧楼改做酒店，新政说“可保持原土地用途”，业主还要过哪几道关？",
+  "titleEn": "Converting an Old Building into a Hotel: The New Policy Says the Original Land Use Can Stay, but What Other Approvals Does the Owner Still Need?",
+  "author": "迈创兄弟C&T（MarvelBros C&T）",
+  "date": "2026-11-10",
+  "tag": "专业洞察",
+  "type": "article",
+  "slug": "old-building-hotel-conversion-approvals-2026-11-10",
+  "summary": "三部门意见允许土地权利人在符合规划管控、安全等要求下，用现有房产兴办文化和旅游接待设施时保持原土地用途。本文说明它放宽了什么、酒店是否在内要看地方认定，以及土地、规划建设许可、消防设计审查或备案、营业前消防检查、特种行业许可五关的先后、谁批和停止条件。",
+  "summaryEn": "The three-ministry Opinions allow a land rights holder, where planning controls, safety and other requirements are met, to keep the original land use when using existing property to set up cultural and tourism visitor reception facilities. This article explains what that relaxation covers, that whether a hotel is included depends on local confirmation, and the order, approving authority and stopping conditions of the five steps: land, planning and construction permits, fire protection design review or filing, the pre-opening fire safety inspection, and the special industry license.",
+  "firstLine": "旧楼改酒店，新政放宽的是土地这一关：在符合规划管控、安全等要求的前提下，土地权利人用现有房产兴办文化和旅游接待设施，可以保持原土地用途和权利类型不变。规划建设许可、消防设计审查或备案、营业前消防安全检查、特种行业许可这几关，政策没有说可以免，业主仍要按顺序逐关拿到书面结果。",
+  "category": "hotel-investment",
+  "tagColor": "bg-[#c67829]",
+  "tagTextColor": "text-white",
+  "readTime": 12,
+  "featured": true,
+  "image": ""
+},
+{
   "id": 2026110201,
   "title": "收购酒店前，怎样判断账面利润能否持续？",
   "titleEn": "Before Acquiring a Hotel, How Can You Assess Whether Reported Earnings Are Sustainable?",
