@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Dev assets are tied to the hostname Next was started with (localhost).
+  // Browsers that open the forwarded port as 127.0.0.1 are otherwise blocked.
+  allowedDevOrigins: ['127.0.0.1'],
   turbopack: {
     root: __dirname,
   },
