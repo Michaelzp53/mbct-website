@@ -1,4 +1,5 @@
 import { brand, brandEmails, organizationId, lifecycleServices } from '@/lib/brand'
+import { defaultOgImages } from '@/lib/seo'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
@@ -22,9 +23,11 @@ export const siteMetadata: Metadata = {
     type: 'website',
     siteName: '迈创兄弟C&T',
     locale: 'zh_CN',
+    images: defaultOgImages,
   },
   twitter: {
     card: 'summary_large_image',
+    images: [defaultOgImages[0].url],
   },
   robots: {
     index: true,

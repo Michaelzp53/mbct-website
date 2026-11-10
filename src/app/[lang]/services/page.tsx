@@ -385,7 +385,7 @@ export default async function ServicesPage({
                   href={`/${lang}/contact?type=plan`}
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition-opacity"
                 >
-                  {isZh ? '把你的项目情况发给我们' : 'Tell us about your project'}
+                  {isZh ? '把您的项目情况发给我们' : 'Tell us about your project'}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

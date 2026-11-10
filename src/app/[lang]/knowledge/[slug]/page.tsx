@@ -10802,11 +10802,13 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       publishedTime: article.date,
       modifiedTime: article.date,
       authors: ['MarvelBros C&T'],
+      images: [{ url: 'https://www.marvelbros.com/hero-hung-li-1HbWj9BDbjE-unsplash.jpg', width: 1920, height: 1079, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: ['https://www.marvelbros.com/hero-hung-li-1HbWj9BDbjE-unsplash.jpg'],
     },
   }
 }
@@ -10861,6 +10863,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         url: 'https://www.marvelbros.com/logo-new.png',
       },
     },
+    image: ['https://www.marvelbros.com/hero-hung-li-1HbWj9BDbjE-unsplash.jpg'],
     mainEntityOfPage: articleUrl,
     url: articleUrl,
     inLanguage: isEnglish ? 'en-US' : 'zh-CN',

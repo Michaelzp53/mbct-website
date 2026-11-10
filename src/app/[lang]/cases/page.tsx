@@ -73,7 +73,7 @@ export default async function CasesPage({
 
             <div className="rounded-3xl border border-primary/20 bg-primary/5 p-8 md:p-10">
               <p className="text-sm font-medium text-primary mb-4">
-                {isZh ? '你能从这里看到什么' : 'What you will see here'}
+                {isZh ? '您能从这里看到什么' : 'What you will see here'}
               </p>
               <div className="space-y-4 text-sm md:text-base text-foreground">
                 {trustPoints.map((item) => (
@@ -88,7 +88,7 @@ export default async function CasesPage({
                   href={`/${lang}/contact?type=plan`}
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:opacity-80 transition-opacity"
                 >
-                  {isZh ? '让我们看一看你的项目' : 'Let us look at your project'}
+                  {isZh ? '让我们看一看您的项目' : 'Let us look at your project'}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

@@ -273,7 +273,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div>
             <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '专业交流' : 'Professional conversation'}</p>
             <h2 className="mt-3 max-w-4xl text-3xl font-semibold leading-tight md:text-4xl">
-              {isZh ? '你的酒店现在最需要先解决哪个问题？' : 'Which problem should your hotel solve first?'}
+              {isZh ? '您的酒店现在最需要先解决哪个问题？' : 'Which problem should your hotel solve first?'}
             </h2>
             <p className="mt-4 max-w-3xl leading-7 text-slate-600 dark:text-slate-300">
               {isZh ? '酒店投资、筹建或经营过程中，很多问题越早判断，调整成本越低。您可以告诉我们项目阶段、所在区域以及当前面临的问题，我们会基于实际情况共同分析问题来源，判断下一步需要关注的重点。' : 'Across hotel investment, development, and operations, earlier judgment usually means a lower cost of correction. Tell us the project stage, location, and current challenge. We will examine the situation with you and identify what deserves attention next.'}

@@ -73,6 +73,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       type: 'article',
       siteName: 'MarvelBros C&T',
       locale: isZh ? 'zh_CN' : 'en_US',
+      images: [{ url: 'https://www.marvelbros.com/hero-hung-li-1HbWj9BDbjE-unsplash.jpg', width: 1920, height: 1079, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://www.marvelbros.com/hero-hung-li-1HbWj9BDbjE-unsplash.jpg'],
     },
   }
 }
