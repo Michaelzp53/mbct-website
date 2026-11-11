@@ -111,6 +111,7 @@ export default function HotelTopicPage({ slug, lang }: { slug: TopicSlug; lang: 
   const isZh = lang === 'zh'; const copy = copies[slug][isZh ? 'zh' : 'en']; const url = `https://www.marvelbros.com/${lang}/${slug}`
   const serviceModules = topicServiceModules[slug]?.[isZh ? 'zh' : 'en'] ?? []
   const related = [
+    ...(slug === 'hotel-investment' ? [{ slug: 'leased-hotel-remaining-lease-term-payback-valuation-2026-11-11', zh: '租赁物业做酒店，剩余租期怎样约束回本和估值？', en: 'Running a Hotel in Leased Premises: How Does the Remaining Lease Term Constrain Payback and Valuation?' }] : []),
     { slug: 'hotel-investor-pitfalls-guide', zh: '酒店投资中容易被忽视的关键风险', en: 'Critical risks hotel investors often overlook' },
     { slug: 'family-room-operational-readiness-2026-07-28', zh: '亲子房为什么留不住家庭客？', en: 'Why do family rooms struggle to retain family guests?' },
     { slug: 'summer-escape-hotels-air-conditioned-room-2026-07-29', zh: '酒店如何把季节需求转化为完整体验？', en: 'How can hotels turn seasonal demand into a complete experience?' },
