@@ -92,8 +92,8 @@ export function ArticleMarkdown({ content }: ArticleMarkdownProps) {
             </a>
           ),
           table: ({ children }) => (
-            <div className="overflow-x-auto my-4">
-              <table className="min-w-full border-collapse border border-border">
+            <div className="my-4 max-w-full overflow-x-auto">
+              <table className="w-full min-w-[720px] border-collapse border border-border">
                 {children}
               </table>
             </div>

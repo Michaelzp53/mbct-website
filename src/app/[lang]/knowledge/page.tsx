@@ -84,6 +84,25 @@ export default async function KnowledgePage({
 
   const registeredArticles = [
 {
+  "id": 2026111101,
+  "title": "租赁物业做酒店，剩余租期怎样约束回本和估值？",
+  "titleEn": "Running a Hotel in Leased Premises: How Does the Remaining Lease Term Constrain Payback and Valuation?",
+  "author": "迈创兄弟C&T（MarvelBros C&T）",
+  "date": "2026-11-11",
+  "tag": "专业洞察",
+  "type": "article",
+  "slug": "leased-hotel-remaining-lease-term-payback-valuation-2026-11-11",
+  "summary": "租来的物业做酒店，改造投入要在可执行的剩余租期内收回，续租只作情景、不作基准。本文按《民法典》和租赁司法解释拆开合同租期与可执行租期、续租选择权与优先承租、可带走设备与附合装修，给出一张四列租期约束测算表，并说明剩余年限怎样限制收购或转让时的出价。",
+  "summaryEn": "When a hotel operates in leased premises, the renovation investment has to be recovered within the enforceable remaining lease term. A renewal belongs in a scenario, not in the base case.",
+  "firstLine": "租来的物业做酒店，改造投入要在可执行的剩余租期里收回，续租只能放进情景测算，不能当作基准。估值也受同一条约束：只买经营权、不买房屋时，买方愿付的价格，不应高于这段年限里能拿到的现金流减去到期复原费用。合同上写的剩余年数，只是起点。",
+  "category": "hotel-investment",
+  "tagColor": "bg-[#c67829]",
+  "tagTextColor": "text-white",
+  "readTime": 12,
+  "featured": true,
+  "image": ""
+},
+{
   "id": 2026111001,
   "title": "旧楼改做酒店，新政说“可保持原土地用途”，业主还要过哪几道关？",
   "titleEn": "Converting an Old Building into a Hotel: The New Policy Says the Original Land Use Can Stay, but What Other Approvals Does the Owner Still Need?",
