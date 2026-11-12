@@ -46,14 +46,15 @@ export function Navbar({ lang, dict }: NavbarProps) {
           <div className="flex min-h-[72px] items-center justify-between py-2">
             <Link
               href={`/${lang}/`}
-              className="flex min-w-0 items-center gap-2 lg:gap-3 flex-shrink-0"
+              className="flex min-w-0 flex-shrink-0 items-center"
+              style={{ gap: "0.5cm" }}
             >
               <Image
                 src="/logo-new.png"
                 alt={isZh ? "迈创兄弟C&T 标志" : "MarvelBros C&T Logo"}
-                width={48}
-                height={48}
-                className="object-contain flex-shrink-0"
+                width={53}
+                height={53}
+                className="h-[52.8px] w-[52.8px] flex-shrink-0 object-contain"
               />
               <span className="min-w-0">
                 <span className="block text-[13px] font-semibold leading-none text-slate-950 dark:text-white lg:text-[14px]">MarvelBros C&amp;T</span>

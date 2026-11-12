@@ -106,13 +106,6 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       knowsAbout: disciplines.map((item) => item.title),
       audience: { '@type': 'Audience', audienceType: isZh ? '酒店投资人、业主和管理者' : 'Hotel investors, owners, and managers' },
     },
-    mentions: {
-      '@type': 'Person',
-      '@id': 'https://www.marvelbros.com/#lao-mai',
-      name: isZh ? '老迈' : 'Lao Mai',
-      description: isZh ? '拥有约30年酒店管理经验。' : 'Approximately 30 years of hotel management experience.',
-      affiliation: { '@id': organizationId },
-    },
   }
 
   return (
@@ -134,8 +127,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <p className="mt-2 text-lg font-semibold">{isZh ? '年酒店行业实战经验基础' : 'years of practical hospitality experience'}</p>
           </div>
           <div className="lg:col-span-2 max-w-4xl">
-            <h2 className="text-2xl font-semibold">{isZh ? '老迈：约30年酒店管理经验' : 'Lao Mai: approximately 30 years in hotel management'}</h2>
-            <p className="mt-4 text-lg leading-8 text-slate-700 dark:text-slate-200">{isZh ? '老迈拥有约30年酒店管理经验，关注酒店投资、筹建、运营、市场、成本与团队管理。迈创兄弟C&T面向酒店投资人、业主和管理者，提供酒店全生命周期价值提升咨询；网站通过专业洞察、经营判断和可执行的方法，分享酒店经营知识。' : 'Lao Mai has approximately 30 years of hotel management experience, with a focus on investment, development, operations, marketing, cost, and team management. MarvelBros C&T provides hotel lifecycle value advisory for investors, owners, and managers. Its website shares hospitality knowledge through industry insights, operating judgment, and practical methods.'}</p>
+            <h2 className="text-2xl font-semibold">{isZh ? '迈创兄弟C&T：30年酒店管理咨询服务经验' : 'MarvelBros C&T: 30 years of hotel management consulting experience'}</h2>
+            <p className="mt-4 text-lg leading-8 text-slate-700 dark:text-slate-200">{isZh ? '我们拥有30年酒店全流程咨询服务经验。关注酒店投资、建设、运营、改造、市场策略、成本收益与获客路径。迈创兄弟C&T面向酒店投资人、业主和管理者，提供酒店全生命周期价值提升咨询；网站通过专业洞察、经营判断和可执行的方法，分享酒店经营知识。' : 'We have 30 years of consulting experience across the full hotel process, covering investment, construction, operations, renovation, market strategy, cost and revenue, and guest-acquisition paths. MarvelBros C&T provides hotel lifecycle value advisory for investors, owners, and managers. Its website shares hospitality knowledge through industry insights, operating judgment, and practical methods.'}</p>
           </div>
           <p className="max-w-4xl text-lg leading-8 text-slate-700 dark:text-slate-200">
             {isZh ? '团队拥有30多年酒店行业实战经验，专业能力覆盖品牌、投资、运营、技术支持与数字化营销。五位专家围绕同一个经营目标协同判断，以清晰的问题诊断、可执行的改善路径和项目成果验证专业实力。' : 'The team brings more than 30 years of practical hospitality experience across brand strategy, investment, operations, technology support, and digital marketing. Five specialists work around one business objective, demonstrating expertise through clear diagnosis, actionable improvement paths, and project results.'}
