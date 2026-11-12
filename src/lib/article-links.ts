@@ -1,6 +1,6 @@
 // Repair only MarvelBros destinations. Published link text and external links stay unchanged.
 const internalHost = /^(?:https?:\/\/)?(?:www\.)?marvelbros\.com/iu
-const glue = /[；。，、）】：:\s]|电话|邮箱|或通过/u
+const glue = /[；。，、）】：:*\s]|电话|邮箱|或通过/u
 
 export type ArticleHrefLang = 'zh' | 'en'
 
@@ -24,10 +24,19 @@ function cutGluedSuffix(url: string) {
   return match[1] + suffix
 }
 
+function toPageLanguage(path: string, lang: ArticleHrefLang) {
+  if (lang === 'en' && (path === '/zh' || path.startsWith('/zh/'))) return `/en${path.slice(3)}`
+  return path
+}
+
 export function normalizeInternalArticleHref(href?: string, lang: ArticleHrefLang = 'zh') {
-  if (!href || !internalHost.test(href.trim())) return href
-  const decoded = safeDecode(href.trim())
-  let raw = internalHost.test(decoded) ? decoded : href.trim()
+  if (!href) return href
+  const trimmed = href.trim()
+  const englishRelative = lang === 'en' && trimmed.startsWith('/zh')
+  const input = englishRelative ? `https://www.marvelbros.com${trimmed.split(glue)[0]}` : trimmed
+  if (!internalHost.test(input)) return href
+  const decoded = safeDecode(input)
+  let raw = internalHost.test(decoded) ? decoded : input
   raw = raw.replace(/^http:\/\//iu, 'https://')
   if (!/^https?:\/\//iu.test(raw)) raw = `https://${raw}`
   raw = raw.replace(/^https:\/\/marvelbros\.com/iu, 'https://www.marvelbros.com')
@@ -46,5 +55,7 @@ export function normalizeInternalArticleHref(href?: string, lang: ArticleHrefLan
   else if (path === '/zh/hangye' || path === '/en/hangye') path = `/${explicitLang}/knowledge`
   else if (path === '/gxjzd' || path === '/lean') path = `/${lang}/lean`
   else if (path === '/zh/gxjzd' || path === '/en/gxjzd') path = `/${explicitLang}/lean`
-  return `https://www.marvelbros.com${path}${parsed.search}${parsed.hash}`
+  path = toPageLanguage(path, lang)
+  const target = `${path}${parsed.search}${parsed.hash}`
+  return englishRelative ? target : `https://www.marvelbros.com${target}`
 }
