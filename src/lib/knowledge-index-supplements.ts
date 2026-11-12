@@ -9,6 +9,7 @@ export const supplementalKnowledgeSlugs = [
   'hotel-banquet-accept-decline-contribution-per-time-slot-2026-11-12',
   'hotel-restaurant-open-to-public-or-guests-only-2026-11-12',
   'hotel-fnb-food-cost-loss-where-to-check-2026-11-12',
+  'hotel-fnb-menu-which-dishes-to-cut-first-2026-11-12',
   'hotel-180-day-revpar-double-case',
   'youth-day-hotel-consumption-insights',
   '技术范式转移视角下的酒店业创新路径研究',
