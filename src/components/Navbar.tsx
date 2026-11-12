@@ -5,7 +5,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Menu, X, Globe, ArrowRight } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import type { Dict } from "@/lib/dicts";
 
@@ -28,10 +27,8 @@ export function Navbar({ lang, dict }: NavbarProps) {
 
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
-    { href: `/${lang}/knowledge`, label: isZh ? "专业洞察" : "Insights" },
-    { href: `/${lang}/lean`, label: isZh ? "管享精道" : "Lean Insights" },
+    { href: `/${lang}/knowledge`, label: isZh ? "决策文库" : "Decisions" },
     { href: `/${lang}/services`, label: isZh ? "解决方案" : "Solutions" },
-    { href: `/${lang}/cases`, label: isZh ? "案例成果" : "Results" },
     { href: `/${lang}/about`, label: isZh ? "关于我们" : "About Us" },
   ];
 
@@ -56,16 +53,9 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 height={48}
                 className="object-contain flex-shrink-0"
               />
-              <div className="flex flex-col min-w-0">
-                <span className="text-[13px] font-semibold leading-none text-slate-950 dark:text-white lg:text-[14px]">
-                  MarvelBros C&amp;T
-                </span>
-                <span className="mt-1 max-w-[160px] truncate text-[10px] font-medium text-brand-blue dark:text-sky-300 sm:text-xs lg:max-w-none">
-                  {isZh
-                    ? "迈创兄弟C&T · 酒店全生命周期价值提升咨询"
-                    : "Hotel Lifecycle Value Enhancement Consultancy"}
-                </span>
-              </div>
+              <span className="text-[13px] font-semibold leading-none text-slate-950 dark:text-white lg:text-[14px]">
+                MarvelBros C&amp;T
+              </span>
             </Link>
 
             <nav className="hidden flex-shrink-0 items-center gap-1 min-[1180px]:flex 2xl:gap-2">
@@ -87,8 +77,6 @@ export function Navbar({ lang, dict }: NavbarProps) {
                   <span>{primaryCta.label}</span>
                   <ArrowRight className="w-4 h-4" />
               </Link>
-
-              <ThemeToggle lang={lang} />
 
               <a
                 href={languageHref}
@@ -178,8 +166,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
 
-            <div className="flex items-center justify-between">
-              <ThemeToggle lang={lang} />
+            <div className="flex items-center justify-end">
               <a
                 href={languageHref}
                 onClick={event => { event.currentTarget.href = `${languageHref}${window.location.search}${window.location.hash}` }}

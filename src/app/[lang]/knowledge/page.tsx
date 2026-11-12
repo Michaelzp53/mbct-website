@@ -8,14 +8,15 @@ import { BookOpen, FileText, BarChart3, ArrowRight, Clock, User, Calendar } from
 import NewsletterSubscribe from './[slug]/NewsletterSubscribe'
 import KnowledgeSearchBox from './KnowledgeSearchBox'
 import { getPrimaryTopic, getTopicCopy, selectTopicArticles, topicOrder, type PrimaryTopic } from '@/lib/knowledge-topics'
+import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
-  const title = isZh ? '专业洞察：酒店经营问题与方法' : 'Hotel Investment, Pre-Opening and Operations Knowledge Hub'
+  const title = isZh ? '决策文库：十二个酒店决定' : 'Decision library: twelve hotel decisions'
   const description = isZh
-    ? '从酒店投资判断、筹建筹开到经营改善，按真实酒店问题找到判断方法、案例与下一步行动。'
-    : 'Find practical methods, cases, and next steps for hotel investment, pre-opening, and operating improvement through real hospitality questions.'
+    ? '按酒店业主的十二个决定查阅判断方法。餐饮一篇仍在编写。'
+    : 'Twelve owner decisions, each with a method. The food and beverage piece is still being written.'
 
   return {
     title,
@@ -57,13 +58,13 @@ export default async function KnowledgePage({
 
   // 页面UI翻译
   const ui = {
-    pageTitle: isZh ? '专业洞察：酒店经营问题与方法' : 'Hotel Investment, Pre-Opening and Operations Knowledge Hub',
+    pageTitle: isZh ? '十二个酒店决定' : 'Twelve hotel decisions',
     pageSubtitle: isZh
-      ? '从投资判断、筹建筹开到经营改善，按真实酒店问题找到判断方法、案例和下一步行动。'
-      : 'Find methods, cases, and next steps for real hotel questions — from investment and pre-opening to operating improvement.',
+      ? '每条只回答业主的一个决定。餐饮一篇仍在编写。'
+      : 'Each entry answers one owner decision. The food and beverage piece is still being written.',
     heroSubtitle: isZh
-      ? '从投资判断、筹建筹开到经营改善，按真实酒店问题找到判断方法、案例和下一步行动。'
-      : 'Find methods, cases, and next steps for real hotel questions — from investment and pre-opening to operating improvement.',
+      ? '每条只回答业主的一个决定。餐饮一篇仍在编写。'
+      : 'Each entry answers one owner decision. The food and beverage piece is still being written.',
     leanBannerTitle: isZh ? '管享精道 · 专题栏目' : 'Lean Insights · Special Column',
     leanBannerDesc: isZh
       ? '专为酒店管理者打造的精益管理知识体系 —— 从投资决策到运营升级，7大模块系统赋能。独立入口，直达实战精华。'
@@ -3373,47 +3374,6 @@ export default async function KnowledgePage({
     return new Date(article.date) > new Date(latest.date) ? article : latest
   }, allArticles[0])
 
-  const questionTopics: PrimaryTopic[] = [
-    'investment',
-    'hotel-opening',
-    'revenue',
-    'operations',
-    'cost',
-    'renovation',
-    'team',
-    'governance',
-    'marketing',
-    'distribution',
-    'cultural-tourism',
-    'silver-economy',
-  ]
-  const knowledgeMap = [
-    {
-      step: isZh ? '投资前' : 'Before investment',
-      title: isZh ? '判断项目、品牌、回报与风险' : 'Judge the project, brand, return, and risk',
-      topics: ['investment'] as PrimaryTopic[],
-    },
-    {
-      step: isZh ? '筹开期' : 'Pre-opening',
-      title: isZh ? '把定位、产品、预算与开业准备连起来' : 'Connect positioning, product, budget, and opening readiness',
-      topics: ['hotel-opening', 'renovation'] as PrimaryTopic[],
-    },
-    {
-      step: isZh ? '经营期' : 'In operation',
-      title: isZh ? '同时看收入、利润、客源、成本与服务' : 'Read revenue, profit, demand, cost, and service together',
-      topics: ['revenue', 'operations', 'cost', 'marketing', 'distribution'] as PrimaryTopic[],
-    },
-    {
-      step: isZh ? '治理层' : 'Governance',
-      title: isZh ? '让业主目标被管理公司和团队正确承接' : 'Help operators and teams carry owner objectives correctly',
-      topics: ['governance', 'team'] as PrimaryTopic[],
-    },
-    {
-      step: isZh ? '改善期' : 'Improvement',
-      title: isZh ? '诊断、拆解、测试、验证，再决定是否扩大' : 'Diagnose, break down, test, verify, then decide whether to scale',
-      topics: ['operations', 'renovation'] as PrimaryTopic[],
-    },
-  ]
   const selectedTopic = topicOrder.includes(requestedTopic as PrimaryTopic)
     ? requestedTopic as PrimaryTopic
     : null
@@ -3449,43 +3409,71 @@ export default async function KnowledgePage({
     },
   ]
 
-  const visibleArticles = selectedTopic ? selectedTopicArticles : questionTopics.flatMap(topic => selectTopicArticles(allArticles, topic))
-  const uniqueVisible = visibleArticles.filter((article, index, entries) => entries.findIndex(item => item.slug === article.slug) === index)
+  const listedDecisions = ownerDecisions.filter(decision => decision.slug)
   const collectionJsonLd = {
     '@context': 'https://schema.org', '@type': 'CollectionPage',
     '@id': `https://www.marvelbros.com/${lang}/knowledge#collection`,
     url: `https://www.marvelbros.com/${lang}/knowledge`, name: ui.pageTitle,
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
-    mainEntity: { '@type': 'ItemList', itemListElement: uniqueVisible.map((article, index) => ({
+    mainEntity: { '@type': 'ItemList', itemListElement: listedDecisions.map((decision, index) => ({
       '@type': 'ListItem', position: index + 1,
-      name: isZh ? article.title : article.titleEn || article.title,
-      url: `https://www.marvelbros.com/${lang}/knowledge/${encodeURIComponent(article.slug)}`,
+      name: isZh ? decision.zh : decision.en,
+      url: `https://www.marvelbros.com/${lang}/knowledge/${encodeURIComponent(decision.slug || '')}`,
     })) },
   }
 
   return (
     <div className="min-h-screen bg-background">
-      <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '专业洞察' : 'Insights'} />
+      <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '决策文库' : 'Decisions'} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <header className="mb-6 max-w-3xl">
-          <p className="text-sm font-semibold text-primary">{isZh ? '迈创兄弟C&T · 酒店经营知识库' : 'MarvelBros C&T · Hotel knowledge'}</p>
+      <div className="mx-auto max-w-[1440px] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 xl:px-16">
+        <header className="mb-8 max-w-3xl">
+          <p className="text-sm font-semibold text-primary">{isZh ? '迈创兄弟C&T · 决策文库' : 'MarvelBros C&T · Decisions'}</p>
           <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{ui.pageTitle}</h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">{ui.heroSubtitle}</p>
         </header>
 
-        <KnowledgeSearchBox
-          lang={lang}
-          isZh={isZh}
-          articles={allArticles}
-          placeholder={ui.searchPlaceholder}
-        />
+        <section id="decisions" className="scroll-mt-24">
+          <ol className="border-t border-slate-300 dark:border-slate-700">
+            {ownerDecisions.map((decision, index) => {
+              const href = ownerDecisionHref(lang, decision)
+              const title = isZh ? decision.zh : decision.en
+              const className = 'group grid min-h-16 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-4 dark:border-slate-700 sm:grid-cols-[3.5rem_1fr_auto]'
+              const body = (
+                <>
+                  <span className="text-sm font-bold text-[#d98b28]">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="text-lg font-semibold sm:text-xl">
+                    {title}
+                    {!href && <span className="ml-3 text-sm font-medium text-slate-500">{isZh ? '编写中' : 'In preparation'}</span>}
+                  </span>
+                  {href ? <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1" /> : <span />}
+                </>
+              )
+              return href ? (
+                <li key={decision.id}>
+                  <Link href={href} className={`${className} hover:bg-slate-50 dark:hover:bg-slate-900`}>{body}</Link>
+                </li>
+              ) : (
+                <li key={decision.id} className={className}>{body}</li>
+              )
+            })}
+          </ol>
+        </section>
 
-        <details className="mb-6 rounded-xl border border-border p-4">
-          <summary className="cursor-pointer font-semibold">{isZh ? '按专业洞察栏目浏览' : 'Browse Insights by category'}</summary>
-          <nav aria-label={isZh ? '专业洞察栏目' : 'Insights categories'} className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
-            {knowledgeCategories.map(category => <Link key={category.slug} className="rounded-lg bg-muted px-3 py-3 text-sm hover:text-primary" href={`/${lang}/knowledge/category/${category.slug}`}>{isZh ? category.zh : category.en}</Link>)}
+        <div className="mt-10">
+          <KnowledgeSearchBox
+            lang={lang}
+            isZh={isZh}
+            articles={allArticles}
+            placeholder={ui.searchPlaceholder}
+          />
+        </div>
+
+        <details className="mt-8 border-t border-slate-300 py-4 dark:border-slate-700">
+          <summary className="cursor-pointer text-sm font-semibold">{isZh ? '其他文章' : 'Other articles'}</summary>
+          <nav aria-label={isZh ? '其他栏目' : 'Other categories'} className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+            {knowledgeCategories.map(category => <Link key={category.slug} className="px-1 py-2 text-sm hover:text-primary" href={`/${lang}/knowledge/category/${category.slug}`}>{isZh ? category.zh : category.en}</Link>)}
           </nav>
         </details>
 
@@ -3516,107 +3504,7 @@ export default async function KnowledgePage({
           </section>
         )}
 
-        <nav aria-label={isZh ? '按经营问题浏览' : 'Browse by operating problem'} className="mb-8 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-          {questionTopics.map(topic => <Link key={topic} href={`/${lang}/knowledge?topic=${topic}#topic-results`} className="rounded-lg border border-border px-3 py-3 text-sm font-medium hover:border-primary hover:bg-primary/5">{getTopicCopy(topic, isZh).title} →</Link>)}
-        </nav>
 
-        {!selectedTopic && <>
-        <section id="problem-navigation" className="mb-16 scroll-mt-24">
-          <div className="max-w-3xl mb-8">
-            <p className="text-sm font-medium text-primary mb-3">{isZh ? '按问题开始' : 'Start with the question'}</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {isZh ? '先找到正在影响酒店结果的那个问题' : 'Start with the issue shaping the hotel result'}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              {isZh ? '每个入口只保留少量精选文章，帮助你先缩小判断范围，而不是在长目录里反复筛选。' : 'Each entry contains a small editorial selection so readers can narrow the judgment before opening a long directory.'}
-            </p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2">
-            <section className="rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-yellow-50 p-6 dark:border-amber-500/30 dark:from-amber-900/20 dark:to-yellow-900/20 md:col-span-2">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-sm font-medium text-amber-700 dark:text-amber-300">{isZh ? '酒店精益管理方法' : 'Practical lean hotel management'}</p>
-                  <h3 className="mt-2 text-xl font-bold text-card-foreground">{ui.leanTitle}</h3>
-                  <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-                    {isZh ? '从真实经营问题出发，查看收益、运营、团队与成本等场景中的判断方法和改进动作。' : 'Start with real operating problems and explore practical judgments and improvement actions across revenue, operations, teams, and costs.'}
-                  </p>
-                </div>
-                <Link
-                  href={`/${lang}/lean`}
-                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#f59e0b] px-5 py-3 font-bold text-[#0f172a] transition-colors hover:bg-[#d98b28]"
-                >
-                  {ui.enterLean}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </section>
-            {questionTopics.map((topic) => {
-              const copy = getTopicCopy(topic, isZh)
-              const selected = selectTopicArticles(allArticles, topic)
-
-              return (
-                <section key={topic} className="rounded-2xl border border-border bg-card p-6">
-                  <h3 className="text-xl font-bold text-card-foreground">{copy.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{copy.description}</p>
-                  <div className="mt-5 space-y-3">
-                    {selected.map((article) => (
-                      <Link
-                        key={`${topic}-${article.slug}`}
-                        href={`/${lang}/knowledge/${encodeURIComponent(article.slug)}`}
-                        className="group flex items-start justify-between gap-3 text-sm font-medium text-foreground hover:text-primary"
-                      >
-                        <span>{isZh ? article.title : article.titleEn || article.title}</span>
-                        <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
-                      </Link>
-                    ))}
-                  </div>
-                  <Link
-                    href={`/${lang}/knowledge?topic=${topic}#topic-results`}
-                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:opacity-80"
-                  >
-                    {isZh ? '查看该主题全部内容' : 'View all in this topic'} <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </section>
-              )
-            })}
-          </div>
-        </section>
-
-        <section id="knowledge-map" className="mb-16 rounded-3xl border border-border bg-card p-6 sm:p-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-medium text-primary">{isZh ? '知识体系地图' : 'Knowledge map'}</p>
-            <h2 className="mt-2 text-3xl font-bold text-card-foreground">
-              {isZh ? '按酒店经营全周期，找到下一步需要补齐的知识' : 'Find the next knowledge gap across the hotel lifecycle'}
-            </h2>
-            <p className="mt-4 leading-7 text-muted-foreground">
-              {isZh ? '按酒店所处阶段，查阅投资、筹开、经营、治理与改善的相关知识。' : 'This knowledge base connects investment, pre-opening, operations, governance, and improvement into one durable reference path.'}
-            </p>
-          </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
-            {knowledgeMap.map((stage, index) => (
-              <div key={stage.step} className="rounded-2xl border border-border bg-background/60 p-5">
-                <span className="text-xs font-bold tracking-[0.18em] text-primary">{String(index + 1).padStart(2, '0')}</span>
-                <h3 className="mt-3 text-lg font-bold text-card-foreground">{stage.step}</h3>
-                <p className="mt-2 min-h-16 text-sm leading-6 text-muted-foreground">{stage.title}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {stage.topics.map((topic) => (
-                    <Link
-                      key={`${stage.step}-${topic}`}
-                      href={`/${lang}/knowledge?topic=${topic}#topic-results`}
-                      className="rounded-full border border-border px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
-                    >
-                      {getTopicCopy(topic, isZh).title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-
-        </>}
         {false && <>
         {/* Categories */}
         <section id="categories" className="mb-16">
