@@ -5,6 +5,8 @@ import { plainArticleText } from '@/lib/article-labels'
 // Read their original metadata and text; do not duplicate or rewrite their bodies.
 export const supplementalKnowledgeSlugs = [
   'hotel-fb-operate-or-outsource-2026-11-12',
+  'hotel-breakfast-included-rate-revenue-cost-allocation-2026-11-12',
+  'hotel-banquet-accept-decline-contribution-per-time-slot-2026-11-12',
   'hotel-180-day-revpar-double-case',
   'youth-day-hotel-consumption-insights',
   '技术范式转移视角下的酒店业创新路径研究',
