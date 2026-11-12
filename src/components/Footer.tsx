@@ -14,8 +14,8 @@ export function Footer({ lang, dict }: FooterProps) {
   const isZh = lang === 'zh'
 
   const knowledgeLinks = [
-    { label: isZh ? '决策文库' : 'Decisions', href: `/${lang}/knowledge` },
-    { label: isZh ? '管享精道' : 'Lean Insights', href: `/${lang}/lean` },
+    { label: isZh ? '酒店投、筹、管、退、改决议' : 'Resolutions', href: `/${lang}/knowledge` },
+    { label: isZh ? '投管知识' : 'Practice Library', href: `/${lang}/lean` },
     { label: isZh ? '案例成果' : 'Case results', href: `/${lang}/cases` },
   ]
 

@@ -2,7 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, FileText, Phone } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
-import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
+import { ownerDecisions } from '@/lib/owner-decisions'
+import { crawlKeywords } from '@/lib/seo'
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -21,9 +22,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     name: isZh ? '迈创兄弟C&T酒店全生命周期价值提升咨询' : 'MarvelBros C&T Hotel Lifecycle Value Enhancement Consultancy',
     url: `https://www.marvelbros.com/${lang}`,
     description: isZh
-      ? '面向酒店投资人、业主和管理者，提供酒店投资研究、品牌定位、筹建管理、经营诊断、产品升级与市场增长咨询。'
-      : 'Hotel lifecycle advisory for investors, owners, and managers across investment research, brand positioning, development, operations, product renewal, and market growth.',
+      ? '面向酒店投资人、业主和管理者，提供酒店投资、筹建筹开与经营改善咨询。'
+      : 'Hotel advisory for investors, owners, and managers: investment, pre-opening, and operating improvement.',
     inLanguage: isZh ? 'zh-CN' : 'en-US',
+    keywords: [...(isZh ? crawlKeywords.zh : crawlKeywords.en), ...ownerDecisions.map((decision) => (isZh ? decision.zh : decision.en))].join(', '),
     about: ownerDecisions.map((decision) => (isZh ? decision.zh : decision.en)),
     isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
   }
@@ -32,42 +34,33 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }} />
       <HeroWithStats lang={lang} />
-      <section id="hotel-problems" className="scroll-mt-20 bg-[#f4f7f8] py-12 dark:bg-slate-900 md:py-20">
+      <section id="services" className="scroll-mt-20 border-b border-slate-200 bg-white py-10 dark:border-slate-800 dark:bg-slate-950 md:py-14">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
-          <div className="max-w-3xl">
-              <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '十二个酒店决定' : 'Twelve hotel decisions'}</h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
-              {isZh ? '每条只回答业主的一个决定。餐饮一篇仍在编写。' : 'Each entry answers one owner decision. The food and beverage piece is still being written.'}
-            </p>
-          </div>
-
-          <ol className="mt-12 border-t border-slate-300 dark:border-slate-700">
-            {ownerDecisions.map((decision, index) => {
-              const href = ownerDecisionHref(lang, decision)
-              const title = isZh ? decision.zh : decision.en
-              const className = 'group grid min-h-20 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-5 dark:border-slate-700 sm:grid-cols-[3.5rem_1fr_auto]'
-              const body = (
-                <>
-                  <span className="text-sm font-bold text-[#d98b28]">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="text-xl font-semibold sm:text-2xl">
-                    {title}
-                    {!href && <span className="ml-3 text-sm font-medium text-slate-500 dark:text-slate-400">{isZh ? '编写中' : 'In preparation'}</span>}
-                  </span>
-                  {href ? <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-brand-blue" /> : <span />}
-                </>
-              )
-              return href ? (
-                <li key={decision.id}>
-                  <Link href={href} className={`${className} transition-colors hover:bg-white/70 dark:hover:bg-slate-950/40`}>
-                    {body}
-                  </Link>
-                </li>
-              ) : (
-                <li key={decision.id} className={className}>{body}</li>
-              )
-            })}
-          </ol>
+          <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '主要业务' : 'What we do'}</p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-semibold leading-tight md:text-4xl">
+            {isZh ? '三项咨询，对应酒店的三个阶段' : 'Three advisory lines, one for each stage of a hotel'}
+          </h2>
+          <ul className="mt-8 border-t border-slate-300 dark:border-slate-700">
+            {[
+              { href: `/${lang}/hotel-investment`, zh: '酒店投资判断', en: 'Hotel investment decisions', detailZh: '适用于新项目、品牌选择、改造和投资前的关键判断。', detailEn: 'For the key decisions before a new project, brand choice, repositioning, or capital commitment.' },
+              { href: `/${lang}/hotel-opening`, zh: '酒店筹建筹开', en: 'Hotel pre-opening', detailZh: '把预算、工程接口、团队、流程与开业节奏拉到同一张执行表上。', detailEn: 'Put budget, technical interfaces, team, processes, and opening readiness on one execution plan.' },
+              { href: `/${lang}/hotel-operation-improvement`, zh: '酒店经营改善', en: 'Hotel operating improvement', detailZh: '从经营诊断到收入、成本、团队和市场承接，建立可复盘的改善路径。', detailEn: 'From diagnosis to revenue, cost, team, and market capture, build an improvement path that can be reviewed.' },
+            ].map((item) => (
+              <li key={item.href} className="border-b border-slate-300 dark:border-slate-700">
+                <Link href={item.href} className="group grid gap-1 py-4 sm:grid-cols-[11rem_1fr_auto] sm:items-baseline sm:gap-6">
+                  <span className="font-semibold group-hover:text-brand-blue dark:group-hover:text-sky-300">{isZh ? item.zh : item.en}</span>
+                  <span className="text-sm leading-6 text-slate-600 dark:text-slate-300">{isZh ? item.detailZh : item.detailEn}</span>
+                  <ArrowRight className="hidden h-4 w-4 text-slate-400 sm:block" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300">
+            <Link href={`/${lang}/knowledge`} className="font-semibold text-brand-blue hover:text-[#b86d13] dark:text-sky-300">
+              {isZh ? '酒店投、筹、管、退、改决议' : 'Resolutions on investment, pre-opening, operation, exit, and renovation'}
+            </Link>
+            {isZh ? '：回答酒店“投”、“筹”、“管”、“退”、“改”业者的决策问题。' : ': decision questions on investment, pre-opening, operation, exit, and renovation.'}
+          </p>
         </div>
       </section>
 

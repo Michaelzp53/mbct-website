@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: '*', allow: '/' },
       {
-        userAgent: ['Googlebot', 'Bingbot', 'Baiduspider', 'GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'ClaudeBot', 'PerplexityBot'],
+        userAgent: ['Googlebot', 'Google-Extended', 'Bingbot', 'Baiduspider', 'Bytespider', 'Applebot', 'Applebot-Extended', 'Amazonbot', 'GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'ClaudeBot', 'PerplexityBot', 'meta-externalagent'],
         allow: '/',
       },
     ],

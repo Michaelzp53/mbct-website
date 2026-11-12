@@ -29,7 +29,7 @@ export function legacyStructuredData(lang: string, path: string) {
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: lang === 'zh' ? '首页' : 'Home', item: `${siteUrl}/${lang}` },
-      { '@type': 'ListItem', position: 2, name: section === '/knowledge' ? (lang === 'zh' ? '专业洞察' : 'Knowledge') : (lang === 'zh' ? '管享精道' : 'Lean Insights'), item: `${siteUrl}/${lang}${section}` },
+      { '@type': 'ListItem', position: 2, name: section === '/knowledge' ? (lang === 'zh' ? '酒店投、筹、管、退、改决议' : 'Resolutions') : (lang === 'zh' ? '投管知识｜管享精道' : 'Practice library'), item: `${siteUrl}/${lang}${section}` },
       { '@type': 'ListItem', position: 3, name: entry.title, item: url },
     ],
   }]
