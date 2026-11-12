@@ -9,7 +9,18 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   async redirects() {
+    const httpsUpgrade = {
+      has: [{ type: 'header' as const, key: 'x-forwarded-proto', value: 'http' }],
+      permanent: true,
+    }
     return [
+      { source: '/', ...httpsUpgrade, destination: 'https://www.marvelbros.com/' },
+      { source: '/:path*', ...httpsUpgrade, destination: 'https://www.marvelbros.com/:path*' },
+      { source: '/hangye', destination: '/zh/knowledge', permanent: true },
+      { source: '/:lang(zh|en)/hangye', destination: '/:lang/knowledge', permanent: true },
+      { source: '/gxjzd', destination: '/zh/lean', permanent: true },
+      { source: '/:lang(zh|en)/gxjzd', destination: '/:lang/lean', permanent: true },
+      { source: '/lean', destination: '/zh/lean', permanent: true },
       { source: '/solutions', destination: '/zh/services', permanent: true },
       { source: '/:lang(zh|en)/solutions', destination: '/:lang/services', permanent: true },
       {
