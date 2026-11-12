@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
       { source: '/gxjzd', destination: '/zh/lean', permanent: true },
       { source: '/:lang(zh|en)/gxjzd', destination: '/:lang/lean', permanent: true },
       { source: '/lean', destination: '/zh/lean', permanent: true },
+      { source: '/:lang(zh|en)/knowledge/hotel-ramp-up-sequence-2026-05-23', destination: '/:lang/lean/article/new-hotel-ramp-up-sequence-2026-05-23', permanent: true },
       { source: '/solutions', destination: '/zh/services', permanent: true },
       { source: '/:lang(zh|en)/solutions', destination: '/:lang/services', permanent: true },
       {
