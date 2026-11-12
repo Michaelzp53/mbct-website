@@ -4787,7 +4787,7 @@ export const articlesData: Record<string, {
       '1. 中国饭店协会《2026年中国酒店业发展报告》https://www.chinahotel.org.cn',
       '2. 同程旅行《2026年五一酒店消费数据报告》https://www.ly.com',
       '3. 各酒店集团公开披露的加盟政策（华住、锦江、首旅如家、亚朵年度财报）',
-      '4. 酒店之家《2026中国酒店投资白皮书》https://www.hotelhomes.cn',
+      '4. 酒店之家《2026中国酒店投资白皮书》',
     ],
   },
 
