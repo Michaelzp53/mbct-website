@@ -17,6 +17,7 @@ interface ArticleMarkdownProps {
 
 export function ArticleMarkdown({ content }: ArticleMarkdownProps) {
   const pathname = usePathname()
+  const pageLang = pathname === '/en' || pathname.startsWith('/en/') ? 'en' : 'zh'
   const originalChinese = pathname.startsWith('/en/') && containsChineseBody(content)
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -87,7 +88,7 @@ export function ArticleMarkdown({ content }: ArticleMarkdownProps) {
           },
           hr: () => <hr className="my-8 border-border" />,
           a: ({ children, href }) => (
-            <a href={normalizeInternalArticleHref(href)} className="text-primary hover:underline">
+            <a href={normalizeInternalArticleHref(href, pageLang)} className="text-primary hover:underline">
               {children}
             </a>
           ),
