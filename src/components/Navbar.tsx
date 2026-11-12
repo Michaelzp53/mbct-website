@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Menu, X, Globe, ArrowRight } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import type { Dict } from "@/lib/dicts";
 
@@ -28,6 +29,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
     { href: `/${lang}/knowledge`, label: isZh ? "决策文库" : "Decisions" },
+    { href: `/${lang}/lean`, label: isZh ? "投管知识" : "Practice Library" },
     { href: `/${lang}/services`, label: isZh ? "解决方案" : "Solutions" },
     { href: `/${lang}/about`, label: isZh ? "关于我们" : "About Us" },
   ];
@@ -41,10 +43,10 @@ export function Navbar({ lang, dict }: NavbarProps) {
     <>
       <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
         <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-10">
-          <div className="flex h-[72px] items-center justify-between">
+          <div className="flex min-h-[72px] items-center justify-between py-2">
             <Link
               href={`/${lang}/`}
-              className="flex items-center gap-2 lg:gap-3 flex-shrink-0"
+              className="flex min-w-0 items-center gap-2 lg:gap-3 flex-shrink-0"
             >
               <Image
                 src="/logo-new.png"
@@ -53,8 +55,14 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 height={48}
                 className="object-contain flex-shrink-0"
               />
-              <span className="text-[13px] font-semibold leading-none text-slate-950 dark:text-white lg:text-[14px]">
-                MarvelBros C&amp;T
+              <span className="min-w-0">
+                <span className="block text-[13px] font-semibold leading-none text-slate-950 dark:text-white lg:text-[14px]">MarvelBros C&amp;T</span>
+                <span className="mt-1 block text-[11px] font-medium leading-4 text-brand-blue dark:text-sky-300">
+                  {isZh ? "酒店投、建、管、改、退" : "Invest, build, operate, renew, exit"}
+                </span>
+                <span className="block text-[11px] font-medium leading-4 text-brand-blue dark:text-sky-300">
+                  {isZh ? "全生命周期价值提升咨询服务" : "Hotel lifecycle advisory"}
+                </span>
               </span>
             </Link>
 
@@ -64,7 +72,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "flex-shrink-0 whitespace-nowrap px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300",
+                    "flex-shrink-0 whitespace-nowrap px-2.5 py-2 text-[15.4px] font-bold text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300",
                   )}
                 >
                   {link.label}
@@ -73,7 +81,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </nav>
 
             <div className="hidden min-[1180px]:flex items-center gap-3 min-[1180px]:gap-4 flex-shrink-0">
-              <Link href={primaryCta.href} className="inline-flex min-h-11 items-center gap-1.5 bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 sm:text-sm">
+              <Link href={primaryCta.href} className="inline-flex min-h-11 items-center gap-1.5 bg-primary px-4 py-2 text-[15.4px] font-bold text-primary-foreground hover:bg-primary/90">
                   <span>{primaryCta.label}</span>
                   <ArrowRight className="w-4 h-4" />
               </Link>
@@ -83,11 +91,12 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 onClick={event => { event.currentTarget.href = `${languageHref}${window.location.search}${window.location.hash}` }}
                 hrefLang={otherLang}
                 aria-label={isZh ? "Read this page in English" : "以中文阅读本页"}
-                className="flex flex-shrink-0 items-center gap-1.5 px-2 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300"
+                className="flex flex-shrink-0 items-center gap-1.5 px-2 py-2 text-[15.4px] font-bold text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300"
               >
                 <Globe className="w-4 h-4" />
                 <span>{lang === "zh" ? "EN" : "中文"}</span>
               </a>
+              <ThemeToggle lang={lang} />
             </div>
 
             <button
@@ -153,7 +162,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="border-b border-slate-200 px-1 py-3 text-base font-semibold text-slate-700 transition-colors hover:text-brand-blue dark:border-slate-800 dark:text-slate-200 dark:hover:text-sky-300"
+                className="border-b border-slate-200 px-1 py-3 text-[17.6px] font-bold text-slate-700 transition-colors hover:text-brand-blue dark:border-slate-800 dark:text-slate-200 dark:hover:text-sky-300"
               >
                 {link.label}
               </Link>
@@ -166,7 +175,8 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
 
-            <div className="flex items-center justify-end">
+            <div className="flex items-center justify-between gap-3">
+              <ThemeToggle lang={lang} />
               <a
                 href={languageHref}
                 onClick={event => { event.currentTarget.href = `${languageHref}${window.location.search}${window.location.hash}` }}

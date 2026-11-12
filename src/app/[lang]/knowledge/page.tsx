@@ -13,10 +13,10 @@ import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
-  const title = isZh ? '决策文库：十二个酒店决定' : 'Decision library: twelve hotel decisions'
+  const title = isZh ? '酒店经营里的十二个问题' : 'Twelve questions in running a hotel'
   const description = isZh
-    ? '按酒店业主的十二个决定查阅判断方法。餐饮一篇仍在编写。'
-    : 'Twelve owner decisions, each with a method. The food and beverage piece is still being written.'
+    ? '酒店经营里会碰到的十二个问题，每条都能点进对应的方法。'
+    : 'Twelve questions that come up in running a hotel. Each one links to a method.'
 
   return {
     title,
@@ -58,13 +58,13 @@ export default async function KnowledgePage({
 
   // 页面UI翻译
   const ui = {
-    pageTitle: isZh ? '十二个酒店决定' : 'Twelve hotel decisions',
+    pageTitle: isZh ? '酒店经营里的十二个问题' : 'Twelve questions in running a hotel',
     pageSubtitle: isZh
-      ? '每条只回答业主的一个决定。餐饮一篇仍在编写。'
-      : 'Each entry answers one owner decision. The food and beverage piece is still being written.',
+      ? '每条对应一个会碰到的问题。其余文章仍在下方。'
+      : 'Each line is one question an owner actually meets. Earlier articles remain below.',
     heroSubtitle: isZh
-      ? '每条只回答业主的一个决定。餐饮一篇仍在编写。'
-      : 'Each entry answers one owner decision. The food and beverage piece is still being written.',
+      ? '每条对应一个会碰到的问题。其余文章仍在下方。'
+      : 'Each line is one question an owner actually meets. Earlier articles remain below.',
     leanBannerTitle: isZh ? '管享精道 · 专题栏目' : 'Lean Insights · Special Column',
     leanBannerDesc: isZh
       ? '专为酒店管理者打造的精益管理知识体系 —— 从投资决策到运营升级，7大模块系统赋能。独立入口，直达实战精华。'

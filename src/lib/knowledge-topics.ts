@@ -66,6 +66,7 @@ export function getPrimaryTopic(article: KnowledgeLike): PrimaryTopic {
   if (title === "租赁物业做酒店，剩余租期怎样约束回本和估值？") return 'investment'
   if (title === "酒店准备出售，先整理哪一份买方能复核的数据室？") return 'investment'
   if (title === "酒店要不要装充电桩？先看住客停车多久、车位够不够") return 'investment'
+  if (title === "酒店餐饮，该自营还是外包") return 'operations'
   if (/酒店AI不是PPT|hotel ai is not a slide deck|hotel-ai-implementation-operating-loop/iu.test(`${title} ${article.slug || ''}`)) return 'operations'
   const titleMatch = topicKeywords.find(([, pattern]) => pattern.test(title))
   if (titleMatch) return titleMatch[0]

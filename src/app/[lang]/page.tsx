@@ -32,29 +32,31 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }} />
       <HeroWithStats lang={lang} />
-      <section id="hotel-problems" className="scroll-mt-20 bg-[#f4f7f8] py-12 dark:bg-slate-900 md:py-20">
+      <section id="hotel-problems" className="scroll-mt-20 border-b border-[#e6dccb] bg-[#F7F1E6] py-8 dark:border-slate-800 dark:bg-slate-900 md:py-10">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
-          <div className="max-w-3xl">
-              <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '关键决策入口' : 'Critical decision points'}</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{isZh ? '十二个酒店决定' : 'Twelve hotel decisions'}</h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
-              {isZh ? '每条只回答业主的一个决定。餐饮一篇仍在编写。' : 'Each entry answers one owner decision. The food and beverage piece is still being written.'}
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '经营问题' : 'Operating questions'}</p>
+              <h2 className="mt-2 text-2xl font-semibold leading-tight md:text-3xl">{isZh ? '酒店经营里的十二个问题' : 'Twelve questions in running a hotel'}</h2>
+            </div>
+            <p className="max-w-md text-sm leading-6 text-[#5B4631] dark:text-[#D8B98A]">
+              {isZh ? '每条对应一个会碰到的问题。' : 'Each line is one question an owner actually meets.'}
             </p>
           </div>
 
-          <ol className="mt-12 border-t border-slate-300 dark:border-slate-700">
+          <ol className="mt-5 grid border-t border-[#d8cbb6] dark:border-slate-700 lg:grid-cols-2 lg:gap-x-12">
             {ownerDecisions.map((decision, index) => {
               const href = ownerDecisionHref(lang, decision)
               const title = isZh ? decision.zh : decision.en
-              const className = 'group grid min-h-20 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-5 dark:border-slate-700 sm:grid-cols-[3.5rem_1fr_auto]'
+              const className = 'group grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-b border-[#d8cbb6] py-2.5 dark:border-slate-700'
               const body = (
                 <>
-                  <span className="text-sm font-bold text-[#d98b28]">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="text-xl font-semibold sm:text-2xl">
+                  <span className="text-xs font-bold text-[#d98b28]">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="text-base font-medium leading-6">
                     {title}
-                    {!href && <span className="ml-3 text-sm font-medium text-slate-500 dark:text-slate-400">{isZh ? '编写中' : 'In preparation'}</span>}
+                    {!href && <span className="ml-2 text-xs font-medium text-slate-500 dark:text-slate-400">{isZh ? '编写中' : 'In preparation'}</span>}
                   </span>
-                  {href ? <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-brand-blue" /> : <span />}
+                  {href ? <ArrowRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-brand-blue" /> : <span />}
                 </>
               )
               return href ? (
