@@ -3395,17 +3395,20 @@ export default async function KnowledgePage({
     },
   ]
 
-  const listedDecisions = ownerDecisions.filter(decision => decision.slug)
+  const listedDecisions = ownerDecisions.flatMap(decision => {
+    const href = ownerDecisionHref(lang, decision)
+    return href ? [{ decision, href }] : []
+  })
   const collectionJsonLd = {
     '@context': 'https://schema.org', '@type': 'CollectionPage',
     '@id': `https://www.marvelbros.com/${lang}/knowledge#collection`,
     url: `https://www.marvelbros.com/${lang}/knowledge`, name: ui.pageTitle,
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
-    mainEntity: { '@type': 'ItemList', itemListElement: listedDecisions.map((decision, index) => ({
+    mainEntity: { '@type': 'ItemList', itemListElement: listedDecisions.map(({ decision, href }, index) => ({
       '@type': 'ListItem', position: index + 1,
       name: isZh ? decision.zh : decision.en,
-      url: `https://www.marvelbros.com/${lang}/knowledge/${encodeURIComponent(decision.slug || '')}`,
+      url: `https://www.marvelbros.com${href}`,
     })) },
   }
 

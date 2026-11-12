@@ -3,13 +3,14 @@ export type OwnerDecision = {
   zh: string
   en: string
   slug: string | null
+  href?: string
 }
 
 export const ownerDecisions: OwnerDecision[] = [
   { id: 'buy', zh: '如何判断一个酒店项目该不该投资', en: 'How to judge whether a hotel project should proceed', slug: 'hotel-demand-stress-tests-investment-2026-08-12' },
   { id: 'brand', zh: '续约、换牌，还是独立经营', en: 'Renew, rebrand, or go independent', slug: 'hotel-brand-contract-total-cost-2026-09-14' },
   { id: 'renovation', zh: '存量酒店改造应该怎么做', en: 'How an existing hotel should be renovated', slug: 'legacy-hotel-renovation-diagnosis-2026-06-03' },
-  { id: 'opening', zh: '筹开前必看重点', en: 'Priorities to check before opening', slug: null },
+  { id: 'opening', zh: '筹开前必看重点', en: 'Priorities to check before opening', slug: null, href: '/lean/article/new-hotel-ramp-up-sequence-2026-05-23' },
   { id: 'revenue', zh: '客房收入没有增长，怎么改善', en: 'Room revenue is not growing. How to improve it', slug: 'urban-business-hotel-more-orders-less-profit-2026-07-03' },
   { id: 'price', zh: '价格和渠道一起看', en: 'Price and channels together', slug: 'hotel-channel-price-authority-map-2026-09-16' },
   { id: 'labor', zh: '酒店人力成本应当怎么优化', en: 'How hotel labor cost should be optimized', slug: 'hotel-cost-optimization-dangers-2026-05-22' },
@@ -21,5 +22,6 @@ export const ownerDecisions: OwnerDecision[] = [
 ]
 
 export function ownerDecisionHref(lang: string, decision: OwnerDecision) {
+  if (decision.href) return `/${lang}${decision.href.startsWith('/') ? decision.href : `/${decision.href}`}`
   return decision.slug ? `/${lang}/knowledge/${decision.slug}` : null
 }
