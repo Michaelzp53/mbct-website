@@ -70,6 +70,7 @@ export function getPrimaryTopic(article: KnowledgeLike): PrimaryTopic {
   if (title === "酒店早餐含在房价里，账应该怎么拆") return 'operations'
   if (title === "酒店宴会，这场会该不该接") return 'operations'
   if (title === "酒店餐厅，继续对外营业还是只服务住客") return 'operations'
+  if (title === "酒店餐饮原料损耗从哪一环查起") return 'operations'
   if (/酒店AI不是PPT|hotel ai is not a slide deck|hotel-ai-implementation-operating-loop/iu.test(`${title} ${article.slug || ''}`)) return 'operations'
   const titleMatch = topicKeywords.find(([, pattern]) => pattern.test(title))
   if (titleMatch) return titleMatch[0]
