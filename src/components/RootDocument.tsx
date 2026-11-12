@@ -1,5 +1,5 @@
 import { brand, brandEmails, organizationId, lifecycleServices } from '@/lib/brand'
-import { crawlKeywords, defaultOgImages } from '@/lib/seo'
+import { defaultOgImages } from '@/lib/seo'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
@@ -17,7 +17,7 @@ export const siteMetadata: Metadata = {
     default: '迈创兄弟C&T｜酒店经营知识、行业洞察与实战方法',
   },
   description: brand.zh.description,
-  keywords: crawlKeywords.zh.join(', '),
+  keywords: '酒店投资咨询, 酒店筹开管理, 酒店经营诊断, 酒店运营优化, 酒店经营知识, 酒店管理',
   authors: [{ name: '迈创兄弟C&T' }],
   openGraph: {
     type: 'website',
@@ -44,13 +44,26 @@ export default function RootDocument({ children, lang = 'zh-CN' }: { children: R
     '@type': 'Organization',
     '@id': organizationId,
     name: 'MarvelBros C&T',
-    alternateName: ['迈创兄弟C&T', 'MarvelBros C&T', 'MBCT', '管享精道', '投管知识'],
+    alternateName: ['迈创兄弟C&T', 'MarvelBros C&T'],
     url: 'https://www.marvelbros.com',
     logo: 'https://www.marvelbros.com/logo-new.png',
     email: [...brandEmails],
     telephone: '+86-189-4157-9333',
     description: lang.startsWith('zh') ? brand.zh.description : brand.en.description,
-    knowsAbout: [...crawlKeywords.zh, ...crawlKeywords.en],
+    knowsAbout: [
+      '酒店投资咨询',
+      '酒店筹建筹开',
+      '酒店经营诊断',
+      '酒店经营改善',
+      '酒店收益管理',
+      '酒店市场获客',
+      'Hotel investment consulting',
+      'Hotel pre-opening management',
+      'Hotel operational diagnosis',
+      'Hotel operations improvement',
+      'Hotel revenue management',
+      'Hotel market acquisition',
+    ],
     hasOfferCatalog: { '@type': 'OfferCatalog', name: lang.startsWith('zh') ? brand.zh.services : brand.en.services, itemListElement: lifecycleServices.map(service => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': `https://www.marvelbros.com/${lang.startsWith('zh') ? 'zh' : 'en'}/services#${service.slug}`, name: lang.startsWith('zh') ? service.zh : service.en, provider: { '@id': organizationId } } })) },
     contactPoint: {
       '@type': 'ContactPoint',
@@ -68,7 +81,7 @@ export default function RootDocument({ children, lang = 'zh-CN' }: { children: R
     '@id': 'https://www.marvelbros.com/#website',
     url: 'https://www.marvelbros.com',
     name: 'MarvelBros C&T',
-    alternateName: ['迈创兄弟C&T', 'MBCT', '管享精道', '投管知识', '酒店投、筹、管、退、改决议'],
+    alternateName: '迈创兄弟C&T',
     publisher: {
       '@id': 'https://www.marvelbros.com/#organization',
     },

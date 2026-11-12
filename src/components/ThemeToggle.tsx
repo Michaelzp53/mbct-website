@@ -6,10 +6,9 @@ import { useTheme } from './ThemeProvider'
 interface ThemeToggleProps {
   lang?: string
   className?: string
-  prominent?: boolean
 }
 
-export function ThemeToggle({ lang = 'zh', className = '', prominent = false }: ThemeToggleProps) {
+export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
   const { theme, setTheme, isManualOverride } = useTheme()
   const isZh = lang === 'zh'
 
@@ -20,14 +19,14 @@ export function ThemeToggle({ lang = 'zh', className = '', prominent = false }: 
         aria-pressed={theme === 'light'}
         onClick={() => setTheme('light')}
         className={`
-          flex cursor-pointer items-center gap-1.5 font-bold transition-colors ${prominent ? 'px-3 py-2 text-2xl' : 'px-2 py-1.5 text-xs'}
+          flex cursor-pointer items-center gap-1.5 px-2 py-1.5 text-xs font-medium transition-colors
           ${theme === 'light'
             ? 'bg-brand-blue text-white'
             : 'text-slate-500 hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300'}
         `}
         title={isZh ? '白天模式' : 'Light mode'}
       >
-        <Sun className={prominent ? 'h-6 w-6' : 'h-3.5 w-3.5'} />
+        <Sun className="w-3.5 h-3.5" />
         <span>{isZh ? '昼' : 'Light'}</span>
       </button>
 
@@ -36,14 +35,14 @@ export function ThemeToggle({ lang = 'zh', className = '', prominent = false }: 
         aria-pressed={theme === 'dark'}
         onClick={() => setTheme('dark')}
         className={`
-          flex cursor-pointer items-center gap-1.5 font-bold transition-colors ${prominent ? 'px-3 py-2 text-2xl' : 'px-2 py-1.5 text-xs'}
+          flex cursor-pointer items-center gap-1.5 px-2 py-1.5 text-xs font-medium transition-colors
           ${theme === 'dark'
             ? 'bg-slate-800 text-white'
             : 'text-slate-500 hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300'}
         `}
         title={isZh ? '夜间模式' : 'Dark mode'}
       >
-        <Moon className={prominent ? 'h-6 w-6' : 'h-3.5 w-3.5'} />
+        <Moon className="w-3.5 h-3.5" />
         <span>{isZh ? '夜' : 'Dark'}</span>
       </button>
 

@@ -11,17 +11,14 @@ import { leanCategories, getLeanArticleCategory } from '@/lib/knowledge-taxonomy
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
-  const title = isZh ? '投管知识｜管享精道' : 'Practice library | Lean Insights'
+  const title = isZh ? '管享精道｜酒店管理者的精益经营知识库' : 'Lean Insights | A Practical Hotel Management Knowledge Base'
   const description = isZh
-    ? '投管知识即管享精道，收录酒店投资、筹开、经营诊断、收益管理、成本、团队与营销的方法文章。迈创兄弟C&T。'
-    : 'The practice library, also called Lean Insights, collects methods on hotel investment, pre-opening, diagnosis, revenue, cost, teams, and marketing. MarvelBros C&T.'
+    ? '管享精道是迈创兄弟C&T面向酒店管理者的精益经营知识库，涵盖精益投资、筹开、诊断、收益、成本、数字化、营销与治理。'
+    : 'Lean Insights is MarvelBros C&T’s practical hotel management knowledge base, covering lean investment, pre-opening, diagnosis, revenue, cost, digital transformation, marketing, and governance.'
 
   return {
     title,
     description,
-    keywords: isZh
-      ? '投管知识, 管享精道, 酒店投资, 酒店筹开, 酒店经营诊断, 酒店收益管理, 酒店成本, 迈创兄弟C&T'
-      : 'hotel investment, hotel pre-opening, hotel revenue management, hotel cost, MarvelBros C&T, Lean Insights',
     alternates: {
       canonical: `https://www.marvelbros.com/${lang}/lean`,
       languages: {
@@ -140,10 +137,10 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
   const isZh = lang === 'zh'
 
   const ui = {
-    pageTitle: isZh ? '投管知识' : 'Practice library',
+    pageTitle: isZh ? '管享精道' : 'Lean Insights',
     pageSubtitle: isZh
-      ? '管享精道。酒店投资、筹开、经营诊断、收益、成本、团队与营销的方法文章，供业主和管理者查阅。'
-      : 'Lean Insights. Methods on hotel investment, pre-opening, diagnosis, revenue, cost, teams, and marketing, for owners and managers.',
+      ? '专为酒店管理者打造的精益管理知识体系 —— 7大模块系统赋能，从投资决策到运营升级'
+      : 'A Lean management knowledge system purpose-built for hotel executives — 7 modules spanning investment decisions to operational excellence',
     allArticles: isZh ? '全部文章' : 'All Articles',
     articleCount: isZh ? '篇' : ' articles',
     views: isZh ? '阅读' : 'Views',
@@ -155,7 +152,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
 
   return (
     <div className="min-h-screen bg-background">
-      <SiteBreadcrumb lang={lang} path="/lean" label={isZh ? '投管知识' : 'Practice library'} />
+      <SiteBreadcrumb lang={lang} path="/lean" label={isZh ? '管享精道' : 'Lean Insights'} />
 
       {/* Header */}
       <div className="bg-gradient-to-br from-[#f59e0b]/10 via-background to-background border-b border-border">

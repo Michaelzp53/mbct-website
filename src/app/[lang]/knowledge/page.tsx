@@ -8,21 +8,19 @@ import { BookOpen, FileText, BarChart3, ArrowRight, Clock, User, Calendar } from
 import NewsletterSubscribe from './[slug]/NewsletterSubscribe'
 import KnowledgeSearchBox from './KnowledgeSearchBox'
 import { getPrimaryTopic, getTopicCopy, selectTopicArticles, topicOrder, type PrimaryTopic } from '@/lib/knowledge-topics'
-import { ownerDecisionGroups, ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
+import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
-  const title = isZh ? '酒店投、筹、管、退、改决议' : 'Resolutions on hotel investment, pre-opening, operation, exit, and renovation'
+  const title = isZh ? '决策文库：十二个酒店决定' : 'Decision library: twelve hotel decisions'
   const description = isZh
-    ? '酒店投、筹、管、退、改决议，回答酒店投资人、业主和管理者在投资、筹开、经营管理、退出和改造中的决策问题。迈创兄弟C&T。'
-    : 'Resolutions for hotel investors, owners, and managers on investment, pre-opening, operations, exit, and renovation. MarvelBros C&T.'
-  const keywords = [...(isZh ? ['酒店投、筹、管、退、改决议', '酒店投资', '酒店筹开', '酒店经营管理', '酒店退出', '酒店改造', '投管知识', '管享精道', '迈创兄弟C&T'] : ['hotel investment', 'hotel pre-opening', 'hotel operations', 'hotel exit', 'hotel renovation', 'MarvelBros C&T']), ...ownerDecisions.map((decision) => (isZh ? decision.zh : decision.en))].join(', ')
+    ? '按酒店业主的十二个决定查阅判断方法。餐饮一篇仍在编写。'
+    : 'Twelve owner decisions, each with a method. The food and beverage piece is still being written.'
 
   return {
     title,
     description,
-    keywords,
     alternates: {
       canonical: `https://www.marvelbros.com/${lang}/knowledge`,
       languages: {
@@ -60,13 +58,13 @@ export default async function KnowledgePage({
 
   // 页面UI翻译
   const ui = {
-    pageTitle: isZh ? '酒店投、筹、管、退、改决议' : 'Resolutions on hotel investment, pre-opening, operation, exit, and renovation',
+    pageTitle: isZh ? '十二个酒店决定' : 'Twelve hotel decisions',
     pageSubtitle: isZh
-      ? '回答酒店“投”、“筹”、“管”、“退”、“改”业者的决策问题。'
-      : 'Decision questions on hotel investment, pre-opening, operation, exit, and renovation.',
+      ? '每条只回答业主的一个决定。餐饮一篇仍在编写。'
+      : 'Each entry answers one owner decision. The food and beverage piece is still being written.',
     heroSubtitle: isZh
-      ? '回答酒店“投”、“筹”、“管”、“退”、“改”业者的决策问题。'
-      : 'Decision questions on hotel investment, pre-opening, operation, exit, and renovation.',
+      ? '每条只回答业主的一个决定。餐饮一篇仍在编写。'
+      : 'Each entry answers one owner decision. The food and beverage piece is still being written.',
     leanBannerTitle: isZh ? '管享精道 · 专题栏目' : 'Lean Insights · Special Column',
     leanBannerDesc: isZh
       ? '专为酒店管理者打造的精益管理知识体系 —— 从投资决策到运营升级，7大模块系统赋能。独立入口，直达实战精华。'
@@ -3416,8 +3414,6 @@ export default async function KnowledgePage({
     '@context': 'https://schema.org', '@type': 'CollectionPage',
     '@id': `https://www.marvelbros.com/${lang}/knowledge#collection`,
     url: `https://www.marvelbros.com/${lang}/knowledge`, name: ui.pageTitle,
-    description: ui.heroSubtitle,
-    keywords: ownerDecisions.map((decision) => (isZh ? decision.zh : decision.en)).join(', '),
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
     mainEntity: { '@type': 'ItemList', itemListElement: listedDecisions.map((decision, index) => ({
@@ -3429,46 +3425,41 @@ export default async function KnowledgePage({
 
   return (
     <div className="min-h-screen bg-background">
-      <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '酒店投、筹、管、退、改决议' : 'Resolutions'} />
+      <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '决策文库' : 'Decisions'} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
       <div className="mx-auto max-w-[1440px] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 xl:px-16">
         <header className="mb-8 max-w-3xl">
-          <p className="text-sm font-semibold text-primary">{isZh ? '迈创兄弟C&T · 酒店投、筹、管、退、改决议' : 'MarvelBros C&T · Resolutions'}</p>
+          <p className="text-sm font-semibold text-primary">{isZh ? '迈创兄弟C&T · 决策文库' : 'MarvelBros C&T · Decisions'}</p>
           <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{ui.pageTitle}</h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">{ui.heroSubtitle}</p>
         </header>
 
-        <div id="decisions" className="scroll-mt-24 space-y-10">
-          {ownerDecisionGroups.map((group) => (
-            <section key={group.id} id={group.id} className="scroll-mt-24">
-              <h2 className="text-xl font-semibold">{isZh ? group.zh : group.en}</h2>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">{isZh ? group.summaryZh : group.summaryEn}</p>
-              <ol className="mt-4 border-t border-slate-300 dark:border-slate-700">
-                {ownerDecisions.filter(decision => decision.group === group.id).map((decision) => {
-                  const href = ownerDecisionHref(lang, decision)
-                  const title = isZh ? decision.zh : decision.en
-                  const className = 'group grid grid-cols-[1fr_auto] items-center gap-4 border-b border-slate-300 py-3 dark:border-slate-700'
-                  const body = (
-                    <>
-                      <span className="text-base font-medium leading-7">
-                        {title}
-                        {!href && <span className="ml-3 text-sm font-medium text-slate-500">{isZh ? '编写中' : 'In preparation'}</span>}
-                      </span>
-                      {href ? <ArrowRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1" /> : <span />}
-                    </>
-                  )
-                  return href ? (
-                    <li key={decision.id}>
-                      <Link href={href} className={`${className} hover:text-primary`}>{body}</Link>
-                    </li>
-                  ) : (
-                    <li key={decision.id} className={className}>{body}</li>
-                  )
-                })}
-              </ol>
-            </section>
-          ))}
-        </div>
+        <section id="decisions" className="scroll-mt-24">
+          <ol className="border-t border-slate-300 dark:border-slate-700">
+            {ownerDecisions.map((decision, index) => {
+              const href = ownerDecisionHref(lang, decision)
+              const title = isZh ? decision.zh : decision.en
+              const className = 'group grid min-h-16 grid-cols-[2.5rem_1fr_auto] items-center gap-4 border-b border-slate-300 py-4 dark:border-slate-700 sm:grid-cols-[3.5rem_1fr_auto]'
+              const body = (
+                <>
+                  <span className="text-sm font-bold text-[#d98b28]">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="text-lg font-semibold sm:text-xl">
+                    {title}
+                    {!href && <span className="ml-3 text-sm font-medium text-slate-500">{isZh ? '编写中' : 'In preparation'}</span>}
+                  </span>
+                  {href ? <ArrowRight className="h-5 w-5 text-slate-400 transition-transform group-hover:translate-x-1" /> : <span />}
+                </>
+              )
+              return href ? (
+                <li key={decision.id}>
+                  <Link href={href} className={`${className} hover:bg-slate-50 dark:hover:bg-slate-900`}>{body}</Link>
+                </li>
+              ) : (
+                <li key={decision.id} className={className}>{body}</li>
+              )
+            })}
+          </ol>
+        </section>
 
         <div className="mt-10">
           <KnowledgeSearchBox
