@@ -13,7 +13,7 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
   const isZh = lang === 'zh'
 
   return (
-    <div className={`relative flex items-center gap-0.5 border border-slate-300 bg-white p-0.5 dark:border-slate-700 dark:bg-slate-900 ${className}`}>
+    <div className={`relative flex items-center gap-0.5 border border-[#dfd1bc] bg-[#fffdf8] p-0.5 dark:border-[#5b4631] dark:bg-[#211a13] ${className}`}>
       <button
         type="button"
         aria-pressed={theme === 'light'}
@@ -22,7 +22,7 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
           flex cursor-pointer items-center gap-1.5 px-2 py-1.5 text-xs font-medium transition-colors
           ${theme === 'light'
             ? 'bg-brand-blue text-white'
-            : 'text-slate-500 hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300'}
+            : 'text-slate-500 hover:text-brand-blue dark:text-[#cdbfae] dark:hover:text-[#d8b98a]'}
         `}
         title={isZh ? '白天模式' : 'Light mode'}
       >
@@ -37,8 +37,8 @@ export function ThemeToggle({ lang = 'zh', className = '' }: ThemeToggleProps) {
         className={`
           flex cursor-pointer items-center gap-1.5 px-2 py-1.5 text-xs font-medium transition-colors
           ${theme === 'dark'
-            ? 'bg-slate-800 text-white'
-            : 'text-slate-500 hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300'}
+            ? 'bg-[#3d2f22] text-[#fff8ec]'
+            : 'text-slate-500 hover:text-brand-blue dark:text-[#cdbfae] dark:hover:text-[#d8b98a]'}
         `}
         title={isZh ? '夜间模式' : 'Dark mode'}
       >

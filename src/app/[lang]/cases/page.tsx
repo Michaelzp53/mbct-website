@@ -31,15 +31,6 @@ export default async function CasesPage({
   const isZh = lang === 'zh'
   const orderedCases = [5, 4, 0, 1, 2, 3].map((index) => dict.cases.items[index]).filter(Boolean)
 
-  const badgeGradients = [
-    'linear-gradient(135deg, #4285f4, #34a853)',
-    'linear-gradient(135deg, #34a853, #fbbc04)',
-    'linear-gradient(135deg, #fbbc04, #ea4335)',
-    'linear-gradient(135deg, #ea4335, #764ba2)',
-    'linear-gradient(135deg, #764ba2, #4285f4)',
-    'linear-gradient(135deg, #4285f4, #ea4335)',
-  ]
-
   const trustPoints = [
     isZh ? '案例不只讲结果，也讲当时面对的经营卡点。' : 'Each case shows the business bottleneck, not just the outcome.',
     isZh ? '从诊断、执行到复盘，强调完整动作链。' : 'From diagnosis to execution to review, we show the full action chain.',
@@ -100,11 +91,11 @@ export default async function CasesPage({
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {orderedCases.map((c, i) => (
+            {orderedCases.map((c) => (
               <Card key={c.client} className="border border-border bg-card rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 card-themed h-full flex flex-col">
                 <div className="h-44 relative overflow-hidden flex-shrink-0">
                   <Image src={c.image} alt={c.client} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
-                  <Badge className="absolute top-4 left-4 text-white text-xs font-bold border-0" style={{ background: badgeGradients[i % badgeGradients.length] }}>
+                  <Badge className="absolute top-4 left-4 border-0 bg-[#17120d] text-xs font-bold text-[#fff8ec] dark:bg-[#d8b98a] dark:text-[#17120d]">
                     {c.category}
                   </Badge>
                 </div>
@@ -126,8 +117,8 @@ export default async function CasesPage({
                   {/* 四要素：核心问题 */}
                   <div>
                     <div className="flex items-start gap-2 mb-1.5">
-                      <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
+                      <AlertTriangle className="w-4 h-4 text-[#c79a3b] flex-shrink-0 mt-0.5" />
+                      <span className="text-xs font-semibold text-[#8a6424] dark:text-[#d8b98a] uppercase tracking-wider">
                         {isZh ? '核心问题' : 'CORE PROBLEM'}
                       </span>
                     </div>
@@ -137,15 +128,15 @@ export default async function CasesPage({
                   {/* 四要素：执行动作 */}
                   <div>
                     <div className="flex items-center gap-2 mb-1.5">
-                      <ListChecks className="w-4 h-4 text-blue-500" />
-                      <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                      <ListChecks className="w-4 h-4 text-[#5b4631] dark:text-[#d8b98a]" />
+                      <span className="text-xs font-semibold text-[#5b4631] dark:text-[#d8b98a] uppercase tracking-wider">
                         {isZh ? '执行动作' : 'ACTIONS'}
                       </span>
                     </div>
                     <ul className="space-y-1">
                       {c.actions.map((action, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#c79a3b] flex-shrink-0 mt-2" />
                           <span className="text-sm text-muted-foreground leading-relaxed">{action}</span>
                         </li>
                       ))}
@@ -154,14 +145,14 @@ export default async function CasesPage({
 
                   {/* 四要素：量化结果 */}
                   <div className="mt-auto">
-                    <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
+                    <div className="border border-[#b7c8ba] bg-[#edf4ed] p-4 dark:border-[#527260] dark:bg-[#213328]">
                       <div className="flex items-center gap-2 mb-1.5">
-                        <TrendingUp className="w-4 h-4 text-green-600 dark:text-green-400" />
-                        <span className="text-xs font-semibold text-green-700 dark:text-green-300 uppercase tracking-wider">
+                        <TrendingUp className="w-4 h-4 text-[#51755e] dark:text-[#b7d1bd]" />
+                        <span className="text-xs font-semibold text-[#3d644b] dark:text-[#d2e5d5] uppercase tracking-wider">
                           {isZh ? '量化结果' : 'QUANTIFIED RESULT'}
                         </span>
                       </div>
-                      <p className="text-green-700 dark:text-green-300 font-semibold text-sm leading-relaxed">{c.result}</p>
+                      <p className="font-semibold text-sm leading-relaxed text-[#3d644b] dark:text-[#d2e5d5]">{c.result}</p>
                     </div>
                     <p className="text-primary font-bold text-lg mt-3">{c.metric}</p>
                   </div>
@@ -191,7 +182,7 @@ export default async function CasesPage({
                 className="bg-card rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow duration-300 border border-border"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-xl flex-shrink-0">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#c79a3b] text-xl text-[#17120d]">
                     {t.avatar}
                   </div>
                   <div className="flex-1 min-w-0">
