@@ -121,7 +121,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="bg-[#17120d] py-20 text-white md:py-28">
+      <section className="bg-[#0b2d42] py-20 text-white md:py-28">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
           <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-20">
             <div className="relative aspect-[4/3] overflow-hidden bg-slate-800">
@@ -135,7 +135,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div className="absolute inset-0 bg-slate-950/15" />
             </div>
             <div>
-              <p className="text-sm font-semibold leading-6 text-[#d8b98a]">{isZh ? '案例与成果' : 'Cases and outcomes'}</p>
+              <p className="text-sm font-semibold leading-6 text-amber-300">{isZh ? '案例与成果' : 'Cases and outcomes'}</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl">
                 {isZh ? '项目经验，是团队专业的最好证明' : 'Project experience is the strongest proof of team expertise'}
               </h2>
@@ -147,7 +147,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   [isZh ? '项目结果' : 'Project result', isZh ? '为业主节省投资超过3000万元，结果由业主项目感谢信确认。' : 'More than RMB 30 million saved for the owner, confirmed in the owner’s project letter.'],
                 ].map(([term, description]) => (
                   <div key={term} className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[7rem_1fr]">
-                    <dt className="font-semibold text-[#d8b98a]">{term}</dt>
+                    <dt className="font-semibold text-amber-300">{term}</dt>
                     <dd className="leading-7 text-slate-200">{description}</dd>
                   </div>
                 ))}
@@ -160,12 +160,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   [isZh ? '项目结果' : 'Project result', isZh ? '团队动作更聚焦，代表性项目运营成本降低25%。' : 'The team focused execution, and operating cost fell by 25% in a representative case.'],
                 ].map(([term, description]) => (
                   <div key={term} className="grid gap-2 border-b border-white/15 py-4 last:border-b-0 sm:grid-cols-[7rem_1fr]">
-                    <dt className="font-semibold text-[#d8b98a]">{term}</dt>
+                    <dt className="font-semibold text-amber-300">{term}</dt>
                     <dd className="text-sm leading-6 text-slate-200">{description}</dd>
                   </div>
                 ))}
               </dl>
-              <Link href={`/${lang}/cases`} className="mt-8 inline-flex items-center gap-2 font-semibold text-white hover:text-[#d8b98a]">
+              <Link href={`/${lang}/cases`} className="mt-8 inline-flex items-center gap-2 font-semibold text-white hover:text-amber-300">
                 {isZh ? '查看案例与工作方法' : 'See cases and working methods'}
                 <ArrowRight className="h-5 w-5" />
               </Link>
@@ -174,7 +174,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="border-t border-[#dfd1bc] bg-[#f7f1e6] py-16 dark:border-[#5b4631] dark:bg-[#211a13] md:py-20">
+      <section className="border-t border-slate-200 bg-[#f4f7f8] py-16 dark:border-slate-800 dark:bg-slate-900 md:py-20">
         <div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 xl:px-16">
           <div>
             <p className="text-sm font-semibold leading-6 text-primary">{isZh ? '专业交流' : 'Professional conversation'}</p>
