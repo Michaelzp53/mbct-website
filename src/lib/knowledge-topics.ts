@@ -66,6 +66,7 @@ export function getPrimaryTopic(article: KnowledgeLike): PrimaryTopic {
   if (title === "租赁物业做酒店，剩余租期怎样约束回本和估值？") return 'investment'
   if (title === "五部门要发展绿色酒店，单体酒店先做哪几项节能改造才算得过账？") return 'investment'
   if (title === "酒店准备出售，先整理哪一份买方能复核的数据室？") return 'investment'
+  if (title === "酒店出售前还要不要改造？先比较三种出售准备方案") return 'investment'
   if (title === "酒店要不要装充电桩？先看住客停车多久、车位够不够") return 'investment'
   if (title === "酒店餐饮，该自营还是外包") return 'operations'
   if (title === "酒店早餐含在房价里，账应该怎么拆") return 'operations'

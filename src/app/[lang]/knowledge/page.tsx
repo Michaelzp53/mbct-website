@@ -84,6 +84,25 @@ export default async function KnowledgePage({
   }
 
   const registeredArticles = [
+    {
+      id: 2026111301,
+      type: 'article',
+      title: "酒店出售前还要不要改造？先比较三种出售准备方案",
+      titleEn: "Should a Hotel Be Renovated Before It Is Sold? Compare Three Sale Preparation Options First",
+      slug: "hotel-pre-sale-renovation-three-options-2026-11-13",
+      summary: '酒店出售前是否改造，要看买方出价能否覆盖投入和延迟成本。本文比较现状出售、整改后出售与经营修复后出售，并用假设算例演示净回款比较和收手条件。',
+      summaryEn: 'Whether to renovate before selling a hotel depends on whether the buyer’s offer can cover the spending and delay. Compare an as-is sale, sale after remediation, and sale after an operational turnaround, with hypothetical net-proceeds calculations and stop conditions.',
+      firstLine: "酒店出售前改造不改造，看这笔钱能不能在目标买方的出价里收回来：会让买方无法接手、融资或交割、整改范围又能在挂牌前定下来的缺陷，整改后再卖；问题出在经营或产品，修复结果能在出售前形成连续的经营数据，卖方也撑得住这段时间的，才考虑经营修复后出售；不属于这两种情况的，尤其是目标买方会按自己的方案翻新或翻牌时，现状出售，把缺陷清单和第三方估算交给买方。依法必须整改的安全事项，不论卖不卖都要办，不放进这三种方案的比较。",
+      author: '迈创兄弟C&T（MarvelBros C&T）',
+      date: '2026-11-13',
+      category: 'hotel-investment',
+      tag: '专业洞察',
+      tagColor: 'bg-[#c67829]',
+      tagTextColor: 'text-white',
+      readTime: 12,
+      featured: true,
+      image: '',
+    },
 {
   "id": 2026111101,
   "title": "租赁物业做酒店，剩余租期怎样约束回本和估值？",
