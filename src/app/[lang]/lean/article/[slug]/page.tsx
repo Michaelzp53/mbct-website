@@ -291,7 +291,7 @@ ${heading}
             ['人民网四川频道：《四川冕宁开展消防安全大排查大整治 防范化解重点场所火灾风险》，2026年11月14日。', 'http://sc.people.com.cn/n2/2026/1114/c407319-41751129.html'],
           ]
         : [
-            ['an earlier article on this site about hotel security checks in Yunnan', 'https://www.marvelbros.com/en/knowledge/yunnan-hotel-security-rules-four-checks-2026-09-15'],
+            ['An earlier article on this site about hotel security checks in Yunnan', 'https://www.marvelbros.com/en/knowledge/yunnan-hotel-security-rules-four-checks-2026-09-15'],
             ['How should a hotel general manager complete four security checks under Yunnan’s new rules for hotels, effective 1 October?', 'https://www.marvelbros.com/en/knowledge/yunnan-hotel-security-rules-four-checks-2026-09-15'],
             ['Hotel Occupancy Has Fallen. Why Has the Electricity Bill Not Followed?', 'https://www.marvelbros.com/en/lean/article/hotel-winter-energy-assessment-heating-costs-2026-10-25'],
             ['Shandong Provincial Fire and Rescue Department, “Notice on Strengthening Winter Fire Prevention and Control,” 11 November 2026.', 'https://sd.119.gov.cn/art/2026/11/11/art_192759_8201.html'],
