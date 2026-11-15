@@ -52,7 +52,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const title = isZh ? articleData.titleZh : articleData.titleEn
   const seoTitle = slug === storedValueRefundSlug && !isZh ? storedValueRefundSeoTitleEn : title
   const description = isZh ? articleData.summaryZh : articleData.summaryEn
-  const keywords = slug === storedValueRefundSlug ? storedValueRefundKeywords[isZh ? 'zh' : 'en'] : articleData.tags
+  const winterFireTags = isZh
+    ? ['冬季消防检查', '酒店消防自查', '隐患整改台账', '常闭防火门']
+    : ['winter fire safety inspections', 'hotel fire safety self-inspection', 'fire hazard rectification log', 'fire doors kept closed']
+  const keywords = slug === storedValueRefundSlug
+    ? storedValueRefundKeywords[isZh ? 'zh' : 'en']
+    : slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15'
+      ? winterFireTags
+      : articleData.tags
   const canonical = `https://www.marvelbros.com/${lang}/lean/article/${slug}`
 
   return {
@@ -110,7 +117,14 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
 
   const category = leanCategoryBySlug[getLeanArticleCategory(articleData)]
   const articleTitle = isZh ? articleData.titleZh : articleData.titleEn
-  const visibleTags = slug === storedValueRefundSlug ? storedValueRefundKeywords[isZh ? 'zh' : 'en'] : articleData.tags
+  const winterFireTags = isZh
+    ? ['冬季消防检查', '酒店消防自查', '隐患整改台账', '常闭防火门']
+    : ['Winter Fire Safety Inspections', 'Hotel Fire Safety Self-Inspection', 'Fire Hazard Rectification Log', 'Fire Doors Kept Closed']
+  const visibleTags = slug === storedValueRefundSlug
+    ? storedValueRefundKeywords[isZh ? 'zh' : 'en']
+    : slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15'
+      ? winterFireTags
+      : articleData.tags
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
     if (slug === storedValueRefundSlug) {
@@ -237,7 +251,71 @@ ${heading}
       for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
       return text
     }
+    if (slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15') {
+      const headings = isZh
+        ? ['冬季消防检查会查什么？', '为什么先查后场这四处？', '当场能改和限期整改怎么分？', '为什么说整改留证比自查更难？', '一条隐患的证据要留到什么程度？', '委托管理、特许加盟和业主自营，谁来签？', '怎样先试一轮，什么时候算做到了？', '这套方法管不到什么？', '延伸阅读', '参考资料']
+        : ['What do winter fire safety inspections check?', 'Why check these four back-of-house areas first?', 'How do you distinguish an immediate correction from deadline-based rectification?', 'Why is documenting rectification harder than finding a hazard?', 'How much evidence is enough to close one hazard?', 'Under a management contract, franchise or owner-operated model, who signs?', 'How should you run the first cycle, and when is it working?', 'What does this method not cover?', 'Further reading', 'References']
+      let text = articleContent.startsWith(`${articleTitle}\n\n`)
+        ? articleContent.slice(articleTitle.length + 2)
+        : articleContent.slice(articleTitle.length).trim()
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+
+      const tableHeader = isZh
+        ? '隐患｜整改责任人｜期限｜复查证据'
+        : 'Hazard | Rectification owner | Deadline | Reinspection evidence'
+      const lines = text.split('\n')
+      const tableIndex = lines.indexOf(tableHeader)
+      if (tableIndex >= 0) {
+        const rows: string[][] = []
+        for (let index = tableIndex; index < lines.length && lines[index].trim(); index += 1) {
+          if (index === tableIndex + 1 && !isZh) rows.push(['---', '---', '---', '---'])
+          else rows.push((isZh ? lines[index].split('｜') : lines[index].split('|')).map((cell) => cell.trim()))
+        }
+        const markdownTable = [
+          `| ${rows[0].join(' | ')} |`,
+          '| --- | --- | --- | --- |',
+          ...rows.slice(1).filter((row) => row.some((cell) => cell !== '---')).map((row) => `| ${row.join(' | ')} |`),
+        ].join('\n')
+        const tableEnd = lines.findIndex((line, index) => index > tableIndex && !line.trim())
+        const end = tableEnd < 0 ? lines.length : tableEnd
+        lines.splice(tableIndex, end - tableIndex, markdownTable)
+        text = lines.join('\n')
+      }
+
+      const links = isZh
+        ? [
+            ['本站讨论云南旅馆治安走查的旧文', 'https://www.marvelbros.com/zh/knowledge/yunnan-hotel-security-rules-four-checks-2026-09-15'],
+            ['云南旅馆治安新规10月1日施行，酒店总经理要先完成哪四项走查？', 'https://www.marvelbros.com/zh/knowledge/yunnan-hotel-security-rules-four-checks-2026-09-15'],
+            ['酒店入住率下降，为什么电费没有跟着降？', 'https://www.marvelbros.com/zh/lean/article/hotel-winter-energy-assessment-heating-costs-2026-10-25'],
+            ['山东省消防救援局：《关于加强冬季火灾防控工作的通告》，2026年11月11日。', 'https://sd.119.gov.cn/art/2026/11/11/art_192759_8201.html'],
+            ['人民网四川频道：《四川冕宁开展消防安全大排查大整治 防范化解重点场所火灾风险》，2026年11月14日。', 'http://sc.people.com.cn/n2/2026/1114/c407319-41751129.html'],
+          ]
+        : [
+            ['An earlier article on this site about hotel security checks in Yunnan', 'https://www.marvelbros.com/en/knowledge/yunnan-hotel-security-rules-four-checks-2026-09-15'],
+            ['How should a hotel general manager complete four security checks under Yunnan’s new rules for hotels, effective 1 October?', 'https://www.marvelbros.com/en/knowledge/yunnan-hotel-security-rules-four-checks-2026-09-15'],
+            ['Hotel Occupancy Has Fallen. Why Has the Electricity Bill Not Followed?', 'https://www.marvelbros.com/en/lean/article/hotel-winter-energy-assessment-heating-costs-2026-10-25'],
+            ['Shandong Provincial Fire and Rescue Department, “Notice on Strengthening Winter Fire Prevention and Control,” 11 November 2026.', 'https://sd.119.gov.cn/art/2026/11/11/art_192759_8201.html'],
+            ['People’s Daily Online, Sichuan channel, “Mianning, Sichuan, Conducts Extensive Fire Safety Inspections and Rectification to Prevent and Mitigate Fire Risks at Key Venues,” 14 November 2026.', 'http://sc.people.com.cn/n2/2026/1114/c407319-41751129.html'],
+          ]
+      const originalReferenceUrls = isZh
+        ? links.map(([, url]) => url)
+        : [
+            '',
+            'https://www.marvelbros.com/zh/knowledge/yunnan-hotel-security-rules-four-checks-2026-09-15',
+            'https://www.marvelbros.com/zh/lean/article/hotel-winter-energy-assessment-heating-costs-2026-10-25',
+            'https://sd.119.gov.cn/art/2026/11/11/art_192759_8201.html',
+            'http://sc.people.com.cn/n2/2026/1114/c407319-41751129.html',
+          ]
+      for (const [index, [label, url]] of links.entries()) {
+        const reference = `${label}\n${originalReferenceUrls[index]}`
+        text = text.includes(reference)
+          ? text.replace(reference, `[${label}](${url})`)
+          : text.replace(label, `[${label}](${url})`)
+      }
+      return text
+    }
     const energyArticle = slug === 'hotel-energy-management-after-golden-week-2026-10-07'
+
     if (!energyArticle && slug !== 'hotel-orders-cash-shortage-operating-loan-2026-09-29') return articleContent
     const sectionTitles = energyArticle
       ? (isZh
@@ -280,7 +358,11 @@ ${heading}
     url: articleUrl,
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     articleSection: category ? (isZh ? category.zh : category.en) : articleData.category,
-    keywords: slug === storedValueRefundSlug ? storedValueRefundKeywords[isZh ? 'zh' : 'en'] : articleData.tags,
+    keywords: slug === storedValueRefundSlug
+      ? storedValueRefundKeywords[isZh ? 'zh' : 'en']
+      : slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15'
+        ? winterFireTags
+        : articleData.tags,
   }
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -390,7 +472,7 @@ ${heading}
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1">
               <User className="w-3.5 h-3.5" />
-              {articleData.author}
+              {slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15' && !isZh ? 'MarvelBros C&T' : articleData.author}
             </span>
             <span className="flex items-center gap-1">
               <Clock className="w-3.5 h-3.5" />
