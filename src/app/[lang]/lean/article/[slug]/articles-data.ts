@@ -1,3 +1,4 @@
+import newArticles20261118 from './articles-2026-11-18.json';
 import newArticles20261115 from './articles-2026-11-15.json';
 import newArticles20261107 from './articles-2026-11-07.json';
 import newArticles20261106 from './articles-2026-11-06.json';
@@ -8189,7 +8190,7 @@ import newArticles20261015 from './articles-2026-10-15.json';
 
 import newArticles20261016 from './articles-2026-10-16.json';
 
-export const allArticlesData = [...(newArticles20261115 as ArticleData[]), ...(newArticles20261107 as ArticleData[]), ...(newArticles20261106 as ArticleData[]), ...(newArticles20261104Carbon as ArticleData[]), ...(newArticles20261104 as ArticleData[]), ...(newArticles20261031 as ArticleData[]), ...(newArticles20261027 as ArticleData[]), ...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[]), ...(newArticles20261015 as ArticleData[]), ...(newArticles20261016 as ArticleData[]), ...(newArticles20261018 as ArticleData[]), ...(newArticles20261019 as ArticleData[]), ...(newArticles20261021 as ArticleData[]), ...(newArticles20261023 as ArticleData[]), ...(newArticles20261024 as ArticleData[]), ...(newArticles20261025 as ArticleData[])];
+export const allArticlesData = [...(newArticles20261118 as ArticleData[]), ...(newArticles20261115 as ArticleData[]), ...(newArticles20261107 as ArticleData[]), ...(newArticles20261106 as ArticleData[]), ...(newArticles20261104Carbon as ArticleData[]), ...(newArticles20261104 as ArticleData[]), ...(newArticles20261031 as ArticleData[]), ...(newArticles20261027 as ArticleData[]), ...allArticles, ...(newArticles20260927 as ArticleData[]), ...(newArticles20260928 as ArticleData[]), ...(newArticles20260929 as ArticleData[]), ...(newArticles20261007 as ArticleData[]), ...(newArticles20261013 as ArticleData[]), ...(newArticles20261014 as ArticleData[]), ...(newArticles20261015 as ArticleData[]), ...(newArticles20261016 as ArticleData[]), ...(newArticles20261018 as ArticleData[]), ...(newArticles20261019 as ArticleData[]), ...(newArticles20261021 as ArticleData[]), ...(newArticles20261023 as ArticleData[]), ...(newArticles20261024 as ArticleData[]), ...(newArticles20261025 as ArticleData[])];
 
 export function getArticleBySlug(slug: string) {
   return allArticlesData.find(a => a.slug === slug)

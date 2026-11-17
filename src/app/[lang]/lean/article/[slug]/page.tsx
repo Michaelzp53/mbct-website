@@ -11,6 +11,15 @@ import { ArticleMarkdown } from '@/components/article-markdown'
 import { leanCategoryBySlug, getLeanArticleCategory } from '@/lib/knowledge-taxonomy'
 
 const storedValueRefundSlug = 'hotel-stored-value-card-refund-rules-2026-11-07'
+const cashGuestsSlug = 'hotel-self-check-in-cash-guests'
+const cashGuestsSeoDescription = {
+  zh: '酒店采用自助办理入住，现金客人如何接待？从人工承接权限、房费和约定押金的凭据、支付与依法登记到故障切换，梳理一条可核对的接待路径，避免重复收费或绕过登记条件。',
+  en: 'How should hotels using self-service check-in serve cash-paying guests? Map a checkable reception process covering staff authority, records for room charges and agreed deposits, payment, legally required registration and backup procedures, without duplicate charges or bypassing registration conditions.',
+}
+const cashGuestsKeywords = {
+  zh: ['自助办理入住', '酒店现金支付', '人工办理入住', '现金房费与押金'],
+  en: ['self-service check-in', 'hotel cash payments', 'staff-assisted hotel check-in', 'cash room charges and deposits'],
+}
 const storedValueRefundSeoTitleEn = 'Hotel Stored-Value Card Refunds: Why "Refund the Balance" Is Not Enough'
 const storedValueRefundKeywords = {
   zh: ['酒店储值卡退款', '酒店储值卡退款怎么算', '充值赠送金额退款', '酒店预付卡消费记录'],
@@ -51,7 +60,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
   const title = isZh ? articleData.titleZh : articleData.titleEn
   const seoTitle = slug === storedValueRefundSlug && !isZh ? storedValueRefundSeoTitleEn : title
-  const description = isZh ? articleData.summaryZh : articleData.summaryEn
+  const description = slug === cashGuestsSlug
+    ? cashGuestsSeoDescription[isZh ? 'zh' : 'en']
+    : isZh ? articleData.summaryZh : articleData.summaryEn
   const winterFireTags = isZh
     ? ['冬季消防检查', '酒店消防自查', '隐患整改台账', '常闭防火门']
     : ['winter fire safety inspections', 'hotel fire safety self-inspection', 'fire hazard rectification log', 'fire doors kept closed']
@@ -59,7 +70,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     ? storedValueRefundKeywords[isZh ? 'zh' : 'en']
     : slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15'
       ? winterFireTags
-      : articleData.tags
+      : slug === cashGuestsSlug
+        ? cashGuestsKeywords[isZh ? 'zh' : 'en']
+        : articleData.tags
   const canonical = `https://www.marvelbros.com/${lang}/lean/article/${slug}`
 
   return {
@@ -124,9 +137,47 @@ export default async function LeanArticlePage({ params }: { params: Promise<{ la
     ? storedValueRefundKeywords[isZh ? 'zh' : 'en']
     : slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15'
       ? winterFireTags
-      : articleData.tags
+      : slug === cashGuestsSlug
+        ? cashGuestsKeywords[isZh ? 'zh' : 'en']
+        : articleData.tags
   const articleContent = isZh ? articleData.contentZh : (articleData.contentEn?.trim() || articleData.contentZh)
   const displayContent = (() => {
+    if (slug === cashGuestsSlug) {
+      const headings = isZh
+        ? ['自助办理入住，为什么还要单独安排现金收付？', '现金接待这件事，酒店该把责任和权限交给谁？', '房费和按约收取的押金，怎样留下能核对的收付记录？', '款项已经确认，什么时候可以继续交付入住凭证？', '支付、核验或设备出故障，原安排要改哪一步？', '上线或减员前，业主怎样验收，什么情况下应先停下来？', '哪些情况不能直接照搬这套安排？']
+        : ['Why does self-service check-in still need separate cash payment arrangements?', 'Who should have responsibility and authority for serving cash-paying guests?', 'How can hotels keep checkable payment records for room charges and deposits collected as agreed?', 'Once payment is confirmed, when can check-in credentials be issued?', 'If payment, verification or equipment fails, which step in the original arrangements needs to change?', 'Before rollout or staffing cuts, what should the owner verify, and when should the hotel stop first?', 'When should these arrangements not be copied directly?']
+      let text = articleContent.startsWith(articleTitle) ? articleContent.slice(articleTitle.length).trim() : articleContent
+      for (const heading of headings) text = text.replace(`\n\n${heading}\n\n`, `\n\n## ${heading}\n\n`)
+      const lines = text.split('\n')
+      const tableStart = lines.findIndex((line) => line.includes('\t'))
+      if (tableStart >= 0) {
+        const rows: string[][] = []
+        let index = tableStart
+        while (index < lines.length && lines[index].includes('\t')) {
+          rows.push(lines[index].split('\t'))
+          index += 1
+        }
+        const markdownTable = [
+          `| ${rows[0].join(' | ')} |`,
+          '| --- | --- | --- | --- |',
+          ...rows.slice(1).map((row) => `| ${row.join(' | ')} |`),
+        ].join('\n')
+        lines.splice(tableStart, index - tableStart, markdownTable)
+        text = lines.join('\n')
+      }
+      const referenceLabel = isZh ? '参考资料' : 'References'
+      const referenceAt = text.lastIndexOf(`\n\n${referenceLabel}\n`)
+      if (referenceAt >= 0) {
+        const reference = text.slice(referenceAt).replace(/\n/g, '\n\n').replace(/\n{3,}/g, '\n\n')
+        text = text.slice(0, referenceAt) + reference
+      }
+      const linkLabel = isZh
+        ? '酒店团队集中抵店，怎样安排入住才能少排队？'
+        : 'Hotel Group Arrivals: How Can Check-in Be Organised to Reduce Queues?'
+      const linkTarget = `https://www.marvelbros.com/${isZh ? 'zh' : 'en'}/lean/article/hotel-group-arrival-pre-check-in-queues-2026-10-23`
+      text = text.replace(linkLabel, `[${linkLabel}](${linkTarget})`)
+      return text
+    }
     if (slug === storedValueRefundSlug) {
       const chapters = isZh
         ? ["酒店储值卡退款，先确认为什么退", "同一笔消费，退款原因会改变扣减", "赠送服务和利息，不能塞进余额一起算", "让另一人凭记录复算，而不是再问一次前台"]
@@ -337,7 +388,9 @@ ${heading}
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: articleTitle,
-    description: isZh ? articleData.summaryZh : articleData.summaryEn,
+    description: slug === cashGuestsSlug
+      ? cashGuestsSeoDescription[isZh ? 'zh' : 'en']
+      : isZh ? articleData.summaryZh : articleData.summaryEn,
     datePublished: articleData.date,
     dateModified: articleData.date,
     author: {
@@ -362,7 +415,9 @@ ${heading}
       ? storedValueRefundKeywords[isZh ? 'zh' : 'en']
       : slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15'
         ? winterFireTags
-        : articleData.tags,
+        : slug === cashGuestsSlug
+          ? cashGuestsKeywords[isZh ? 'zh' : 'en']
+          : articleData.tags,
   }
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -472,7 +527,7 @@ ${heading}
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1">
               <User className="w-3.5 h-3.5" />
-              {slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15' && !isZh ? 'MarvelBros C&T' : articleData.author}
+              {(slug === 'hotel-winter-fire-inspection-rectification-evidence-2026-11-15' || slug === cashGuestsSlug) && !isZh ? 'MarvelBros C&T' : articleData.author}
             </span>
             <span className="flex items-center gap-1">
               <Clock className="w-3.5 h-3.5" />
