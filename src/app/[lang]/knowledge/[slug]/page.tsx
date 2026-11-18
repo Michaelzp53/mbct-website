@@ -1,3 +1,4 @@
+import articles20261118 from './articles-2026-11-18.json'
 import articles20261113 from './articles-2026-11-13.json'
 import articles20261112 from './articles-2026-11-12.json'
 import articles20261111 from './articles-2026-11-11.json'
@@ -72,6 +73,10 @@ export const articlesData: Record<string, {
   titleEn?: string
   description?: string
   descriptionEn?: string
+  seoDescription?: string
+  seoDescriptionEn?: string
+  keywords?: string[]
+  keywordsEn?: string[]
   author: string
   date: string
   readTime: string
@@ -79,6 +84,7 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...articles20261118,
   ...articles20261113,
   ...articles20261112,
   ...articles20261111,
@@ -10699,6 +10705,8 @@ function safeDecodeSlug(slug: string) {
 }
 
 function getKeywords(article: (typeof articlesData)[string], isEnglish: boolean) {
+  const supplied = isEnglish ? article.keywordsEn : article.keywords
+  if (supplied?.length) return supplied
   const isEducationalTravelArticle = article.title.includes('研学旅行升温') || article.titleEn?.includes('Educational Family Travel')
   if (isEducationalTravelArticle) {
     return isEnglish
@@ -10786,7 +10794,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
   const title = (isEnglish && article.titleEn ? article.titleEn : article.title)?.trim() || decodedSlug
   const content = isEnglish && article.contentEn ? article.contentEn : article.content
-  const description = (isEnglish ? article.descriptionEn : article.description) || getPlainDescription(content, title)
+  const summary = (isEnglish ? article.descriptionEn : article.description) || getPlainDescription(content, title)
+  const description = (isEnglish ? article.seoDescriptionEn : article.seoDescription) || summary
   const canonical = `https://www.marvelbros.com/${lang}/knowledge/${encodeURIComponent(decodedSlug)}`
 
   return {
@@ -10849,12 +10858,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       .find((paragraph) => paragraph && paragraph !== articleTitle && !paragraph.startsWith('#'))
       ?.replace(/\s+/g, ' ')
       .slice(0, 220)
+  const seoDescription = (isEnglish ? article.seoDescriptionEn : article.seoDescription) || articleDescription
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: articleTitle?.trim() || decodedSlug,
-    description: articleDescription,
+    description: seoDescription,
     datePublished: article.date,
     dateModified: article.date,
     author: {
@@ -10875,7 +10885,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     mainEntityOfPage: articleUrl,
     url: articleUrl,
     inLanguage: isEnglish ? 'en-US' : 'zh-CN',
-    articleSection: article.tag,
+    articleSection: decodedSlug === 'asset-light-hotel-contract-capital-allocation' && isEnglish ? 'Professional Insights' : article.tag,
     keywords: getKeywords(article, isEnglish),
   }
   const breadcrumbJsonLd = {
@@ -11026,7 +11036,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </p>
           </div>
 
-          <ArticleContent content={articleContent} articleTitle={articleTitle} lang={lang} />
+          <ArticleContent content={decodedSlug === 'asset-light-hotel-contract-capital-allocation' ? articleContent.map((paragraph) => {
+            const label = isEnglish
+              ? 'When a Brand Contract Is Near Expiry, How Should a Hotel Owner Decide Among Renewal, Reflagging and Independent Operation?'
+              : '品牌合同快到期，续约、换牌还是独立经营？酒店业主该怎样决策？'
+            const href = `https://www.marvelbros.com/${lang}/knowledge/hotel-brand-contract-expiry-owner-decision-2026-11-05`
+            let next = paragraph.includes(label) ? paragraph.replace(label, `[${label}](${href})`) : paragraph
+            if (!next.includes('\t') && next.includes('\n')) next = next.replace(/\n/g, '\n\n')
+            return next
+          }) : articleContent} articleTitle={articleTitle} lang={lang} />
             {slug === 'hotel-sale-data-room-document-index-2026-10-22' && <a href="/downloads/hotel-sale-document-index-2026-10-22.csv" download className="block my-6 underline">{!isEnglish ? '下载卖方资料目录与缺件台账（CSV）' : 'Download the seller document index and missing-document register (CSV)'}</a>}
           {slug === 'hotel-acquisition-sustainable-earnings-review-2026-11-02' && <a href={`/downloads/hotel-acquisition-earnings-review-2026-11-02-${isEnglish ? 'en' : 'zh'}.csv`} download className="block my-6 underline">{isEnglish ? 'Download the Hotel Acquisition Earnings Review and Adjustment Worksheet (CSV)' : '下载酒店收购利润核对与调整表（CSV）'}</a>}
           <ArticleEngagementTracker articleSlug={decodedSlug} />
