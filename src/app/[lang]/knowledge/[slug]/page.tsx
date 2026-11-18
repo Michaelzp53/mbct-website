@@ -11044,7 +11044,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             let next = paragraph.includes(label) ? paragraph.replace(label, `[${label}](${href})`) : paragraph
             if (!next.includes('\t') && next.includes('\n')) next = next.replace(/\n/g, '\n\n')
             return next
-          }) : articleContent} articleTitle={articleTitle} lang={lang} />
+          }) : articleContent} articleTitle={articleTitle} lang={lang} formatSourceBlocks={decodedSlug === 'asset-light-hotel-contract-capital-allocation'} />
             {slug === 'hotel-sale-data-room-document-index-2026-10-22' && <a href="/downloads/hotel-sale-document-index-2026-10-22.csv" download className="block my-6 underline">{!isEnglish ? '下载卖方资料目录与缺件台账（CSV）' : 'Download the seller document index and missing-document register (CSV)'}</a>}
           {slug === 'hotel-acquisition-sustainable-earnings-review-2026-11-02' && <a href={`/downloads/hotel-acquisition-earnings-review-2026-11-02-${isEnglish ? 'en' : 'zh'}.csv`} download className="block my-6 underline">{isEnglish ? 'Download the Hotel Acquisition Earnings Review and Adjustment Worksheet (CSV)' : '下载酒店收购利润核对与调整表（CSV）'}</a>}
           <ArticleEngagementTracker articleSlug={decodedSlug} />

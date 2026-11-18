@@ -47,13 +47,14 @@ export function joinArticleParagraphs(paragraphs: string[]) {
   return blocks.join('\n\n')
 }
 
-export default function ArticleContent({ content, articleTitle }: { content: string[]; articleTitle: string; lang?: string }) {
+export default function ArticleContent({ content, articleTitle, formatSourceBlocks = false }: { content: string[]; articleTitle: string; lang?: string; formatSourceBlocks?: boolean }) {
   const paragraphs = content
     .filter(paragraph => paragraph.trim() !== articleTitle.trim())
     .map(paragraph => {
-      const clean = tabBlockToMarkdownTable(paragraph.replace(/^(?:\*\*)?副标?题(?:\*\*)?[：:]\s*/u, ''))
-      const isChineseHeading = /^[一二三四五六七八九十]+、/u.test(clean) && clean.length < 100 && !clean.includes('\n')
-      const isRomanHeading = /^(?:VI|IV|V|III|II|I)\. \S/u.test(clean) && clean.length < 140 && !clean.includes('\n')
+      const stripped = paragraph.replace(/^(?:\*\*)?副标?题(?:\*\*)?[：:]\s*/u, '')
+      const clean = formatSourceBlocks ? tabBlockToMarkdownTable(stripped) : stripped
+      const isChineseHeading = /^[一二三四五六七八九十]+、/u.test(clean) && clean.length < 100
+      const isRomanHeading = formatSourceBlocks && /^(?:VI|IV|V|III|II|I)\. \S/u.test(clean) && clean.length < 140 && !clean.includes('\n')
       return isChineseHeading || isRomanHeading ? `## ${clean}` : clean
     })
   return <div data-article-body className="[overflow-wrap:anywhere]"><ArticleMarkdown content={joinArticleParagraphs(paragraphs)} /></div>
