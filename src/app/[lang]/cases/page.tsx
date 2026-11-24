@@ -7,6 +7,7 @@ import PageHero from '@/components/PageHero'
 import { CheckCircle, ArrowRight, Quote, Target, AlertTriangle, ListChecks, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { pageAlternates, siteUrl } from '@/lib/page-seo'
 
 export async function generateMetadata({
   params,
@@ -18,6 +19,7 @@ export async function generateMetadata({
   return {
     title: isZh ? '案例成果｜酒店问题如何被诊断并转化为结果？' : 'Case Results | How Hotel Problems Become Results',
     description: isZh ? '查看迈创兄弟C&T酒店项目案例，了解核心问题、执行动作与量化结果。' : 'Review MarvelBros C&T hotel projects through the core problem, actions taken, and quantified results.',
+    alternates: pageAlternates(lang, '/cases'),
   }
 }
 
@@ -46,8 +48,27 @@ export default async function CasesPage({
     isZh ? '所有成果都回到一个问题：有没有真正改善酒店经营。' : 'Every win is measured against one question: did hotel performance truly improve?',
   ]
 
+  const casesJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: isZh ? '案例成果' : 'Case results',
+    url: `${siteUrl}/${lang}/cases`,
+    inLanguage: isZh ? 'zh-CN' : 'en-US',
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: orderedCases.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.client,
+        description: item.coreProblem,
+      })),
+    },
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(casesJsonLd).replace(/</g, '\\u003c') }} />
       <PageHero
         title={isZh ? '酒店经营问题，如何找到原因并推进改善？' : 'How do we identify the causes of hotel operating problems and improve performance?'}
         subtitle={isZh ? '从核心问题、关键行动到量化结果，以下项目案例展示迈创兄弟C&T如何推动酒店经营改善。' : 'From core problems and decisive actions to quantified results, these project cases show how MarvelBros C&T advances hotel performance.'}

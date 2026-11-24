@@ -45,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localized('/topics/ai-hotel-growth', 0.95, 'weekly'),
     ...localized('/knowledge', 0.9, 'daily'),
     ...localized('/lean', 0.9, 'daily'),
+    ...localized('/topics', 0.8, 'weekly'),
     ...localized('/cases', 0.7, 'monthly'),
     ...localized('/about', 0.6, 'monthly'),
     ...localized('/contact', 0.8, 'monthly'),
@@ -70,9 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     localized(path, 0.8, 'monthly', toDate(versions.zh?.date || versions.en?.date || undefined))
   )
 
-  const urls = [...staticPages, ...topicPages, ...knowledgeArticles, ...leanArticles, ...legacyArticles,
-    { url: `${siteUrl}/articles/hotel-renovation`, changeFrequency: 'monthly' as const, priority: 0.5 },
-  ]
+  const urls = [...staticPages, ...topicPages, ...knowledgeArticles, ...leanArticles, ...legacyArticles]
   const deduped = new Map(urls.map((entry) => [entry.url, entry]))
 
   return Array.from(deduped.values()).sort((a, b) => a.url.localeCompare(b.url))

@@ -22,8 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: `https://www.marvelbros.com/${lang}/lean`,
       languages: {
-        zh: 'https://www.marvelbros.com/zh/lean',
-        en: 'https://www.marvelbros.com/en/lean',
+        'zh-CN': 'https://www.marvelbros.com/zh/lean',
+        'en-US': 'https://www.marvelbros.com/en/lean',
+        'x-default': 'https://www.marvelbros.com/zh/lean',
       },
     },
     openGraph: {
@@ -139,8 +140,8 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
   const ui = {
     pageTitle: isZh ? '管享精道' : 'Lean Insights',
     pageSubtitle: isZh
-      ? '专为酒店管理者打造的精益管理知识体系 —— 7大模块系统赋能，从投资决策到运营升级'
-      : 'A Lean management knowledge system purpose-built for hotel executives — 7 modules spanning investment decisions to operational excellence',
+      ? '专为酒店管理者打造的精益管理知识体系 —— 8大模块系统赋能，从投资决策到运营升级'
+      : 'A Lean management knowledge system purpose-built for hotel executives — 8 modules spanning investment decisions to operational excellence',
     allArticles: isZh ? '全部文章' : 'All Articles',
     articleCount: isZh ? '篇' : ' articles',
     views: isZh ? '阅读' : 'Views',
@@ -150,8 +151,28 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
     minRead: isZh ? '分钟' : 'min',
   }
 
+  const collectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: ui.pageTitle,
+    description: ui.pageSubtitle,
+    url: `https://www.marvelbros.com/${lang}/lean`,
+    inLanguage: isZh ? 'zh-CN' : 'en-US',
+    isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: categories.map((cat, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: isZh ? cat.labelZh : cat.labelEn,
+        url: `https://www.marvelbros.com/${lang}/lean/category/${cat.id}`,
+      })),
+    },
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
       <SiteBreadcrumb lang={lang} path="/lean" label={isZh ? '管享精道' : 'Lean Insights'} />
 
       {/* Header */}
@@ -173,7 +194,13 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
           </div>
 
           {/* Search Bar */}
-          <SearchBox lang={lang} isZh={isZh} allArticlesData={allArticlesData} />
+          <SearchBox lang={lang} isZh={isZh} allArticlesData={allArticlesData.map((article) => ({
+            slug: article.slug,
+            titleZh: article.titleZh,
+            titleEn: article.titleEn,
+            summaryZh: article.summaryZh.slice(0, 80),
+            summaryEn: article.summaryEn.slice(0, 80),
+          }))} />
         </div>
       </div>
 

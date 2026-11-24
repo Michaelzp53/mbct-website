@@ -31,6 +31,28 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   return (
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd).replace(/</g, '\\u003c') }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: isZh ? '迈创兄弟C&T' : 'MarvelBros C&T',
+        url: `https://www.marvelbros.com/${lang}`,
+        inLanguage: isZh ? 'zh-CN' : 'en-US',
+        isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: [
+            [isZh ? '决策文库' : 'Decisions', `/${lang}/knowledge`],
+            [isZh ? '管享精道' : 'Lean Insights', `/${lang}/lean`],
+            [isZh ? '解决方案' : 'Solutions', `/${lang}/services`],
+            [isZh ? '案例' : 'Cases', `/${lang}/cases`],
+          ].map(([name, path], index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name,
+            url: `https://www.marvelbros.com${path}`,
+          })),
+        },
+      }).replace(/</g, '\\u003c') }} />
       <HeroWithStats lang={lang} />
       <section id="hotel-problems" className="scroll-mt-20 border-b border-[#e6dccb] bg-[#F7F1E6] py-8 dark:border-slate-800 dark:bg-slate-900 md:py-10">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">

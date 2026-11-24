@@ -4,7 +4,7 @@ import { ArrowRight, HelpCircle } from 'lucide-react'
 
 const siteUrl = 'https://www.marvelbros.com'
 
-const topics = {
+export const topics = {
   'why-hotels-need-ai-search-growth': {
     zh: {
       title: '酒店为什么需要 AI 搜索获客？',
@@ -111,6 +111,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: {
         'zh-CN': `${siteUrl}/zh/topics/${topicSlug}`,
         'en-US': `${siteUrl}/en/topics/${topicSlug}`,
+        'x-default': `${siteUrl}/zh/topics/${topicSlug}`,
       },
     },
     openGraph: {

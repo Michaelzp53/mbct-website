@@ -4,7 +4,7 @@ import { legacyArticleSeo } from './legacy-article-seo'
 export const siteUrl = 'https://www.marvelbros.com'
 export function pageAlternates(lang: string, path: string) {
   return { canonical: `${siteUrl}/${lang}${path}`, languages: {
-    'zh-CN': `${siteUrl}/zh${path}`, 'en-US': `${siteUrl}/en${path}`,
+    'zh-CN': `${siteUrl}/zh${path}`, 'en-US': `${siteUrl}/en${path}`, 'x-default': `${siteUrl}/zh${path}`,
   } }
 }
 export function legacyMetadata(lang: string, path: string): Metadata {

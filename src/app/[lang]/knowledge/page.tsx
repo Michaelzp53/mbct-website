@@ -24,8 +24,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: `https://www.marvelbros.com/${lang}/knowledge`,
       languages: {
-        zh: 'https://www.marvelbros.com/zh/knowledge',
-        en: 'https://www.marvelbros.com/en/knowledge',
+        'zh-CN': 'https://www.marvelbros.com/zh/knowledge',
+        'en-US': 'https://www.marvelbros.com/en/knowledge',
+        'x-default': 'https://www.marvelbros.com/zh/knowledge',
       },
     },
     openGraph: {
@@ -67,8 +68,8 @@ export default async function KnowledgePage({
       : 'Each line is one question an owner actually meets. Earlier articles remain below.',
     leanBannerTitle: isZh ? '管享精道 · 专题栏目' : 'Lean Insights · Special Column',
     leanBannerDesc: isZh
-      ? '专为酒店管理者打造的精益管理知识体系 —— 从投资决策到运营升级，7大模块系统赋能。独立入口，直达实战精华。'
-      : 'A Lean management knowledge system built for hotel executives — 7 modules empowering decisions from investment to operations. Independent entry to a world of practical wisdom.',
+      ? '专为酒店管理者打造的精益管理知识体系 —— 从投资决策到运营升级，8大模块系统赋能。独立入口，直达实战精华。'
+      : 'A Lean management knowledge system built for hotel executives — 8 modules empowering decisions from investment to operations. Independent entry to a world of practical wisdom.',
     enterLean: isZh ? '进入管享精道' : 'Enter Lean Insights',
     academicTitle: isZh ? '行业分析' : 'Industry Analysis',
     academicDesc: isZh ? '用行业证据解释变化，帮助投资者、业主和经营团队形成判断' : 'Use industry evidence to help investors, owners, and operators make better judgments',

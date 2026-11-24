@@ -86,7 +86,14 @@ export default function RootDocument({ children, lang = 'zh-CN' }: { children: R
       '@id': 'https://www.marvelbros.com/#organization',
     },
     inLanguage: ['zh-CN', 'en-US'],
-
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `https://www.marvelbros.com/${lang.startsWith('zh') ? 'zh' : 'en'}/knowledge?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   }
 
   return (

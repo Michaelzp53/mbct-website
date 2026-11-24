@@ -10807,6 +10807,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       languages: {
         'zh-CN': `https://www.marvelbros.com/zh/knowledge/${encodeURIComponent(decodedSlug)}`,
         'en-US': `https://www.marvelbros.com/en/knowledge/${encodeURIComponent(decodedSlug)}`,
+        'x-default': `https://www.marvelbros.com/zh/knowledge/${encodeURIComponent(decodedSlug)}`,
       },
     },
     openGraph: {

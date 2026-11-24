@@ -55,6 +55,11 @@ const nextConfig: NextConfig = {
         destination: '/:lang/cases',
         permanent: true,
       },
+      {
+        source: '/articles/hotel-renovation',
+        destination: '/zh/hotel-operation-improvement',
+        statusCode: 301,
+      },
     ];
   },
 };

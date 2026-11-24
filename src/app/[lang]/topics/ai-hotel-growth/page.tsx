@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: {
         'zh-CN': `${siteUrl}/zh/topics/ai-hotel-growth`,
         'en-US': `${siteUrl}/en/topics/ai-hotel-growth`,
+        'x-default': `${siteUrl}/zh/topics/ai-hotel-growth`,
       },
     },
     openGraph: {

@@ -84,6 +84,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       languages: {
         'zh-CN': `https://www.marvelbros.com/zh/lean/article/${slug}`,
         'en-US': `https://www.marvelbros.com/en/lean/article/${slug}`,
+        'x-default': `https://www.marvelbros.com/zh/lean/article/${slug}`,
       },
     },
     openGraph: {

@@ -300,6 +300,24 @@ export default async function ServicesPage({
     },
   }
 
+  const collectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: isZh ? '解决方案' : 'Solutions',
+    url: `https://www.marvelbros.com/${lang}/services`,
+    inLanguage: isZh ? 'zh-CN' : 'en-US',
+    isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: serviceGroups.map((group, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: group.title,
+        url: `https://www.marvelbros.com${group.href}`,
+      })),
+    },
+  }
+
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -334,6 +352,11 @@ export default async function ServicesPage({
         id={`services-json-ld-${lang}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        id={`services-collection-json-ld-${lang}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }}
       />
       <script
         id={`services-faq-json-ld-${lang}`}

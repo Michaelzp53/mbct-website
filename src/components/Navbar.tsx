@@ -29,7 +29,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
   const navLinks = [
     { href: `/${lang}/`, label: nav.home },
     { href: `/${lang}/knowledge`, label: isZh ? "决策文库" : "Decisions" },
-    { href: `/${lang}/lean`, label: isZh ? "投管知识" : "Practice Library" },
+    { href: `/${lang}/lean`, label: isZh ? "管享精道" : "Practice Library" },
     { href: `/${lang}/services`, label: isZh ? "解决方案" : "Solutions" },
     { href: `/${lang}/about`, label: isZh ? "关于我们" : "About Us" },
   ];
@@ -59,7 +59,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               <span className="min-w-0">
                 <span className="block text-[13px] font-semibold leading-none text-slate-950 dark:text-white lg:text-[14px]">MarvelBros C&amp;T</span>
                 <span className="mt-1 block text-[11px] font-medium leading-4 text-brand-blue dark:text-sky-300">
-                  {isZh ? "酒店投、建、管、改、退" : "Invest, build, operate, renew, exit"}
+                  {isZh ? "酒店投、建、筹、管、改、退" : "Invest, build, pre-open, operate, renew, exit"}
                 </span>
                 <span className="block text-[11px] font-medium leading-4 text-brand-blue dark:text-sky-300">
                   {isZh ? "全生命周期价值提升咨询服务" : "Hotel lifecycle advisory"}
