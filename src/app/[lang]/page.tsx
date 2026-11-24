@@ -74,7 +74,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   return (
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <div className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('/images/home-named/homepage-city-night.jpg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#031018]/30 dark:bg-[#01060c]/30" />
+        <div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" />
         <div className="relative">
       <HeroWithStats lang={lang} />
 
@@ -92,7 +92,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           ))}
         </dl>
-        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-base font-medium leading-7 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.65)] sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across investment, development, pre-opening, operations, renovation, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
+        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-base font-medium leading-7 text-white sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across investment, development, pre-opening, operations, renovation, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
       </section>
         </div>
       </div>
@@ -168,9 +168,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       <section data-screen="7" className="relative bg-cover bg-center py-10" style={{ backgroundImage: "url('/images/home-named/contact-us.jpg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#4d6574]/30 dark:bg-[#01060c]/30" />
+        <div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" />
         <div className="relative mx-auto grid max-w-[1440px] gap-6 px-5 sm:px-8 lg:grid-cols-[1fr_1.2fr] lg:px-12 xl:px-16">
-          <div className="text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.65)]">
+          <div className="text-white">
             <h2 className="text-3xl font-semibold leading-snug">{isZh ? '直接联系' : 'Direct contact'}</h2>
             <p className="mt-4 text-2xl font-semibold"><a href="tel:+8618941579333">+86 189 4157 9333</a></p>
             <p className="mt-2 text-base font-medium">{isZh ? '电话与微信同号' : 'Same number for Phone & WeChat'}</p>

@@ -3440,11 +3440,11 @@ export default async function KnowledgePage({
     <div className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
       <div className="relative bg-cover bg-center" style={{ backgroundImage: "url('/images/home-named/solutions-lounge.jpeg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#4d6574]/30 dark:bg-[#01060c]/30" />
+        <div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" />
         <div className="relative">
       <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '决策文库' : 'Decisions'} />
       <div className="mx-auto max-w-[1440px] px-5 pb-8 sm:px-8 sm:pb-12 lg:px-12 xl:px-16">
-        <header className="max-w-3xl text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.75)]">
+        <header className="max-w-3xl text-white">
           <p className="text-sm font-semibold tracking-wide text-amber-200">{isZh ? '迈创兄弟C&T · 决策文库' : 'MarvelBros C&T · Decisions'}</p>
           <h1 className="mt-3 text-3xl font-semibold leading-snug sm:text-4xl">{ui.pageTitle}</h1>
           <p className="mt-3 text-base font-medium leading-7">{ui.heroSubtitle}</p>

@@ -124,17 +124,17 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <BrandIdentity lang={lang} />
 
       <section className="relative border-b border-slate-200 bg-cover bg-center py-12 dark:border-slate-800 md:py-16" style={{ backgroundImage: "url('/images/photography/team-advisory.jpg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#4d6574]/30 dark:bg-[#01060c]/30" />
+        <div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" />
         <div className="relative mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:px-12 xl:px-16">
-          <div className="text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
+          <div className="text-white">
             <p className="text-4xl font-semibold text-amber-200 md:text-5xl">30+</p>
             <p className="mt-2 text-base font-semibold">{isZh ? '年酒店行业实战经验基础' : 'years of practical hospitality experience'}</p>
           </div>
-          <div className="max-w-4xl text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.7)] lg:col-span-2">
+          <div className="max-w-4xl text-white lg:col-span-2">
             <h2 className="text-2xl font-semibold leading-snug md:text-3xl">{isZh ? '迈创兄弟C&T：30年酒店管理咨询服务经验' : 'MarvelBros C&T: 30 years of hotel management consulting experience'}</h2>
             <p className="mt-3 text-base font-medium leading-7">{isZh ? '我们拥有30年酒店全流程咨询服务经验。关注酒店投资、建设、运营、改造、市场策略、成本收益与获客路径。迈创兄弟C&T面向酒店投资人、业主和管理者，提供酒店全生命周期价值提升咨询；网站通过专业洞察、经营判断和可执行的方法，分享酒店经营知识。' : 'We have 30 years of consulting experience across the full hotel process, covering investment, construction, operations, renovation, market strategy, cost and revenue, and guest-acquisition paths. MarvelBros C&T provides hotel lifecycle value advisory for investors, owners, and managers. Its website shares hospitality knowledge through industry insights, operating judgment, and practical methods.'}</p>
           </div>
-          <p className="max-w-4xl text-base font-medium leading-7 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
+          <p className="max-w-4xl text-base font-medium leading-7 text-white">
             {isZh ? '团队拥有30多年酒店行业实战经验，专业能力覆盖品牌、投资、运营、技术支持与数字化营销。五位专家围绕同一个经营目标协同判断，以清晰的问题诊断、可执行的改善路径和项目成果验证专业实力。' : 'The team brings more than 30 years of practical hospitality experience across brand strategy, investment, operations, technology support, and digital marketing. Five specialists work around one business objective, demonstrating expertise through clear diagnosis, actionable improvement paths, and project results.'}
           </p>
         </div>

@@ -180,7 +180,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
 
       {/* Header */}
       <div className="relative border-b border-border bg-cover bg-center" style={{ backgroundImage: "url('/images/home-modern/signature-lounge.jpeg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#4d6574]/30 dark:bg-[#01060c]/30" />
+        <div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-3">
@@ -189,10 +189,10 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                 {isZh ? '迈创兄弟C&T · 知识库' : 'MarvelBros C&T · Knowledge Base'}
               </span>
             </div>
-            <h1 className="mb-3 text-3xl font-semibold leading-snug text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.8)] md:text-4xl">
+            <h1 className="mb-3 text-3xl font-semibold leading-snug text-white md:text-4xl">
               {ui.pageTitle}
             </h1>
-            <p className="max-w-3xl text-base font-medium leading-7 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.75)] md:text-lg">
+            <p className="max-w-3xl text-base font-medium leading-7 text-white md:text-lg">
               {ui.pageSubtitle}
             </p>
           </div>
