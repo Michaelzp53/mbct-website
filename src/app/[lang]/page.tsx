@@ -85,7 +85,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           ))}
         </dl>
-        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-sm leading-6 text-slate-100 sm:px-8 lg:px-12 xl:px-16">{isZh ? FACT : 'MarvelBros C&T advises across invest, build, pre-opening, operate, renew, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.'}</p>
+        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-sm leading-6 text-slate-100 sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across invest, build, pre-opening, operate, renew, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
       </section>
 
       <section data-screen="3" className="border-b border-slate-200 py-10 dark:border-slate-800">
