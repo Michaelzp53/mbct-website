@@ -9,6 +9,8 @@ import NewsletterSubscribe from './[slug]/NewsletterSubscribe'
 import KnowledgeSearchBox from './KnowledgeSearchBox'
 import { getPrimaryTopic, getTopicCopy, selectTopicArticles, topicOrder, type PrimaryTopic } from '@/lib/knowledge-topics'
 import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
+import { ogImages } from '@/lib/seo'
+import { articleCatalog } from '@/lib/article-catalog'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
@@ -37,11 +39,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       alternateLocale: isZh ? 'en_US' : 'zh_CN',
       url: `https://www.marvelbros.com/${lang}/knowledge`,
       siteName: isZh ? '迈创兄弟C&T' : 'MarvelBros C&T',
+      images: ogImages(isZh ? 'zh' : 'en'),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [ogImages(isZh ? 'zh' : 'en')[0].url],
     },
   }
 }
@@ -51,10 +55,10 @@ export default async function KnowledgePage({
   searchParams,
 }: {
   params: Promise<{ lang: string }>
-  searchParams: Promise<{ topic?: string }>
+  searchParams: Promise<{ topic?: string; page?: string }>
 }) {
   const { lang } = await params
-  const { topic: requestedTopic } = await searchParams
+  const { topic: requestedTopic, page: requestedPage } = await searchParams
   const isZh = lang === 'zh'
 
   // 页面UI翻译
@@ -3436,14 +3440,14 @@ export default async function KnowledgePage({
     <div className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
       <div className="relative bg-cover bg-center" style={{ backgroundImage: "url('/images/home-named/solutions-lounge.jpeg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/20 dark:bg-slate-950/20" />
+        <div className="pointer-events-none absolute inset-0 bg-[#4d6574]/30 dark:bg-[#01060c]/30" />
         <div className="relative">
       <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '决策文库' : 'Decisions'} />
       <div className="mx-auto max-w-[1440px] px-5 pb-8 sm:px-8 sm:pb-12 lg:px-12 xl:px-16">
-        <header className="max-w-3xl">
-          <p className="text-sm font-semibold text-primary">{isZh ? '迈创兄弟C&T · 决策文库' : 'MarvelBros C&T · Decisions'}</p>
-          <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{ui.pageTitle}</h1>
-          <p className="mt-3 text-base leading-7 text-muted-foreground">{ui.heroSubtitle}</p>
+        <header className="max-w-3xl text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.75)]">
+          <p className="text-sm font-semibold tracking-wide text-amber-200">{isZh ? '迈创兄弟C&T · 决策文库' : 'MarvelBros C&T · Decisions'}</p>
+          <h1 className="mt-3 text-3xl font-semibold leading-snug sm:text-4xl">{ui.pageTitle}</h1>
+          <p className="mt-3 text-base font-medium leading-7">{ui.heroSubtitle}</p>
         </header>
         </div>
         </div>
@@ -3481,7 +3485,16 @@ export default async function KnowledgePage({
           <KnowledgeSearchBox
             lang={lang}
             isZh={isZh}
-            articles={allArticles}
+            articles={allArticles.map((article) => ({
+              id: article.id,
+              slug: article.slug,
+              title: article.title,
+              titleEn: article.titleEn,
+              author: article.author,
+              date: article.date,
+              readTime: article.readTime,
+              tag: article.tag,
+            }))}
             placeholder={ui.searchPlaceholder}
           />
         </div>
@@ -3496,6 +3509,39 @@ export default async function KnowledgePage({
             })}
           </nav>
         </details>
+
+        <section className="mt-8" aria-label={isZh ? '文章分页' : 'Article pages'}>
+          {(() => {
+            const indexArticles = articleCatalog().filter((item) => item.system === 'knowledge')
+            const pageSize = 24
+            const pageCount = Math.max(1, Math.ceil(indexArticles.length / pageSize))
+            const parsed = Number(requestedPage)
+            const current = Number.isFinite(parsed) && parsed > 0 ? Math.min(Math.floor(parsed), pageCount) : 1
+            const slice = indexArticles.slice((current - 1) * pageSize, current * pageSize)
+            const pageHref = (number: number) => `/${lang}/knowledge${number === 1 ? '' : `?page=${number}`}`
+            return (
+              <>
+                <h2 className="text-2xl font-semibold leading-snug">{isZh ? '文章列表' : 'Article list'}</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{isZh ? `共 ${indexArticles.length} 篇，第 ${current}/${pageCount} 页。` : `${indexArticles.length} articles, page ${current} of ${pageCount}.`}</p>
+                <ul className="mt-4 space-y-2">
+                  {slice.map((article) => (
+                    <li key={article.slug}>
+                      <Link href={`/${lang}${article.path}`} className="text-base leading-7 hover:underline">
+                        {isZh ? article.titleZh : article.titleEn}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <nav className="mt-6 flex flex-wrap gap-2" aria-label={isZh ? '文章列表分页' : 'Article list pages'}>
+                  {Array.from({ length: pageCount }, (_, index) => {
+                    const number = index + 1
+                    return <Link key={number} href={pageHref(number)} className={`px-3 py-2 text-sm font-semibold ${number === current ? 'bg-[#0b4a6f] text-white' : 'border border-slate-300 dark:border-slate-700'}`} aria-current={number === current ? 'page' : undefined}>{number}</Link>
+                  })}
+                </nav>
+              </>
+            )
+          })()}
+        </section>
 
         {selectedTopic && (
           <section id="topic-results" className="mb-16 scroll-mt-24">
