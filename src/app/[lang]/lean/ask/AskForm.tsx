@@ -69,7 +69,7 @@ export default function AskForm({ lang }: AskFormProps) {
     titleRequired: isZh ? '必填' : 'Required',
     questionDetail: isZh ? '问题详情' : 'Question Details',
     detailPlaceholder: isZh
-      ? '请描述：\n1. 酒店类型和规模\n2. 遇到的具体问题\n3. 尝试过的解决方案\n4. 期望的结果'
+      ? '请描述：\n1. 酒店类型和规模\n2. 遇到的具体问题\n3. 尝试过的办法\n4. 期望的结果'
       : 'Please describe:\n1. Your hotel type and scale\n2. Specific problem you face\n3. Solutions already tried\n4. Desired outcome',
     pillarLabel: isZh ? '分类维度' : 'Pillar Category',
     pillarRequired: isZh ? '必选：选择最相关的精益维度' : 'Required: Select the most relevant lean pillar',

@@ -42,10 +42,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         mainEntity: {
           '@type': 'ItemList',
           itemListElement: [
-            [isZh ? '决策文库' : 'Decisions', `/${lang}/knowledge`],
+            [isZh ? '决策文库' : 'Knowledge Library', `/${lang}/knowledge`],
             [isZh ? '管享精道' : 'Lean Insights', `/${lang}/lean`],
-            [isZh ? '解决方案' : 'Solutions', `/${lang}/services`],
-            [isZh ? '案例' : 'Cases', `/${lang}/cases`],
+            [isZh ? '服务清单' : 'Services', `/${lang}/services`],
+            [isZh ? '实践案例' : 'Case Studies', `/${lang}/cases`],
           ].map(([name, path], index) => ({
             '@type': 'ListItem',
             position: index + 1,
@@ -171,7 +171,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
             <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-13 items-center justify-center gap-2 bg-brand-blue px-6 py-3.5 font-semibold text-white hover:bg-brand-blue-hover">
               <FileText className="h-5 w-5" />
-              {isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}
+              {isZh ? '预约项目诊断' : 'Book a Diagnosis'}
             </Link>
             <a href="tel:+8618941579333" className="inline-flex min-h-13 items-center justify-center gap-2 border border-slate-400 px-6 py-3.5 font-semibold hover:border-brand-blue hover:text-brand-blue dark:border-slate-600 dark:hover:border-sky-300 dark:hover:text-sky-300">
               <Phone className="h-5 w-5" />

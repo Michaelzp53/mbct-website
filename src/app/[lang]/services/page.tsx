@@ -303,7 +303,7 @@ export default async function ServicesPage({
   const collectionJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: isZh ? '解决方案' : 'Solutions',
+    name: isZh ? '服务清单' : 'Services',
     url: `https://www.marvelbros.com/${lang}/services`,
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     isPartOf: { '@id': 'https://www.marvelbros.com/#website' },
@@ -347,7 +347,7 @@ export default async function ServicesPage({
 
   return (
     <>
-      <SiteBreadcrumb lang={lang} path="/services" label={isZh ? '解决方案' : 'Solutions'} />
+      <SiteBreadcrumb lang={lang} path="/services" label={isZh ? '服务清单' : 'Services'} />
       <script
         id={`services-json-ld-${lang}`}
         type="application/ld+json"
@@ -382,7 +382,7 @@ export default async function ServicesPage({
               </h2>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl">
                 {isZh
-                  ? '很多酒店的问题，不是缺一个工具，也不是缺一场培训，而是缺一套能把投资决策、经营动作、客户获取和团队执行串起来的方法。我们的服务不是零散外包，而是围绕经营结果组织起来的完整解决方案。'
+                  ? '很多酒店的问题，不是缺一个工具，也不是缺一场培训，而是缺一套能把投资决策、经营动作、客户获取和团队执行串起来的方法。我们的服务不是零散外包，而是围绕经营结果组织起来的完整服务。'
                   : 'Most hotels do not fail because they lack one more tool or workshop. They struggle because investment decisions, operating actions, customer acquisition, and team execution are disconnected. Our services are built as one operating system around business outcomes.'}
               </p>
             </div>

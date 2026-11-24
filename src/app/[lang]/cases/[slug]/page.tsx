@@ -53,7 +53,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ lan
     <main className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <article className="mx-auto max-w-4xl px-5 py-12 sm:px-8">
-        <Link href={`/${lang}/cases`} className="text-sm font-semibold text-primary">{isZh ? '返回案例成果' : 'Back to case results'}</Link>
+        <Link href={`/${lang}/cases`} className="text-sm font-semibold text-primary">{isZh ? '返回实践案例' : 'Back to case studies'}</Link>
         <div className="relative mt-6 h-64 overflow-hidden rounded-2xl">
           <Image src={item.image} alt={copy.client} fill className="object-cover" sizes="800px" />
         </div>

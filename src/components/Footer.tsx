@@ -14,14 +14,15 @@ export function Footer({ lang, dict }: FooterProps) {
   const isZh = lang === 'zh'
 
   const knowledgeLinks = [
-    { label: isZh ? '决策文库' : 'Decisions', href: `/${lang}/knowledge` },
+    { label: isZh ? '决策文库' : 'Knowledge Library', href: `/${lang}/knowledge` },
     { label: isZh ? '管享精道' : 'Lean Insights', href: `/${lang}/lean` },
-    { label: isZh ? '案例成果' : 'Case results', href: `/${lang}/cases` },
+    { label: isZh ? '专题' : 'Topics', href: `/${lang}/topics` },
+    { label: isZh ? '实践案例' : 'Case Studies', href: `/${lang}/cases` },
   ]
 
   const companyLinks = [
-    { label: isZh ? '关于我们' : 'About Us', href: `/${lang}/about` },
-    { label: isZh ? '解决方案' : 'Solutions', href: `/${lang}/services` },
+    { label: isZh ? '关于我们' : 'About', href: `/${lang}/about` },
+    { label: isZh ? '服务清单' : 'Services', href: `/${lang}/services` },
     { label: isZh ? '酒店经营改善' : 'Operating improvement', href: `/${lang}/hotel-operation-improvement` },
     { label: isZh ? '联系我们' : 'Contact', href: `/${lang}/contact` },
   ]
@@ -81,7 +82,7 @@ export function Footer({ lang, dict }: FooterProps) {
               </a>
               <a href="mailto:contactme@marvelbros.com" className="flex items-center gap-3 break-all text-sm text-slate-700 transition-colors hover:text-brand-blue dark:text-slate-200 dark:hover:text-sky-300"><Mail className="h-4 w-4 shrink-0 text-brand-gold" />contactme@marvelbros.com</a>
               <Link href={`/${lang}/contact?type=diagnosis`} className="mt-5 inline-flex items-center gap-2 border-b-2 border-brand-gold pb-1 text-sm font-semibold">
-                {isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}
+                {isZh ? '预约项目诊断' : 'Book a Diagnosis'}
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

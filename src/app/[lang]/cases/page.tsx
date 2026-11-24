@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { lang } = await params
   const isZh = lang === 'zh'
   return {
-    title: isZh ? '案例成果｜酒店问题如何被诊断并转化为结果？' : 'Case Results | How Hotel Problems Become Results',
+    title: isZh ? '实践案例｜酒店问题如何被诊断并转化为结果？' : 'Case Studies | How Hotel Problems Become Results',
     description: isZh ? '查看迈创兄弟C&T酒店项目案例，了解核心问题、执行动作与量化结果。' : 'Review MarvelBros C&T hotel projects through the core problem, actions taken, and quantified results.',
     alternates: pageAlternates(lang, '/cases'),
   }
@@ -38,7 +38,7 @@ export default async function CasesPage({
   const casesJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: isZh ? '案例成果' : 'Case results',
+    name: isZh ? '实践案例' : 'Case Studies',
     url: `${siteUrl}/${lang}/cases`,
     inLanguage: isZh ? 'zh-CN' : 'en-US',
     isPartOf: { '@id': `${siteUrl}/#website` },

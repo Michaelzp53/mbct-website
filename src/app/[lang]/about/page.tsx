@@ -190,8 +190,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               ))}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href={`/${lang}/cases`} className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d98b28] px-6 py-3 font-semibold text-slate-950 hover:bg-amber-400">{isZh ? '查看案例成果' : 'Review case results'}<ArrowRight className="size-5" /></Link>
-              <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#d98b28] px-6 py-3 font-semibold text-[#b86d13] hover:bg-amber-50 dark:text-amber-300 dark:hover:bg-white/10">{isZh ? '交流酒店项目' : 'Discuss a Hotel Project'}<ArrowRight className="size-5" /></Link>
+              <Link href={`/${lang}/cases`} className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d98b28] px-6 py-3 font-semibold text-slate-950 hover:bg-amber-400">{isZh ? '查看实践案例' : 'Review case studies'}<ArrowRight className="size-5" /></Link>
+              <Link href={`/${lang}/contact?type=diagnosis`} className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#d98b28] px-6 py-3 font-semibold text-[#b86d13] hover:bg-amber-50 dark:text-amber-300 dark:hover:bg-white/10">{isZh ? '预约项目诊断' : 'Book a Diagnosis'}<ArrowRight className="size-5" /></Link>
             </div>
           </div>
         </div>

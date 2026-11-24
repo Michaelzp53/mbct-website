@@ -57,7 +57,7 @@ export function Header() {
               <NavigationMenuItem>
                 <Link href="/solutions" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    解决方案
+                    服务清单
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -108,7 +108,7 @@ export function Header() {
                   ))}
                 </div>
                 <Link href="/solutions" onClick={() => setIsOpen(false)}>
-                  <Button variant="ghost" className="w-full justify-start">解决方案</Button>
+                  <Button variant="ghost" className="w-full justify-start">服务清单</Button>
                 </Link>
                 <Link href="/cases" onClick={() => setIsOpen(false)}>
                   <Button variant="ghost" className="w-full justify-start">案例</Button>

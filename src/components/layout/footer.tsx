@@ -16,7 +16,7 @@ const footerLinks = {
     { title: '加入我们', href: '/careers' },
   ],
   resources: [
-    { title: '解决方案', href: '/solutions' },
+    { title: '服务清单', href: '/zh/services' },
     { title: '成功案例', href: '/cases' },
     { title: '行业报告', href: '/reports' },
     { title: '知识库', href: '/knowledge' },

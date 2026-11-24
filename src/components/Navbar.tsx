@@ -26,27 +26,27 @@ export function Navbar({ lang, dict }: NavbarProps) {
     if (menu?.matches(":popover-open")) menu.hidePopover();
   }, [pathname]);
 
-  const navLinks = [
-    { href: `/${lang}/`, label: nav.home },
-    { href: `/${lang}/knowledge`, label: isZh ? "决策文库" : "Decisions" },
+  const knowledgeLinks = [
+    { href: `/${lang}/knowledge`, label: isZh ? "决策文库" : "Knowledge Library" },
     { href: `/${lang}/lean`, label: isZh ? "管享精道" : "Lean Insights" },
-    { href: `/${lang}/services`, label: isZh ? "解决方案" : "Solutions" },
-    { href: `/${lang}/cases`, label: isZh ? "案例成果" : "Case Studies" },
-    { href: `/${lang}/about`, label: isZh ? "关于我们" : "About Us" },
+    { href: `/${lang}/topics`, label: isZh ? "专题" : "Topics" },
   ];
-
-  const stageNav = [
-    { slug: "hotel-investment", zh: "投", en: "Invest" },
-    { slug: "hotel-development", zh: "建", en: "Build" },
-    { slug: "hotel-opening", zh: "筹", en: "Pre-open" },
-    { slug: "hotel-operation-improvement", zh: "管", en: "Operate" },
-    { slug: "hotel-renovation", zh: "改", en: "Renew" },
-    { slug: "hotel-exit", zh: "退", en: "Exit" },
+  const stageLinks = [
+    { href: `/${lang}/hotel-investment`, label: isZh ? "酒店投资" : "Investment" },
+    { href: `/${lang}/hotel-development`, label: isZh ? "酒店建设" : "Development" },
+    { href: `/${lang}/hotel-opening`, label: isZh ? "酒店筹开" : "Pre-Opening" },
+    { href: `/${lang}/hotel-operation-improvement`, label: isZh ? "经营改善" : "Operations" },
+    { href: `/${lang}/hotel-renovation`, label: isZh ? "改造升级" : "Renovation" },
+    { href: `/${lang}/hotel-exit`, label: isZh ? "资产退出" : "Exit" },
   ];
-
+  const leafLinks = [
+    { href: `/${lang}/services`, label: isZh ? "服务清单" : "Services" },
+    { href: `/${lang}/cases`, label: isZh ? "实践案例" : "Case Studies" },
+    { href: `/${lang}/about`, label: isZh ? "关于我们" : "About" },
+  ];
   const primaryCta = {
     href: `/${lang}/contact?type=diagnosis`,
-    label: isZh ? "交流酒店项目" : "Discuss a Hotel Project",
+    label: isZh ? "预约项目诊断" : "Book a Diagnosis",
   };
 
   return (
@@ -78,14 +78,20 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </Link>
 
             <nav className="hidden flex-shrink-0 items-center gap-1 min-[1280px]:flex 2xl:gap-2">
-              {navLinks.map((link) => link.href.endsWith('/services') ? (
-                <div key={link.href} className="group relative">
-                  <Link href={link.href} className="flex-shrink-0 whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300">{link.label}</Link>
-                  <div className="invisible absolute left-0 top-full z-20 min-w-44 border border-slate-200 bg-white py-2 group-hover:visible group-focus-within:visible dark:border-slate-700 dark:bg-slate-950">
-                    {stageNav.map((item) => <Link key={item.slug} href={`/${lang}/${item.slug}`} className="block px-4 py-2 text-sm font-semibold hover:text-brand-blue">{isZh ? item.zh : item.en}</Link>)}
-                  </div>
+              <Link href={`/${lang}/`} className={cn("flex-shrink-0 whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300")}>{nav.home}</Link>
+              <div className="group relative">
+                <button type="button" aria-haspopup="true" aria-controls="nav-knowledge" className="whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300">{isZh ? "知识库" : "Knowledge"}</button>
+                <div id="nav-knowledge" className="invisible absolute left-0 top-full z-20 min-w-44 border border-slate-200 bg-white py-2 group-hover:visible group-focus-within:visible dark:border-slate-700 dark:bg-slate-950">
+                  {knowledgeLinks.map((item) => <Link key={item.href} href={item.href} className="block px-4 py-2 text-sm font-semibold hover:text-brand-blue">{item.label}</Link>)}
                 </div>
-              ) : (
+              </div>
+              <div className="group relative">
+                <button type="button" aria-haspopup="true" aria-controls="nav-lifecycle" className="whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300">{isZh ? "全周期方案" : "Lifecycle Solutions"}</button>
+                <div id="nav-lifecycle" className="invisible absolute left-0 top-full z-20 min-w-44 border border-slate-200 bg-white py-2 group-hover:visible group-focus-within:visible dark:border-slate-700 dark:bg-slate-950">
+                  {stageLinks.map((item) => <Link key={item.href} href={item.href} className="block px-4 py-2 text-sm font-semibold hover:text-brand-blue">{item.label}</Link>)}
+                </div>
+              </div>
+              {leafLinks.map((link) => (
                 <Link key={link.href} href={link.href} className={cn("flex-shrink-0 whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 transition-colors hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300 dark:hover:text-sky-300")}>{link.label}</Link>
               ))}
             </nav>
@@ -168,19 +174,17 @@ export function Navbar({ lang, dict }: NavbarProps) {
             className="flex flex-col px-5 py-3"
             aria-label={isZh ? "手机导航" : "Mobile navigation"}
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="border-b border-slate-200 px-1 py-3 text-[17.6px] font-bold text-slate-700 transition-colors hover:text-brand-blue dark:border-slate-800 dark:text-slate-200 dark:hover:text-sky-300"
-              >
-                {link.label}
-              </Link>
+            <Link href={`/${lang}/`} className="border-b border-slate-200 px-1 py-3 text-[17.6px] font-bold text-slate-700 hover:text-brand-blue dark:border-slate-800 dark:text-slate-200">{nav.home}</Link>
+            <button type="button" className="border-b border-slate-200 px-1 py-3 text-left text-[17.6px] font-bold text-slate-700 dark:border-slate-800 dark:text-slate-200">{isZh ? "知识库" : "Knowledge"}</button>
+            {knowledgeLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="border-b border-slate-200 px-1 py-2 text-sm font-semibold text-slate-600 dark:border-slate-800 dark:text-slate-300">{item.label}</Link>
             ))}
-            {stageNav.map((item) => (
-              <Link key={item.slug} href={`/${lang}/${item.slug}`} className="border-b border-slate-200 px-1 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300">
-                {isZh ? `解决方案 · ${item.zh}` : `Solutions · ${item.en}`}
-              </Link>
+            <button type="button" className="border-b border-slate-200 px-1 py-3 text-left text-[17.6px] font-bold text-slate-700 dark:border-slate-800 dark:text-slate-200">{isZh ? "全周期方案" : "Lifecycle Solutions"}</button>
+            {stageLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="border-b border-slate-200 px-1 py-2 text-sm font-semibold text-slate-600 dark:border-slate-800 dark:text-slate-300">{item.label}</Link>
+            ))}
+            {leafLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="border-b border-slate-200 px-1 py-3 text-[17.6px] font-bold text-slate-700 hover:text-brand-blue dark:border-slate-800 dark:text-slate-200">{link.label}</Link>
             ))}
           </nav>
 

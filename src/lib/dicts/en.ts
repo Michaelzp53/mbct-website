@@ -2,9 +2,9 @@ import { brand } from '@/lib/brand'
 export const en = {
   nav: {
     home: 'Home',
-    about: 'About Us',
-    services: 'Solutions',
-    cases: 'Case Results',
+    about: 'About',
+    services: 'Services',
+    cases: 'Case Studies',
     contact: 'Contact Us',
     getPlan: 'Get a Plan',
     login: 'Log In / Register',
@@ -24,7 +24,7 @@ export const en = {
     ],
   },
   services: {
-    title: 'Solutions',
+    title: 'Services',
     subtitle: 'Three capability clusters—pre-investment decisions, operational growth, and AI implementation—forming a deliverable chain from diagnosis to execution',
     cta: 'View All Services',
     items: [
@@ -79,7 +79,7 @@ export const en = {
     ],
   },
   cases: {
-    title: 'Case Results',
+    title: 'Case Studies',
     subtitle: 'Real project outcomes shown through four elements: project type, core problem, actions taken, and quantified results',
     cta: 'View More Cases',
     items: [
@@ -263,7 +263,7 @@ export const en = {
       privacy: 'I have read and agree to the Privacy Policy. MarvelBros C&T will strictly protect project information.',
       submit: 'Submit',
       submitting: 'Submitting...',
-      success: 'Submitted successfully! We will contact you within 24 hours.',
+      success: 'Submitted. We will make a first judgment, then arrange a time to talk.',
       error: 'Submission failed. Please try again later.',
     },
     services: [
@@ -363,7 +363,7 @@ export const en = {
     sections: {
       academic: 'Academic Research',
       'industry-reports': 'Industry Reports',
-      cases: 'Case Results',
+      cases: 'Case Studies',
       blogs: 'Industry Perspectives',
     },
     featured: 'Featured Report',

@@ -60,6 +60,16 @@ const nextConfig: NextConfig = {
         destination: '/zh/hotel-renovation',
         statusCode: 301,
       },
+      {
+        source: '/:lang(zh|en)/hotel-revenue',
+        destination: '/:lang/hotel-operation-improvement',
+        statusCode: 301,
+      },
+      {
+        source: '/:lang(zh|en)/hotel-preopening',
+        destination: '/:lang/hotel-opening',
+        statusCode: 301,
+      },
     ];
   },
 };

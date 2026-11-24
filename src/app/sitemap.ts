@@ -54,7 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localized('/hotel-investment', 0.95, 'weekly'),
     ...localized('/hotel-opening', 0.95, 'weekly'),
     ...localized('/hotel-operation-improvement', 0.95, 'weekly'),
-    ...localized('/hotel-revenue', 0.95, 'weekly'),
     ...localized('/hotel-development', 0.95, 'weekly'),
     ...localized('/hotel-exit', 0.95, 'weekly'),
     ...localized('/hotel-renovation', 0.95, 'weekly'),
