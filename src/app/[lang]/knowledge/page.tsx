@@ -1,7 +1,7 @@
 import { articleLabel } from '@/lib/article-labels'
 import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import { getKnowledgeIndexSupplements, supplementalKnowledgeSlugs } from '@/lib/knowledge-index-supplements'
-import { knowledgeCategories } from '@/lib/knowledge-taxonomy'
+import { categoryForKnowledgeTopic, knowledgeCategories } from '@/lib/knowledge-taxonomy'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { BookOpen, FileText, BarChart3, ArrowRight, Clock, User, Calendar } from 'lucide-react'
@@ -3482,7 +3482,10 @@ export default async function KnowledgePage({
         <details className="mt-8 border-t border-slate-300 py-4 dark:border-slate-700">
           <summary className="cursor-pointer text-sm font-semibold">{isZh ? '其他文章' : 'Other articles'}</summary>
           <nav aria-label={isZh ? '其他栏目' : 'Other categories'} className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
-            {knowledgeCategories.map(category => <Link key={category.slug} className="px-1 py-2 text-sm hover:text-primary" href={`/${lang}/knowledge/category/${category.slug}`}>{isZh ? category.zh : category.en}</Link>)}
+            {knowledgeCategories.map(category => {
+              const count = allArticles.filter((article) => categoryForKnowledgeTopic(getPrimaryTopic(article)) === category.slug).length
+              return <Link key={category.slug} className="px-1 py-2 text-sm hover:text-primary" href={`/${lang}/knowledge/category/${category.slug}`}>{isZh ? category.zh : category.en} {count} {isZh ? '篇' : ''}</Link>
+            })}
           </nav>
         </details>
 

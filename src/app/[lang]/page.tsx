@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { ArrowRight, FileText, Phone } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
 import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
+import { STAGE_PAGES } from '@/components/HotelTopicPage'
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -70,7 +71,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             {ownerDecisions.map((decision, index) => {
               const href = ownerDecisionHref(lang, decision)
               const title = isZh ? decision.zh : decision.en
-              const className = 'group grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-b border-[#d8cbb6] py-2.5 dark:border-slate-700'
+              const stage = decision.stage ? STAGE_PAGES.find((item) => item.slug === decision.stage) : undefined
+              const className = 'group grid min-w-0 flex-1 grid-cols-[2rem_1fr_auto] items-center gap-3 py-2.5'
               const body = (
                 <>
                   <span className="text-xs font-bold text-[#d98b28]">{String(index + 1).padStart(2, '0')}</span>
@@ -81,14 +83,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   {href ? <ArrowRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-brand-blue" /> : <span />}
                 </>
               )
-              return href ? (
-                <li key={decision.id}>
-                  <Link href={href} className={`${className} transition-colors hover:bg-white/70 dark:hover:bg-slate-950/40`}>
-                    {body}
-                  </Link>
+              return (
+                <li key={decision.id} className="flex items-center gap-2 border-b border-[#d8cbb6] dark:border-slate-700">
+                  {href ? <Link href={href} className={`${className} transition-colors hover:bg-white/70 dark:hover:bg-slate-950/40`}>{body}</Link> : <div className={className}>{body}</div>}
+                  {stage && <Link href={`/${lang}/${stage.slug}`} className="shrink-0 rounded-full border border-[#d8b98a] px-2 py-0.5 text-xs font-semibold text-[#8a5a16] hover:border-[#0b4a6f] dark:text-amber-200">{isZh ? stage.zh : stage.en}</Link>}
                 </li>
-              ) : (
-                <li key={decision.id} className={className}>{body}</li>
               )
             })}
           </ol>

@@ -146,8 +146,8 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
     articleCount: isZh ? '篇' : ' articles',
     views: isZh ? '阅读' : 'Views',
     likes: isZh ? '点赞' : 'Likes',
-    askButton: isZh ? '向迈创兄弟提问' : 'Ask MarvelBros',
-    askDesc: isZh ? '遇到管理难题？向迈创兄弟提问，48小时内专业回复' : 'Facing a management challenge? Ask MarvelBros — professional response within 48 hours',
+    askButton: isZh ? '把这个问题交给顾问' : 'Hand this question to an adviser',
+    askDesc: isZh ? '这不是留言板，是诊断入口：写下你的酒店现状，我们按阶段回你一份判断' : 'This is a diagnosis entry, not a guestbook. Write the hotel’s current situation and we will reply with a stage judgment.',
     minRead: isZh ? '分钟' : 'min',
   }
 

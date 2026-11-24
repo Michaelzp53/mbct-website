@@ -35,6 +35,7 @@ export default async function ContactPage({ params, searchParams }: { params: Pr
       <header className="mb-8 max-w-3xl">
         <p className="text-sm font-semibold text-primary">{zh ? '迈创兄弟C&T · 专业交流' : 'MarvelBros C&T · Talk with us'}</p>
         <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{zh ? '您的酒店，现在最想解决什么问题？' : 'What would you most like to resolve at your hotel?'}</h1>
+        {article === 'lean-question' && <p className="mt-4 text-base font-medium leading-7">{zh ? '这不是留言板，是诊断入口：写下你的酒店现状，我们按阶段回你一份判断。' : 'This is a diagnosis entry, not a message board. Write down the hotel’s current situation, and we will answer with a stage judgment.'}</p>}
         <p className="mt-4 text-base leading-7 text-muted-foreground">{zh ? '从项目阶段和一个具体问题开始。我们结合实际背景交流判断，再确定是否需要进一步分析。' : 'Start with your project stage and one concrete question. We will discuss the context before deciding whether further analysis is useful.'}</p>
       </header>
       <div className="grid items-start gap-8 lg:grid-cols-[1.3fr_1fr]">

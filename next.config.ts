@@ -57,7 +57,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/articles/hotel-renovation',
-        destination: '/zh/hotel-operation-improvement',
+        destination: '/zh/hotel-renovation',
         statusCode: 301,
       },
     ];

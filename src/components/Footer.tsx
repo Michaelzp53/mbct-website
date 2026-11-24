@@ -88,7 +88,23 @@ export function Footer({ lang, dict }: FooterProps) {
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 pt-7 text-xs text-slate-500 dark:text-slate-400 md:flex-row md:items-center md:justify-between">
+        <p className="pt-7 text-sm text-slate-600 dark:text-slate-300">
+          {isZh ? '阶段：' : 'Stages: '}
+          {[
+            [isZh ? '投' : 'Invest', 'hotel-investment'],
+            [isZh ? '建' : 'Build', 'hotel-development'],
+            [isZh ? '筹' : 'Pre-open', 'hotel-opening'],
+            [isZh ? '管' : 'Operate', 'hotel-operation-improvement'],
+            [isZh ? '改' : 'Renew', 'hotel-renovation'],
+            [isZh ? '退' : 'Exit', 'hotel-exit'],
+          ].map(([label, slug], index, list) => (
+            <span key={slug}>
+              <Link href={`/${lang}/${slug}`} className="hover:text-brand-blue dark:hover:text-sky-300">{label}</Link>
+              {index < list.length - 1 ? (isZh ? ' · ' : ' · ') : ''}
+            </span>
+          ))}
+        </p>
+        <div className="flex flex-col gap-5 pt-4 text-xs text-slate-500 dark:text-slate-400 md:flex-row md:items-center md:justify-between">
           <p>{footer.copyright}</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link href={`/${lang}/privacy`} className="hover:text-brand-blue dark:hover:text-sky-300">{footer.privacy}</Link>

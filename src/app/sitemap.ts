@@ -55,6 +55,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localized('/hotel-opening', 0.95, 'weekly'),
     ...localized('/hotel-operation-improvement', 0.95, 'weekly'),
     ...localized('/hotel-revenue', 0.95, 'weekly'),
+    ...localized('/hotel-development', 0.95, 'weekly'),
+    ...localized('/hotel-exit', 0.95, 'weekly'),
+    ...localized('/hotel-renovation', 0.95, 'weekly'),
+    ...localized('/cases/sanya-luxury-resort', 0.7, 'monthly'),
+    ...localized('/cases/northwest-state-guesthouse', 0.7, 'monthly'),
+    ...localized('/cases/qingdao-economy-hotel', 0.7, 'monthly'),
     ...knowledgeCategories.flatMap(({ slug }) => localized(`/knowledge/category/${slug}`, 0.85, 'weekly')),
     ...leanCategories.flatMap(({ slug }) => localized(`/lean/category/${slug}`, 0.85, 'weekly')),
   ]
