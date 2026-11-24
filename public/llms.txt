@@ -1,6 +1,25 @@
 # MarvelBros C&T / 迈创兄弟C&T
 
+MarvelBros C&T（迈创兄弟C&T）is a hotel lifecycle value consultancy for investors, owners, and managers.
+The site covers investment, development, pre-opening, operations, renovation, and exit: 投、建、筹、管、改、退.
+434 articles are searchable from the two libraries: 219 in the knowledge library and 215 in Lean Insights.
+
 Official website: https://www.marvelbros.com
+
+## Primary pages
+
+- Home: https://www.marvelbros.com/zh
+- Investment: https://www.marvelbros.com/zh/hotel-investment
+- Development: https://www.marvelbros.com/zh/hotel-development
+- Pre-opening: https://www.marvelbros.com/zh/hotel-opening
+- Operations improvement: https://www.marvelbros.com/zh/hotel-operation-improvement
+- Renovation: https://www.marvelbros.com/zh/hotel-renovation
+- Exit: https://www.marvelbros.com/zh/hotel-exit
+- Services: https://www.marvelbros.com/zh/services
+- Case studies: https://www.marvelbros.com/zh/cases
+- Knowledge library (决策文库): https://www.marvelbros.com/zh/knowledge
+- Lean Insights (管享精道): https://www.marvelbros.com/zh/lean
+- Topics: https://www.marvelbros.com/zh/topics
 
 MarvelBros C&T, publicly used in Chinese as 迈创兄弟C&T, is a hotel advisory and digital intelligence practice focused on hotel investment judgment, operating growth, and AI-powered lean management implementation.
 

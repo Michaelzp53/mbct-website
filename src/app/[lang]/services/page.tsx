@@ -1,6 +1,7 @@
 import BrandIdentity from '@/components/BrandIdentity'
 import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import { brand, organizationId } from '@/lib/brand'
+import { ogImages } from '@/lib/seo'
 import type { Metadata } from 'next'
 import {
   Building2,
@@ -61,11 +62,13 @@ export async function generateMetadata({
       alternateLocale: isZh ? 'en_US' : 'zh_CN',
       url: `https://www.marvelbros.com/${lang}/services`,
       siteName: isZh ? '迈创兄弟C&T' : 'MarvelBros C&T',
+      images: ogImages(isZh ? 'zh' : 'en'),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [ogImages(isZh ? 'zh' : 'en')[0].url],
     },
   }
 }

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { getDict } from '@/lib/dicts'
-import { defaultOgImages } from '@/lib/seo'
+import { ogImages } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 export function generateStaticParams() {
@@ -27,13 +27,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         locale: 'en_US',
         alternateLocale: 'zh_CN',
         type: 'website',
-        images: defaultOgImages,
+        images: ogImages('en'),
       },
       twitter: {
         card: 'summary_large_image',
         title: 'MarvelBros C&T - Hotel Lifecycle Value Enhancement Consultancy',
         description: brand.en.description,
-        images: [defaultOgImages[0].url],
+        images: [ogImages('en')[0].url],
       },
       alternates: {
         canonical: 'https://www.marvelbros.com/en',
@@ -58,13 +58,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       locale: 'zh_CN',
       alternateLocale: 'en_US',
       type: 'website',
-      images: defaultOgImages,
+      images: ogImages('zh'),
     },
     twitter: {
       card: 'summary_large_image',
       title: '迈创兄弟C&T - 酒店全生命周期价值提升咨询',
       description: brand.zh.description,
-      images: [defaultOgImages[0].url],
+      images: [ogImages('zh')[0].url],
     },
     alternates: {
       canonical: 'https://www.marvelbros.com/zh',

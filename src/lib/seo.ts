@@ -9,3 +9,10 @@ export const defaultOgImage = {
 } as const
 
 export const defaultOgImages = [defaultOgImage]
+
+export function ogImages(lang: 'zh' | 'en') {
+  return [{
+    ...defaultOgImage,
+    alt: lang === 'en' ? 'MarvelBros C&T — Hotel Lifecycle Value Consultancy' : defaultOgImage.alt,
+  }]
+}

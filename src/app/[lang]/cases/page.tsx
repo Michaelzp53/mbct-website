@@ -5,6 +5,7 @@ import PageHero from '@/components/PageHero'
 import { CheckCircle, ArrowRight, Quote } from 'lucide-react'
 import Link from 'next/link'
 import { pageAlternates, siteUrl } from '@/lib/page-seo'
+import { ogImages } from '@/lib/seo'
 import { publishedCases } from '@/lib/case-studies'
 import CasesFilter from './CasesFilter'
 
@@ -19,6 +20,20 @@ export async function generateMetadata({
     title: isZh ? '实践案例｜酒店问题如何被诊断并转化为结果？' : 'Case Studies | How Hotel Problems Become Results',
     description: isZh ? '查看迈创兄弟C&T酒店项目案例，了解核心问题、执行动作与量化结果。' : 'Review MarvelBros C&T hotel projects through the core problem, actions taken, and quantified results.',
     alternates: pageAlternates(lang, '/cases'),
+    openGraph: {
+      title: isZh ? '实践案例｜酒店问题如何被诊断并转化为结果？' : 'Case Studies | How Hotel Problems Become Results',
+      description: isZh ? '查看迈创兄弟C&T酒店项目案例，了解核心问题、执行动作与量化结果。' : 'Review MarvelBros C&T hotel projects through the core problem, actions taken, and quantified results.',
+      url: `https://www.marvelbros.com/${lang}/cases`,
+      type: 'website',
+      locale: isZh ? 'zh_CN' : 'en_US',
+      images: ogImages(isZh ? 'zh' : 'en'),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: isZh ? '实践案例｜酒店问题如何被诊断并转化为结果？' : 'Case Studies | How Hotel Problems Become Results',
+      description: isZh ? '查看迈创兄弟C&T酒店项目案例，了解核心问题、执行动作与量化结果。' : 'Review MarvelBros C&T hotel projects through the core problem, actions taken, and quantified results.',
+      images: [ogImages(isZh ? 'zh' : 'en')[0].url],
+    },
   }
 }
 

@@ -3,6 +3,7 @@ import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import Link from 'next/link'
 import { ContactForm } from '@/components/ContactForm'
 import { getDict } from '@/lib/dicts'
+import { ogImages } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
@@ -17,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: { canonical: url, languages: {
       zh: 'https://www.marvelbros.com/zh/contact', en: 'https://www.marvelbros.com/en/contact',
     } },
-    openGraph: { title, description, url, type: 'website', siteName: zh ? '迈创兄弟C&T' : 'MarvelBros C&T', locale: zh ? 'zh_CN' : 'en_US', alternateLocale: zh ? 'en_US' : 'zh_CN' },
-    twitter: { card: 'summary_large_image', title, description },
+    openGraph: { title, description, url, type: 'website', siteName: zh ? '迈创兄弟C&T' : 'MarvelBros C&T', locale: zh ? 'zh_CN' : 'en_US', alternateLocale: zh ? 'en_US' : 'zh_CN', images: ogImages(zh ? 'zh' : 'en') },
+    twitter: { card: 'summary_large_image', title, description, images: [ogImages(zh ? 'zh' : 'en')[0].url] },
   }
 }
 
