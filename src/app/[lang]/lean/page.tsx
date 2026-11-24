@@ -7,6 +7,7 @@ import SearchBox from './SearchBox'
 import { allArticlesData } from './article/[slug]/articles-data'
 import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import { leanCategories, getLeanArticleCategory } from '@/lib/knowledge-taxonomy'
+import { ogImages } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
@@ -35,11 +36,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       alternateLocale: isZh ? 'en_US' : 'zh_CN',
       url: `https://www.marvelbros.com/${lang}/lean`,
       siteName: isZh ? '迈创兄弟C&T' : 'MarvelBros C&T',
+      images: ogImages(isZh ? 'zh' : 'en'),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [ogImages(isZh ? 'zh' : 'en')[0].url],
     },
   }
 }
@@ -177,7 +180,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
 
       {/* Header */}
       <div className="relative border-b border-border bg-cover bg-center" style={{ backgroundImage: "url('/images/home-modern/signature-lounge.jpeg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/20 dark:bg-slate-950/20" />
+        <div className="pointer-events-none absolute inset-0 bg-[#4d6574]/30 dark:bg-[#01060c]/30" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-3">
@@ -186,10 +189,10 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
                 {isZh ? '迈创兄弟C&T · 知识库' : 'MarvelBros C&T · Knowledge Base'}
               </span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="mb-3 text-3xl font-semibold leading-snug text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.8)] md:text-4xl">
               {ui.pageTitle}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="max-w-3xl text-base font-medium leading-7 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.75)] md:text-lg">
               {ui.pageSubtitle}
             </p>
           </div>

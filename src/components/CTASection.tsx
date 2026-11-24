@@ -14,7 +14,7 @@ export function CTASection({ dict, lang }: CTASectionProps) {
 
   return (
     <section className="relative overflow-hidden bg-cover bg-center py-16" style={{ backgroundImage: "url('/images/home-modern/advisory-conversation.png')" }}>
-      <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/20 dark:bg-slate-950/20" />
+      <div className="pointer-events-none absolute inset-0 bg-[#4d6574]/30 dark:bg-[#01060c]/30" />
       {/* Dot grid - dark theme */}
       <div className="absolute inset-0 hidden opacity-[0.06] dark:block">
         <div
@@ -29,10 +29,10 @@ export function CTASection({ dict, lang }: CTASectionProps) {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[120px] dark:block hidden" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 max-w-2xl mx-auto leading-tight">
+        <h2 className="mx-auto mb-4 max-w-2xl text-2xl font-semibold leading-snug text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.8)] md:text-3xl">
           {isZh ? '先把问题梳理清楚，再决定下一步怎么做' : 'Clarify the problem before deciding the next move'}
         </h2>
-        <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
+        <p className="mx-auto mb-8 max-w-xl text-base font-medium leading-7 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.75)]">
           {isZh
             ? '如果你正在判断一个项目、准备筹开，或希望改善现有酒店的经营结果，可以先告诉我们目前最难判断的一件事。'
             : 'If you are evaluating a project, preparing an opening, or improving an existing hotel, start by sharing the one issue that is hardest to judge.'}

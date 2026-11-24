@@ -13,22 +13,22 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
   return (
     <section data-screen="1" className="border-b border-white/15 text-white">
       <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
-        <h1 className="max-w-4xl text-[32px] font-semibold leading-tight [text-shadow:0_1px_2px_rgba(0,0,0,0.55)] sm:text-5xl">
+        <h1 className="max-w-4xl text-3xl font-semibold leading-snug [text-shadow:0_1px_3px_rgba(0,0,0,0.75)] sm:text-4xl">
           {isZh ? '酒店全生命周期价值提升咨询，从当前这一步做判断' : 'Sound judgment across the hotel lifecycle, from the current stage'}
         </h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-slate-100 sm:text-lg">
+        <p className="mt-4 max-w-3xl text-lg font-medium leading-8 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.7)] sm:text-xl">
           {isZh
             ? '迈创兄弟C&T 做酒店全生命周期价值提升咨询，先按你所处的阶段分流。'
             : 'MarvelBros C&T advises on hotel value across the lifecycle, starting from the stage you are in.'}
         </p>
         <div className="mt-8 grid gap-3 md:grid-cols-3">
           {cards.map((card) => (
-            <Link key={card.href} href={card.href} className="border border-white/40 px-4 py-5 text-lg font-semibold hover:border-amber-300">
+            <Link key={card.href} href={card.href} className="border border-white/40 px-4 py-5 text-base font-semibold hover:border-amber-300">
               {isZh ? card.zh : card.en}
             </Link>
           ))}
           <div className="border border-white/40 px-4 py-5">
-            <Link href={`/${lang}/hotel-operation-improvement`} className="text-lg font-semibold hover:text-amber-200">
+            <Link href={`/${lang}/hotel-operation-improvement`} className="text-base font-semibold hover:text-amber-200">
               {isZh ? '存量亏损或改造' : 'Operating loss or renovation'}
             </Link>
             <p className="mt-3 text-sm">

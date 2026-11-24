@@ -4,6 +4,7 @@ import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
 import { getDict } from '@/lib/dicts'
 import HeroWithStats from '@/components/HeroWithStats'
 import LightInquiryForm from '@/components/LightInquiryForm'
+import { ogImages } from '@/lib/seo'
 
 const FACT = '迈创兄弟C&T 提供酒店投、建、筹、管、改、退六阶段的价值提升咨询，30+ 年酒店行业实战经验，已帮助开发商避免超 3000 万元潜在损失。'
 
@@ -44,15 +45,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const title = zh
     ? '酒店全生命周期价值提升咨询｜为酒店业主提供投资、筹开与经营改善的判断依据'
     : 'Hotel lifecycle consulting for owners and operators'
+  const description = zh
+    ? '迈创兄弟C&T 做酒店全生命周期价值提升咨询，覆盖投资、筹开、经营改善、改造与退出。'
+    : 'MarvelBros C&T advises hotel owners on investment, pre-opening, operations, renovation, and exit.'
   return {
     title: { absolute: title },
-    description: zh
-      ? '迈创兄弟C&T 做酒店全生命周期价值提升咨询，覆盖投资、筹开、经营改善、改造与退出。'
-      : 'MarvelBros C&T advises hotel owners on investment, pre-opening, operations, renovation, and exit.',
+    description,
     alternates: {
       canonical: `https://www.marvelbros.com/${zh ? 'zh' : 'en'}`,
       languages: { 'zh-CN': 'https://www.marvelbros.com/zh', 'en-US': 'https://www.marvelbros.com/en', 'x-default': 'https://www.marvelbros.com/zh' },
     },
+    openGraph: { title, description, url: `https://www.marvelbros.com/${zh ? 'zh' : 'en'}`, type: 'website', locale: zh ? 'zh_CN' : 'en_US', images: ogImages(zh ? 'zh' : 'en') },
+    twitter: { card: 'summary_large_image', title, description, images: [ogImages(zh ? 'zh' : 'en')[0].url] },
   }
 }
 
@@ -69,8 +73,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   return (
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
-      <div className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('/images/home-named/homepage-night-hotel.jpg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#0b4a6f]/20 dark:bg-[#061422]/20" />
+      <div className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('/images/home-named/homepage-city-night.jpg')" }}>
+        <div className="pointer-events-none absolute inset-0 bg-[#031018]/30 dark:bg-[#01060c]/30" />
         <div className="relative">
       <HeroWithStats lang={lang} />
 
@@ -84,18 +88,18 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           ] as const).map(([value, label]) => (
             <div key={label} className="border-l-2 border-white/70 px-2">
               <dt className="whitespace-nowrap text-lg font-semibold sm:text-2xl">{value}</dt>
-              <dd className="mt-1 text-[11px] leading-4 sm:text-xs">{label}</dd>
+              <dd className="mt-1 text-xs font-medium leading-4 text-white sm:text-sm">{label}</dd>
             </div>
           ))}
         </dl>
-        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-sm leading-6 text-slate-100 sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across investment, development, pre-opening, operations, renovation, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
+        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-base font-medium leading-7 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.65)] sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across investment, development, pre-opening, operations, renovation, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
       </section>
         </div>
       </div>
 
       <section data-screen="3" className="border-b border-slate-200 py-10 dark:border-slate-800">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
-          <h2 className="text-2xl font-semibold">{isZh ? '酒店全周期十二个核心问题' : 'Twelve core questions across the hotel lifecycle'}</h2>
+          <h2 className="text-3xl font-semibold leading-snug">{isZh ? '酒店全周期十二个核心问题' : 'Twelve core questions across the hotel lifecycle'}</h2>
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             {ownerDecisions.map((decision, index) => {
               const href = ownerDecisionHref(lang, decision)
@@ -104,8 +108,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               return (
                 <article key={decision.id} className="border border-slate-200 p-4 dark:border-slate-700">
                   <p className="text-sm font-semibold text-brand-gold">{String(index + 1).padStart(2, '0')}{tag ? ` · ${isZh ? tag[0] : tag[1]}` : ''}</p>
-                  <h3 className="mt-2 font-semibold">{isZh ? decision.zh : decision.en}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{isZh ? note[0] : note[1]}</p>
+                  <h3 className="mt-2 text-lg font-semibold leading-7">{isZh ? decision.zh : decision.en}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{isZh ? note[0] : note[1]}</p>
                   {href && <p className="mt-3 text-sm font-semibold"><Link href={href} className="text-brand-blue dark:text-sky-300">{isZh ? '看诊断思路' : 'Read the diagnosis'}</Link></p>}
                 </article>
               )
@@ -116,13 +120,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       <section data-screen="4" className="border-b border-slate-200 py-10 dark:border-slate-800">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
-          <h2 className="text-2xl font-semibold">{isZh ? '四步协作方法' : 'Four-step collaboration'}</h2>
+          <h2 className="text-3xl font-semibold leading-snug">{isZh ? '四步协作方法' : 'Four-step collaboration'}</h2>
           <ol className="mt-6 grid gap-3 md:grid-cols-4">
             {steps.map(([zh, zhBody, en, enBody], index) => (
               <li key={zh} className="border border-slate-200 p-4 dark:border-slate-700">
                 <p className="text-sm font-semibold text-brand-gold">0{index + 1}</p>
-                <h3 className="mt-2 font-semibold">{isZh ? zh : en}</h3>
-                <p className="mt-2 text-sm leading-6">{isZh ? zhBody : enBody}</p>
+                <h3 className="mt-2 text-lg font-semibold leading-7">{isZh ? zh : en}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">{isZh ? zhBody : enBody}</p>
               </li>
             ))}
           </ol>
@@ -132,7 +136,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       <section data-screen="5" className="border-b border-slate-200 py-10 dark:border-slate-800">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
-          <h2 className="text-2xl font-semibold">{isZh ? '实践案例' : 'Case Studies'}</h2>
+          <h2 className="text-3xl font-semibold leading-snug">{isZh ? '实践案例' : 'Case Studies'}</h2>
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             {cases.map((item) => (
               <article key={item.client} className="border border-slate-200 p-4 dark:border-slate-700">
@@ -164,12 +168,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       <section data-screen="7" className="relative bg-cover bg-center py-10" style={{ backgroundImage: "url('/images/home-named/contact-us.jpg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/20 dark:bg-slate-950/20" />
+        <div className="pointer-events-none absolute inset-0 bg-[#4d6574]/30 dark:bg-[#01060c]/30" />
         <div className="relative mx-auto grid max-w-[1440px] gap-6 px-5 sm:px-8 lg:grid-cols-[1fr_1.2fr] lg:px-12 xl:px-16">
-          <div>
-            <h2 className="text-2xl font-semibold">{isZh ? '直接联系' : 'Direct contact'}</h2>
-            <p className="mt-4 text-lg font-semibold"><a href="tel:+8618941579333">+86 189 4157 9333</a></p>
-            <p className="mt-2 text-sm">{isZh ? '电话与微信同号' : 'Same number for Phone & WeChat'}</p>
+          <div className="text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.65)]">
+            <h2 className="text-3xl font-semibold leading-snug">{isZh ? '直接联系' : 'Direct contact'}</h2>
+            <p className="mt-4 text-2xl font-semibold"><a href="tel:+8618941579333">+86 189 4157 9333</a></p>
+            <p className="mt-2 text-base font-medium">{isZh ? '电话与微信同号' : 'Same number for Phone & WeChat'}</p>
           </div>
           <LightInquiryForm lang={lang} />
         </div>
