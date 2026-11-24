@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -446,7 +447,8 @@ The answer isn't in the policy. It's in your choices.
  </div>
  </div>
  </div>
- </article>
+ <ArticleNeighbors lang={lang} path={`/knowledge/beijing-hotel-policy-2026`} system="knowledge" />
+        </article>
  </main>
  )
 }

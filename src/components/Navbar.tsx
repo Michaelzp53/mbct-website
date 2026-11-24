@@ -35,6 +35,15 @@ export function Navbar({ lang, dict }: NavbarProps) {
     { href: `/${lang}/about`, label: isZh ? "关于我们" : "About Us" },
   ];
 
+  const stageNav = [
+    { slug: "hotel-investment", zh: "投", en: "Invest" },
+    { slug: "hotel-development", zh: "建", en: "Build" },
+    { slug: "hotel-opening", zh: "筹", en: "Pre-open" },
+    { slug: "hotel-operation-improvement", zh: "管", en: "Operate" },
+    { slug: "hotel-renovation", zh: "改", en: "Renew" },
+    { slug: "hotel-exit", zh: "退", en: "Exit" },
+  ];
+
   const primaryCta = {
     href: `/${lang}/contact?type=diagnosis`,
     label: isZh ? "交流酒店项目" : "Discuss a Hotel Project",
@@ -69,20 +78,19 @@ export function Navbar({ lang, dict }: NavbarProps) {
             </Link>
 
             <nav className="hidden flex-shrink-0 items-center gap-1 min-[1280px]:flex 2xl:gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "flex-shrink-0 whitespace-nowrap px-2.5 py-2 text-[15.4px] font-bold text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300",
-                  )}
-                >
-                  {link.label}
-                </Link>
+              {navLinks.map((link) => link.href.endsWith('/services') ? (
+                <div key={link.href} className="group relative">
+                  <Link href={link.href} className="flex-shrink-0 whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300">{link.label}</Link>
+                  <div className="invisible absolute left-0 top-full z-20 min-w-44 border border-slate-200 bg-white py-2 group-hover:visible group-focus-within:visible dark:border-slate-700 dark:bg-slate-950">
+                    {stageNav.map((item) => <Link key={item.slug} href={`/${lang}/${item.slug}`} className="block px-4 py-2 text-sm font-semibold hover:text-brand-blue">{isZh ? item.zh : item.en}</Link>)}
+                  </div>
+                </div>
+              ) : (
+                <Link key={link.href} href={link.href} className={cn("flex-shrink-0 whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 transition-colors hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300 dark:hover:text-sky-300")}>{link.label}</Link>
               ))}
             </nav>
 
-            <div className="hidden min-[1280px]:flex items-center gap-3 min-[1280px]:gap-4 flex-shrink-0">
+            <div className="hidden min-[1280px]:flex items-center gap-2 min-[1440px]:gap-4 flex-shrink-0">
               <Link href={primaryCta.href} className="inline-flex min-h-11 items-center gap-1.5 bg-primary px-4 py-2 text-[15.4px] font-bold text-primary-foreground hover:bg-primary/90">
                   <span>{primaryCta.label}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -167,6 +175,11 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 className="border-b border-slate-200 px-1 py-3 text-[17.6px] font-bold text-slate-700 transition-colors hover:text-brand-blue dark:border-slate-800 dark:text-slate-200 dark:hover:text-sky-300"
               >
                 {link.label}
+              </Link>
+            ))}
+            {stageNav.map((item) => (
+              <Link key={item.slug} href={`/${lang}/${item.slug}`} className="border-b border-slate-200 px-1 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300">
+                {isZh ? `解决方案 · ${item.zh}` : `Solutions · ${item.en}`}
               </Link>
             ))}
           </nav>

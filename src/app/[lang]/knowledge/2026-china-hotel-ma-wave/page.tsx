@@ -1,3 +1,4 @@
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import Link from 'next/link';
 import { ArrowLeft, Clock, User, Calendar } from 'lucide-react';
 import { ArticleMarkdown } from '@/components/article-markdown';
@@ -358,6 +359,7 @@ There is no absolutely right answer — only the path best suited to your curren
           <span>{article.tag}</span>
         </div>
         <ArticleMarkdown content={article.content} />
+        <ArticleNeighbors lang={lang} path={`/knowledge/2026-china-hotel-ma-wave`} system="knowledge" />
       </div>
     </div>
   );

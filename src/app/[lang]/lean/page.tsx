@@ -194,6 +194,11 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
           </div>
 
           {/* Search Bar */}
+          <p className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link href={`/${lang}/topics`}>{isZh ? '专题清单' : 'Topic list'}</Link>
+            <Link href={`/${lang}/lean/qa/front-desk-waiting-5min`}>{isZh ? '前台排队问答' : 'Front-desk queue Q&A'}</Link>
+            <Link href={`/${lang}/lean/qa/hotel-website-content-order-service-faq-cases-2026-06-29`}>{isZh ? '内容获客问答' : 'Content demand Q&A'}</Link>
+          </p>
           <SearchBox lang={lang} isZh={isZh} allArticlesData={allArticlesData.map((article) => ({
             slug: article.slug,
             titleZh: article.titleZh,

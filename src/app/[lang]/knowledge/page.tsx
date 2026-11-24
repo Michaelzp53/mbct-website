@@ -3479,7 +3479,8 @@ export default async function KnowledgePage({
           />
         </div>
 
-        <details className="mt-8 border-t border-slate-300 py-4 dark:border-slate-700">
+        <p className="mt-6"><Link className="text-sm font-semibold text-primary" href={`/${lang}/topics`}>{isZh ? '专题清单：按阶段查看全部文章' : 'Topic list: all articles by stage'}</Link></p>
+        <details open className="mt-8 border-t border-slate-300 py-4 dark:border-slate-700">
           <summary className="cursor-pointer text-sm font-semibold">{isZh ? '其他文章' : 'Other articles'}</summary>
           <nav aria-label={isZh ? '其他栏目' : 'Other categories'} className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
             {knowledgeCategories.map(category => {

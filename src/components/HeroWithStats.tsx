@@ -1,8 +1,6 @@
 import { brand } from '@/lib/brand'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
-
 interface HeroWithStatsProps {
   lang: string
 }
@@ -40,15 +38,36 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
           <p className="mt-5 max-w-[720px] text-base leading-7 text-slate-100 sm:text-lg sm:leading-8">
             {isZh ? brand.zh.description : brand.en.description}
           </p>
-          <div className="mt-6">
-            <Link
-              href={`/${lang}/knowledge#decisions`}
-              className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d98b28] px-6 py-3 text-base font-semibold text-[#17120d] transition-colors hover:bg-[#efaa4d] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
-            >
-              {isZh ? '查找经营问题与方法' : 'Find answers and methods'}
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="#zone-invest" className="inline-flex min-h-12 items-center justify-center bg-[#d98b28] px-5 py-3 text-base font-semibold text-[#17120d] hover:bg-[#efaa4d]">{isZh ? '我要投建新酒店' : 'I want to develop a hotel'}</a>
+            <a href="#zone-opening" className="inline-flex min-h-12 items-center justify-center border border-white/70 px-5 py-3 text-base font-semibold hover:bg-white/10">{isZh ? '酒店正在筹开期' : 'The hotel is pre-opening'}</a>
+            <a href="#zone-stock" className="inline-flex min-h-12 items-center justify-center border border-white/70 px-5 py-3 text-base font-semibold hover:bg-white/10">{isZh ? '存量酒店亏损/改造' : 'An operating hotel is losing money or needs renewal'}</a>
           </div>
+          <p className="mt-4 flex flex-wrap gap-x-3 text-sm font-semibold">
+            {([
+              ['hotel-investment', '投', 'Invest'],
+              ['hotel-development', '建', 'Build'],
+              ['hotel-opening', '筹', 'Pre-open'],
+              ['hotel-operation-improvement', '管', 'Operate'],
+              ['hotel-renovation', '改', 'Renew'],
+              ['hotel-exit', '退', 'Exit'],
+            ] as const).map(([slug, zh, en], index) => (
+              <span key={slug}>{index > 0 && <span className="mr-3 text-white/50">·</span>}<Link href={`/${lang}/${slug}`} className="hover:text-amber-200">{isZh ? zh : en}</Link></span>
+            ))}
+          </p>
+          <dl className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {([
+              ['30+', isZh ? '年行业实战积淀' : 'years of practice'],
+              [isZh ? '超 3000 万元' : 'RMB 30 million+', isZh ? '已帮助开发商避免的潜在损失' : 'potential loss avoided for a developer'],
+              ['25%', isZh ? '典型项目运营成本降幅' : 'operating-cost reduction on a typical project'],
+              [isZh ? '投·建·筹·管·改·退' : 'Invest–Exit', isZh ? '六阶段全覆盖' : 'all six stages'],
+            ] as const).map(([value, label]) => (
+              <div key={label}>
+                <dt className="text-2xl font-semibold text-amber-300">{value}</dt>
+                <dd className="mt-1 text-sm leading-5 text-slate-100">{label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

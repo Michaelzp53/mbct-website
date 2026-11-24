@@ -1,5 +1,6 @@
 import { ArticleMarkdown } from '@/components/article-markdown'
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -64,6 +65,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
           <ArticleMarkdown content={article.content} />
         </div>
 
+        <ArticleNeighbors lang={lang} path={`/knowledge/revpar-recovery-three-tracks-2026-05-20`} system="knowledge" />
         {/* Footer */}
         <div className="flex items-center justify-between pt-8 border-t border-border">
           <div className="flex items-center gap-4">

@@ -1,5 +1,6 @@
 import { ArticleMarkdown } from '@/components/article-markdown'
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -135,6 +136,7 @@ AI系统不仅能够呈现数据，更能够基于数据进行分析、预测、
           <div className="p-8">
             <ArticleMarkdown content={article.content} />
           </div>
+          <ArticleNeighbors lang={lang} path={`/knowledge/digital-transformation-2026`} system="knowledge" />
         </article>
       </div>
     </div>

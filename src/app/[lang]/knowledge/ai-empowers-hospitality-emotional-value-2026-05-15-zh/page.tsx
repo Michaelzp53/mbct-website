@@ -1,3 +1,4 @@
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import Link from 'next/link';
 import { ArrowLeft, Clock, User, Calendar } from 'lucide-react';
 import { ArticleMarkdown } from '@/components/article-markdown';
@@ -68,6 +69,7 @@ Integrate emotional satisfaction into business metrics for quantifiable manageme
           <span>{article.tag}</span>
         </div>
         <ArticleMarkdown content={article.content} />
+        <ArticleNeighbors lang={lang} path={`/knowledge/ai-empowers-hospitality-emotional-value-2026-05-15-zh`} system="knowledge" />
       </div>
     </div>
   );

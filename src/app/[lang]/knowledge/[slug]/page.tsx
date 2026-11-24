@@ -19,6 +19,7 @@ import ArticleComments from './ArticleComments'
 import ContentPathway from '@/components/knowledge/ContentPathway'
 import ArticleEngagementTracker from '@/components/knowledge/ArticleEngagementTracker'
 import { getPrimaryTopic } from '@/lib/knowledge-topics'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { categoryBySlug, categoryForKnowledgeTopic } from '@/lib/knowledge-taxonomy'
 import articles20261011 from './articles-2026-10-11.json'
 import articles20261010 from './articles-2026-10-10.json'
@@ -11062,6 +11063,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <ArticleComments slug={slug} lang={lang} />
 
           {/* Newsletter 订阅 - 下移到全文底部(2026-06-16 优化) */}
+          <ArticleNeighbors lang={lang} path={`/knowledge/${decodedSlug}`} system="knowledge" />
           <NewsletterSubscribe lang={lang} />
 
           <div className="mt-12 pt-8 border-t border-border text-center">

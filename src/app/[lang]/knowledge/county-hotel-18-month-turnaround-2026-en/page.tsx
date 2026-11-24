@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -94,6 +95,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ lang: 
             </div>
 
           </div>
+        <ArticleNeighbors lang={lang} path={`/knowledge/county-hotel-18-month-turnaround-2026-en`} system="knowledge" />
         </article>
 
         {/* CTA */}

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -424,7 +425,8 @@ Results:
  </div>
  </div>
  </div>
- </article>
+ <ArticleNeighbors lang={lang} path={`/knowledge/zhongdang-jiudian-honghai-tuwei`} system="knowledge" />
+        </article>
  </main>
  )
 }

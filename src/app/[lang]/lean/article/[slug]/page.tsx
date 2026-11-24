@@ -9,6 +9,7 @@ import NewsletterSubscribe from '../../../knowledge/[slug]/NewsletterSubscribe'
 import ArticleEngagementTracker from '@/components/knowledge/ArticleEngagementTracker'
 import { ArticleMarkdown } from '@/components/article-markdown'
 import { leanCategoryBySlug, getLeanArticleCategory } from '@/lib/knowledge-taxonomy'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 
 const storedValueRefundSlug = 'hotel-stored-value-card-refund-rules-2026-11-07'
 const cashGuestsSlug = 'hotel-self-check-in-cash-guests'
@@ -546,6 +547,7 @@ ${heading}
         <div data-article-body className="min-w-0 [overflow-wrap:anywhere]"><ArticleMarkdown content={displayContent} /></div>
         <ArticleEngagementTracker articleSlug={slug} articleType="lean" />
         <ArticleComments slug={`lean/${slug}`} lang={lang} />
+        <ArticleNeighbors lang={lang} path={`/lean/article/${slug}`} system="lean" />
         <NewsletterSubscribe lang={lang} />
       </div>
     </div>

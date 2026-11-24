@@ -1,5 +1,6 @@
 import { ArticleMarkdown } from '@/components/article-markdown'
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -170,6 +171,7 @@ MarvelBros C&T will continue to monitor the integration of AI and the hotel indu
  {/* Content */}
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <ArticleMarkdown content={article.content} />
+        <ArticleNeighbors lang={lang} path={`/knowledge/marriott-hilton-ai-ota-threat-2026`} system="knowledge" />
  </div>
 
  {/* Footer */}

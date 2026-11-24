@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark, TrendingUp, BarChart3, Building2, Plane, Database, Lightbulb, ArrowUpRight } from 'lucide-react'
 import { ArticleMarkdown } from '@/components/article-markdown'
 
@@ -213,6 +214,7 @@ K型复苏指的是：不同板块、不同城市、不同酒店类型之间的�
           <div className="p-8">
             <ArticleMarkdown content={article.content} />
           </div>
+          <ArticleNeighbors lang={lang} path={`/knowledge/str-q1-2026`} system="knowledge" />
         </article>
       </div>
     </div>

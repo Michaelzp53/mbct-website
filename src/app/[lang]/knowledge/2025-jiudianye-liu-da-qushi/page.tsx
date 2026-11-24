@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -464,7 +465,8 @@ Remote and hybrid work create demand for:
  </div>
  </div>
  </div>
- </article>
+ <ArticleNeighbors lang={lang} path={`/knowledge/2025-jiudianye-liu-da-qushi`} system="knowledge" />
+        </article>
  </main>
  )
 }

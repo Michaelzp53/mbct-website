@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { ArrowRight, FileText, Phone } from 'lucide-react'
 import HeroWithStats from '@/components/HeroWithStats'
 import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
-import { STAGE_PAGES } from '@/components/HotelTopicPage'
+import { getDict } from '@/lib/dicts'
+import LightInquiryForm from '@/components/LightInquiryForm'
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
@@ -13,7 +14,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     isZh ? '深入数据，洞察经营现状' : 'Study the data to understand current performance',
     isZh ? '结合现场，分析真实问题' : 'Use field observation to identify the real issue',
     isZh ? '基于判断，制定优化策略' : 'Turn professional judgment into an optimization strategy',
-    isZh ? '持续跟踪，推动价值提升' : 'Track implementation and drive sustained improvement',
   ]
 
   const pageJsonLd = {
@@ -67,30 +67,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </p>
           </div>
 
-          <ol className="mt-5 grid border-t border-[#d8cbb6] dark:border-slate-700 lg:grid-cols-2 lg:gap-x-12">
-            {ownerDecisions.map((decision, index) => {
-              const href = ownerDecisionHref(lang, decision)
-              const title = isZh ? decision.zh : decision.en
-              const stage = decision.stage ? STAGE_PAGES.find((item) => item.slug === decision.stage) : undefined
-              const className = 'group grid min-w-0 flex-1 grid-cols-[2rem_1fr_auto] items-center gap-3 py-2.5'
-              const body = (
-                <>
-                  <span className="text-xs font-bold text-[#d98b28]">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="text-base font-medium leading-6">
-                    {title}
-                    {!href && <span className="ml-2 text-xs font-medium text-slate-500 dark:text-slate-400">{isZh ? '编写中' : 'In preparation'}</span>}
-                  </span>
-                  {href ? <ArrowRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-brand-blue" /> : <span />}
-                </>
-              )
-              return (
-                <li key={decision.id} className="flex items-center gap-2 border-b border-[#d8cbb6] dark:border-slate-700">
-                  {href ? <Link href={href} className={`${className} transition-colors hover:bg-white/70 dark:hover:bg-slate-950/40`}>{body}</Link> : <div className={className}>{body}</div>}
-                  {stage && <Link href={`/${lang}/${stage.slug}`} className="shrink-0 rounded-full border border-[#d8b98a] px-2 py-0.5 text-xs font-semibold text-[#8a5a16] hover:border-[#0b4a6f] dark:text-amber-200">{isZh ? stage.zh : stage.en}</Link>}
-                </li>
-              )
-            })}
-          </ol>
+          <QuestionTabs lang={lang} />
         </div>
       </section>
 
@@ -160,32 +137,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <h2 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl">
                 {isZh ? '项目经验，是团队专业的最好证明' : 'Project experience is the strongest proof of team expertise'}
               </h2>
-              <dl className="mt-8 border-t border-white/25">
-                {[
-                  [isZh ? '项目背景' : 'Project background', isZh ? '某国有企业酒店筹开过程中，建设、装修和筹开投入持续增加。' : 'During the pre-opening of a state-owned hotel, construction, fit-out, and opening expenditure continued to rise.'],
-                  [isZh ? '专业判断' : 'Professional judgment', isZh ? '问题不只是预算超支，更在于定位、建设标准与投入项目之间缺少系统复核。' : 'The issue was not simply budget overrun, but a lack of systematic review across positioning, building standards, and investment items.'],
-                  [isZh ? '优化方案' : 'Optimization plan', isZh ? '逐项复核建设方案、装修标准和筹开预算，把成本控制落实到具体项目。' : 'Review construction plans, fit-out standards, and the opening budget line by line, turning cost control into specific actions.'],
-                  [isZh ? '项目结果' : 'Project result', isZh ? '为业主节省投资超过3000万元，结果由业主项目感谢信确认。' : 'More than RMB 30 million saved for the owner, confirmed in the owner’s project letter.'],
-                ].map(([term, description]) => (
-                  <div key={term} className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[7rem_1fr]">
-                    <dt className="font-semibold text-amber-300">{term}</dt>
-                    <dd className="leading-7 text-slate-200">{description}</dd>
-                  </div>
+              <div className="mt-8 grid gap-4">
+                {getDict(lang).cases.items.map((item) => (
+                  <article key={item.client} className="border-t border-white/25 py-4">
+                    <p className="text-3xl font-semibold text-amber-300">{item.result}</p>
+                    <h3 className="mt-2 font-semibold">{item.client}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-200">{item.coreProblem}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-200">{item.actions[0]}</p>
+                    <p className="mt-2 text-xs text-amber-100">{isZh ? '口径' : 'Basis'}：{item.result}</p>
+                  </article>
                 ))}
-              </dl>
-              <dl className="mt-6 border-t border-white/20 bg-white/5 px-5 py-2">
-                {[
-                  [isZh ? '项目背景' : 'Project background', isZh ? '某存量酒店入住率稳定，但净利润连续两个季度低于预期。' : 'An operating hotel maintained stable occupancy, but net profit stayed below target for two quarters.'],
-                  [isZh ? '专业判断' : 'Professional judgment', isZh ? '核心问题不在客流，而在客源结构、报价权限和赠送成本失控。' : 'The core issue was not demand, but guest mix, pricing authority, and uncontrolled complimentary costs.'],
-                  [isZh ? '优化方案' : 'Optimization plan', isZh ? '重建客户分级、净价表和销售复盘机制，把资源转向高贡献客群。' : 'We rebuilt customer tiers, net-rate rules, and sales review routines to focus resources on higher-contribution segments.'],
-                  [isZh ? '项目结果' : 'Project result', isZh ? '团队动作更聚焦，代表性项目运营成本降低25%。' : 'The team focused execution, and operating cost fell by 25% in a representative case.'],
-                ].map(([term, description]) => (
-                  <div key={term} className="grid gap-2 border-b border-white/15 py-4 last:border-b-0 sm:grid-cols-[7rem_1fr]">
-                    <dt className="font-semibold text-amber-300">{term}</dt>
-                    <dd className="text-sm leading-6 text-slate-200">{description}</dd>
-                  </div>
-                ))}
-              </dl>
+              </div>
               <Link href={`/${lang}/cases`} className="mt-8 inline-flex items-center gap-2 font-semibold text-white hover:text-amber-300">
                 {isZh ? '查看案例与工作方法' : 'See cases and working methods'}
                 <ArrowRight className="h-5 w-5" />
@@ -216,9 +178,80 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               +86 189 4157 9333
             </a>
             <p className="text-center text-xs text-slate-500 dark:text-slate-400">{isZh ? '电话与微信同号' : 'Phone and WeChat use the same number'}</p>
+            <LightInquiryForm lang={lang} />
           </div>
         </div>
       </section>
+      <section className="border-t border-slate-200 bg-white py-16 dark:border-slate-800 dark:bg-slate-950">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
+          <h2 className="text-3xl font-semibold">{getDict(lang).cases.testimonials.title}</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {getDict(lang).cases.testimonials.items.map((item) => (
+              <blockquote key={item.name} className="border border-slate-200 p-5 dark:border-slate-700">
+                <p className="leading-7">{item.content}</p>
+                <footer className="mt-4 text-sm font-semibold">{item.name} · {item.role} · {item.time}</footer>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+const questionGroups = [
+  { id: 'invest', zone: 'zone-invest', zh: '投资', en: 'Invest', ids: ['buy', 'brand', 'county'] },
+  { id: 'opening', zone: 'zone-opening', zh: '筹开', en: 'Pre-open', ids: ['opening'] },
+  { id: 'operate', zone: 'zone-stock', zh: '经营', en: 'Operate', ids: ['revenue', 'price', 'labor', 'fb', 'complaints'] },
+  { id: 'renew', zone: 'zone-stock', zh: '改造', en: 'Renew', ids: ['renovation'] },
+  { id: 'exit', zone: 'zone-stock', zh: '退出', en: 'Exit', ids: ['turnaround', 'exit'] },
+] as const
+
+const questionNotes: Record<string, [string, string]> = {
+  buy: ['先核需求、物业和回报边界，再决定进不进。', 'Check demand, the property, and the return boundary before entering.'],
+  brand: ['把续约、换牌、独立经营放在同一张成本表上比。', 'Compare renewal, reflagging, and independent operation on one cost sheet.'],
+  county: ['县域和城市的客源与价格不能用同一套假设。', 'County and city hotels cannot share the same demand and rate assumptions.'],
+  opening: ['开业日前先核人员、系统和现场能不能一起转。', 'Before opening day, check whether people, systems, and the floor can run together.'],
+  revenue: ['订单变多而利润不涨时，先看净价和客源结构。', 'When orders rise and profit does not, look at net rate and guest mix.'],
+  price: ['价格和渠道要一起看，不能只追出租率。', 'Read rate and channel together, not occupancy alone.'],
+  labor: ['人力成本先对到班次和产出，再谈减人。', 'Match labor cost to shifts and output before cutting headcount.'],
+  fb: ['餐饮先算自营和外包各自的净贡献。', 'Compare the net contribution of operating food and beverage versus outsourcing it.'],
+  complaints: ['反复出现的客诉要回到经营动作，不只做安抚。', 'Repeated complaints have to return to the operating action, not only to an apology.'],
+  renovation: ['先判断该不该改、改多少，再谈停不停业。', 'Decide whether to renovate, and how much, before deciding whether to close.'],
+  turnaround: ['扭亏先分清收入、成本和现金，不靠一次促销。', 'A turnaround separates revenue, cost, and cash. It is not one promotion.'],
+  exit: ['出售或停止经营，先看有没有可核的资产底账。', 'A sale or a stop starts with books a buyer can check.'],
+}
+
+function QuestionTabs({ lang }: { lang: string }) {
+  const isZh = lang === 'zh'
+  return (
+    <div className="question-tabs mt-6">
+      <style>{`.question-tabs .q-panel{display:none}.question-tabs:has(#q-invest:checked) .q-invest,.question-tabs:has(#q-opening:checked) .q-opening,.question-tabs:has(#q-operate:checked) .q-operate,.question-tabs:has(#q-renew:checked) .q-renew,.question-tabs:has(#q-exit:checked) .q-exit{display:grid}`}</style>
+      {questionGroups.map((group, index) => (
+        <input key={group.id} id={`q-${group.id}`} name="hotel-questions" type="radio" defaultChecked={index === 0} className="sr-only" />
+      ))}
+      <div className="flex flex-wrap gap-2">
+        {questionGroups.map((group) => (
+          <label key={group.id} htmlFor={`q-${group.id}`} className="cursor-pointer border border-[#d8b98a] px-3 py-2 text-sm font-semibold">{isZh ? group.zh : group.en}</label>
+        ))}
+      </div>
+      {questionGroups.map((group) => (
+        <div key={group.id} id={group.id === 'invest' ? 'zone-invest' : group.id === 'opening' ? 'zone-opening' : group.id === 'operate' ? 'zone-stock' : undefined} className={`q-panel q-${group.id} mt-4 gap-3`}>
+          {group.ids.map((id) => {
+            const decision = ownerDecisions.find((item) => item.id === id)
+            if (!decision) return null
+            const href = ownerDecisionHref(lang, decision)
+            const title = isZh ? decision.zh : decision.en
+            const note = questionNotes[id]
+            return (
+              <article key={id} className="border border-[#d8cbb6] p-4 dark:border-slate-700">
+                <h3 className="text-lg font-semibold">{href ? <Link href={href}>{title}</Link> : title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{isZh ? note[0] : note[1]}</p>
+              </article>
+            )
+          })}
+        </div>
+      ))}
     </div>
   )
 }

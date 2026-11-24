@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import SiteBreadcrumb from '@/components/SiteBreadcrumb'
 import { topics } from './[topicSlug]/page'
+import ArticleCatalog from '@/components/ArticleCatalog'
 
 const siteUrl = 'https://www.marvelbros.com'
 
@@ -98,6 +99,7 @@ export default async function TopicsIndexPage({ params }: { params: Promise<{ la
             </li>
           ))}
         </ul>
+        <ArticleCatalog lang={lang} />
       </section>
     </main>
   )

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArticleNeighbors from '@/components/ArticleNeighbors'
 import { ArrowLeft } from 'lucide-react'
 
 export default async function ArticlePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -113,5 +114,6 @@ Source boundary: The fee and public-response facts reflect public August 2026 re
 
 About MarvelBros C&T: MarvelBros C&T is an independent hospitality consulting brand focused on hotel operating judgment, channel governance and implementation.
 `
-  return <main className="min-h-screen bg-card"><article className="max-w-4xl mx-auto px-6 py-12"><Link href={`/${lang}/knowledge`} className="text-muted-foreground">{isZh ? '返回知识库' : 'Back to Knowledge'}</Link><header className="mt-10 mb-10"><p className="text-sm text-orange-600">{isZh ? '行业分析' : 'Industry Analysis'} · 2026-08-20</p><h1 className="mt-4 text-4xl font-bold tracking-tight">{title}</h1><p className="mt-5 text-xl text-muted-foreground">{summary}</p><p className="mt-4 text-sm text-muted-foreground">迈创兄弟C&T · {isZh ? '约 10 分钟阅读' : '10 min read'}</p></header><div className="prose prose-lg max-w-none whitespace-pre-wrap">{content}</div></article></main>
+  return <main className="min-h-screen bg-card"><article className="max-w-4xl mx-auto px-6 py-12"><Link href={`/${lang}/knowledge`} className="text-muted-foreground">{isZh ? '返回知识库' : 'Back to Knowledge'}</Link><header className="mt-10 mb-10"><p className="text-sm text-orange-600">{isZh ? '行业分析' : 'Industry Analysis'} · 2026-08-20</p><h1 className="mt-4 text-4xl font-bold tracking-tight">{title}</h1><p className="mt-5 text-xl text-muted-foreground">{summary}</p><p className="mt-4 text-sm text-muted-foreground">迈创兄弟C&T · {isZh ? '约 10 分钟阅读' : '10 min read'}</p></header><div className="prose prose-lg max-w-none whitespace-pre-wrap">{content}</div><ArticleNeighbors lang={lang} path={`/knowledge/doubao-ai-hotel-recommendation-channel-governance-2026-08-20`} system="knowledge" />
+        </article></main>
 }
