@@ -74,10 +74,12 @@ export default function LightInquiryForm({ lang }: { lang: string }) {
           {isZh ? '一句话核心困扰' : 'The problem in one sentence'}
           <textarea name="concern" required maxLength={1000} rows={3} className="border border-slate-300 bg-white px-3 py-2 font-normal text-slate-950 dark:bg-slate-950 dark:text-white" />
         </label>
-        <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">{isZh ? '提交后我们会先做初步判断，再约沟通时间。' : 'After you submit, we make a first judgment and then arrange a time to talk.'}</p>
-        <button type="submit" disabled={status === 'sending'} className="min-h-11 bg-brand-blue px-4 font-semibold text-white">
-          {status === 'sending' ? (isZh ? '提交中' : 'Sending') : (isZh ? '提交这个问题' : 'Submit this question')}
-        </button>
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">{isZh ? '提交后我们会先做初步判断，再约沟通时间。' : 'After you submit, we make a first judgment and then arrange a time to talk.'}</p>
+          <button type="submit" disabled={status === 'sending'} className="min-h-11 shrink-0 bg-brand-blue px-4 font-semibold text-white">
+            {status === 'sending' ? (isZh ? '提交中' : 'Sending') : (isZh ? '提交这个问题' : 'Submit this question')}
+          </button>
+        </div>
         {status === 'ok' && <p className="text-sm font-semibold">{isZh ? '已收到。我们会先做初步判断，再约沟通时间。' : 'Received. We will make a first judgment, then arrange a time to talk.'}</p>}
         {status === 'fail' && <p className="text-sm font-semibold">{isZh ? '这次没有送出。请改用电话或页面上的完整表单。' : 'This did not send. Use the phone number or the full form.'}</p>}
       </form>

@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ...siteMetadata,
       title: { absolute: 'MarvelBros C&T - Hotel Lifecycle Value Enhancement Consultancy' },
       description: brand.en.description,
-      keywords: 'hotel lifecycle consulting, hotel investment consulting, hotel brand positioning, hotel pre-opening management, hotel operational diagnosis, hotel performance improvement, hotel product renewal',
       authors: [{ name: 'MarvelBros C&T' }],
       openGraph: {
         title: 'MarvelBros C&T - Hotel Lifecycle Value Enhancement Consultancy',
@@ -51,7 +50,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     ...siteMetadata,
     title: { absolute: '迈创兄弟C&T - 酒店全生命周期价值提升咨询' },
     description: brand.zh.description,
-    keywords: '酒店全生命周期咨询, 酒店投资咨询, 酒店品牌定位, 酒店筹建管理, 酒店经营诊断, 酒店运营优化, 酒店产品升级, 酒店市场增长',
     authors: [{ name: '迈创兄弟C&T' }],
     openGraph: {
       title: '迈创兄弟C&T - 酒店全生命周期价值提升咨询',

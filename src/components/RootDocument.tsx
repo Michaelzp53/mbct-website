@@ -17,7 +17,6 @@ export const siteMetadata: Metadata = {
     default: '迈创兄弟C&T｜酒店经营知识、行业洞察与实战方法',
   },
   description: brand.zh.description,
-  keywords: '酒店投资咨询, 酒店筹开管理, 酒店经营诊断, 酒店运营优化, 酒店经营知识, 酒店管理',
   authors: [{ name: '迈创兄弟C&T' }],
   openGraph: {
     type: 'website',
