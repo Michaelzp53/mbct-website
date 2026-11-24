@@ -177,7 +177,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
 
       {/* Header */}
       <div className="relative border-b border-border bg-cover bg-center" style={{ backgroundImage: "url('/images/home-modern/signature-lounge.jpeg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/90 dark:bg-slate-950/85" />
+        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/20 dark:bg-slate-950/20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-3">

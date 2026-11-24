@@ -21,7 +21,7 @@ const notes: Record<string, [string, string]> = {
   brand: ['把续约、换牌、独立经营放在同一张成本表上比。', 'Compare renewal, reflagging, and independent operation on one cost sheet.'],
   county: ['县域和城市的客源与价格不能用同一套假设。', 'County and city hotels cannot share the same demand and rate assumptions.'],
   opening: ['开业日前先核人员、系统和现场能不能一起转。', 'Before opening day, check whether people, systems, and the floor can run together.'],
-  revenue: ['订单变多而利润不涨时，先看净价和客源结构。', 'When orders rise and profit does not, look at net rate and guest mix.'],
+    revenue: ['订单变多而利润不涨时，先看净价和客源结构。', 'When orders rise and profit does not, look at net rate and market segment mix.'],
   price: ['价格和渠道要一起看，不能只追出租率。', 'Read rate and channel together, not occupancy alone.'],
   labor: ['人力成本先对到班次和产出，再谈减人。', 'Match labor cost to shifts and output before cutting headcount.'],
   fb: ['餐饮先算自营和外包各自的净贡献。', 'Compare the net contribution of operating food and beverage versus outsourcing it.'],
@@ -69,8 +69,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   return (
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
-      <div className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('/images/home-refresh/hero-hotel-entrance.jpeg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#0b4a6f]/90 dark:bg-[#061422]/85" />
+      <div className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('/images/home-named/homepage-night-hotel.jpg')" }}>
+        <div className="pointer-events-none absolute inset-0 bg-[#0b4a6f]/20 dark:bg-[#061422]/20" />
         <div className="relative">
       <HeroWithStats lang={lang} />
 
@@ -88,14 +88,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           ))}
         </dl>
-        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-sm leading-6 text-slate-100 sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across invest, build, pre-opening, operate, renew, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
+        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-sm leading-6 text-slate-100 sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across investment, development, pre-opening, operations, renovation, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
       </section>
         </div>
       </div>
 
       <section data-screen="3" className="border-b border-slate-200 py-10 dark:border-slate-800">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
-          <h2 className="text-2xl font-semibold">{isZh ? '十二个问题' : 'Twelve questions'}</h2>
+          <h2 className="text-2xl font-semibold">{isZh ? '酒店全周期十二个核心问题' : 'Twelve core questions across the hotel lifecycle'}</h2>
           <div className="mt-6 grid gap-3 md:grid-cols-3">
             {ownerDecisions.map((decision, index) => {
               const href = ownerDecisionHref(lang, decision)
@@ -164,12 +164,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       <section data-screen="7" className="relative bg-cover bg-center py-10" style={{ backgroundImage: "url('/images/home-named/contact-us.jpg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/90 dark:bg-slate-950/85" />
+        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/20 dark:bg-slate-950/20" />
         <div className="relative mx-auto grid max-w-[1440px] gap-6 px-5 sm:px-8 lg:grid-cols-[1fr_1.2fr] lg:px-12 xl:px-16">
           <div>
             <h2 className="text-2xl font-semibold">{isZh ? '直接联系' : 'Direct contact'}</h2>
             <p className="mt-4 text-lg font-semibold"><a href="tel:+8618941579333">+86 189 4157 9333</a></p>
-            <p className="mt-2 text-sm">{isZh ? '电话与微信同号' : 'Phone and WeChat use the same number'}</p>
+            <p className="mt-2 text-sm">{isZh ? '电话与微信同号' : 'Same number for Phone & WeChat'}</p>
           </div>
           <LightInquiryForm lang={lang} />
         </div>

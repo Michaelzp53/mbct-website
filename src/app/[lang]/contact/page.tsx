@@ -44,7 +44,7 @@ export default async function ContactPage({ params, searchParams }: { params: Pr
           <section className="rounded-2xl border border-border bg-card p-6">
             <h2 className="text-xl font-bold">{zh ? '也可以直接联系' : 'You can also contact us directly'}</h2>
             <a className="mt-4 block text-lg font-semibold text-primary hover:underline" href="tel:+8618941579333">+86 189 4157 9333</a>
-            <p className="mt-1 text-sm text-muted-foreground">{zh ? '电话与微信同号' : 'Phone and WeChat use the same number'}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{zh ? '电话与微信同号' : 'Same number for Phone & WeChat'}</p>
             <a className="mt-4 block break-all text-primary hover:underline" href="mailto:info@marvelbros.com">info@marvelbros.com</a>
           </section>
           <section className="rounded-2xl border border-border bg-muted/30 p-6">

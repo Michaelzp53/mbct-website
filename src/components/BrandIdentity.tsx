@@ -9,7 +9,7 @@ export default function BrandIdentity({ lang }: { lang: string }) {
       <div className="mx-auto max-w-6xl">
         <h2 className="text-2xl font-semibold">{identity.positioning}</h2>
         <p className="mt-4 max-w-4xl text-base leading-8">{identity.description}</p>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {lifecycleServices.map(service => (
             <div key={service.slug}>
               <h3 className="text-lg font-semibold"><Link className="underline underline-offset-4" href={`/${lang}/${service.slug}`}>{isZh ? service.zh : service.en}</Link></h3>

@@ -13,8 +13,8 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
   return (
     <section data-screen="1" className="border-b border-white/15 text-white">
       <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
-        <h1 className="max-w-4xl text-[32px] font-semibold leading-tight sm:text-5xl">
-          {isZh ? '酒店全生命周期价值提升咨询，从当前这一步做判断' : 'Start the judgment from the stage the hotel is in now'}
+        <h1 className="max-w-4xl text-[32px] font-semibold leading-tight [text-shadow:0_1px_2px_rgba(0,0,0,0.55)] sm:text-5xl">
+          {isZh ? '酒店全生命周期价值提升咨询，从当前这一步做判断' : 'Sound judgment across the hotel lifecycle, from the current stage'}
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-slate-100 sm:text-lg">
           {isZh

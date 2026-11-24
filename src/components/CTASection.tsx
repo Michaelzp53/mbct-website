@@ -14,7 +14,7 @@ export function CTASection({ dict, lang }: CTASectionProps) {
 
   return (
     <section className="relative overflow-hidden bg-cover bg-center py-16" style={{ backgroundImage: "url('/images/home-modern/advisory-conversation.png')" }}>
-      <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/90 dark:bg-slate-950/85" />
+      <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/20 dark:bg-slate-950/20" />
       {/* Dot grid - dark theme */}
       <div className="absolute inset-0 hidden opacity-[0.06] dark:block">
         <div

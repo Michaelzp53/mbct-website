@@ -13,10 +13,10 @@ import { ownerDecisionHref, ownerDecisions } from '@/lib/owner-decisions'
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const isZh = lang === 'zh'
-  const title = isZh ? '酒店经营里的十二个问题' : 'Twelve questions in running a hotel'
+  const title = isZh ? '酒店全周期十二个核心问题' : 'Twelve core questions across the hotel lifecycle'
   const description = isZh
-    ? '酒店经营里会碰到的十二个问题，每条都能点进对应的方法。'
-    : 'Twelve questions that come up in running a hotel. Each one links to a method.'
+    ? '覆盖投、建、筹、管、改、退的十二个核心问题，每条都能点进对应的方法。'
+    : 'Twelve core questions across investment, development, pre-opening, operations, renovation, and exit. Each one links to a method.'
 
   return {
     title,
@@ -59,7 +59,7 @@ export default async function KnowledgePage({
 
   // 页面UI翻译
   const ui = {
-    pageTitle: isZh ? '酒店经营里的十二个问题' : 'Twelve questions in running a hotel',
+    pageTitle: isZh ? '酒店全周期十二个核心问题' : 'Twelve core questions across the hotel lifecycle',
     pageSubtitle: isZh
       ? '每条对应一个会碰到的问题。其余文章仍在下方。'
       : 'Each line is one question an owner actually meets. Earlier articles remain below.',
@@ -3436,7 +3436,7 @@ export default async function KnowledgePage({
     <div className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
       <div className="relative bg-cover bg-center" style={{ backgroundImage: "url('/images/home-named/solutions-lounge.jpeg')" }}>
-        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/90 dark:bg-slate-950/85" />
+        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/20 dark:bg-slate-950/20" />
         <div className="relative">
       <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '决策文库' : 'Decisions'} />
       <div className="mx-auto max-w-[1440px] px-5 pb-8 sm:px-8 sm:pb-12 lg:px-12 xl:px-16">
