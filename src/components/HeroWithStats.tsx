@@ -11,7 +11,7 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
     { href: `/${lang}/hotel-opening`, zh: '正在筹开', en: 'Pre-opening now' },
   ]
   return (
-    <section data-screen="1" className="border-b border-slate-200 bg-brand-blue text-white dark:border-slate-800">
+    <section data-screen="1" className="border-b border-white/15 text-white">
       <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
         <h1 className="max-w-4xl text-[32px] font-semibold leading-tight sm:text-5xl">
           {isZh ? '酒店全生命周期价值提升咨询，从当前这一步做判断' : 'Start the judgment from the stage the hotel is in now'}

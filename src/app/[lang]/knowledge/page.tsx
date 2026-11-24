@@ -3434,15 +3434,22 @@ export default async function KnowledgePage({
 
   return (
     <div className="min-h-screen bg-background">
-      <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '决策文库' : 'Decisions'} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd).replace(/</g, '\\u003c') }} />
-      <div className="mx-auto max-w-[1440px] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 xl:px-16">
-        <header className="mb-8 max-w-3xl">
+      <div className="relative bg-cover bg-center" style={{ backgroundImage: "url('/images/home-named/solutions-lounge.jpeg')" }}>
+        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/90 dark:bg-slate-950/85" />
+        <div className="relative">
+      <SiteBreadcrumb lang={lang} path="/knowledge" label={isZh ? '决策文库' : 'Decisions'} />
+      <div className="mx-auto max-w-[1440px] px-5 pb-8 sm:px-8 sm:pb-12 lg:px-12 xl:px-16">
+        <header className="max-w-3xl">
           <p className="text-sm font-semibold text-primary">{isZh ? '迈创兄弟C&T · 决策文库' : 'MarvelBros C&T · Decisions'}</p>
           <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{ui.pageTitle}</h1>
           <p className="mt-3 text-base leading-7 text-muted-foreground">{ui.heroSubtitle}</p>
         </header>
+        </div>
+        </div>
+      </div>
 
+      <div className="mx-auto max-w-[1440px] px-5 py-8 sm:px-8 lg:px-12 xl:px-16">
         <section id="decisions" className="scroll-mt-24">
           <ol className="border-t border-slate-300 dark:border-slate-700">
             {ownerDecisions.map((decision, index) => {

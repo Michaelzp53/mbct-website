@@ -120,8 +120,9 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       />
       <BrandIdentity lang={lang} />
 
-      <section className="border-b border-slate-200 bg-[#f4f7f8] py-12 dark:border-slate-800 dark:bg-slate-900 md:py-16">
-        <div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:px-12 xl:px-16">
+      <section className="relative border-b border-slate-200 bg-cover bg-center py-12 dark:border-slate-800 md:py-16" style={{ backgroundImage: "url('/images/photography/team-advisory.jpg')" }}>
+        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/90 dark:bg-slate-950/85" />
+        <div className="relative mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:px-12 xl:px-16">
           <div>
             <p className="text-5xl font-semibold text-[#b86d13]">30+</p>
             <p className="mt-2 text-lg font-semibold">{isZh ? '年酒店行业实战经验基础' : 'years of practical hospitality experience'}</p>

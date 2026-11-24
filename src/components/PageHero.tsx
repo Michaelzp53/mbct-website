@@ -9,12 +9,8 @@ interface PageHeroProps {
 export default function PageHero({ title, subtitle, bgImage, titleSize }: PageHeroProps) {
   return (
     <section className="relative flex min-h-[370px] items-center overflow-hidden border-b border-slate-200 py-20 md:min-h-[460px] md:py-24">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `linear-gradient(to right, rgba(24, 34, 30, 0.92) 0%, rgba(24, 34, 30, 0.72) 52%, rgba(24, 34, 30, 0.24) 100%), url('${bgImage}')`,
-        }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${bgImage}')` }} />
+      <div className="absolute inset-0 bg-[#18221e]/90 dark:bg-[#061422]/85" />
 
       <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
         <h1 className={`${titleSize ?? 'text-4xl md:text-[56px]'} max-w-4xl font-semibold leading-[1.12] text-white`}>

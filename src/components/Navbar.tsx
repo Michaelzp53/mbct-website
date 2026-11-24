@@ -24,6 +24,8 @@ export function Navbar({ lang, dict }: NavbarProps) {
   useEffect(() => {
     const menu = document.getElementById("mobile-navigation");
     if (menu?.matches(":popover-open")) menu.hidePopover();
+    const active = document.activeElement;
+    if (active instanceof HTMLElement && active.closest("header")) active.blur();
   }, [pathname]);
 
   const knowledgeLinks = [
@@ -77,22 +79,26 @@ export function Navbar({ lang, dict }: NavbarProps) {
               </span>
             </Link>
 
-            <nav className="hidden flex-shrink-0 items-center gap-1 min-[1280px]:flex 2xl:gap-2">
-              <Link href={`/${lang}/`} className={cn("flex-shrink-0 whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300")}>{nav.home}</Link>
-              <div className="group relative">
+            <nav className="hidden flex-shrink-0 items-stretch gap-1 self-stretch min-[1280px]:flex 2xl:gap-2">
+              <Link href={`/${lang}/`} className={cn("flex flex-shrink-0 items-center whitespace-nowrap px-1.5 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300")}>{nav.home}</Link>
+              <div className="group relative flex items-center">
                 <button type="button" aria-haspopup="true" aria-controls="nav-knowledge" className="whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300">{isZh ? "知识库" : "Knowledge"}</button>
-                <div id="nav-knowledge" className="invisible absolute left-0 top-full z-20 min-w-44 border border-slate-200 bg-white py-2 group-hover:visible group-focus-within:visible dark:border-slate-700 dark:bg-slate-950">
-                  {knowledgeLinks.map((item) => <Link key={item.href} href={item.href} className="block px-4 py-2 text-sm font-semibold hover:text-brand-blue">{item.label}</Link>)}
+                <div id="nav-knowledge" className="invisible absolute left-0 top-full z-30 pt-1 group-hover:visible group-focus-within:visible">
+                  <div className="min-w-48 border border-slate-200 bg-white py-1 shadow-sm dark:border-slate-700 dark:bg-slate-950">
+                    {knowledgeLinks.map((item) => <Link key={item.href} href={item.href} className="flex min-h-11 items-center px-4 text-sm font-semibold hover:bg-slate-50 hover:text-brand-blue dark:hover:bg-slate-900">{item.label}</Link>)}
+                  </div>
                 </div>
               </div>
-              <div className="group relative">
+              <div className="group relative flex items-center">
                 <button type="button" aria-haspopup="true" aria-controls="nav-lifecycle" className="whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300">{isZh ? "全周期方案" : "Lifecycle Solutions"}</button>
-                <div id="nav-lifecycle" className="invisible absolute left-0 top-full z-20 min-w-44 border border-slate-200 bg-white py-2 group-hover:visible group-focus-within:visible dark:border-slate-700 dark:bg-slate-950">
-                  {stageLinks.map((item) => <Link key={item.href} href={item.href} className="block px-4 py-2 text-sm font-semibold hover:text-brand-blue">{item.label}</Link>)}
+                <div id="nav-lifecycle" className="invisible absolute left-0 top-full z-30 pt-1 group-hover:visible group-focus-within:visible">
+                  <div className="min-w-48 border border-slate-200 bg-white py-1 shadow-sm dark:border-slate-700 dark:bg-slate-950">
+                    {stageLinks.map((item) => <Link key={item.href} href={item.href} className="flex min-h-11 items-center px-4 text-sm font-semibold hover:bg-slate-50 hover:text-brand-blue dark:hover:bg-slate-900">{item.label}</Link>)}
+                  </div>
                 </div>
               </div>
               {leafLinks.map((link) => (
-                <Link key={link.href} href={link.href} className={cn("flex-shrink-0 whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 transition-colors hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300 dark:hover:text-sky-300")}>{link.label}</Link>
+                <Link key={link.href} href={link.href} className={cn("flex flex-shrink-0 items-center whitespace-nowrap px-1.5 text-[15.4px] font-bold text-slate-600 transition-colors hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300 dark:hover:text-sky-300")}>{link.label}</Link>
               ))}
             </nav>
 
@@ -177,11 +183,11 @@ export function Navbar({ lang, dict }: NavbarProps) {
             <Link href={`/${lang}/`} className="border-b border-slate-200 px-1 py-3 text-[17.6px] font-bold text-slate-700 hover:text-brand-blue dark:border-slate-800 dark:text-slate-200">{nav.home}</Link>
             <button type="button" className="border-b border-slate-200 px-1 py-3 text-left text-[17.6px] font-bold text-slate-700 dark:border-slate-800 dark:text-slate-200">{isZh ? "知识库" : "Knowledge"}</button>
             {knowledgeLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="border-b border-slate-200 px-1 py-2 text-sm font-semibold text-slate-600 dark:border-slate-800 dark:text-slate-300">{item.label}</Link>
+              <Link key={item.href} href={item.href} className="flex min-h-11 items-center border-b border-slate-200 px-1 text-sm font-semibold text-slate-600 dark:border-slate-800 dark:text-slate-300">{item.label}</Link>
             ))}
             <button type="button" className="border-b border-slate-200 px-1 py-3 text-left text-[17.6px] font-bold text-slate-700 dark:border-slate-800 dark:text-slate-200">{isZh ? "全周期方案" : "Lifecycle Solutions"}</button>
             {stageLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="border-b border-slate-200 px-1 py-2 text-sm font-semibold text-slate-600 dark:border-slate-800 dark:text-slate-300">{item.label}</Link>
+              <Link key={item.href} href={item.href} className="flex min-h-11 items-center border-b border-slate-200 px-1 text-sm font-semibold text-slate-600 dark:border-slate-800 dark:text-slate-300">{item.label}</Link>
             ))}
             {leafLinks.map((link) => (
               <Link key={link.href} href={link.href} className="border-b border-slate-200 px-1 py-3 text-[17.6px] font-bold text-slate-700 hover:text-brand-blue dark:border-slate-800 dark:text-slate-200">{link.label}</Link>

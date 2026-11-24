@@ -69,9 +69,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   return (
     <div className="min-h-screen bg-white text-slate-950 dark:bg-slate-950 dark:text-white">
+      <div className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('/images/home-refresh/hero-hotel-entrance.jpeg')" }}>
+        <div className="pointer-events-none absolute inset-0 bg-[#0b4a6f]/90 dark:bg-[#061422]/85" />
+        <div className="relative">
       <HeroWithStats lang={lang} />
 
-      <section data-screen="2" className="border-b border-white/20 bg-brand-blue text-white">
+      <section data-screen="2" className="border-b border-white/20">
         <dl className="mx-auto grid max-w-[1440px] grid-cols-4 px-5 py-4 sm:px-8 lg:px-12 xl:px-16">
           {([
             ['30+', isZh ? '年' : 'years'],
@@ -87,6 +90,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </dl>
         <p className="mx-auto max-w-[1440px] px-5 pb-4 text-sm leading-6 text-slate-100 sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across invest, build, pre-opening, operate, renew, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
       </section>
+        </div>
+      </div>
 
       <section data-screen="3" className="border-b border-slate-200 py-10 dark:border-slate-800">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16">
@@ -158,8 +163,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section data-screen="7" className="bg-[#f4f7f8] py-10 dark:bg-slate-900">
-        <div className="mx-auto grid max-w-[1440px] gap-6 px-5 sm:px-8 lg:grid-cols-[1fr_1.2fr] lg:px-12 xl:px-16">
+      <section data-screen="7" className="relative bg-cover bg-center py-10" style={{ backgroundImage: "url('/images/home-named/contact-us.jpg')" }}>
+        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/90 dark:bg-slate-950/85" />
+        <div className="relative mx-auto grid max-w-[1440px] gap-6 px-5 sm:px-8 lg:grid-cols-[1fr_1.2fr] lg:px-12 xl:px-16">
           <div>
             <h2 className="text-2xl font-semibold">{isZh ? '直接联系' : 'Direct contact'}</h2>
             <p className="mt-4 text-lg font-semibold"><a href="tel:+8618941579333">+86 189 4157 9333</a></p>

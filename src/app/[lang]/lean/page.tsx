@@ -176,8 +176,9 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
       <SiteBreadcrumb lang={lang} path="/lean" label={isZh ? '管享精道' : 'Lean Insights'} />
 
       {/* Header */}
-      <div className="bg-gradient-to-br from-[#f59e0b]/10 via-background to-background border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="relative border-b border-border bg-cover bg-center" style={{ backgroundImage: "url('/images/home-modern/signature-lounge.jpeg')" }}>
+        <div className="pointer-events-none absolute inset-0 bg-[#f4f7f8]/90 dark:bg-slate-950/85" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/30 mb-3">
               <BookOpen className="w-4 h-4 text-[#f59e0b]" />
