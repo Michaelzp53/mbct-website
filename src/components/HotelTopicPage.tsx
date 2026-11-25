@@ -1,16 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { LIFECYCLE_STAGES, stageDisplayLabel, type LifecycleSlug } from '@/lib/lifecycle-stages'
 
-export type TopicSlug = 'hotel-investment' | 'hotel-development' | 'hotel-opening' | 'hotel-operation-improvement' | 'hotel-renovation' | 'hotel-revenue' | 'hotel-exit'
+export type TopicSlug = LifecycleSlug | 'hotel-revenue'
 
-export const STAGE_PAGES: Array<{ slug: TopicSlug; zh: string; en: string; titleZh: string; titleEn: string }> = [
-  { slug: 'hotel-investment', zh: '投', en: 'Invest', titleZh: '酒店投资', titleEn: 'Investment' },
-  { slug: 'hotel-development', zh: '建', en: 'Build', titleZh: '酒店开发建设', titleEn: 'Development' },
-  { slug: 'hotel-opening', zh: '筹', en: 'Pre-open', titleZh: '酒店筹开', titleEn: 'Pre-opening' },
-  { slug: 'hotel-operation-improvement', zh: '管', en: 'Operate', titleZh: '酒店经营改善', titleEn: 'Operating improvement' },
-  { slug: 'hotel-renovation', zh: '改', en: 'Renew', titleZh: '酒店改造', titleEn: 'Renovation' },
-  { slug: 'hotel-exit', zh: '退', en: 'Exit', titleZh: '酒店退出', titleEn: 'Exit' },
+export const STAGE_PAGES: Array<{ slug: TopicSlug; zh: string; en: string; titleZh: string; titleEn: string; fullZh: string; fullEn: string }> = [
+  ...LIFECYCLE_STAGES.map((stage) => ({
+    slug: stage.slug as TopicSlug,
+    zh: stage.shortZh,
+    en: stage.shortEn,
+    titleZh: stage.navZh,
+    titleEn: stage.navEn,
+    fullZh: stage.fullZh,
+    fullEn: stage.fullEn,
+  })),
 ]
 
 const contactTypeBySlug: Partial<Record<TopicSlug, string>> = {
@@ -252,7 +256,7 @@ export default function HotelTopicPage({ slug, lang }: { slug: TopicSlug; lang: 
     'hotel-exit': '/images/home-modern/urban-waterfront.jpeg',
   }
   const ctaType = contactTypeBySlug[slug] || 'diagnosis'
-  const otherStages = STAGE_PAGES.filter((item) => item.slug !== slug)
+  const stageStrip = STAGE_PAGES.filter((item) => item.slug !== 'hotel-revenue')
   const faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: copy.faq.map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) }
   const pageJsonLd = { '@context': 'https://schema.org', '@type': 'Service', name: copy.title, description: copy.summary, url, provider: { '@id': 'https://www.marvelbros.com/#organization' }, areaServed: 'International', serviceType: copy.eyebrow, audience: { '@type': 'Audience', audienceType: isZh ? '酒店投资人、业主和管理者' : 'Hotel investors, owners, and managers' } }
   const breadcrumbJsonLd = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: isZh ? '首页' : 'Home', item: `https://www.marvelbros.com/${lang}` }, { '@type': 'ListItem', position: 2, name: copy.eyebrow, item: url }] }
@@ -265,8 +269,34 @@ export default function HotelTopicPage({ slug, lang }: { slug: TopicSlug; lang: 
     {serviceModules.length > 0 && <section className="border-b border-[#d8b98a]/60 bg-[#fff8ec] py-16 dark:border-slate-800 dark:bg-slate-900 md:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8"><p className="font-semibold text-[#8a5a16] dark:text-amber-300">{isZh ? '具体服务模块' : 'Specific service modules'}</p><h2 className="mt-3 text-3xl font-semibold">{isZh ? '从经营问题进入对应的解决路径' : 'Move from the operating problem to the right service path'}</h2><div className={`mt-9 grid gap-6 ${serviceModules.length === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}`}>{serviceModules.map((service, index) => <article id={service.id} key={service.id} className="scroll-mt-24 border border-[#d8b98a] bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-950"><div className="flex items-start justify-between gap-4"><span className="text-sm font-bold text-[#d98b28]">0{index + 1}</span><span className="text-right text-xs font-semibold text-[#8a5a16] dark:text-amber-300">{service.audience}</span></div><h3 className="mt-5 text-2xl font-semibold leading-snug text-[#0b4a6f] dark:text-sky-200">{service.title}</h3><div className="mt-5 space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300"><div><p className="font-semibold text-slate-950 dark:text-white">{isZh ? '重点解决' : 'Focus'}</p><p>{service.problem}</p></div><div><p className="font-semibold text-slate-950 dark:text-white">{isZh ? '主要交付' : 'Deliverable'}</p><p>{service.deliverable}</p></div><div><p className="font-semibold text-slate-950 dark:text-white">{isZh ? '建议第一步' : 'First step'}</p><p>{service.firstStep}</p></div></div><Link href={`/${lang}/contact?type=${contactTypeBySlug[slug] || service.id}`} className="mt-6 inline-flex items-center gap-2 font-semibold text-[#8a5a16] hover:text-[#0b4a6f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c79a3b] dark:text-amber-300 dark:hover:text-sky-200">{isZh ? '提交这个问题' : 'Discuss this service'}<ArrowRight className="size-4" aria-hidden="true" /></Link></article>)}</div></div></section>}
     <section className="bg-[#f4f7f8] py-16 dark:bg-slate-900 md:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-3xl font-semibold">{isZh ? '解决方法' : 'Method'}</h2><ol className="mt-8 grid border-y border-slate-300 dark:border-slate-700 md:grid-cols-2">{copy.method.map((x,i)=><li key={x} className="grid grid-cols-[3rem_1fr] border-b border-slate-300 py-6 md:odd:border-r dark:border-slate-700"><span className="font-bold text-[#d98b28]">0{i+1}</span><span className="pr-6 font-semibold">{x}</span></li>)}</ol></div></section>
     {copy.caseBody ? <section className="relative border-b border-slate-200 bg-cover bg-center py-16 dark:border-slate-800 md:py-24" style={{ backgroundImage: "url('/images/photography/team-advisory.jpg')" }}><div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" /><div className="relative mx-auto max-w-6xl px-5 sm:px-8"><p className="text-sm font-semibold tracking-wide text-white">{isZh ? '项目实践' : 'Project practice'}</p><h2 className="mt-2 text-2xl font-semibold leading-snug text-white md:text-3xl">{copy.caseTitle}</h2><p className="mt-4 max-w-3xl text-base font-medium leading-7 text-white">{copy.caseBody}</p></div></section> : null}
-    <section className="relative border-b border-slate-200 bg-cover bg-center py-16 dark:border-slate-800 md:py-24" style={{ backgroundImage: "url('/images/home-modern/resort-pool.jpeg')" }}><div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" /><div className="relative mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-2xl font-semibold leading-snug text-white md:text-3xl">{isZh ? '相关阶段' : 'Related stages'}</h2><div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-5">{otherStages.map((item) => <Link key={item.slug} href={`/${lang}/${item.slug}`} className="border border-slate-300 bg-white/80 px-4 py-4 font-semibold hover:border-[#0b4a6f] dark:border-slate-700 dark:bg-slate-950/70"><span className="block text-sm text-[#d98b28]">{isZh ? item.zh : item.en}</span><span className="mt-1 block">{isZh ? item.titleZh : item.titleEn}</span></Link>)}</div></div></section>
-    <section className="relative border-b border-slate-200 bg-cover bg-center py-16 dark:border-slate-800 md:py-24" style={{ backgroundImage: "url('/images/home-named/industry-insights.jpg')" }}><div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" /><div className="relative mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-2xl font-semibold leading-snug text-white md:text-3xl">{isZh ? '相关文章' : 'Related articles'}</h2><div className="mt-8 grid border-t border-slate-300 dark:border-slate-700 md:grid-cols-3">{related.map(item=><Link key={item.slug} href={`/${lang}/knowledge/${item.slug}`} className="group flex min-h-36 items-center justify-between gap-4 border-b border-slate-300 bg-white/75 py-6 pr-6 md:border-r dark:border-slate-700 dark:bg-slate-950/65"><span className="font-semibold leading-7">{isZh ? item.zh : item.en}</span><ArrowRight className="size-5 shrink-0 transition group-hover:translate-x-1" /></Link>)}</div></div></section>
+    <section className="relative border-b border-slate-200 bg-cover bg-center py-16 dark:border-slate-800 md:py-24" style={{ backgroundImage: "url('/images/home-modern/resort-pool.jpeg')" }}><div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" /><div className="relative mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-2xl font-semibold leading-snug text-white md:text-3xl">{isZh ? '全周期六个版块' : 'Six lifecycle stages'}</h2><div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">{stageStrip.map((item) => {
+      const meta = LIFECYCLE_STAGES.find((stage) => stage.slug === item.slug)
+      const active = item.slug === slug
+      return (
+        <Link
+          key={item.slug}
+          href={`/${lang}/${item.slug}`}
+          aria-current={active ? 'page' : undefined}
+          className={`flex min-h-28 items-center justify-center border px-3 py-5 text-center font-semibold transition ${active ? 'border-[#d98b28] bg-white' : 'border-white/40 bg-white/80 hover:border-[#d98b28] dark:bg-slate-950/70'}`}
+        >
+          <span className="text-2xl font-bold leading-snug text-[#d98b28] sm:text-3xl">
+            {meta ? stageDisplayLabel(meta, lang) : (isZh ? item.zh : item.en)}
+          </span>
+        </Link>
+      )
+    })}</div></div></section>
+    <section className="relative border-b border-slate-200 bg-cover bg-center py-16 dark:border-slate-800 md:py-24" style={{ backgroundImage: "url('/images/home-named/industry-insights.jpg')" }}><div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" /><div className="relative mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-2xl font-semibold leading-snug text-white md:text-3xl">{isZh ? '相关文章' : 'Related articles'}</h2><ol className="mt-8 grid gap-4">{related.map((item, index) => (
+      <li key={item.slug}>
+        <Link href={`/${lang}/knowledge/${item.slug}`} className="group flex items-start gap-4 border border-white/25 bg-white/90 px-5 py-5 transition hover:border-[#d98b28] dark:bg-slate-950/80">
+          <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center bg-[#d98b28] text-sm font-bold text-slate-950">{String(index + 1).padStart(2, '0')}</span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-xs font-semibold uppercase tracking-wider text-[#8a5a16] dark:text-amber-300">{isZh ? '决策文库' : 'Knowledge'}</span>
+            <span className="mt-1 block text-lg font-semibold leading-7 text-slate-950 dark:text-white">{isZh ? item.zh : item.en}</span>
+          </span>
+          <ArrowRight className="mt-1 size-5 shrink-0 text-[#0b4a6f] transition group-hover:translate-x-1 dark:text-sky-300" />
+        </Link>
+      </li>
+    ))}</ol></div></section>
     <section className="py-16 md:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-3xl font-semibold">{isZh ? '常见问题' : 'Frequently Asked Questions'}</h2><div className="mt-8 divide-y divide-slate-300 border-y border-slate-300 dark:divide-slate-700 dark:border-slate-700">{copy.faq.map(([q,a])=><div key={q} className="py-7"><h3 className="text-xl font-semibold">{q}</h3><p className="mt-3 max-w-4xl leading-7 text-slate-600 dark:text-slate-300">{a}</p></div>)}</div><Link href={`/${lang}/knowledge`} className="mt-8 inline-flex items-center gap-2 font-semibold text-[#0b4a6f] dark:text-sky-300">{isZh ? '进入酒店经营知识库' : 'Explore the hotel knowledge base'}<ArrowRight className="size-5" /></Link></div></section></main>
   </div>
 }
