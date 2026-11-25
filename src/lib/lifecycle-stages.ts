@@ -21,7 +21,10 @@ export const LIFECYCLE_STAGES: Array<{
   /** Nav / submenu label — keep identical across all 全周期方案 menus */
   navZh: string
   navEn: string
+  /** Bright accent for dark overlays / night hero bands */
   accent: string
+  /** Darker accent for light surfaces (footer, white cards) */
+  accentOnLight: string
 }> = [
   {
     slug: 'hotel-investment',
@@ -33,6 +36,7 @@ export const LIFECYCLE_STAGES: Array<{
     navZh: '酒店投资',
     navEn: 'Investment',
     accent: '#f59e0b',
+    accentOnLight: '#b45309',
   },
   {
     slug: 'hotel-development',
@@ -44,6 +48,7 @@ export const LIFECYCLE_STAGES: Array<{
     navZh: '酒店建设',
     navEn: 'Development',
     accent: '#38bdf8',
+    accentOnLight: '#0369a1',
   },
   {
     slug: 'hotel-opening',
@@ -55,6 +60,7 @@ export const LIFECYCLE_STAGES: Array<{
     navZh: '酒店筹开',
     navEn: 'Pre-Opening',
     accent: '#34d399',
+    accentOnLight: '#047857',
   },
   {
     slug: 'hotel-operation-improvement',
@@ -66,6 +72,7 @@ export const LIFECYCLE_STAGES: Array<{
     navZh: '经营改善',
     navEn: 'Operations',
     accent: '#a78bfa',
+    accentOnLight: '#6d28d9',
   },
   {
     slug: 'hotel-renovation',
@@ -77,6 +84,7 @@ export const LIFECYCLE_STAGES: Array<{
     navZh: '改造升级',
     navEn: 'Renovation',
     accent: '#fb7185',
+    accentOnLight: '#be123c',
   },
   {
     slug: 'hotel-exit',
@@ -88,6 +96,7 @@ export const LIFECYCLE_STAGES: Array<{
     navZh: '资产退出',
     navEn: 'Exit',
     accent: '#fbbf24',
+    accentOnLight: '#a16207',
   },
 ]
 
@@ -101,4 +110,10 @@ export function lifecycleNavLinks(lang: string) {
 export function stageDisplayLabel(stage: (typeof LIFECYCLE_STAGES)[number], lang: string) {
   if (lang === 'en') return `${stage.shortEn} (${stage.fullEn})`
   return `${stage.shortZh}（${stage.fullZh}）`
+}
+
+/** Two-line label for narrow six-column grids (avoids EN overflow). */
+export function stageDisplayParts(stage: (typeof LIFECYCLE_STAGES)[number], lang: string) {
+  if (lang === 'en') return { primary: stage.shortEn, secondary: `(${stage.fullEn})` }
+  return { primary: stage.shortZh, secondary: `（${stage.fullZh}）` }
 }
