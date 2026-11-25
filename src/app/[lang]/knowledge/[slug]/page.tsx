@@ -1,3 +1,4 @@
+import articles20261119 from './articles-2026-11-19.json'
 import articles20261118 from './articles-2026-11-18.json'
 import articles20261113 from './articles-2026-11-13.json'
 import articles20261112 from './articles-2026-11-12.json'
@@ -85,6 +86,7 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...articles20261119,
   ...articles20261118,
   ...articles20261113,
   ...articles20261112,
@@ -10887,7 +10889,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     mainEntityOfPage: articleUrl,
     url: articleUrl,
     inLanguage: isEnglish ? 'en-US' : 'zh-CN',
-    articleSection: decodedSlug === 'asset-light-hotel-contract-capital-allocation' && isEnglish ? 'Professional Insights' : article.tag,
+    articleSection: (decodedSlug === 'asset-light-hotel-contract-capital-allocation' || decodedSlug === 'hotel-post-acquisition-data-system-integration-approval') && isEnglish ? 'Professional Insights' : article.tag,
     keywords: getKeywords(article, isEnglish),
   }
   const breadcrumbJsonLd = {
@@ -11038,15 +11040,29 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </p>
           </div>
 
-          <ArticleContent content={decodedSlug === 'asset-light-hotel-contract-capital-allocation' ? articleContent.map((paragraph) => {
-            const label = isEnglish
-              ? 'When a Brand Contract Is Near Expiry, How Should a Hotel Owner Decide Among Renewal, Reflagging and Independent Operation?'
-              : '品牌合同快到期，续约、换牌还是独立经营？酒店业主该怎样决策？'
-            const href = `https://www.marvelbros.com/${lang}/knowledge/hotel-brand-contract-expiry-owner-decision-2026-11-05`
-            let next = paragraph.includes(label) ? paragraph.replace(label, `[${label}](${href})`) : paragraph
-            if (!next.includes('\t') && next.includes('\n')) next = next.replace(/\n/g, '\n\n')
-            return next
-          }) : articleContent} articleTitle={articleTitle} lang={lang} formatSourceBlocks={decodedSlug === 'asset-light-hotel-contract-capital-allocation'} />
+          <ArticleContent content={(() => {
+            const link = decodedSlug === 'asset-light-hotel-contract-capital-allocation'
+              ? {
+                  label: isEnglish
+                    ? 'When a Brand Contract Is Near Expiry, How Should a Hotel Owner Decide Among Renewal, Reflagging and Independent Operation?'
+                    : '品牌合同快到期，续约、换牌还是独立经营？酒店业主该怎样决策？',
+                  href: `https://www.marvelbros.com/${lang}/knowledge/hotel-brand-contract-expiry-owner-decision-2026-11-05`,
+                }
+              : decodedSlug === 'hotel-post-acquisition-data-system-integration-approval'
+                ? {
+                    label: isEnglish
+                      ? 'Before Acquiring a Hotel, How Can You Assess Whether Reported Earnings Are Sustainable?'
+                      : '收购酒店前，怎样判断账面利润能否持续？',
+                    href: `https://www.marvelbros.com/${lang}/knowledge/hotel-acquisition-sustainable-earnings-review-2026-11-02`,
+                  }
+                : null
+            if (!link) return articleContent
+            return articleContent.map((paragraph) => {
+              let next = paragraph.includes(link.label) ? paragraph.replace(link.label, `[${link.label}](${link.href})`) : paragraph
+              if (!next.includes('\t') && next.includes('\n')) next = next.replace(/\n/g, '\n\n')
+              return next
+            })
+          })()} articleTitle={articleTitle} lang={lang} formatSourceBlocks={decodedSlug === 'asset-light-hotel-contract-capital-allocation' || decodedSlug === 'hotel-post-acquisition-data-system-integration-approval'} />
             {slug === 'hotel-sale-data-room-document-index-2026-10-22' && <a href="/downloads/hotel-sale-document-index-2026-10-22.csv" download className="block my-6 underline">{!isEnglish ? '下载卖方资料目录与缺件台账（CSV）' : 'Download the seller document index and missing-document register (CSV)'}</a>}
           {slug === 'hotel-acquisition-sustainable-earnings-review-2026-11-02' && <a href={`/downloads/hotel-acquisition-earnings-review-2026-11-02-${isEnglish ? 'en' : 'zh'}.csv`} download className="block my-6 underline">{isEnglish ? 'Download the Hotel Acquisition Earnings Review and Adjustment Worksheet (CSV)' : '下载酒店收购利润核对与调整表（CSV）'}</a>}
           <ArticleEngagementTracker articleSlug={decodedSlug} />
