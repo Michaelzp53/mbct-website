@@ -101,7 +101,11 @@ export function Footer({ lang, dict }: FooterProps) {
           {isZh ? '阶段：' : 'Stages: '}
           {LIFECYCLE_STAGES.map((stage, index, list) => (
             <span key={stage.slug}>
-              <Link href={`/${lang}/${stage.slug}`} className="font-semibold hover:opacity-80" style={{ color: stage.accentOnLight }}>
+              <Link
+                href={`/${lang}/${stage.slug}`}
+                className="font-semibold text-[color:var(--stage-accent)] hover:opacity-80 dark:text-[color:var(--stage-accent-dark)]"
+                style={{ ['--stage-accent' as string]: stage.accentOnLight, ['--stage-accent-dark' as string]: stage.accent }}
+              >
                 {isZh ? `${stage.shortZh}（${stage.fullZh}）` : `${stage.shortEn} (${stage.fullEn})`}
               </Link>
               {index < list.length - 1 ? ' · ' : ''}
