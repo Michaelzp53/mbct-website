@@ -1,4 +1,5 @@
 import { brand } from '@/lib/brand'
+import { LIFECYCLE_STAGES, lifecycleNavLinks } from '@/lib/lifecycle-stages'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, Mail, Phone } from 'lucide-react'
@@ -23,9 +24,9 @@ export function Footer({ lang, dict }: FooterProps) {
   const companyLinks = [
     { label: isZh ? '关于我们' : 'About', href: `/${lang}/about` },
     { label: isZh ? '服务清单' : 'Services', href: `/${lang}/services` },
-    { label: isZh ? '酒店经营改善' : 'Operating improvement', href: `/${lang}/hotel-operation-improvement` },
     { label: isZh ? '联系我们' : 'Contact', href: `/${lang}/contact` },
   ]
+  const stageLinks = lifecycleNavLinks(lang)
 
   return (
     <footer className="border-t border-slate-200 bg-white text-slate-950 dark:border-slate-800 dark:bg-slate-950 dark:text-white">
@@ -59,8 +60,15 @@ export function Footer({ lang, dict }: FooterProps) {
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold">{isZh ? '迈创兄弟C&T' : 'MarvelBros C&T'}</h2>
+            <h2 className="text-sm font-semibold">{isZh ? '全周期方案' : 'Lifecycle Solutions'}</h2>
             <ul className="mt-5 space-y-3">
+              {stageLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300">{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-5 space-y-3 border-t border-slate-200 pt-5 dark:border-slate-700">
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-slate-600 transition-colors hover:text-brand-blue dark:text-slate-300 dark:hover:text-sky-300">{link.label}</Link>
@@ -91,17 +99,12 @@ export function Footer({ lang, dict }: FooterProps) {
 
         <p className="pt-7 text-sm text-slate-600 dark:text-slate-300">
           {isZh ? '阶段：' : 'Stages: '}
-          {[
-            [isZh ? '投' : 'Invest', 'hotel-investment'],
-            [isZh ? '建' : 'Build', 'hotel-development'],
-            [isZh ? '筹' : 'Pre-open', 'hotel-opening'],
-            [isZh ? '管' : 'Operate', 'hotel-operation-improvement'],
-            [isZh ? '改' : 'Renew', 'hotel-renovation'],
-            [isZh ? '退' : 'Exit', 'hotel-exit'],
-          ].map(([label, slug], index, list) => (
-            <span key={slug}>
-              <Link href={`/${lang}/${slug}`} className="hover:text-brand-blue dark:hover:text-sky-300">{label}</Link>
-              {index < list.length - 1 ? (isZh ? ' · ' : ' · ') : ''}
+          {LIFECYCLE_STAGES.map((stage, index, list) => (
+            <span key={stage.slug}>
+              <Link href={`/${lang}/${stage.slug}`} className="font-semibold hover:opacity-80" style={{ color: stage.accent }}>
+                {isZh ? `${stage.shortZh}（${stage.fullZh}）` : `${stage.shortEn} (${stage.fullEn})`}
+              </Link>
+              {index < list.length - 1 ? ' · ' : ''}
             </span>
           ))}
         </p>

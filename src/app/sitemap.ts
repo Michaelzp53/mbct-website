@@ -60,6 +60,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localized('/cases/sanya-luxury-resort', 0.7, 'monthly'),
     ...localized('/cases/northwest-state-guesthouse', 0.7, 'monthly'),
     ...localized('/cases/qingdao-economy-hotel', 0.7, 'monthly'),
+    ...localized('/cases/property/city-business', 0.6, 'monthly'),
+    ...localized('/cases/property/resort', 0.6, 'monthly'),
+    ...localized('/cases/property/economy', 0.6, 'monthly'),
+    ...localized('/cases/property/state-reception', 0.6, 'monthly'),
+    ...localized('/cases/property/county', 0.6, 'monthly'),
     ...knowledgeCategories.flatMap(({ slug }) => localized(`/knowledge/category/${slug}`, 0.85, 'weekly')),
     ...leanCategories.flatMap(({ slug }) => localized(`/lean/category/${slug}`, 0.85, 'weekly')),
   ]

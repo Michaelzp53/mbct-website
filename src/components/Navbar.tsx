@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { Menu, X, Globe, ArrowRight } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
+import { lifecycleNavLinks } from "@/lib/lifecycle-stages";
 import type { Dict } from "@/lib/dicts";
 
 interface NavbarProps {
@@ -33,14 +34,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
     { href: `/${lang}/lean`, label: isZh ? "管享精道" : "Lean Insights" },
     { href: `/${lang}/topics`, label: isZh ? "专题" : "Topics" },
   ];
-  const stageLinks = [
-    { href: `/${lang}/hotel-investment`, label: isZh ? "酒店投资" : "Investment" },
-    { href: `/${lang}/hotel-development`, label: isZh ? "酒店建设" : "Development" },
-    { href: `/${lang}/hotel-opening`, label: isZh ? "酒店筹开" : "Pre-Opening" },
-    { href: `/${lang}/hotel-operation-improvement`, label: isZh ? "经营改善" : "Operations" },
-    { href: `/${lang}/hotel-renovation`, label: isZh ? "改造升级" : "Renovation" },
-    { href: `/${lang}/hotel-exit`, label: isZh ? "资产退出" : "Exit" },
-  ];
+  const stageLinks = lifecycleNavLinks(lang);
   const leafLinks = [
     { href: `/${lang}/services`, label: isZh ? "服务清单" : "Services" },
     { href: `/${lang}/cases`, label: isZh ? "实践案例" : "Case Studies" },

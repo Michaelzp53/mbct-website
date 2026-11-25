@@ -32,12 +32,12 @@ export type CaseStudy = {
 
 export const STAGE_FILTERS: Array<{ id: CaseStage | ''; zh: string; en: string }> = [
   { id: '', zh: '全部阶段', en: 'All stages' },
-  { id: 'investment', zh: '投', en: 'Invest' },
-  { id: 'development', zh: '建', en: 'Build' },
-  { id: 'opening', zh: '筹', en: 'Pre-open' },
-  { id: 'operation', zh: '管', en: 'Operate' },
-  { id: 'renovation', zh: '改', en: 'Renew' },
-  { id: 'exit', zh: '退', en: 'Exit' },
+  { id: 'investment', zh: '投（项目投资）', en: 'Invest' },
+  { id: 'development', zh: '建（项目建设）', en: 'Build' },
+  { id: 'opening', zh: '筹（项目筹备）', en: 'Pre-open' },
+  { id: 'operation', zh: '管（项目管理）', en: 'Operate' },
+  { id: 'renovation', zh: '改（项目改造）', en: 'Renew' },
+  { id: 'exit', zh: '退（退出机制）', en: 'Exit' },
 ]
 
 export const PROPERTY_FILTERS: Array<{ id: PropertyType | ''; zh: string; en: string }> = [

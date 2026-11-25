@@ -23,15 +23,19 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
         </p>
         <div className="mt-8 grid gap-3 md:grid-cols-3">
           {cards.map((card) => (
-            <Link key={card.href} href={card.href} className="border border-white/40 px-4 py-5 text-base font-semibold hover:border-amber-300">
+            <Link
+              key={card.href}
+              href={card.href}
+              className="flex min-h-28 items-center justify-center border border-white/40 px-4 py-5 text-center text-2xl font-semibold leading-snug hover:border-amber-300 sm:min-h-32 sm:text-3xl"
+            >
               {isZh ? card.zh : card.en}
             </Link>
           ))}
-          <div className="border border-white/40 px-4 py-5">
-            <Link href={`/${lang}/hotel-operation-improvement`} className="text-base font-semibold hover:text-amber-200">
+          <div className="flex min-h-28 flex-col items-center justify-center border border-white/40 px-4 py-5 text-center sm:min-h-32">
+            <Link href={`/${lang}/hotel-operation-improvement`} className="text-2xl font-semibold leading-snug hover:text-amber-200 sm:text-3xl">
               {isZh ? '存量亏损或改造' : 'Operating loss or renovation'}
             </Link>
-            <p className="mt-3 text-sm">
+            <p className="mt-3 text-base sm:text-lg">
               <Link href={`/${lang}/hotel-renovation`} className="hover:text-amber-200">
                 {isZh ? '只想改造升级 →' : 'Renovation only →'}
               </Link>
