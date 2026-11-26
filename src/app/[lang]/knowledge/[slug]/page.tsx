@@ -11049,8 +11049,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             if (!next.includes('\t') && next.includes('\n')) next = next.replace(/\n/g, '\n\n')
             return next
           }) : decodedSlug === 'hotel-acquisition-veto-signals-2026-11-26' ? articleContent.map((paragraph) => {
-            if (!paragraph.includes('决策文库投资判断')) return paragraph
             const origin = `https://www.marvelbros.com/${lang}`
+            if (isEnglish) {
+              return paragraph
+                .replace('Decision Library investment judgment section', `[Decision Library investment judgment section](${origin}/hotel-investment)`)
+                .replace('MarvelBros full-cycle hotel asset advisory services', `[MarvelBros full-cycle hotel asset advisory services](${origin}/services)`)
+                .replace("From Loss to Premium: A Regional Hotel's Experience Remodeling Journey", `[From Loss to Premium: A Regional Hotel's Experience Remodeling Journey](${origin}/knowledge/hotel-turnaround-case)`)
+                .replace('hotel exit topic', `[hotel exit topic](${origin}/hotel-exit)`)
+            }
+            if (!paragraph.includes('决策文库投资判断')) return paragraph
             return paragraph
               .replace('决策文库投资判断', `[决策文库投资判断](${origin}/hotel-investment)`)
               .replace('迈创兄弟酒店资产全周期顾问服务', `[迈创兄弟酒店资产全周期顾问服务](${origin}/services)`)
