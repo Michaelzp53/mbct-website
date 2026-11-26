@@ -4,6 +4,7 @@ import { plainArticleText } from '@/lib/article-labels'
 // Existing article URLs omitted from the manually maintained hub index.
 // Read their original metadata and text; do not duplicate or rewrite their bodies.
 export const supplementalKnowledgeSlugs = [
+  'hotel-acquisition-veto-signals-2026-11-26',
   'asset-light-hotel-contract-capital-allocation',
   'hotel-fb-operate-or-outsource-2026-11-12',
   'hotel-breakfast-included-rate-revenue-cost-allocation-2026-11-12',

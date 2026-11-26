@@ -1,3 +1,4 @@
+import articles20261126 from './articles-2026-11-26.json'
 import articles20261118 from './articles-2026-11-18.json'
 import articles20261113 from './articles-2026-11-13.json'
 import articles20261112 from './articles-2026-11-12.json'
@@ -85,6 +86,7 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...articles20261126,
   ...articles20261118,
   ...articles20261113,
   ...articles20261112,
@@ -10922,7 +10924,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       },
     ],
   }
-  const faqIndex = articleContent.findIndex((paragraph) => /^(常见问题|FAQ|Frequently Asked Questions)$/i.test(paragraph.trim()))
+  const faqIndex = articleContent.findIndex((paragraph) => /^(常见问题(解答)?|FAQ|Frequently Asked Questions)$/i.test(paragraph.trim()))
   const faqJsonLd = faqIndex >= 0
     ? {
         '@context': 'https://schema.org',
@@ -11046,7 +11048,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             let next = paragraph.includes(label) ? paragraph.replace(label, `[${label}](${href})`) : paragraph
             if (!next.includes('\t') && next.includes('\n')) next = next.replace(/\n/g, '\n\n')
             return next
-          }) : articleContent} articleTitle={articleTitle} lang={lang} formatSourceBlocks={decodedSlug === 'asset-light-hotel-contract-capital-allocation'} />
+          }) : decodedSlug === 'hotel-acquisition-veto-signals-2026-11-26' ? articleContent.map((paragraph) => {
+            if (!paragraph.includes('决策文库投资判断')) return paragraph
+            const origin = `https://www.marvelbros.com/${lang}`
+            return paragraph
+              .replace('决策文库投资判断', `[决策文库投资判断](${origin}/hotel-investment)`)
+              .replace('迈创兄弟酒店资产全周期顾问服务', `[迈创兄弟酒店资产全周期顾问服务](${origin}/services)`)
+              .replace('《从亏损到溢价：一家区域酒店的体验重塑之路》', `[《从亏损到溢价：一家区域酒店的体验重塑之路》](${origin}/knowledge/hotel-turnaround-case)`)
+              .replace('酒店退出专题', `[酒店退出专题](${origin}/hotel-exit)`)
+          }) : articleContent} articleTitle={articleTitle} lang={lang} formatSourceBlocks={decodedSlug === 'asset-light-hotel-contract-capital-allocation' || decodedSlug === 'hotel-acquisition-veto-signals-2026-11-26'} />
             {slug === 'hotel-sale-data-room-document-index-2026-10-22' && <a href="/downloads/hotel-sale-document-index-2026-10-22.csv" download className="block my-6 underline">{!isEnglish ? '下载卖方资料目录与缺件台账（CSV）' : 'Download the seller document index and missing-document register (CSV)'}</a>}
           {slug === 'hotel-acquisition-sustainable-earnings-review-2026-11-02' && <a href={`/downloads/hotel-acquisition-earnings-review-2026-11-02-${isEnglish ? 'en' : 'zh'}.csv`} download className="block my-6 underline">{isEnglish ? 'Download the Hotel Acquisition Earnings Review and Adjustment Worksheet (CSV)' : '下载酒店收购利润核对与调整表（CSV）'}</a>}
           <ArticleEngagementTracker articleSlug={decodedSlug} />
