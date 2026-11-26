@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { LIFECYCLE_STAGES, stageDisplayLabel, type LifecycleSlug } from '@/lib/lifecycle-stages'
+import { LIFECYCLE_STAGES, stageDisplayParts, type LifecycleSlug } from '@/lib/lifecycle-stages'
 
 export type TopicSlug = LifecycleSlug | 'hotel-revenue'
 
@@ -272,15 +272,17 @@ export default function HotelTopicPage({ slug, lang }: { slug: TopicSlug; lang: 
     <section className="relative border-b border-slate-200 bg-cover bg-center py-16 dark:border-slate-800 md:py-24" style={{ backgroundImage: "url('/images/home-modern/resort-pool.jpeg')" }}><div className="pointer-events-none absolute inset-0 bg-[#163044]/75 dark:bg-[#0e1c2c]/80" /><div className="relative mx-auto max-w-6xl px-5 sm:px-8"><h2 className="text-2xl font-semibold leading-snug text-white md:text-3xl">{isZh ? '全周期六个版块' : 'Six lifecycle stages'}</h2><div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">{stageStrip.map((item) => {
       const meta = LIFECYCLE_STAGES.find((stage) => stage.slug === item.slug)
       const active = item.slug === slug
+      const parts = meta ? stageDisplayParts(meta, lang) : { primary: isZh ? item.zh : item.en, secondary: '' }
       return (
         <Link
           key={item.slug}
           href={`/${lang}/${item.slug}`}
           aria-current={active ? 'page' : undefined}
-          className={`flex min-h-28 items-center justify-center border px-3 py-5 text-center font-semibold transition ${active ? 'border-[#d98b28] bg-white' : 'border-white/40 bg-white/80 hover:border-[#d98b28] dark:bg-slate-950/70'}`}
+          className={`flex min-h-28 items-center justify-center overflow-hidden border px-2 py-4 text-center font-semibold transition ${active ? 'border-[#d98b28] bg-white' : 'border-white/40 bg-white/80 hover:border-[#d98b28] dark:bg-slate-950/70'}`}
         >
-          <span className="text-2xl font-bold leading-snug text-[#d98b28] sm:text-3xl">
-            {meta ? stageDisplayLabel(meta, lang) : (isZh ? item.zh : item.en)}
+          <span className="block w-full text-[#d98b28]">
+            <span className="block text-2xl font-bold leading-tight sm:text-3xl">{parts.primary}</span>
+            {parts.secondary ? <span className="mt-1 block text-sm font-bold leading-snug break-words sm:text-base">{parts.secondary}</span> : null}
           </span>
         </Link>
       )
