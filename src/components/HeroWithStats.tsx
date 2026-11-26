@@ -26,17 +26,17 @@ export default function HeroWithStats({ lang }: HeroWithStatsProps) {
             <Link
               key={card.href}
               href={card.href}
-              className="flex min-h-28 items-center justify-center border border-white/40 px-4 py-5 text-center text-2xl font-semibold leading-snug hover:border-amber-300 sm:min-h-32 sm:text-3xl"
+              className="flex min-h-28 items-center justify-center border border-white/40 px-4 py-5 text-center text-2xl font-semibold leading-snug text-[#f5c518] hover:border-amber-300 sm:min-h-32 sm:text-3xl"
             >
               {isZh ? card.zh : card.en}
             </Link>
           ))}
           <div className="flex min-h-28 flex-col items-center justify-center border border-white/40 px-4 py-5 text-center sm:min-h-32">
-            <Link href={`/${lang}/hotel-operation-improvement`} className="text-2xl font-semibold leading-snug hover:text-amber-200 sm:text-3xl">
+            <Link href={`/${lang}/hotel-operation-improvement`} className="text-2xl font-semibold leading-snug text-[#38bdf8] hover:text-white sm:text-3xl">
               {isZh ? '存量亏损或改造' : 'Operating loss or renovation'}
             </Link>
             <p className="mt-3 text-base sm:text-lg">
-              <Link href={`/${lang}/hotel-renovation`} className="hover:text-amber-200">
+              <Link href={`/${lang}/hotel-renovation`} className="font-semibold text-[#fb923c] hover:text-white">
                 {isZh ? '只想改造升级 →' : 'Renovation only →'}
               </Link>
             </p>

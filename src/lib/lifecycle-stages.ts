@@ -103,7 +103,7 @@ export const LIFECYCLE_STAGES: Array<{
 export function lifecycleNavLinks(lang: string) {
   return LIFECYCLE_STAGES.map((stage) => ({
     href: `/${lang}/${stage.slug}`,
-    label: lang === 'en' ? stage.navEn : stage.navZh,
+    label: stageDisplayLabel(stage, lang),
   }))
 }
 

@@ -73,7 +73,7 @@ export default function LightInquiryForm({ lang }: { lang: string }) {
             {stages.map((item) => (
               <label
                 key={item.id}
-                className="inline-flex items-center gap-1.5 border border-white/35 bg-white/10 px-2.5 py-1.5 text-base font-bold"
+                className="inline-flex min-h-12 items-center justify-center gap-1.5 border border-white/35 bg-white/10 px-3 py-1.5 text-2xl font-bold"
                 style={{ color: item.accent }}
               >
                 <input type="radio" name="stage" value={item.id} required className="accent-amber-400" />

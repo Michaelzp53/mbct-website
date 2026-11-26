@@ -81,18 +81,18 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section data-screen="2" className="border-b border-white/20">
         <dl className="mx-auto grid max-w-[1440px] grid-cols-2 gap-y-4 px-5 py-4 sm:grid-cols-4 sm:px-8 lg:px-12 xl:px-16">
           {([
-            { value: '30+', label: isZh ? '年酒店项目管理和咨询团队' : 'years of hotel project management and advisory', color: '#f59e0b' },
+            { value: isZh ? '30+年酒店项目管理和咨询团队' : '30+ years of hotel project management and advisory', label: '', color: '#f59e0b' },
             { value: isZh ? '3000 万元' : 'RMB 30 million', label: isZh ? '已帮助开发商避免的潜在损失' : 'potential loss avoided for a developer', color: '#38bdf8' },
             { value: '25%', label: isZh ? '典型项目运营成本降幅' : 'operating-cost reduction on a typical project', color: '#34d399' },
             { value: isZh ? '投·建·筹·管·改·退' : 'Invest–Exit', label: isZh ? '六阶段全覆盖' : 'all six stages', color: '#fbbf24' },
           ] as const).map((item) => (
-            <div key={item.label} className="border-l-2 border-white/40 px-2">
+            <div key={item.value} className="border-l-2 px-2" style={{ borderColor: item.color }}>
               <dt className="text-lg font-semibold leading-snug sm:text-2xl" style={{ color: item.color }}>{item.value}</dt>
-              <dd className="mt-1 text-xs font-semibold leading-4 sm:text-sm" style={{ color: item.color }}>{item.label}</dd>
+              {item.label ? <dd className="mt-1 text-xs font-semibold leading-4 sm:text-sm" style={{ color: item.color }}>{item.label}</dd> : null}
             </div>
           ))}
         </dl>
-        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-base font-medium leading-7 text-white sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across investment, development, pre-opening, operations, renovation, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
+        <p className="mx-auto max-w-[1440px] px-5 pb-4 text-base font-medium leading-7 text-[#7dd3fc] sm:px-8 lg:px-12 xl:px-16" dangerouslySetInnerHTML={{ __html: isZh ? FACT : 'MarvelBros C&amp;T advises across investment, development, pre-opening, operations, renovation, and exit, with 30+ years of practice and more than RMB 30 million in potential loss avoided.' }} />
       </section>
         </div>
       </div>

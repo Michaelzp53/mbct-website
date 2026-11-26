@@ -86,7 +86,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
               <div className="group relative flex items-center">
                 <button type="button" aria-haspopup="true" aria-controls="nav-lifecycle" className="whitespace-nowrap px-1.5 py-2 text-[15.4px] font-bold text-slate-600 hover:text-brand-blue min-[1440px]:px-2.5 dark:text-slate-300">{isZh ? "全周期方案" : "Lifecycle Solutions"}</button>
                 <div id="nav-lifecycle" className="invisible absolute left-0 top-full z-30 pt-1 group-hover:visible group-focus-within:visible">
-                  <div className="min-w-48 border border-slate-200 bg-white py-1 shadow-sm dark:border-slate-700 dark:bg-slate-950">
+                  <div className="min-w-64 border border-slate-200 bg-white py-1 shadow-sm dark:border-slate-700 dark:bg-slate-950">
                     {stageLinks.map((item) => <Link key={item.href} href={item.href} className="flex min-h-11 items-center px-4 text-sm font-semibold hover:bg-slate-50 hover:text-brand-blue dark:hover:bg-slate-900">{item.label}</Link>)}
                   </div>
                 </div>
