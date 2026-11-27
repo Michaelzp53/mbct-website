@@ -8,9 +8,9 @@ export const brand = {
   },
   en: {
     name: 'MarvelBros C&T',
-    positioning: 'Hotel Lifecycle Value Enhancement Consultancy',
-    description: 'MarvelBros C&T is a hotel lifecycle value consultancy for investors, owners, and managers, covering investment, development, pre-opening, operations, renovation, and exit.',
-    services: 'Invest, Develop, Pre-open, Operate, Renovate, Exit',
+    positioning: 'Hotel Lifecycle Value Consultancy',
+    description: 'MarvelBros C&T is a hotel lifecycle value advisory for investors, owners and managers, covering six stages: investment, development, pre-opening, operations, renovation and exit.',
+    services: 'Investment, Development, Pre-opening, Operations, Renovation, Exit',
   },
 }
 

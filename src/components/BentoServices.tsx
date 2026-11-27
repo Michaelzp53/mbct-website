@@ -24,27 +24,27 @@ export default function BentoServices({ lang }: BentoServicesProps) {
     {
       id: 'strategy',
       title: isZh ? '① 酒店投资可行性研究' : '① Investment Feasibility Study',
-      desc: isZh ? '数据驱动的投前决策分析，AI市场扫描+10年期财务建模+蒙特卡洛风险模拟' : 'Data-driven go/no-go analysis. AI market scanning + 10-year financial modeling + Monte Carlo risk simulation',
+      desc: isZh ? '数据驱动的投前决策分析，AI市场扫描+10年期财务建模+蒙特卡洛风险模拟' : 'Data-driven pre-investment analysis: AI market scanning, 10-year financial modeling, and Monte Carlo risk simulation.',
       icon: BarChart3,
       color: '#4285f4',
       gradient: 'linear-gradient(135deg, #4285f4, #34a853)',
       size: 'small',
-      stats: isZh ? '避免3000万损失' : '¥30M Avoided',
+      stats: isZh ? '避免3000万损失' : 'RMB 30M losses avoided',
     },
     {
       id: 'brand',
       title: isZh ? '② 酒店品牌创建与定位' : '② Brand Creation & Positioning',
-      desc: isZh ? '从零打造差异化高端酒店品牌，品牌战略+VI手册+品牌故事体系' : 'Build distinctive premium hotel brand. Brand strategy + VI handbook + brand story system',
+      desc: isZh ? '从零打造差异化高端酒店品牌，品牌战略+VI手册+品牌故事体系' : 'Building a differentiated premium brand from zero: brand strategy, a VI manual, and a brand narrative system.',
       icon: Palette,
       color: '#ec4899',
       gradient: 'linear-gradient(135deg, #ec4899, #4285f4)',
       size: 'small',
-      stats: isZh ? 'ADR溢价15-30%' : 'ADR +15-30%',
+      stats: isZh ? 'ADR溢价15-30%' : 'ADR premium 15–30%',
     },
     {
       id: 'ops',
       title: isZh ? '③ 酒店运营诊断与增长' : '③ Operations Diagnosis & Growth',
-      desc: isZh ? '六模块全维度诊断，AI48小时出初步报告，风险共担效果保障' : 'Six-module comprehensive audit, AI 48hr preliminary report, results guarantee',
+      desc: isZh ? '六模块全维度诊断，AI48小时出初步报告，风险共担效果保障' : 'Six-module diagnostic audit; AI produces a preliminary report within 48 hours; outcomes are shared risk.',
       icon: TrendingUp,
       color: '#ea4335',
       gradient: 'linear-gradient(135deg, #ea4335, #764ba2)',
@@ -54,62 +54,62 @@ export default function BentoServices({ lang }: BentoServicesProps) {
     {
       id: 'saas',
       title: isZh ? '④ AI管理系统（SaaS）' : '④ AI Management System (SaaS)',
-      desc: isZh ? '让AI处理重复性工作，插拔式部署2周上线，无需更换PMS' : 'Let AI handle repetitive tasks. Plug-and-play deploy in 2 weeks, no PMS replacement needed',
+      desc: isZh ? '让AI处理重复性工作，插拔式部署2周上线，无需更换PMS' : 'AI handles repetitive tasks; plug-in deployment live within 2 weeks with no PMS replacement.',
       icon: Cpu,
       color: '#34a853',
       gradient: 'linear-gradient(135deg, #34a853, #fbbc04)',
       size: 'small',
-      stats: isZh ? '效率提升40%' : '+40% Efficiency',
+      stats: isZh ? '效率提升40%' : '+40% efficiency',
     },
     {
       id: 'private',
-      title: isZh ? '⑤ 私域流量运营' : '⑤ Private Domain Growth',
-      desc: isZh ? '降低OTA依赖，企微+社群+小程序+内容矩阵建立自有渠道' : 'Reduce OTA dependency. WeChat ecosystem + community + mini-program + content matrix',
+      title: isZh ? '⑤ 私域流量运营' : '⑤ Owned Channel Operations',
+      desc: isZh ? '降低OTA依赖，企微+社群+小程序+内容矩阵建立自有渠道' : 'Reduce OTA reliance through WeCom, member communities, mini-program booking, and a content matrix.',
       icon: Users,
       color: '#fbbc04',
       gradient: 'linear-gradient(135deg, #fbbc04, #ea4335)',
       size: 'small',
-      stats: isZh ? '直订提升15-25%' : '+15-25% Direct',
+      stats: isZh ? '直订提升15-25%' : 'Direct booking +15–25%',
     },
     {
       id: 'partnership',
-      title: isZh ? '⑥ 落地陪跑与效果保障' : '⑥ Execution Partnership',
-      desc: isZh ? '目标导向，持续精进。透明数据看板+关键节点可控，效果未达预期共同复盘调整直到达成目标' : 'Goal-oriented, continuous improvement. Transparent dashboard + milestone control, joint review and adjustment until targets are met',
+      title: isZh ? '⑥ 落地陪跑与效果保障' : '⑥ Execution Partnership & Outcome Review',
+      desc: isZh ? '目标导向，持续精进。透明数据看板+关键节点可控，效果未达预期共同复盘调整直到达成目标' : 'Target-driven and iterative: a transparent dashboard, milestone control, and joint review until targets are met.',
       icon: Building2,
       color: '#764ba2',
       gradient: 'linear-gradient(135deg, #764ba2, #4285f4)',
       size: 'small',
-      stats: isZh ? '效果保障' : 'Results Guarantee',
+      stats: isZh ? '效果保障' : 'Outcome review',
     },
     {
       id: 'advisory',
-      title: isZh ? '⑦ 轻量管理顾问' : '⑦ Light Management Advisory',
-      desc: isZh ? 'AI月度诊断+战略咨询+1小时危机响应，7×24 AI助手' : 'Monthly AI diagnostics + strategic advisory + 1hr crisis response, 7×24 AI assistant',
+      title: isZh ? '⑦ 轻量管理顾问' : '⑦ Fractional Management Advisory',
+      desc: isZh ? 'AI月度诊断+战略咨询+1小时危机响应，7×24 AI助手' : 'Monthly AI diagnostics, strategic advisory, 1-hour crisis response, and a 24/7 AI assistant.',
       icon: Sparkles,
       color: '#4285f4',
       gradient: 'linear-gradient(135deg, #4285f4, #34a853)',
       size: 'small',
-      stats: isZh ? '1小时响应' : '1hr Response',
+      stats: isZh ? '1小时响应' : '1-hour response',
     },
     {
       id: 'financing',
       title: isZh ? '⑧ 融资顾问' : '⑧ Financing Advisory',
-      desc: isZh ? '投行级财务包装+精准对接投资方+全程谈判支持' : 'Investment-bank-grade financial packaging + precise investor matching + full negotiation support',
+      desc: isZh ? '投行级财务包装+精准对接投资方+全程谈判支持' : 'Investment-bank-grade financial packaging, targeted investor introductions, and end-to-end negotiation support.',
       icon: BarChart3,
       color: '#34a853',
       gradient: 'linear-gradient(135deg, #34a853, #fbbc04)',
       size: 'small',
-      stats: isZh ? '节省5500万' : '¥55M Saved',
+      stats: isZh ? '节省5500万' : 'RMB 55M saved',
     },
     {
       id: 'research',
       title: isZh ? '⑨ 行业研究内容' : '⑨ Industry Research & Content',
-      desc: isZh ? '迈创兄弟C&T是酒店行业的知识伙伴，季度报告+案例研究+免费内容生态' : 'MarvelBros C&T is your hospitality knowledge partner. Quarterly reports + case studies + free content ecosystem',
+      desc: isZh ? '迈创兄弟C&T是酒店行业的知识伙伴，季度报告+案例研究+免费内容生态' : 'MarvelBros C&T is a knowledge partner to the hotel industry: quarterly reports, case studies, and open-access content.',
       icon: Sparkles,
       color: '#ec4899',
       gradient: 'linear-gradient(135deg, #ec4899, #764ba2)',
       size: 'small',
-      stats: isZh ? '免费内容生态' : 'Free Content',
+      stats: isZh ? '免费内容生态' : 'Open-access content',
     },
   ]
   const [hoveredId, setHoveredId] = useState<string | null>(null)
@@ -121,15 +121,15 @@ export default function BentoServices({ lang }: BentoServicesProps) {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-medium">{isZh ? '迈创兄弟C&T 服务清单' : 'MarvelBros C&T Services'}</span>
+            <span className="text-primary text-sm font-medium">{isZh ? '迈创兄弟C&T 服务清单' : 'MarvelBros C&T Service Portfolio'}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            {isZh ? '酒店全生命周期价值提升咨询服务' : 'Hotel Lifecycle Value Enhancement Consultancy'}
+            {isZh ? '酒店全生命周期价值提升咨询服务' : 'Hotel Lifecycle Value Consultancy'}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             {isZh 
               ? '面向酒店投资人、业主和管理者，提供酒店投资、酒店筹开与酒店经营改善咨询服务。'
-              : 'Advising hotel investors, owners and managers on hotel investment, pre-opening and operational improvement.'}
+              : 'Advisory for hotel investors, owners, and managers across hotel investment, pre-opening, and operational improvement.'}
           </p>
         </div>
 
@@ -143,7 +143,7 @@ export default function BentoServices({ lang }: BentoServicesProps) {
             return (
               <Link
                 key={service.id}
-                href={`/zh/services#${service.id}`}
+                href={`/${lang}/services#${service.id}`}
                 className={`
                   group relative overflow-hidden rounded-2xl bg-card border border-border
                   transition-all duration-300 ease-out
@@ -192,7 +192,7 @@ export default function BentoServices({ lang }: BentoServicesProps) {
                       {service.stats}
                     </span>
                     <div className="flex items-center gap-1 text-muted-foreground group-hover:text-primary transition-colors">
-                      <span className="text-sm">{isZh ? '了解详情' : 'Learn More'}</span>
+                      <span className="text-sm">{isZh ? '了解详情' : 'View Service Detail'}</span>
                       <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -208,7 +208,7 @@ export default function BentoServices({ lang }: BentoServicesProps) {
             href={`/${lang}/contact?type=plan`}
             className="inline-flex items-center gap-2 px-8 py-4 btn-gradient-primary font-bold rounded-xl"
           >
-            {isZh ? '获取定制方案' : 'Get Custom Plan'}
+            {isZh ? '获取定制方案' : 'Request a Custom Proposal'}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
