@@ -1,3 +1,4 @@
+import articles20261127 from './articles-2026-11-27.json'
 import articles20261126 from './articles-2026-11-26.json'
 import articles20261118 from './articles-2026-11-18.json'
 import articles20261113 from './articles-2026-11-13.json'
@@ -86,6 +87,7 @@ export const articlesData: Record<string, {
   content: string[]
   contentEn?: string[]
 }> = {
+  ...articles20261127,
   ...articles20261126,
   ...articles20261118,
   ...articles20261113,
