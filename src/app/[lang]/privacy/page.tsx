@@ -46,7 +46,7 @@ export default async function PrivacyPage({
               <p>
                 {lang === 'zh'
                   ? '我们收集您在使用服务时主动提供的信息，包括但不限于：姓名、邮箱地址、联系电话、企业信息等。'
-                  : 'We collect information you actively provide when using our services, including but not limited to: name, email address, phone number, business information, etc.'}
+                  : 'We collect information you provide when using our services, such as your name, email address, phone number and company details.'}
               </p>
             </section>
 
@@ -57,7 +57,7 @@ export default async function PrivacyPage({
               <p>
                 {lang === 'zh'
                   ? '我们使用收集的信息用于：提供和改进服务、响应您的请求、发送服务相关通知、进行数据分析。'
-                  : 'We use collected information to: provide and improve services, respond to your requests, send service-related notifications, conduct data analysis.'}
+                  : 'We use this information to provide and improve our services, respond to your requests, send service notifications, and carry out analytics.'}
               </p>
             </section>
 
@@ -68,7 +68,7 @@ export default async function PrivacyPage({
               <p>
                 {lang === 'zh'
                   ? '我们采用行业标准的安全措施保护您的个人信息，防止非法访问、使用或泄露。'
-                  : 'We employ industry-standard security measures to protect your personal information from unauthorized access, use, or disclosure.'}
+                  : 'We apply industry-standard security measures to protect your personal information from unauthorized access, use, or disclosure.'}
               </p>
             </section>
 
@@ -90,7 +90,7 @@ export default async function PrivacyPage({
               <p>
                 {lang === 'zh'
                   ? '您有权访问、更正、删除您的个人信息。如有任何问题，请联系我们。'
-                  : 'You have the right to access, correct, and delete your personal information. Please contact us if you have any questions.'}
+                  : 'You may access, correct or request deletion of your personal information. Contact us with any questions.'}
               </p>
             </section>
 
