@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const title = isZh ? '管享精道｜酒店管理者的精益经营知识库' : 'Lean Insights | A Practical Hotel Management Knowledge Base'
   const description = isZh
     ? '管享精道是迈创兄弟C&T面向酒店管理者的精益经营知识库，涵盖精益投资、筹开、诊断、收益、成本、数字化、营销与治理。'
-    : 'Lean Insights is MarvelBros C&T’s practical hotel management knowledge base, covering lean investment, pre-opening, diagnosis, revenue, cost, digital transformation, marketing, and governance.'
+    : 'Our practical knowledge base for hotel executives: investment, pre-opening, diagnosis, revenue, cost, digital, marketing and governance.'
 
   return {
     title,
@@ -144,7 +144,7 @@ export default async function LeanPage({ params }: { params: Promise<{ lang: str
     pageTitle: isZh ? '管享精道' : 'Lean Insights',
     pageSubtitle: isZh
       ? '专为酒店管理者打造的精益管理知识体系 —— 8大模块系统赋能，从投资决策到运营升级'
-      : 'A Lean management knowledge system purpose-built for hotel executives — 8 modules spanning investment decisions to operational excellence',
+      : '8 modules for hotel executives, from investment decisions to operational excellence',
     allArticles: isZh ? '全部文章' : 'All Articles',
     articleCount: isZh ? '篇' : ' articles',
     views: isZh ? '阅读' : 'Views',
