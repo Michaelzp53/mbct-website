@@ -92,7 +92,7 @@ export default async function LangLayout({
 
   return (
     <RootDocument lang={lang === 'zh' ? 'zh-CN' : 'en-US'}>
-    <div className="flex min-h-screen flex-col bg-white dark:bg-slate-950">
+    <div className="flex min-h-screen flex-col bg-background text-foreground transition-colors duration-300">
       <Navbar lang={lang} dict={dict} />
       <main className="flex-1">{children}</main>
       <Footer lang={lang} dict={dict} />

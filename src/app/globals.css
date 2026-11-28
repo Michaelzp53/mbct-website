@@ -4,77 +4,81 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --star-gold: #d98b28;
-  --electric-blue: #0b4a6f;
+  --star-gold: #b08d57;
+  --electric-blue: #0f172a;
   --growth-green: #16a34a;
-  --brand-blue: #0b4a6f;
-  --brand-blue-hover: #073a58;
-  --brand-gold: #d98b28;
-  --brand-gold-hover: #efaa4d;
-  --background: #ffffff;
-  --background-alt: #f4f7f8;
-  --foreground: #0f1720;
+  --brand-blue: #0f172a;
+  --brand-blue-hover: #1e293b;
+  --brand-gold: #b08d57;
+  --brand-gold-hover: #967442;
+  --background: #f8f6f2;
+  --background-alt: #f1ede6;
+  --foreground: #0f172a;
 
   --card: #ffffff;
-  --card-foreground: #0f1720;
+  --card-foreground: #0f172a;
   --popover: #ffffff;
-  --popover-foreground: #0f1720;
+  --popover-foreground: #0f172a;
 
-  --primary: #0b4a6f;
-  --primary-foreground: #ffffff;
-  --secondary: #edf3f5;
-  --secondary-foreground: #163f57;
-  --muted: #edf2f3;
-  --muted-foreground: #52606a;
-  --accent: #e8f0f3;
-  --accent-foreground: #0b4a6f;
+  --primary: #0f172a;
+  --primary-foreground: #f8f6f2;
+  --secondary: #f1ede6;
+  --secondary-foreground: #1e293b;
+  --muted: #eeeae2;
+  --muted-foreground: #52606d;
+  --accent: #efe9de;
+  --accent-foreground: #0f172a;
 
   --destructive: #dc2626;
-  --border: #d5dde1;
-  --input: #f4f7f8;
-  --ring: #0b4a6f;
-  --radius: 0.375rem;
+  --border: #e4ded4;
+  --input: #f1ede6;
+  --ring: #b08d57;
+  --radius: 0.5rem;
 
-  /* 浅色主题的区块背景（用于内容分隔） */
-  --section-bg: #f4f7f8;
-  --divider: #d5dde1;
+  /* 浅色主题的区块背景（暖石白与暖砂灰层次分隔） */
+  --section-bg: #f1ede6;
+  --divider: #e4ded4;
 
   /* 渐变定义 */
-  --gradient-primary: linear-gradient(135deg, #0b4a6f 0%, #0b4a6f 100%);
-  --gradient-text: linear-gradient(135deg, #0f1720 0%, #0b4a6f 100%);
+  --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-text: linear-gradient(135deg, #0f172a 0%, #b08d57 100%);
 }
 
-/* -------- 深色主题：Gemini 式深蓝黑高对比 -------- */
+/* -------- 深色主题：黑曜石 + 哑光香槟金高端资产管理配色 -------- */
 .dark {
-  /* 深色背景 */
-  --background: #0b1020;
-  --background-alt: #111827;
-  --foreground: #eef4ff;
+  --background: #0b0f17;
+  --background-alt: #121824;
+  --foreground: #f1f5f9;
 
-  --card: #111827;
-  --card-foreground: #eef4ff;
-  --popover: #111827;
-  --popover-foreground: #eef4ff;
+  --brand-blue: #e2e8f0;
+  --brand-blue-hover: #ffffff;
+  --brand-gold: #c9a66b;
+  --brand-gold-hover: #dfbf86;
 
-  --primary: #7dc7ee;
-  --primary-foreground: #06101f;
-  --secondary: #172033;
-  --secondary-foreground: #dbeafe;
-  --muted: #172033;
-  --muted-foreground: #a9b7d0;
-  --accent: #1b2a4a;
-  --accent-foreground: #9ed9f7;
+  --card: #131924;
+  --card-foreground: #f1f5f9;
+  --popover: #131924;
+  --popover-foreground: #f1f5f9;
+
+  --primary: #c9a66b;
+  --primary-foreground: #0b0f17;
+  --secondary: #1a2232;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1a2232;
+  --muted-foreground: #94a3b8;
+  --accent: #1e2738;
+  --accent-foreground: #e5c994;
 
   --destructive: #ea4335;
-  --border: rgba(148, 163, 184, 0.22);
-  --input: #172033;
-  --ring: #8ab4f8;
+  --border: rgba(241, 245, 249, 0.11);
+  --input: #172030;
+  --ring: #c9a66b;
 
-  --section-bg: #111827;
-  --divider: rgba(148, 163, 184, 0.22);
+  --section-bg: #121824;
+  --divider: rgba(241, 245, 249, 0.11);
 
-  --gradient-primary: linear-gradient(135deg, #7dc7ee 0%, #7dc7ee 100%);
-  --gradient-text: linear-gradient(135deg, #eef4ff 0%, #7dc7ee 100%);
+  --gradient-primary: linear-gradient(135deg, #c9a66b 0%, #dfbf86 100%);
+  --gradient-text: linear-gradient(135deg, #f8fafc 0%, #c9a66b 100%);
 }
 
 @theme inline {
@@ -84,8 +88,9 @@
   --color-brand-gold-hover: var(--brand-gold-hover);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Inter", -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

@@ -1,14 +1,11 @@
 import { brand, brandEmails, organizationId, lifecycleServices } from '@/lib/brand'
 import { defaultOgImages } from '@/lib/seo'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import PageViewTracker from '@/components/analytics/PageViewTracker'
 import '@/app/globals.css'
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL('https://www.marvelbros.com'),
@@ -97,7 +94,7 @@ export default function RootDocument({ children, lang = 'zh-CN' }: { children: R
 
   return (
     <html lang={lang} suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <script
           id="organization-json-ld"
           type="application/ld+json"
